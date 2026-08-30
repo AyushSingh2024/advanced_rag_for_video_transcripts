@@ -1,0 +1,266 @@
+WEBVTT
+
+00:00:00.320 --> 00:00:05.460
+Alright everyone, welcome to chapter number 2 of our map. In chapter number 1, we have
+
+00:00:05.520 --> 00:00:12.880
+basically seen all of the features which is provided by expo map. But right now, our main
+
+00:00:13.060 --> 00:00:19.420
+focus is to understand them one by one once again so that we have a proper command on
+
+00:00:19.500 --> 00:00:20.400
+to the expo map.
+
+00:00:20.800 --> 00:00:26.340
+So, the first thing again, let's move ahead and try to understand more about camera positioning.
+
+00:00:27.099 --> 00:00:27.359
+Perfect.
+
+00:00:27.460 --> 00:00:33.300
+So, with the help of a mini project, we are going to understand more about camera positioning.
+
+00:00:33.480 --> 00:00:35.900
+I already have my build ready as you guys can see.
+
+00:00:36.140 --> 00:00:38.019
+This is the previous application we have built.
+
+00:00:38.420 --> 00:00:40.199
+This is very weird and very bad app.
+
+00:00:40.440 --> 00:00:46.080
+But definitely, we are just seeing the overview of ExpoMap, what you can do with that.
+
+00:00:46.300 --> 00:00:49.980
+But in this let's move hand and try to create a mini project.
+
+00:00:50.879 --> 00:00:55.620
+So what is the idea of the mini project is we simply wanted to have a screen.
+
+00:00:57.160 --> 00:01:03.699
+Let's say this is a screen, onto this screen we have map and inside this map we basically
+
+00:01:03.900 --> 00:01:06.920
+have a button that move the camera to different cities.
+
+00:01:07.500 --> 00:01:07.780
+All right.
+
+00:01:08.600 --> 00:01:11.800
+move the camera to different cities.
+
+00:01:12.600 --> 00:01:19.040
+using longitude and latitude and zone. Perfect. So, what is the key concept for it?
+
+00:01:19.450 --> 00:01:25.720
+You can see that. Expomap, expose native map view with camera position prop. Yes,
+
+00:01:25.810 --> 00:01:28.880
+we know that very well. If I just go to my index,
+
+00:01:29.100 --> 00:01:35.180
+You can see that we have a camera position prop at this point, yes you can see that
+
+00:01:35.619 --> 00:01:37.820
+we have this camera position prop, yes.
+
+00:01:38.180 --> 00:01:43.619
+So they basically expose the native map view, nice.
+
+00:01:43.840 --> 00:01:49.920
+So first that we have is the coordinates and second thing that we have into it is the zoom,
+
+00:01:50.659 --> 00:01:51.080
+nice.
+
+00:01:51.780 --> 00:01:55.259
+So, now let us move ahead and definitely we do not need it.
+
+00:01:55.500 --> 00:01:57.640
+what I will do basically I will.
+
+00:01:58.400 --> 00:02:06.640
+Create here nodes.md and inside the nodes I will cut this out and I will paste it out
+
+00:02:06.760 --> 00:02:06.900
+cool.
+
+00:02:07.420 --> 00:02:12.800
+So, that you have the access of this nodes RNFES and let me say this as index perfect.
+
+00:02:13.640 --> 00:02:15.840
+So, right now you can see this is how they look to us.
+
+00:02:16.200 --> 00:02:20.220
+So, first thing is let me import all of the important things that I need.
+
+00:02:20.840 --> 00:02:25.700
+I need a use state, then I need a button, definitely I don't need this, I'll remove
+
+00:02:25.819 --> 00:02:30.440
+it in a while and I have imported ashric as map from expo map.
+
+00:02:31.599 --> 00:02:35.940
+First thing I wanted you to create here a state variable.
+
+00:02:37.980 --> 00:02:44.920
+So, this state variable showing us some coordinates, first one is the latitude and second thing
+
+00:02:45.020 --> 00:02:48.600
+is the longitude and then a zoom value, nice.
+
+00:02:50.080 --> 00:02:57.360
+And then first of all let me copy my design, this is the design, let me paste it and then
+
+00:02:57.480 --> 00:03:00.840
+what I will do first of all, I will have here axis of view.
+
+00:03:02.720 --> 00:03:06.000
+This view is first of all going to have a style.
+
+00:03:07.140 --> 00:03:10.560
+This style is definitely going to be as a map container.
+
+00:03:11.040 --> 00:03:12.040
+Let me off my AI.
+
+00:03:13.120 --> 00:03:13.400
+All right.
+
+00:03:14.180 --> 00:03:21.660
+And what I can do if the platform specific UI, so if the platform OS is iOS, then show
+
+00:03:21.780 --> 00:03:22.820
+the Apple map.
+
+00:03:23.200 --> 00:03:25.760
+Otherwise, show the Google map, perfect.
+
+00:03:26.410 --> 00:03:27.940
+And if I save it, look at that.
+
+00:03:28.480 --> 00:03:32.420
+This is how the Google map is basically showing to us, nice.
+
+00:03:33.300 --> 00:03:36.280
+And in same way, we can have a button.
+
+00:03:37.180 --> 00:03:44.220
+And that button is basically going to show us Delhi, Mumbai, Bangalore and all of them
+
+00:03:44.300 --> 00:03:47.540
+have their some longitude and latitude positions.
+
+00:03:47.670 --> 00:03:49.560
+So, inside this view, what I can do?
+
+00:03:49.720 --> 00:03:51.099
+I can have here a style.
+
+00:03:51.700 --> 00:04:00.519
+Inside this style, we can have a styles.buttons and inside this styles.buttons, first thing
+
+00:04:00.739 --> 00:04:01.800
+I can have a button.
+
+00:04:03.060 --> 00:04:03.640
+Nice.
+
+00:04:04.260 --> 00:04:07.599
+So, let me import the button from React Native.
+
+00:04:08.160 --> 00:04:11.040
+This button is basically showing us this deli title.
+
+00:04:11.500 --> 00:04:17.180
+And then on press they are basically changing the coordinates according to the position.
+
+00:04:17.540 --> 00:04:18.779
+Easy nothing rocket science.
+
+00:04:19.680 --> 00:04:26.000
+In same way I can have for Mumbai and in same way I can have for Bangalore.
+
+00:04:27.900 --> 00:04:28.940
+Let me save it.
+
+00:04:29.129 --> 00:04:32.000
+So the moment I save it, this is how they are going to look.
+
+00:04:32.879 --> 00:04:34.800
+Now let us see the moment I press on Mumbai.
+
+00:04:35.720 --> 00:04:39.740
+I am hopefully redirected to the Mumbai's location.
+
+00:04:41.419 --> 00:04:42.300
+Nothing is bragged.
+
+00:04:43.020 --> 00:04:44.020
+Maybe we are too late.
+
+00:04:46.379 --> 00:04:53.259
+Yes, look at that, exactly we are at somewhere around this varodra and something if I again
+
+00:04:53.360 --> 00:05:01.940
+press on Bangalore and maybe zoom should be 5, I do not know, but if I put the zoom as
+
+00:05:02.039 --> 00:05:06.360
+5 and now if I save it and again press on Bangalore, ok.
+
+00:05:06.530 --> 00:05:09.319
+So, let me change the value of zoom to 9.
+
+00:05:10.260 --> 00:05:11.980
+Let me again press on Bangalore.
+
+00:05:12.040 --> 00:05:17.300
+So somewhere definitely we are somewhere here at this location of Bangalore.
+
+00:05:18.180 --> 00:05:18.480
+Nice.
+
+00:05:18.620 --> 00:05:23.660
+If I again press on Delhi, New Delhi, Mumbai somewhere to the Mumbai.
+
+00:05:24.300 --> 00:05:26.580
+Let me go to go with 9 with Mumbai.
+
+00:05:27.340 --> 00:05:28.720
+Again press somewhere here.
+
+00:05:28.780 --> 00:05:30.240
+If I again press on Bangalore.
+
+00:05:30.500 --> 00:05:32.480
+So we are successfully changing the positions.
+
+00:05:32.980 --> 00:05:33.300
+All right.
+
+00:05:33.860 --> 00:05:39.020
+So this is how you can basically use this camera position props.
+
+00:05:39.500 --> 00:05:40.700
+Making sense?
+
+00:05:41.220 --> 00:05:46.420
+Alright, so what you will basically learn like what is camera position and how coordinates
+
+00:05:47.460 --> 00:05:51.840
+map to the real world places and how zoom controls all of these things.
+
+00:05:52.740 --> 00:05:52.920
+Perfect.
+
+00:05:53.920 --> 00:05:54.420
+Nice.
+
+00:05:55.120 --> 00:06:01.280
+So, yes, we can say this is pretty much it with the camera position prop and see you
+
+00:06:01.520 --> 00:06:02.080
+next time.
+

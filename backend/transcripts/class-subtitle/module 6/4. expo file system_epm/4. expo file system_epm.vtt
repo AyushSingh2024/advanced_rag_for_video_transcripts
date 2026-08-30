@@ -1,0 +1,1490 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:04.320
+Hey everyone and welcome to one more new lecture.
+
+00:00:04.600 --> 00:00:10.880
+In this lecture, we are going to learn about Expo file system, a powerful API that lets
+
+00:00:10.920 --> 00:00:18.120
+your app, we can say manage files right on the device and with the help of a file system,
+
+00:00:18.360 --> 00:00:24.680
+you can do the CRUD operations, you can download it, you can upload files and we can say you
+
+00:00:24.681 --> 00:00:26.200
+you can use it with.
+
+00:00:27.560 --> 00:00:32.520
+Photos, you can use it with PDFs, backups, logs and many more.
+
+00:00:33.300 --> 00:00:39.300
+And this is going to be the essential when your app needs to handle read file content
+
+00:00:39.400 --> 00:00:44.860
+and not just we can say key value storage like in previous chapters we have learned
+
+00:00:44.861 --> 00:00:51.260
+about that how you can store data more of in key value pair or let's say in a SQLite
+
+00:00:51.261 --> 00:00:51.660
+format.
+
+00:00:52.500 --> 00:00:57.000
+But whenever you wanted to use the actual file system.
+
+00:00:57.840 --> 00:00:59.800
+So what is expo file system?
+
+00:01:00.320 --> 00:01:04.900
+If I just simply coming to the documentation of expo file system.
+
+00:01:05.680 --> 00:01:15.500
+So expo file system provides access to files and directories store on the device or bundled
+
+00:01:15.501 --> 00:01:19.020
+as assessed asset into the native project.
+
+00:01:19.500 --> 00:01:24.180
+It is also allows downloading file from the network.
+
+00:01:24.520 --> 00:01:25.920
+Amazing, isn't it?
+
+00:01:26.320 --> 00:01:29.200
+So let's move ahead and try to break it down more.
+
+00:01:29.640 --> 00:01:33.780
+So expo file system first of all is the library.
+
+00:01:34.800 --> 00:01:39.880
+All right, which give you the access of we can say file system of users device.
+
+00:01:40.200 --> 00:01:48.820
+And then this will work both on Android and iOS and we can know that each app let's say
+
+00:01:48.840 --> 00:01:51.740
+that means is simply coming to here and grab it.
+
+00:01:52.060 --> 00:01:57.240
+So each app have their own private file system.
+
+00:01:58.200 --> 00:02:01.520
+Perfect each app have their private folders.
+
+00:02:02.200 --> 00:02:09.639
+So, that with the help of expo file system we can read from it and we can write to it.
+
+00:02:09.940 --> 00:02:16.120
+You can also download files from the internet and we can definitely save them locally.
+
+00:02:16.680 --> 00:02:21.900
+So, let us move ahead and try to understand why do we even need the file system.
+
+00:02:22.880 --> 00:02:27.920
+So, we can know that we already have async storage which is definitely great for storing
+
+00:02:27.921 --> 00:02:30.000
+small bits of data.
+
+00:02:30.500 --> 00:02:39.160
+So, whenever you wanted to store small bits of data, then async storage is fine.
+
+00:02:39.640 --> 00:02:39.860
+Perfect.
+
+00:02:39.980 --> 00:02:46.000
+Then async storage and key value storage, whatever is that, they are good for it.
+
+00:02:46.540 --> 00:02:54.060
+But sometime we need to deal with entire files like we have 1 GB of data, 2 GB of data.
+
+00:02:54.880 --> 00:02:58.740
+So for that we can, let me just try to give the example for it.
+
+00:02:59.440 --> 00:03:06.379
+Let's say you wanted to up saving a user selected photos.
+
+00:03:07.120 --> 00:03:08.379
+Let's just say this is your work.
+
+00:03:09.019 --> 00:03:14.480
+So definitely photos are very big in size and if they are in high quality, let's say
+
+00:03:14.481 --> 00:03:15.780
+are exporting.
+
+00:03:17.040 --> 00:03:23.260
+app data as document. Yes, this is this can be also the feature. Let's say you are exporting
+
+00:03:23.439 --> 00:03:30.299
+app data as a document. So, this is where we also need it. You are we can say that you
+
+00:03:30.300 --> 00:03:36.720
+are downloading a PDF. So, definitely we need it. You are uploading a file to the back end.
+
+00:03:36.879 --> 00:03:39.099
+Yes, you are uploading a file.
+
+00:03:39.400 --> 00:03:48.459
+to the backend. So, in that case we also need expo file system. So, with the help of file
+
+00:03:48.620 --> 00:03:56.040
+system, so basically we can say file system gives you full control over these operations.
+
+00:03:56.300 --> 00:04:02.560
+And you can definitely say that we have bunch of method I mean lot of methods definitely
+
+00:04:03.380 --> 00:04:06.120
+need not to get too much depth into all of them.
+
+00:04:06.480 --> 00:04:11.660
+But let me just try to explain to you guys bunch of them one by one.
+
+00:04:11.661 --> 00:04:16.000
+So for that let me just simply copy this installation command.
+
+00:04:16.700 --> 00:04:24.780
+Let me go to my terminal, open a new terminal and then simply hit "Bunex Expo Install Expo
+
+00:04:24.840 --> 00:04:26.300
+File System" alright.
+
+00:04:26.760 --> 00:04:29.680
+So this is basically going to install this library.
+
+00:04:31.460 --> 00:04:34.980
+And after that we will going to see that.
+
+00:04:35.100 --> 00:04:38.320
+A bunch of things and don't worry about it.
+
+00:04:38.640 --> 00:04:41.460
+So before like this is installed successfully.
+
+00:04:42.380 --> 00:04:50.440
+So the first thing that I wanted to explain you guys is about we can say we have three
+
+00:04:51.140 --> 00:04:51.740
+directories.
+
+00:04:52.020 --> 00:04:52.300
+Perfect.
+
+00:04:52.920 --> 00:04:57.320
+We can have we can even name this as the three directories.
+
+00:04:57.900 --> 00:05:06.120
+And the name of that directory is the first one is known as paths.document.
+
+00:05:06.340 --> 00:05:07.900
+I will explain you each of them.
+
+00:05:09.259 --> 00:05:16.520
+And then second one that we have is paths.cache and the third one that we have is paths.bundle
+
+00:05:16.521 --> 00:05:17.620
+and this is optional.
+
+00:05:18.240 --> 00:05:24.100
+So you can definitely skip it but alright I will just try my best to explain you about
+
+00:05:24.360 --> 00:05:25.080
+each of them.
+
+00:05:25.200 --> 00:05:26.120
+Perfect.
+
+00:05:26.390 --> 00:05:32.420
+So now whenever you are dealing with expo file system, you have access of three directories.
+
+00:05:32.520 --> 00:05:36.760
+I mean you have a bunch of other but these are main hero of our entire game.
+
+00:05:37.680 --> 00:05:39.380
+First one is the path document.
+
+00:05:39.980 --> 00:05:41.900
+Second one is path cache.
+
+00:05:42.660 --> 00:05:43.860
+And third one is...
+
+00:05:44.200 --> 00:05:46.820
+We can say bundle.
+
+00:05:47.360 --> 00:05:47.640
+Perfect.
+
+00:05:48.600 --> 00:05:50.940
+So let's move ahead and try to understand.
+
+00:05:51.120 --> 00:05:53.760
+So what is path document actually means?
+
+00:05:54.260 --> 00:05:55.960
+Let's try to understand this first.
+
+00:05:56.620 --> 00:06:03.380
+So we can say that whenever you install any app into our folder into your operating system
+
+00:06:03.480 --> 00:06:04.260
+into your mobile.
+
+00:06:05.300 --> 00:06:09.460
+So operating system give that their own private space.
+
+00:06:09.600 --> 00:06:11.740
+can say that give their own.
+
+00:06:12.920 --> 00:06:20.580
+Private storage, just give me a minute, storage, perfect, yes we understand that.
+
+00:06:20.980 --> 00:06:30.560
+So we can say think of it like a folder on your phone that belongs only to these directories,
+
+00:06:31.200 --> 00:06:33.480
+perfect, like first one that we have is document.
+
+00:06:34.160 --> 00:06:38.300
+So document is a folder we can say a document.
+
+00:06:39.740 --> 00:06:43.080
+folder where you can save file.
+
+00:06:43.340 --> 00:06:50.960
+Yes, where you can basically save files and we can say that whenever you wanted to care
+
+00:06:51.240 --> 00:06:53.540
+about something for long term.
+
+00:06:54.200 --> 00:06:56.580
+So you save file for long term.
+
+00:06:57.030 --> 00:07:01.380
+In that case, we are going to save them into path document.
+
+00:07:01.600 --> 00:07:05.280
+But the second one which is come is path cache.
+
+00:07:05.520 --> 00:07:07.380
+So why even we need it?
+
+00:07:07.430 --> 00:07:09.960
+So we can say that this is a cache folder.
+
+00:07:11.500 --> 00:07:14.900
+This is a cache folder for temporary.
+
+00:07:17.480 --> 00:07:19.840
+Let me just fix my spellings.
+
+00:07:20.420 --> 00:07:21.900
+Excuse me for that.
+
+00:07:22.280 --> 00:07:24.560
+files that can.
+
+00:07:24.800 --> 00:07:29.020
+that can be removed by OS anytime. Perfect.
+
+00:07:29.300 --> 00:07:32.599
+That can be removed by OS anytime.
+
+00:07:32.699 --> 00:07:37.360
+So into the cache folder, we only store that data.
+
+00:07:38.280 --> 00:07:40.180
+That is not permanent.
+
+00:07:40.560 --> 00:07:43.819
+We always wanted to store the temporary data into it.
+
+00:07:44.120 --> 00:07:45.560
+And the third one is the bundle.
+
+00:07:45.659 --> 00:07:50.340
+So this is basically we can say a folder where app bundled asset come.
+
+00:07:50.700 --> 00:07:57.980
+Perfect. Like we have images, we have some config, we have some another logos, a lot
+
+00:07:57.981 --> 00:08:04.580
+of things. So all the bundled thing will live here and this is only read only. You can't
+
+00:08:04.660 --> 00:08:09.540
+write anything into it. Cool. So this bundle is a read only. So that's why I can say you
+
+00:08:09.541 --> 00:08:10.760
+can ignore it for now.
+
+00:08:11.100 --> 00:08:13.240
+And just focus on these two.
+
+00:08:13.300 --> 00:08:17.120
+So the first one is where you wanted to store the permanent data.
+
+00:08:17.940 --> 00:08:24.020
+And the second one is we can say this is where you can basically store the temporary data.
+
+00:08:24.400 --> 00:08:29.960
+So you can do all the read and write operation and this is persist for longer time.
+
+00:08:30.340 --> 00:08:31.420
+And when it's come to?
+
+00:08:31.800 --> 00:08:39.220
+cache, you can also do read and write here, but this will not consist for longer time.
+
+00:08:39.600 --> 00:08:46.100
+So you can always use this for temporary data and third one is just give me a minute.
+
+00:08:48.320 --> 00:08:51.820
+Third one is something known as paths dot bundle.
+
+00:08:51.940 --> 00:08:53.420
+So you can't write anything.
+
+00:08:53.560 --> 00:09:00.120
+You can read it and bundles data always persist and you will always use this for storing your
+
+00:09:00.121 --> 00:09:03.020
+apps asset like asset like images or fonts.
+
+00:09:03.320 --> 00:09:04.540
+I mean, a lot of other things.
+
+00:09:04.960 --> 00:09:10.440
+So these are the main thing that we need to understand for now.
+
+00:09:10.620 --> 00:09:10.880
+All right.
+
+00:09:10.881 --> 00:09:11.960
+Now we are good to go.
+
+00:09:12.300 --> 00:09:13.320
+Perfect.
+
+00:09:13.321 --> 00:09:19.580
+So, now let's move ahead and try to understand how we can perform operations.
+
+00:09:19.779 --> 00:09:25.200
+So for that let me come into here and import three things.
+
+00:09:26.019 --> 00:09:26.380
+Perfect.
+
+00:09:26.839 --> 00:09:32.180
+So, the first thing I have imported file, second thing I have imported directory and
+
+00:09:32.181 --> 00:09:32.940
+And third one is...
+
+00:09:33.300 --> 00:09:40.060
+path. No problem. You can even go depth into it from here. Like we have directory, we have
+
+00:09:40.080 --> 00:09:45.720
+file, we have paths as well. Perfect. We also have file handle, but all right. These are
+
+00:09:45.721 --> 00:09:50.060
+three main things we have imported. So these are the classes.
+
+00:09:50.600 --> 00:09:54.699
+Perfect, yes these are the classes that we are importing.
+
+00:09:55.540 --> 00:10:04.339
+Now for simulating bunch of them like let's say you wanted to read data, write data and
+
+00:10:04.340 --> 00:10:05.160
+create data.
+
+00:10:05.699 --> 00:10:09.420
+Perfect, so for that how you can write that function.
+
+00:10:09.421 --> 00:10:11.880
+So let's try to understand that very easy.
+
+00:10:12.000 --> 00:10:17.340
+Let me simply coming to here and simply say, just give me a minute.
+
+00:10:17.420 --> 00:10:18.200
+Let me off this.
+
+00:10:18.340 --> 00:10:18.600
+All right.
+
+00:10:18.620 --> 00:10:24.540
+So we can simply say const create and read file.
+
+00:10:24.600 --> 00:10:25.220
+No problem.
+
+00:10:25.740 --> 00:10:31.720
+And then I can simply use here the async and then always like whenever you are using async
+
+00:10:31.721 --> 00:10:35.080
+or something, always try to be inside, try and catch.
+
+00:10:35.720 --> 00:10:38.620
+This is the good practice that we can follow.
+
+00:10:38.820 --> 00:10:39.120
+All right.
+
+00:10:39.700 --> 00:10:40.700
+Perfect.
+
+00:10:41.140 --> 00:10:47.860
+And then what you can do, you can simply say const file is equals to initialize like first
+
+00:10:47.861 --> 00:10:54.160
+thing we wanted to initialize the path of we can like let me just tell you how you can
+
+00:10:54.180 --> 00:10:54.420
+do so.
+
+00:10:55.020 --> 00:10:57.060
+simply say new file no problem.
+
+00:10:57.800 --> 00:11:00.480
+This is basically the constructor.
+
+00:11:00.560 --> 00:11:04.080
+We are basically constructing it and creating the instance of it.
+
+00:11:04.560 --> 00:11:04.760
+All right.
+
+00:11:04.839 --> 00:11:11.260
+I hope so not using too much of jargons and then you will always give it the path like
+
+00:11:11.261 --> 00:11:14.779
+where you wanted to store this thing so I can simply say paths.
+
+00:11:15.100 --> 00:11:20.120
+Dot, you can see lot of things, but main thing that we need for now is document.
+
+00:11:20.380 --> 00:11:26.720
+Now you guys understand a property containing the document directory, a place to store file
+
+00:11:26.759 --> 00:11:30.519
+that are safe from being deleted by the system.
+
+00:11:30.779 --> 00:11:31.940
+Yes, we know that.
+
+00:11:32.560 --> 00:11:36.639
+And second thing you can give the name of your, we can say your file.
+
+00:11:37.019 --> 00:11:39.440
+So I can simply say hello.txt.
+
+00:11:39.699 --> 00:11:40.279
+No problem.
+
+00:11:40.900 --> 00:11:43.860
+This can be exist and this can't be.
+
+00:11:43.880 --> 00:11:46.020
+So right now nothing exists like this.
+
+00:11:46.700 --> 00:11:50.160
+And then what I can do, I can simply say file dot create.
+
+00:11:51.140 --> 00:11:51.760
+That's it.
+
+00:11:52.160 --> 00:11:56.060
+Now after doing so this our file will create.
+
+00:11:56.380 --> 00:12:00.120
+Now what you can do, let's say I wanted to write something into it.
+
+00:12:00.121 --> 00:12:03.240
+So I can simply say file dot write, not streams.
+
+00:12:03.700 --> 00:12:05.940
+We just wanted to write it like this.
+
+00:12:06.579 --> 00:12:13.060
+I can say hello from expo file system easy.
+
+00:12:13.839 --> 00:12:15.420
+So this is how you can create it.
+
+00:12:15.639 --> 00:12:17.199
+This is how you can write it.
+
+00:12:17.720 --> 00:12:21.160
+Let us say you wanted to.
+
+00:12:22.160 --> 00:12:29.060
+read the content kind of that. So, what you can do you can simply say cons content is
+
+00:12:29.061 --> 00:12:34.019
+equals to await yes you need to await it because let us say the file is too big. So, it will
+
+00:12:34.020 --> 00:12:39.959
+take some time. So, then you can simply say text. So, this is basically going to return
+
+00:12:39.960 --> 00:12:47.600
+you a promise that resolve with the content of the file as a string easy and let us say
+
+00:12:49.140 --> 00:12:53.040
+Let me create one more log like we have created previously.
+
+00:12:53.140 --> 00:12:58.620
+So I can simply say const logs and then I can say set logs.
+
+00:13:00.340 --> 00:13:04.820
+This is equals to use state and this is an empty array.
+
+00:13:05.040 --> 00:13:05.580
+No problem.
+
+00:13:05.900 --> 00:13:11.120
+And I can create a function that will basically going to add a log for us.
+
+00:13:11.720 --> 00:13:18.220
+Just for simulation, I can also copy that from the another finds, but no problem.
+
+00:13:19.380 --> 00:13:21.380
+And then this is basically going to do what?
+
+00:13:21.560 --> 00:13:23.580
+This is basically going to do set logs.
+
+00:13:24.300 --> 00:13:32.800
+So, whatever the previous data we have and this is basically going to be all the data
+
+00:13:32.801 --> 00:13:38.000
+we are spreading it perfect and whatever the message is coming.
+
+00:13:40.200 --> 00:13:40.540
+Easy.
+
+00:13:40.800 --> 00:13:42.800
+What just happened?
+
+00:13:43.440 --> 00:13:46.459
+I wanted to store this message as a string.
+
+00:13:46.720 --> 00:13:48.519
+So how I can store it?
+
+00:13:48.959 --> 00:13:51.339
+Let me just check it like this.
+
+00:13:52.060 --> 00:13:55.740
+And what if I can do something like this?
+
+00:13:56.500 --> 00:13:58.180
+Is it possible?
+
+00:13:58.560 --> 00:14:00.180
+I am getting this error.
+
+00:14:00.320 --> 00:14:01.480
+Alright, I can fix it.
+
+00:14:01.880 --> 00:14:04.260
+I can simply say this is the type of string.
+
+00:14:04.920 --> 00:14:05.840
+Now this is fine.
+
+00:14:06.140 --> 00:14:06.760
+No problem.
+
+00:14:07.020 --> 00:14:13.520
+Now we have created it and then you can simply say here add log and whatever the content
+
+00:14:13.880 --> 00:14:15.760
+will come and I can make it much better.
+
+00:14:16.520 --> 00:14:18.960
+I will say this as file created.
+
+00:14:19.940 --> 00:14:26.620
+and read easy and then whatever the content will come let's say in two double ticks a
+
+00:14:26.621 --> 00:14:35.060
+double quotations I can show my content now if I call this you know that we can get the
+
+00:14:35.061 --> 00:14:40.060
+data no problem but by any chance if we have any error I can add a log for my error.
+
+00:14:40.500 --> 00:14:46.660
+Easy. I don't think so there is any rocket science is going on here. Perfect.
+
+00:14:47.100 --> 00:14:50.480
+Let's move ahead and try to see the output.
+
+00:14:51.340 --> 00:14:55.900
+But for seeing the output first of all let me paste my CSS.
+
+00:14:56.460 --> 00:15:01.240
+You can definitely get all of the CSS from my Github repo.
+
+00:15:02.560 --> 00:15:05.500
+Alright, now let's move ahead and try to initialize this.
+
+00:15:05.501 --> 00:15:09.780
+So the first thing that I wanted to do and let me just quickly do it and then I'll be
+
+00:15:09.781 --> 00:15:10.320
+right back.
+
+00:15:11.080 --> 00:15:15.820
+Alright guys, so now I have just created a very basic simulation UI.
+
+00:15:16.060 --> 00:15:17.760
+Now you can see that this is our view.
+
+00:15:18.540 --> 00:15:23.880
+Inside this I have added basic file system operation header and then a scroll view where
+
+00:15:23.900 --> 00:15:28.160
+we can actually going to add the button and the moment you do something over it, you can
+
+00:15:28.161 --> 00:15:28.580
+see the logs.
+
+00:15:29.060 --> 00:15:31.020
+have the context out of it.
+
+00:15:31.100 --> 00:15:36.139
+And then this is a view where we have added another text which is saying operation logs
+
+00:15:37.920 --> 00:15:45.240
+and then a simple scroll view which is basically logs all the data which is inside this state
+
+00:15:45.241 --> 00:15:46.779
+variable which is an array.
+
+00:15:47.319 --> 00:15:48.199
+Alright no problem.
+
+00:15:48.620 --> 00:15:50.579
+Now let's move ahead and try to use it.
+
+00:15:52.820 --> 00:15:59.280
+So, what you can do now, you can simply let me show you, you can simply come into inside
+
+00:15:59.281 --> 00:16:07.320
+this buttons container and let me just add here another view and this view will say as
+
+00:16:07.340 --> 00:16:08.080
+the style.
+
+00:16:08.400 --> 00:16:16.340
+And I can call it this styles dot row and then I can paste this perfect and I can get
+
+00:16:16.360 --> 00:16:18.920
+my button button from react native.
+
+00:16:19.200 --> 00:16:23.900
+And now if I save it, you will see we have create and read and the moment I click it,
+
+00:16:24.280 --> 00:16:28.820
+you will see file created and read and what is the content is coming.
+
+00:16:29.200 --> 00:16:31.240
+Hello from Xposed system.
+
+00:16:31.480 --> 00:16:31.740
+Why?
+
+00:16:32.460 --> 00:16:36.280
+Let's say let me change this to Suraj from this site.
+
+00:16:37.500 --> 00:16:43.780
+And now if I save it and then if I again write it now you can see what is saying has been
+
+00:16:43.840 --> 00:16:47.760
+rejected cause unable to create file directory it is already exist.
+
+00:16:48.140 --> 00:16:53.820
+So again now we are trying to do we are trying to recreate this file which is already exist.
+
+00:16:54.340 --> 00:16:56.020
+So you can instead of this.
+
+00:16:56.100 --> 00:17:00.259
+Now you can comment out this create thing.
+
+00:17:00.600 --> 00:17:00.959
+Perfect.
+
+00:17:01.519 --> 00:17:06.339
+And then if you just simply press now you will see file created and read so much from
+
+00:17:06.340 --> 00:17:12.319
+this site and one interesting thing every time you writing something new you can see
+
+00:17:12.380 --> 00:17:17.460
+that every time you writing something new that a data is over writing.
+
+00:17:17.760 --> 00:17:19.299
+So you need to keep that in mind.
+
+00:17:19.599 --> 00:17:19.940
+Perfect.
+
+00:17:20.119 --> 00:17:21.599
+So this is the example number one.
+
+00:17:21.640 --> 00:17:23.740
+I hope I am able to simulate it properly.
+
+00:17:25.000 --> 00:17:30.580
+In the same way, I am just keep adding bunch of other methods and bunch of things like
+
+00:17:31.020 --> 00:17:33.320
+give you lot of assignments out of it.
+
+00:17:33.560 --> 00:17:34.820
+So make sure to give it a try.
+
+00:17:35.380 --> 00:17:41.080
+Now let's move ahead and we will see that how you can basically read any data as a base
+
+00:17:41.081 --> 00:17:43.060
+64 format.
+
+00:17:44.520 --> 00:17:47.880
+basically so you can simply create one read as.
+
+00:17:50.580 --> 00:17:58.060
+Base64, perfect and then what you can do you can simply run again async and then again add
+
+00:17:58.061 --> 00:18:04.180
+a try and catch and you will say const file is equals to new file no problem and then
+
+00:18:04.420 --> 00:18:06.340
+again paths.document.
+
+00:18:06.800 --> 00:18:12.880
+And then same file name make sure to give it and then hello easy and then you can try
+
+00:18:12.881 --> 00:18:19.540
+to recreate it but already existed so you need not to do so anything and sorry need
+
+00:18:19.541 --> 00:18:25.360
+not to do so this you can change it and what you can do you can change the name of this
+
+00:18:25.361 --> 00:18:26.000
+file as well.
+
+00:18:26.160 --> 00:18:30.660
+Let us say I have just created this as base 64 test.
+
+00:18:31.100 --> 00:18:41.059
+dot txt and then I can again say file dot create easy and then I can say file dot write
+
+00:18:42.480 --> 00:18:46.580
+and then you can say convert me to base 64.
+
+00:18:47.000 --> 00:18:51.000
+Easy and then I can get my base64 data.
+
+00:18:51.240 --> 00:18:52.060
+How you can get it?
+
+00:18:52.500 --> 00:18:55.340
+Let's say above we are getting in the format of text.
+
+00:18:55.580 --> 00:18:58.240
+So instead of text I can simply say base64.
+
+00:18:58.800 --> 00:19:00.840
+I don't think so any rocket science is going on.
+
+00:19:01.200 --> 00:19:04.480
+I can simply say file and base64.
+
+00:19:04.940 --> 00:19:08.040
+So now you are getting the data into the base64 format.
+
+00:19:08.400 --> 00:19:16.740
+And let me copy this log and add log, but instead of content, I will say this base64,
+
+00:19:17.080 --> 00:19:24.580
+but if I just only console and log it as a base64, you will not be able to understand
+
+00:19:24.581 --> 00:19:25.040
+that.
+
+00:19:25.220 --> 00:19:29.800
+So that's why let me convert this and not convert this.
+
+00:19:29.940 --> 00:19:34.900
+Let me just extract the substring 0 to 30 so that we'll see something later.
+
+00:19:36.700 --> 00:19:53.899
+Perfect. And in the same way, if we have any error, then I am going to show the error. Easy. Now, what you can do? You can simply come into here and maybe copy only this and I can just paste it here. No problem. And I will
+
+00:19:53.900 --> 00:19:58.420
+Give it a 2 and what I can say read base64.
+
+00:19:59.600 --> 00:20:07.120
+Easy and instead of I can directly say base64 and I will read as base64.
+
+00:20:07.720 --> 00:20:10.440
+Easy and now if I say base64 look at that.
+
+00:20:11.020 --> 00:20:17.100
+This is how data is coming in the format of base64 but let's say you wanted to read it
+
+00:20:17.101 --> 00:20:17.520
+properly.
+
+00:20:17.540 --> 00:20:18.500
+So what you will do?
+
+00:20:21.320 --> 00:20:24.139
+two string and then definitely two string.
+
+00:20:24.799 --> 00:20:25.019
+All right.
+
+00:20:25.020 --> 00:20:29.120
+Well, let's say that we just try to read something like this, unable to create.
+
+00:20:29.380 --> 00:20:31.940
+I know that we already have this file.
+
+00:20:32.779 --> 00:20:33.000
+Perfect.
+
+00:20:33.080 --> 00:20:37.799
+And if I say base 64, all right, still they are giving me the format into the.
+
+00:20:39.120 --> 00:20:40.860
+Base64, no problem.
+
+00:20:40.940 --> 00:20:45.820
+So what you can do instead of this, you can directly say this as text and the moment you
+
+00:20:45.821 --> 00:20:47.519
+call it, you will get your data.
+
+00:20:47.760 --> 00:20:50.860
+So I hope so I'm making sense in same way.
+
+00:20:51.000 --> 00:20:55.419
+Let's say let me just now quickly add the methods and in same way you can simulate that
+
+00:20:55.460 --> 00:20:58.279
+I hope you guys able to do so that.
+
+00:20:59.320 --> 00:21:06.480
+Let's say in same way you wanted to we can says copy some file and delete some file get
+
+00:21:06.700 --> 00:21:08.480
+let's say how you can delete some file.
+
+00:21:09.240 --> 00:21:09.480
+Perfect.
+
+00:21:09.540 --> 00:21:12.740
+So for that what you can do I am just directly writing it.
+
+00:21:13.160 --> 00:21:16.380
+I can simply say delete file no problem.
+
+00:21:19.140 --> 00:21:24.820
+Just give me a minute and delete file will always going to be something like this.
+
+00:21:24.920 --> 00:21:31.060
+You can simply say create a file like we already have existing file we can say and for deleting
+
+00:21:31.061 --> 00:21:33.720
+this first three thing is same.
+
+00:21:34.260 --> 00:21:34.620
+Easy.
+
+00:21:35.500 --> 00:21:40.700
+First three things is always going to be same and instead of this, you can simply say delete
+
+00:21:41.720 --> 00:21:42.000
+me.
+
+00:21:43.060 --> 00:21:43.320
+Perfect.
+
+00:21:43.580 --> 00:21:46.480
+And you can change this to delete me.
+
+00:21:46.640 --> 00:21:47.260
+No problem.
+
+00:21:47.780 --> 00:21:53.440
+I can even wrap this inside a function and we can call it and pass the argument.
+
+00:21:53.560 --> 00:21:57.160
+And on the basis of that, we can get different data, but I just don't want it to.
+
+00:21:58.820 --> 00:22:00.460
+And how you can delete it?
+
+00:22:00.780 --> 00:22:05.160
+Simple you can simply say file.delete and this is how you will basically delete it.
+
+00:22:05.280 --> 00:22:05.740
+No problem.
+
+00:22:06.740 --> 00:22:09.240
+Let's say you wanted to copy some file.
+
+00:22:09.300 --> 00:22:10.020
+So what you will do?
+
+00:22:10.140 --> 00:22:14.420
+Let me simply copy this much coming to here instead of delete file.
+
+00:22:15.180 --> 00:22:16.920
+Now I will say this as copy file.
+
+00:22:17.200 --> 00:22:17.980
+Easy.
+
+00:22:18.500 --> 00:22:19.679
+So, how you can copy this?
+
+00:22:19.940 --> 00:22:20.779
+Everything will same.
+
+00:22:21.179 --> 00:22:21.700
+No problem.
+
+00:22:22.539 --> 00:22:26.880
+So, before copying it, I will say, hope so this file is exist.
+
+00:22:26.960 --> 00:22:27.700
+So, what you can do?
+
+00:22:27.720 --> 00:22:33.399
+You can simply say, a file or instead of file, we can call it as original.
+
+00:22:34.660 --> 00:22:35.180
+Perfect.
+
+00:22:36.100 --> 00:22:38.480
+And I will name it as original.
+
+00:22:38.680 --> 00:22:39.260
+No problem.
+
+00:22:40.340 --> 00:22:42.000
+And let me fix my spellings.
+
+00:22:42.460 --> 00:22:42.720
+Alright.
+
+00:22:43.020 --> 00:22:44.080
+And then what I can do?
+
+00:22:44.320 --> 00:22:47.600
+I can simply say if not of original dot exist.
+
+00:22:49.980 --> 00:22:50.260
+Perfect.
+
+00:22:50.500 --> 00:22:51.040
+Not origin.
+
+00:22:51.600 --> 00:22:54.900
+This is going to be as original dot.
+
+00:22:55.860 --> 00:23:00.920
+exist, then what I can do, I am going to create it and then write some bunch of data into
+
+00:23:00.921 --> 00:23:08.680
+it. Making sense? All right. I need to also fix this, fix this and we are good. Nice.
+
+00:23:08.780 --> 00:23:14.840
+This is making sense. No problem. And what you will do now, whenever you wanted to copy
+
+00:23:14.841 --> 00:23:20.420
+some data. So what if we store that into a cache? That is a good practice. So I will
+
+00:23:20.421 --> 00:23:24.180
+say this as const copy is equals to new file.
+
+00:23:24.500 --> 00:23:32.440
+And then now give the path as cache like I wanted to store that data into the cache folder
+
+00:23:32.480 --> 00:23:36.400
+so that if needed my system will delete this file.
+
+00:23:37.260 --> 00:23:43.560
+Perfect and I will name this as copy.txt and then what you can do you can simply say original
+
+00:23:43.900 --> 00:23:46.740
+copy that into this location.
+
+00:23:47.000 --> 00:23:48.020
+Perfect.
+
+00:23:48.040 --> 00:23:53.720
+So now every data which is available inside this is going to be copied into this folder
+
+00:23:54.000 --> 00:23:59.000
+easy and this is how you can console it and check it in same way.
+
+00:23:59.140 --> 00:24:02.980
+Let's say you wanted to move a file from one location to another location.
+
+00:24:03.100 --> 00:24:05.220
+I mean you can just coming to here.
+
+00:24:05.280 --> 00:24:06.260
+Let me tell you.
+
+00:24:06.300 --> 00:24:14.600
+And you will found this look at that we have move async same view also have move in same way we have delete async no problem.
+
+00:24:15.120 --> 00:24:20.180
+Now we have create upload task, create download, copy async lot of things.
+
+00:24:20.260 --> 00:24:26.700
+I hope so you guys can just simply coming to here and read it and just.
+
+00:24:27.559 --> 00:24:31.740
+According to you, you can implement all of them.
+
+00:24:31.940 --> 00:24:35.720
+Now, interestingly, let's see how you can list all of your directories.
+
+00:24:35.900 --> 00:24:36.780
+So that is interesting.
+
+00:24:36.960 --> 00:24:44.320
+I can simply say list directory is equals to let me just come into here.
+
+00:24:44.500 --> 00:24:49.260
+And then I will call it and then I can simply add the try and catch.
+
+00:24:49.440 --> 00:24:50.020
+No problem.
+
+00:24:50.660 --> 00:24:52.880
+Let me now create a directory.
+
+00:24:53.060 --> 00:24:54.120
+Now I'm not creating a file.
+
+00:24:54.140 --> 00:24:55.360
+I'm creating a directory.
+
+00:24:55.880 --> 00:25:01.600
+So I will say simply directory coming from expo file system.
+
+00:25:02.000 --> 00:25:04.960
+This will going to accept the path.document.
+
+00:25:05.460 --> 00:25:06.600
+Now we have a folder.
+
+00:25:07.540 --> 00:25:10.880
+Now inside this folder how I can get it.
+
+00:25:10.900 --> 00:25:15.080
+I can simply say items is equal to dir.list.
+
+00:25:15.320 --> 00:25:17.780
+Yes, this is how you can get it.
+
+00:25:18.700 --> 00:25:22.480
+Now we have list of all the items that we have inside it.
+
+00:25:23.600 --> 00:25:29.340
+And what you can do, you can basically, we can say show the length of it.
+
+00:25:29.420 --> 00:25:35.660
+So what if I add a simple log, which is saying found items dot length, this much of item,
+
+00:25:35.840 --> 00:25:36.180
+easy.
+
+00:25:37.200 --> 00:25:38.480
+And let's try to use it.
+
+00:25:38.900 --> 00:25:46.360
+So, for using it what I can do below this let me just copy this and come into here.
+
+00:25:46.500 --> 00:25:52.460
+Alright, this is another row and I will use this list directory method.
+
+00:25:53.320 --> 00:25:53.740
+Perfect.
+
+00:25:54.340 --> 00:25:58.420
+I will name it to 3 and say this as list directory.
+
+00:25:59.440 --> 00:25:59.880
+Perfect.
+
+00:26:00.620 --> 00:26:02.919
+And then how you can basically get it?
+
+00:26:03.020 --> 00:26:03.580
+It's simple.
+
+00:26:05.000 --> 00:26:05.220
+Easy.
+
+00:26:05.360 --> 00:26:08.320
+And now the moment you call it, you will going to get some data.
+
+00:26:08.520 --> 00:26:09.600
+Let me just try to see.
+
+00:26:10.020 --> 00:26:14.539
+If I say simply list directory, you will see that we are getting a 16 items.
+
+00:26:14.840 --> 00:26:18.940
+Maybe we have a bunch of other files, other things into that as well.
+
+00:26:19.000 --> 00:26:22.020
+So that's why what we are getting, we are getting 16 files.
+
+00:26:23.020 --> 00:26:23.299
+Perfect.
+
+00:26:24.440 --> 00:26:31.080
+Nice. In same way, you can create some file how you can we can say how you can work with
+
+00:26:31.180 --> 00:26:36.620
+bytes. Now, interestingly, one last example I wanted to take and one more example after
+
+00:26:36.621 --> 00:26:43.220
+it how you can upload some file that is interesting. So let's move ahead and try to understand.
+
+00:26:44.120 --> 00:26:49.180
+Alright, so for that what you can do, it's a pretty straightforward but very interesting
+
+00:26:49.200 --> 00:26:52.280
+with the help of fetch you will do so this.
+
+00:26:52.840 --> 00:27:01.220
+So I will say this as upload file no problem, I will name it async and then I can add a
+
+00:27:01.221 --> 00:27:02.520
+simple try and catch.
+
+00:27:03.600 --> 00:27:08.100
+Then this try and catch like uploading will take some time.
+
+00:27:08.320 --> 00:27:08.760
+Agree.
+
+00:27:09.320 --> 00:27:11.980
+So what if we maintain a state variable for that?
+
+00:27:12.600 --> 00:27:23.740
+I can say this as a loading and set loading and this will equal to use state and initially
+
+00:27:23.799 --> 00:27:24.840
+this is false.
+
+00:27:26.679 --> 00:27:34.380
+Perfect now inside this upload file what I can do I can simply coming to here and first
+
+00:27:34.381 --> 00:27:37.480
+before starting it I will say set loading as true.
+
+00:27:38.899 --> 00:27:44.899
+Making sense and right now let's say let me create a file.
+
+00:27:45.139 --> 00:27:53.659
+So I will say this as const file is equals to new file with the name of inside the cache
+
+00:27:53.660 --> 00:27:59.779
+folder because definitely we don't need it cache and I will name it as upload.txt.
+
+00:28:00.400 --> 00:28:03.280
+And then I will create this file.
+
+00:28:04.140 --> 00:28:06.040
+Then I will write bunch of data into it.
+
+00:28:06.041 --> 00:28:07.400
+So I will say file.write
+
+00:28:09.400 --> 00:28:11.400
+and let me write it as
+
+00:28:13.140 --> 00:28:14.400
+upload this content.
+
+00:28:15.700 --> 00:28:15.940
+Perfect.
+
+00:28:16.280 --> 00:28:20.080
+And with the help of this you can even create your own file system manager.
+
+00:28:21.280 --> 00:28:27.299
+So, this is a very powerful thing and let us say let me say this as const form data
+
+00:28:28.200 --> 00:28:34.020
+initialize of form data and then I will append this file inside my form data.
+
+00:28:34.340 --> 00:28:43.140
+I will say form data append this file this is going to be the file and then path of that
+
+00:28:43.141 --> 00:28:44.600
+file is equals to this file.
+
+00:28:44.800 --> 00:28:47.460
+And now I wanted to upload it.
+
+00:28:47.540 --> 00:28:49.660
+So where I wanted to upload it?
+
+00:28:49.840 --> 00:28:57.460
+You can simply say, just listen to, I can simply say const response is equals to await
+
+00:28:57.980 --> 00:28:58.340
+fetch.
+
+00:28:59.980 --> 00:29:00.240
+Perfect.
+
+00:29:00.900 --> 00:29:02.700
+Now we have two types of fetch.
+
+00:29:02.900 --> 00:29:10.180
+So, the first fetch will come from native JavaScript that we know, but we have one more
+
+00:29:10.181 --> 00:29:13.020
+thing which is known as ExpoFetch.
+
+00:29:13.160 --> 00:29:22.260
+So, you can simply say fetch and this fetch will come from ExpoFetch, but as you guys
+
+00:29:22.261 --> 00:29:24.620
+can see like yeah we are getting the suggestions.
+
+00:29:24.660 --> 00:29:25.900
+So, we already have it.
+
+00:29:25.940 --> 00:29:31.820
+Now with the help of ExpoFetch, yes now this fetch is coming from ExpoFetch.
+
+00:29:33.019 --> 00:29:35.000
+And then I can use it.
+
+00:29:35.260 --> 00:29:37.620
+So what you will do like there is a API.
+
+00:29:38.399 --> 00:29:40.419
+I don't know you guys know about it or not.
+
+00:29:41.760 --> 00:29:44.059
+That is known as HTTP bin.
+
+00:29:46.019 --> 00:29:47.340
+Yes, if I am not wrong.
+
+00:29:47.700 --> 00:30:01.200
+So, what I will do I will simply coming to here give the locations I will say https/httpbin.org/post
+
+00:30:01.340 --> 00:30:03.100
+because we wanted to post it.
+
+00:30:03.779 --> 00:30:11.840
+Then we will give the method as post method we know that I will say this as post and in
+
+00:30:11.841 --> 00:30:14.760
+the body I will pass my form data.
+
+00:30:17.100 --> 00:30:17.500
+Perfect.
+
+00:30:17.799 --> 00:30:22.059
+And then you can definitely get this response status like is it okay?
+
+00:30:22.240 --> 00:30:22.919
+Is it failed?
+
+00:30:23.440 --> 00:30:23.799
+Whatever.
+
+00:30:24.620 --> 00:30:26.900
+Now let's try to use it.
+
+00:30:27.220 --> 00:30:31.660
+And then what I will do, let's say by any chance if we have any error, then we will
+
+00:30:31.679 --> 00:30:32.380
+show the error.
+
+00:30:32.800 --> 00:30:39.660
+Yes, and into the finally, I will set my loading to the false.
+
+00:30:39.940 --> 00:30:42.940
+Doesn't matter we are getting error or we are getting success.
+
+00:30:43.400 --> 00:30:45.980
+We always wanted to make it false.
+
+00:30:47.800 --> 00:30:53.660
+And then what I can do, I can create a button as upload file.
+
+00:30:53.780 --> 00:30:59.900
+So what if I just below this, I add this perfect and this is going to be fourth.
+
+00:31:00.800 --> 00:31:08.640
+So, now we have upload file perfect and the moment I press upload file alright we are
+
+00:31:08.740 --> 00:31:15.760
+into loading state and look at that we are getting uploaded and the status as 200 this
+
+00:31:15.761 --> 00:31:24.260
+means if I try to go HTTP bin dot org perfect.
+
+00:31:26.019 --> 00:31:30.460
+So, you will see that a simple HTTP request response service.
+
+00:31:31.559 --> 00:31:31.820
+Perfect.
+
+00:31:31.860 --> 00:31:33.519
+So, you will see that we have a post.
+
+00:31:33.860 --> 00:31:38.799
+This is how you can post some data and pass something and you will get the request post
+
+00:31:39.000 --> 00:31:42.320
+parameter just for testing purpose we need it.
+
+00:31:42.400 --> 00:31:49.200
+Perfect, in same way we have get method, you can always get it and try to get the method
+
+00:31:49.201 --> 00:31:50.320
+you wanted to have.
+
+00:31:50.780 --> 00:31:56.340
+Perfect, so you will see that this is how you can use this and you will get data something
+
+00:31:57.860 --> 00:31:58.580
+like this.
+
+00:31:58.620 --> 00:31:59.380
+I mean cool.
+
+00:31:59.800 --> 00:32:04.640
+Perfect, so this means we have successfully able to upload this file.
+
+00:32:05.600 --> 00:32:10.580
+So I hope so you guys able to understand it and getting everything clearly.
+
+00:32:11.680 --> 00:32:16.860
+In same way if you wanted to store data in JSON format you can just stringify the data
+
+00:32:16.940 --> 00:32:17.940
+and store it.
+
+00:32:18.460 --> 00:32:18.760
+So yeah.
+
+00:32:19.300 --> 00:32:24.420
+This is how you can create, read, update, delete, whatever you wanted to do.
+
+00:32:24.500 --> 00:32:25.500
+Lot of methods.
+
+00:32:25.800 --> 00:32:28.880
+You just go and execute all of them one by one.
+
+00:32:28.940 --> 00:32:32.660
+You will get to know a lot more other things as well.
+
+00:32:32.820 --> 00:32:33.120
+Perfect.
+
+00:32:33.600 --> 00:32:35.340
+Expo also have bunch of examples.
+
+00:32:35.500 --> 00:32:36.520
+I have did the same thing.
+
+00:32:36.640 --> 00:32:37.700
+You need not to do anything.
+
+00:32:38.100 --> 00:32:42.600
+And again you can also picking file from the system.
+
+00:32:42.760 --> 00:32:48.179
+Let's say you wanted to pick some file but we haven't talked about the export document
+
+00:32:48.299 --> 00:32:48.520
+picker.
+
+00:32:48.521 --> 00:32:50.940
+So that's why I am not bringing this up.
+
+00:32:51.220 --> 00:32:53.179
+You will understand this in upcoming lectures.
+
+00:32:53.500 --> 00:32:53.900
+Alright.
+
+00:32:54.360 --> 00:32:57.160
+In same way we have how you can download some file.
+
+00:32:57.900 --> 00:33:00.220
+from somewhere else like we have a sample PDF.
+
+00:33:00.860 --> 00:33:04.020
+You will get the destination and you want it to download it.
+
+00:33:04.080 --> 00:33:06.420
+So for downloading we have a download file async.
+
+00:33:06.670 --> 00:33:10.200
+A download file, let's say the file size is too big
+
+00:33:10.220 --> 00:33:12.800
+so you don't want it to block some other operations.
+
+00:33:12.880 --> 00:33:14.500
+In that case you can use it.
+
+00:33:14.920 --> 00:33:17.600
+In same way we have a fetch, we have already used it.
+
+00:33:18.500 --> 00:33:20.960
+Then we have moving and copying file, we did it.
+
+00:33:21.360 --> 00:33:25.980
+We have legacy file system which is this below this I think we have.
+
+00:33:27.240 --> 00:33:29.200
+Yes, you will see that we have legacy.
+
+00:33:29.520 --> 00:33:33.160
+So you can also try that out, but not important at all.
+
+00:33:33.799 --> 00:33:42.419
+So we can say this is how basically you will deal with all of this data storage and file
+
+00:33:42.420 --> 00:33:43.919
+system into the expo.
+
+00:33:44.500 --> 00:33:47.380
+Perfect, definitely you need to practice a lot.
+
+00:33:47.980 --> 00:33:53.240
+But in next chapter with the help of Expo SQLite, we are going to create offline notes
+
+00:33:53.400 --> 00:33:55.420
+app and you will definitely love it.
+
+00:33:55.440 --> 00:33:59.960
+But for now, this is pretty much it and see you in next time.
+

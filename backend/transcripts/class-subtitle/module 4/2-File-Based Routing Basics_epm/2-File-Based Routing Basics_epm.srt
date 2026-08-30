@@ -1,0 +1,368 @@
+1
+00:00:00,580 --> 00:00:07,100
+Hey everyone and now that you understand what expo router is, now let's learn how the file
+
+2
+00:00:07,260 --> 00:00:12,600
+based routing system actually work. Unlike react navigation where we manually define
+
+3
+00:00:12,780 --> 00:00:18,240
+route in code, expo router automatically create route based on file and folder as we know
+
+4
+00:00:18,300 --> 00:00:25,480
+that. So, now let's move ahead and start implementing it. So, for implementation this is going to
+
+5
+00:00:25,481 --> 00:00:28,200
+be very easy without just wasting too much of time here.
+
+6
+00:00:28,600 --> 00:00:30,400
+Let me move ahead here, perfect.
+
+7
+00:00:30,860 --> 00:00:33,540
+And then let me simply hit 1x expo start.
+
+8
+00:00:35,320 --> 00:00:39,180
+And after hitting this, let me just wait for starting my metrobangler.
+
+9
+00:00:40,020 --> 00:00:41,580
+And then let me simply write a.
+
+10
+00:00:41,700 --> 00:00:48,260
+So after pressing a, this is going to start my expo router, my expo application on to my
+
+11
+00:00:48,280 --> 00:00:50,180
+physical device, which is connected to this.
+
+12
+00:00:50,181 --> 00:00:55,780
+And now you will see they are showing us edit app slash index dot TSX to edit the screen.
+
+13
+00:00:57,300 --> 00:01:02,699
+So, you have noticed one thing, the moment for the first time application is loaded,
+
+14
+00:01:03,399 --> 00:01:05,799
+we are automatically redirected to this page.
+
+15
+00:01:06,860 --> 00:01:13,240
+And let's say, if I just try to edit anything, and if I say hello world, and if I save it,
+
+16
+00:01:13,700 --> 00:01:15,159
+you will see they are changing it.
+
+17
+00:01:15,380 --> 00:01:19,780
+So, this means index.tsx for now is our entry file.
+
+18
+00:01:20,400 --> 00:01:21,120
+Perfect.
+
+19
+00:01:21,650 --> 00:01:29,000
+And now our scenario one is let's say I just wanted to add here about and I just wanted
+
+20
+00:01:29,160 --> 00:01:31,940
+to add here details page and this example become all.
+
+21
+00:01:32,040 --> 00:01:36,100
+Let's say I wanted to add here, we can say explore.
+
+22
+00:01:36,600 --> 00:01:38,780
+And I wanted to add here feed page.
+
+23
+00:01:39,070 --> 00:01:39,260
+Perfect.
+
+24
+00:01:39,439 --> 00:01:43,200
+These are the two pages and two screens I wanted to add.
+
+25
+00:01:43,250 --> 00:01:45,159
+So how you can do so that very easy.
+
+26
+00:01:45,610 --> 00:01:51,759
+You can simply coming to here and say feed dot ESX and then let me try to copy this
+
+27
+00:01:51,860 --> 00:01:54,520
+and make sure to export default this component.
+
+28
+00:01:54,700 --> 00:01:57,600
+And instead of index, let me call it a feed.
+
+29
+00:01:58,610 --> 00:02:01,640
+Perfect and I can rename this to feed.
+
+30
+00:02:02,340 --> 00:02:09,000
+In same way, I can copy this and create one more route name as explore.
+
+31
+00:02:09,330 --> 00:02:14,180
+So explore.tsx, let me paste it and let me call it explore.
+
+32
+00:02:15,170 --> 00:02:15,340
+Perfect.
+
+33
+00:02:16,840 --> 00:02:19,040
+And I can even call this as explore.
+
+34
+00:02:19,520 --> 00:02:21,540
+So now how we can basically check it.
+
+35
+00:02:22,000 --> 00:02:23,239
+So we have always two ways.
+
+36
+00:02:24,040 --> 00:02:30,239
+One way is that you wanted to test that out inside your phone, but interestingly you can
+
+37
+00:02:30,319 --> 00:02:32,920
+even test it out inside your web apps.
+
+38
+00:02:33,040 --> 00:02:34,340
+So this is the beauty of it.
+
+39
+00:02:35,080 --> 00:02:38,040
+If I just go to 8081 and if I hit it.
+
+40
+00:02:38,500 --> 00:02:42,780
+You will see that our application is also working inside our web app.
+
+41
+00:02:43,300 --> 00:02:47,880
+So, you need not to dig too much deep into it, but just for simulation purpose.
+
+42
+00:02:48,600 --> 00:02:54,740
+Let me try to go inside /feed and now you will see we are inside feed page and in same
+
+43
+00:02:54,920 --> 00:02:58,260
+way, let's say I just wanted to go inside explore.
+
+44
+00:02:59,220 --> 00:03:03,600
+If I just go inside explore, this is how they are going to show to us.
+
+45
+00:03:03,900 --> 00:03:11,299
+Perfect, but let me try to use here a link component which is provided by expo router.
+
+46
+00:03:12,140 --> 00:03:19,659
+So let me import a link component from expo router and this link component, sorry let
+
+47
+00:03:19,660 --> 00:03:23,120
+me remove it, let me snooze this, perfect.
+
+48
+00:03:23,659 --> 00:03:28,260
+And now let me come into here and below this let me just simply use this link component.
+
+49
+00:03:28,600 --> 00:03:36,060
+And with the help of this link component, I wanted to redirect myself, let's say towards
+
+50
+00:03:36,420 --> 00:03:39,560
+feed and in same way towards explore.
+
+51
+00:03:39,760 --> 00:03:45,800
+So let me first of all write here is feed and they accept a simple href and then you
+
+52
+00:03:45,880 --> 00:03:49,500
+will see everything is properly tightly saved.
+
+53
+00:03:49,800 --> 00:03:50,660
+So I love this.
+
+54
+00:03:51,180 --> 00:03:52,960
+Let me just simply pass feed.
+
+55
+00:03:53,500 --> 00:03:59,900
+And in same way I can come into here and I can take myself towards explore and I can
+
+56
+00:03:59,980 --> 00:04:06,160
+write here not in small sorry this is going to be explore and if I save it and if I try
+
+57
+00:04:06,240 --> 00:04:12,080
+to press on feed you will see that I am redirected towards feed page and they are tagged on each
+
+58
+00:04:12,180 --> 00:04:17,820
+other because the moment I press on back I am again redirected to index page and if
+
+59
+00:04:17,821 --> 00:04:22,120
+If I go to explore, you will see I am in explore and again I can redirect myself.
+
+60
+00:04:22,500 --> 00:04:24,980
+towards the index page.
+
+61
+00:04:25,430 --> 00:04:30,680
+So this is how this file based routing actually work and if you wanted to add a nested file,
+
+62
+00:04:32,040 --> 00:04:32,300
+perfect.
+
+63
+00:04:32,810 --> 00:04:38,620
+So let's say let me just simply coming to here and inside this I have added here profile.
+
+64
+00:04:39,200 --> 00:04:45,900
+And inside this profile, I can have again index.tsx file and another file as well.
+
+65
+00:04:46,480 --> 00:04:52,460
+Let's say I've added here user.tsx and then same way R&FES user screen.
+
+66
+00:04:52,900 --> 00:04:52,980
+Perfect.
+
+67
+00:04:53,680 --> 00:04:58,180
+And just for UI purpose, let me copy this style and let me paste it.
+
+68
+00:04:59,080 --> 00:04:59,320
+Easy.
+
+69
+00:04:59,720 --> 00:05:00,500
+Nothing rocket science.
+
+70
+00:05:01,300 --> 00:05:04,479
+And now let me try to go inside this.
+
+71
+00:05:05,340 --> 00:05:07,220
+So this is basically going to be a link.
+
+72
+00:05:08,180 --> 00:05:14,940
+This link is going to be redirect myself towards the profile slash user.
+
+73
+00:05:15,360 --> 00:05:15,659
+Make sense?
+
+74
+00:05:15,889 --> 00:05:17,919
+And then if I just simply press href.
+
+75
+00:05:18,300 --> 00:05:21,759
+And now you will see that we have suggestion for this.
+
+76
+00:05:22,039 --> 00:05:28,460
+So, if I just simply write it and now if I press it, you will see I am now inside the
+
+77
+00:05:28,580 --> 00:05:30,979
+nested route, perfect.
+
+78
+00:05:31,780 --> 00:05:42,379
+So, I am assuming that this is how basically this is how basically this is how basically
+
+79
+00:05:42,380 --> 00:05:42,400
+file-based routing actually work.
+
+80
+00:05:42,401 --> 00:05:43,920
+So you will see that we haven't written any kind of boilerplate code, no duplicates screen
+
+81
+00:05:44,040 --> 00:05:49,400
+registration and automatically everything is properly linked to each other, we can automatically
+
+82
+00:05:49,600 --> 00:05:50,760
+add here nested routes.
+
+83
+00:05:51,350 --> 00:05:56,180
+So and this is also going to be very easy as a developer, this is going to be very nice
+
+84
+00:05:56,420 --> 00:06:00,520
+developer experience for me to easily re-factor my moving files.
+
+85
+00:06:01,900 --> 00:06:08,200
+Perfect. So file based routing means your file structure become your navigation structure.
+
+86
+00:06:08,270 --> 00:06:13,760
+Now you will see that now. Perfect. And in same way routes are generated automatically
+
+87
+00:06:13,960 --> 00:06:19,480
+based on files and folder inside and definitely they are automatically generating. You need
+
+88
+00:06:19,600 --> 00:06:27,040
+not to manual route definition like we used to do inside react navigation and nested folder
+
+89
+00:06:27,041 --> 00:06:30,140
+create nested rows automatically and this system
+
+90
+00:06:30,700 --> 00:06:39,080
+going to work exactly same in let's say Android and if you are using a we can say iOS and
+
+91
+00:06:39,120 --> 00:06:43,660
+if you are using web everywhere is going to be work at same as you are seeing here.
+
+92
+00:06:43,790 --> 00:06:48,020
+So yeah, this is pretty much it for this chapter and see you next time.
+

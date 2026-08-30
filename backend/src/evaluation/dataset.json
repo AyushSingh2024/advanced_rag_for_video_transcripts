@@ -1,0 +1,12 @@
+[
+  {
+    "question": "What is the main topic explained in the sample source?",
+    "expectedTerms": ["topic"],
+    "shouldAbstain": false
+  },
+  {
+    "question": "What secret password is never included in the source?",
+    "expectedTerms": [],
+    "shouldAbstain": true
+  }
+]

@@ -1,0 +1,500 @@
+1
+00:00:00,000 --> 00:00:06,860
+Hey everyone and welcome to chapter number one of module two, name as core components
+
+2
+00:00:06,920 --> 00:00:07,660
+and styling.
+
+3
+00:00:07,820 --> 00:00:13,360
+In this lecture we are understand, we will understand an important concept in React Native,
+
+4
+00:00:13,560 --> 00:00:16,640
+name is native component versus core component.
+
+5
+00:00:17,300 --> 00:00:18,680
+What are native components?
+
+6
+00:00:18,800 --> 00:00:21,220
+one of the question is arising.
+
+7
+00:00:21,600 --> 00:00:25,320
+What are native components?
+
+8
+00:00:25,780 --> 00:00:29,140
+So native components are the actual UI element.
+
+9
+00:00:29,200 --> 00:00:30,060
+Listen to me carefully.
+
+10
+00:00:31,180 --> 00:00:38,559
+This is going to be your actual UI elements provided by the OS.
+
+11
+00:00:38,900 --> 00:00:39,200
+Perfect.
+
+12
+00:00:39,600 --> 00:00:43,559
+OS means iOS or Android here.
+
+13
+00:00:43,700 --> 00:00:51,240
+So, native components are the actually UI elements provided by the operating system.
+
+14
+00:00:51,920 --> 00:00:59,380
+So, let us say if I just try to give you an example and for Apple perfect not Apple, but
+
+15
+00:00:59,480 --> 00:01:01,600
+just understand this as an iOS.
+
+16
+00:01:02,080 --> 00:01:08,820
+So, for iOS and then we have Android perfect and then for Android.
+
+17
+00:01:09,180 --> 00:01:11,180
+So for iOS...
+
+18
+00:01:11,400 --> 00:01:18,580
+We have like you need not to understand anything for now just listen to me keep your brain
+
+19
+00:01:18,581 --> 00:01:23,020
+open and just downloading all the things that I am saying to you.
+
+20
+00:01:23,560 --> 00:01:25,980
+Now we are understanding native components.
+
+21
+00:01:26,320 --> 00:01:33,580
+Native means actually UI elements provided by the OS you are developing on be it iOS
+
+22
+00:01:33,860 --> 00:01:34,440
+or Android.
+
+23
+00:01:34,700 --> 00:01:42,219
+So, in future like whenever you are going to use Objective-C, Shift-UI, then they provide
+
+24
+00:01:42,220 --> 00:01:49,820
+you their native component like UI view, UI label and then UI button.
+
+25
+00:01:50,300 --> 00:01:56,240
+In same way on Android they provide you something like this.
+
+26
+00:01:56,420 --> 00:02:02,140
+They provide you the view, the text view, the button.
+
+27
+00:02:02,640 --> 00:02:02,920
+Perfect.
+
+28
+00:02:03,340 --> 00:02:04,760
+So what are they are?
+
+29
+00:02:04,900 --> 00:02:06,300
+But basically what is view?
+
+30
+00:02:06,520 --> 00:02:07,280
+What is text view?
+
+31
+00:02:07,360 --> 00:02:07,960
+What is button?
+
+32
+00:02:08,300 --> 00:02:15,220
+So, these components, yes, these are all the components and these components are written
+
+33
+00:02:15,300 --> 00:02:17,660
+in native languages.
+
+34
+00:02:18,300 --> 00:02:24,780
+So, they are written in native language like we have a lot of native language.
+
+35
+00:02:25,020 --> 00:02:33,180
+One is SIFT, then we have Objective C, then we have Java and then we have, let's say,
+
+36
+00:02:33,380 --> 00:02:33,760
+Kotlin.
+
+37
+00:02:34,200 --> 00:02:45,920
+So, these are the native languages like sift, Objective-C, Java or Kotlin and they are exist
+
+38
+00:02:45,980 --> 00:02:55,300
+only yes they are exist only inside the native Android or iOS layer perfect they only exist
+
+39
+00:02:55,519 --> 00:03:00,420
+inside the native iOS or Android layer.
+
+40
+00:03:00,700 --> 00:03:09,180
+Perfect, they are not directly used in react native and JavaScript code.
+
+41
+00:03:09,181 --> 00:03:18,800
+So listen to me carefully, they are not directly used in react native and JavaScript code.
+
+42
+00:03:18,801 --> 00:03:21,540
+So, like you are a react native developer.
+
+43
+00:03:21,800 --> 00:03:28,360
+So as a react native developer, we do not import or write native components directly.
+
+44
+00:03:28,940 --> 00:03:29,260
+Perfect.
+
+45
+00:03:29,600 --> 00:03:32,880
+You never going to write these components directly.
+
+46
+00:03:33,540 --> 00:03:35,840
+So this is where the core component come.
+
+47
+00:03:36,460 --> 00:03:38,020
+So what is core component?
+
+48
+00:03:38,100 --> 00:03:43,860
+If I just simply write what is core components in react native.
+
+49
+00:03:44,600 --> 00:03:50,000
+So, core components are the components provided by the react native.
+
+50
+00:03:50,620 --> 00:03:50,860
+Perfect.
+
+51
+00:03:50,900 --> 00:03:57,440
+These are the component which is provided by the react native that we use inside our
+
+52
+00:03:57,441 --> 00:03:57,720
+code.
+
+53
+00:03:58,460 --> 00:03:58,780
+Perfect.
+
+54
+00:03:58,900 --> 00:04:04,460
+We are going to use this inside our actual code that we are going to write.
+
+55
+00:04:05,120 --> 00:04:09,300
+Some like if I just try to give you some common core components name.
+
+56
+00:04:09,400 --> 00:04:16,540
+We have view, we have text, we have image, we have scroll view, we have pressable, lot
+
+57
+00:04:16,541 --> 00:04:16,880
+of things.
+
+58
+00:04:16,899 --> 00:04:19,060
+I mean, I can write bunch of here.
+
+59
+00:04:19,639 --> 00:04:21,639
+So these components are written.
+
+60
+00:04:22,000 --> 00:04:27,160
+Yes, these components are written inside.
+
+61
+00:04:27,600 --> 00:04:29,240
+the JS.
+
+62
+00:04:30,200 --> 00:04:38,380
+And like if I just try to these components are written in JS and act as a cross platform
+
+63
+00:04:38,381 --> 00:04:44,640
+interface like you can use this view for iOS, you can use this view for Android as well.
+
+64
+00:04:44,660 --> 00:04:46,660
+So this is the beauty of react native.
+
+65
+00:04:46,800 --> 00:04:54,840
+So, you write one component and react native internally handles the platform specific implementations
+
+66
+00:04:54,841 --> 00:04:55,500
+for you.
+
+67
+00:04:55,840 --> 00:04:58,740
+So, I hope so that make sense.
+
+68
+00:04:59,319 --> 00:04:59,539
+Perfect.
+
+69
+00:04:59,540 --> 00:05:06,240
+So, let's say if you are writing any one of them, but if you are writing for iOS.
+
+70
+00:05:06,700 --> 00:05:13,500
+Let's say you are only writing for let's say you are writing inside the expo or react native
+
+71
+00:05:13,560 --> 00:05:15,180
+they both are same for now.
+
+72
+00:05:15,540 --> 00:05:21,280
+So internally they are using react native we knows that expo is using react native internally.
+
+73
+00:05:22,120 --> 00:05:27,420
+So react native is going to do something they are going to compile that in a way they are
+
+74
+00:05:27,421 --> 00:05:29,100
+supported inside the iOS.
+
+75
+00:05:29,600 --> 00:05:33,120
+And same way they are supported inside the
+
+76
+00:05:34,820 --> 00:05:36,160
+Android as well.
+
+77
+00:05:36,240 --> 00:05:38,760
+So everything is properly compatible.
+
+78
+00:05:39,640 --> 00:05:39,940
+Perfect.
+
+79
+00:05:40,420 --> 00:05:44,760
+So if I just simply try to map that out, so this is how they are going to work.
+
+80
+00:05:45,400 --> 00:05:46,820
+We have view text image.
+
+81
+00:05:47,460 --> 00:05:50,160
+We have written everything inside the expo.
+
+82
+00:05:50,460 --> 00:05:52,880
+Expo is using react native internally.
+
+83
+00:05:53,240 --> 00:06:00,600
+React native is going to do the implementation, which is a platform specific implementation
+
+84
+00:06:00,601 --> 00:06:02,400
+like iOS for Android.
+
+85
+00:06:02,401 --> 00:06:05,320
+So, this is how kind of they work.
+
+86
+00:06:06,180 --> 00:06:10,960
+So, let's say if I just go to my VS code and just try to explain you need not to write
+
+87
+00:06:10,961 --> 00:06:12,180
+anything for now.
+
+88
+00:06:12,800 --> 00:06:18,120
+Let's say you can see that we are importing text and view from react native from next
+
+89
+00:06:18,121 --> 00:06:20,100
+chapter we are going to understand each of them.
+
+90
+00:06:20,139 --> 00:06:20,820
+So don't worry.
+
+91
+00:06:21,460 --> 00:06:25,680
+Let's say we have imported here view and we have imported here text we have two thing
+
+92
+00:06:26,160 --> 00:06:26,720
+make sense.
+
+93
+00:06:27,000 --> 00:06:34,800
+So, on iOS, let's say you are on iOS, so on iOS this view is going to be mapped towards
+
+94
+00:06:34,820 --> 00:06:40,200
+the UI view like that we have talked about like this is the native component.
+
+95
+00:06:40,780 --> 00:06:47,480
+So, you write for iOS you are using the same view, but internally they are going to map
+
+96
+00:06:47,640 --> 00:06:53,800
+towards UI view same for text and in same way let's say you are on Android and on Android
+
+97
+00:06:56,540 --> 00:07:03,820
+You have let's just say use this text so they are again mapped towards the text view, this
+
+98
+00:07:03,860 --> 00:07:06,780
+is a native component which is available to them.
+
+99
+00:07:07,139 --> 00:07:09,540
+So this mapping happens automatically.
+
+100
+00:07:10,220 --> 00:07:16,840
+You never, yes you never ever going to interact with this UI view with this text view or Android
+
+101
+00:07:16,919 --> 00:07:18,960
+views whatever is that directly.
+
+102
+00:07:19,500 --> 00:07:26,180
+So, I mean one of the biggest question that arises right now, why React Native uses this
+
+103
+00:07:26,181 --> 00:07:26,460
+approach?
+
+104
+00:07:27,160 --> 00:07:35,400
+So, this approach first of all give you like again a single code base, up second they give
+
+105
+00:07:35,401 --> 00:07:41,060
+you native look and feel, then they give you a good performance, yes they are very performant.
+
+106
+00:07:41,100 --> 00:07:48,520
+So, they give you good performance and a simple and consistent development experience.
+
+107
+00:07:48,680 --> 00:07:50,860
+So, this is what I am talking about.
+
+108
+00:07:50,960 --> 00:07:54,900
+They are going to give you a simple and consistent development experience.
+
+109
+00:07:55,260 --> 00:08:02,140
+So, you focus on building the UI using the core component and react native take care
+
+110
+00:08:02,141 --> 00:08:04,960
+of rendering native UI on each platform.
+
+111
+00:08:05,780 --> 00:08:06,300
+Perfect.
+
+112
+00:08:06,780 --> 00:08:08,560
+So, I hope so that makes sense.
+
+113
+00:08:08,680 --> 00:08:13,580
+So, if I just try to summarize you native component or platform specific component.
+
+114
+00:08:14,280 --> 00:08:14,520
+Perfect.
+
+115
+00:08:14,940 --> 00:08:16,980
+Like UI view, UI label, UI button.
+
+116
+00:08:17,120 --> 00:08:22,800
+If you are using shift Objective-C like view text view button, if you are using Java and
+
+117
+00:08:22,980 --> 00:08:25,100
+inside Java there is another way of writing it.
+
+118
+00:08:25,280 --> 00:08:29,380
+Like I don't exactly remember because I never written something inside Java.
+
+119
+00:08:31,120 --> 00:08:35,280
+Yeah, and in same way core component are react native components.
+
+120
+00:08:35,340 --> 00:08:37,040
+So this is what your core components.
+
+121
+00:08:37,799 --> 00:08:40,720
+This is why react native app feels truly native.
+
+122
+00:08:41,179 --> 00:08:46,480
+So from next chapter, we are going to start learning all of the core components that we
+
+123
+00:08:46,540 --> 00:08:51,620
+have, like we have view, we have text image, text input, pressable, scroll view, style
+
+124
+00:08:51,621 --> 00:08:55,520
+sheet, then button switch, a lot of things.
+
+125
+00:08:55,521 --> 00:09:02,000
+Perfect, so yeah this is pretty much it for this chapter and see you next time.
+

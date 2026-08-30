@@ -1,0 +1,1212 @@
+1
+00:00:00,580 --> 00:00:04,800
+All right, everyone, and welcome to one more new module.
+
+2
+00:00:05,100 --> 00:00:08,160
+And this is the expo notifications module.
+
+3
+00:00:08,580 --> 00:00:10,000
+So this is a chapter number one.
+
+4
+00:00:10,160 --> 00:00:16,219
+In this chapter, we are going to set the foundation for expo notifications.
+
+5
+00:00:17,199 --> 00:00:23,260
+And first of all, in this chapter, we are actually going to see what do you need to
+
+6
+00:00:23,261 --> 00:00:29,259
+know about notification and the type of notification like remote notification, local notification
+
+7
+00:00:29,640 --> 00:00:36,720
+and then going to create one expo application and then we need a development build for that
+
+8
+00:00:37,000 --> 00:00:41,220
+and then we are going to start implementing that one by one.
+
+9
+00:00:41,360 --> 00:00:45,620
+Alright, so first thing is before touching the code.
+
+10
+00:00:45,900 --> 00:00:51,300
+There are two very important thing you must understand about notification.
+
+11
+00:00:52,460 --> 00:00:55,000
+First thing is what is notification?
+
+12
+00:00:55,001 --> 00:01:01,820
+We can say that kind of a message in app message we wanted to send towards the user kind of
+
+13
+00:01:02,060 --> 00:01:02,360
+alright.
+
+14
+00:01:05,259 --> 00:01:09,759
+Notifications are on operating system level, not a app level.
+
+15
+00:01:09,979 --> 00:01:11,159
+This is a very important point.
+
+16
+00:01:11,580 --> 00:01:16,080
+So, notifications are not rendered by react native or JavaScript.
+
+17
+00:01:16,700 --> 00:01:19,659
+They are completely handled by us.
+
+18
+00:01:19,700 --> 00:01:22,659
+They are completely handled by the OS.
+
+19
+00:01:23,300 --> 00:01:23,600
+Perfect.
+
+20
+00:01:23,920 --> 00:01:29,759
+So, OS in the sense is you are using Android and is you are using we can say Apple.
+
+21
+00:01:29,900 --> 00:01:32,400
+I hope so that is making sense.
+
+22
+00:01:32,540 --> 00:01:34,440
+So for now let's focus on Android.
+
+23
+00:01:35,500 --> 00:01:39,640
+Perfect, so they are handled by Android OS and iOS OS.
+
+24
+00:01:39,900 --> 00:01:45,940
+Your app, we can say that your app only request or we can say trigger them.
+
+25
+00:01:46,580 --> 00:01:52,900
+Alright, so final control of your notifications are always with the operating system.
+
+26
+00:01:53,200 --> 00:02:00,759
+That is why we need a permission and need a permission for setting up the notification,
+
+27
+00:02:00,770 --> 00:02:02,280
+you know that cool.
+
+28
+00:02:03,380 --> 00:02:12,180
+So now the second thing is notification, notification can work even when app is closed, yes we know
+
+29
+00:02:12,181 --> 00:02:14,260
+that, we know that very well.
+
+30
+00:02:18,799 --> 00:02:24,120
+can work even when app is closed.
+
+31
+00:02:24,280 --> 00:02:28,760
+So notification are designed to work in a way when your app is not running.
+
+32
+00:02:29,200 --> 00:02:33,940
+So app is we can say that your app working in background when your app is killed.
+
+33
+00:02:34,340 --> 00:02:39,500
+Killed means basically you are forcefully stop them something like that when your phone
+
+34
+00:02:39,680 --> 00:02:40,060
+is off.
+
+35
+00:02:40,150 --> 00:02:42,319
+So notification still work in that case.
+
+36
+00:02:42,400 --> 00:02:48,720
+So, this is what make notification a very powerful distracting tool we can say that
+
+37
+00:02:49,220 --> 00:02:49,540
+alright.
+
+38
+00:02:49,930 --> 00:02:54,799
+So, now the types of notification we have perfect.
+
+39
+00:02:55,459 --> 00:03:00,920
+So, this is basically types of notifications that we have.
+
+40
+00:03:01,120 --> 00:03:04,720
+So, there are always two type of notifications.
+
+41
+00:03:04,721 --> 00:03:09,780
+So, the first type of notification is known as local notification.
+
+42
+00:03:10,400 --> 00:03:13,379
+What is this local notification?
+
+43
+00:03:14,079 --> 00:03:21,120
+Local notification are triggered directly from the device itself alright, it is triggered
+
+44
+00:03:21,121 --> 00:03:25,579
+from device itself alright.
+
+45
+00:03:25,700 --> 00:03:32,599
+We can say that whenever you are working with local notification, you don't need a internet.
+
+46
+00:03:32,760 --> 00:03:35,140
+Alright, so you can say no internet.
+
+47
+00:03:35,560 --> 00:03:38,720
+Then second thing you don't need even a backend for it.
+
+48
+00:03:38,780 --> 00:03:45,400
+So you can say no backend and then this is triggered by your app code and they works
+
+49
+00:03:45,459 --> 00:03:47,060
+offline very well.
+
+50
+00:03:47,800 --> 00:03:50,140
+Alright, so this is our local notifications.
+
+51
+00:03:50,380 --> 00:03:52,580
+So if I just try to give you some examples.
+
+52
+00:03:53,200 --> 00:03:56,379
+Let's say you are making a reminder application.
+
+53
+00:03:56,620 --> 00:04:03,019
+So after every 10 minutes you are going to get a notification, but that is offline notification,
+
+54
+00:04:03,380 --> 00:04:09,420
+alarm notification, a daily habit remainder notification, timer completion alerts.
+
+55
+00:04:09,670 --> 00:04:14,540
+So these are all the examples for your local notifications.
+
+56
+00:04:14,900 --> 00:04:24,300
+Perfect, now the second thing that we have is known as remote notification or push notifications,
+
+57
+00:04:24,540 --> 00:04:31,560
+these are just two words of same concept, so second thing that we have is the remote
+
+58
+00:04:31,820 --> 00:04:35,139
+or we can say that is as a push notification.
+
+59
+00:04:35,400 --> 00:04:36,820
+So, what is this?
+
+60
+00:04:37,520 --> 00:04:42,560
+Remote notification are always send from the server, alright.
+
+61
+00:04:42,820 --> 00:04:45,100
+They are always send from the server.
+
+62
+00:04:45,580 --> 00:04:48,699
+So, what is the things that you required for it?
+
+63
+00:04:48,840 --> 00:04:50,639
+Yes, you required internet.
+
+64
+00:04:50,800 --> 00:04:58,180
+Then second thing is you requires a proper backend for it, then uses push services.
+
+65
+00:04:58,240 --> 00:05:02,680
+There is a lot of push services for using the push notification.
+
+66
+00:05:02,759 --> 00:05:07,819
+So you need a push services and then work even if app is closed.
+
+67
+00:05:08,440 --> 00:05:13,800
+So yes, push notifications even work if your app is closed.
+
+68
+00:05:14,659 --> 00:05:17,780
+And if I just try to give you example for it.
+
+69
+00:05:17,800 --> 00:05:28,580
+So, we can say that a WhatsApp message, order status update, then you can have OTP notifications,
+
+70
+00:05:29,580 --> 00:05:37,120
+marketing push notifications, so these are all the notification that comes under this
+
+71
+00:05:37,180 --> 00:05:38,740
+push notification category.
+
+72
+00:05:40,320 --> 00:05:40,920
+Perfect.
+
+73
+00:05:41,060 --> 00:05:47,260
+So in this chapter, basically our main focus is on local notification and how we are basically
+
+74
+00:05:47,261 --> 00:05:49,220
+going to set it up.
+
+75
+00:05:49,380 --> 00:05:49,620
+Cool.
+
+76
+00:05:49,980 --> 00:05:55,860
+So again, one very important thing to understand push notification do not work in expoco.
+
+77
+00:05:56,160 --> 00:05:59,040
+Yes, I am talking about this push notification.
+
+78
+00:05:59,200 --> 00:06:03,520
+So for working with push notification, you need a development build.
+
+79
+00:06:03,600 --> 00:06:10,000
+But a local notification can work with expogo, but I think it is the right time.
+
+80
+00:06:10,200 --> 00:06:18,340
+Let's go and create a development build so that we don't have to re-create a new application
+
+81
+00:06:18,380 --> 00:06:21,340
+and then create a development build for that.
+
+82
+00:06:21,360 --> 00:06:23,080
+I don't want that.
+
+83
+00:06:23,500 --> 00:06:23,760
+Cool.
+
+84
+00:06:24,960 --> 00:06:30,880
+So, first thing first, let me just simply come into here and then I basically wanted
+
+85
+00:06:30,881 --> 00:06:31,879
+to do is.
+
+86
+00:06:33,560 --> 00:06:38,360
+create, bunx, create, expo app, add the latest.
+
+87
+00:06:39,220 --> 00:06:43,740
+And yes, I wanted to create that into the same folder.
+
+88
+00:06:44,500 --> 00:06:44,780
+Perfect.
+
+89
+00:06:45,960 --> 00:06:48,460
+And definitely let's just wait for the installation.
+
+90
+00:06:49,420 --> 00:06:51,800
+Alright guys, so now we have successfully installed it.
+
+91
+00:06:51,940 --> 00:06:53,180
+Now let me clear it.
+
+92
+00:06:53,720 --> 00:06:55,960
+And then first thing is always bun run.
+
+93
+00:06:57,320 --> 00:07:04,120
+a reset project because yes I wanted to reset my project and then simply say no and clear
+
+94
+00:07:04,121 --> 00:07:04,479
+it.
+
+95
+00:07:05,120 --> 00:07:07,639
+Alright, so what is going to be the next step?
+
+96
+00:07:08,540 --> 00:07:13,100
+Next step is going to be initialize a EAS build and then we are good to go.
+
+97
+00:07:13,500 --> 00:07:20,520
+So, for that what I wanted to do basically, let me just simply coming to here and then
+
+98
+00:07:20,540 --> 00:07:28,860
+say EAS build configure and I think before that let me coming to here and search here
+
+99
+00:07:29,440 --> 00:07:37,820
+expo notifications and then let me open this and after that first of all let me copy this
+
+100
+00:07:37,821 --> 00:07:39,840
+Perfect. And then hit Bunn-X.
+
+101
+00:07:40,300 --> 00:07:44,139
+expo install expo notifications.
+
+102
+00:07:44,280 --> 00:07:47,560
+So this is basically going to install this package for us.
+
+103
+00:07:48,099 --> 00:07:54,580
+Alright, so now we have installed it successfully and after this what I wanted you to do is
+
+104
+00:07:54,581 --> 00:07:57,520
+we can definitely just move ahead and start using it.
+
+105
+00:07:58,419 --> 00:08:03,879
+Next step is just simply run this, not this, just give me a minute.
+
+106
+00:08:04,400 --> 00:08:06,479
+Let me cut this out.
+
+107
+00:08:06,720 --> 00:08:06,840
+Cool.
+
+108
+00:08:07,660 --> 00:08:10,259
+So next step is EAS build configure.
+
+109
+00:08:11,520 --> 00:08:11,900
+Perfect.
+
+110
+00:08:12,400 --> 00:08:12,639
+Nice.
+
+111
+00:08:13,160 --> 00:08:14,540
+Let me hit this up.
+
+112
+00:08:15,020 --> 00:08:17,340
+So this is basically going to hit a configuration.
+
+113
+00:08:17,540 --> 00:08:20,539
+Now they are saying EAS build project not configured.
+
+114
+00:08:20,800 --> 00:08:23,800
+Would you like to automatically create a project?
+
+115
+00:08:24,580 --> 00:08:26,159
+Yes, create that for me.
+
+116
+00:08:26,539 --> 00:08:28,879
+And all right, now they are creating it.
+
+117
+00:08:29,099 --> 00:08:29,360
+Perfect.
+
+118
+00:08:30,120 --> 00:08:31,220
+For which platform?
+
+119
+00:08:32,000 --> 00:08:36,419
+Definitely Android and is built when you are ready to create it.
+
+120
+00:08:36,420 --> 00:08:36,679
+Nice.
+
+121
+00:08:36,900 --> 00:08:44,059
+And after this, definitely let's move ahead and install this bunx expo install.
+
+122
+00:08:44,740 --> 00:08:51,780
+So this is going to bunx expo install expo dev client because we need it.
+
+123
+00:08:52,920 --> 00:08:59,000
+And after this only step is to run the we can say.
+
+124
+00:09:00,420 --> 00:09:02,839
+development of basically a build command.
+
+125
+00:09:02,899 --> 00:09:11,620
+So I can say EAS build perfect hyphen hyphen platform and platform is going to be as Android
+
+126
+00:09:12,880 --> 00:09:15,279
+and then what is the next thing?
+
+127
+00:09:15,440 --> 00:09:17,420
+Next thing is for which profile?
+
+128
+00:09:18,279 --> 00:09:20,100
+The profile is going to be.
+
+129
+00:09:21,660 --> 00:09:22,620
+as development.
+
+130
+00:09:23,080 --> 00:09:25,000
+Alright, so the moment I hit this,
+
+131
+00:09:25,860 --> 00:09:26,180
+perfect.
+
+132
+00:09:26,500 --> 00:09:28,440
+So definitely we can wait for it because
+
+133
+00:09:29,200 --> 00:09:30,800
+creating a build takes
+
+134
+00:09:30,880 --> 00:09:32,140
+so much of time, sometime.
+
+135
+00:09:32,680 --> 00:09:33,900
+If you are on free tier.
+
+136
+00:09:35,080 --> 00:09:36,940
+Perfect. So hopefully this will work
+
+137
+00:09:36,980 --> 00:09:38,980
+and now, yes, they are asking
+
+138
+00:09:39,040 --> 00:09:40,700
+me for my
+
+139
+00:09:41,540 --> 00:09:42,980
+Android application ID.
+
+140
+00:09:44,080 --> 00:09:48,860
+Let's go with the same and now they are initializing this, generate a new key store.
+
+141
+00:09:49,180 --> 00:09:51,600
+Yes, generate that for me.
+
+142
+00:09:52,920 --> 00:09:53,540
+All right.
+
+143
+00:09:54,140 --> 00:09:56,420
+And they are generating the key store into the cloud.
+
+144
+00:09:56,740 --> 00:09:57,100
+Perfect.
+
+145
+00:09:57,480 --> 00:09:58,779
+Till then we can wait for it.
+
+146
+00:09:59,339 --> 00:09:59,519
+Okay.
+
+147
+00:09:59,540 --> 00:10:04,399
+So now we have created the key store and now they are basically compressing our project
+
+148
+00:10:04,400 --> 00:10:04,680
+file.
+
+149
+00:10:04,681 --> 00:10:07,459
+So we can definitely wait for this as well.
+
+150
+00:10:07,600 --> 00:10:12,980
+Alright, so now we have basically compressed this file successfully in 9 seconds and now
+
+151
+00:10:12,981 --> 00:10:20,139
+they are basically uploading the EAS build towards our EAS basically to the expo account.
+
+152
+00:10:20,899 --> 00:10:22,899
+Everything is I think done.
+
+153
+00:10:23,220 --> 00:10:23,480
+Cool.
+
+154
+00:10:23,900 --> 00:10:24,940
+Nice.
+
+155
+00:10:25,080 --> 00:10:29,620
+So now our build is in queue and definitely they are going to take some time.
+
+156
+00:10:29,820 --> 00:10:35,960
+You can just simply open it, grab a cup of coffee and whatever you want it to do because
+
+157
+00:10:36,000 --> 00:10:38,640
+this will definitely going to take some time.
+
+158
+00:10:38,960 --> 00:10:39,160
+Perfect.
+
+159
+00:10:39,220 --> 00:10:42,080
+We are in queued and less than five minutes remaining.
+
+160
+00:10:43,020 --> 00:10:44,220
+Skip the queue with the plan.
+
+161
+00:10:44,740 --> 00:10:45,320
+Not now.
+
+162
+00:10:46,080 --> 00:10:46,640
+All right.
+
+163
+00:10:46,980 --> 00:10:49,580
+So let's just wait for it and then I'll be right back.
+
+164
+00:10:49,800 --> 00:10:56,160
+Alright guys, so after you can see that 15 minutes we have successfully and I think after
+
+165
+00:10:56,161 --> 00:11:00,339
+16 minutes 58 seconds we have successfully built this.
+
+166
+00:11:00,720 --> 00:11:04,700
+Alright, so now let's move ahead and install the development build.
+
+167
+00:11:04,980 --> 00:11:07,040
+Let me quickly open this.
+
+168
+00:11:07,700 --> 00:11:09,519
+Let's go, just give me a minute.
+
+169
+00:11:09,820 --> 00:11:14,920
+Alright, so now you can see this is what we have and I can simply press on install and
+
+170
+00:11:14,921 --> 00:11:18,019
+With the help of my camera I can simply
+
+171
+00:11:19,779 --> 00:11:20,300
+Perfect.
+
+172
+00:11:20,600 --> 00:11:25,620
+And then let me just quickly visit to the website and then I can press on install.
+
+173
+00:11:25,839 --> 00:11:32,399
+So this is basically going to start downloading this and let just wait for the download completion.
+
+174
+00:11:32,440 --> 00:11:34,160
+I can simply press on details.
+
+175
+00:11:34,400 --> 00:11:36,160
+And we are downloading it.
+
+176
+00:11:36,280 --> 00:11:37,940
+All right, let me wait for it once again.
+
+177
+00:11:38,500 --> 00:11:42,480
+All right, so we have installed it and then let me just simply press for installation.
+
+178
+00:11:42,700 --> 00:11:43,920
+Yes, this is module 12.
+
+179
+00:11:44,460 --> 00:11:45,880
+I can press on install.
+
+180
+00:11:46,600 --> 00:11:51,160
+All right, so we have installed it successfully and then I can simply open this.
+
+181
+00:11:51,620 --> 00:11:51,940
+Perfect.
+
+182
+00:11:52,160 --> 00:11:54,840
+And then I can run Bunnex Expo Start.
+
+183
+00:11:55,100 --> 00:11:59,180
+So, this is basically going to start it's in use.
+
+184
+00:11:59,560 --> 00:12:00,579
+All right, where it is using?
+
+185
+00:12:00,850 --> 00:12:01,759
+I don't know.
+
+186
+00:12:02,000 --> 00:12:06,560
+Let me just close all the application and then let me rerun it.
+
+187
+00:12:07,300 --> 00:12:08,560
+8081 is in use.
+
+188
+00:12:08,740 --> 00:12:09,740
+All right, just give me a minute.
+
+189
+00:12:10,819 --> 00:12:12,920
+All right, now let me rerun it.
+
+190
+00:12:13,259 --> 00:12:15,680
+And yes, now we are on to development build.
+
+191
+00:12:15,900 --> 00:12:21,640
+And I can simply press A. So, this is basically going to start open this here.
+
+192
+00:12:21,800 --> 00:12:21,980
+Perfect.
+
+193
+00:12:22,040 --> 00:12:24,540
+So, first up is always going to be same.
+
+194
+00:12:25,000 --> 00:12:32,620
+Let me coming to here once again and let me simply reload this and let me open this.
+
+195
+00:12:32,700 --> 00:12:34,220
+Hopefully this will work right now.
+
+196
+00:12:34,400 --> 00:12:36,040
+Let me simply press on continue.
+
+197
+00:12:36,740 --> 00:12:42,400
+Let me off my server and I think let me close this as well.
+
+198
+00:12:42,401 --> 00:12:44,700
+And let me open this.
+
+199
+00:12:45,520 --> 00:12:46,120
+All right.
+
+200
+00:12:46,840 --> 00:12:50,360
+And let me also run my application and at this time this will work.
+
+201
+00:12:50,640 --> 00:12:51,080
+Don't worry.
+
+202
+00:12:51,380 --> 00:12:56,540
+And I can simply press A. So this is going to open this inside my phone.
+
+203
+00:12:56,760 --> 00:12:57,940
+So what if I reload it?
+
+204
+00:12:58,060 --> 00:12:59,280
+What if I reopen it?
+
+205
+00:12:59,281 --> 00:12:59,620
+Perfect.
+
+206
+00:13:00,700 --> 00:13:02,100
+And yes, look at that.
+
+207
+00:13:02,340 --> 00:13:03,760
+This is how they look to us.
+
+208
+00:13:03,960 --> 00:13:04,660
+Amazing.
+
+209
+00:13:05,280 --> 00:13:08,740
+So, now let us move ahead and start implementing it.
+
+210
+00:13:08,820 --> 00:13:10,660
+So, implementation is very simple.
+
+211
+00:13:11,260 --> 00:13:13,560
+These are just bunch of things we need to do.
+
+212
+00:13:14,180 --> 00:13:19,080
+So, first thing that I wanted you to is to simply import bunch of things.
+
+213
+00:13:19,280 --> 00:13:19,540
+Perfect.
+
+214
+00:13:20,100 --> 00:13:24,319
+So, for importing purpose let me import all of them.
+
+215
+00:13:24,639 --> 00:13:29,920
+So, I have imported here use state, use effect and then bunch of components from react native
+
+216
+00:13:30,540 --> 00:13:34,000
+and then notification from expo notification.
+
+217
+00:13:34,500 --> 00:13:34,860
+Easy.
+
+218
+00:13:35,459 --> 00:13:40,980
+So, always for using the notification first thing that we need to do is to configure that.
+
+219
+00:13:41,100 --> 00:13:50,800
+So, I can simply say notifications dot set notification handler yes this method got it
+
+220
+00:13:50,801 --> 00:13:57,740
+and first of all let me off my AI and inside this after that what I can do we have here
+
+221
+00:13:57,741 --> 00:14:02,880
+one method known as handle notification and this is going to be a async method.
+
+222
+00:14:03,200 --> 00:14:09,780
+And let me just quickly open it and inside this you can see we have bunch of properties.
+
+223
+00:14:10,040 --> 00:14:15,580
+So some of them is let me just copy them and paste it.
+
+224
+00:14:16,140 --> 00:14:16,520
+Nice.
+
+225
+00:14:17,040 --> 00:14:20,480
+So the first thing that I have is should show alert.
+
+226
+00:14:20,900 --> 00:14:23,260
+Second thing what just happened?
+
+227
+00:14:24,260 --> 00:14:29,920
+True true false is missing the following property notification behavior should show banner.
+
+228
+00:14:31,300 --> 00:14:37,900
+All right, let me just open and for now, what if I make it true and I think we have one
+
+229
+00:14:37,901 --> 00:14:43,660
+more left if I'm not wrong and let's say right now, let me mark it as false.
+
+230
+00:14:44,380 --> 00:14:50,100
+All right, so these are only first thing that I made true is should play sound and should
+
+231
+00:14:50,320 --> 00:14:50,800
+show banner.
+
+232
+00:14:51,140 --> 00:14:53,620
+All right, we'll see that and show alert.
+
+233
+00:14:54,000 --> 00:14:55,920
+And, then what is the next step?
+
+234
+00:14:56,280 --> 00:14:57,800
+Next step is also very simple.
+
+235
+00:14:57,900 --> 00:15:00,820
+We simply wanted to maintain a permission state.
+
+236
+00:15:01,460 --> 00:15:03,760
+So, this is just a simple state variable.
+
+237
+00:15:04,240 --> 00:15:07,820
+First thing is permission granted and set permission granted.
+
+238
+00:15:08,540 --> 00:15:15,180
+And, then I wanted you to create here a function, very simple function that is going to name
+
+239
+00:15:15,181 --> 00:15:18,860
+as check permission is equals to async.
+
+240
+00:15:19,000 --> 00:15:28,460
+And, inside this I can simply name it as status and this is equals to await notifications.get
+
+241
+00:15:28,660 --> 00:15:35,100
+permission async simple nothing rocket science going on here and then simply say set permission
+
+242
+00:15:35,101 --> 00:15:35,640
+granted.
+
+243
+00:15:36,040 --> 00:15:38,200
+this we have access of this status.
+
+244
+00:15:38,900 --> 00:15:43,180
+And, if this is equal to equal to what?
+
+245
+00:15:43,460 --> 00:15:46,240
+This is equal to equal to granted.
+
+246
+00:15:47,040 --> 00:15:51,080
+Alright, so this means this is what we are basically checking it.
+
+247
+00:15:51,980 --> 00:15:55,380
+And then first thing is simply run a use effect.
+
+248
+00:15:55,700 --> 00:15:57,000
+So, what is this use effect?
+
+249
+00:15:57,600 --> 00:15:59,500
+For the first time this is going to run.
+
+250
+00:16:00,600 --> 00:16:07,079
+Check the permission and if the permission status is granted then set this otherwise
+
+251
+00:16:08,040 --> 00:16:13,600
+let us move ahead and create a function name is request notification.
+
+252
+00:16:13,980 --> 00:16:23,100
+So this is for checking purpose next one is for request I can say notification permission
+
+253
+00:16:23,180 --> 00:16:24,779
+is equals to a sink.
+
+254
+00:16:25,600 --> 00:16:29,380
+And then I can simply open try and catch, easy.
+
+255
+00:16:30,139 --> 00:16:39,779
+And first thing is again simple going to be const status and this is equals to await notifications
+
+256
+00:16:40,120 --> 00:16:44,519
+dot request yes request permission async.
+
+257
+00:16:44,579 --> 00:16:47,100
+So, we are basically asking for permissions.
+
+258
+00:16:47,400 --> 00:16:49,980
+And then simple bunch of things.
+
+259
+00:16:50,360 --> 00:16:57,920
+First thing is if status is not equal to granted, then simply show here alert, permission not
+
+260
+00:16:58,200 --> 00:16:58,740
+granted.
+
+261
+00:16:59,420 --> 00:17:06,880
+Simple and if the platform operating system is Android, then simply write this code.
+
+262
+00:17:07,740 --> 00:17:08,080
+Perfect.
+
+263
+00:17:08,540 --> 00:17:11,500
+And let me also import my platform here.
+
+264
+00:17:12,140 --> 00:17:12,520
+Perfect.
+
+265
+00:17:12,900 --> 00:17:20,540
+So, this is basically saying platform.os if it is Android, then simply say await notifications,
+
+266
+00:17:20,960 --> 00:17:25,859
+set notification channel as default and the name and the importance.
+
+267
+00:17:26,099 --> 00:17:33,900
+So, for now, I have added this as Max and again, you never need to just dig into the rabbit
+
+268
+00:17:33,901 --> 00:17:38,860
+hole and just try to understand everything that is not important for now.
+
+269
+00:17:39,020 --> 00:17:39,440
+All right.
+
+270
+00:17:39,700 --> 00:17:43,899
+And then at the end, you can simply say set permission as true.
+
+271
+00:17:44,100 --> 00:17:48,760
+But any chance we have any error, then I can simply show alert as error.
+
+272
+00:17:49,500 --> 00:17:50,440
+All right.
+
+273
+00:17:51,120 --> 00:17:51,600
+Nice.
+
+274
+00:17:52,059 --> 00:17:56,000
+And then let's move ahead first of all, and let me add a bunch of UI for it.
+
+275
+00:17:56,179 --> 00:18:01,620
+So for that, I can simply paste this UI and I can import my style sheet.
+
+276
+00:18:02,019 --> 00:18:03,440
+So I have a simple container.
+
+277
+00:18:03,800 --> 00:18:07,740
+a title or status and a button container.
+
+278
+00:18:08,220 --> 00:18:12,600
+Alright and then let me paste the whole UI for it.
+
+279
+00:18:13,720 --> 00:18:20,760
+Alright so now you can see that this is basic of view which have a text and then permission
+
+280
+00:18:20,840 --> 00:18:21,320
+status.
+
+281
+00:18:21,780 --> 00:18:23,540
+Alright and then a simple button.
+
+282
+00:18:23,800 --> 00:18:30,480
+Which is first of all requesting a permission and then second one is sending a notification
+
+283
+00:18:30,520 --> 00:18:31,300
+on demand.
+
+284
+00:18:32,060 --> 00:18:35,500
+Alright, so sending a notification is again very easy point.
+
+285
+00:18:35,760 --> 00:18:38,320
+So what if I just simply copy and paste that.
+
+286
+00:18:39,360 --> 00:18:41,760
+Alright, so this is simple a function.
+
+287
+00:18:42,240 --> 00:18:43,440
+What is the name of it?
+
+288
+00:18:43,680 --> 00:18:44,740
+Send notification.
+
+289
+00:18:44,900 --> 00:18:50,400
+Again, checking for permission and this is how you register and schedule.
+
+290
+00:18:50,500 --> 00:18:56,900
+a notification, this is a local notification, so notification, schedule notification, whatever
+
+291
+00:18:56,901 --> 00:19:01,600
+the content and the trigger and then again a simple alert.
+
+292
+00:19:02,740 --> 00:19:06,860
+Alright, but if I save it, so right now you can see they are saying me permission is not
+
+293
+00:19:06,861 --> 00:19:12,360
+granted, let try to use it, if I just simply say request permission, look at that, allow
+
+294
+00:19:13,400 --> 00:19:15,500
+to send you notification.
+
+295
+00:19:15,660 --> 00:19:17,120
+Let me simply allow this.
+
+296
+00:19:17,480 --> 00:19:23,220
+Now we have successfully given them the basic point for it.
+
+297
+00:19:23,380 --> 00:19:23,700
+Alright.
+
+298
+00:19:24,180 --> 00:19:28,620
+And now if I just simply press on test send notification, look at that.
+
+299
+00:19:28,700 --> 00:19:35,779
+Hello from expo this is the local notification and if you open this look at that how beautifully
+
+300
+00:19:35,820 --> 00:19:42,299
+we have successfully created our first in-app notification again this is not that advance
+
+301
+00:19:42,659 --> 00:19:49,659
+in next chapter I am going to show you how you can basically customize this change the
+
+302
+00:19:49,660 --> 00:19:55,120
+logo change the background and how are you wanted to do so but for this this is pretty
+
+303
+00:19:55,121 --> 00:19:57,519
+much it and see you next time.
+

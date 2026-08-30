@@ -1,0 +1,980 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:04.860
+Alright, beautiful people's welcome to the last video of this specific section.
+
+00:00:05.060 --> 00:00:10.280
+In this section, we will basically going to see that how you can upload any Android application
+
+00:00:10.281 --> 00:00:11.420
+to the Google Play Store.
+
+00:00:11.580 --> 00:00:16.079
+This is going to be the entire goal of this application of this specific video.
+
+00:00:16.400 --> 00:00:16.720
+Perfect.
+
+00:00:17.220 --> 00:00:22.080
+So, first thing which is mandatory that you need is a Google Play Console account.
+
+00:00:22.200 --> 00:00:29.000
+So, for using the Google Play Console account you need to pay around 25 dollars for the
+
+00:00:29.001 --> 00:00:29.440
+lifetime.
+
+00:00:30.140 --> 00:00:33.980
+So, basically you pay once and you can upload as many apps you need.
+
+00:00:34.280 --> 00:00:35.480
+Someone got it?
+
+00:00:35.800 --> 00:00:38.060
+This is something that you basically need.
+
+00:00:38.340 --> 00:00:42.480
+First thing you need a Google Play Console account and you have to verify yourself.
+
+00:00:42.540 --> 00:00:45.340
+They will ask you some basic information.
+
+00:00:45.500 --> 00:00:52.100
+like your name, your email, your some of the maybe your some driving license, some PEN
+
+00:00:52.101 --> 00:00:56.660
+card, maybe bank statement just to verify you.
+
+00:00:56.661 --> 00:00:57.600
+Okay, that's it.
+
+00:00:58.140 --> 00:01:03.260
+And within a week, they will actually going to verify you and then you need a 14 testers
+
+00:01:03.261 --> 00:01:03.640
+as well.
+
+00:01:03.900 --> 00:01:07.540
+They can be your family, they can be your friends, you can actually share that app with
+
+00:01:07.541 --> 00:01:10.900
+them and they can just they just need to download that app.
+
+00:01:11.040 --> 00:01:11.360
+That's it.
+
+00:01:11.400 --> 00:01:14.760
+Okay, these are some basic steps that you need to do.
+
+00:01:15.580 --> 00:01:17.980
+These are the prerequisites that you need.
+
+00:01:18.800 --> 00:01:25.940
+Alright, so now I have basically prepared some basic, I can say that testing some basic
+
+00:01:25.941 --> 00:01:26.880
+notes for you.
+
+00:01:27.120 --> 00:01:32.040
+Initially, we will going to see that how you can publish your app to the Google Play Store.
+
+00:01:32.360 --> 00:01:37.980
+So everything to prepare before and while publishing an Android app to Google Play.
+
+00:01:38.000 --> 00:01:44.560
+including graphic sizes, privacy policy, tester emails and how to share without collecting
+
+00:01:44.780 --> 00:01:45.080
+emails.
+
+00:01:45.560 --> 00:01:48.760
+So, two different testing paths we need we can actually follow.
+
+00:01:49.760 --> 00:01:54.620
+First is we can going we can use let me show you that okay first thing what you need you
+
+00:01:54.621 --> 00:01:59.940
+need account and one time setup we know that we basically need to do this and then what
+
+00:01:59.941 --> 00:02:00.380
+you need.
+
+00:02:00.381 --> 00:02:02.000
+Second thing is very important.
+
+00:02:02.001 --> 00:02:08.380
+Second thing that you need is your storing the listing text like your app name, short
+
+00:02:08.381 --> 00:02:10.860
+description of your app and full description of your app.
+
+00:02:11.060 --> 00:02:13.220
+Okay, let's just do everything one by one.
+
+00:02:13.600 --> 00:02:18.940
+So step number one simply visit towards your Google Play Store app and then simply press
+
+00:02:18.941 --> 00:02:19.800
+on create app.
+
+00:02:20.060 --> 00:02:24.840
+So the moment you press on create app first thing they will ask you is your application
+
+00:02:24.841 --> 00:02:25.000
+name.
+
+00:02:28.380 --> 00:02:30.400
+unitapp, you can name it anything you want.
+
+00:02:31.080 --> 00:02:35.480
+Then second thing is the package name, so for the package name you simply need to go
+
+00:02:35.540 --> 00:02:42.420
+inside your app.json and search for android and whatever the name of this package you
+
+00:02:42.421 --> 00:02:44.260
+simply need to grab this.
+
+00:02:44.261 --> 00:02:50.500
+Okay, so this is so basically second thing this is the package name you need to paste
+
+00:02:50.620 --> 00:02:55.700
+so simple and you can actually simply run for check availability this package name is
+
+00:02:55.701 --> 00:03:00.800
+already in use so you can simply add here the unit flow to you can name it whatever
+
+00:03:00.801 --> 00:03:06.120
+you want and after that first thing they asking you is the default language definitely this
+
+00:03:06.960 --> 00:03:10.800
+Next thing is you can change this in later app store definitely.
+
+00:03:11.440 --> 00:03:13.660
+So is this your app or is this your game?
+
+00:03:13.860 --> 00:03:15.580
+Definitely this is my app.
+
+00:03:15.940 --> 00:03:16.160
+Simple.
+
+00:03:16.940 --> 00:03:19.340
+Is this a free app or is this a paid app?
+
+00:03:19.480 --> 00:03:21.620
+So this is the free section you can go for it.
+
+00:03:21.980 --> 00:03:23.800
+Second we also have the paid one.
+
+00:03:24.120 --> 00:03:24.220
+Okay.
+
+00:03:24.280 --> 00:03:25.900
+But right now we have the free.
+
+00:03:25.901 --> 00:03:30.920
+Next thing they are asking you developer program policy you basically need to check for it
+
+00:03:30.921 --> 00:03:34.840
+also need to check for it and then simply press on create app.
+
+00:03:35.299 --> 00:03:41.319
+So the first step very first step is done this one I mean Google play developer account
+
+00:03:41.420 --> 00:03:47.620
+you need to get this second you need a Google cloud project when you wanted to use EAS submit
+
+00:03:47.621 --> 00:03:51.500
+but for now let just ignore this EAS submit we will see this later.
+
+00:03:51.900 --> 00:03:57.140
+Then you need to basically create a create app, we already did this, we also have this
+
+00:03:57.141 --> 00:03:58.700
+package name and done.
+
+00:03:59.860 --> 00:04:00.400
+What next?
+
+00:04:00.900 --> 00:04:05.060
+Next we need app name, we already have a short description and full description.
+
+00:04:05.700 --> 00:04:11.940
+So now the moment you press there you will find something like this thing, but now you
+
+00:04:11.941 --> 00:04:14.620
+will see that you have bunch of tasks to do.
+
+00:04:14.700 --> 00:04:18.360
+Look at that, you have these much of tasks to follow.
+
+00:04:19.040 --> 00:04:24.260
+First is some privacy policy you need to set, then some sign in details you need to give,
+
+00:04:25.540 --> 00:04:30.740
+then you need to give ads, content rating, target audience, data safety, government app,
+
+00:04:31.380 --> 00:04:32.840
+in features that you have.
+
+00:04:33.100 --> 00:04:38.260
+And then health in same way in which category your app will actually come then you will
+
+00:04:38.261 --> 00:04:40.520
+basically going to set up your store listing.
+
+00:04:40.960 --> 00:04:45.180
+So these are all of the basic information that you have to do.
+
+00:04:45.680 --> 00:04:50.880
+Like if I just simply press on set privacy policy so what you need to do basically you
+
+00:04:50.881 --> 00:04:53.380
+basically need to create one privacy policy.
+
+00:04:53.420 --> 00:04:54.400
+How you can create?
+
+00:04:54.500 --> 00:05:00.040
+You can, you must own one website that website actually contain the privacy policy page.
+
+00:05:00.480 --> 00:05:05.380
+You can simply paste the link of that specific privacy policy app.
+
+00:05:05.660 --> 00:05:05.940
+Okay.
+
+00:05:06.220 --> 00:05:08.480
+I don't know right now I have any or not.
+
+00:05:11.440 --> 00:05:13.640
+I need to basically search for it.
+
+00:05:21.220 --> 00:05:30.420
+sample privacy policy website for India and I can just search for anything and then I
+
+00:05:30.500 --> 00:05:33.700
+can simply select on live edit maybe download for words.
+
+00:05:33.900 --> 00:05:40.620
+and download PDF and then these are something your privacy policy you can publish this online
+
+00:05:41.060 --> 00:05:43.540
+and share with anyone you wanted to share.
+
+00:05:43.759 --> 00:05:49.520
+Okay let me just simply put this simply press on save like this is kind of my privacy policy.
+
+00:05:50.760 --> 00:05:53.600
+In the same way next we need to add the sign in data.
+
+00:05:54.000 --> 00:05:56.420
+So is any party or application restricted?
+
+00:05:56.680 --> 00:05:57.360
+For now no.
+
+00:05:57.440 --> 00:06:01.860
+So I can simply save this and I can come back out of it.
+
+00:06:02.020 --> 00:06:02.340
+Nice.
+
+00:06:03.000 --> 00:06:04.700
+So the second step is also done.
+
+00:06:04.760 --> 00:06:07.580
+Third step is your app support any kind of ad?
+
+00:06:07.640 --> 00:06:08.420
+For now no.
+
+00:06:08.440 --> 00:06:10.700
+No my app does not contain any kind of ad.
+
+00:06:10.900 --> 00:06:14.620
+So, again I can simply press on save simple very easy.
+
+00:06:15.800 --> 00:06:17.479
+Then I can again come back.
+
+00:06:17.979 --> 00:06:20.000
+Next thing they're asking you your content rating.
+
+00:06:20.440 --> 00:06:25.460
+So, you need to do so this receive rating for your app from official rating authorities.
+
+00:06:26.460 --> 00:06:31.100
+Complete the content rating questionnaire question eyes and to receive official content
+
+00:06:31.101 --> 00:06:32.620
+rating for your app.
+
+00:06:32.760 --> 00:06:37.280
+Ratings are displayed on Google Play to help user identify whether your app is suitable
+
+00:06:37.281 --> 00:06:38.240
+for them or not.
+
+00:06:38.600 --> 00:06:44.360
+Then just keep giving the answer what is the email address, email address let me just put
+
+00:06:44.361 --> 00:06:45.860
+my sample email.
+
+00:06:48.840 --> 00:06:54.080
+Next which category is your app is definitely all other types and terms and conditions let
+
+00:06:54.081 --> 00:06:54.720
+me just agree.
+
+00:06:55.600 --> 00:07:02.120
+Next, does the app contain any rating relevant related to any violence, any languages and
+
+00:07:02.220 --> 00:07:07.560
+whatever is that any some specific gender downloaded as part of the app package.
+
+00:07:07.720 --> 00:07:11.120
+So code or assets, so right now I can say simply no.
+
+00:07:11.520 --> 00:07:16.460
+User content sharing, does the app natively allow user to interact or exchange contact?
+
+00:07:16.580 --> 00:07:16.920
+No.
+
+00:07:17.240 --> 00:07:18.320
+Online content?
+
+00:07:18.420 --> 00:07:18.680
+No.
+
+00:07:18.920 --> 00:07:20.720
+Promote or sale for age restricted?
+
+00:07:21.000 --> 00:07:21.460
+No.
+
+00:07:23.280 --> 00:07:28.100
+Malleus miscellaneous does the app share the user current and precise physical location?
+
+00:07:28.340 --> 00:07:28.600
+No.
+
+00:07:28.920 --> 00:07:31.600
+Does the app allow your user to purchase digital?
+
+00:07:31.840 --> 00:07:34.000
+No, I think everything will be no for now.
+
+00:07:34.420 --> 00:07:38.180
+You can just read according to your need and press yes on the debates.
+
+00:07:39.320 --> 00:07:43.720
+Then I can again save this like from where I'm getting save options at the bottom of
+
+00:07:43.721 --> 00:07:43.960
+it.
+
+00:07:44.080 --> 00:07:44.560
+Got it?
+
+00:07:45.520 --> 00:07:46.540
+Then what I can do?
+
+00:07:46.580 --> 00:07:48.400
+Then I can simply press on next.
+
+00:07:49.000 --> 00:07:54.520
+Next, these are the ratings I got perfect and then I can simply press over it.
+
+00:07:55.120 --> 00:08:03.140
+Now I get my ratings as well and cool amazing after that target audience.
+
+00:08:03.260 --> 00:08:08.000
+So my target audience is from anyone can use our applications.
+
+00:08:08.180 --> 00:08:11.180
+I think 6 to 18 and over.
+
+00:08:12.100 --> 00:08:14.540
+Because they already got introduced to unit conversion.
+
+00:08:14.640 --> 00:08:16.260
+So they can use our app as well.
+
+00:08:16.261 --> 00:08:21.060
+And now like legal and regulatory compliance, you need to check it.
+
+00:08:22.380 --> 00:08:24.600
+You have declared that your app does not contain ad.
+
+00:08:24.680 --> 00:08:28.600
+If this is incorrect, no, my app does not contain simply press next.
+
+00:08:31.300 --> 00:08:32.620
+Teacher approved program.
+
+00:08:32.799 --> 00:08:36.780
+You have team up with teachers and children education and media specialist to spotlight
+
+00:08:36.781 --> 00:08:38.860
+the best app for kid on Google Play.
+
+00:08:38.900 --> 00:08:45.320
+In the teacher approved program, expert rate app for quality and age appropriates, learn
+
+00:08:45.321 --> 00:08:51.060
+more about include my app in teacher for now does not include anything simply save this
+
+00:08:51.120 --> 00:08:52.460
+and let's just move ahead.
+
+00:08:54.100 --> 00:08:59.540
+Alright, and now I can once again go to my dashboard and after that next data safety,
+
+00:08:59.760 --> 00:09:04.080
+you just have to just fill this long, long, long form, take so much of time.
+
+00:09:04.100 --> 00:09:12.560
+simply press next does your app collect and share no no additional badges simply press save save
+
+00:09:15.800 --> 00:09:23.240
+let's just come back next is government app is your app developer or any behalf of government no
+
+00:09:26.180 --> 00:09:28.459
+Let's just come back once again.
+
+00:09:28.980 --> 00:09:30.440
+Next is financial features.
+
+00:09:31.339 --> 00:09:34.060
+Select of the financial feature your app provide.
+
+00:09:34.740 --> 00:09:35.080
+Nothing.
+
+00:09:36.360 --> 00:09:42.160
+I mean, we, yes, my app does not provide any financial features for now.
+
+00:09:42.980 --> 00:09:48.680
+Then I can simply press on save and I just wanted to stay here.
+
+00:09:48.779 --> 00:09:49.160
+Definitely.
+
+00:09:49.800 --> 00:09:59.140
+Yeah, I can go, I mean, next, I can go back, cool and all good.
+
+00:09:59.320 --> 00:10:02.560
+Next is two declaration need attention.
+
+00:10:02.839 --> 00:10:03.820
+First is advertising.
+
+00:10:04.000 --> 00:10:04.779
+Why this impact?
+
+00:10:04.980 --> 00:10:07.600
+All developer required to submit the declaration of this app.
+
+00:10:10.040 --> 00:10:12.700
+Does your app use advertising ID?
+
+00:10:13.500 --> 00:10:14.140
+No.
+
+00:10:15.500 --> 00:10:16.880
+Let's go back.
+
+00:10:18.040 --> 00:10:20.180
+Next declaration that is have health apps.
+
+00:10:20.600 --> 00:10:21.340
+Start declaration.
+
+00:10:22.240 --> 00:10:24.360
+No, my app does not have any health features.
+
+00:10:26.800 --> 00:10:31.660
+This is just a very simple app, but now you got the gist that what are all the features,
+
+00:10:32.140 --> 00:10:34.080
+what are all the things that you have to go through.
+
+00:10:35.280 --> 00:10:35.760
+Okay.
+
+00:10:36.000 --> 00:10:37.760
+Then let me go back once again.
+
+00:10:38.420 --> 00:10:39.660
+All the actions are done.
+
+00:10:39.900 --> 00:10:40.640
+Everything is cool.
+
+00:10:43.040 --> 00:10:43.480
+Perfect.
+
+00:10:43.720 --> 00:10:47.660
+So now what we can do now, I can simply go to my dashboard once again.
+
+00:10:48.360 --> 00:10:49.200
+Everything is done.
+
+00:10:49.201 --> 00:10:51.320
+Manage how your app is organized and present.
+
+00:10:51.480 --> 00:10:52.560
+Select an app category.
+
+00:10:53.240 --> 00:10:54.500
+Yes, I wanted to select.
+
+00:10:54.779 --> 00:10:59.440
+So this is and the category should be how I can select my category.
+
+00:10:59.720 --> 00:11:01.220
+Okay, I can I need to press on edit.
+
+00:11:01.800 --> 00:11:06.640
+This is app and category should be if I am not wrong.
+
+00:11:08.740 --> 00:11:14.860
+That is should be more of the tools because I provide bunch of tools inside this.
+
+00:11:18.800 --> 00:11:26.840
+Let me close this tags I can even add bunch of tags like health and fitness sports business
+
+00:11:26.880 --> 00:11:32.380
+tools because I have tools I have you know I don't have calendar actually I think a
+
+00:11:32.381 --> 00:11:34.260
+A clock, alarm and timer? Nope.
+
+00:11:37.420 --> 00:11:44.040
+Driver education, emojis, events, like look at that lot of options that you actually have.
+
+00:11:45.200 --> 00:11:48.700
+You can select for bunch of them and simply press on apply.
+
+00:11:49.760 --> 00:11:53.740
+Next you need to add some basic information of your like your email address.
+
+00:11:53.880 --> 00:11:55.260
+Let me put my sample email.
+
+00:11:58.180 --> 00:12:03.700
+Next is the phone number that I just don't want it to add my phone number right now and
+
+00:12:03.701 --> 00:12:04.480
+the website link.
+
+00:12:04.959 --> 00:12:10.500
+So I think my website hopefully my website does not got down for now.
+
+00:12:10.640 --> 00:12:10.720
+Okay.
+
+00:12:10.721 --> 00:12:13.399
+I need to fix this.
+
+00:12:13.519 --> 00:12:14.320
+I'll fix that later.
+
+00:12:14.480 --> 00:12:18.600
+But for now, let me put my website name simply press on save.
+
+00:12:22.160 --> 00:12:25.800
+And let me close this, this is fine, nice.
+
+00:12:27.100 --> 00:12:31.780
+Let me once again go to my dashboard, all of this thing is done, set up your store listing,
+
+00:12:33.020 --> 00:12:34.040
+this is very important.
+
+00:12:34.880 --> 00:12:40.860
+Now first thing you need your app name, second thing you need the 80 characters for your
+
+00:12:41.000 --> 00:12:45.820
+short description of your app, in same way you also need the full description of your
+
+00:12:45.821 --> 00:12:47.860
+app under 4000 characters.
+
+00:12:49.200 --> 00:12:57.120
+Fast Offline Unit Converter, so this is the short description that I can have, ok, this
+
+00:12:57.200 --> 00:13:03.760
+is fine I think and in same way I can have the full description.
+
+00:13:03.770 --> 00:13:12.420
+Now for the graphics your app icon must be 512 by 512 pixel, for the feature graphics
+
+00:13:12.421 --> 00:13:18.120
+you must have 1024 by 500 and for the phone screenshots you need minimum.
+
+00:13:18.600 --> 00:13:28.860
+2 screenshot and maximum of 8 screenshot and for the adapted icon foreground you need 1024
+
+00:13:28.861 --> 00:13:36.000
+to 2024 image and for adaptive icon background you need this and monochrome with this.
+
+00:13:36.001 --> 00:13:37.740
+Optionals, but useful.
+
+00:13:37.900 --> 00:13:44.980
+You can also add table screenshots, promo videos, TV banners, wear operating systems
+
+00:13:45.020 --> 00:13:50.780
+and quick design tips and use same color as your app screenshots, feature graphics and
+
+00:13:50.820 --> 00:13:51.080
+icon.
+
+00:13:52.000 --> 00:13:55.660
+And for the app content, make sure you have policy program there.
+
+00:13:56.200 --> 00:14:00.940
+And these are the bunch of things you need to create a put inside your privacy policy.
+
+00:14:01.600 --> 00:14:05.660
+And this is your privacy policy is required and all good.
+
+00:14:06.199 --> 00:14:07.540
+This is what basically you need.
+
+00:14:08.519 --> 00:14:10.880
+We have already added all of this information.
+
+00:14:11.779 --> 00:14:17.660
+Then what you will get now, you know after that, after everything going to happen, what
+
+00:14:17.819 --> 00:14:21.040
+you can do right now, you can simply put save as draft.
+
+00:14:22.560 --> 00:14:27.200
+Next, thing that you will get is your store listing experiments.
+
+00:14:28.300 --> 00:14:31.740
+So they will ask you for to create your store list.
+
+00:14:31.940 --> 00:14:35.399
+You can put the experiment name store settings.
+
+00:14:36.660 --> 00:14:40.279
+Okay, now this is found, this is fine, this is also fine.
+
+00:14:40.959 --> 00:14:46.320
+I think now this is the high time simply press on test and release and after that you can
+
+00:14:46.321 --> 00:14:47.519
+And simply press on.
+
+00:14:48.200 --> 00:14:50.780
+All of this thing is done I think.
+
+00:14:51.660 --> 00:14:54.580
+So yes this is the only thing we basically need to add.
+
+00:14:56.380 --> 00:15:01.680
+So after all of this information adding what you need to do simply press on test and release
+
+00:15:02.420 --> 00:15:07.980
+and after that simply press on testing and right now I wanted to go for close testing.
+
+00:15:08.100 --> 00:15:14.579
+Then simply press on close testing after pressing on this is mandatory if you are uploading
+
+00:15:14.580 --> 00:15:21.199
+your app for the first time in 2026 simply press on create track you can name it close
+
+00:15:22.160 --> 00:15:23.100
+testing track.
+
+00:15:24.500 --> 00:15:31.420
+And after that what you need to do now you basically need to select the country like
+
+00:15:31.520 --> 00:15:33.860
+in which countries you wanted to run this test.
+
+00:15:34.380 --> 00:15:39.680
+So simply select all of them simply press on save in same way releases is fine.
+
+00:15:40.400 --> 00:15:41.800
+Now who are all your testers?
+
+00:15:41.860 --> 00:15:48.260
+So I have a few internal testers you can actually create your email list and add them and then
+
+00:15:48.261 --> 00:15:49.560
+simply press on save.
+
+00:15:50.000 --> 00:15:56.100
+After that what you can do you can simply press on create a new release and this will
+
+00:15:56.101 --> 00:15:58.560
+actually going to create a new release for you.
+
+00:15:58.680 --> 00:16:04.620
+So the moment you press on new release now they are asking you to upload the app bundle.
+
+00:16:05.400 --> 00:16:07.380
+Now how you will get this app bundle?
+
+00:16:07.900 --> 00:16:14.280
+So for getting your app bundle what you need to do you need to create a production bid.
+
+00:16:14.400 --> 00:16:20.160
+So, you basically need to run this specific command for EAS let me show you that you can
+
+00:16:20.161 --> 00:16:23.620
+simply run EAS build hyphen hyphen profile.
+
+00:16:23.760 --> 00:16:31.320
+Now profile should be production very important and then platform right now we are specifically
+
+00:16:31.321 --> 00:16:33.840
+us in android so the platform should be android.
+
+00:16:34.400 --> 00:16:40.700
+So, the moment you run this application, this command, so after running this command what
+
+00:16:40.780 --> 00:16:43.180
+you will actually going to get, let me show you that.
+
+00:16:43.740 --> 00:16:47.020
+Let me take you towards the EAS build that we have.
+
+00:16:47.780 --> 00:16:51.900
+Ok, so let me just search for my this builds.
+
+00:16:53.640 --> 00:16:57.820
+And let me open this for my unit flow.
+
+00:16:58.120 --> 00:16:59.020
+So where is this?
+
+00:16:59.460 --> 00:17:01.860
+This is the unit flow that I have and build.
+
+00:17:02.020 --> 00:17:04.140
+But right now I need my production build.
+
+00:17:04.740 --> 00:17:08.839
+So I can simply press on production build and after that you will get this download
+
+00:17:08.840 --> 00:17:09.240
+option.
+
+00:17:09.400 --> 00:17:15.260
+So, simply download this production build and interestingly you will see the format
+
+00:17:15.480 --> 00:17:22.820
+of this download build is.aab very important and simply go to your app store and upload
+
+00:17:22.900 --> 00:17:26.200
+this specific build that you have.
+
+00:17:26.400 --> 00:17:32.240
+This is your app, this is your optimized version of your app, you basically need to upload
+
+00:17:32.241 --> 00:17:38.420
+this, alright, so this will take few minutes, let's just wait for installation of it, just
+
+00:17:38.421 --> 00:17:39.340
+uploadation of it.
+
+00:17:40.120 --> 00:17:44.540
+Alright guys, so uploading is finished, now what you need to do, you need to basically
+
+00:17:44.541 --> 00:17:46.040
+put the file.
+
+00:17:46.041 --> 00:17:50.400
+The name of the release you wanted to add, so this is so you can identify this release
+
+00:17:50.800 --> 00:17:54.460
+and it is this not going to show the users on Google play.
+
+00:17:54.600 --> 00:18:00.120
+We suggest a name based on the first app bundle or APK in this release, but you can edit it.
+
+00:18:00.240 --> 00:18:03.920
+So I can name it as unit flow bundle.
+
+00:18:06.900 --> 00:18:12.280
+Alright, and okay now there's one problem actually, now they are saying me that your
+
+00:18:12.640 --> 00:18:16.140
+package name should be matched, it's okay your package name should actually going to
+
+00:18:16.141 --> 00:18:21.200
+match, I just intensely change the name of it, you can even add some release note and
+
+00:18:21.201 --> 00:18:25.880
+then simply press on next, so the moment you press on next, now what will going to happen,
+
+00:18:27.500 --> 00:18:33.320
+Okay, now you need to upload APK Android bundle for this app, you need to app cannot published
+
+00:18:33.321 --> 00:18:37.780
+yet complete the step in the dashboard again you just need to complete all of the steps
+
+00:18:38.160 --> 00:18:43.800
+like set up your store listing these are all the information you need to upload and that
+
+00:18:43.820 --> 00:18:48.280
+is the last update you need to do and share this with your internal user and wait for
+
+00:18:48.281 --> 00:18:53.440
+14 days after 14 days you will automatically going to get this options let me show you
+
+00:18:53.441 --> 00:18:56.800
+that this option apply access to production that's it.
+
+00:18:56.900 --> 00:19:03.720
+And now within a week, within a week or two, this application will automatically live on
+
+00:19:03.721 --> 00:19:04.160
+Play Store.
+
+00:19:04.880 --> 00:19:10.880
+So these are all the steps you actually need to follow for uploading your, I can say that
+
+00:19:10.881 --> 00:19:12.720
+apps to Android application.
+
+00:19:13.100 --> 00:19:19.260
+Same thing will actually going to happen with the icons these are the complete full publishing
+
+00:19:19.261 --> 00:19:20.640
+checklist you need to follow.
+
+00:19:21.080 --> 00:19:26.260
+So make sure to take screenshots of this otherwise I'll make it public and you can even visit
+
+00:19:26.320 --> 00:19:30.000
+to this specific website link alright.
+
+00:19:30.760 --> 00:19:35.120
+So these are the link that we have let me show you hopefully you are able to see.
+
+00:19:35.380 --> 00:19:40.820
+So this is the link that we have so you can copy this specific link and visit here cool.
+
+00:19:41.800 --> 00:19:48.060
+So, first thing you need a Google developer account and you need a place to console package
+
+00:19:48.061 --> 00:19:53.500
+name should be finalized production A, B you actually need this then these are bunch store
+
+00:19:53.501 --> 00:19:58.320
+listing assets that you need to keep ready your policy legal should be ready testing
+
+00:19:58.321 --> 00:20:03.440
+should be also done and you can also automate that but this is optional and ignore it for
+
+00:20:03.441 --> 00:20:07.260
+now need not to worry about and then just start uploading it.
+
+00:20:08.080 --> 00:20:11.760
+And in same thing will actually going to happen for Apple App Store.
+
+00:20:11.980 --> 00:20:17.640
+So for Apple App Store you basically need a Apple developer account that is around $100
+
+00:20:18.260 --> 00:20:19.140
+for each year.
+
+00:20:19.420 --> 00:20:19.680
+Yes.
+
+00:20:20.500 --> 00:20:25.820
+And then look at that $99 here you can actually just go and purchase your own.
+
+00:20:26.300 --> 00:20:31.600
+account from here, you can basically sign up for it and then you basically need a new
+
+00:20:31.601 --> 00:20:31.880
+app.
+
+00:20:32.180 --> 00:20:35.480
+You need a bundle ID from where you will get this bundle ID.
+
+00:20:35.920 --> 00:20:38.120
+You can simply go inside your app, Jason.
+
+00:20:39.200 --> 00:20:44.200
+Inside this app, Jason, you can open this icon and at this point you will search for
+
+00:20:44.201 --> 00:20:45.160
+something known as.
+
+00:20:45.360 --> 00:20:51.060
+Bundle ID, Bundle identifier actually and this bundle identifier is something which
+
+00:20:51.061 --> 00:20:58.160
+is specific to your iOS application when you need SKU very simple same steps nothing you
+
+00:20:58.161 --> 00:21:03.640
+need app name, subtitle, promotional text, description, keyword everything is completely
+
+00:21:03.641 --> 00:21:08.360
+mentioned all the graphics you need all the other things that you basically need everything
+
+00:21:08.361 --> 00:21:13.060
+is completely mentioned here just read it once everything smoothly going to happen for
+
+00:21:13.061 --> 00:21:13.280
+you.
+
+00:21:13.300 --> 00:21:18.660
+And after submitting all of the information you just need to wait again for few days a
+
+00:21:18.661 --> 00:21:19.060
+week.
+
+00:21:19.480 --> 00:21:25.220
+Apple sometime take two weeks, sometime takes three weeks, maybe more than that, but depends.
+
+00:21:26.020 --> 00:21:30.480
+Alright, so these are the entire flow you need to follow and with this I can simply
+
+00:21:30.481 --> 00:21:32.920
+say I can end this entire section.
+
+00:21:33.020 --> 00:21:37.720
+One thing which is left is es submit and for now we can completely negate this because
+
+00:21:37.721 --> 00:21:40.700
+this is not so much important for now.
+
+00:21:40.800 --> 00:21:46.640
+Perfect, because for the first time you need to upload your application manually.
+
+00:21:47.140 --> 00:21:49.140
+So that is why I have completely skipped this.
+
+00:21:49.250 --> 00:21:52.220
+You can read more about it, simple steps you need to follow.
+
+00:21:52.700 --> 00:21:54.840
+But right now that is not that important.
+
+00:21:55.040 --> 00:22:00.360
+We'll obviously upload in more upcoming videos because this is the course that we.
+
+00:22:00.361 --> 00:22:03.600
+going to maintain it for a very longer period of time.
+
+00:22:04.039 --> 00:22:10.440
+Then in next release we will upload some good projects and some other updates as well.
+
+00:22:10.450 --> 00:22:14.840
+Okay, so with this let me end this entire course and see you next time.
+

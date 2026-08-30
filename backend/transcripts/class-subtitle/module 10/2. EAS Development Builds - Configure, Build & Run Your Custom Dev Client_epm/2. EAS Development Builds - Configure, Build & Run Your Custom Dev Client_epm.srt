@@ -1,0 +1,648 @@
+1
+00:00:00,000 --> 00:00:06,760
+Alright everyone and welcome to one more new chapter in this chapter we are going to see
+
+2
+00:00:06,940 --> 00:00:12,500
+how you can configure a development build of your expo application perfect.
+
+3
+00:00:12,640 --> 00:00:17,440
+So for that first of all I wanted you to simply go to the documentation.
+
+4
+00:00:18,300 --> 00:00:24,619
+and click here alright then you will be redirected towards the expo build so if
+
+5
+00:00:24,620 --> 00:00:29,900
+you read expo build we know that it's a hosted service for building app binaries
+
+6
+00:00:30,380 --> 00:00:36,019
+for your expo and react native projects so you can simply press on create your
+
+7
+00:00:36,120 --> 00:00:37,140
+first build
+
+8
+00:00:37,660 --> 00:00:38,620
+Got it.
+
+9
+00:00:39,420 --> 00:00:44,960
+And you will see the expo build allow you to build a ready to submit binary of your app
+
+10
+00:00:45,140 --> 00:00:48,000
+for Google Play Store or Apple App Store.
+
+11
+00:00:48,579 --> 00:00:51,300
+In this guide, let learn how to do that.
+
+12
+00:00:52,660 --> 00:00:58,540
+Alternatively, if you prefer to install the app directly to your Android device or emulator
+
+13
+00:00:59,079 --> 00:01:02,739
+or install in the iOS simulator, we will point out.
+
+14
+00:01:03,300 --> 00:01:10,540
+You, towards the resource that explain how to do that, but first thing first what you
+
+15
+00:01:10,600 --> 00:01:12,200
+need this is the prerequisite.
+
+16
+00:01:13,040 --> 00:01:14,640
+First look at that.
+
+17
+00:01:15,240 --> 00:01:20,500
+ESBuild is a rapidly evolving service before you set out to create a build for your project
+
+18
+00:01:20,660 --> 00:01:25,860
+we recommend you to consulting the limitation page and other prerequisites.
+
+19
+00:01:25,979 --> 00:01:28,000
+So it's fine if you wanted to go.
+
+20
+00:01:28,800 --> 00:01:33,340
+First thing is you need a project perfect that you want to build.
+
+21
+00:01:33,580 --> 00:01:38,620
+So we're going to create that in a while and then you need a expo user account.
+
+22
+00:01:38,860 --> 00:01:44,920
+So simply just go to export.dev/signup and make sure you are sign up and you know the
+
+23
+00:01:45,340 --> 00:01:47,200
+username and password for it.
+
+24
+00:01:47,660 --> 00:01:49,040
+All right, so I'm giving you a minute.
+
+25
+00:01:49,280 --> 00:01:50,880
+Just go and quickly come back.
+
+26
+00:01:51,480 --> 00:01:51,760
+All right.
+
+27
+00:01:51,880 --> 00:01:54,640
+So I'm assuming that now you have a expo user account.
+
+28
+00:01:55,100 --> 00:01:56,140
+as well.
+
+29
+00:01:56,680 --> 00:01:56,860
+Nice.
+
+30
+00:01:57,619 --> 00:02:03,540
+Now, let's move ahead and what I wanted you to do is to simply go inside your VS code
+
+31
+00:02:03,780 --> 00:02:08,199
+for now and let's initialize a new expo project.
+
+32
+00:02:08,259 --> 00:02:12,959
+So I can simply say Banex create expo.
+
+33
+00:02:13,020 --> 00:02:14,120
+I don't know what is the command.
+
+34
+00:02:14,200 --> 00:02:15,440
+I always forget this.
+
+35
+00:02:15,720 --> 00:02:16,480
+Sorry for that.
+
+36
+00:02:18,100 --> 00:02:24,200
+Let me go to the documentation I think yes so create expo app yes I am writing that
+
+37
+00:02:24,320 --> 00:02:34,260
+route create expo app at the rate latest alright and yes dot slash no problem so they are basically
+
+38
+00:02:34,440 --> 00:02:36,240
+going to install my application.
+
+39
+00:02:36,700 --> 00:02:41,280
+Alright, so now you can see that we have successfully installed it.
+
+40
+00:02:41,459 --> 00:02:49,400
+Now for testing this out, what we will do simply, I can simply say "Bonex expo start".
+
+41
+00:02:49,401 --> 00:02:55,800
+So this is basically going to start my development server, but you will notice something by default.
+
+42
+00:02:56,200 --> 00:02:58,940
+This is showing us using expo go.
+
+43
+00:02:59,580 --> 00:03:04,380
+So if I just coming to like this, just give me a minute, let me just quickly fix this
+
+44
+00:03:04,440 --> 00:03:10,300
+out and yes, now if I just simply press a, so this is basically going to start my expo
+
+45
+00:03:10,340 --> 00:03:12,599
+application and look at that they are building it.
+
+46
+00:03:13,280 --> 00:03:18,280
+So by default, every time whenever you create your application, they are starting inside
+
+47
+00:03:18,360 --> 00:03:19,120
+your expo go.
+
+48
+00:03:19,519 --> 00:03:22,000
+But now we know the limitation of expo go.
+
+49
+00:03:22,300 --> 00:03:22,800
+Yes or no?
+
+50
+00:03:23,260 --> 00:03:23,959
+Yes, we know that.
+
+51
+00:03:24,300 --> 00:03:29,340
+Now, let's move ahead and we'll see how you can first of all configure this.
+
+52
+00:03:30,020 --> 00:03:30,120
+Perfect.
+
+53
+00:03:30,460 --> 00:03:31,840
+You just simply close this.
+
+54
+00:03:32,640 --> 00:03:35,520
+First step is always is to configure this.
+
+55
+00:03:35,680 --> 00:03:40,300
+But for before configuration, you need to install bunch of things with me.
+
+56
+00:03:40,360 --> 00:03:46,760
+So again, go to introduction, create your first app and yes, first of all, install this.
+
+57
+00:03:47,480 --> 00:03:48,940
+So simply copy this.
+
+58
+00:03:49,700 --> 00:04:00,440
+and open new terminal and say burn add -g es cli so we are basically installing
+
+59
+00:04:00,530 --> 00:04:07,120
+the es cli tool no problem alright so in less than 10 seconds we have installed
+
+60
+00:04:07,330 --> 00:04:08,700
+the as cli
+
+61
+00:04:08,900 --> 00:04:15,739
+So, you can also use the above command to check if a new version of ESTheorize is available.
+
+62
+00:04:16,180 --> 00:04:20,540
+We encourage you to always stay up to date with the latest version of No Problem.
+
+63
+00:04:21,620 --> 00:04:25,960
+Now the second step is always simply run ESLogin.
+
+64
+00:04:26,100 --> 00:04:28,460
+No problem I can simply run ESLogin.
+
+65
+00:04:29,759 --> 00:04:35,940
+So, the moment you hit ES login, you can see that they are already saying me that you are
+
+66
+00:04:36,240 --> 00:04:38,759
+already logged in as code by Suraj.
+
+67
+00:04:38,770 --> 00:04:41,139
+So, do you want it to continue or no?
+
+68
+00:04:42,190 --> 00:04:44,039
+So, as you know, I am already logged in.
+
+69
+00:04:44,330 --> 00:04:46,060
+So, I can simply say no.
+
+70
+00:04:46,550 --> 00:04:46,740
+But.
+
+71
+00:04:47,300 --> 00:04:53,860
+If you just simply hit a yes login, they are going to show you some we can say URL you
+
+72
+00:04:53,861 --> 00:04:58,560
+can simply visit there, put your credentials and login you guys are developer you can simply
+
+73
+00:04:58,620 --> 00:04:59,699
+do so that no problem.
+
+74
+00:05:00,460 --> 00:05:07,319
+And if you also wanted to check you are logged in with which ID you can simply run yes.
+
+75
+00:05:07,900 --> 00:05:08,740
+Who am I?
+
+76
+00:05:09,360 --> 00:05:10,340
+Alright, what you will run?
+
+77
+00:05:10,380 --> 00:05:12,300
+You can simply run EAS, who am I?
+
+78
+00:05:12,380 --> 00:05:16,580
+And if I hit this, you will see this is the username which is coming.
+
+79
+00:05:17,340 --> 00:05:17,780
+No problem.
+
+80
+00:05:18,979 --> 00:05:19,040
+Alright.
+
+81
+00:05:19,919 --> 00:05:20,880
+Now, what next?
+
+82
+00:05:21,500 --> 00:05:22,460
+Next is very important.
+
+83
+00:05:22,620 --> 00:05:23,580
+Next they are saying you.
+
+84
+00:05:24,100 --> 00:05:29,260
+is to configure the project to configure an Android or an iOS.
+
+85
+00:05:29,460 --> 00:05:35,820
+I'm only going to focus on Android for now to configure because wider audience have Android.
+
+86
+00:05:36,120 --> 00:05:41,360
+That's why and this is easy to understand because iOS have a lot of we can say security
+
+87
+00:05:42,110 --> 00:05:42,280
+things.
+
+88
+00:05:42,530 --> 00:05:47,640
+So, I just don't want it to go into that for now at least to configure an Android or
+
+89
+00:05:47,820 --> 00:05:49,920
+an iOS project for ES build.
+
+90
+00:05:50,690 --> 00:05:51,700
+Run the following command.
+
+91
+00:05:53,220 --> 00:06:00,020
+So, if I just simply copy this and if I just paste it, es build colon configure.
+
+92
+00:06:01,139 --> 00:06:07,440
+So, this is basically going to start configuring my build and you will see.
+
+93
+00:06:07,800 --> 00:06:10,259
+ES project not configured, no problem.
+
+94
+00:06:10,889 --> 00:06:14,940
+Would you like to automatically create an ES project for this module 10?
+
+95
+00:06:15,129 --> 00:06:16,099
+Yes, I wanted to.
+
+96
+00:06:16,100 --> 00:06:17,240
+I can simply say yes.
+
+97
+00:06:18,080 --> 00:06:20,300
+Now on to my dashboard, look at that.
+
+98
+00:06:20,310 --> 00:06:21,360
+They are giving me a link.
+
+99
+00:06:22,220 --> 00:06:27,159
+HTTPS, export dev account code by Suraj projects and module 10.
+
+100
+00:06:27,190 --> 00:06:31,060
+If I just simply press this for you guys and open it.
+
+101
+00:06:31,800 --> 00:06:40,580
+You will find that ok now inside the project I have this project name as module 10 making
+
+102
+00:06:40,720 --> 00:06:48,539
+sense nice this is your dashboard amazing tool so which platform would you like to configure
+
+103
+00:06:48,680 --> 00:06:54,780
+for AIS build so no don't press on all for now let's go with android same you can go
+
+104
+00:06:54,800 --> 00:06:58,680
+with iOS but for now let me just simply press android.
+
+105
+00:06:59,300 --> 00:07:07,120
+Nice, now what they are saying, your project is ready to build nice run EIS build when
+
+106
+00:07:07,199 --> 00:07:13,639
+you are ready to create your first build and once the build is complete run EIS submit
+
+107
+00:07:13,879 --> 00:07:15,860
+to upload to app to App Store.
+
+108
+00:07:15,879 --> 00:07:18,159
+No, we don't want it to do that right now at least.
+
+109
+00:07:18,840 --> 00:07:19,120
+All right.
+
+110
+00:07:19,620 --> 00:07:24,919
+So if I just CLS this and again coming to here, let me go to this.
+
+111
+00:07:26,600 --> 00:07:32,280
+Next step after configuration for development, definitely we recommend creating a development
+
+112
+00:07:32,500 --> 00:07:36,800
+build and if I just simply press on development build, how to create that.
+
+113
+00:07:37,750 --> 00:07:42,100
+So for that you need a library known as Dev client.
+
+114
+00:07:42,700 --> 00:07:44,960
+So, let's install this first of all.
+
+115
+00:07:45,200 --> 00:07:49,360
+So, this is your expo dev client, no problem.
+
+116
+00:07:49,760 --> 00:07:56,440
+I can simply hit BUNX, expo install expo dev client, no problem, simple thing.
+
+117
+00:07:57,180 --> 00:08:00,620
+Alright, so in less than 7 seconds, we have installed it successfully.
+
+118
+00:08:01,420 --> 00:08:01,880
+What next?
+
+119
+00:08:02,320 --> 00:08:04,520
+Next is to run a build.
+
+120
+00:08:04,840 --> 00:08:05,040
+But.
+
+121
+00:08:05,500 --> 00:08:10,380
+Next thing they are saying you additional configuration may be required for some scenarios
+
+122
+00:08:10,450 --> 00:08:16,260
+that your app depend on environment variable not now at least is your project inside of
+
+123
+00:08:16,261 --> 00:08:21,260
+a monodap or not now do use private npm packages again not now.
+
+124
+00:08:21,690 --> 00:08:22,960
+So what is the next step?
+
+125
+00:08:23,380 --> 00:08:27,120
+Next step is this simply run EAS build.
+
+126
+00:08:27,700 --> 00:08:35,040
+platform and you can also just build for we can say profile, there's multiple profile,
+
+127
+00:08:35,240 --> 00:08:36,380
+let me explain you what is that.
+
+128
+00:08:36,840 --> 00:08:41,700
+So right now if I just simply move ahead and try to show you what has changed inside our
+
+129
+00:08:41,799 --> 00:08:42,260
+application.
+
+130
+00:08:42,880 --> 00:08:49,760
+So first thing you will find a new JSON file name as EAS build, alright, then this is basically
+
+131
+00:08:49,880 --> 00:08:53,320
+showing the EAS version and this is the main thing which is the build.
+
+132
+00:08:53,800 --> 00:08:56,519
+And build is in three profiles.
+
+133
+00:08:56,920 --> 00:09:01,940
+First profile is the development with development client as true.
+
+134
+00:09:02,000 --> 00:09:08,300
+So this means whenever you are going to install this development client inside your physical
+
+135
+00:09:08,700 --> 00:09:14,220
+or simulator device you are actually getting the debug version of your application.
+
+136
+00:09:14,959 --> 00:09:20,519
+So you can actually connect that with your metro server and whenever you make change
+
+137
+00:09:20,520 --> 00:09:22,060
+inside this you can see the output.
+
+138
+00:09:22,600 --> 00:09:29,199
+Then we have a preview, this is basically for internal distribution to your manager,
+
+139
+00:09:29,329 --> 00:09:33,199
+to your tester, to your team members basically and this is the production.
+
+140
+00:09:33,839 --> 00:09:52,579
+Production profile means you wanted to, you wanted to, you wanted to, you wanted to, you
+
+141
+00:09:52,580 --> 00:09:52,600
+send this application and we can say upload this application to the App Store or Play
+
+142
+00:09:52,601 --> 00:09:52,621
+Store.
+
+143
+00:09:52,622 --> 00:09:52,642
+Then we have another services like AS Summit but for now we do not need it.
+
+144
+00:09:52,643 --> 00:09:54,080
+Along with this you also go inside your package JSON.
+
+145
+00:09:54,600 --> 00:10:00,220
+And inside the package JSON, you will find something known as export dev client.
+
+146
+00:10:00,860 --> 00:10:01,259
+No problem.
+
+147
+00:10:01,639 --> 00:10:03,860
+So now we have all the things ready.
+
+148
+00:10:04,259 --> 00:10:09,319
+So what we have did inside this chapter, we have basically configure a development build.
+
+149
+00:10:09,940 --> 00:10:10,199
+All right.
+
+150
+00:10:10,300 --> 00:10:13,639
+This is thing, one more thing, which is very important.
+
+151
+00:10:13,800 --> 00:10:19,839
+If you go inside your app JSON, and if you go to the very down, yes, you will see something
+
+152
+00:10:20,500 --> 00:10:20,940
+new.
+
+153
+00:10:21,600 --> 00:10:27,800
+which is name as extra and inside this extra you will find a router which is empty and
+
+154
+00:10:27,959 --> 00:10:31,779
+yes they have a project ID with this name.
+
+155
+00:10:32,579 --> 00:10:39,019
+Alright so this project ID is basically this thing got it this is the project ID which
+
+156
+00:10:39,120 --> 00:10:45,360
+is configured here alright look at that we have DD83 at the end here we also had DD83
+
+157
+00:10:45,519 --> 00:10:46,459
+at the end.
+
+158
+00:10:46,940 --> 00:10:47,980
+So this is the first step.
+
+159
+00:10:48,300 --> 00:10:53,899
+And what is the name of this step is to how to configure a development build.
+
+160
+00:10:54,269 --> 00:10:59,180
+So from next shifter we are going to see how you can create the actual build and use that
+
+161
+00:10:59,380 --> 00:11:00,040
+into your device.
+
+162
+00:11:00,660 --> 00:11:04,959
+So this is pretty much it for this shifter and see you next time.
+

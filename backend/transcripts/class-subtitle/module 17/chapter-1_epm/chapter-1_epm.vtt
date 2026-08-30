@@ -1,0 +1,413 @@
+WEBVTT
+
+00:00:00.719 --> 00:00:04.900
+All right, everyone, and welcome to one more new module.
+
+00:00:05.080 --> 00:00:09.140
+In this module, we are going to talk about one more new project.
+
+00:00:09.340 --> 00:00:12.440
+The name is AI Story Generator.
+
+00:00:12.960 --> 00:00:18.100
+And this is one of the amazing project that you can directly add into your resume.
+
+00:00:18.800 --> 00:00:19.880
+This is the project we are.
+
+00:00:20.300 --> 00:00:24.900
+Actually, let me if I just try to explain you the flow of this application, let's say
+
+00:00:24.901 --> 00:00:30.860
+this is a mobile phone and then at the top of it you are going to get a text area and
+
+00:00:30.861 --> 00:00:32.320
+you will enter your prompt.
+
+00:00:33.059 --> 00:00:37.059
+On the basis of this prompt, we are going to hit a.
+
+00:00:38.719 --> 00:00:42.780
+your expo API route, basically the backend of it.
+
+00:00:43.039 --> 00:00:48.399
+This backend is using some AI related stuff, something known as AISDK.
+
+00:00:48.420 --> 00:00:49.559
+I'll explain you everything.
+
+00:00:49.739 --> 00:00:50.180
+Don't worry.
+
+00:00:51.620 --> 00:00:54.600
+So, this AISDK and everything is free to use.
+
+00:00:54.680 --> 00:00:55.739
+So, don't worry about it.
+
+00:00:55.900 --> 00:01:02.560
+Then this AISDK is going to give us some response and then on the basis of this response we
+
+00:01:02.620 --> 00:01:08.640
+are going to use some third party library that will generate a text to image for us
+
+00:01:09.140 --> 00:01:15.180
+alright and on the basis of that image we are going to create one story page and into
+
+00:01:18.259 --> 00:01:22.680
+Let's say at least of 10 images and stories.
+
+00:01:22.860 --> 00:01:26.580
+So this is our image 1, then we have paragraph related to this.
+
+00:01:27.259 --> 00:01:33.000
+In same way, this is our image 2, then the paragraph and scrolling towards the top and
+
+00:01:33.001 --> 00:01:36.500
+you can even download the images and read the story.
+
+00:01:36.780 --> 00:01:41.399
+So this looks very simple, but you will learn a lot of things into it.
+
+00:01:41.400 --> 00:01:48.340
+So, the first step is simply move ahead and initialize a project and some bunch of foundational
+
+00:01:48.440 --> 00:01:52.260
+related things we are going to implement into this chapter number one.
+
+00:01:52.880 --> 00:01:59.620
+So, I have already created one folder name is ai-story-generator then simply run burnx
+
+00:02:00.380 --> 00:02:02.880
+create expo app at the latest.
+
+00:02:03.340 --> 00:02:08.840
+So, this is going to create a new application for me then dot slash alright.
+
+00:02:09.400 --> 00:02:14.079
+So, we can definitely wait for few seconds and then I will be right back.
+
+00:02:14.900 --> 00:02:19.140
+Alright and after this what we will do we can simply reset our project.
+
+00:02:19.141 --> 00:02:27.459
+So, I can simply say burn run reset project ok and then I can simply say no or maybe not
+
+00:02:27.460 --> 00:02:29.579
+you can reset that.
+
+00:02:31.120 --> 00:02:39.620
+Alright, then if I simply run bunx expostart, so this is going to run my development server.
+
+00:02:40.040 --> 00:02:40.320
+Perfect.
+
+00:02:40.380 --> 00:02:41.560
+So, let's just wait for it.
+
+00:02:41.860 --> 00:02:48.480
+Simply press on A. So, this is going to build the bundle of Android and then going to open
+
+00:02:48.481 --> 00:02:49.100
+for us.
+
+00:02:49.200 --> 00:02:49.640
+Alright.
+
+00:02:50.480 --> 00:02:50.680
+Perfect.
+
+00:02:50.720 --> 00:02:54.000
+So, this is how our application actually looks.
+
+00:02:55.160 --> 00:02:56.200
+Now, let's move ahead.
+
+00:02:56.800 --> 00:03:04.860
+And, first thing is I wanted to set up my all the constants that I am going to use in
+
+00:03:04.900 --> 00:03:05.900
+upcoming chapters.
+
+00:03:06.390 --> 00:03:11.120
+So, for that at the root of it I am going to create one constant.
+
+00:03:13.260 --> 00:03:18.340
+And then the name of this constant is going to be the theme.
+
+00:03:19.840 --> 00:03:21.540
+theme.ts, perfect.
+
+00:03:23.060 --> 00:03:27.460
+And then let me simply copy and paste all the themes that I'm going to use.
+
+00:03:27.520 --> 00:03:31.580
+So this is the colors like some bunch of shades related to zinc.
+
+00:03:32.440 --> 00:03:36.160
+Just trying to match with Tailwind's design strategy.
+
+00:03:36.620 --> 00:03:38.120
+And then this is related to yellow.
+
+00:03:38.380 --> 00:03:38.620
+Yes.
+
+00:03:38.621 --> 00:03:41.900
+So the theme of our application is zinc or yellow.
+
+00:03:42.100 --> 00:03:45.540
+This is the accent color and this is the background colors that we have.
+
+00:03:45.700 --> 00:03:48.760
+And this is all the themes like this is your background.
+
+00:03:48.940 --> 00:03:49.959
+This is your card.
+
+00:03:50.239 --> 00:03:54.300
+This is your borders text, text, secondary, primary and primary dark.
+
+00:03:54.780 --> 00:04:01.220
+This is always a good practice to define all of your themes and color related thing.
+
+00:04:01.340 --> 00:04:04.860
+And we can say branding related thing into a separate file.
+
+00:04:04.900 --> 00:04:09.939
+So, that in future let's say you wanted to change your branding, so you can just directly
+
+00:04:09.940 --> 00:04:14.579
+change that at one place and it will reflect into your entire application.
+
+00:04:14.599 --> 00:04:18.380
+So, that is the main point of doing this easy.
+
+00:04:19.479 --> 00:04:21.959
+So, I hope so this makes sense now perfect.
+
+00:04:22.340 --> 00:04:27.880
+Now let's move ahead and simply go inside the root layout as well.
+
+00:04:28.940 --> 00:04:33.900
+And inside this root layout, okay, so this is the root layout that we have.
+
+00:04:34.240 --> 00:04:36.900
+For now, they are only showing us what?
+
+00:04:37.680 --> 00:04:38.440
+A stack.
+
+00:04:39.020 --> 00:04:42.979
+But I wanted to have my application into the dark theme.
+
+00:04:43.919 --> 00:04:50.860
+So, for that, we are going to use here, I can simply say import, then simply say dark theme.
+
+00:04:51.020 --> 00:04:55.800
+Yes, dark theme from React navigation and also the theme provider.
+
+00:04:56.560 --> 00:04:56.879
+Perfect.
+
+00:04:58.580 --> 00:05:01.760
+And let me off my AI as well.
+
+00:05:01.860 --> 00:05:02.100
+Nice.
+
+00:05:02.360 --> 00:05:06.260
+And then instead of this, I'm simply going to return the stack.
+
+00:05:07.260 --> 00:05:12.020
+But this stack is wrapped inside something known as theme provider.
+
+00:05:13.900 --> 00:05:17.720
+Let me cut this down and let me paste it.
+
+00:05:18.020 --> 00:05:21.020
+And then this theme provider is going to have a value.
+
+00:05:21.560 --> 00:05:24.240
+The value is going to be dark theme.
+
+00:05:24.500 --> 00:05:24.699
+Perfect.
+
+00:05:24.800 --> 00:05:25.720
+Now look at that.
+
+00:05:25.800 --> 00:05:27.099
+We are into dark mode.
+
+00:05:27.460 --> 00:05:27.819
+Nice.
+
+00:05:29.020 --> 00:05:33.240
+And easily you can implement the dark and light mode toggle with the help of this theme
+
+00:05:33.400 --> 00:05:33.659
+provider.
+
+00:05:33.720 --> 00:05:34.819
+Such amazing thing.
+
+00:05:36.400 --> 00:05:41.840
+After this, what I wanted you to do is to simply go to a stack and inside the stack
+
+00:05:41.841 --> 00:05:44.740
+you can pass all the screen options that we have.
+
+00:05:45.539 --> 00:05:50.300
+So the first screen option is header shown as false and then a lot of things.
+
+00:05:50.400 --> 00:05:51.500
+Let me show you all of them.
+
+00:05:53.020 --> 00:05:58.160
+Okay, let me paste it and then let me import my theme from constant theme.
+
+00:05:59.020 --> 00:06:04.500
+So now you guys can see that we are not anymore able to see the headers.
+
+00:06:04.760 --> 00:06:04.880
+Why?
+
+00:06:04.980 --> 00:06:06.640
+Because header shown is false.
+
+00:06:07.260 --> 00:06:09.640
+Then we have a content style.
+
+00:06:10.220 --> 00:06:13.220
+Then we have header style and header tint color.
+
+00:06:13.720 --> 00:06:14.640
+Okay, very good.
+
+00:06:15.300 --> 00:06:19.460
+Now we are going to have two main screen.
+
+00:06:19.600 --> 00:06:24.220
+One is your index screen and another one is your story screen.
+
+00:06:24.360 --> 00:06:26.960
+So we already have an index screen, no problem.
+
+00:06:27.960 --> 00:06:30.420
+In the same way I can have one story screen.
+
+00:06:30.480 --> 00:06:33.640
+So R and FES and I can simply say this is story.
+
+00:06:34.740 --> 00:06:39.540
+Okay, close this and now coming to here and let's modify them as well.
+
+00:06:40.000 --> 00:06:47.440
+So, first thing that we have the stack screen and the name of this screen is index, no problem.
+
+00:06:48.100 --> 00:06:54.600
+In same way, I can have another screen, stack screen and the name is going to be, guess
+
+00:06:54.601 --> 00:06:56.100
+that story exactly.
+
+00:06:56.960 --> 00:07:02.860
+So, this is your story and then what I will do, I will simply add the options and for
+
+00:07:02.940 --> 00:07:06.260
+the story, okay, I can simply say.
+
+00:07:08.600 --> 00:07:19.440
+header shown as false and then title is going to be we can say your story whatever is that
+
+00:07:19.441 --> 00:07:22.700
+you wanted to add it's up to you.
+
+00:07:24.000 --> 00:07:29.320
+After this, I wanted to show header back title is back itself.
+
+00:07:29.700 --> 00:07:30.480
+So perfect.
+
+00:07:31.760 --> 00:07:34.680
+And then I will self close this.
+
+00:07:35.100 --> 00:07:35.480
+Very good.
+
+00:07:35.760 --> 00:07:40.880
+And last thing is the status bar because although we need not to but it's fine.
+
+00:07:41.040 --> 00:07:46.960
+Let me just simply add the status bar and this status bar will come from expose status
+
+00:07:46.961 --> 00:07:47.360
+bar.
+
+00:07:47.640 --> 00:07:48.260
+No problem.
+
+00:07:49.240 --> 00:07:51.400
+And then simply format it once.
+
+00:07:53.060 --> 00:07:53.660
+Amazing.
+
+00:07:54.180 --> 00:07:56.000
+Now this is what we are done with.
+
+00:07:56.280 --> 00:08:02.220
+Now we have successfully organized it and in same way if you wanted to use the link
+
+00:08:02.360 --> 00:08:10.500
+and let's say you wanted to go into story and let me just simply render here the text.
+
+00:08:12.800 --> 00:08:15.420
+The text is going to say me go to story.
+
+00:08:16.520 --> 00:08:16.720
+Okay.
+
+00:08:16.800 --> 00:08:18.880
+And definitely this is in black color.
+
+00:08:19.020 --> 00:08:20.020
+We'll fix it.
+
+00:08:20.460 --> 00:08:20.840
+Don't worry.
+
+00:08:21.320 --> 00:08:24.220
+And the moment I press, I'm definitely in story.
+
+00:08:24.340 --> 00:08:27.540
+Hopefully when I'm not be able to see anything here.
+
+00:08:28.680 --> 00:08:29.160
+Okay.
+
+00:08:29.240 --> 00:08:29.940
+It's fine.
+
+00:08:30.160 --> 00:08:30.340
+Maybe.
+
+00:08:30.480 --> 00:08:30.820
+Yes.
+
+00:08:31.120 --> 00:08:35.280
+I don't know you are able to see this or not, but this is the story text that we have.
+
+00:08:35.600 --> 00:08:37.819
+I will fix it later, no worries.
+
+00:08:38.459 --> 00:08:42.440
+But for now, we have successfully set up this.
+
+00:08:42.759 --> 00:08:48.980
+From the next shifter we are going to work on to our UI screens and navigation.
+
+00:08:49.339 --> 00:08:54.120
+So yes, this is pretty much it for this shifter and see you next time.
+

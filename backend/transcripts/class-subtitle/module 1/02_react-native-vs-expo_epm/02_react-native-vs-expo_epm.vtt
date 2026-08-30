@@ -1,0 +1,518 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:05.640
+All right everyone and welcome to chapter number two of our module number one.
+
+00:00:06.240 --> 00:00:11.600
+In this chapter we are going to understand React Native and we are also going to understand
+
+00:00:11.601 --> 00:00:16.740
+what is Expo and then we are going to have a very good comparison between React Native
+
+00:00:17.280 --> 00:00:17.880
+and Expo.
+
+00:00:17.900 --> 00:00:23.060
+Perfect, this is definitely going to be a theoretical chapter but don't worry every
+
+00:00:23.061 --> 00:00:24.920
+bit of it is going to be worth it.
+
+00:00:24.980 --> 00:00:30.240
+Now before moving ahead first of all I just wanted to talk about what is React Native.
+
+00:00:30.340 --> 00:00:34.320
+If I just simply coming to here and write what is RN?
+
+00:00:34.430 --> 00:00:36.160
+RN means React Native.
+
+00:00:37.780 --> 00:00:43.180
+Perfect, but also before this if I just simply ask you one question.
+
+00:00:43.600 --> 00:00:50.420
+If you want to build an app like Instagram perfect if I just simply coming to here and
+
+00:00:50.421 --> 00:00:56.000
+then I write drop here the Instagram let's say if you wanted to build a app like Instagram
+
+00:00:56.860 --> 00:01:02.960
+so do you really wanted to write two separate code base just listen to me carefully let's
+
+00:01:04.599 --> 00:01:12.200
+Instagram clone, do you really want it to write a two separate app, one for iOS and
+
+00:01:12.240 --> 00:01:14.220
+then another one is for Android?
+
+00:01:17.100 --> 00:01:24.800
+I don't think so, like most developers don't and that's exactly why React Native exists.
+
+00:01:25.200 --> 00:01:27.340
+So, what is react native?
+
+00:01:27.750 --> 00:01:35.840
+If I just simply come into here and say react native is a framework, yes, react native is
+
+00:01:35.841 --> 00:01:41.960
+a framework that lets you build that lets you build.
+
+00:01:42.880 --> 00:01:54.119
+Real mobile app using JS and react like if you are a web developer and switching to mobile
+
+00:01:54.240 --> 00:02:00.799
+development you just need to know about JavaScript and react which is you know very well.
+
+00:02:01.100 --> 00:02:07.600
+So, with one code base like if I just simply come into here and then say with one code
+
+00:02:07.601 --> 00:02:15.180
+base like this is your one code base you can write your app for Android and you can even
+
+00:02:15.181 --> 00:02:17.739
+write your app for iOS.
+
+00:02:17.940 --> 00:02:21.040
+So, this is the beauty of React Native.
+
+00:02:21.300 --> 00:02:25.040
+Now, very important thing, listen to me carefully.
+
+00:02:25.560 --> 00:02:28.120
+React Native apps are not website.
+
+00:02:28.780 --> 00:02:28.960
+Yes.
+
+00:02:29.120 --> 00:02:31.060
+So keep this in mind.
+
+00:02:31.180 --> 00:02:33.280
+I'm just marking here a star.
+
+00:02:33.960 --> 00:02:39.220
+React Native apps are not website.
+
+00:02:39.660 --> 00:02:44.200
+Like most of developer are confusing this, but make sure to keep that in mind.
+
+00:02:44.720 --> 00:02:47.660
+React Native apps is the actual mobile app.
+
+00:02:47.800 --> 00:02:50.960
+Be it iOS or Android doesn't matter.
+
+00:02:51.500 --> 00:02:54.060
+They don't run inside a browser.
+
+00:02:55.660 --> 00:02:59.700
+When you write react native code, you are going to see something very different.
+
+00:03:00.220 --> 00:03:03.640
+Like instead of writing div, I'll show you the entire code of it.
+
+00:03:03.660 --> 00:03:03.940
+Don't worry.
+
+00:03:03.941 --> 00:03:07.360
+Instead of writing div, you are going to write here the view.
+
+00:03:07.900 --> 00:03:17.000
+instead of writing paragraph, h1, span, you are going to write here the text or for button
+
+00:03:17.040 --> 00:03:19.980
+I mean this is same you are going to write here the button.
+
+00:03:20.720 --> 00:03:22.540
+So what is this means?
+
+00:03:23.299 --> 00:03:23.939
+This means...
+
+00:03:24.500 --> 00:03:32.240
+React Native converts it into actual native components. You need not to go too much depth
+
+00:03:32.280 --> 00:03:41.980
+into it, but just listen to me carefully. React Native converts it into actual native
+
+00:03:43.940 --> 00:03:45.840
+native component. Perfect.
+
+00:03:46.180 --> 00:03:49.160
+Actual native component. Cool.
+
+00:03:49.680 --> 00:03:53.320
+So that's why app build with react native,
+
+00:03:53.580 --> 00:03:57.400
+like whenever you build any app with react native, first of all,
+
+00:03:57.460 --> 00:03:59.680
+they are going to feel you very fast.
+
+00:03:59.700 --> 00:04:02.500
+Then they are going to look very native.
+
+00:04:02.840 --> 00:04:09.220
+Native means if you build for iOS, you will see like every UI is resembling with the iOS
+
+00:04:09.319 --> 00:04:09.519
+UI.
+
+00:04:10.060 --> 00:04:15.260
+But whenever you are building for Android, you are going to see all your UIs, all your
+
+00:04:15.261 --> 00:04:20.360
+buttons, all your selects are resembling with an Android native UI.
+
+00:04:20.700 --> 00:04:27.120
+Perfect. They work offline. Yes, they work very well offline. They can access. Yes, one
+
+00:04:27.121 --> 00:04:33.060
+of the best thing about React Native, they can access your camera. They can access your
+
+00:04:33.061 --> 00:04:39.540
+GPS. They can help you to create a notification system. They can even access your gallery.
+
+00:04:40.100 --> 00:04:44.540
+They can even access a xero scope. I mean, there are a lot of things to do and don't
+
+00:04:44.640 --> 00:04:48.240
+worry. We are going to discuss each and every topic out of it.
+
+00:04:49.560 --> 00:04:56.960
+So, if I just tell you a simple comparison between web apps, first of all let me change
+
+00:04:56.961 --> 00:04:58.860
+my color this one.
+
+00:04:59.139 --> 00:05:02.600
+If I just try to give you a basic comparison this is your web apps.
+
+00:05:03.240 --> 00:05:12.139
+So web apps always runs in browser we know that then they uses HTML and CSS and JavaScript
+
+00:05:12.500 --> 00:05:16.440
+They have limited access to device features.
+
+00:05:16.840 --> 00:05:23.220
+Yes, like whenever you are building a web apps, they don't have even the direct access
+
+00:05:23.221 --> 00:05:25.380
+of your actual device features.
+
+00:05:26.440 --> 00:05:31.580
+But whenever you build a react native app, whenever you build.
+
+00:05:31.600 --> 00:05:39.620
+If I just try to copy this and write down that here, whenever you wanted to build a
+
+00:05:39.621 --> 00:05:40.540
+react native app.
+
+00:05:41.060 --> 00:05:46.240
+So this is going to be built like first of all, they are going to build using JS.
+
+00:05:46.560 --> 00:05:49.700
+So everything is going to be look known to you.
+
+00:05:50.100 --> 00:05:53.700
+You have a one code base for iOS for Android.
+
+00:05:54.000 --> 00:05:57.340
+Then they give you a near native performance.
+
+00:05:57.440 --> 00:05:58.720
+What is this native mean?
+
+00:05:58.920 --> 00:06:04.920
+Native mean for which platform you are developing like is you are developing for Android or iOS.
+
+00:06:05.000 --> 00:06:08.900
+So native means Android or iOS depends on your mobile device.
+
+00:06:09.960 --> 00:06:10.180
+Cool.
+
+00:06:10.740 --> 00:06:15.620
+So this is going to be near native performance and faster development.
+
+00:06:15.780 --> 00:06:16.880
+Why faster development?
+
+00:06:17.020 --> 00:06:19.380
+You have one code base for two different apps.
+
+00:06:19.700 --> 00:06:28.580
+for two different OS. So for 90% of real world app, React Native is more than enough. So
+
+00:06:28.840 --> 00:06:36.720
+that's why like companies, yep, that's why companies like Insta, companies like Shopify,
+
+00:06:37.560 --> 00:06:45.740
+companies like Discord, companies like Uber, they all are using, yes, they all are using
+
+00:06:45.741 --> 00:06:48.600
+React natives to build their apps.
+
+00:06:49.680 --> 00:06:52.639
+Perfect, but it is a limitation.
+
+00:06:52.860 --> 00:06:53.860
+What is the limitation?
+
+00:06:54.199 --> 00:06:57.639
+Let me take you to the documentation of react native dot def.
+
+00:06:57.800 --> 00:06:59.080
+So make sure you visit here.
+
+00:06:59.560 --> 00:07:01.220
+This is how the landing page looks.
+
+00:07:01.740 --> 00:07:05.139
+You can definitely scroll and skim it.
+
+00:07:05.900 --> 00:07:13.440
+But I just simply wanted to click on get started and the moment you click on get started just
+
+00:07:13.500 --> 00:07:21.960
+try to read this react native allow developers who know react to create native apps at the
+
+00:07:22.000 --> 00:07:27.639
+same time native developers can use react native to gain a parity.
+
+00:07:28.199 --> 00:07:33.919
+I hope I'm pronouncing it right if not excuse me for that between a native platforms by
+
+00:07:35.200 --> 00:07:37.300
+Common features once.
+
+00:07:38.620 --> 00:07:40.280
+What is native developers?
+
+00:07:40.780 --> 00:07:43.200
+Native developers means like
+
+00:07:44.260 --> 00:07:46.120
+if you are only developing for iOS
+
+00:07:46.300 --> 00:07:48.080
+or only developing for Android
+
+00:07:48.240 --> 00:07:50.900
+like if you are only using Flutter or SIFT.
+
+00:07:51.100 --> 00:07:52.120
+I hope so I make sense.
+
+00:07:52.200 --> 00:08:00.200
+We believe yes, we believe that the best way to experience react native is through a framework.
+
+00:08:01.040 --> 00:08:09.040
+Yes, we have react natives framework as well a toolbox with all the necessary APIs to let
+
+00:08:09.041 --> 00:08:11.060
+you build production ready apps.
+
+00:08:11.400 --> 00:08:14.979
+You can also use react native without a framework.
+
+00:08:15.460 --> 00:08:20.560
+Don't worry like if you don't want it to go with any framework, you can simply use it.
+
+00:08:20.699 --> 00:08:25.259
+But react native officially recommending you to use a framework.
+
+00:08:26.500 --> 00:08:29.460
+So the name of that framework is expo.
+
+00:08:29.500 --> 00:08:36.500
+So you can simply visit to this site known as Expo and let me just simply go to my documentation
+
+00:08:36.659 --> 00:08:40.120
+and this is what Expo means and let me go to my introduction.
+
+00:08:40.940 --> 00:08:42.559
+What is this Expo means?
+
+00:08:43.120 --> 00:08:51.540
+So Expo is a framework, React natives framework that makes developing Android and iOS app
+
+00:08:51.541 --> 00:08:52.040
+easier.
+
+00:08:52.940 --> 00:08:55.380
+Our framework provide file based routing.
+
+00:08:57.600 --> 00:09:03.639
+Familiar with Next.js like if you don't it's fine but if you are familiar with Next.js
+
+00:09:04.220 --> 00:09:06.259
+so they also support file-based routing.
+
+00:09:06.759 --> 00:09:11.600
+A standard library for native modules and much more.
+
+00:09:11.920 --> 00:09:14.819
+Expo is a open source like this is free to use.
+
+00:09:16.000 --> 00:09:20.139
+So this is what Expo is and now we are going to talk about Expo.
+
+00:09:20.800 --> 00:09:28.080
+So, where expo comes in, now react native is a powerful we know that react native is
+
+00:09:28.081 --> 00:09:35.800
+very powerful like this is let's say this is your react native very powerful, but setup
+
+00:09:35.899 --> 00:09:41.980
+can sometime feels heavy like if you wanted to setup a react native you are going to feel
+
+00:09:41.981 --> 00:09:48.140
+very heavy for that like you need to run this command that command ejected do lot of bunch
+
+00:09:48.141 --> 00:09:48.620
+of things.
+
+00:09:49.000 --> 00:09:52.080
+But this is where Expo comes.
+
+00:09:52.360 --> 00:09:57.920
+So think of it like React Native is there, we can say that the engine, but Expo is a
+
+00:09:57.921 --> 00:09:59.420
+smooth driving experience.
+
+00:10:00.090 --> 00:10:05.320
+So now let's move ahead and talk about what is Expo.
+
+00:10:05.400 --> 00:10:09.660
+And, and again Expo is not a replacement for React Native.
+
+00:10:10.120 --> 00:10:15.280
+React Native is the core framework and Expo is a tool built on top of React Native.
+
+00:10:15.420 --> 00:10:21.800
+So first thing is if I just write the definition about Expo let me search if we have the logo
+
+00:10:21.801 --> 00:10:22.520
+for it yes.
+
+00:10:22.800 --> 00:10:24.100
+So what is this Expo?
+
+00:10:25.000 --> 00:10:49.980
+Expo means Expo is a framework or tool we can say built on top of a
+
+00:10:49.981 --> 00:10:50.001
+React Native. Perfect. So, Expo sit on top of React Native and make things easier for
+
+00:10:50.002 --> 00:10:50.022
+you. Like they give you minimal setup, ready to use APIs. APIs means they give you camera
+
+00:10:50.023 --> 00:10:53.000
+API, they give you media API, they give you location API out of the box.
+
+00:10:53.200 --> 00:10:58.900
+And, they even provide you for a better development experience like whenever we are going to set
+
+00:10:58.901 --> 00:11:03.920
+up our expo in upcoming lectures, you will going to learn about expogo.
+
+00:11:05.480 --> 00:11:11.560
+So expogo is for your application testing, you can just simply install that and see all
+
+00:11:11.580 --> 00:11:16.920
+the outputs inside your app or emulator, whatever you are using simulator, emulator whatever
+
+00:11:16.921 --> 00:11:17.580
+is that.
+
+00:11:19.720 --> 00:11:24.839
+Perfect, so Expo is faster to start, they have less configuration, they are very beginner
+
+00:11:24.840 --> 00:11:30.199
+friendly and still production ready, like you can directly ship your products into the production.
+
+00:11:30.980 --> 00:11:33.440
+Like if I just simply go to chai code website.
+
+00:11:34.500 --> 00:11:39.160
+Perfect, if I just simply go to chai code website and if you go at the very bottom of
+
+00:11:39.161 --> 00:11:44.820
+it, we have bunch of app like chai code, we have masters G, we have a lot of other app
+
+00:11:45.000 --> 00:11:45.300
+as well.
+
+00:11:45.520 --> 00:11:48.760
+So they all are built with expo itself.
+
+00:11:48.761 --> 00:11:51.240
+If I just simply press on Master G.
+
+00:11:52.140 --> 00:11:55.540
+This app, yes, we have also the MasterG app as well.
+
+00:11:55.860 --> 00:11:59.540
+So whenever you are going to check that, you will going to see that they built on top of
+
+00:11:59.840 --> 00:12:05.360
+expo itself and we are handling a huge user database.
+
+00:12:05.560 --> 00:12:06.840
+Perfect, huge user base.
+
+00:12:07.600 --> 00:12:16.240
+So, now the one of the question arise which one you choose, so which one you choose which
+
+00:12:16.241 --> 00:12:20.060
+is recommended by official documentation of React Native.
+
+00:12:20.880 --> 00:12:26.139
+If you want a best way to experience React Native is through a framework and the name
+
+00:12:26.140 --> 00:12:28.740
+of that framework for now is Expo.
+
+00:12:29.000 --> 00:12:34.860
+With the help of Expo, you can create Android, iOS, TV and yes, you can even create web apps,
+
+00:12:35.160 --> 00:12:40.280
+but let's not go web is let's leave aside web because we have Next.
+
+00:12:40.281 --> 00:12:41.420
+Yes, we have angular.
+
+00:12:41.560 --> 00:12:42.140
+We have react.
+
+00:12:42.141 --> 00:12:43.140
+We can use that.
+
+00:12:43.380 --> 00:12:47.040
+But for now, we are only focusing on iOS Android apps.
+
+00:12:47.620 --> 00:12:51.000
+So Expo is the best way to start with your.
+
+00:12:51.880 --> 00:12:58.420
+mobile development journey best framework need not to jump to flutter jump to Kotlin
+
+00:12:58.800 --> 00:13:04.780
+expo is one of the best if you are coming from web developer web development background
+
+00:13:04.880 --> 00:13:07.600
+if not it's completely fine you can start from here.
+
+00:13:07.900 --> 00:13:15.280
+So, now tell me like if this video clear your confusion so make sure to drop the 5 star
+
+00:13:15.340 --> 00:13:17.940
+rating and now it's completely up to you.
+
+00:13:18.360 --> 00:13:22.720
+So, yeah this is pretty much it for this chapter and see you next time.
+

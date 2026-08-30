@@ -1,0 +1,320 @@
+1
+00:00:00,760 --> 00:00:06,560
+Hello everyone, in this lecture we are going to learn how to talk to external APIs from
+
+2
+00:00:06,740 --> 00:00:07,740
+your expo app.
+
+3
+00:00:08,900 --> 00:00:16,120
+External APIs are services you don't control like we can say public rest services, whether
+
+4
+00:00:16,239 --> 00:00:19,380
+APIs or any backend you did not write.
+
+5
+00:00:20,580 --> 00:00:27,660
+So, we will see how to fetch data from those services using fetch and you can even use
+
+6
+00:00:27,860 --> 00:00:29,240
+a library known as Xeos.
+
+7
+00:00:29,460 --> 00:00:33,440
+So, it's up to you, but I'm going to be as native as possible.
+
+8
+00:00:33,560 --> 00:00:35,160
+So, I wanted to use fetch here.
+
+9
+00:00:36,460 --> 00:00:39,260
+So, why do we even need to consume external APIs?
+
+10
+00:00:39,380 --> 00:00:40,340
+I mean, it's straightforward.
+
+11
+00:00:40,780 --> 00:00:41,380
+sometime.
+
+12
+00:00:43,200 --> 00:00:45,660
+External APIs are everywhere.
+
+13
+00:00:46,880 --> 00:00:49,520
+They powers you lot of features out of the box.
+
+14
+00:00:49,680 --> 00:00:56,380
+Like sometimes you wanted to fetch some real data like weather, stock price, mapping, getting
+
+15
+00:00:56,480 --> 00:00:59,460
+information we can say from third parties services.
+
+16
+00:01:00,140 --> 00:01:05,480
+Like let's say you wanted to integrate Stripe, Firebase, Superbase, Convex, then you need
+
+17
+00:01:05,720 --> 00:01:06,740
+external API calling.
+
+18
+00:01:07,380 --> 00:01:08,560
+So that's why we are doing it.
+
+19
+00:01:09,200 --> 00:01:09,860
+Perfect.
+
+20
+00:01:10,759 --> 00:01:13,860
+So let's move ahead and let me keep it very short and simple.
+
+21
+00:01:14,680 --> 00:01:21,439
+Let me create one more new here something known as post.tsx, rn, fes and this is going
+
+22
+00:01:21,560 --> 00:01:22,140
+to be post.
+
+23
+00:01:23,720 --> 00:01:27,500
+Perfect and let me take myself towards the post page.
+
+24
+00:01:27,820 --> 00:01:33,360
+So below this, let me simply use the link href2.
+
+25
+00:01:34,100 --> 00:01:38,640
+Yes, this one and then I can simply say this as post.
+
+26
+00:01:39,600 --> 00:01:39,680
+Perfect.
+
+27
+00:01:39,790 --> 00:01:42,280
+And if I press on post, I am on to my post page.
+
+28
+00:01:42,970 --> 00:01:49,500
+Now inside this post page, there is a very interesting API name is Jason placeholder.
+
+29
+00:01:50,000 --> 00:02:01,200
+Perfect, if I just simply hit the URL as sttps json placeholder.type icode.com/post and
+
+30
+00:02:01,260 --> 00:02:03,140
+you will get bunch of posts.
+
+31
+00:02:04,360 --> 00:02:09,580
+Perfect, so on the basis of that you can render them on UI but we'll see how we can do that
+
+32
+00:02:09,699 --> 00:02:10,820
+inside our expo app.
+
+33
+00:02:11,840 --> 00:02:18,700
+So, for that, let's say whenever I redirect myself towards this page, I wanted to see
+
+34
+00:02:18,739 --> 00:02:18,920
+that.
+
+35
+00:02:19,120 --> 00:02:21,440
+So, I can use use effect and use state simple.
+
+36
+00:02:22,290 --> 00:02:29,739
+So, let me simply say here the const posts and then set posts is equals to use state
+
+37
+00:02:30,400 --> 00:02:38,720
+Alright, and then let me just inside this use state let me add here the array like definitely
+
+38
+00:02:39,439 --> 00:02:48,019
+this post can be the array like you can see this array of object and then I can simply
+
+39
+00:02:48,140 --> 00:02:49,079
+use the loading.
+
+40
+00:02:49,900 --> 00:02:58,920
+And this is going to be as a set loading, LOADNG loading is equals to a view state and
+
+41
+00:02:59,079 --> 00:03:00,920
+let me initialize as true, easy.
+
+42
+00:03:01,860 --> 00:03:05,680
+And then I can simply use a method.
+
+43
+00:03:06,840 --> 00:03:12,700
+Let me name the method as const fetchPosts is equals to async.
+
+44
+00:03:14,460 --> 00:03:20,720
+And let me wrap them up wrap them up inside a try and catch finally block.
+
+45
+00:03:21,780 --> 00:03:22,560
+It's a good practice.
+
+46
+00:03:23,540 --> 00:03:28,680
+Then let me set loading as false every time when this request complete or not.
+
+47
+00:03:29,840 --> 00:03:36,100
+And by any chance if we have any error so console.error and error is basically going
+
+48
+00:03:36,260 --> 00:03:41,020
+to be something went wrong or we can say error fetching post.
+
+49
+00:03:43,240 --> 00:03:51,580
+Alright, so this is going to be error fetching posts and then I can simply say an inside
+
+50
+00:03:51,720 --> 00:03:59,900
+my try I can simply say cons response is equals to await fetch not fetch post this fetch you
+
+51
+00:03:59,901 --> 00:04:06,080
+can even use a axios here as well and inside this let me use this URL perfect.
+
+52
+00:04:06,700 --> 00:04:12,099
+So, I can simply paste this URL and yep, we are good to go.
+
+53
+00:04:12,319 --> 00:04:20,500
+Now let me simply say data, this data is equals to await and response dot json.
+
+54
+00:04:22,120 --> 00:04:27,620
+And then I can do what I can simply say set posts as data.
+
+55
+00:04:28,540 --> 00:04:28,740
+Yep.
+
+56
+00:04:29,500 --> 00:04:35,800
+Nice, now but this is not going to work, we definitely need to wrap this up inside a
+
+57
+00:04:35,860 --> 00:04:36,340
+use effect.
+
+58
+00:04:37,260 --> 00:04:44,680
+So this use effect is going to be here and inside this I can simply call my fetch posts
+
+59
+00:04:45,120 --> 00:04:59,360
+and I can simply call my fetch posts.
+
+60
+00:04:59,361 --> 00:04:59,381
+And then I can add a dependency of empty dependency and if I save it still nothing to show because
+
+61
+00:04:59,382 --> 00:04:59,402
+definitely we haven't added anything.
+
+62
+00:04:59,403 --> 00:05:02,200
+Now if we are into loading state, yes, if we are into loading state, then I wanted to
+
+63
+00:05:02,260 --> 00:05:10,420
+return here a component inbuilt component as activity indicator and add a size as large.
+
+64
+00:05:12,139 --> 00:05:17,220
+Alright and for the UI I can simply use the flat list and show them.
+
+65
+00:05:17,630 --> 00:05:21,000
+So let me paste the UI, let me import my flat list.
+
+66
+00:05:21,729 --> 00:05:26,860
+So now you will see we have a data, a simple key extractor and I wanted to render this.
+
+67
+00:05:27,200 --> 00:05:33,580
+And now if I save it, look at that, we are rendering all the random posts and all this
+
+68
+00:05:33,660 --> 00:05:38,460
+is just simple simulation, I can enhance this as much as I want, but I just don't want
+
+69
+00:05:38,461 --> 00:05:39,380
+it to get into it.
+
+70
+00:05:39,900 --> 00:05:45,000
+But yes, like look at that, now if I go to post and if I go to here, you will see we
+
+71
+00:05:45,080 --> 00:05:49,400
+have rendered all the data which is coming from this external API.
+
+72
+00:05:50,300 --> 00:05:50,600
+Cool.
+
+73
+00:05:51,020 --> 00:05:52,020
+So, yes.
+
+74
+00:05:52,600 --> 00:05:58,600
+This is how you can basically use it in same way if you wanted to send data now I am not
+
+75
+00:05:58,660 --> 00:06:05,140
+going to teach you how to use fetch API you know that very well so yep alright.
+
+76
+00:06:06,480 --> 00:06:11,220
+So this is pretty much it for this shifter we are going to create a very crazy mini project
+
+77
+00:06:11,500 --> 00:06:16,580
+For that mini project, we are going to create a news app like we are going to use the external
+
+78
+00:06:16,860 --> 00:06:22,160
+news API and consume that and show them on to the UI.
+
+79
+00:06:22,350 --> 00:06:22,860
+So we will see.
+
+80
+00:06:23,490 --> 00:06:27,460
+So yeah, this is pretty much it for this chapter and see you next time.
+

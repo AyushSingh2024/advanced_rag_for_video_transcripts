@@ -1,0 +1,896 @@
+1
+00:00:00,560 --> 00:00:03,380
+Alright guys and welcome to one more new chapter.
+
+2
+00:00:03,640 --> 00:00:07,460
+In this chapter we are basically going to talk about Expo SQLite.
+
+3
+00:00:08,160 --> 00:00:15,200
+This is again a library that is providing you the access of database locally into your
+
+4
+00:00:15,201 --> 00:00:15,420
+phone.
+
+5
+00:00:15,800 --> 00:00:19,500
+Perfect like this is good for making offline applications.
+
+6
+00:00:19,580 --> 00:00:21,100
+So you will definitely love it.
+
+7
+00:00:21,340 --> 00:00:27,480
+So for using it, simply copy this command from here till here and then you can basically
+
+8
+00:00:27,680 --> 00:00:28,060
+run this.
+
+9
+00:00:28,061 --> 00:00:32,940
+So let me clear my currently running application and install it.
+
+10
+00:00:33,000 --> 00:00:40,780
+So I have run basically bunnex expo install expo SQLite easy and then let me rerun my
+
+11
+00:00:40,781 --> 00:00:41,220
+application.
+
+12
+00:00:41,520 --> 00:00:42,760
+Our next expose start.
+
+13
+00:00:44,480 --> 00:00:47,680
+And after doing this, let me just reload it once.
+
+14
+00:00:47,820 --> 00:00:52,260
+And this is my index.txx file, which is completely empty.
+
+15
+00:00:54,180 --> 00:01:00,980
+And so for always using ExposeSQL, I mean SQLite, you need to do a bunch of settings
+
+16
+00:01:01,180 --> 00:01:03,580
+and bunch of organizational thing.
+
+17
+00:01:04,140 --> 00:01:05,040
+So for that.
+
+18
+00:01:05,300 --> 00:01:10,420
+At the root level, make sure to create a DB file, data file, whatever you wanted to call
+
+19
+00:01:10,421 --> 00:01:10,860
+it.
+
+20
+00:01:11,240 --> 00:01:14,140
+And then let me simply say database.ts.
+
+21
+00:01:14,360 --> 00:01:17,440
+So at this point, I am going to initialize my data.
+
+22
+00:01:18,380 --> 00:01:32,120
+I can simply say import ashrick as SQLite from SQLite.
+
+23
+00:01:32,121 --> 00:01:32,141
+Exposequalite, easy.
+
+24
+00:01:32,142 --> 00:01:36,600
+And then I can create a function as, I will say this as export const dbpromise because
+
+25
+00:01:38,720 --> 00:01:39,360
+SQLite.
+
+26
+00:01:39,940 --> 00:01:43,600
+We have method something known as open database async.
+
+27
+00:01:43,680 --> 00:01:44,840
+So we are using async.
+
+28
+00:01:45,399 --> 00:01:47,520
+That's why I have named it as dbpromise.
+
+29
+00:01:47,720 --> 00:01:47,920
+Cool.
+
+30
+00:01:47,960 --> 00:01:50,500
+Whatever you wanted to name it, it's up to you.
+
+31
+00:01:50,600 --> 00:01:53,280
+and then name the database name.
+
+32
+00:01:53,360 --> 00:01:56,500
+So I've just named it as appdata.dpa.
+
+33
+00:01:56,560 --> 00:02:00,240
+Whatever you want it to give, you can simply give it.
+
+34
+00:02:00,479 --> 00:02:02,720
+Now, this is the step number one.
+
+35
+00:02:03,360 --> 00:02:06,800
+Now let's say I wanted to create a user table.
+
+36
+00:02:06,801 --> 00:02:08,400
+As you guys know, we are using SQL.
+
+37
+00:02:08,620 --> 00:02:11,800
+So definitely we are going to write here SQL query.
+
+38
+00:02:12,200 --> 00:02:15,700
+And again, I am not going to teach you how to write SQL.
+
+39
+00:02:16,020 --> 00:02:21,920
+So I hope so you guys know that and if not, then you can simply just follow along with
+
+40
+00:02:21,921 --> 00:02:24,860
+me and see how you can write any SQL queries.
+
+41
+00:02:26,800 --> 00:02:27,000
+Perfect.
+
+42
+00:02:27,120 --> 00:02:35,519
+So let me for that, let me create here a function as create tables.ts and then first thing I
+
+43
+00:02:35,520 --> 00:02:38,739
+am wanting to import my DB promise.
+
+44
+00:02:39,300 --> 00:02:48,480
+So, something like this from dot slash database and then what I can do I can simply create
+
+45
+00:02:48,481 --> 00:02:55,880
+one function I can name that function as export async function and the name of that function
+
+46
+00:02:55,881 --> 00:02:57,760
+is create tables.
+
+47
+00:02:59,500 --> 00:03:06,160
+And this create tables is basically first of all, let me get the data from this promise.
+
+48
+00:03:06,300 --> 00:03:08,680
+So I can simply say access from this.
+
+49
+00:03:09,239 --> 00:03:12,300
+So DB is equals to await DB promise.
+
+50
+00:03:13,220 --> 00:03:15,819
+Now inside this we have the DB access.
+
+51
+00:03:16,340 --> 00:03:18,000
+And now what I can do?
+
+52
+00:03:18,340 --> 00:03:21,080
+Let me I just wanted to run a basic command.
+
+53
+00:03:21,400 --> 00:03:26,860
+So, for running a command we have a method you can definitely go and check that like
+
+54
+00:03:26,879 --> 00:03:32,799
+you can see that we have execute async we have run async run async lot of methods.
+
+55
+00:03:33,599 --> 00:03:42,480
+So, for that I wanted to use await db.runAsync method and inside this into back ticks I can
+
+56
+00:03:42,481 --> 00:03:44,480
+write my query easy.
+
+57
+00:03:44,659 --> 00:03:49,599
+So, let me try to paste the query because again I'm not wanted to write anything from
+
+58
+00:03:50,800 --> 00:03:53,500
+So, this is the basic SQL query.
+
+59
+00:03:53,610 --> 00:04:00,480
+So, what is this create table if not exist simple basically we are asking our SQL to
+
+60
+00:04:00,640 --> 00:04:07,160
+create a user table if they don't exist and which with bunch of structural thing like
+
+61
+00:04:07,280 --> 00:04:12,700
+the ID is going to be integer and the constraint as primary key and then auto increment.
+
+62
+00:04:12,800 --> 00:04:13,740
+Easy.
+
+63
+00:04:14,260 --> 00:04:17,360
+Then we have name which is type of text and this is not null.
+
+64
+00:04:17,580 --> 00:04:19,839
+This means you need to pass some data.
+
+65
+00:04:20,459 --> 00:04:22,580
+Same for email and this is also text.
+
+66
+00:04:22,700 --> 00:04:23,420
+This is unique.
+
+67
+00:04:23,560 --> 00:04:25,260
+So email needs to be unique.
+
+68
+00:04:25,440 --> 00:04:28,880
+You can't save same emails into your database.
+
+69
+00:04:29,440 --> 00:04:31,060
+And then we have again not null.
+
+70
+00:04:32,379 --> 00:04:34,819
+So, this is one method is ready.
+
+71
+00:04:35,379 --> 00:04:35,720
+Perfect.
+
+72
+00:04:36,240 --> 00:04:37,379
+Now, how you can use it?
+
+73
+00:04:37,400 --> 00:04:38,740
+You can simply copy this.
+
+74
+00:04:39,099 --> 00:04:41,919
+Let's say, let me go to my app and index.
+
+75
+00:04:42,979 --> 00:04:43,240
+Perfect.
+
+76
+00:04:43,460 --> 00:04:45,680
+And you can even run that into your layout.
+
+77
+00:04:45,860 --> 00:04:51,120
+But let me just open my index and call this function on first load.
+
+78
+00:04:51,340 --> 00:04:53,340
+So, I can simply import my use effect.
+
+79
+00:04:53,900 --> 00:05:00,820
+And simply call my create tables method and add an empty dependency.
+
+80
+00:05:01,540 --> 00:05:01,900
+Easy.
+
+81
+00:05:02,680 --> 00:05:06,120
+Now you will see nothing has bragged one thing.
+
+82
+00:05:07,960 --> 00:05:10,300
+And I think we are good to go now.
+
+83
+00:05:11,639 --> 00:05:14,880
+Alright, so I think we also need to configure this.
+
+84
+00:05:15,060 --> 00:05:18,740
+So let me just copy everything that we have.
+
+85
+00:05:18,919 --> 00:05:19,120
+Perfect.
+
+86
+00:05:21,500 --> 00:05:24,020
+From here till here, just simply copy it.
+
+87
+00:05:24,139 --> 00:05:28,460
+So let me go to my app, Jason, and you will see that we already have this
+
+88
+00:05:28,680 --> 00:05:33,300
+expo SQLite added as plugin, just enhance this, whatever is written
+
+89
+00:05:33,599 --> 00:05:36,580
+inside the documentation, just use it.
+
+90
+00:05:36,600 --> 00:05:43,820
+like enable FTS, use SQL Cypher and for Android we have bunch of settings for iOS we have
+
+91
+00:05:43,860 --> 00:05:48,780
+other settings as well and you guys might be thinking what is the meaning of this enable
+
+92
+00:05:48,781 --> 00:05:54,560
+FTS I will talk about this in a while but for now if I reload my current application
+
+93
+00:05:56,259 --> 00:05:59,800
+just to see what can be the output here.
+
+94
+00:06:00,000 --> 00:06:00,259
+Perfect.
+
+95
+00:06:01,259 --> 00:06:03,860
+Alright, and then I can still see nothing has changed.
+
+96
+00:06:03,979 --> 00:06:06,919
+So this means everything is working fine for now.
+
+97
+00:06:08,060 --> 00:06:08,340
+Perfect.
+
+98
+00:06:08,440 --> 00:06:14,400
+So with this, let's move ahead and let me create a bunch of CRUD operations and then
+
+99
+00:06:14,401 --> 00:06:16,479
+we'll see how I can use it.
+
+100
+00:06:16,500 --> 00:06:17,240
+Easy.
+
+101
+00:06:17,720 --> 00:06:23,340
+So, for that what I can do I can simply go to my DB once again and I can create here
+
+102
+00:06:23,360 --> 00:06:29,180
+simple crud.ts file and then let me add bunch of functions here.
+
+103
+00:06:29,360 --> 00:06:29,580
+Perfect.
+
+104
+00:06:29,660 --> 00:06:32,000
+So, I am just directly copy and pasting it.
+
+105
+00:06:32,400 --> 00:06:34,120
+You also need to do the same.
+
+106
+00:06:34,400 --> 00:06:41,600
+So, you will see that the first method that we have is insert user and like here you can
+
+107
+00:06:41,601 --> 00:06:47,880
+notice one thing like insert into users the name and email simple and values and why I
+
+108
+00:06:47,881 --> 00:06:49,139
+have added this question mark.
+
+109
+00:06:49,220 --> 00:06:54,479
+So, this question mark is a good practice like someone if someone is trying to do a
+
+110
+00:06:54,490 --> 00:06:55,419
+sequel injection.
+
+111
+00:06:55,550 --> 00:06:58,160
+So, this thing is going to save that.
+
+112
+00:06:58,500 --> 00:07:01,900
+We can say thing like save that practice.
+
+113
+00:07:02,280 --> 00:07:02,640
+Got it?
+
+114
+00:07:02,720 --> 00:07:07,860
+So that's why you need to put it whenever you are getting something you can go with
+
+115
+00:07:07,861 --> 00:07:08,440
+it.
+
+116
+00:07:08,500 --> 00:07:09,580
+Cool and values.
+
+117
+00:07:09,780 --> 00:07:12,780
+So whatever the value is like this is the name and this is the email.
+
+118
+00:07:13,040 --> 00:07:16,720
+This will take the place of this.
+
+119
+00:07:17,020 --> 00:07:17,600
+Perfect.
+
+120
+00:07:18,040 --> 00:07:19,760
+Same with get user.
+
+121
+00:07:20,120 --> 00:07:23,480
+So this is how you can get simple select star from users.
+
+122
+00:07:24,060 --> 00:07:27,540
+we have get users on the basis of ID.
+
+123
+00:07:28,800 --> 00:07:31,979
+So, this is your get users and this is our get user.
+
+124
+00:07:32,199 --> 00:07:34,780
+Make sure to keep that in mind and then we have delete user.
+
+125
+00:07:35,500 --> 00:07:38,280
+This is how you can delete it and then we have update.
+
+126
+00:07:38,699 --> 00:07:43,240
+Simple update user set name is equals to this one.
+
+127
+00:07:43,500 --> 00:07:46,780
+And the ID is equals to another, I mean this question mark.
+
+128
+00:07:47,140 --> 00:07:47,420
+Perfect.
+
+129
+00:07:47,900 --> 00:07:50,100
+So this is how this basically work.
+
+130
+00:07:50,140 --> 00:07:55,240
+I mean very fairly simple syntax like this question mark is going to take place with
+
+131
+00:07:55,241 --> 00:07:59,260
+this name and the another question mark is going to take place with this ID.
+
+132
+00:07:59,700 --> 00:08:01,460
+You need to pass something like this.
+
+133
+00:08:02,540 --> 00:08:07,040
+Now, let me save it and let me try to use it.
+
+134
+00:08:07,139 --> 00:08:09,699
+So how I can basically use it?
+
+135
+00:08:10,220 --> 00:08:13,720
+So for using it, let me go inside my app.
+
+136
+00:08:14,699 --> 00:08:20,900
+Inside my app, let me first of all what I can do, I can create here screens.
+
+137
+00:08:21,699 --> 00:08:22,139
+Perfect.
+
+138
+00:08:22,979 --> 00:08:29,020
+And instead of screen, I can directly create here a stack as users list.
+
+139
+00:08:29,600 --> 00:08:38,240
+dot t s x simple and then r n f e s and I can call this as users list and I will save
+
+140
+00:08:38,241 --> 00:08:38,780
+it.
+
+141
+00:08:39,120 --> 00:08:48,840
+Let me go to my index and let me get my link from expo router and let me go to slash users
+
+142
+00:08:48,940 --> 00:08:49,200
+list.
+
+143
+00:08:51,600 --> 00:09:00,100
+users list and if I just simply press I am onto my users list component and here what
+
+144
+00:09:00,140 --> 00:09:06,980
+I wanted to do basically I simply wanted to like we already have react, style, view, lot
+
+145
+00:09:06,981 --> 00:09:07,460
+of things.
+
+146
+00:09:08,000 --> 00:09:09,440
+Let me import two method.
+
+147
+00:09:10,120 --> 00:09:15,640
+So the first method is getUsers and the another one is deleteUser.
+
+148
+00:09:15,900 --> 00:09:21,500
+Simple. And with style sheet, I also need here a pressable.
+
+149
+00:09:24,100 --> 00:09:28,760
+And what I can do, I can simply call a use effect and get all the data.
+
+150
+00:09:28,780 --> 00:09:31,960
+But right now we definitely don't have it, but we'll do something.
+
+151
+00:09:32,680 --> 00:09:38,940
+So let me simply come into here and say, const users.
+
+152
+00:09:39,300 --> 00:09:41,740
+And this is going to be set users.
+
+153
+00:09:42,780 --> 00:09:44,500
+And I can say this as--
+
+154
+00:09:44,900 --> 00:09:55,080
+use state and my user is empty and I can what I can do basically I can simply say a sync
+
+155
+00:09:55,860 --> 00:09:58,840
+Function should be loadUsers.
+
+156
+00:10:00,300 --> 00:10:07,300
+And then I can keep it empty and I can simply say cons list is equals to await get users.
+
+157
+00:10:08,080 --> 00:10:08,540
+All right.
+
+158
+00:10:08,820 --> 00:10:12,740
+And then I can simply say set users and simply equal to list.
+
+159
+00:10:13,000 --> 00:10:14,540
+Very simple, fairly simple.
+
+160
+00:10:15,200 --> 00:10:22,019
+And let me set the type as any for now just to don't want it to see any typescript error.
+
+161
+00:10:22,620 --> 00:10:24,940
+And then I can simply call my use effect.
+
+162
+00:10:26,520 --> 00:10:32,300
+And inside this I can call my loadUser function and we are good to go.
+
+163
+00:10:32,820 --> 00:10:37,440
+Now just to render them onto the UI let me just simply paste it.
+
+164
+00:10:37,640 --> 00:10:44,300
+But right now you guys can see that we have UID, U name, email and then on press we are
+
+165
+00:10:44,301 --> 00:10:45,540
+calling this method.
+
+166
+00:10:45,700 --> 00:10:51,580
+Perfect, like deleting it and after deleting it we are getting opening the then and then
+
+167
+00:10:51,581 --> 00:10:54,080
+again loading the user just to see the instant update.
+
+168
+00:10:54,560 --> 00:10:57,660
+But for now you guys can see that we have nothing to show.
+
+169
+00:10:58,700 --> 00:11:05,920
+So for it what I can do I can basically move ahead and start creating one more method.
+
+170
+00:11:06,280 --> 00:11:06,620
+Perfect.
+
+171
+00:11:07,160 --> 00:11:09,200
+So how I can basically create it.
+
+172
+00:11:10,040 --> 00:11:11,800
+This is going to be fairly simple.
+
+173
+00:11:12,460 --> 00:11:13,700
+So let me show you how.
+
+174
+00:11:13,900 --> 00:11:21,220
+So, for that what I can do basically I can go to my users and out of this I can simply
+
+175
+00:11:21,221 --> 00:11:22,500
+initialize a link.
+
+176
+00:11:23,280 --> 00:11:31,420
+This link will take me to the I can say insert user screen which don't exist for now, but
+
+177
+00:11:31,421 --> 00:11:34,280
+it will in a while and then I can say.
+
+178
+00:11:34,600 --> 00:11:42,240
+insert user simple and let me create that so for that I can simply say insert user
+
+179
+00:11:42,360 --> 00:11:49,839
+dot TSX RNFES and insert user save this and save this as well and the moment I
+
+180
+00:11:49,840 --> 00:11:51,819
+click on insert user I am here
+
+181
+00:11:52,100 --> 00:11:57,180
+And what I can do now, I can simply initialize the UI.
+
+182
+00:11:57,420 --> 00:12:01,660
+So let me just simply copy and paste so that we don't waste much of time.
+
+183
+00:12:02,639 --> 00:12:04,519
+And let me import them one by one.
+
+184
+00:12:04,639 --> 00:12:06,220
+One I have text input.
+
+185
+00:12:06,920 --> 00:12:12,339
+Another one is the button from react native and then a method which is insert user.
+
+186
+00:12:13,500 --> 00:12:15,980
+And let me initialize all the hooks that we need.
+
+187
+00:12:16,319 --> 00:12:17,600
+So the first hook is neem.
+
+188
+00:12:19,940 --> 00:12:27,120
+SetName which is equals to use state initially this is empty same for email so I can simply
+
+189
+00:12:27,220 --> 00:12:38,300
+say const email and set email is equals to use state and again empty.
+
+190
+00:12:38,800 --> 00:12:46,240
+And for router I can simply say cons router is equals to use router from expo router.
+
+191
+00:12:46,519 --> 00:12:48,519
+Perfect, so this will push me to user list.
+
+192
+00:12:49,600 --> 00:12:51,279
+Now let me try to use it.
+
+193
+00:12:51,380 --> 00:12:59,100
+So for name let me simply say Suraj Kumar and for email let me simply say suraj@suraj.com.
+
+194
+00:12:59,300 --> 00:13:08,260
+And if I press on save and look at that, now this insert user has using this query by running
+
+195
+00:13:08,261 --> 00:13:14,700
+this query and if I am going to my users list, you will see I am getting this cool.
+
+196
+00:13:15,080 --> 00:13:18,200
+And if I delete by pressing over it, this user is deleted.
+
+197
+00:13:18,860 --> 00:13:20,180
+I can reinsert the data.
+
+198
+00:13:21,259 --> 00:13:21,740
+Perfect.
+
+199
+00:13:21,899 --> 00:13:23,800
+In the same way, you can insert bulk data.
+
+200
+00:13:24,300 --> 00:13:26,139
+You can do whatever you want it to do.
+
+201
+00:13:26,899 --> 00:13:35,180
+Let me again save this and again I'm getting I can insert lot of email, lot of gmail.com
+
+202
+00:13:35,940 --> 00:13:37,980
+and if I save it, I'm getting two data.
+
+203
+00:13:38,079 --> 00:13:40,380
+It's perfect and I can delete it as well.
+
+204
+00:13:41,280 --> 00:13:41,720
+Cool.
+
+205
+00:13:41,920 --> 00:13:46,240
+So in this, in same way, like let's say you wanted to see the detail of some user, you
+
+206
+00:13:46,260 --> 00:13:47,540
+can go with that approach.
+
+207
+00:13:47,560 --> 00:13:53,500
+You guys know you need to create a edit user with the ID page and there you can basically
+
+208
+00:13:53,520 --> 00:13:54,620
+implement all of this.
+
+209
+00:13:55,200 --> 00:14:01,700
+So these are, this is how you can basically use SQLite and why do we even need SQLite?
+
+210
+00:14:02,000 --> 00:14:08,840
+just to go or complete offline sometimes and you wanted to create offline first application.
+
+211
+00:14:09,060 --> 00:14:16,560
+Let's say in mini project when this module will comes to end we are going to create a
+
+212
+00:14:16,561 --> 00:14:17,180
+mini project.
+
+213
+00:14:17,400 --> 00:14:23,220
+And in that project, we will see that how you can create offline notes app, like where
+
+214
+00:14:23,221 --> 00:14:30,420
+you will maintain your own notes and perform a full CRUD operations using SQLite database
+
+215
+00:14:30,820 --> 00:14:32,700
+that will work fully offline.
+
+216
+00:14:33,660 --> 00:14:34,180
+Perfect.
+
+217
+00:14:34,699 --> 00:14:36,800
+So yes, this is pretty much it.
+
+218
+00:14:36,980 --> 00:14:38,139
+A simple basic step.
+
+219
+00:14:38,560 --> 00:14:39,740
+Initialize your database.
+
+220
+00:14:40,459 --> 00:14:41,139
+Fairly easy.
+
+221
+00:14:42,459 --> 00:14:48,319
+Create as much tables as you want and implement as much CRUD operations as you want and just
+
+222
+00:14:48,420 --> 00:14:49,639
+simply use it.
+
+223
+00:14:50,000 --> 00:14:51,800
+So yeah, this is pretty much it.
+
+224
+00:14:52,779 --> 00:14:56,180
+And let me just end this chapter and see you next time.
+

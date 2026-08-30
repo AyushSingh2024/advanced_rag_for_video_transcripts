@@ -1,0 +1,1154 @@
+WEBVTT
+
+00:00:00.440 --> 00:00:03.540
+Alright everyone and welcome to one more new chapter.
+
+00:00:03.760 --> 00:00:09.060
+In this chapter we are going to implement the image detail component, image detail model
+
+00:00:09.260 --> 00:00:09.680
+component.
+
+00:00:10.660 --> 00:00:15.540
+In this component our key feature is we wanted to show the full size of the image.
+
+00:00:15.900 --> 00:00:21.420
+And, then we definitely wanted to show the close button and then in the footer of this
+
+00:00:21.560 --> 00:00:25.300
+specific model, I wanted to show two action.
+
+00:00:25.619 --> 00:00:30.900
+One is download or save something like that and then another one is the share.
+
+00:00:31.160 --> 00:00:31.439
+Perfect.
+
+00:00:32.440 --> 00:00:35.600
+So, let us move ahead and start implementing it.
+
+00:00:35.739 --> 00:00:37.280
+So, for implementation.
+
+00:00:38.600 --> 00:00:44.820
+Simply, what we need to do is to close everything and then simply create one more new component
+
+00:00:44.940 --> 00:00:53.500
+and the name of that component is ImageDetailModel.tsx and then RNFES.
+
+00:00:54.300 --> 00:01:01.760
+All right, and then inside this image detail model, what I wanted to do is I wanted to
+
+00:01:01.761 --> 00:01:02.940
+have one interface.
+
+00:01:03.900 --> 00:01:10.900
+This interface have a visible, true or false and then image which is type of pixabay image
+
+00:01:10.920 --> 00:01:16.280
+and then on close I wanted to show this and then definitely this is the type I wanted
+
+00:01:16.281 --> 00:01:16.720
+to have.
+
+00:01:17.040 --> 00:01:18.320
+Now, let me close my AI.
+
+00:01:19.320 --> 00:01:22.460
+We have a visible image and then on close.
+
+00:01:22.800 --> 00:01:26.800
+After this, I wanted to have three state variable.
+
+00:01:28.080 --> 00:01:29.220
+First one is the status.
+
+00:01:29.900 --> 00:01:34.340
+Second thing is the we can say download and sharing.
+
+00:01:35.540 --> 00:01:38.700
+So for status, we definitely need a development build.
+
+00:01:39.200 --> 00:01:44.080
+But for now, I can simply import the downloading and a sharing thing.
+
+00:01:44.360 --> 00:01:45.200
+Okay.
+
+00:01:45.260 --> 00:01:49.320
+Along with this, I wanted you to install one dependency.
+
+00:01:49.600 --> 00:01:50.700
+or simply run.
+
+00:01:52.759 --> 00:01:58.080
+Bunnx, Expo install, Expo media lib, R-A-R-Y library.
+
+00:01:59.440 --> 00:01:59.700
+Perfect.
+
+00:01:59.940 --> 00:02:01.580
+This is your Expo media library.
+
+00:02:01.720 --> 00:02:08.100
+So you can definitely search for this Expo media library and you can open this.
+
+00:02:08.500 --> 00:02:12.540
+So, you can see that they are even included into expogo.
+
+00:02:13.540 --> 00:02:19.420
+So, expo media library provide access to the users media library allowing them to access
+
+00:02:19.440 --> 00:02:25.680
+their existing images and videos from your app as well as saves a new one.
+
+00:02:25.681 --> 00:02:31.220
+You can also subscribe to any update made to the users media library when a very important
+
+00:02:31.221 --> 00:02:31.740
+thing.
+
+00:02:31.800 --> 00:02:37.320
+Android allows full access to media library which is the purpose of this package only
+
+00:02:37.321 --> 00:02:43.360
+for application needing broad access to photo to see the this basically permission policies
+
+00:02:43.720 --> 00:02:48.640
+but it is fine and then definitely you after installing this.
+
+00:02:48.800 --> 00:02:57.400
+If you wanted to fix this like just simply coming to here and copy from this is basically
+
+00:02:57.401 --> 00:03:04.380
+for permission if you wanted to have all right which have photo permission save photos permission
+
+00:03:05.040 --> 00:03:07.640
+prevent automatic limit access alert lot of things.
+
+00:03:08.460 --> 00:03:13.140
+All right then one important thing are you using this library in existing react native
+
+00:03:13.141 --> 00:03:13.320
+app?
+
+00:03:13.680 --> 00:03:14.280
+No.
+
+00:03:14.300 --> 00:03:18.280
+Then, this is how you can basically use them.
+
+00:03:18.580 --> 00:03:22.500
+So right now, let me just simply come into here.
+
+00:03:22.580 --> 00:03:31.000
+Hopefully this will work inside the app JSON, inside the plugins, outside of this array,
+
+00:03:31.680 --> 00:03:33.040
+I wanted to paste it.
+
+00:03:33.060 --> 00:03:34.580
+So okay.
+
+00:03:35.200 --> 00:03:40.220
+I only need from here to here.
+
+00:03:40.239 --> 00:03:41.680
+I think we are good.
+
+00:03:42.420 --> 00:03:43.239
+Let me paste it.
+
+00:03:43.340 --> 00:03:48.000
+So right now you can see that this is the photos permission, save photo permission,
+
+00:03:48.300 --> 00:03:53.680
+access media located enable and permission is no, we don't need audio.
+
+00:03:54.200 --> 00:03:58.900
+Now, let us only go with a photo, perfect.
+
+00:03:59.599 --> 00:04:05.080
+Then I can simply come into here and for using this you can see the first thing they are
+
+00:04:05.380 --> 00:04:10.080
+showing us is this permission, perfect.
+
+00:04:10.160 --> 00:04:14.540
+So, here what I can do at the top of it, I can simply say this as.
+
+00:04:16.040 --> 00:04:21.240
+Permission response, this will definitely come from the media library component.
+
+00:04:21.540 --> 00:04:24.880
+So let me import it, easy, yes.
+
+00:04:25.960 --> 00:04:34.440
+But instead of naming this permission response, I can simply say status and request permission,
+
+00:04:35.260 --> 00:04:36.420
+ok, nice.
+
+00:04:37.320 --> 00:04:38.900
+And after this what we can do?
+
+00:04:39.020 --> 00:04:41.820
+We can simply say if we don't have any image.
+
+00:04:43.960 --> 00:04:47.500
+Then I simply going to return null here.
+
+00:04:47.980 --> 00:04:55.460
+Otherwise, what I am going to do is, let's say for now, I can simply implement the UI.
+
+00:04:56.560 --> 00:04:58.220
+So, first thing is we need a model.
+
+00:04:59.420 --> 00:05:02.360
+This model have animated type, which is of fade.
+
+00:05:03.400 --> 00:05:09.120
+Then, we have our transparent, transparent as true.
+
+00:05:10.560 --> 00:05:11.880
+Then, we can have visible.
+
+00:05:12.440 --> 00:05:15.340
+Visible is equals to visible as well.
+
+00:05:15.800 --> 00:05:16.600
+Alright.
+
+00:05:18.900 --> 00:05:25.419
+Alright, so the visible is actually going to be equal to the visible props which is
+
+00:05:25.420 --> 00:05:25.680
+coming.
+
+00:05:26.620 --> 00:05:33.440
+Alright, this one and the last one is going to be onRequestClose is equals to onClose.
+
+00:05:33.639 --> 00:05:34.940
+Okay, we know that very well.
+
+00:05:35.100 --> 00:05:35.400
+Perfect.
+
+00:05:36.240 --> 00:05:40.260
+And then let me just paste all the design related to this.
+
+00:05:41.360 --> 00:05:45.500
+So, below this I can paste all the styles that we have.
+
+00:05:46.440 --> 00:05:47.040
+Okay.
+
+00:05:47.120 --> 00:05:47.320
+Nice.
+
+00:05:47.360 --> 00:05:54.400
+So, we have container, header, close button, image container, image, footer, info container,
+
+00:05:54.820 --> 00:05:56.280
+tag container, lot of other things.
+
+00:05:57.040 --> 00:06:03.460
+And then we have tag, text, user text, actions, action button, icon circle and action text.
+
+00:06:03.700 --> 00:06:03.820
+Okay.
+
+00:06:05.420 --> 00:06:12.260
+Now, let's move ahead and after this what I wanted to do is to simply add here one view.
+
+00:06:12.680 --> 00:06:13.160
+Okay.
+
+00:06:13.161 --> 00:06:15.820
+So, we have a view here.
+
+00:06:16.480 --> 00:06:21.500
+Inside this view, I can have one style and I think I need to import the view.
+
+00:06:21.900 --> 00:06:29.860
+from react native then we have a style, style is equals to style start container then when
+
+00:06:29.880 --> 00:06:35.220
+we are going to have a blur view this blur view will come from expo blur we know that
+
+00:06:36.800 --> 00:06:36.979
+ok.
+
+00:06:37.220 --> 00:06:41.419
+So let me just simply import my expo blur component.
+
+00:06:41.900 --> 00:06:49.080
+And, after this what I wanted to show here, after this I wanted to have one more, let
+
+00:06:49.081 --> 00:06:50.860
+me coming to here, ok.
+
+00:06:51.120 --> 00:06:57.660
+So, after this view below this I can have one more view, this view can have a style,
+
+00:06:58.100 --> 00:07:05.580
+and this style is equals to styles.header and then I can have one pressable that will
+
+00:07:05.600 --> 00:07:07.740
+basically show on close button.
+
+00:07:08.140 --> 00:07:12.360
+So let me import my icons and all of the other things as well.
+
+00:07:12.700 --> 00:07:15.700
+This color will come from constant theme.
+
+00:07:16.200 --> 00:07:17.840
+Let's use this.
+
+00:07:18.180 --> 00:07:26.980
+So for that I can simply go to my index.tsx and inside the index.tsx what I will do below
+
+00:07:27.000 --> 00:07:34.260
+this filter model I will simply paste my image model and then I will import image model we
+
+00:07:34.261 --> 00:07:39.900
+have a visible image and then on close I will set this to null.
+
+00:07:40.300 --> 00:07:41.180
+Let me save it.
+
+00:07:41.181 --> 00:07:42.420
+Hopefully this will work.
+
+00:07:44.000 --> 00:07:47.900
+The moment I click it, nothing is working.
+
+00:07:50.200 --> 00:07:57.160
+Definitely we need to implement bunch of more logic for it if I am not wrong or what if
+
+00:07:57.161 --> 00:07:58.420
+I reload this once?
+
+00:07:58.920 --> 00:08:00.540
+So maybe this will work.
+
+00:08:02.480 --> 00:08:04.080
+Handle search does not exist.
+
+00:08:07.580 --> 00:08:11.680
+So, the moment I am trying to reload you can see nothing is happening.
+
+00:08:12.040 --> 00:08:14.580
+So, I will re-try to open my application.
+
+00:08:16.800 --> 00:08:17.620
+Let me go here.
+
+00:08:17.740 --> 00:08:18.860
+Let me press it.
+
+00:08:18.980 --> 00:08:19.300
+Okay.
+
+00:08:19.340 --> 00:08:21.120
+And let's just wait for opening it.
+
+00:08:22.400 --> 00:08:27.680
+Okay, so you can see that right now we are able to see this and something is happening
+
+00:08:28.080 --> 00:08:30.100
+due to Android permission requirement.
+
+00:08:31.040 --> 00:08:34.200
+Expo go can no longer provide full access to media library.
+
+00:08:34.480 --> 00:08:38.419
+Okay, we definitely build a development build in a while, so no worries in it.
+
+00:08:38.799 --> 00:08:40.860
+But now if I press it, yes, look at that.
+
+00:08:41.159 --> 00:08:45.200
+Nothing is showing in that way, but you can see we can see this cross button.
+
+00:08:45.520 --> 00:08:46.180
+Okay, perfect.
+
+00:08:47.400 --> 00:08:51.960
+Now, let us move ahead and focus on implementing this.
+
+00:08:53.360 --> 00:08:54.840
+So, what I will do?
+
+00:08:56.040 --> 00:08:57.320
+Okay, we have this view.
+
+00:08:58.460 --> 00:08:58.820
+Perfect.
+
+00:08:59.760 --> 00:09:01.840
+Inside this view, we already have blur view.
+
+00:09:02.220 --> 00:09:03.880
+Then this is just a cross button.
+
+00:09:05.080 --> 00:09:05.380
+Okay.
+
+00:09:05.420 --> 00:09:11.340
+So, outside of this, I can have one more view and I think this is where I wanted to show
+
+00:09:11.341 --> 00:09:12.980
+my image into full width.
+
+00:09:13.400 --> 00:09:20.920
+So, this is another view that will basically render an image like this.
+
+00:09:21.420 --> 00:09:29.640
+Let me import image from react native and what just happened I think does we need a
+
+00:09:29.641 --> 00:09:34.480
+expo image if I am not wrong because you can even use expo image here.
+
+00:09:34.600 --> 00:09:36.060
+So that is also a nice.
+
+00:09:36.900 --> 00:09:43.120
+component to go with, so I think yes. Instead of importing this from react native, we can
+
+00:09:43.240 --> 00:09:48.380
+import this from expo image. Alright, now this is fine, perfect.
+
+00:09:48.960 --> 00:09:55.780
+What next? Next is I wanted to design this as well, so I can simply say style, style
+
+00:09:55.781 --> 00:09:59.040
+is equals to styles.image container.
+
+00:09:59.400 --> 00:10:02.140
+Let me save it the moment I press.
+
+00:10:02.540 --> 00:10:02.800
+Okay.
+
+00:10:02.940 --> 00:10:03.860
+Yes, look at that.
+
+00:10:04.320 --> 00:10:09.340
+I hope you guys are still able to see that into full screen something like this.
+
+00:10:10.180 --> 00:10:10.560
+I okay.
+
+00:10:10.561 --> 00:10:11.680
+Hopefully this will show us.
+
+00:10:11.820 --> 00:10:12.020
+Okay.
+
+00:10:12.060 --> 00:10:12.800
+Yes, look at that.
+
+00:10:12.840 --> 00:10:14.020
+This is how they look.
+
+00:10:14.640 --> 00:10:17.100
+Not that good, but it's fine.
+
+00:10:18.200 --> 00:10:18.380
+Perfect.
+
+00:10:18.900 --> 00:10:25.600
+After this what I will do out of this view, yes this view I wanted to show the another
+
+00:10:25.601 --> 00:10:34.740
+view this will basically going to be the style, style is equals to styles.footer and then
+
+00:10:34.741 --> 00:10:36.460
+let me paste my pressable.
+
+00:10:36.600 --> 00:10:42.100
+So this is basically going to be for showing the text from react native.
+
+00:10:42.500 --> 00:10:45.520
+showing all the tags we have related to this.
+
+00:10:45.720 --> 00:10:49.080
+Let me format it once because it's little confusing to understand.
+
+00:10:50.000 --> 00:10:51.700
+This is your info container.
+
+00:10:52.420 --> 00:10:52.980
+Okay.
+
+00:10:53.560 --> 00:10:56.040
+This is all the information related to this image.
+
+00:10:56.460 --> 00:10:59.420
+Second, we are going to have all the actions that we have.
+
+00:10:59.900 --> 00:11:05.440
+So, you will see let me first of all import activity indicator.
+
+00:11:05.940 --> 00:11:10.440
+So, first action that we have and the second action we have two action.
+
+00:11:10.700 --> 00:11:14.660
+First action is download, second action is share.
+
+00:11:15.240 --> 00:11:15.720
+Perfect.
+
+00:11:16.720 --> 00:11:17.040
+Nice.
+
+00:11:17.420 --> 00:11:20.460
+Now, let's move ahead and add two functions here.
+
+00:11:22.580 --> 00:11:25.620
+Handle download, simple async.
+
+00:11:26.580 --> 00:11:26.760
+Okay.
+
+00:11:26.980 --> 00:11:29.640
+And second thing is I think handle share.
+
+00:11:30.399 --> 00:11:32.760
+So let me also initialize like this.
+
+00:11:33.100 --> 00:11:33.399
+Perfect.
+
+00:11:33.839 --> 00:11:39.000
+Now if I save it and open any of the image, let's say, let me open this.
+
+00:11:39.100 --> 00:11:45.459
+We can definitely wait for image to load and yes this is all the tags related to this the
+
+00:11:45.460 --> 00:11:49.259
+author name you can save it and you can share it.
+
+00:11:49.560 --> 00:11:57.120
+First of all let implement the sharing feature perfect so for implementing the sharing feature
+
+00:11:57.180 --> 00:12:00.860
+it is quite easy so what you will do everything is fine.
+
+00:12:02.339 --> 00:12:06.380
+I can simply say try and catch, shut sharing is true.
+
+00:12:07.300 --> 00:12:21.860
+Then I can say simple file uri is equals to we need a file system.document directory yes
+
+00:12:23.100 --> 00:12:25.360
+if we have it otherwise empty string.
+
+00:12:25.500 --> 00:12:34.220
+Then, simply add a image ID whatever the image we have just a URI we are getting it, image
+
+00:12:34.221 --> 00:12:43.960
+ID dot jpg and we definitely need to import expo file system as well.
+
+00:12:44.260 --> 00:12:46.660
+So you will come here and search for expo.
+
+00:12:47.400 --> 00:12:53.040
+File system, yes and you even need to install this.
+
+00:12:53.300 --> 00:13:03.560
+So simply copy this, simply run, not here, simply run, bunnex expo install, expo file
+
+00:13:03.600 --> 00:13:05.280
+system, nice.
+
+00:13:05.900 --> 00:13:08.760
+And does we already have expo file system?
+
+00:13:08.960 --> 00:13:12.940
+No, we need to install it and yep, we are good to go.
+
+00:13:13.260 --> 00:13:17.420
+Now I can simply import my expo file system.
+
+00:13:18.440 --> 00:13:21.800
+So let me import my expo file system below this.
+
+00:13:24.180 --> 00:13:27.019
+Nice, and then I can definitely fix it.
+
+00:13:27.160 --> 00:13:29.880
+So instead of file system, we can have a directory.
+
+00:13:31.040 --> 00:13:34.640
+Okay, so now I am going to have all the file URL for it.
+
+00:13:36.700 --> 00:13:37.519
+What next?
+
+00:13:38.500 --> 00:13:41.519
+Does we need a directory or does we need file?
+
+00:13:42.600 --> 00:13:51.480
+I think directory, ok and after this what I will do I can simply say URI is equals to
+
+00:13:51.481 --> 00:14:04.940
+await file system dot download async I think this is depreciated instead use download file
+
+00:14:04.941 --> 00:14:05.639
+async, ok.
+
+00:14:05.640 --> 00:14:08.199
+So, let me just use this download file async.
+
+00:14:08.800 --> 00:14:19.800
+So, this download file async is accepting does not exist on type of expo file system, do
+
+00:14:19.839 --> 00:14:21.420
+you mean download async?
+
+00:14:22.000 --> 00:14:26.600
+If I am adding download async, they are showing me the depreciated thing.
+
+00:14:27.200 --> 00:14:29.820
+Ok, we can, let me try to go with it.
+
+00:14:31.819 --> 00:14:38.300
+Large image URL, first thing, second thing is the file URI we need to pass.
+
+00:14:40.259 --> 00:14:45.339
+And now if I go to, let me search for the correct name.
+
+00:14:45.639 --> 00:14:47.860
+The name is download file.
+
+00:14:50.120 --> 00:14:56.360
+download file sync ok then I think they have a file URL and if I'm not wrong right now
+
+00:14:56.361 --> 00:15:02.560
+I can simply add the ps ignore for it hopefully this will work if not will figure out something
+
+00:15:02.579 --> 00:15:10.639
+don't worry and then I can simply say await media library save to library async and then
+
+00:15:10.640 --> 00:15:12.240
+and the URI we have.
+
+00:15:12.860 --> 00:15:14.860
+And then I can simply show the toast.
+
+00:15:16.480 --> 00:15:23.440
+As alert, let me import the alert success image save to gallery and then I can simply
+
+00:15:23.460 --> 00:15:28.520
+show the catch and then I can also show the finally.
+
+00:15:29.340 --> 00:15:34.840
+So for the finally or or or okay, okay, sorry, we don't want it to download this actually.
+
+00:15:35.500 --> 00:15:40.240
+Okay, my mistake, remove everything, sorry.
+
+00:15:41.840 --> 00:15:45.120
+Instead first of all I will get the file information.
+
+00:15:46.120 --> 00:15:49.260
+So this is how you will get the file information.
+
+00:15:49.440 --> 00:15:56.220
+So we have file system, get info and then if we do not have any info, we will simply
+
+00:15:56.221 --> 00:15:57.460
+call this function.
+
+00:15:57.900 --> 00:16:06.340
+download this ok otherwise we will import expo file sharing because we wanted to share
+
+00:16:06.341 --> 00:16:14.400
+something so I can simply search for expo sharing and simply install the expo sharing
+
+00:16:15.840 --> 00:16:16.240
+library.
+
+00:16:17.300 --> 00:16:21.220
+I can simply say bunx expo install expo sharing.
+
+00:16:23.480 --> 00:16:24.480
+Alright perfect.
+
+00:16:26.480 --> 00:16:36.040
+And, after this what I will do, let me move ahead, ok, and inside the finally, I will
+
+00:16:36.041 --> 00:16:44.560
+just simply try to say set sharing as false, ok, and instead of showing download the image,
+
+00:16:44.779 --> 00:16:47.240
+we will show the fail to share the image.
+
+00:16:47.800 --> 00:16:56.279
+So, if we do not have any existing file information then download it otherwise what I will do I
+
+00:16:56.300 --> 00:17:04.059
+can simply say await then I am going to import the sharing this sharing will come from exposharing.
+
+00:17:04.800 --> 00:17:10.780
+So, I will come into here and then I will simply say sharing from exposharing.
+
+00:17:11.380 --> 00:17:11.880
+Nice.
+
+00:17:12.600 --> 00:17:12.860
+Okay.
+
+00:17:12.940 --> 00:17:20.920
+And then after this what I will do, I will simply try to say is available async, then
+
+00:17:20.921 --> 00:17:25.540
+I will call this function, open this and then simply say await.
+
+00:17:25.800 --> 00:17:33.580
+sharing.shareasync ok and then simply add the file uri we have otherwise simply show
+
+00:17:33.581 --> 00:17:38.740
+the error sharing is not available ok nice.
+
+00:17:39.540 --> 00:17:45.880
+So if I just simply open this click on share so you can see that we are just opening it
+
+00:17:46.640 --> 00:17:49.340
+Alright, why it is taking so much of time?
+
+00:17:52.940 --> 00:17:56.260
+You can see that we have a sharing is true.
+
+00:17:57.580 --> 00:17:58.100
+Okay.
+
+00:17:58.620 --> 00:17:59.380
+Still it is loading.
+
+00:18:01.279 --> 00:18:01.519
+Alright.
+
+00:18:01.779 --> 00:18:03.399
+So let me figure out what is going wrong.
+
+00:18:04.320 --> 00:18:04.720
+Alright guys.
+
+00:18:04.721 --> 00:18:06.860
+So I have figured out something very interesting.
+
+00:18:07.240 --> 00:18:11.779
+So instead of sharing going with this function, let me update it.
+
+00:18:12.760 --> 00:18:18.220
+Okay, first thing you can see that we have a file system, then something that we have
+
+00:18:18.221 --> 00:18:25.919
+a cache directory, then a simple image, okay, then this function download a sync, alright,
+
+00:18:25.920 --> 00:18:29.500
+and after that we are basically trying to share this.
+
+00:18:29.679 --> 00:18:37.980
+If I open this, okay, we are still showing this, so this is coming as true, let me reload
+
+00:18:37.981 --> 00:18:40.440
+it, okay, then maybe this will work.
+
+00:18:42.160 --> 00:18:47.940
+And, yes you can even see that there is something wrong here as well, but we will figure out
+
+00:18:48.940 --> 00:18:49.840
+ok, no worries.
+
+00:18:52.760 --> 00:18:54.820
+Ok, let me try to reload it once.
+
+00:18:58.639 --> 00:19:03.760
+Alright, so if I just simply press and then click on share, okay, so now I am basically
+
+00:19:03.761 --> 00:19:04.380
+getting what?
+
+00:19:04.960 --> 00:19:08.500
+Fail to share image, why I am failing to share image?
+
+00:19:09.539 --> 00:19:15.779
+Because method download async imported from this is depreciated, you can migrate to new
+
+00:19:15.780 --> 00:19:22.380
+file system API using file and directory or import the legacy API from legacy, okay, we
+
+00:19:22.381 --> 00:19:23.279
+have two approaches.
+
+00:19:23.900 --> 00:19:28.740
+So, I think what I will do, let me figure out.
+
+00:19:30.200 --> 00:19:35.220
+Alright guys, so let me just retry to paste this and then try to explain you this.
+
+00:19:35.870 --> 00:19:37.660
+Okay, there is nothing just a simple change.
+
+00:19:38.300 --> 00:19:40.440
+First is we have cached the directory file.
+
+00:19:40.450 --> 00:19:45.520
+You can see the file system, new file system, then directory, then whatever the file system
+
+00:19:45.521 --> 00:19:47.860
+path cache for it, we know that very well.
+
+00:19:48.000 --> 00:19:53.860
+like how to access the cache folder, image directory, whatever all that, then we are
+
+00:19:53.861 --> 00:19:57.320
+downloading it and sharing the downloaded file.
+
+00:19:58.660 --> 00:20:02.940
+Okay, so if I try to share, click here and yes, look at that.
+
+00:20:03.560 --> 00:20:07.940
+This is how you can share to, if you have bunch of social media installed, you can even
+
+00:20:08.160 --> 00:20:09.820
+share to them as well.
+
+00:20:10.000 --> 00:20:16.900
+Amazing, now the next step is to implement the save feature, how you can implement the
+
+00:20:16.980 --> 00:20:20.820
+save feature, ok, so let's move ahead and try to implement that as well.
+
+00:20:21.360 --> 00:20:27.860
+So first step is first simply, first thing I wanted to get the, we can say permission
+
+00:20:27.861 --> 00:20:30.740
+to download, ok, so simply open try and catch.
+
+00:20:31.000 --> 00:20:36.560
+Then say set downloading is true, no problem, then I can say what?
+
+00:20:36.880 --> 00:20:47.320
+Let status is equals to await media library dot request permission async, then what I
+
+00:20:47.321 --> 00:20:47.840
+will say?
+
+00:20:48.140 --> 00:20:55.200
+If not of permission granted, show the error, permission required, please grant the permission,
+
+00:20:55.800 --> 00:20:56.020
+ok.
+
+00:20:57.220 --> 00:20:57.540
+Alright.
+
+00:20:57.760 --> 00:20:58.560
+After this.
+
+00:20:59.400 --> 00:21:05.340
+First of all, let me download the image to cache directory and then give it a unique
+
+00:21:05.380 --> 00:21:05.860
+name.
+
+00:21:06.640 --> 00:21:06.960
+Simple.
+
+00:21:07.060 --> 00:21:10.280
+So this is the cache directory that we are going to have.
+
+00:21:11.300 --> 00:21:13.020
+Let me show you something like this.
+
+00:21:13.380 --> 00:21:15.180
+This is the same code that we need.
+
+00:21:16.140 --> 00:21:18.080
+Alright, so you can see this.
+
+00:21:18.500 --> 00:21:22.980
+We have a cache directory and this is the file that we have.
+
+00:21:23.340 --> 00:21:23.600
+Nice.
+
+00:21:24.140 --> 00:21:25.120
+will do next.
+
+00:21:25.400 --> 00:21:29.260
+Next, I will try to basically download it.
+
+00:21:29.261 --> 00:21:31.760
+This is where we have this is your media.
+
+00:21:33.500 --> 00:21:34.160
+All right.
+
+00:21:34.900 --> 00:21:41.940
+And after getting this file, what I will try to do is I can simply say await media library
+
+00:21:41.980 --> 00:21:42.460
+dot.
+
+00:21:42.600 --> 00:21:52.059
+Save to library async and then I will pass the file here basically okay and this file
+
+00:21:52.080 --> 00:22:00.220
+will contain the URI for it okay and hopefully this will work we will see that then I can
+
+00:22:00.221 --> 00:22:03.380
+simply show alert success image save to gallery.
+
+00:22:04.419 --> 00:22:12.299
+Otherwise, I will show the console error and inside the finally, I can simply say set downloading
+
+00:22:12.300 --> 00:22:14.039
+as a false.
+
+00:22:14.960 --> 00:22:19.639
+Okay, if at the moment press on safe, what I am getting fail to save image.
+
+00:22:20.240 --> 00:22:26.179
+Why has been rejected or you have requested the audio permission, but it is not declared.
+
+00:22:27.080 --> 00:22:30.220
+Okay, so for using this, let me close everything.
+
+00:22:32.360 --> 00:22:32.840
+Perfect.
+
+00:22:33.360 --> 00:22:34.320
+And then what next?
+
+00:22:34.520 --> 00:22:35.780
+Let me close this as well.
+
+00:22:35.940 --> 00:22:37.740
+I can simply say EAS init.
+
+00:22:40.100 --> 00:22:44.760
+So this is going to initialize it and yep, I wanted to create this.
+
+00:22:46.280 --> 00:22:48.220
+Then let's just wait for a few seconds.
+
+00:22:48.600 --> 00:22:49.900
+Project link successfully.
+
+00:22:51.300 --> 00:22:51.480
+Okay.
+
+00:22:51.540 --> 00:22:55.660
+Then what I will see, EAS build configure.
+
+00:23:00.280 --> 00:23:04.340
+Okay, so hopefully this will work now.
+
+00:23:05.500 --> 00:23:06.179
+Which platform?
+
+00:23:06.700 --> 00:23:09.940
+Definitely Android for now and then what next?
+
+00:23:10.919 --> 00:23:12.799
+Next is run EAS build.
+
+00:23:12.980 --> 00:23:20.559
+simply run EAS build platform is going to be hyphen hyphen platform is Android.
+
+00:23:21.200 --> 00:23:28.340
+And, hyphen hyphen profile is going to be development and then I can simply head this.
+
+00:23:30.580 --> 00:23:34.019
+Yes, I wanted to install export of client as well.
+
+00:23:34.240 --> 00:23:35.860
+They're smart enough to tell us everything.
+
+00:23:37.240 --> 00:23:42.919
+Okay, and then they are installing all the dependencies that we need and yes, we do not
+
+00:23:42.920 --> 00:23:45.019
+have any environment variable for now.
+
+00:23:46.440 --> 00:23:50.320
+Actually, we do have, but for now, we can definitely go with this approach as we are
+
+00:23:50.321 --> 00:23:52.519
+not sharing this app with anyone.
+
+00:23:53.000 --> 00:23:55.600
+Then I can simply say, yes, go with this name.
+
+00:23:57.200 --> 00:23:58.539
+Okay, we have initialized it.
+
+00:23:58.620 --> 00:24:03.620
+Keystore, yes, create new Keystore, generating Keystore in the cloud.
+
+00:24:04.120 --> 00:24:05.659
+Yep, we can wait for it.
+
+00:24:07.580 --> 00:24:12.200
+Alright, so now you guys can see that we are compressing the project file and uploading
+
+00:24:12.240 --> 00:24:13.200
+to EAS build.
+
+00:24:14.800 --> 00:24:16.660
+Alright, so now you can see this is the logs.
+
+00:24:17.060 --> 00:24:20.500
+So let me just try to open this and show here.
+
+00:24:20.720 --> 00:24:22.500
+Yes, now you can see that our.
+
+00:24:23.620 --> 00:24:31.580
+application is in queued and then build queued okay and I think spinning up the build environment
+
+00:24:31.600 --> 00:24:35.760
+and all of the things you can definitely wait for a few minutes and then I will be right
+
+00:24:35.800 --> 00:24:36.060
+back.
+
+00:24:36.800 --> 00:24:41.040
+Alright guys so now our development build is ready so simply say no.
+
+00:24:41.100 --> 00:24:43.120
+And then let me close everything.
+
+00:24:43.360 --> 00:24:44.600
+Let me open my camera.
+
+00:24:45.299 --> 00:24:45.660
+Alright.
+
+00:24:45.919 --> 00:24:48.059
+And then let me try to download this.
+
+00:24:48.320 --> 00:24:49.240
+So, just give me a minute.
+
+00:24:50.080 --> 00:24:50.440
+Alright.
+
+00:24:50.520 --> 00:24:53.580
+Let me just simply scan this up.
+
+00:24:54.419 --> 00:24:54.799
+Okay.
+
+00:24:56.900 --> 00:24:58.960
+And then I can simply open it.
+
+00:25:00.299 --> 00:25:01.840
+And then I can press on install.
+
+00:25:04.179 --> 00:25:08.139
+Okay, let's go inside the details and we are installing it.
+
+00:25:08.820 --> 00:25:10.419
+Alright, let's just wait for few seconds.
+
+00:25:11.539 --> 00:25:14.440
+Alright, and then I can simply press on install.
+
+00:25:14.799 --> 00:25:16.360
+Let's just wait for installation.
+
+00:25:17.179 --> 00:25:20.600
+Okay, and then let me simply try to open this application.
+
+00:25:22.480 --> 00:25:26.419
+Alright, and then I can simply hit 1x expose start.
+
+00:25:28.500 --> 00:25:36.080
+And then what I will do I will try to connect this okay invalid URL host we already have
+
+00:25:36.081 --> 00:25:42.780
+this right host but okay but if I try to simply press on A and this is going to open this
+
+00:25:42.799 --> 00:25:49.799
+inside okay let me simply press on continue okay let me reload it once again.
+
+00:25:53.260 --> 00:25:58.680
+Alright, and now we can see that all the images that we are getting and what if I just simply
+
+00:25:58.681 --> 00:26:01.320
+open it and try to save it.
+
+00:26:01.440 --> 00:26:02.040
+Look at that.
+
+00:26:02.041 --> 00:26:03.560
+Now they are asking us to allow.
+
+00:26:03.700 --> 00:26:07.120
+I can simply say allow all and okay.
+
+00:26:07.380 --> 00:26:10.740
+They are keep loading and loading images saved to gallery.
+
+00:26:11.080 --> 00:26:11.920
+Let's check the gallery.
+
+00:26:12.320 --> 00:26:12.540
+Okay.
+
+00:26:12.700 --> 00:26:15.380
+And hopefully we find something here.
+
+00:26:16.080 --> 00:26:17.519
+And yes, look at that.
+
+00:26:18.299 --> 00:26:20.240
+This is the image that we have downloaded.
+
+00:26:20.799 --> 00:26:21.179
+Nice.
+
+00:26:22.179 --> 00:26:28.159
+If I open this once again, let's say I have closed it and let me try to get something
+
+00:26:28.200 --> 00:26:31.059
+green or definitely background.
+
+00:26:31.250 --> 00:26:32.399
+We will get a lot more.
+
+00:26:33.480 --> 00:26:35.100
+I can simply say apply filter.
+
+00:26:36.700 --> 00:26:38.200
+So, yes, look at that.
+
+00:26:38.480 --> 00:26:42.820
+This is the filters that we got and let me try to download this.
+
+00:26:42.980 --> 00:26:47.180
+Open this simply press on save images save to gallery.
+
+00:26:48.160 --> 00:26:52.200
+Let me open my gallery and yes, amazing, amazing job.
+
+00:26:53.120 --> 00:26:56.580
+This is the end of our entire wallpaper application.
+
+00:26:56.800 --> 00:27:01.500
+I hope you loved it and if yes, then make sure to drop your feedback with this boy.
+
+00:27:01.680 --> 00:27:02.060
+Take care.
+
+00:27:02.180 --> 00:27:04.520
+See you and see you next time.
+

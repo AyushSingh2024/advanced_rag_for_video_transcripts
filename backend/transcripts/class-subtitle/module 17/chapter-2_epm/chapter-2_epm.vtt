@@ -1,0 +1,1487 @@
+WEBVTT
+
+00:00:00.799 --> 00:00:03.860
+Alright everyone and welcome to chapter number two.
+
+00:00:03.960 --> 00:00:09.420
+In this chapter we are going to implement the screens and navigation of our application.
+
+00:00:09.640 --> 00:00:09.940
+Perfect.
+
+00:00:10.940 --> 00:00:17.960
+So, basically we are going to design the UI of our index page and we can say of our something
+
+00:00:17.961 --> 00:00:19.380
+known as story page.
+
+00:00:19.640 --> 00:00:19.980
+Perfect.
+
+00:00:20.000 --> 00:00:23.640
+So, let's move ahead and start implementing this.
+
+00:00:23.780 --> 00:00:28.520
+So for the implementation, first step is simply go inside your index page.
+
+00:00:28.939 --> 00:00:29.240
+Perfect.
+
+00:00:30.119 --> 00:00:33.100
+And definitely I'm just hitting and trying something.
+
+00:00:33.340 --> 00:00:34.980
+That's why this is edited.
+
+00:00:35.440 --> 00:00:36.160
+It's okay.
+
+00:00:36.379 --> 00:00:38.059
+Let me just simply coming to here.
+
+00:00:38.400 --> 00:00:41.900
+And first step is I wanted to add here.
+
+00:00:42.640 --> 00:00:48.640
+something known as all the designs related to this page that we are going to use.
+
+00:00:48.719 --> 00:00:52.160
+So let me just simply paste all of the designs, no problem.
+
+00:00:52.879 --> 00:00:54.839
+This is what we are doing from the start.
+
+00:00:55.140 --> 00:00:56.860
+No, we have no problem in it.
+
+00:00:57.300 --> 00:00:59.820
+And then let me simply import my style sheet.
+
+00:01:00.940 --> 00:01:02.420
+this theme of
+
+00:01:03.100 --> 00:01:12.500
+And this colors perfect and yep all the designs are here nice cool.
+
+00:01:12.549 --> 00:01:16.159
+So now we can definitely use this properties and we are good to go.
+
+00:01:17.420 --> 00:01:23.380
+So the first thing is what I wanted you to do is to simply add instead of this view simply
+
+00:01:23.381 --> 00:01:26.540
+use something known as keyboard avoiding view.
+
+00:01:26.780 --> 00:01:28.899
+Yes this is something very interesting component.
+
+00:01:29.200 --> 00:01:36.039
+So, every time whenever you are using some input and text area, you will see that your
+
+00:01:36.119 --> 00:01:39.420
+keyboard is basically overlapping that text area.
+
+00:01:39.700 --> 00:01:47.079
+So, if you are going to use this keyboard avoiding view that will actually push your
+
+00:01:47.200 --> 00:01:54.340
+that specific text area or input box to the top depends on the platform you are dealing
+
+00:01:54.341 --> 00:01:54.640
+with.
+
+00:01:54.641 --> 00:01:57.119
+Let's say we have something known as behavior.
+
+00:01:57.600 --> 00:02:02.040
+And, this behavior is depends on the platform dot os.
+
+00:02:02.560 --> 00:02:10.979
+If this is equals to equals to ios then simply add some paddings otherwise change the height
+
+00:02:10.980 --> 00:02:12.600
+of the application ok.
+
+00:02:16.220 --> 00:02:20.260
+Nice, and then after that I can simply add the container style.
+
+00:02:20.400 --> 00:02:27.120
+So I can simply say styles, styles.container and after this what I will do first thing
+
+00:02:27.160 --> 00:02:30.080
+we are going to have here a scroll view.
+
+00:02:31.459 --> 00:02:33.180
+Let me import my scroll view.
+
+00:02:33.700 --> 00:02:38.000
+And, this scroll view is going to have a style.
+
+00:02:39.060 --> 00:02:44.459
+This style is equals to styles.scrollview.
+
+00:02:47.780 --> 00:02:48.500
+Nice.
+
+00:02:48.880 --> 00:02:51.860
+And then we are going to have the content container style.
+
+00:02:52.040 --> 00:02:54.580
+This is also equals to style.scrollcontent.
+
+00:02:56.100 --> 00:03:02.380
+And then we can have a shows vertical scroll indicator as false.
+
+00:03:04.100 --> 00:03:04.480
+Very good.
+
+00:03:04.520 --> 00:03:08.420
+And then inside this we are actually going to have a view.
+
+00:03:12.400 --> 00:03:14.540
+And let me import the view component.
+
+00:03:14.840 --> 00:03:16.900
+This view is going to have a style.
+
+00:03:17.400 --> 00:03:23.459
+This style is equals to styles dot content.
+
+00:03:25.079 --> 00:03:25.319
+Nice.
+
+00:03:26.620 --> 00:03:32.840
+And then what I will do first view is basically related to all the text inputs and all the
+
+00:03:32.841 --> 00:03:34.099
+headers basically I can say.
+
+00:03:34.299 --> 00:03:35.659
+Let me just paste that header.
+
+00:03:36.200 --> 00:03:42.819
+This header is basically going to this is your view no problem inside this view first
+
+00:03:42.820 --> 00:03:49.660
+thing we have icon a book open icon so we are going to use here or something new icon
+
+00:03:49.661 --> 00:03:56.900
+library the name is react lucid react native if I'm not wrong let me see that and this
+
+00:03:56.901 --> 00:04:02.120
+is your title and this is your description for it we know that cool.
+
+00:04:02.400 --> 00:04:11.019
+Let's move ahead and then simply run burn add lucid react native.
+
+00:04:11.799 --> 00:04:15.360
+So this is basically going to add this icon library.
+
+00:04:15.700 --> 00:04:16.100
+Perfect.
+
+00:04:17.720 --> 00:04:20.220
+Alright guys, so now we have successfully installed it.
+
+00:04:20.260 --> 00:04:21.160
+Let me close this.
+
+00:04:21.320 --> 00:04:21.579
+Perfect.
+
+00:04:21.580 --> 00:04:25.220
+And then we can now import this.
+
+00:04:25.221 --> 00:04:31.320
+Book open icon and this book open icon will come from below this.
+
+00:04:31.479 --> 00:04:38.139
+I can simply say import book open icon from Lucid react native.
+
+00:04:38.540 --> 00:04:42.820
+And yes, the moment I save it and what just happened.
+
+00:04:45.640 --> 00:04:50.320
+Unable to resolve arrow down JS.
+
+00:04:53.600 --> 00:04:54.020
+It's okay.
+
+00:04:54.180 --> 00:04:55.500
+I can simply hit the reload.
+
+00:04:55.900 --> 00:04:56.960
+Maybe that will work.
+
+00:05:00.700 --> 00:05:02.000
+I can close this.
+
+00:05:02.520 --> 00:05:05.440
+this once again and read in my application.
+
+00:05:09.900 --> 00:05:12.980
+All right, and maybe I need to change the version of it.
+
+00:05:13.100 --> 00:05:13.600
+I don't know.
+
+00:05:13.640 --> 00:05:18.940
+We'll see that or maybe we will change the entire library if it's throw us so much of
+
+00:05:18.941 --> 00:05:19.160
+error.
+
+00:05:22.320 --> 00:05:23.760
+Let's just wait for it.
+
+00:05:24.600 --> 00:05:26.720
+And yes, look at that.
+
+00:05:26.880 --> 00:05:33.220
+We have a story generator open and definitely powered by open router create magical stories.
+
+00:05:33.460 --> 00:05:37.840
+Open router provide you more than 51 AI models that is free to use.
+
+00:05:38.060 --> 00:05:39.360
+That's why I'm using this.
+
+00:05:40.160 --> 00:05:42.880
+And then we have this very beautiful icon.
+
+00:05:43.300 --> 00:05:43.560
+Amazing.
+
+00:05:44.500 --> 00:05:45.420
+Now let's move ahead.
+
+00:05:45.600 --> 00:05:48.140
+And next step is we already have a header.
+
+00:05:48.500 --> 00:05:51.900
+So, inside this content, we already have a header.
+
+00:05:52.340 --> 00:05:53.260
+Now what I need?
+
+00:05:53.480 --> 00:05:54.520
+I need another view.
+
+00:05:56.520 --> 00:06:03.300
+This view is going to have a style and that is going to be styles.inputContainer.
+
+00:06:03.900 --> 00:06:10.620
+And this input container is going to contain something known as one text input, but before
+
+00:06:10.621 --> 00:06:14.940
+using that text input, we need a state variable for it.
+
+00:06:15.360 --> 00:06:22.639
+So, I can simply say prompt and then set prompt is equals to use state.
+
+00:06:24.560 --> 00:06:28.539
+And then initially this is going to be one empty string.
+
+00:06:28.860 --> 00:06:30.979
+I think we are good to go.
+
+00:06:31.200 --> 00:06:38.620
+In same way we can have one loading state as well loading and set loading is equals
+
+00:06:38.621 --> 00:06:42.180
+to use state and initially I can mark this as false.
+
+00:06:44.520 --> 00:06:49.000
+And then I can simply come into here and paste my text input.
+
+00:06:49.400 --> 00:06:56.540
+So, let me simply copy this and paste it and let me import my text input and format this
+
+00:06:56.541 --> 00:06:56.880
+once.
+
+00:06:57.620 --> 00:07:04.419
+So, you can see that right now this is a text input that have a style, a placeholder and
+
+00:07:04.420 --> 00:07:06.440
+then a placeholder text color.
+
+00:07:06.800 --> 00:07:12.900
+Alright, so now you guys can see and the moment I simply press on save, this is how my input
+
+00:07:12.901 --> 00:07:14.860
+box is actually looks.
+
+00:07:15.479 --> 00:07:15.900
+Perfect.
+
+00:07:16.500 --> 00:07:16.879
+Nice.
+
+00:07:17.780 --> 00:07:25.159
+And what I will do outside of this view basically like from here I think.
+
+00:07:25.220 --> 00:07:26.120
+Yep.
+
+00:07:26.121 --> 00:07:31.580
+Outside of this we can have one touchable opacity that will show us a button that will
+
+00:07:31.659 --> 00:07:32.639
+say generate story.
+
+00:07:32.979 --> 00:07:33.580
+Okay.
+
+00:07:33.600 --> 00:07:41.620
+So, this is going to be touchable opacity and this is going to be touchable opacity.
+
+00:07:41.940 --> 00:07:45.660
+Inside this touchable opacity we are going to have some style.
+
+00:07:46.640 --> 00:07:53.540
+Style is equals to the array of first thing is the style start button no problem.
+
+00:07:54.480 --> 00:08:01.140
+And if we are in loading state, then show the style of style dot button disabled.
+
+00:08:01.600 --> 00:08:09.040
+And, nice and then on press we are going to have some method here right now we do not
+
+00:08:09.080 --> 00:08:16.280
+have it and then when this button is disabled when we are in loading state easy and then
+
+00:08:16.281 --> 00:08:20.020
+we have active opacity of 0.8 no problem.
+
+00:08:20.100 --> 00:08:27.020
+So, what I will do here right now, if we are in loading state then I wanted to show something
+
+00:08:27.180 --> 00:08:28.940
+otherwise I wanted to show something.
+
+00:08:29.720 --> 00:08:36.559
+So, whenever I am in loading state then I wanted to render here the activity indicator
+
+00:08:36.660 --> 00:08:39.100
+that is showing the generating text.
+
+00:08:40.000 --> 00:08:41.780
+Like this.
+
+00:08:42.600 --> 00:08:42.799
+Ok.
+
+00:08:43.179 --> 00:08:47.120
+And then inside this I will show some icons.
+
+00:08:48.260 --> 00:08:51.100
+Let me import my wand 2 icon.
+
+00:08:52.200 --> 00:08:52.500
+Ok.
+
+00:08:52.640 --> 00:08:56.580
+And then first of all let me add them into the react fragment.
+
+00:08:58.720 --> 00:08:58.920
+Yep.
+
+00:08:59.120 --> 00:09:01.400
+And then I can also import my sparkles.
+
+00:09:01.680 --> 00:09:04.460
+And the moment I save it, this is how they look.
+
+00:09:04.620 --> 00:09:04.960
+Easy.
+
+00:09:05.680 --> 00:09:07.220
+So, this is your home screen.
+
+00:09:07.800 --> 00:09:15.320
+And, what I will do next, next outside of this touchable opacity, I will simply do what
+
+00:09:15.600 --> 00:09:18.740
+example underscore prompts dot length.
+
+00:09:19.120 --> 00:09:27.980
+If this is greater than 0, then we wanted to show the example prompts.
+
+00:09:28.160 --> 00:09:29.080
+So, what I will do?
+
+00:09:29.081 --> 00:09:30.580
+I can simply open one view.
+
+00:09:33.180 --> 00:09:36.060
+Inside this view, we are going to have a style.
+
+00:09:36.640 --> 00:09:44.640
+Style is equals to styles.exampleContainer and this example container is going to have
+
+00:09:44.641 --> 00:09:52.280
+a text that will show a simple example prompts and this text will simply show a style.
+
+00:09:52.700 --> 00:09:58.880
+That will be styles.examples we have something on its title.
+
+00:10:00.040 --> 00:10:03.600
+Okay, so if I save it, this is how this example prompt will look.
+
+00:10:04.680 --> 00:10:09.040
+Then we have one grid style and let me tell you very interesting thing.
+
+00:10:10.420 --> 00:10:14.220
+Inside the react native into designs, we don't have grid.
+
+00:10:14.920 --> 00:10:16.320
+You need to keep that in mind.
+
+00:10:17.200 --> 00:10:21.459
+They have some PR raised for that into their GitHub repo.
+
+00:10:22.420 --> 00:10:24.519
+But for now, they don't support grids.
+
+00:10:25.279 --> 00:10:31.120
+So this does not mean that react native is bad or they don't support react native.
+
+00:10:31.360 --> 00:10:33.839
+You can do everything with Flexbox itself.
+
+00:10:34.400 --> 00:10:36.780
+Then this is going to be your view.
+
+00:10:36.960 --> 00:10:43.460
+View will have something known as style.example grid design.
+
+00:10:44.100 --> 00:10:51.360
+Okay, but internally they use flex, what irony and then inside this I can simply say example
+
+00:10:51.400 --> 00:10:53.980
+prompts.mapit.
+
+00:10:54.720 --> 00:11:00.640
+Map this, this is your example, then we can have index and this is simply going to return
+
+00:11:00.641 --> 00:11:03.160
+you another touchable opacity.
+
+00:11:04.620 --> 00:11:15.760
+So, let me simply say touchable opacity that will basically render a text that is showing
+
+00:11:16.459 --> 00:11:16.899
+example.
+
+00:11:17.480 --> 00:11:17.620
+Okay.
+
+00:11:17.621 --> 00:11:22.420
+If I save it, this is how all the text will look, but no, this is very bad.
+
+00:11:22.600 --> 00:11:25.100
+So, let me just enhance the design.
+
+00:11:25.519 --> 00:11:28.680
+First thing is let me give the key for each of the text.
+
+00:11:29.019 --> 00:11:29.519
+Very good.
+
+00:11:29.900 --> 00:11:34.660
+And next what I will do, I will simply give the style to it.
+
+00:11:35.140 --> 00:11:40.060
+Style is going to be styles.exampleCard.
+
+00:11:40.320 --> 00:11:42.400
+So now this looks amazing.
+
+00:11:43.360 --> 00:11:46.160
+And yes, you can even scroll it and this is how they look.
+
+00:11:46.640 --> 00:11:47.380
+No problem.
+
+00:11:47.900 --> 00:11:56.440
+And then on press, this is basically going to call one method name as handle example
+
+00:11:57.140 --> 00:12:03.860
+prompt and then they are going to get the basically the example, the moment you click,
+
+00:12:03.940 --> 00:12:07.500
+we wanted to add this prompt onto our.
+
+00:12:08.100 --> 00:12:17.399
+text area, you got the point. Then I can simply say disable, disable on loading. Nice. Now
+
+00:12:17.400 --> 00:12:22.579
+let's move ahead and implement two method. One method is this and definitely we are not
+
+00:12:22.580 --> 00:12:27.459
+going to implement the actual logic right now, just a simple initialization. So this
+
+00:12:27.460 --> 00:12:34.139
+is the handle generate method and below is handle example prompt. So let's move ahead
+
+00:12:34.140 --> 00:12:35.160
+and first of all.
+
+00:12:35.500 --> 00:12:45.960
+Let me create const handle example prompt this is going to accept the example prompt
+
+00:12:46.180 --> 00:12:55.000
+of string nice and then I can simply say set prompt set prompt is equals to example prompt
+
+00:12:55.620 --> 00:13:01.460
+nice and then what I will do I will only initialize one empty function.
+
+00:13:03.440 --> 00:13:11.440
+handle generate ok, this is just a simple function ok, so the moment I save it and let
+
+00:13:11.441 --> 00:13:16.820
+us say I clicked here look at that, if I clicked here look at that, this is how this actually
+
+00:13:16.821 --> 00:13:17.180
+works.
+
+00:13:17.760 --> 00:13:23.220
+right now we are done with the index page, what next?
+
+00:13:23.800 --> 00:13:26.940
+Next is your main story page.
+
+00:13:27.180 --> 00:13:34.560
+So story pages also basically this depends on some UI elements for now.
+
+00:13:35.240 --> 00:13:42.220
+But what I will try to do is to implement that I think when we have some AI response.
+
+00:13:42.500 --> 00:13:48.620
+Or maybe we can take some sample AI response and then try to load it up.
+
+00:13:48.640 --> 00:13:57.460
+So let me just close this or instead of closing this, let's go inside the story page.
+
+00:13:57.540 --> 00:13:58.580
+So how I will go it?
+
+00:13:58.780 --> 00:14:00.420
+I just simply add one hacker.
+
+00:14:00.660 --> 00:14:02.220
+I'll change that in a while.
+
+00:14:02.780 --> 00:14:03.620
+This is your link.
+
+00:14:04.720 --> 00:14:05.960
+This will basically...
+
+00:14:06.400 --> 00:14:16.260
+Take me to the, let me import the text, go to story and then right now what I will do
+
+00:14:16.440 --> 00:14:18.560
+href, href will take me to the story.
+
+00:14:19.320 --> 00:14:23.720
+Okay, if I save it, nice, let me add the style.
+
+00:14:24.680 --> 00:14:30.180
+is going to be the color of white.
+
+00:14:31.240 --> 00:14:36.900
+Okay, so the moment I press on go to story, I am into the story page, into in story page
+
+00:14:36.901 --> 00:14:37.460
+right now.
+
+00:14:37.580 --> 00:14:41.460
+Let me close this index, open this story.tsx.
+
+00:14:43.020 --> 00:14:47.900
+Okay, so first thing is definitely we are going to have a lot of data, a lot of search
+
+00:14:47.901 --> 00:14:49.800
+parameters, a lot of things.
+
+00:14:49.980 --> 00:14:50.859
+But for now...
+
+00:14:52.480 --> 00:14:56.940
+Let me try to add all the state variables that we need.
+
+00:14:57.120 --> 00:15:06.680
+So, the first thing that will come in future is data, data from use local search params
+
+00:15:06.880 --> 00:15:11.740
+and yes, after this we can have one router.
+
+00:15:12.300 --> 00:15:14.680
+router is equals to use router.
+
+00:15:15.300 --> 00:15:26.060
+And, then we can have one image loading and then set image loading is equals to use state
+
+00:15:26.860 --> 00:15:27.200
+nice.
+
+00:15:27.980 --> 00:15:37.339
+And, then we can have another state variable with the name of image error and set image
+
+00:15:37.399 --> 00:15:37.779
+errors.
+
+00:15:39.360 --> 00:15:43.660
+is equals to again a use state and then simply open it.
+
+00:15:44.600 --> 00:15:51.040
+And at the end we can have one image URLs and then set image URLs.
+
+00:15:52.680 --> 00:15:52.959
+Perfect.
+
+00:15:53.220 --> 00:15:55.720
+And then this is equals to use state as well.
+
+00:15:57.220 --> 00:15:59.420
+Nice, and what next?
+
+00:15:59.620 --> 00:16:05.700
+Next what we will do, we will just initialize one empty let story because right now we do
+
+00:16:05.701 --> 00:16:06.620
+not have any story.
+
+00:16:07.560 --> 00:16:09.960
+So I will just keep it story.
+
+00:16:10.140 --> 00:16:17.260
+This is basically the type of story response that contain the title and paragraph and that
+
+00:16:17.261 --> 00:16:19.580
+paragraph also contain the prompt to image.
+
+00:16:19.900 --> 00:16:21.620
+and the actual paragraph.
+
+00:16:22.300 --> 00:16:25.860
+So what I will try to do right now is we are good to go.
+
+00:16:26.180 --> 00:16:29.980
+We can simply initialize that as a null for now.
+
+00:16:31.060 --> 00:16:31.180
+Good.
+
+00:16:31.380 --> 00:16:39.340
+And then what I will do, I will simply say if we don't have any story, okay, if we don't
+
+00:16:39.380 --> 00:16:46.340
+have any story, which is we don't right now, then first of all, let me grab all the designs
+
+00:16:46.341 --> 00:16:47.080
+that I need.
+
+00:16:47.800 --> 00:16:52.100
+Let me copy this and then let me paste it.
+
+00:16:52.260 --> 00:16:52.680
+Okay.
+
+00:16:53.839 --> 00:16:56.040
+So, this is the colors.
+
+00:16:56.240 --> 00:16:57.820
+Let me import the colors.
+
+00:16:58.019 --> 00:17:03.080
+Let me import my theme and yes, nice.
+
+00:17:03.140 --> 00:17:05.520
+So, this is all the designs that we have.
+
+00:17:07.280 --> 00:17:09.380
+We also need to import the platform.
+
+00:17:09.839 --> 00:17:10.160
+Perfect.
+
+00:17:10.260 --> 00:17:12.420
+So, this is all the designs that we need.
+
+00:17:15.360 --> 00:17:20.560
+Now, let us move ahead and if we do not have any story for now, ok.
+
+00:17:21.600 --> 00:17:26.080
+So, if you do not have any story, then I wanted to show no story found something like that.
+
+00:17:26.360 --> 00:17:31.040
+So, let me simply return this UI that is.
+
+00:17:32.480 --> 00:17:39.400
+No story found and then let me import the arrow left from the react native.
+
+00:17:39.800 --> 00:17:40.280
+Okay.
+
+00:17:40.300 --> 00:17:43.820
+So this is the icon we need the moment I say it.
+
+00:17:43.870 --> 00:17:45.600
+Yes, you can see that right now.
+
+00:17:45.840 --> 00:17:46.820
+No story found.
+
+00:17:46.920 --> 00:17:50.180
+If I go back, if I again press, this is how this will look.
+
+00:17:50.780 --> 00:17:56.660
+This is simple touchable opacity that is showing on press, go back and then arrow left and
+
+00:17:56.661 --> 00:17:57.220
+then a text.
+
+00:17:57.420 --> 00:17:58.320
+No problem.
+
+00:17:59.060 --> 00:17:59.580
+Easy.
+
+00:18:00.100 --> 00:18:08.020
+But let's say we have some UI, then what I will try to do, this view is going to have
+
+00:18:08.021 --> 00:18:14.960
+a style, then we have styles.container and then we have another view.
+
+00:18:16.360 --> 00:18:22.940
+This view is again going to have a style and this style is going to be styles.header.
+
+00:18:23.539 --> 00:18:27.700
+Okay, and then what I will try to do right now
+
+00:18:29.240 --> 00:18:33.360
+What I will do, I will just add some sample story data here.
+
+00:18:34.240 --> 00:18:40.780
+Okay, so right now for the story, let me just try to do you know what I can simply say this
+
+00:18:40.781 --> 00:18:43.320
+as like this.
+
+00:18:43.640 --> 00:18:49.540
+Okay, this is just a sample story and I can definitely change the name of it to story
+
+00:18:49.541 --> 00:18:50.240
+once again.
+
+00:18:50.960 --> 00:18:54.720
+So for the story you will see that we have a title.
+
+00:18:55.900 --> 00:19:00.440
+Then some paragraph, let me just show you the structure so that you can also use AI
+
+00:19:00.620 --> 00:19:02.700
+and generate a same structure like this.
+
+00:19:04.180 --> 00:19:11.040
+Then we have inside this paragraph, this is a paragraph sexually, which are array that
+
+00:19:11.160 --> 00:19:16.660
+except array of object, which have one paragraph and then the prompt to image.
+
+00:19:16.920 --> 00:19:18.880
+This prompt will go to AI right now.
+
+00:19:18.881 --> 00:19:21.560
+We are not that much focusing on to this.
+
+00:19:21.700 --> 00:19:23.519
+But yes, this is your story.
+
+00:19:23.820 --> 00:19:24.059
+Perfect.
+
+00:19:24.440 --> 00:19:31.880
+So now if I save it, okay, so yes, now you can see that definitely let's move ahead and
+
+00:19:31.881 --> 00:19:33.139
+start implementing this.
+
+00:19:33.769 --> 00:19:37.080
+So the first thing is we already have one view.
+
+00:19:37.960 --> 00:19:43.519
+This view is the header view that will actually going to show one touchable opacity.
+
+00:19:44.000 --> 00:19:50.200
+something like this. Now if I save it, this is what you can see right now. In same way,
+
+00:19:50.360 --> 00:19:57.000
+I can show the story title. So, the story title is The Night and the Hidden Portal.
+
+00:19:58.060 --> 00:20:01.440
+Okay. This is the story title that we have.
+
+00:20:01.900 --> 00:20:06.440
+So, padding top what I am saying, no, I think I need more paddings.
+
+00:20:06.900 --> 00:20:08.640
+So, padding of 40 is fine.
+
+00:20:09.640 --> 00:20:13.300
+I think we can keep the 60 or maybe 50.
+
+00:20:14.660 --> 00:20:15.680
+Okay, this is fine.
+
+00:20:16.200 --> 00:20:16.440
+Cool.
+
+00:20:16.800 --> 00:20:22.280
+So, this is how this the title will coming from this sample story that we have.
+
+00:20:22.480 --> 00:20:23.380
+Okay, no problem.
+
+00:20:24.000 --> 00:20:28.020
+After this, I wanted to add here one share button.
+
+00:20:29.100 --> 00:20:34.600
+This share will going to use something known as handle share that do not have right now.
+
+00:20:34.900 --> 00:20:41.000
+So I can simply initialize one handle share button and we are good to go.
+
+00:20:41.880 --> 00:20:42.620
+Let me save it.
+
+00:20:42.680 --> 00:20:44.860
+Yes, so this is how this handle share will look.
+
+00:20:45.420 --> 00:20:45.680
+Fine.
+
+00:20:46.240 --> 00:20:50.700
+Outside of this view, I wanted to have one scroll view.
+
+00:20:52.340 --> 00:21:02.840
+This scroll view is again going to have three things, a style, content style and show vertical
+
+00:21:02.960 --> 00:21:03.860
+scroll indicator.
+
+00:21:04.600 --> 00:21:09.080
+And then I simply wanted to open this and what I will do?
+
+00:21:09.100 --> 00:21:18.360
+I will simply say story, yes, story.paragraphs.map because we know that paragraphs is the array
+
+00:21:19.360 --> 00:21:23.480
+and then inside this we have a part and the index.
+
+00:21:24.600 --> 00:21:30.039
+And then I will try to implicit and not implicit, let explicit return it.
+
+00:21:31.140 --> 00:21:34.820
+And inside this first thing is we can have one image URL.
+
+00:21:36.120 --> 00:21:40.120
+Image URL will come from image URLs index.
+
+00:21:40.280 --> 00:21:42.799
+You might be thinking what is this image URLs?
+
+00:21:43.120 --> 00:21:46.520
+So this image URL is nothing, just this one.
+
+00:21:46.700 --> 00:21:48.539
+This is the state variable that we have.
+
+00:21:48.900 --> 00:21:53.220
+And what I will try to do, I will try to add a types for it.
+
+00:21:53.360 --> 00:21:58.380
+So this is the object that have a key of number because that is an index and that will return
+
+00:21:58.381 --> 00:21:58.980
+as a string.
+
+00:22:00.200 --> 00:22:03.640
+So yes, this is how this actually going to look.
+
+00:22:04.840 --> 00:22:07.800
+I know it's a bit confusing, but let me explain you.
+
+00:22:08.220 --> 00:22:12.100
+The image URL will accept a key which is a type of number.
+
+00:22:12.240 --> 00:22:14.040
+So this number is your index.
+
+00:22:14.500 --> 00:22:18.240
+And, on the basis of this we are going to return a string.
+
+00:22:18.500 --> 00:22:20.960
+So, that is why we are doing it like this.
+
+00:22:21.360 --> 00:22:26.520
+Image URL, image URL is accepting the index and this after this, this will return as a
+
+00:22:26.521 --> 00:22:27.220
+string to this.
+
+00:22:27.740 --> 00:22:31.240
+Ok, that is why the type look like that.
+
+00:22:32.180 --> 00:22:32.460
+Nice.
+
+00:22:32.700 --> 00:22:35.520
+And after this what I can do?
+
+00:22:36.000 --> 00:22:41.020
+I can simply have has error and is loading same way.
+
+00:22:41.540 --> 00:22:44.060
+So this is your has error and then is loading.
+
+00:22:45.420 --> 00:22:45.740
+Perfect.
+
+00:22:46.060 --> 00:22:48.100
+And this will actually going to return.
+
+00:22:49.900 --> 00:22:51.540
+Okay now you can see there stop crying.
+
+00:22:53.280 --> 00:22:55.320
+Image URL probably undefined.
+
+00:22:56.100 --> 00:22:57.760
+Okay we will fix it.
+
+00:22:57.761 --> 00:22:58.200
+No worries.
+
+00:22:58.600 --> 00:22:59.900
+For now we are good to go.
+
+00:23:01.000 --> 00:23:02.320
+And then we have one view.
+
+00:23:04.480 --> 00:23:06.360
+This is your view.
+
+00:23:06.660 --> 00:23:07.020
+Okay.
+
+00:23:07.021 --> 00:23:07.580
+Excuse me.
+
+00:23:07.640 --> 00:23:08.940
+Let me fix my spelling.
+
+00:23:09.160 --> 00:23:09.440
+Nice.
+
+00:23:10.220 --> 00:23:13.220
+So, this view is first thing they are going to have a key.
+
+00:23:14.020 --> 00:23:20.460
+So, key can be we can say the story, then part and then index.
+
+00:23:23.600 --> 00:23:32.159
+Yep, and second thing is we can have a style, style is again the styles.part container.
+
+00:23:33.600 --> 00:23:36.100
+Okay, then we can have one simple view.
+
+00:23:38.039 --> 00:23:45.940
+This view is basically going to be the style, style is styles.image container.
+
+00:23:46.600 --> 00:23:53.260
+And, then we can say that if it is loading ok, if this is loading then I simply wanted
+
+00:23:53.261 --> 00:24:00.919
+to show the activity indicator, no problem, nice.
+
+00:24:00.920 --> 00:24:03.500
+So, this is what activity indicator we have, but.
+
+00:24:03.800 --> 00:24:11.960
+So, if we have the image URL, yes if we have image URL then I basically wanted to show
+
+00:24:11.961 --> 00:24:12.580
+my image.
+
+00:24:12.940 --> 00:24:15.520
+So, image can be quite big.
+
+00:24:16.080 --> 00:24:33.780
+So, let me just simply grab my image and make sure that this image will come from the image
+
+00:24:33.781 --> 00:24:33.801
+React native, ok, and not react native actually, sorry, from the expo image.
+
+00:24:33.802 --> 00:24:37.600
+So what I will do, I will simply come into here and then I will import the image from
+
+00:24:39.159 --> 00:24:40.039
+expo image.
+
+00:24:40.600 --> 00:24:44.919
+Ok, so these are bunch of inbuilt component provided by expo like next years.
+
+00:24:46.100 --> 00:24:53.860
+And, then what I will do, let me once again coming to here and ok, so this is our image,
+
+00:24:55.020 --> 00:25:02.900
+this image will contain what this image will contain a source, source can be of URI which
+
+00:25:02.901 --> 00:25:08.840
+is equals to image URL, no problem, then we can have a style, style is again equal to
+
+00:25:08.841 --> 00:25:13.960
+styles.image then we can have content fit which is cover.
+
+00:25:14.900 --> 00:25:25.580
+Then we can have a transition, this transition is actually of we can say 200, then on load
+
+00:25:25.660 --> 00:25:29.500
+start what I will do, I will simply show this.
+
+00:25:29.920 --> 00:25:35.760
+So on image loading simply make this image loading is true and image error make as false.
+
+00:25:36.420 --> 00:25:42.440
+On load end same thing make this false, which one is false?
+
+00:25:42.460 --> 00:25:43.780
+okay the first one.
+
+00:25:44.000 --> 00:25:46.400
+This image loading will be false.
+
+00:25:46.900 --> 00:25:47.340
+Okay.
+
+00:25:48.280 --> 00:25:48.440
+Why?
+
+00:25:48.441 --> 00:25:53.580
+Because we don't want it to load the another image, but by any chance, if we have any error,
+
+00:25:53.940 --> 00:25:59.440
+then we wanted to say error as whatever the handle image error method that we have will
+
+00:25:59.500 --> 00:26:00.880
+implement that in a while.
+
+00:26:00.940 --> 00:26:07.300
+For now, let me just simply make this as empty array as empty initialize function.
+
+00:26:07.800 --> 00:26:08.020
+Okay.
+
+00:26:09.180 --> 00:26:10.500
+And what just happened?
+
+00:26:10.600 --> 00:26:12.760
+I am not able to understand that.
+
+00:26:14.680 --> 00:26:21.720
+Okay, so we have a transition, there is something wrong with it, I will figure out in a while,
+
+00:26:22.440 --> 00:26:23.620
+so just give me a minute.
+
+00:26:25.080 --> 00:26:29.540
+Alright guys, so for some reason we are getting some syntax issue here, so let me try to go
+
+00:26:29.541 --> 00:26:33.280
+back, back and once again back.
+
+00:26:34.200 --> 00:26:38.700
+Hopefully, this will work right now and we are still getting it.
+
+00:26:39.340 --> 00:26:42.220
+I do not know from where we have expo image.
+
+00:26:44.060 --> 00:26:44.900
+Okay, nice.
+
+00:26:45.460 --> 00:26:50.120
+Okay, what if I remove this entirely and what if I also remove this?
+
+00:26:50.460 --> 00:26:54.720
+So if I try to save it, you can see that this issue will go from here.
+
+00:26:54.721 --> 00:26:55.220
+No problem.
+
+00:26:55.900 --> 00:26:59.520
+Try to rewrite this same thing once again.
+
+00:26:59.640 --> 00:27:03.440
+So if we have this, what I will try to do, I will try to return something.
+
+00:27:04.600 --> 00:27:04.920
+Okay.
+
+00:27:05.200 --> 00:27:06.820
+So what is that returning part?
+
+00:27:06.940 --> 00:27:07.900
+A simple view.
+
+00:27:08.820 --> 00:27:09.260
+Nice.
+
+00:27:09.740 --> 00:27:11.880
+That view have a key and a style.
+
+00:27:13.060 --> 00:27:13.660
+No problem.
+
+00:27:14.360 --> 00:27:15.420
+Then what we have?
+
+00:27:15.920 --> 00:27:17.620
+We have one image container.
+
+00:27:17.980 --> 00:27:18.160
+Okay.
+
+00:27:20.100 --> 00:27:23.720
+which have a style, style of what?
+
+00:27:24.220 --> 00:27:33.200
+Style of styles not image container and this image container first thing contain the loading
+
+00:27:33.201 --> 00:27:33.640
+state.
+
+00:27:35.280 --> 00:27:40.000
+This is the first thing that we are going to contain inside this image container, this
+
+00:27:40.001 --> 00:27:42.440
+loading state and what next?
+
+00:27:42.960 --> 00:27:44.559
+Next we are going to have the image.
+
+00:27:44.799 --> 00:27:48.520
+So, if we have a image URL then simply.
+
+00:27:49.560 --> 00:27:53.460
+render this one, otherwise render something else.
+
+00:27:53.700 --> 00:27:54.640
+Okay, I got it.
+
+00:27:54.660 --> 00:27:55.260
+Where is the issue?
+
+00:27:55.340 --> 00:28:01.700
+So, if we don't have any image, then I can simply show what no preview image is available.
+
+00:28:03.160 --> 00:28:08.260
+But if we have that, then I wanted to use here the image thing.
+
+00:28:08.660 --> 00:28:15.160
+Okay, and now if I save it, you will see the error and error is definitely we need to provide
+
+00:28:15.161 --> 00:28:17.980
+bunch of props inside this image.
+
+00:28:18.500 --> 00:28:27.060
+So, the first few props are very simple that we have source, style, content fit and transition.
+
+00:28:28.000 --> 00:28:33.060
+If I go to story, can't convert undefined value to object.
+
+00:28:34.860 --> 00:28:36.480
+We know that why I am getting it.
+
+00:28:36.900 --> 00:28:41.360
+Then simple onload start, onload end and onload error.
+
+00:28:43.900 --> 00:28:51.440
+things that we need to add. So for now, I will try to keep it as empty callback. Okay.
+
+00:28:51.820 --> 00:28:57.840
+Same thing with on load and let me also keep this as an empty callback and last on error.
+
+00:28:58.060 --> 00:29:05.700
+Let me also keep this as empty callback. Perfect. And if I once again coming to here, cannot
+
+00:29:05.701 --> 00:29:07.180
+convert undefined value to.
+
+00:29:08.220 --> 00:29:14.000
+object. No problem. If we have the image URL, otherwise show. Otherwise what I will do,
+
+00:29:14.059 --> 00:29:25.039
+I will use the dice API. So dice API API dice bar. I think this one. And let me just simply
+
+00:29:25.059 --> 00:29:32.260
+copy this. Let me simply paste it instead of SVG, just change this to JPG and maybe
+
+00:29:32.440 --> 00:29:32.720
+PNG.
+
+00:29:33.100 --> 00:29:36.960
+And now if I save it and hopefully this will work.
+
+00:29:38.679 --> 00:29:39.280
+Not working.
+
+00:29:40.780 --> 00:29:40.940
+Okay.
+
+00:29:41.000 --> 00:29:41.559
+I'll see that.
+
+00:29:41.580 --> 00:29:42.059
+No worries.
+
+00:29:42.580 --> 00:29:48.679
+So what I will try to do next, let's say if we have any kind of error, then I wanted to
+
+00:29:48.680 --> 00:29:50.860
+render that error as well.
+
+00:29:51.620 --> 00:29:51.820
+Okay.
+
+00:29:51.821 --> 00:29:54.820
+We have any error and we are into loading state.
+
+00:29:55.700 --> 00:30:00.160
+So I think out of this basically if I am not wrong this one.
+
+00:30:00.800 --> 00:30:03.440
+We need to paste it.
+
+00:30:03.540 --> 00:30:09.480
+So, if we have any error, can't find name has error, but we have has error.
+
+00:30:09.840 --> 00:30:11.820
+So, this is written statement.
+
+00:30:13.300 --> 00:30:18.020
+So, maybe the inside this written statement.
+
+00:30:19.580 --> 00:30:23.400
+outside of the, maybe inside in the image container we need to add it.
+
+00:30:23.480 --> 00:30:26.299
+So you will see that this is for loading state.
+
+00:30:26.539 --> 00:30:27.820
+This is if we have image.
+
+00:30:28.640 --> 00:30:28.820
+Okay.
+
+00:30:28.919 --> 00:30:30.559
+So from here we are done.
+
+00:30:31.580 --> 00:30:31.900
+Nice.
+
+00:30:31.940 --> 00:30:36.000
+After this what I will try to do, I will simply try to paste this and yes look at that.
+
+00:30:36.039 --> 00:30:41.260
+If we have any error and we are not into the loading state, then we simply wanted to show
+
+00:30:41.261 --> 00:30:42.580
+fail to load image.
+
+00:30:42.900 --> 00:30:49.540
+Otherwise, outside of this we simply show the index of the image and the paragraph of
+
+00:30:49.541 --> 00:30:49.900
+the image.
+
+00:30:50.620 --> 00:30:58.900
+So, yeah cool then what I will do outside of this we will simply show that the end thing
+
+00:30:59.420 --> 00:30:59.840
+ok.
+
+00:31:01.400 --> 00:31:06.900
+Now, the one thing that I wanted to fix is this issue that is can't convert undefined
+
+00:31:06.960 --> 00:31:08.420
+value to object.
+
+00:31:09.460 --> 00:31:12.220
+Okay, what if I reload it?
+
+00:31:13.780 --> 00:31:15.500
+Because this is definitely the end of it.
+
+00:31:15.880 --> 00:31:17.180
+This is just some UI part.
+
+00:31:17.360 --> 00:31:18.880
+Okay, nothing rocket science.
+
+00:31:19.200 --> 00:31:22.779
+So, let me just figure out and the issue is render error.
+
+00:31:22.860 --> 00:31:24.139
+Okay, I know what is the issue.
+
+00:31:24.340 --> 00:31:25.340
+Let me fix it.
+
+00:31:25.940 --> 00:31:26.159
+All right.
+
+00:31:26.160 --> 00:31:31.360
+So, what I can do for it, like I can definitely add a bunch of types for it.
+
+00:31:31.539 --> 00:31:31.960
+Okay.
+
+00:31:32.019 --> 00:31:35.940
+So, let me try to grab them and simply try to paste them.
+
+00:31:36.980 --> 00:31:41.740
+Okay, so now you guys can see for the type, this is type of record, number and Boolean.
+
+00:31:42.220 --> 00:31:44.060
+Okay, all of them is same.
+
+00:31:44.740 --> 00:31:49.600
+This is the first thing and then if I save and go to story, you can see that right now
+
+00:31:49.601 --> 00:31:55.460
+we are only saying no image available, no image available, no image, no image, no image.
+
+00:31:55.840 --> 00:31:56.180
+Okay.
+
+00:31:56.200 --> 00:32:00.200
+And then we are getting the 1, 2, 3, 4, 5 as well.
+
+00:32:01.200 --> 00:32:07.200
+But one more thing that I can do for the image thing and that is let me show you.
+
+00:32:08.019 --> 00:32:10.480
+Let me fix this logic with this logic.
+
+00:32:10.799 --> 00:32:14.100
+If we have an image URL, then show this URL.
+
+00:32:14.940 --> 00:32:16.799
+Otherwise, simply show this URI.
+
+00:32:18.019 --> 00:32:18.419
+Okay.
+
+00:32:19.139 --> 00:32:22.860
+And also for this, I can paste this one.
+
+00:32:23.200 --> 00:32:31.659
+So, on load start, on load end and on error we wanted to fix this and right now if I try
+
+00:32:31.740 --> 00:32:34.100
+to reload it hopefully this will work.
+
+00:32:35.019 --> 00:32:39.600
+Alright, so the first issue is you guys can see that right now we are showing the image
+
+00:32:39.601 --> 00:32:42.240
+badge which is this index depends on the index.
+
+00:32:42.800 --> 00:32:45.880
+This view will come out of here.
+
+00:32:46.120 --> 00:32:50.000
+Okay, so the moment I save it now you are able to see the prompt.
+
+00:32:50.140 --> 00:32:55.680
+This is sample prompts which is coming and this is how this actually look to us.
+
+00:32:56.980 --> 00:33:00.980
+Alright and the only thing which is left is for the image.
+
+00:33:01.300 --> 00:33:07.540
+Right now you can see that what I am doing actually is we are showing no preview image
+
+00:33:07.541 --> 00:33:08.180
+is available.
+
+00:33:08.820 --> 00:33:10.440
+Okay, this is what we are actually doing.
+
+00:33:11.300 --> 00:33:16.000
+But what if I will do here, you know what, I can simply remove this condition.
+
+00:33:16.700 --> 00:33:26.559
+Okay, and after removing this condition, instead I will add simple and, and then you will see
+
+00:33:26.799 --> 00:33:33.080
+something, hopefully I am able to render this glass or maybe, maybe I will remove this whole
+
+00:33:33.081 --> 00:33:34.260
+condition itself.
+
+00:33:34.700 --> 00:33:41.380
+Okay, let me save it and yes this look at that by any chance if we don't have any image.
+
+00:33:41.760 --> 00:33:50.039
+So this is some sample image that we can show that from that specific API and definitely
+
+00:33:50.040 --> 00:33:55.919
+we can even change the UI for it like let me show you how right now we can simply pass
+
+00:33:55.920 --> 00:33:56.720
+parameters.
+
+00:33:57.000 --> 00:34:00.140
+And let me show you what I'm talking about right now.
+
+00:34:00.160 --> 00:34:05.020
+Let's say at this point, what I will do, I will create one placeholder.
+
+00:34:05.100 --> 00:34:10.520
+You are the, you can see that this is the API we are using and this is simple seed.
+
+00:34:10.659 --> 00:34:15.840
+Yes, they accept something known as seed and the seed is depend on the index and then some
+
+00:34:15.841 --> 00:34:16.639
+basic title.
+
+00:34:17.000 --> 00:34:23.600
+And now if I just simply grab this and show this placeholder URI and now if I save it
+
+00:34:23.601 --> 00:34:29.980
+you can see for different title and for different placeholders we can have different images,
+
+00:34:30.159 --> 00:34:36.260
+but definitely this is just a placeholder image for some reason AI will not be able
+
+00:34:36.261 --> 00:34:37.320
+to generate the image.
+
+00:34:37.780 --> 00:34:39.820
+In that case we are going to show.
+
+00:34:39.821 --> 00:34:45.540
+this thing so with this you can see that we are done with the index UI and we are also
+
+00:34:45.541 --> 00:34:50.400
+done with the image UI so I hope so this looks good with this this is the end of this chapter
+
+00:34:50.480 --> 00:34:52.020
+and see you next time.
+

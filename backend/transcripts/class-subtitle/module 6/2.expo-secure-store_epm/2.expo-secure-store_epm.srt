@@ -1,0 +1,1336 @@
+1
+00:00:00,939 --> 00:00:04,300
+Alright everyone and welcome to one more new lecture.
+
+2
+00:00:04,420 --> 00:00:07,440
+In this lecture we are going to talk about X4 secure store.
+
+3
+00:00:08,300 --> 00:00:13,740
+So this is the chapter number two where basically we are going to see that what are all the
+
+4
+00:00:13,741 --> 00:00:19,780
+other ways to secure and to basically store your data to the mobile storages.
+
+5
+00:00:20,260 --> 00:00:21,360
+So this is the second one.
+
+6
+00:00:21,560 --> 00:00:22,880
+First one is the sync storage.
+
+7
+00:00:23,460 --> 00:00:24,980
+This is the secure storage.
+
+8
+00:00:25,240 --> 00:00:28,440
+So definitely they have something related to security.
+
+9
+00:00:28,800 --> 00:00:37,320
+So, a library that provide a way to encrypt and securely store key value pairs locally
+
+10
+00:00:37,460 --> 00:00:38,559
+onto the device.
+
+11
+00:00:39,699 --> 00:00:45,699
+So, Expo secure store provide a way to encrypt and securely store key value pair locally
+
+12
+00:00:45,700 --> 00:00:46,400
+on the device.
+
+13
+00:00:48,300 --> 00:00:55,680
+has a separate storage system and has no access to storage for other expo projects.
+
+14
+00:00:55,780 --> 00:00:57,180
+This is the beauty of it.
+
+15
+00:00:57,559 --> 00:01:01,160
+So large payload can be rejected definitely.
+
+16
+00:01:01,320 --> 00:01:08,160
+Don't save a 2GB file, a 5GB file inside your local system and even don't save more than
+
+17
+00:01:08,161 --> 00:01:09,380
+10MB, 20MB.
+
+18
+00:01:10,000 --> 00:01:10,660
+For that.
+
+19
+00:01:10,900 --> 00:01:16,820
+Like they have already told you like this is the number of bytes you can store, but
+
+20
+00:01:16,880 --> 00:01:19,520
+I don't recommend you to use it completely.
+
+21
+00:01:20,400 --> 00:01:20,620
+Perfect.
+
+22
+00:01:20,680 --> 00:01:26,760
+So, if you wanted to ever store the large files and something, so use something known
+
+23
+00:01:26,761 --> 00:01:33,540
+as Expo file system for it, but for now, let's not focus on the size of your data, focus
+
+24
+00:01:33,760 --> 00:01:35,540
+on how you can basically store it.
+
+25
+00:01:35,900 --> 00:01:41,200
+Perfect, so first of all before starting anything what is secure storage?
+
+26
+00:01:42,300 --> 00:01:46,280
+What do you understand by secure storage?
+
+27
+00:01:46,980 --> 00:01:49,500
+Perfect, and why do we even need it?
+
+28
+00:01:49,800 --> 00:01:53,260
+So secure storage is a way to save sensitive data.
+
+29
+00:01:54,120 --> 00:01:55,760
+Why basically we need it?
+
+30
+00:01:55,950 --> 00:01:59,720
+Just to save the sensitive data.
+
+31
+00:02:00,220 --> 00:02:04,140
+We can say like API keys, like tokens.
+
+32
+00:02:06,040 --> 00:02:10,060
+like passwords on a user device.
+
+33
+00:02:10,759 --> 00:02:15,640
+It's encrypt the data so it's safe from unauthorized access.
+
+34
+00:02:15,720 --> 00:02:17,700
+We can say that.
+
+35
+00:02:18,340 --> 00:02:18,540
+Perfect.
+
+36
+00:02:18,780 --> 00:02:21,440
+So for using it, simply copy this command.
+
+37
+00:02:21,800 --> 00:02:31,120
+And, coming to here close this simply coming to here and say burnex expo install secure
+
+38
+00:02:31,121 --> 00:02:31,400
+store.
+
+39
+00:02:31,920 --> 00:02:35,100
+So, this is going to install this package.
+
+40
+00:02:35,840 --> 00:02:42,840
+Close this index file and instead I will say you to coming to here and I can say this as
+
+41
+00:02:44,400 --> 00:02:53,180
+screen.tsx and simply copy this and simply paste this here just to maintain this file
+
+42
+00:02:54,000 --> 00:03:00,940
+and wherever we have index I will basically going to say this as sync storage screen.
+
+43
+00:03:03,240 --> 00:03:03,880
+Perfect.
+
+44
+00:03:05,160 --> 00:03:13,600
+Now let me close this and remove everything RnFes simple react native snippet and then
+
+45
+00:03:13,900 --> 00:03:15,600
+let me rerun my application.
+
+46
+00:03:15,680 --> 00:03:17,220
+So burnx expose start.
+
+47
+00:03:19,580 --> 00:03:19,900
+Perfect.
+
+48
+00:03:20,420 --> 00:03:24,240
+And then I can simply reload it and then I'll be right back.
+
+49
+00:03:28,739 --> 00:03:29,140
+Perfect.
+
+50
+00:03:29,319 --> 00:03:33,920
+So it is still loading and I think it will load in a while and yep.
+
+51
+00:03:34,959 --> 00:03:38,140
+Now how you can basically use it.
+
+52
+00:03:38,280 --> 00:03:42,840
+So for using it again this is very straightforward like they are saying you to configure a bunch
+
+53
+00:03:42,841 --> 00:03:48,640
+of things but for now ignore this and move ahead and we will see basically how you can
+
+54
+00:03:48,641 --> 00:03:50,160
+use the APIs of it.
+
+55
+00:03:50,300 --> 00:03:56,020
+So, for using the API simply import it and this is how you can set it, this is how you
+
+56
+00:03:56,021 --> 00:03:59,960
+can get it, but we will see how I can implement that.
+
+57
+00:04:00,240 --> 00:04:08,260
+So, for this and first step is always going to be import star as I will say this as secure
+
+58
+00:04:08,261 --> 00:04:11,660
+store from expo secure store.
+
+59
+00:04:13,220 --> 00:04:19,820
+Perfect, and then let's say I just wanted to create here a username and password and
+
+60
+00:04:19,959 --> 00:04:21,779
+I wanted to store that.
+
+61
+00:04:21,980 --> 00:04:24,040
+Cool, so we can take that as an example.
+
+62
+00:04:24,800 --> 00:04:29,980
+So I can simply say const username, I mean, yes, a state variable.
+
+63
+00:04:30,400 --> 00:04:37,020
+Set username and then this is equals to use state and keep this as an empty.
+
+64
+00:04:37,900 --> 00:04:43,180
+And then I can again coming to here simply press control D and just to duplicate it.
+
+65
+00:04:43,300 --> 00:04:46,139
+You have some different key bindings for it.
+
+66
+00:04:46,580 --> 00:04:51,840
+So then this is going to be a password and I can call this as set password.
+
+67
+00:04:52,879 --> 00:04:53,400
+Perfect.
+
+68
+00:04:53,720 --> 00:04:57,580
+And then let me first of all design it.
+
+69
+00:04:57,960 --> 00:05:02,539
+So for designing it, let's say for this view, I can simply say this as a style.
+
+70
+00:05:03,500 --> 00:05:08,460
+can be padding of 20 and then margin top of
+
+71
+00:05:08,700 --> 00:05:10,480
+50 once again.
+
+72
+00:05:11,260 --> 00:05:15,000
+Then we can have a input box like two input box.
+
+73
+00:05:15,220 --> 00:05:18,540
+One is for username and another one is for password.
+
+74
+00:05:18,840 --> 00:05:19,500
+Not rocket science.
+
+75
+00:05:19,550 --> 00:05:20,980
+I mean just basic UI.
+
+76
+00:05:21,640 --> 00:05:23,260
+And if I save it, you will see it.
+
+77
+00:05:23,300 --> 00:05:23,660
+Cool.
+
+78
+00:05:24,660 --> 00:05:24,960
+Nice.
+
+79
+00:05:25,300 --> 00:05:36,120
+In the same way I can have we can say a button which is basically going to show us the save
+
+80
+00:05:36,121 --> 00:05:36,979
+credentials thing.
+
+81
+00:05:37,259 --> 00:05:40,900
+So let me just import a button from react native.
+
+82
+00:05:42,700 --> 00:05:49,640
+So, self close this and first thing you can pass here as the title and you will say this
+
+83
+00:05:49,641 --> 00:05:55,560
+as save credentials perfect IELTS.
+
+84
+00:05:56,920 --> 00:06:01,240
+Alright, now if I save it you will see this is how you can get it cool.
+
+85
+00:06:01,320 --> 00:06:07,040
+So, you can simply write any data you can pass a password and the moment you press on
+
+86
+00:06:08,000 --> 00:06:14,980
+You will get it cool but for that definitely we need to implement here the on press method
+
+87
+00:06:14,981 --> 00:06:17,300
+and I can create here the on save.
+
+88
+00:06:18,360 --> 00:06:22,880
+So let me coming to here and start using it.
+
+89
+00:06:23,100 --> 00:06:29,320
+So what you can do you can simply say const on save and again this is going to be a sync.
+
+90
+00:06:32,100 --> 00:06:32,540
+Perfect.
+
+91
+00:06:32,840 --> 00:06:39,080
+And then I can come into here, say try and catch, and then I can simply say await secure
+
+92
+00:06:40,000 --> 00:06:40,320
+store.
+
+93
+00:06:41,200 --> 00:06:41,420
+All right.
+
+94
+00:06:41,440 --> 00:06:43,440
+Let me reimport it.
+
+95
+00:06:43,780 --> 00:06:45,020
+So let me copy this.
+
+96
+00:06:45,240 --> 00:06:46,320
+Let me paste it.
+
+97
+00:06:46,360 --> 00:06:46,620
+Perfect.
+
+98
+00:06:46,800 --> 00:06:52,879
+So, secure storage and then this is going to be set item async because we wanted to
+
+99
+00:06:52,880 --> 00:06:59,580
+store data asynchronously and then key is going to be username and then password whatever
+
+100
+00:07:00,280 --> 00:07:08,460
+inside this username easy no problem and then again say await and then secure storage dot
+
+101
+00:07:09,039 --> 00:07:10,639
+set item async.
+
+102
+00:07:11,000 --> 00:07:17,160
+And, then this is going to be your password and then I can pass password as well.
+
+103
+00:07:19,280 --> 00:07:26,940
+And after this I can simply show the alert, alert dot alert and I can say this as success
+
+104
+00:07:30,780 --> 00:07:35,600
+credentials saved, s a b saved securely.
+
+105
+00:07:35,860 --> 00:07:36,460
+Perfect.
+
+106
+00:07:36,760 --> 00:07:38,960
+SECU securely.
+
+107
+00:07:43,260 --> 00:07:43,720
+Perfect.
+
+108
+00:07:44,360 --> 00:07:51,680
+Now if I, let me come into here, let me add username as this and password as 12329.
+
+109
+00:07:53,760 --> 00:07:54,160
+Perfect.
+
+110
+00:07:54,660 --> 00:08:00,560
+And if I press on save credentials, you will see I am getting credentials saved securely.
+
+111
+00:08:01,240 --> 00:08:03,200
+Now what is the meaning of it?
+
+112
+00:08:04,000 --> 00:08:07,740
+Let's move ahead and we will see how we can basically load the password.
+
+113
+00:08:08,220 --> 00:08:08,540
+Perfect.
+
+114
+00:08:09,120 --> 00:08:13,840
+So for loading it, what I can do, first of all, let's say by any chance if we have any
+
+115
+00:08:13,841 --> 00:08:14,040
+error.
+
+116
+00:08:14,919 --> 00:08:20,600
+So let me copy this, paste it and this will become error.
+
+117
+00:08:21,740 --> 00:08:24,300
+And then I can simply show the error.
+
+118
+00:08:25,400 --> 00:08:27,960
+And instead of this I will say.
+
+119
+00:08:29,460 --> 00:08:32,160
+fail to save data, whatever is that.
+
+120
+00:08:32,400 --> 00:08:32,660
+Cool.
+
+121
+00:08:33,240 --> 00:08:35,020
+Now let me create one more button.
+
+122
+00:08:35,660 --> 00:08:36,679
+Let me copy this.
+
+123
+00:08:36,900 --> 00:08:37,179
+Perfect.
+
+124
+00:08:38,039 --> 00:08:39,480
+Let me save it.
+
+125
+00:08:39,520 --> 00:08:39,980
+Nice.
+
+126
+00:08:40,820 --> 00:08:47,260
+And then I can say this as load credentials and instead of on save, I can say this simple
+
+127
+00:08:47,980 --> 00:08:49,440
+handle load simple.
+
+128
+00:08:49,500 --> 00:08:55,980
+I mean on load and then I can create const on load is equals to a sync.
+
+129
+00:08:57,700 --> 00:09:03,160
+Again, try and catch because this is a good practice to always keep try and catch here
+
+130
+00:09:03,240 --> 00:09:05,540
+and let's say I wanted to get data.
+
+131
+00:09:06,160 --> 00:09:14,120
+I can simply say await secure store dot.
+
+132
+00:09:15,740 --> 00:09:19,160
+Or I can store the data inside a variable.
+
+133
+00:09:19,500 --> 00:09:20,300
+Better approach.
+
+134
+00:09:21,180 --> 00:09:24,800
+Saved user name is equals to await secure store.
+
+135
+00:09:26,040 --> 00:09:30,720
+Get item async and then this is going to be user name.
+
+136
+00:09:30,900 --> 00:09:31,280
+Perfect.
+
+137
+00:09:32,240 --> 00:09:39,700
+In same way, I can get my saved password as await secure storage.
+
+138
+00:09:40,100 --> 00:09:49,259
+dot get item async and then make sure to pass the correct key for it and in same
+
+139
+00:09:49,260 --> 00:09:55,819
+way you can show the alert. Show alert can be loaded username and whatever your
+
+140
+00:09:55,899 --> 00:09:58,000
+username is going to be.
+
+141
+00:09:58,759 --> 00:10:04,899
+Perfect, you can again add here design but let me just simply add a view which is self
+
+142
+00:10:04,900 --> 00:10:10,259
+closing view which is basically going to add the margin vertical here something like this
+
+143
+00:10:10,639 --> 00:10:15,300
+and if I alright save it and if I just.
+
+144
+00:10:15,900 --> 00:10:17,640
+Make it empty.
+
+145
+00:10:17,900 --> 00:10:21,780
+Like let me remove it and let me remove this as well.
+
+146
+00:10:22,260 --> 00:10:27,580
+And if I simply press on load credential, you will see this data is securely coming
+
+147
+00:10:27,581 --> 00:10:30,260
+from my secure storage.
+
+148
+00:10:30,880 --> 00:10:31,180
+Perfect.
+
+149
+00:10:31,980 --> 00:10:35,260
+And if you wanted to, let's say, show your password as well.
+
+150
+00:10:35,400 --> 00:10:38,900
+So let me just see that I can show this or not.
+
+151
+00:10:40,180 --> 00:10:41,100
+password
+
+152
+00:10:42,839 --> 00:10:44,699
+I mean definitely I can show.
+
+153
+00:10:45,819 --> 00:10:48,339
+So this is going to be saved password.
+
+154
+00:10:48,459 --> 00:10:53,579
+If I simply press on load credentials, this is how you will fetch it.
+
+155
+00:10:53,759 --> 00:10:53,959
+Cool.
+
+156
+00:10:54,680 --> 00:10:58,459
+Now, let's how you can clear this very simple.
+
+157
+00:10:59,180 --> 00:11:04,639
+So I can again create here one more method like we have on load.
+
+158
+00:11:05,339 --> 00:11:09,860
+In same way I can create on delete and then I can simply say async.
+
+159
+00:11:12,240 --> 00:11:14,120
+Simple try and catch.
+
+160
+00:11:14,580 --> 00:11:14,840
+Cool.
+
+161
+00:11:16,000 --> 00:11:18,780
+And let me just simply paste that entirely.
+
+162
+00:11:20,980 --> 00:11:21,540
+Here.
+
+163
+00:11:21,560 --> 00:11:21,940
+Perfect.
+
+164
+00:11:22,300 --> 00:11:24,560
+So we have simple try which is await.
+
+165
+00:11:25,700 --> 00:11:26,300
+Another await.
+
+166
+00:11:26,700 --> 00:11:31,280
+Then it is just simply resetting it and credential cleared.
+
+167
+00:11:31,740 --> 00:11:32,100
+Perfect.
+
+168
+00:11:32,300 --> 00:11:40,260
+And then let me copy this much and paste this much and instead of load credentials, I can
+
+169
+00:11:40,480 --> 00:11:46,100
+say this as clear credentials and I can use here on clear.
+
+170
+00:11:47,740 --> 00:11:49,459
+Is this the name of it?
+
+171
+00:11:49,760 --> 00:11:50,420
+On delete.
+
+172
+00:11:50,560 --> 00:11:50,800
+Yep.
+
+173
+00:11:51,260 --> 00:11:59,580
+So, I can simply say on delete and the moment I hit this, you will see that my secure storage
+
+174
+00:11:59,581 --> 00:12:00,560
+is now empty.
+
+175
+00:12:00,800 --> 00:12:06,200
+Now, we have a bunch of advanced features as well.
+
+176
+00:12:07,720 --> 00:12:12,360
+Like we can say while storing, like this is your on safe.
+
+177
+00:12:12,680 --> 00:12:12,860
+Perfect.
+
+178
+00:12:12,940 --> 00:12:18,500
+We have secure store, set item, a sync, username and the data whatever you are saving.
+
+179
+00:12:18,820 --> 00:12:21,980
+But we can pass bunch of other data as well.
+
+180
+00:12:21,981 --> 00:12:24,140
+You will see that we have these options.
+
+181
+00:12:24,200 --> 00:12:30,740
+And, if you press over this secure options, one of them is, let me show you, let me open
+
+182
+00:12:30,741 --> 00:12:34,860
+here the option, we have one thing known as require authentication.
+
+183
+00:12:35,180 --> 00:12:41,080
+And if I simply say this as true, and another thing is authentication prompt.
+
+184
+00:12:41,420 --> 00:12:46,880
+So, if I just say coming to here and then say authentication prompt and you will simply
+
+185
+00:12:47,960 --> 00:12:52,020
+say authenticate to access your SEC secret.
+
+186
+00:12:53,160 --> 00:12:53,760
+Perfect.
+
+187
+00:12:54,180 --> 00:12:54,960
+So let me try.
+
+188
+00:12:55,120 --> 00:13:01,400
+Let me just simply say Suraj and password, simple password and if I say save credential
+
+189
+00:13:01,500 --> 00:13:03,120
+you will see an error.
+
+190
+00:13:03,940 --> 00:13:05,720
+Why I am getting this error?
+
+191
+00:13:07,860 --> 00:13:10,500
+Any guess why I am getting this error?
+
+192
+00:13:12,720 --> 00:13:14,280
+Fail to save data.
+
+193
+00:13:14,780 --> 00:13:15,140
+Okay.
+
+194
+00:13:15,160 --> 00:13:25,160
+So for this, you need to go inside your app.json and inside this app.json, you simply need
+
+195
+00:13:25,200 --> 00:13:26,600
+to add this.
+
+196
+00:13:26,780 --> 00:13:31,300
+Like you will search for plugins and simply copy this from here till here.
+
+197
+00:13:31,310 --> 00:13:32,600
+So let me search for plugins.
+
+198
+00:13:32,780 --> 00:13:33,640
+This one.
+
+199
+00:13:34,400 --> 00:13:37,920
+And we have Expo Secure Store already added here as a plugin.
+
+200
+00:13:38,500 --> 00:13:44,140
+So, what I can do, I can paste this like something like this.
+
+201
+00:13:44,160 --> 00:13:44,380
+Cool.
+
+202
+00:13:44,580 --> 00:13:50,340
+So, this is the name and this is the configure Android backup true and face ID permission,
+
+203
+00:13:50,920 --> 00:13:51,820
+whatever is that.
+
+204
+00:13:52,560 --> 00:13:55,960
+In same way, you can also configure this for your iOS.
+
+205
+00:13:56,480 --> 00:14:02,160
+So, you can simply open your iOS config and then this is what you need to add.
+
+206
+00:14:02,260 --> 00:14:03,300
+So, where is my iOS?
+
+207
+00:14:03,640 --> 00:14:04,100
+Here.
+
+208
+00:14:04,400 --> 00:14:08,160
+I can simply copy this object.
+
+209
+00:14:08,600 --> 00:14:08,980
+Perfect.
+
+210
+00:14:09,940 --> 00:14:13,060
+And below this I can simply paste it.
+
+211
+00:14:14,340 --> 00:14:14,620
+Easy.
+
+212
+00:14:15,120 --> 00:14:16,760
+And let me reload it once again.
+
+213
+00:14:18,440 --> 00:14:19,560
+Now look at that.
+
+214
+00:14:20,200 --> 00:14:22,300
+Save username and password to something.
+
+215
+00:14:23,160 --> 00:14:25,040
+So let me say save it.
+
+216
+00:14:25,200 --> 00:14:25,400
+Cool.
+
+217
+00:14:26,160 --> 00:14:28,400
+And now they are asking me bunch of thing.
+
+218
+00:14:29,420 --> 00:14:33,279
+Samsung pass asking me for update. I will update it later. Cool.
+
+219
+00:14:33,600 --> 00:14:35,380
+Let me press on simple continue.
+
+220
+00:14:37,920 --> 00:14:40,519
+I don't know whatever they're asking. So just give me a minute.
+
+221
+00:14:40,640 --> 00:14:43,779
+Let me see how I can make it more secure. Then I'll be right back.
+
+222
+00:14:44,300 --> 00:14:47,459
+Alright, so I have reloaded my application.
+
+223
+00:14:47,760 --> 00:14:49,760
+Let's see what we can see here.
+
+224
+00:14:49,940 --> 00:14:52,839
+Perfect, they're still showing me this module 6 and loaded.
+
+225
+00:14:53,040 --> 00:14:54,680
+Let me try to resave it.
+
+226
+00:14:54,860 --> 00:14:55,160
+Perfect.
+
+227
+00:14:55,720 --> 00:15:00,700
+So let me add my username and password something like this.
+
+228
+00:15:00,899 --> 00:15:02,440
+And if I say save credential.
+
+229
+00:15:02,700 --> 00:15:05,840
+still showing me a error. Perfect.
+
+230
+00:15:06,460 --> 00:15:11,740
+Alright guys, so I have basically consoled the error and as expected, they are basically saying me
+
+231
+00:15:12,220 --> 00:15:17,880
+that for using this, like we have already passed the option, like we need authentication.
+
+232
+00:15:18,280 --> 00:15:22,700
+So now you will see that they are saying me like, "Hey, this request has been rejected."
+
+233
+00:15:23,100 --> 00:15:26,199
+Because, could not authenticate the user.
+
+234
+00:15:26,420 --> 00:15:26,740
+Why?
+
+235
+00:15:26,920 --> 00:15:29,920
+Because no biometrics are currently enrolled.
+
+236
+00:15:30,540 --> 00:15:35,560
+So for accepting biometrics, now you can see that we are right now dealing with biometrics.
+
+237
+00:15:36,360 --> 00:15:42,399
+Cool, this is quite advanced thing, but what you can do, I am just making it something
+
+238
+00:15:42,400 --> 00:15:46,880
+like this, like this is not important to always go with it, you can completely skip it.
+
+239
+00:15:47,339 --> 00:15:50,819
+But let's say, let me say can use bio.
+
+240
+00:15:51,700 --> 00:16:00,180
+I am just showing you how you can do so this bio matrix is equals to await perfect and
+
+241
+00:16:00,181 --> 00:16:07,900
+this is going to be secure store dot can use bio metric authentication and call this perfect.
+
+242
+00:16:09,780 --> 00:16:15,600
+So, check if the value can be saved with required authentication, true if the device support
+
+243
+00:16:15,720 --> 00:16:21,260
+biometric authentication, otherwise false and then this is how this basically going
+
+244
+00:16:21,261 --> 00:16:22,080
+to be work.
+
+245
+00:16:23,920 --> 00:16:30,100
+All right, they have no effect over it and then I can basically say can use biometrics.
+
+246
+00:16:30,240 --> 00:16:36,420
+So, if we can use biometrics, then I wanted to go with this approach.
+
+247
+00:16:36,800 --> 00:16:38,100
+Perfect.
+
+248
+00:16:38,680 --> 00:16:40,860
+Same for storing password as well.
+
+249
+00:16:41,300 --> 00:16:50,140
+So I can cut this for password, save this and I can simply copy this option.
+
+250
+00:16:50,560 --> 00:16:50,920
+Perfect.
+
+251
+00:16:51,320 --> 00:16:52,200
+And save it.
+
+252
+00:16:52,201 --> 00:16:52,480
+Cool.
+
+253
+00:16:52,740 --> 00:16:56,540
+But let's say we don't have anything related to biometrics.
+
+254
+00:16:57,459 --> 00:17:01,959
+Then what I can do basically like out of this, I can go to my else.
+
+255
+00:17:04,420 --> 00:17:08,599
+And I can just without using this options I can save it.
+
+256
+00:17:08,600 --> 00:17:11,339
+Yes, this is the one approach you can go with it.
+
+257
+00:17:11,740 --> 00:17:18,300
+So let me try to remove it because we don't need it.
+
+258
+00:17:19,339 --> 00:17:20,540
+Same with this.
+
+259
+00:17:21,839 --> 00:17:23,919
+Perfect, so we will try this once again.
+
+260
+00:17:24,160 --> 00:17:26,339
+Let me first of all try to reload it.
+
+261
+00:17:26,720 --> 00:17:27,880
+I hope so.
+
+262
+00:17:27,881 --> 00:17:29,419
+Never use for this.
+
+263
+00:17:30,860 --> 00:17:31,340
+Never use.
+
+264
+00:17:31,520 --> 00:17:33,179
+Let me simply say ok.
+
+265
+00:17:33,480 --> 00:17:33,720
+Perfect.
+
+266
+00:17:33,900 --> 00:17:39,679
+Let me simply say you Suraj Kumar and whatever the value I am basically going to add and
+
+267
+00:17:39,680 --> 00:17:40,660
+if I say save.
+
+268
+00:17:41,320 --> 00:17:45,419
+So now I am getting credentials saved successfully.
+
+269
+00:17:46,300 --> 00:17:49,980
+All right, but how they have basically saved if I'm not wrong.
+
+270
+00:17:50,560 --> 00:17:52,680
+So they are basically going inside the else.
+
+271
+00:17:52,900 --> 00:18:01,560
+But what if I removed the else and inside the else I can show the alert no biometrics,
+
+272
+00:18:01,980 --> 00:18:03,100
+then maybe this will not work.
+
+273
+00:18:03,300 --> 00:18:03,660
+Recheck it.
+
+274
+00:18:03,800 --> 00:18:03,940
+Cool.
+
+275
+00:18:04,280 --> 00:18:10,220
+If I say no, oh, now look at that credential saved successfully and now you are getting
+
+276
+00:18:10,920 --> 00:18:11,760
+no biometrics.
+
+277
+00:18:11,761 --> 00:18:12,360
+Cool.
+
+278
+00:18:12,679 --> 00:18:14,820
+So basically we are going inside the else.
+
+279
+00:18:14,980 --> 00:18:19,240
+I mean, we need to set up a bunch of things for using bio matrix for now.
+
+280
+00:18:19,380 --> 00:18:23,080
+So I don't want it to get into that.
+
+281
+00:18:23,299 --> 00:18:23,460
+Cool.
+
+282
+00:18:24,340 --> 00:18:27,139
+And they have already provided you like how you can use it.
+
+283
+00:18:27,260 --> 00:18:29,340
+Like we have this can use bio matrix.
+
+284
+00:18:31,380 --> 00:18:36,059
+Perfect, maybe if I just try to use this into my iOS.
+
+285
+00:18:36,320 --> 00:18:37,220
+Let me try this.
+
+286
+00:18:37,740 --> 00:18:39,899
+Cool, maybe I can show you that.
+
+287
+00:18:40,240 --> 00:18:43,480
+So just give me a minute, let me check it and then I will show you that.
+
+288
+00:18:43,659 --> 00:18:43,919
+Cool.
+
+289
+00:18:45,940 --> 00:18:50,059
+Alright guys, so I have done a bunch of research and let me tell you one thing.
+
+290
+00:18:50,460 --> 00:18:55,039
+Right now we are using basically something known as Expo Go.
+
+291
+00:18:55,400 --> 00:19:03,320
+Perfect, and inside the expogo you cannot test this out like something you cannot have,
+
+292
+00:19:03,580 --> 00:19:09,520
+we can say that in expogo like this require authentication thing is won't work as we
+
+293
+00:19:09,540 --> 00:19:16,060
+are expecting because expogo does not support biometric authentication directly.
+
+294
+00:19:16,500 --> 00:19:21,900
+So in upcoming chapters, when we are going to talk about like how you can build your
+
+295
+00:19:22,020 --> 00:19:28,100
+standalone version of the app for Android and iOS separately, then this would be work.
+
+296
+00:19:28,680 --> 00:19:33,460
+But right now I don't want it to cover that thing and confuse you guys.
+
+297
+00:19:33,960 --> 00:19:37,720
+So for now, what you can do, you can completely ignore this part.
+
+298
+00:19:37,800 --> 00:19:43,540
+I mean the code is right, everything is right, each and every implementation is right, but
+
+299
+00:19:43,680 --> 00:19:47,180
+the actual problem is there is something known as a build.
+
+300
+00:19:47,900 --> 00:19:52,600
+So for build like that thing come in two, three chapters later.
+
+301
+00:19:53,100 --> 00:19:58,539
+So, after that I'll explain you how you can basically build the separate standalone versions
+
+302
+00:19:59,100 --> 00:20:03,760
+of your Android and of your iOS and then how you can basically test that out.
+
+303
+00:20:03,880 --> 00:20:06,460
+But for now, whatever we are doing, everything is right.
+
+304
+00:20:06,880 --> 00:20:13,179
+But because of the limitation of Expo Go, we can't test this out, which is a good thing.
+
+305
+00:20:13,340 --> 00:20:17,520
+I mean, you can't get the direct access by using just the Expo Go.
+
+306
+00:20:17,600 --> 00:20:18,500
+Perfect.
+
+307
+00:20:19,020 --> 00:20:24,580
+So, just for now, you can definitely keep this as the reference, but let's say if you
+
+308
+00:20:24,581 --> 00:20:28,980
+wanted to test this out, so you need to build this application and then see this.
+
+309
+00:20:29,039 --> 00:20:33,660
+So, for now, you can completely skip that part and this is how you can basically set
+
+310
+00:20:33,661 --> 00:20:34,200
+this item.
+
+311
+00:20:34,240 --> 00:20:39,960
+This is how you can basically get this item and this is how you can basically delete that.
+
+312
+00:20:40,120 --> 00:20:44,980
+So, these are all the things that we wanted to keep in mind for now.
+
+313
+00:20:45,700 --> 00:20:49,919
+Perfect. So if I just try to give you a basic summary of it all over.
+
+314
+00:20:50,779 --> 00:20:57,220
+So the basic summary is use secure store when you need to store passwords, tokens, APIs
+
+315
+00:20:57,820 --> 00:21:03,059
+and keep sensitive. This is basically going to keep your data as encrypted and this is
+
+316
+00:21:03,060 --> 00:21:07,840
+very secure authentication credentials and you can why you keep this as secure because
+
+317
+00:21:08,179 --> 00:21:12,320
+when you are going to make this application for production, then you will see the real
+
+318
+00:21:12,480 --> 00:21:13,299
+superpower of it.
+
+319
+00:21:13,300 --> 00:21:20,460
+And don't use when you wanted to store large file and non-sensitive things like for that
+
+320
+00:21:20,461 --> 00:21:22,260
+we already have async storage.
+
+321
+00:21:23,660 --> 00:21:31,700
+And let's say like you have already seen this the size of your file.
+
+322
+00:21:31,701 --> 00:21:35,940
+file like basic data is basically something known as 2048 bytes.
+
+323
+00:21:36,539 --> 00:21:38,419
+So this means overall 2 KB.
+
+324
+00:21:39,220 --> 00:21:42,760
+So you can't put more than 2 KB of data up here.
+
+325
+00:21:43,100 --> 00:21:45,320
+So make sure to keep that also in mind.
+
+326
+00:21:45,679 --> 00:21:50,700
+Like if the data is more than 2 KB, so don't use it, then use file system.
+
+327
+00:21:50,701 --> 00:21:53,240
+We'll talk about that in upcoming chapters.
+
+328
+00:21:53,700 --> 00:21:56,919
+So, yes, this is pretty much it for this chapter.
+
+329
+00:21:57,100 --> 00:21:58,299
+I hope you loved it.
+
+330
+00:21:58,300 --> 00:21:58,559
+Perfect.
+
+331
+00:21:58,560 --> 00:22:03,779
+And you have just learned something new, like whenever you wanted to test something and
+
+332
+00:22:03,840 --> 00:22:09,059
+see the real power of you, it you wanted to build your application and extract that.
+
+333
+00:22:09,200 --> 00:22:11,100
+We'll talk about that in upcoming lectures.
+
+334
+00:22:12,220 --> 00:22:16,120
+But for now, this is pretty much it and see you next time.
+

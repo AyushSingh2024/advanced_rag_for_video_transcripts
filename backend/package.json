@@ -1,0 +1,38 @@
+{
+  "name": "advancedd_rag",
+  "version": "1.0.0",
+  "description": "Production-oriented hybrid RAG pipeline with LangGraph, Qdrant, PostgreSQL, reranking, grading, and citations",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "ask": "node index.js",
+    "ingest": "node src/cli/ingest.js",
+    "curriculum": "node src/cli/buildCurriculum.js",
+    "concepts": "node src/cli/buildConceptGraph.js",
+    "manifest": "node src/cli/generateManifest.js",
+    "migrate": "node src/cli/migrate.js",
+    "serve": "node src/server.js",
+    "eval": "node src/evaluation/run.js",
+    "test": "node --test --test-concurrency=1",
+    "check": "node --check index.js && node --check src/server.js"
+  },
+  "keywords": ["rag", "langgraph", "qdrant", "postgresql", "openai"],
+  "author": "",
+  "license": "ISC",
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "@langchain/core": "latest",
+    "@langchain/langgraph": "latest",
+    "@langchain/openai": "latest",
+    "@langchain/qdrant": "latest",
+    "@langchain/textsplitters": "latest",
+    "@qdrant/js-client-rest": "latest",
+    "dotenv": "latest",
+    "express": "latest",
+    "pdf-parse": "latest",
+    "pg": "latest",
+    "zod": "latest"
+  }
+}

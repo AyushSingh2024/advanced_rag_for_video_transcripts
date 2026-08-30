@@ -1,0 +1,768 @@
+1
+00:00:00,680 --> 00:00:03,440
+Hey everyone and welcome to one more new module.
+
+2
+00:00:03,600 --> 00:00:09,360
+In this module we are basically going to talk about Expo sensors and what is this?
+
+3
+00:00:10,040 --> 00:00:15,860
+This is one of the powerful feature which is provided by Expo.
+
+4
+00:00:16,000 --> 00:00:24,400
+So, Expo sensors, a library that provides access to a device, accelerometer, barometer,
+
+5
+00:00:24,820 --> 00:00:29,140
+motion, xeroscope, light, magnetometer and barometer.
+
+6
+00:00:29,340 --> 00:00:30,380
+What is this and what?
+
+7
+00:00:30,500 --> 00:00:35,080
+There are so many types of meter, so many types of xeroscope, lightning.
+
+8
+00:00:35,220 --> 00:00:35,860
+What is this?
+
+9
+00:00:35,900 --> 00:00:43,060
+So, in this module, we are definitely going to understand each and every, like what is
+
+10
+00:00:43,120 --> 00:00:50,060
+this accelerometer, what is barometer, how we can basically get the magnetism and magnetic
+
+11
+00:00:50,061 --> 00:00:51,360
+field around your phone.
+
+12
+00:00:51,361 --> 00:00:53,100
+I mean, this is very interesting.
+
+13
+00:00:53,420 --> 00:00:55,260
+This is a revolution in itself.
+
+14
+00:00:55,920 --> 00:00:57,160
+So now let's move ahead.
+
+15
+00:00:58,340 --> 00:01:01,820
+And try to understand this perfect.
+
+16
+00:01:02,120 --> 00:01:05,099
+So the first thing is what is sensors?
+
+17
+00:01:05,440 --> 00:01:12,920
+Sensors are bit or we can say that something which is provided they are provided you a
+
+18
+00:01:12,921 --> 00:01:18,240
+software layer something like if I just try to explain you first of all what is sensors.
+
+19
+00:01:20,500 --> 00:01:31,020
+Sensors are hardware, yes they are hardware component in device like smartphones, tablets,
+
+20
+00:01:31,600 --> 00:01:36,260
+smart watches that detect and measure physical properties.
+
+21
+00:01:36,600 --> 00:01:46,060
+So, what is sensors? Sensors are hardware component in device that detects and measure
+
+22
+00:01:46,159 --> 00:01:54,740
+yes very important point they detect and measure that and measure of physical property from
+
+23
+00:01:54,741 --> 00:02:00,399
+environment, perfect, measure the physical.
+
+24
+00:02:01,960 --> 00:02:04,520
+properties from the environment.
+
+25
+00:02:04,580 --> 00:02:08,060
+So this is kind of an definition we can say for it.
+
+26
+00:02:08,240 --> 00:02:14,220
+So they collect data that app can use to interactive experiences.
+
+27
+00:02:14,360 --> 00:02:15,820
+So we can say that.
+
+28
+00:02:16,360 --> 00:02:18,860
+So we have a bunch of sensors.
+
+29
+00:02:19,060 --> 00:02:25,400
+So these are bunch of common sensors which is provided by any smartphone and tablets
+
+30
+00:02:25,580 --> 00:02:26,240
+and anything.
+
+31
+00:02:26,520 --> 00:02:28,280
+Like first one we have accelerometer.
+
+32
+00:02:30,700 --> 00:02:35,099
+Magnetometer, device motion, barometer, light sensor and pedometer.
+
+33
+00:02:35,500 --> 00:02:39,480
+So we are going to understand each and every step by step.
+
+34
+00:02:40,319 --> 00:02:42,700
+So the first thing that we have is accelerometer.
+
+35
+00:02:42,701 --> 00:02:46,480
+So let's move ahead and start talking about this accelerometer.
+
+36
+00:02:46,900 --> 00:02:47,760
+So what is this?
+
+37
+00:02:48,120 --> 00:02:53,040
+So this sensors we can say tell you how the phone is moving.
+
+38
+00:02:53,359 --> 00:02:53,680
+Yes.
+
+39
+00:02:53,700 --> 00:02:59,800
+So, how the phone is moving or we can say tilting, whatever you wanted to say.
+
+40
+00:03:00,640 --> 00:03:07,880
+So, this sensors works is only this like how your phone is moving or tilting in your physical
+
+41
+00:03:07,881 --> 00:03:08,360
+space.
+
+42
+00:03:09,280 --> 00:03:09,780
+Perfect.
+
+43
+00:03:10,260 --> 00:03:12,580
+So, and how they measures thing?
+
+44
+00:03:13,040 --> 00:03:19,860
+They measures your this moving and tilting property in three dimensions.
+
+45
+00:03:20,000 --> 00:03:27,500
+Perfect. They measure things in three dimensions. So, what are that three dimensions are? Like
+
+46
+00:03:27,501 --> 00:03:34,760
+first dimension are forward and back. Second is going to be left and down and third is
+
+47
+00:03:34,761 --> 00:03:36,020
+going to be up and down.
+
+48
+00:03:36,500 --> 00:03:41,820
+Perfect, not left and down, this is going to be left and right.
+
+49
+00:03:42,480 --> 00:03:49,380
+So these are the three dimensions which is measured by this accelerometer, accelerometer
+
+50
+00:03:49,460 --> 00:03:50,100
+whatever that.
+
+51
+00:03:50,500 --> 00:03:54,120
+So why do we even, we care about it.
+
+52
+00:03:54,200 --> 00:04:00,860
+So, you can use this to make your app respond to device movement whenever you wanted to
+
+53
+00:04:00,900 --> 00:04:04,680
+make an app that respond on device movement.
+
+54
+00:04:05,440 --> 00:04:08,040
+Yes, whenever move your physical device.
+
+55
+00:04:08,440 --> 00:04:12,819
+So, this is going to be if I just simply write here device movement.
+
+56
+00:04:12,900 --> 00:04:19,959
+not just tab or a tabs and swipes like something you're really just picking up your phone and
+
+57
+00:04:20,320 --> 00:04:26,180
+Let's say you are playing a game. So in that case you are physically moving your device and
+
+58
+00:04:27,220 --> 00:04:28,900
+with the help of sensors
+
+59
+00:04:29,539 --> 00:04:35,979
+We are responding to that movement with the help of these accelerometers, gyroscope, whatever is that?
+
+60
+00:04:36,039 --> 00:04:40,120
+But right now we are talking about accelerometer. Perfect?
+
+61
+00:04:42,199 --> 00:04:42,880
+Perfect
+
+62
+00:04:42,881 --> 00:04:44,700
+So, now what is the real world use of it?
+
+63
+00:04:44,800 --> 00:04:50,680
+So, the first thing is whenever you wanted to say a tilt to move a character in game.
+
+64
+00:04:51,280 --> 00:04:57,020
+Let's say if you are making something that whenever you tilt your phone, tilt to move
+
+65
+00:04:58,540 --> 00:05:00,100
+character in a game.
+
+66
+00:05:01,160 --> 00:05:07,980
+So at that time you can use it and then we can say there is a lot of like if I just shake this phone
+
+67
+00:05:09,100 --> 00:05:15,080
+and if I just opened any development server, you will see you are going to open an inspect mode inside the phone.
+
+68
+00:05:15,081 --> 00:05:19,300
+So that is also the feature which is built using these kind of meters.
+
+69
+00:05:19,580 --> 00:05:25,680
+Perfect. Second is shake to refresh we can say and also detect a sudden drop.
+
+70
+00:05:25,900 --> 00:05:33,680
+or a motion. So, in that case you can use it, but let us move ahead and try to understand
+
+71
+00:05:33,681 --> 00:05:42,860
+that in an example. So, for that let me simply run a bunX perfect bunX.
+
+72
+00:05:45,780 --> 00:05:58,020
+Create, just give me a minute, burnx, create, expo app, add the latest and then dot slash.
+
+73
+00:05:58,280 --> 00:06:00,840
+Let me just wait for it and then I'll be right back.
+
+74
+00:06:01,580 --> 00:06:04,500
+Alright so now we have installed it successfully.
+
+75
+00:06:04,740 --> 00:06:07,360
+Now let me just simply reset it.
+
+76
+00:06:09,740 --> 00:06:16,600
+reset project. Perfect. So this is going to reset my project and back to normal. Alright.
+
+77
+00:06:17,020 --> 00:06:23,520
+Now how you can install it and which library you have to install. So you simply need to
+
+78
+00:06:23,521 --> 00:06:30,720
+copy this much and coming to here open your terminal and then simply paste bunnex and
+
+79
+00:06:30,721 --> 00:06:32,320
+then the code we have copied.
+
+80
+00:06:32,500 --> 00:06:40,020
+So, this is going to install expo sensor inside your project and then simply run bunx expo
+
+81
+00:06:40,760 --> 00:06:41,040
+start.
+
+82
+00:06:42,180 --> 00:06:45,620
+So, this is going to start my development server.
+
+83
+00:06:48,020 --> 00:06:48,240
+Alright.
+
+84
+00:06:48,260 --> 00:06:48,500
+Perfect.
+
+85
+00:06:48,680 --> 00:06:55,200
+And then you can simply press A. So, by pressing A this is going to open.
+
+86
+00:06:55,400 --> 00:07:03,220
+into my expogo app. Perfect. Let me just wait for it. And yes, now let's move ahead and
+
+87
+00:07:03,580 --> 00:07:09,380
+let's see understand about accelerometer, how you can use it. Perfect. So let me just
+
+88
+00:07:09,381 --> 00:07:12,940
+simply go to my app and index dot t s x.
+
+89
+00:07:13,100 --> 00:07:19,620
+And inside this what I can do or instead I will create a component here.
+
+90
+00:07:19,800 --> 00:07:20,080
+Perfect.
+
+91
+00:07:20,940 --> 00:07:29,540
+So this is going to be a components and then I will simply going to name this as tiltcounter.tsx
+
+92
+00:07:29,640 --> 00:07:30,580
+and rafce.
+
+93
+00:07:31,100 --> 00:07:38,120
+And this is going to be my tilt counter app, not RAFC, sorry for that, RNFES, because this
+
+94
+00:07:38,121 --> 00:07:40,740
+is a react native app, tilt counter.
+
+95
+00:07:41,100 --> 00:07:45,540
+Alright, and then let me just simply import that for now.
+
+96
+00:07:46,260 --> 00:07:48,780
+So I will simply say tilt counter.
+
+97
+00:07:49,300 --> 00:07:49,460
+Perfect.
+
+98
+00:07:49,540 --> 00:07:55,080
+So what we are making basically, whenever I move my application, I just wanted to show
+
+99
+00:07:55,081 --> 00:07:58,860
+a text you moved left, you moved right, something like that.
+
+100
+00:07:58,900 --> 00:07:59,540
+Cool.
+
+101
+00:08:00,340 --> 00:08:07,240
+So first thing you need to import accelerometer from your expo sensor.
+
+102
+00:08:07,479 --> 00:08:07,680
+Perfect.
+
+103
+00:08:07,759 --> 00:08:13,139
+First of all let me simply add this and then make sure you don't misspell it.
+
+104
+00:08:13,240 --> 00:08:15,280
+So we have accelerometer here.
+
+105
+00:08:15,281 --> 00:08:23,860
+here. Perfect. Nice. And I just wanted to show here if I tilt my phone towards right, then
+
+106
+00:08:23,880 --> 00:08:29,240
+I wanted to show right and if I tilt my phone towards up, then I wanted to show up. Otherwise,
+
+107
+00:08:29,400 --> 00:08:35,640
+I wanted to show stable. Easy requirement. Let's see how we can achieve that using this
+
+108
+00:08:36,700 --> 00:08:45,680
+So, I can first of all maintain a state variable tiLTTilt and then set tiLTTilt alright and
+
+109
+00:08:45,681 --> 00:08:54,540
+then this is equals to use state and initially let me just maintain here a stable alright.
+
+110
+00:08:56,380 --> 00:09:03,180
+And then for a view, first of all, let me just simply create here a style.
+
+111
+00:09:03,960 --> 00:09:06,000
+So we have a container and a text.
+
+112
+00:09:06,280 --> 00:09:06,760
+Easy.
+
+113
+00:09:07,380 --> 00:09:12,920
+And then what is this basically going to show whatever the device's position we have.
+
+114
+00:09:13,680 --> 00:09:16,980
+So right now you will see we are only able to see here stable.
+
+115
+00:09:17,460 --> 00:09:17,980
+All right.
+
+116
+00:09:18,180 --> 00:09:20,800
+Now all the game is inside use effect.
+
+117
+00:09:22,460 --> 00:09:30,000
+So, I can simply create here a use effect and then no dependency needed to add for now.
+
+118
+00:09:30,120 --> 00:09:31,980
+So, let me just simply create it.
+
+119
+00:09:32,080 --> 00:09:33,460
+Now what do you need to do?
+
+120
+00:09:34,240 --> 00:09:39,380
+Simply first of all for always using this accelerometer where is that?
+
+121
+00:09:40,980 --> 00:09:43,180
+Let me just import it.
+
+122
+00:09:43,340 --> 00:09:44,220
+Just give me a minute.
+
+123
+00:09:44,460 --> 00:09:44,940
+All right.
+
+124
+00:09:45,400 --> 00:09:48,920
+So, for using it, first of all, you will create here a sub.
+
+125
+00:09:49,440 --> 00:09:54,500
+We are subscribing to an event listener and then this is going to be accelerometer and
+
+126
+00:09:54,501 --> 00:09:55,820
+then we have an add listener.
+
+127
+00:09:57,060 --> 00:09:57,480
+All right.
+
+128
+00:09:57,940 --> 00:10:05,420
+And inside this, we have a callback and this callback give you access of x-axis and y-axis.
+
+129
+00:10:05,700 --> 00:10:06,260
+Cool.
+
+130
+00:10:06,700 --> 00:10:14,180
+And, then inside this what I will do let me just simply do a basic calculation alright.
+
+131
+00:10:14,200 --> 00:10:21,440
+So, for absolute values I can simply use math dot absolute and then I will just go for x.
+
+132
+00:10:21,840 --> 00:10:24,620
+So, if the value is greater than 0.4.
+
+133
+00:10:25,500 --> 00:10:33,120
+On the x axis basically, so I am going to use here the set tilt value and then I simply
+
+134
+00:10:33,121 --> 00:10:33,960
+do a comparison.
+
+135
+00:10:34,100 --> 00:10:40,200
+So if the x is greater than zero, this means we are tilting our phone towards right.
+
+136
+00:10:40,380 --> 00:10:41,860
+Tilt right.
+
+137
+00:10:43,440 --> 00:10:48,380
+Otherwise, I will show I mean this means we are less than zero.
+
+138
+00:10:48,700 --> 00:10:53,520
+So I will simply going to show here t I will get tilt left.
+
+139
+00:10:54,140 --> 00:10:55,020
+All right.
+
+140
+00:10:55,720 --> 00:11:01,400
+And in same way, let me add else if here and let's do for up and down.
+
+141
+00:11:01,900 --> 00:11:06,220
+So now we have to look this is for x-axis like this horizontally.
+
+142
+00:11:06,780 --> 00:11:07,960
+Now let's do vertically.
+
+143
+00:11:08,420 --> 00:11:09,740
+I will simply say.
+
+144
+00:11:09,800 --> 00:11:18,220
+math dot absolute value for y and let's go with same threshold 0.4 and then let me simply
+
+145
+00:11:18,221 --> 00:11:26,660
+say set tilt and what is that if x value is greater than zero isn't it? Just give me a
+
+146
+00:11:26,661 --> 00:11:28,980
+minute I hope I'm doing right.
+
+147
+00:11:30,620 --> 00:11:31,899
+Why this is crying?
+
+148
+00:11:32,980 --> 00:11:39,500
+Okay, first of all we have add yes I need to get out of it and then simply set date.
+
+149
+00:11:39,800 --> 00:11:46,240
+So same thing just copy this perfect just paste it but instead of x we have to go for
+
+150
+00:11:46,241 --> 00:11:53,100
+white y and instead of right we have to go for up and instead of left we have to go for
+
+151
+00:11:53,101 --> 00:11:53,560
+down.
+
+152
+00:11:53,600 --> 00:11:56,560
+Otherwise, we are into stable mode.
+
+153
+00:11:56,639 --> 00:12:02,779
+So I can simply say setTiltValue as stable, s, t, a, b, l is stable.
+
+154
+00:12:04,180 --> 00:12:11,339
+And when we are not using it, then I just wanted to unmount it and simply remove the
+
+155
+00:12:11,340 --> 00:12:12,360
+this eventlessness.
+
+156
+00:12:12,440 --> 00:12:13,120
+So, sub.remove.
+
+157
+00:12:13,121 --> 00:12:13,800
+the move.
+
+158
+00:12:15,640 --> 00:12:19,120
+All right, now let's try to implement this.
+
+159
+00:12:19,540 --> 00:12:26,240
+For now you will see that my value of setTilt is showing me a stable, but if I move it towards
+
+160
+00:12:26,660 --> 00:12:32,340
+right, look at that I have tilted it towards right and if I move to left and you will see
+
+161
+00:12:32,440 --> 00:12:33,940
+that I have tilted towards left.
+
+162
+00:12:34,220 --> 00:12:36,140
+basically from where your.
+
+163
+00:12:36,700 --> 00:12:39,680
+Phone is upside down. Got it?
+
+164
+00:12:40,000 --> 00:12:43,360
+So, if I am going towards right, this means I have tilt towards left.
+
+165
+00:12:43,450 --> 00:12:46,920
+And if I am going towards left, it tilts towards right.
+
+166
+00:12:46,990 --> 00:12:49,760
+And if I go down, so you will see something like this.
+
+167
+00:12:50,100 --> 00:12:53,460
+And if I go up, something like this. So, how I can show you that?
+
+168
+00:12:54,360 --> 00:12:59,420
+like if you are not trusting me so let me just open that inside another phone then I
+
+169
+00:12:59,421 --> 00:13:01,199
+will show you inside my video.
+
+170
+00:13:01,660 --> 00:13:02,000
+Perfect.
+
+171
+00:13:02,480 --> 00:13:07,060
+So just give me a minute and let me just quickly open it.
+
+172
+00:13:08,100 --> 00:13:12,380
+Alright, so I am just basically showing you this look at that like my device is now in
+
+173
+00:13:12,381 --> 00:13:13,160
+stable position.
+
+174
+00:13:13,440 --> 00:13:13,740
+Perfect.
+
+175
+00:13:15,700 --> 00:13:21,100
+right, look at that. So the position you're showing me is tilt left, easy. And in the
+
+176
+00:13:21,101 --> 00:13:27,200
+same way, if I go towards, look at that, this is showing me a right. And if I go up, look
+
+177
+00:13:27,201 --> 00:13:31,820
+at that, my tilt position at up. And if I go towards down, look at that, I am towards
+
+178
+00:13:31,840 --> 00:13:35,540
+down. So this is how we are basically grabbing it.
+
+179
+00:13:35,700 --> 00:13:36,620
+Cool.
+
+180
+00:13:37,380 --> 00:13:38,180
+I hope so.
+
+181
+00:13:38,460 --> 00:13:38,720
+Perfect.
+
+182
+00:13:39,900 --> 00:13:40,160
+Nice.
+
+183
+00:13:40,360 --> 00:13:44,900
+So, this is how we see and look at that I shake my application and this opened up.
+
+184
+00:13:44,901 --> 00:13:47,100
+So, you can also implement this feature.
+
+185
+00:13:47,220 --> 00:13:51,580
+So, this feature is implemented definitely with the help of accelerometer.
+
+186
+00:13:52,000 --> 00:13:52,880
+Cool.
+
+187
+00:13:53,120 --> 00:13:58,960
+So I hope so you are loving it and this is how you can basically take use of accelerometer
+
+188
+00:13:59,280 --> 00:14:05,480
+again if you wanted to deep dive into it you can simply go to documentation open this and
+
+189
+00:14:05,481 --> 00:14:07,980
+read more about it if you wanted to.
+
+190
+00:14:07,981 --> 00:14:08,240
+Cool.
+
+191
+00:14:09,420 --> 00:14:14,960
+So yes this is pretty much it for our accelerometer thing and in next chapter we are going to
+
+192
+00:14:15,020 --> 00:14:17,740
+talk about bunch of other sensors as well.
+

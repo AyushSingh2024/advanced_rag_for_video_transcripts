@@ -1,0 +1,3680 @@
+1
+00:00:00,520 --> 00:00:03,940
+All right, everyone, and welcome to one more new chapter.
+
+2
+00:00:04,140 --> 00:00:09,160
+In this chapter, we are going to implement a Google OAuth inside our expo app.
+
+3
+00:00:09,840 --> 00:00:10,020
+Perfect.
+
+4
+00:00:10,160 --> 00:00:16,560
+But before moving ahead, I just wanted to talk about what is OAuth 2.0.
+
+5
+00:00:16,700 --> 00:00:26,680
+So, to let your user login using their existing account from the services like Google, Apple,
+
+6
+00:00:26,760 --> 00:00:32,200
+GitHub and many more, you can use OAuth 2.0.
+
+7
+00:00:32,299 --> 00:00:41,520
+So, OAuth 2.0 is widely used secure protocol that allows your app to access user information
+
+8
+00:00:41,940 --> 00:00:45,780
+from another device without needing to handle password.
+
+9
+00:00:46,120 --> 00:00:47,500
+Very important point.
+
+10
+00:00:47,900 --> 00:00:55,300
+It's allow your user to log in with a single tab with saved times, build trust and remove
+
+11
+00:00:56,100 --> 00:00:58,000
+the need to manage passwords.
+
+12
+00:00:58,080 --> 00:01:05,280
+So basically whenever you are using OAuth, you are not managing any kind of password.
+
+13
+00:01:05,900 --> 00:01:12,780
+You are authenticated or instead we can say you are authorizing a user from a third party
+
+14
+00:01:12,781 --> 00:01:14,980
+service provider like Google.
+
+15
+00:01:15,100 --> 00:01:20,020
+like GitHub, like Apple, like Facebook, something like that.
+
+16
+00:01:20,220 --> 00:01:20,500
+Perfect.
+
+17
+00:01:22,460 --> 00:01:26,799
+And one very important point they have mentioned, Authflow can be complex.
+
+18
+00:01:27,180 --> 00:01:32,820
+Alright, if you are looking for a simple integration, most provider offer SDKs.
+
+19
+00:01:32,821 --> 00:01:36,880
+and services that handle everything for you.
+
+20
+00:01:37,280 --> 00:01:40,360
+You can learn more about this in Auth Solution section,
+
+21
+00:01:40,800 --> 00:01:46,500
+but we are going to skip this for now and let's move ahead and try to implement by ourselves.
+
+22
+00:01:47,480 --> 00:01:53,260
+If you are looking for a full control or want to understand how OAuth actually works under the hood,
+
+23
+00:01:53,700 --> 00:01:54,960
+the following section
+
+24
+00:01:56,399 --> 00:02:02,360
+show how to implement a complete OAuth flow yourself using expo.
+
+25
+00:02:02,880 --> 00:02:05,799
+Alright, so how this is how this OAuth actually work.
+
+26
+00:02:06,880 --> 00:02:10,360
+So OAuth work by introducing an authorization server.
+
+27
+00:02:10,539 --> 00:02:12,980
+So let me just quickly open this diagram.
+
+28
+00:02:13,840 --> 00:02:14,099
+Perfect.
+
+29
+00:02:14,620 --> 00:02:16,280
+Let's say this is your expo app.
+
+30
+00:02:16,739 --> 00:02:17,360
+No problem.
+
+31
+00:02:17,900 --> 00:02:26,459
+and you clicked on login with Google, then this login with Google make authorization
+
+32
+00:02:26,739 --> 00:02:35,260
+request. Listen to me carefully, they make authorization request perfect and then basically
+
+33
+00:02:35,280 --> 00:02:41,159
+then we are redirecting ourselves toward this service provider or authorization provider
+
+34
+00:02:41,599 --> 00:02:43,280
+at this time. Let's say Google.
+
+35
+00:02:43,400 --> 00:02:46,959
+Then Google will basically show you their consent screen.
+
+36
+00:02:47,319 --> 00:02:52,459
+Basically the account you wanted to select and from which account you wanted to choose.
+
+37
+00:02:52,959 --> 00:02:55,239
+And then you give the authorization grant.
+
+38
+00:02:55,760 --> 00:02:56,060
+Alright.
+
+39
+00:02:56,180 --> 00:02:59,819
+And after getting authorization grant, we are going to the auth provider.
+
+40
+00:03:00,400 --> 00:03:04,640
+Auth provider giving you the access token and on the basis of access token, we are able
+
+41
+00:03:04,641 --> 00:03:05,519
+to.
+
+42
+00:03:05,520 --> 00:03:10,960
+access all the user information. So kind of that this is not the right diagram I can say
+
+43
+00:03:10,961 --> 00:03:18,080
+for the OAuth but yes this is how kind of they work. Alright and this is how we are
+
+44
+00:03:18,081 --> 00:03:24,340
+going to implement that inside the Expo API routes. Yes we are going to use Expo API routes
+
+45
+00:03:24,360 --> 00:03:24,959
+for it.
+
+46
+00:03:24,960 --> 00:03:31,140
+So, this is your Expo client, this is your API route, which is Expo API routes, thanks
+
+47
+00:03:31,141 --> 00:03:36,240
+to Expo and then we have Google Auth, which is the provider at this time.
+
+48
+00:03:36,820 --> 00:03:41,480
+So, you will see like this is your initial Auth request clicked on sign in with Google,
+
+49
+00:03:42,260 --> 00:03:45,380
+then this request will go to the API route server.
+
+50
+00:03:45,900 --> 00:03:51,079
+And then this is basically redirects to Google auth page.
+
+51
+00:03:51,700 --> 00:03:56,879
+And then user basically approve the access and whenever user will approve the access
+
+52
+00:03:56,920 --> 00:04:01,200
+when we are going to implement that in code, you will understand this much better.
+
+53
+00:04:02,099 --> 00:04:08,459
+Then they are again redirected to the server with server Expo API server with the auth code.
+
+54
+00:04:08,659 --> 00:04:13,900
+And then on the basis of this auth code, we are going to exchange this auth code with
+
+55
+00:04:14,600 --> 00:04:17,760
+client ID and client secret.
+
+56
+00:04:18,520 --> 00:04:24,880
+Yes, then this client ID and client secret will basically again with the like we are
+
+57
+00:04:24,881 --> 00:04:26,540
+going to have four three information.
+
+58
+00:04:26,960 --> 00:04:30,640
+One is this code, then a client ID, then a client secret.
+
+59
+00:04:31,080 --> 00:04:31,540
+And.
+
+60
+00:04:31,541 --> 00:04:37,260
+the scope you wanted to access and then along with this we are again hitting the Google
+
+61
+00:04:37,620 --> 00:04:42,860
+and then Google will validate all of this information like is this the code which I
+
+62
+00:04:42,861 --> 00:04:48,260
+have sent and on the basis of that they return you the access token and then we have access
+
+63
+00:04:48,261 --> 00:04:54,480
+token on the basis of that access token we can access users information like the name,
+
+64
+00:04:54,600 --> 00:04:58,320
+their email, their avatar, a lot of information.
+
+65
+00:04:58,660 --> 00:04:59,040
+Alright.
+
+66
+00:04:59,900 --> 00:05:06,300
+So, explain let you implement the entire OAuth flow directly in your app using these three
+
+67
+00:05:06,301 --> 00:05:06,580
+things.
+
+68
+00:05:07,100 --> 00:05:12,980
+First is Expo router, second is Expo router API and third is Expo auth session.
+
+69
+00:05:13,200 --> 00:05:16,520
+So I think let's move ahead and start implementing that.
+
+70
+00:05:17,580 --> 00:05:22,860
+So, first of all, let me just simply come into here and first thing that I wanted you
+
+71
+00:05:22,861 --> 00:05:25,120
+to do is to install a bunch of things with me.
+
+72
+00:05:25,420 --> 00:05:27,440
+I think we already have that.
+
+73
+00:05:27,600 --> 00:05:33,000
+So first of all, let me go to my package.json and search for expo auth.
+
+74
+00:05:34,220 --> 00:05:35,920
+Alright, we don't have it.
+
+75
+00:05:36,480 --> 00:05:41,140
+So I think let's move ahead and does we have Expo secure store?
+
+76
+00:05:42,180 --> 00:05:44,580
+Oh yes, we already have a Expo secure store.
+
+77
+00:05:45,260 --> 00:05:45,900
+So it's fine.
+
+78
+00:05:46,260 --> 00:05:54,520
+Simply run 1x Expo install and we wanted to install Expo auth session.
+
+79
+00:05:55,800 --> 00:05:57,320
+Expo web browser.
+
+80
+00:05:57,960 --> 00:06:01,600
+Yes, you need to install it and then Expo secure store.
+
+81
+00:06:01,740 --> 00:06:07,520
+We already have it and then one very interesting thing, which is Jaws and then simply install
+
+82
+00:06:07,521 --> 00:06:08,280
+this.
+
+83
+00:06:09,720 --> 00:06:10,020
+Cool.
+
+84
+00:06:10,140 --> 00:06:11,840
+So, let me just wait for installation.
+
+85
+00:06:13,240 --> 00:06:15,720
+Alright, so now we have successfully installed it.
+
+86
+00:06:15,800 --> 00:06:16,880
+Now what is the next step?
+
+87
+00:06:17,640 --> 00:06:22,120
+Next step is let's move ahead and get the Google OAuth credentials.
+
+88
+00:06:22,400 --> 00:06:29,620
+So, for getting the Google OAuth credentials, I basically wanted you to simply.
+
+89
+00:06:31,380 --> 00:06:37,340
+So, for that what I will do, I can simply visit to my Google cloud console.
+
+90
+00:06:38,539 --> 00:06:38,880
+Alright.
+
+91
+00:06:39,240 --> 00:06:45,479
+So, I can simply search for Google cloud console and I will open any one of them.
+
+92
+00:06:46,240 --> 00:06:47,199
+Go to my console.
+
+93
+00:06:48,360 --> 00:06:48,740
+Yes.
+
+94
+00:06:49,400 --> 00:06:50,940
+And after going to console.
+
+95
+00:06:51,600 --> 00:06:59,080
+And then after that what I basically wanted to do is just give me a minute.
+
+96
+00:06:59,740 --> 00:06:59,980
+All right.
+
+97
+00:06:59,981 --> 00:07:04,300
+And then first thing is I basically wanted you to choose any project.
+
+98
+00:07:04,620 --> 00:07:04,840
+Perfect.
+
+99
+00:07:05,360 --> 00:07:11,740
+So, what if I go with let me just go with this current project, my first project.
+
+100
+00:07:12,800 --> 00:07:13,320
+All right.
+
+101
+00:07:14,080 --> 00:07:19,160
+And then what I basically wanted to have is just give me a minute.
+
+102
+00:07:21,460 --> 00:07:23,000
+This is my first project.
+
+103
+00:07:23,220 --> 00:07:29,680
+Or maybe what if I choose my Google or anything you can create your own project and let me
+
+104
+00:07:29,681 --> 00:07:30,800
+search for APIs.
+
+105
+00:07:31,000 --> 00:07:32,320
+Why I'm not getting that.
+
+106
+00:07:33,360 --> 00:07:34,740
+This is the problem with it.
+
+107
+00:07:34,880 --> 00:07:35,820
+So just give me a minute.
+
+108
+00:07:36,660 --> 00:07:42,100
+Alright so you can just simply press here and you will find something known as API and
+
+109
+00:07:42,101 --> 00:07:48,440
+services simply press over this and after pressing and maybe let me just open this fully
+
+110
+00:07:50,700 --> 00:07:52,480
+Fix it nice.
+
+111
+00:07:53,580 --> 00:07:55,940
+Now you will see this lot of information.
+
+112
+00:07:56,360 --> 00:08:01,200
+First thing what you need to do is to simply go inside your OAuth consent screen.
+
+113
+00:08:01,480 --> 00:08:06,680
+Yes, first step is always you need to create OAuth consent screen.
+
+114
+00:08:07,100 --> 00:08:11,820
+And why I am not getting alright this is the overview.
+
+115
+00:08:13,460 --> 00:08:14,580
+I think this is the client.
+
+116
+00:08:14,820 --> 00:08:20,600
+Yes, simply press on client and then simply press on create client because you wanted
+
+117
+00:08:20,601 --> 00:08:22,640
+to create one client for it.
+
+118
+00:08:22,800 --> 00:08:30,100
+So application type is choose right now web application and web client to and the JavaScript
+
+119
+00:08:30,140 --> 00:08:35,660
+Authorize URL will be your application's running server.
+
+120
+00:08:36,000 --> 00:08:44,440
+So, if I am not wrong whenever we run any development build yes we need to create a
+
+121
+00:08:44,441 --> 00:08:45,600
+development build for it.
+
+122
+00:08:45,680 --> 00:08:53,340
+So, their host is going to be HTTP slash slash localhost.
+
+123
+00:08:55,660 --> 00:08:56,260
+8081.
+
+124
+00:08:56,780 --> 00:08:59,140
+Yes, so this is the port for it.
+
+125
+00:08:59,280 --> 00:09:09,960
+Let me add authorization callback and this is again going to be HTTP localhost 8081 slash
+
+126
+00:09:10,140 --> 00:09:10,440
+API.
+
+127
+00:09:10,510 --> 00:09:14,400
+Yes, just add with me auth slash callback.
+
+128
+00:09:14,700 --> 00:09:15,640
+Perfect.
+
+129
+00:09:15,860 --> 00:09:21,640
+And after adding this simply press on create and the moment you press on create, we have
+
+130
+00:09:21,641 --> 00:09:22,160
+two things.
+
+131
+00:09:22,320 --> 00:09:25,840
+First one is the client ID and second thing is the client secret.
+
+132
+00:09:25,940 --> 00:09:30,580
+And please don't use mine secrets because otherwise I'm definitely going to remove all
+
+133
+00:09:30,581 --> 00:09:31,140
+of them.
+
+134
+00:09:31,460 --> 00:09:33,980
+Let me just simply create one ENV.
+
+135
+00:09:34,200 --> 00:09:40,260
+paste one credential, let me copy the another one, let me paste the another credentials
+
+136
+00:09:40,320 --> 00:09:41,340
+as well.
+
+137
+00:09:41,400 --> 00:09:44,420
+Easy, nice, then simply press on OK.
+
+138
+00:09:44,920 --> 00:09:48,180
+Now we have this web client 2 as well.
+
+139
+00:09:48,900 --> 00:09:49,700
+Close this.
+
+140
+00:09:51,000 --> 00:09:58,220
+Now let's move ahead and start setting up first to fall a bunch of we can say.
+
+141
+00:09:59,339 --> 00:10:05,800
+back-end endpoints and maybe before that let's move ahead and let me just simply
+
+142
+00:10:06,600 --> 00:10:13,000
+where is my device I think this one cool and let me also fix their size just give
+
+143
+00:10:13,001 --> 00:10:18,360
+me a minute and then we will good to go alright so now I have successfully set
+
+144
+00:10:18,361 --> 00:10:24,199
+all of them and what is the next step is simply go inside your app
+
+145
+00:10:24,200 --> 00:10:32,120
+and create one API perfect yes and inside this API first end point that I wanted you
+
+146
+00:10:32,121 --> 00:10:40,220
+to create is very simple you simply going to create here something known as first of
+
+147
+00:10:40,221 --> 00:10:43,960
+all create a folder with the name of auth alright.
+
+148
+00:10:44,000 --> 00:10:48,580
+And inside this what we will going to do is to first of all create one endpoint.
+
+149
+00:10:48,800 --> 00:10:53,800
+Yes, the endpoint name is going to be authorized.
+
+150
+00:10:55,080 --> 00:10:57,960
+Yes, authorized plus API dot.
+
+151
+00:10:58,080 --> 00:10:59,000
+Yes, simple.
+
+152
+00:10:59,900 --> 00:11:04,500
+But before using this, yes, what you need to do need to go inside app.json.
+
+153
+00:11:04,700 --> 00:11:12,800
+Search for web, change this static to server, very good and then again let us go inside
+
+154
+00:11:12,820 --> 00:11:21,680
+the authorized.api and inside this we need to import bunch of we can say constant variables.
+
+155
+00:11:21,681 --> 00:11:27,400
+So, at the root of it, I can simply create here some constants.
+
+156
+00:11:28,300 --> 00:11:35,620
+And, then I can simply say this as index dot ts and first constant that we are going to
+
+157
+00:11:35,621 --> 00:11:43,420
+have is the client id alright and you cannot directly create this export const alright.
+
+158
+00:11:43,680 --> 00:11:46,740
+So, this is the first variable in same way.
+
+159
+00:11:47,400 --> 00:11:52,480
+I can have the export const Google client secret.
+
+160
+00:11:53,420 --> 00:12:01,440
+So let me just create them as secret and let me off my AI because disturbing me a lot.
+
+161
+00:12:02,540 --> 00:12:03,220
+All right.
+
+162
+00:12:03,640 --> 00:12:08,360
+And hopefully let me just initialize them, initialize them as well.
+
+163
+00:12:08,560 --> 00:12:08,800
+Perfect.
+
+164
+00:12:09,220 --> 00:12:11,680
+And one more, two more, by the way.
+
+165
+00:12:11,800 --> 00:12:15,399
+I can simply say export const base_url.
+
+166
+00:12:16,019 --> 00:12:20,440
+Yes, we need a base URL and I think for now we are good to go.
+
+167
+00:12:21,200 --> 00:12:23,519
+So what is this base URL is going to be?
+
+168
+00:12:23,720 --> 00:12:32,240
+So this is the base URL we can say backticks HTTP //localhost 8081.
+
+169
+00:12:32,459 --> 00:12:34,160
+So this is the base URL we have.
+
+170
+00:12:34,500 --> 00:12:42,280
+Nice. And in same way we can have one thing which is known as Google Auth URL.
+
+171
+00:12:43,980 --> 00:12:50,060
+So this is the end point we are going to hit from our backend. Alright. Nice.
+
+172
+00:12:50,500 --> 00:12:52,600
+Let me close everything.
+
+173
+00:12:52,920 --> 00:12:56,340
+Let's open dot env inside this dot env.
+
+174
+00:12:56,480 --> 00:12:59,300
+The first variable is Google client ID.
+
+175
+00:13:00,460 --> 00:13:00,640
+Okay.
+
+176
+00:13:00,960 --> 00:13:03,560
+And let me change this to environment variable.
+
+177
+00:13:03,960 --> 00:13:05,820
+Now this is showing a syntax highlighting.
+
+178
+00:13:06,720 --> 00:13:08,620
+Then the another thing that we have.
+
+179
+00:13:09,000 --> 00:13:17,220
+is Google client secret easy perfect and then what you need to do simply say process dot
+
+180
+00:13:17,300 --> 00:13:27,000
+env and this is basically going to be Google client ID nice and the second thing is going
+
+181
+00:13:28,200 --> 00:13:36,880
+process dot env Google client secret. So, these are bunch of constants that we need.
+
+182
+00:13:37,440 --> 00:13:44,760
+Let me close everything only simple focus on to this file and this file is simply going
+
+183
+00:13:44,761 --> 00:13:47,900
+to have what let me just import all of them.
+
+184
+00:13:48,200 --> 00:13:51,220
+from at the rate slash constants.
+
+185
+00:13:52,360 --> 00:13:54,280
+Okay, so I need the base URL.
+
+186
+00:13:55,020 --> 00:14:01,820
+I need the Google client ID and I need the let me import one more thing.
+
+187
+00:14:01,880 --> 00:14:04,220
+Google client of secret.
+
+188
+00:14:04,540 --> 00:14:06,980
+Okay, so these are all the things that we have.
+
+189
+00:14:08,000 --> 00:14:15,700
+Now, let me create export async function and this function is going to be the get function
+
+190
+00:14:16,400 --> 00:14:21,320
+which have access of request and this is going to be the request.
+
+191
+00:14:22,080 --> 00:14:28,360
+Let me open it and first thing is going to be let me initialize the new URL.
+
+192
+00:14:30,320 --> 00:14:33,580
+Then we are going to have the request.url.
+
+193
+00:14:34,080 --> 00:14:35,060
+Okay, no problem.
+
+194
+00:14:35,580 --> 00:14:40,640
+Then second thing we need to extract the redirect URI.
+
+195
+00:14:41,420 --> 00:14:49,520
+So I can simply say url.search_params which going to have the redirect_uri.
+
+196
+00:14:52,480 --> 00:14:55,800
+And, okay, we need to use the method here.
+
+197
+00:14:55,980 --> 00:14:58,840
+So this is going to be URL dot search param dot get.
+
+198
+00:14:59,260 --> 00:14:59,680
+All right.
+
+199
+00:15:00,520 --> 00:15:02,400
+And one more thing, which is the state.
+
+200
+00:15:02,880 --> 00:15:08,280
+This is the random string we will sending from the client side to the Google authorization
+
+201
+00:15:08,281 --> 00:15:08,700
+server.
+
+202
+00:15:10,640 --> 00:15:13,320
+Let me just get the state as well.
+
+203
+00:15:15,140 --> 00:15:17,940
+And then let me make ready my parameters.
+
+204
+00:15:19,200 --> 00:15:23,260
+So now you will see that I have created the parameters.
+
+205
+00:15:23,760 --> 00:15:25,560
+So we have a client ID.
+
+206
+00:15:26,400 --> 00:15:37,460
+client redirect URI, response type, scope and the state and the prompt. And after this
+
+207
+00:15:37,820 --> 00:15:46,600
+last thing is simply going to be return this response with Google auth URL alright and
+
+208
+00:15:46,601 --> 00:15:51,680
+then a simple question mark and parameters. Why we are getting this definitely some Type
+
+209
+00:15:54,660 --> 00:15:57,020
+Client ID, maybe this thing.
+
+210
+00:15:57,220 --> 00:15:58,440
+Yes, now we are good to go.
+
+211
+00:15:58,560 --> 00:16:01,200
+Let me format this once.
+
+212
+00:16:02,160 --> 00:16:02,420
+Perfect.
+
+213
+00:16:02,540 --> 00:16:06,740
+So, do not be sending any redirect URI that we are extracting.
+
+214
+00:16:08,040 --> 00:16:08,720
+I think not.
+
+215
+00:16:08,960 --> 00:16:10,280
+So, we do not need it.
+
+216
+00:16:10,281 --> 00:16:11,860
+So, let me just remove it.
+
+217
+00:16:11,940 --> 00:16:12,180
+Perfect.
+
+218
+00:16:12,740 --> 00:16:14,300
+So, this is your first endpoint.
+
+219
+00:16:15,300 --> 00:16:16,600
+Now, what is your next endpoint?
+
+220
+00:16:17,340 --> 00:16:20,980
+Next endpoint is the callback endpoint.
+
+221
+00:16:21,500 --> 00:16:22,620
+Perfect.
+
+222
+00:16:22,800 --> 00:16:29,200
+So, for the callback endpoint, what we will do again, let me simply come into here and
+
+223
+00:16:29,201 --> 00:16:32,980
+let me call this as callback plus API dot TS.
+
+224
+00:16:33,500 --> 00:16:39,220
+And inside this, first of all, let me copy them and paste them.
+
+225
+00:16:39,400 --> 00:16:39,660
+Perfect.
+
+226
+00:16:40,100 --> 00:16:42,860
+Don't need any constant variables for now.
+
+227
+00:16:43,100 --> 00:16:46,800
+We need the state, we need the code as well.
+
+228
+00:16:47,019 --> 00:16:54,860
+So I can simply say const code is equals to url.searchparams.get and then we have the
+
+229
+00:16:56,120 --> 00:16:57,740
+code as well.
+
+230
+00:16:58,720 --> 00:17:00,880
+And after that, let me remove everything.
+
+231
+00:17:01,500 --> 00:17:02,540
+Perfect.
+
+232
+00:17:03,120 --> 00:17:06,819
+And one more thing if you go inside your app dot json.
+
+233
+00:17:07,700 --> 00:17:07,980
+Perfect.
+
+234
+00:17:08,079 --> 00:17:13,420
+So inside this app dot json you will find something, something known as a scheme.
+
+235
+00:17:13,839 --> 00:17:17,339
+So right now you will see my app scheme name is module 13.
+
+236
+00:17:17,599 --> 00:17:21,240
+Okay, so keep that in mind for now.
+
+237
+00:17:21,419 --> 00:17:21,819
+Perfect.
+
+238
+00:17:22,599 --> 00:17:26,900
+So, now let us move ahead and inside this callback URL.
+
+239
+00:17:27,660 --> 00:17:35,280
+Yep, inside this callback URL, I simply wanted to have what I simply wanted to have something
+
+240
+00:17:35,360 --> 00:17:36,280
+known as the scheme.
+
+241
+00:17:36,700 --> 00:17:42,039
+And, on the basis of that scheme we will basically going to return the response.
+
+242
+00:17:42,279 --> 00:17:51,360
+So, simply I can say here the const redirect URI is equals to let us say right now the
+
+243
+00:17:51,361 --> 00:17:58,260
+scheme is module 13 colon slash slash this should match yes this should match your scheme
+
+244
+00:17:58,399 --> 00:17:59,360
+from here.
+
+245
+00:17:59,700 --> 00:18:00,720
+Perfect.
+
+246
+00:18:01,399 --> 00:18:09,039
+And then what we will do, I can simply say const params is equals to new URL search params.
+
+247
+00:18:09,980 --> 00:18:17,260
+Then we are going to have the code of code colon and then we are also going to have a
+
+248
+00:18:17,261 --> 00:18:20,039
+state state of state.
+
+249
+00:18:20,400 --> 00:18:31,020
+this, then I can simply return this spawns return towards the redirect URI alright with
+
+250
+00:18:31,040 --> 00:18:36,220
+all the information that we have perfect.
+
+251
+00:18:37,340 --> 00:18:39,019
+Now, let's move ahead.
+
+252
+00:18:39,840 --> 00:18:42,639
+Alright, so this is two endpoints which is done for now.
+
+253
+00:18:43,200 --> 00:18:47,500
+Now what we can do, we can simply move ahead and start implementing some UI.
+
+254
+00:18:48,240 --> 00:18:51,919
+So definitely I can simply run bunnex expostart.
+
+255
+00:18:52,659 --> 00:18:57,519
+Alright, and after running this bunnex expostart, I can simply go inside my expogo.
+
+256
+00:18:57,860 --> 00:18:58,240
+Perfect.
+
+257
+00:18:58,639 --> 00:19:04,880
+And then first of all, let me connect my Wi-Fi so that we can simply run that here.
+
+258
+00:19:06,720 --> 00:19:13,280
+Alright, now if I just simply hit my module 13, so hopefully this will work.
+
+259
+00:19:13,560 --> 00:19:14,160
+Not now.
+
+260
+00:19:14,980 --> 00:19:15,720
+Okay, no problem.
+
+261
+00:19:15,721 --> 00:19:19,840
+I can simply press A and we are bundling it.
+
+262
+00:19:21,380 --> 00:19:26,440
+So right now you can see that we already have one sign up screen, but we don't need it right
+
+263
+00:19:26,441 --> 00:19:26,840
+now.
+
+264
+00:19:26,920 --> 00:19:27,200
+Perfect.
+
+265
+00:19:27,400 --> 00:19:30,500
+So, I can simply go inside my layout.
+
+266
+00:19:31,100 --> 00:19:32,820
+I don't need any sign up screen.
+
+267
+00:19:33,140 --> 00:19:39,800
+I only need a login screen and also inside the login screen, I am completely going to
+
+268
+00:19:39,801 --> 00:19:40,580
+change it.
+
+269
+00:19:40,960 --> 00:19:44,160
+So, this is going to be RNFES login.
+
+270
+00:19:45,260 --> 00:19:50,500
+Perfect and maybe I can reload it once so that everything should work correctly.
+
+271
+00:19:50,700 --> 00:19:51,980
+So, just give me a minute.
+
+272
+00:19:52,480 --> 00:19:52,780
+Perfect.
+
+273
+00:19:53,000 --> 00:20:01,400
+What next? Next, I simply wanted to implement we can say the login screen. So, login screen
+
+274
+00:20:02,240 --> 00:20:09,160
+is depend on something known as our auth context. So, the first thing is we need to create a
+
+275
+00:20:09,161 --> 00:20:12,780
+context at the very top of it. Let me create one context.
+
+276
+00:20:13,100 --> 00:20:17,679
+I can call this as auth_context, perfect.
+
+277
+00:20:18,179 --> 00:20:27,980
+So auth_context.tsx, perfect and inside this just import bunch of thing that I am importing,
+
+278
+00:20:28,520 --> 00:20:28,799
+perfect.
+
+279
+00:20:29,100 --> 00:20:35,820
+So, I need a react, I need a web browser from expo web browser and then I need auth request
+
+280
+00:20:36,039 --> 00:20:42,620
+config discovery document make redirect uri use auth request from expo auth session very
+
+281
+00:20:42,621 --> 00:20:50,400
+important then we have imported expo secure store then two more thing one is going to
+
+282
+00:20:50,401 --> 00:20:56,700
+be the base URL this will come from the constants and the joes perfect.
+
+283
+00:20:57,740 --> 00:21:04,240
+First thing we will do is simply say web browser dot maybe complete auth session.
+
+284
+00:21:05,179 --> 00:21:05,419
+Perfect.
+
+285
+00:21:05,679 --> 00:21:09,820
+Then let's create the auth user interface.
+
+286
+00:21:10,059 --> 00:21:12,400
+So this is how my auth user will going to look.
+
+287
+00:21:12,780 --> 00:21:17,720
+They have a sub, a name, an email, a picture, sub kind of we can say the ID.
+
+288
+00:21:18,020 --> 00:21:18,320
+I don't know.
+
+289
+00:21:18,340 --> 00:21:19,200
+We'll see that.
+
+290
+00:21:19,300 --> 00:21:23,620
+And then we have all the interface related to auth context.
+
+291
+00:21:23,760 --> 00:21:29,060
+So we have a user, we have sign in, we have sign out and then we have is loading.
+
+292
+00:21:29,860 --> 00:21:30,180
+Perfect.
+
+293
+00:21:30,720 --> 00:21:35,520
+And then what I will do, I can simply initialize my create context.
+
+294
+00:21:35,900 --> 00:21:36,140
+Easy.
+
+295
+00:21:36,900 --> 00:21:39,380
+So that will also going to pretty much straightforward.
+
+296
+00:21:39,720 --> 00:21:42,320
+So auth context type simply call.
+
+297
+00:21:42,900 --> 00:21:44,060
+Let me remove this.
+
+298
+00:21:44,700 --> 00:21:46,140
+Let me just directly import.
+
+299
+00:21:46,800 --> 00:21:54,020
+Okay, so create context this is the type of this context initially user will be null sign
+
+300
+00:21:54,021 --> 00:21:56,600
+in sign out and is loading is false.
+
+301
+00:21:57,520 --> 00:21:57,900
+Perfect.
+
+302
+00:21:58,340 --> 00:22:00,580
+Now, we need to first of all get the config.
+
+303
+00:22:00,760 --> 00:22:06,780
+So, I can simply say const config which is the type of auth request config.
+
+304
+00:22:07,000 --> 00:22:12,180
+ID is equal to what is first thing we need a client ID.
+
+305
+00:22:12,640 --> 00:22:16,960
+So client ID will have the Google then we have a scope.
+
+306
+00:22:17,320 --> 00:22:18,860
+So I need the open ID.
+
+307
+00:22:20,580 --> 00:22:21,960
+Then I need the profile.
+
+308
+00:22:23,640 --> 00:22:30,860
+Then I need the email and at the end of it, what I will do, I can simply say redirect
+
+309
+00:22:31,040 --> 00:22:36,120
+URI that will simply call make redirect URI.
+
+310
+00:22:36,900 --> 00:22:37,200
+Nice.
+
+311
+00:22:37,920 --> 00:22:39,260
+And then we need two things.
+
+312
+00:22:39,600 --> 00:22:41,960
+First is the discovery endpoint.
+
+313
+00:22:42,880 --> 00:22:44,960
+So let me show you what I'm talking about.
+
+314
+00:22:45,860 --> 00:22:49,059
+These are the two endpoints that we need authorization endpoint.
+
+315
+00:22:49,200 --> 00:22:52,580
+We have already initialized the second one is the token endpoint.
+
+316
+00:22:53,240 --> 00:22:56,220
+So we haven't initialized this will do that in a while.
+
+317
+00:22:56,260 --> 00:22:56,720
+No worries.
+
+318
+00:22:57,400 --> 00:23:04,720
+And then at the end, let me create my export const auth provider.
+
+319
+00:23:06,200 --> 00:23:11,700
+This auth provider will going to call the children perfect.
+
+320
+00:23:12,880 --> 00:23:21,320
+This children is going to be the type of children and we can simply say react dot react node.
+
+321
+00:23:23,419 --> 00:23:30,899
+Okay, and hopefully let me import this and inside this what I will do, let me open this
+
+322
+00:23:30,900 --> 00:23:31,299
+one.
+
+323
+00:23:31,360 --> 00:23:31,720
+Nice.
+
+324
+00:23:31,940 --> 00:23:34,899
+And then we need bunch of state variables.
+
+325
+00:23:36,720 --> 00:23:39,960
+First state variable that I need is the user and set user.
+
+326
+00:23:40,460 --> 00:23:42,539
+Second is access token set access token.
+
+327
+00:23:42,659 --> 00:23:44,600
+Third one is coming from the hook.
+
+328
+00:23:44,800 --> 00:23:52,460
+Name is useAuthRequest, they load an authorization request for a code when the prompt method
+
+329
+00:23:52,461 --> 00:23:55,880
+complete then the response will be fulfilled.
+
+330
+00:23:55,881 --> 00:24:01,380
+So they are giving you the request, the response and the prompt async and then we have isLoading
+
+331
+00:24:01,640 --> 00:24:02,540
+and setIsLoading.
+
+332
+00:24:03,900 --> 00:24:07,920
+So, first thing is always handle the OAuth response.
+
+333
+00:24:08,520 --> 00:24:11,180
+So handle OAuth response, we don't have it right now.
+
+334
+00:24:11,260 --> 00:24:13,080
+So we'll implement that in a while.
+
+335
+00:24:13,900 --> 00:24:16,560
+Second thing is Restore session on app start.
+
+336
+00:24:16,680 --> 00:24:21,800
+So whenever my app will start, I will call one function known as Restore session.
+
+337
+00:24:22,980 --> 00:24:23,160
+Perfect.
+
+338
+00:24:23,240 --> 00:24:26,060
+Now, let me simply paste my Restore session code.
+
+339
+00:24:26,400 --> 00:24:30,320
+So, this is how my restored session code will look.
+
+340
+00:24:31,200 --> 00:24:34,440
+Set is loading as true, then a simple try and catch block.
+
+341
+00:24:35,360 --> 00:24:41,120
+Inside this try, I have just simply implemented the stored token getting from the secure token
+
+342
+00:24:41,420 --> 00:24:42,800
+with the name of access token.
+
+343
+00:24:43,300 --> 00:24:49,560
+Then we are decoding them getting the expiration date basically and again setting them.
+
+344
+00:24:50,600 --> 00:24:53,140
+Okay, this is the one method which is done.
+
+345
+00:24:53,920 --> 00:24:55,740
+In same way, I need another method.
+
+346
+00:24:55,860 --> 00:25:00,660
+We will write that by ourselves, which is known as handleAuthResponse.
+
+347
+00:25:01,420 --> 00:25:02,980
+They will going to accept a code.
+
+348
+00:25:04,300 --> 00:25:05,900
+We can say this as a string.
+
+349
+00:25:06,600 --> 00:25:14,740
+Let me simply open a try and catch then set is loading is equals to true initially and
+
+350
+00:25:14,741 --> 00:25:20,799
+then I can say const form data is equals to new form data.
+
+351
+00:25:25,000 --> 00:25:25,919
+Something like this.
+
+352
+00:25:26,100 --> 00:25:27,120
+All right.
+
+353
+00:25:27,799 --> 00:25:33,059
+And after this, what I will do, I can simply say form data dot append.
+
+354
+00:25:33,559 --> 00:25:37,000
+Then we can have a code and then this is the code value.
+
+355
+00:25:37,269 --> 00:25:37,440
+Okay.
+
+356
+00:25:38,279 --> 00:25:45,159
+And if the request is code, you can look at a lot of things.
+
+357
+00:25:45,279 --> 00:25:51,440
+First thing would we need the code verifier, then simply append the request dot code verifier.
+
+358
+00:25:52,000 --> 00:25:58,100
+here. And then we are simply going to hit the endpoint which do not exist right now
+
+359
+00:25:58,760 --> 00:26:06,200
+with the help of this form data. Base URL simply hit API slash auth slash token we are
+
+360
+00:26:06,201 --> 00:26:12,860
+basically getting the token and saving that token inside the secure store. Easy. So, I
+
+361
+00:26:12,861 --> 00:26:19,300
+can simply say const tokens is equals to await token response dot json.
+
+362
+00:26:20,100 --> 00:26:30,640
+And, then I can simply say save simply call the secure store set item async and then name
+
+363
+00:26:30,641 --> 00:26:39,620
+it as access token and whatever the access token we can have I can simply say tokens.excess
+
+364
+00:26:39,780 --> 00:26:39,980
+token.
+
+365
+00:26:40,400 --> 00:26:47,520
+And I can also change my state variable as set access token to the token access token
+
+366
+00:26:47,540 --> 00:26:52,400
+and then I will decode it and then set the data with it.
+
+367
+00:26:52,600 --> 00:27:00,120
+So this is what we have decoded as auth user by any chance if we have any error I can show
+
+368
+00:27:00,121 --> 00:27:00,640
+the error.
+
+369
+00:27:01,160 --> 00:27:03,020
+Otherwise inside the finally.
+
+370
+00:27:05,300 --> 00:27:08,800
+I can simply say set is loading as false.
+
+371
+00:27:10,620 --> 00:27:16,220
+And then outside of this handle auth response, I will create one sign in method that will
+
+372
+00:27:16,221 --> 00:27:19,140
+simply call one method known as prompt async.
+
+373
+00:27:19,660 --> 00:27:27,020
+Yes, I know there is a lot of boilerplating for implementing the auth by ourself, but this
+
+374
+00:27:27,021 --> 00:27:28,020
+is how the things work.
+
+375
+00:27:28,100 --> 00:27:29,420
+We can't do anything out of it.
+
+376
+00:27:29,600 --> 00:27:34,580
+Alright, so this is the first thing, second thing that we need is the sign out.
+
+377
+00:27:35,080 --> 00:27:43,440
+So this is the sign out and at the very bottom I can simply return auth context dot provider.
+
+378
+00:27:44,460 --> 00:27:45,960
+They will have a value.
+
+379
+00:27:46,840 --> 00:27:50,840
+First thing is the user, second we can give the sign in.
+
+380
+00:27:51,500 --> 00:27:52,500
+Sign out.
+
+381
+00:27:52,800 --> 00:27:56,120
+And then we can say is loading.
+
+382
+00:27:57,200 --> 00:27:57,500
+Perfect.
+
+383
+00:27:58,180 --> 00:28:00,960
+And inside this, I can simply say this as children.
+
+384
+00:28:01,640 --> 00:28:06,660
+And at the very bottom, I can create one hook for it with the name of use auth.
+
+385
+00:28:08,260 --> 00:28:08,480
+Perfect.
+
+386
+00:28:08,620 --> 00:28:10,080
+So this is the hook.
+
+387
+00:28:10,500 --> 00:28:13,540
+Now only one thing which is left for the backend.
+
+388
+00:28:14,300 --> 00:28:24,020
+Let me go to my app, my API and inside this I will create one token plus API dot TS and
+
+389
+00:28:24,080 --> 00:28:27,980
+this token is basically we are handling.
+
+390
+00:28:28,340 --> 00:28:34,580
+We can say that JWT token creating the custom tokens and storing them kind of that a lot
+
+391
+00:28:34,581 --> 00:28:35,840
+of things is going on.
+
+392
+00:28:36,360 --> 00:28:40,120
+So first of all let me simply get my google_videos.
+
+393
+00:28:42,460 --> 00:28:53,920
+client ID, google_clientsecret yes we need that and then the base URL and the JWT_SECRETCRET
+
+394
+00:28:54,060 --> 00:28:55,580
+which do not exist right now.
+
+395
+00:28:56,120 --> 00:29:03,640
+So let me go to my constant and simply say export const JWT secret.
+
+396
+00:29:04,100 --> 00:29:11,840
+And inside this I will call process dot env dot JWT underscore sec id secret.
+
+397
+00:29:13,480 --> 00:29:19,380
+Let's go inside the dot env and after going it, let me paste it.
+
+398
+00:29:19,820 --> 00:29:23,140
+There's multiple ways of creating a simple random string.
+
+399
+00:29:23,500 --> 00:29:25,620
+So let me show you something interesting.
+
+400
+00:29:26,440 --> 00:29:27,820
+Open your git bash.
+
+401
+00:29:28,400 --> 00:29:37,980
+And inside this, what you will do, you will run one method known as open SSL random hex
+
+402
+00:29:38,400 --> 00:29:39,460
+and I think 32.
+
+403
+00:29:40,100 --> 00:29:46,420
+So this is just a random 32 bit of string, hex of strings.
+
+404
+00:29:46,480 --> 00:29:51,080
+So basically this is 68 characters if I'm not wrong, if I save it.
+
+405
+00:29:51,460 --> 00:29:55,200
+So yes, this is a random and make sure you will not share this with anyone.
+
+406
+00:29:57,020 --> 00:29:57,580
+Perfect.
+
+407
+00:29:58,320 --> 00:30:01,000
+And then add this everywhere.
+
+408
+00:30:01,700 --> 00:30:01,980
+Perfect.
+
+409
+00:30:03,060 --> 00:30:04,320
+Then let me coming to here.
+
+410
+00:30:04,660 --> 00:30:05,780
+Now we have this.
+
+411
+00:30:06,280 --> 00:30:12,500
+Now I can simply say export async function, name this as a post.
+
+412
+00:30:13,180 --> 00:30:15,740
+They have access of request.
+
+413
+00:30:16,540 --> 00:30:18,560
+This is the type of request.
+
+414
+00:30:19,620 --> 00:30:19,880
+Perfect.
+
+415
+00:30:20,260 --> 00:30:21,540
+Simply say try and catch.
+
+416
+00:30:22,120 --> 00:30:24,280
+First thing we will get the code.
+
+417
+00:30:24,600 --> 00:30:32,919
+like this code that we are sending from the auth context, which one this form data is
+
+418
+00:30:32,920 --> 00:30:38,799
+code inside this handle you will see that we get this code we are sending here you can
+
+419
+00:30:38,800 --> 00:30:42,640
+see that we are basically getting them perfect.
+
+420
+00:30:42,900 --> 00:30:50,400
+So, now let me just simply format this once and then this is the point where basically
+
+421
+00:30:50,401 --> 00:30:52,920
+we are going to exchange the code with Google.
+
+422
+00:30:53,560 --> 00:30:56,020
+So, that Google will give us the access token.
+
+423
+00:30:56,140 --> 00:31:05,540
+So, I can say const token response is equals to await patch this is the endpoint for getting
+
+424
+00:31:09,059 --> 00:31:13,019
+HTTPS OAuth to Google APIs dot com slash token.
+
+425
+00:31:14,179 --> 00:31:14,340
+Yep.
+
+426
+00:31:14,799 --> 00:31:18,059
+And inside this first thing is going to be the method.
+
+427
+00:31:18,940 --> 00:31:24,299
+Method is post and then I can simply say headers.
+
+428
+00:31:24,679 --> 00:31:29,860
+Headers is again going to be the content type application.
+
+429
+00:31:31,779 --> 00:31:32,899
+Let me show you what is that.
+
+430
+00:31:37,060 --> 00:31:38,260
+This one.
+
+431
+00:31:38,400 --> 00:31:38,560
+Nice.
+
+432
+00:31:38,561 --> 00:31:48,580
+So, you can see we have a content type application X www hyphen form URL encoded.
+
+433
+00:31:49,040 --> 00:31:49,400
+Perfect.
+
+434
+00:31:50,180 --> 00:31:52,980
+Then what I can do, I can send the body for it.
+
+435
+00:31:53,020 --> 00:31:59,980
+So, body is simply a new URL search params, which have the code.
+
+436
+00:32:00,300 --> 00:32:06,040
+which have the client_id which is equals to Google client id.
+
+437
+00:32:07,020 --> 00:32:10,580
+Then we now we are sending the client secret very important.
+
+438
+00:32:12,980 --> 00:32:22,520
+Then this is going to be Google client secret and at the end we are going to have the redirect_uri
+
+439
+00:32:23,040 --> 00:32:26,980
+this will basically redirect toward the uri that we have created.
+
+440
+00:32:28,580 --> 00:32:35,480
+And then grant_type, these are all the parameter which is accepted by Google's API.
+
+441
+00:32:35,481 --> 00:32:38,380
+So if you're not understanding them, it's completely fine.
+
+442
+00:32:38,800 --> 00:32:42,560
+You just need to read and implement these two to three times.
+
+443
+00:32:42,600 --> 00:32:44,280
+You will start understanding everything.
+
+444
+00:32:44,340 --> 00:32:45,520
+So chill, don't worry.
+
+445
+00:32:47,000 --> 00:32:50,480
+Let me just simply copy them and paste whatever I'm sending.
+
+446
+00:32:50,600 --> 00:32:52,000
+So this is the code verifier.
+
+447
+00:32:52,620 --> 00:32:55,880
+If we have that, then simply send this code verifier.
+
+448
+00:32:56,110 --> 00:32:56,260
+Cool.
+
+449
+00:32:56,480 --> 00:32:59,760
+And now we are going to have the access of tokens.
+
+450
+00:32:59,980 --> 00:33:01,660
+This tokens is going to be await.
+
+451
+00:33:03,220 --> 00:33:04,980
+token response dot Jason.
+
+452
+00:33:05,799 --> 00:33:11,840
+And then I am going to call one endpoint that will give us the this is your access token.
+
+453
+00:33:12,200 --> 00:33:12,419
+Yes.
+
+454
+00:33:12,500 --> 00:33:14,539
+So inside this token, we have access token.
+
+455
+00:33:15,080 --> 00:33:16,620
+Now I can get user information.
+
+456
+00:33:16,860 --> 00:33:17,140
+How?
+
+457
+00:33:17,500 --> 00:33:18,700
+Let me show you very easy.
+
+458
+00:33:18,900 --> 00:33:26,360
+I have just basically called this endpoint HTTPS this Google API OAuth v2 user info and
+
+459
+00:33:26,400 --> 00:33:30,900
+then inside this authorization I have passed this access token from here.
+
+460
+00:33:31,640 --> 00:33:33,300
+Now we have this user info.
+
+461
+00:33:34,820 --> 00:33:36,920
+I can say const user info.
+
+462
+00:33:38,200 --> 00:33:49,299
+is equals to await user response dot json ok and then I will basically create one JWT
+
+463
+00:33:49,500 --> 00:33:52,419
+for it and assign it and return it.
+
+464
+00:33:52,940 --> 00:34:00,440
+So first of all let me simply say this as secret new text encoder encode then get the
+
+465
+00:34:00,441 --> 00:34:03,980
+access token something like this.
+
+466
+00:34:05,059 --> 00:34:06,860
+Perfect can't find name.
+
+467
+00:34:07,960 --> 00:34:12,440
+Let me just import them at the top and here.
+
+468
+00:34:12,619 --> 00:34:12,839
+Perfect.
+
+469
+00:34:12,980 --> 00:34:14,520
+So now I have juice as well.
+
+470
+00:34:15,179 --> 00:34:19,320
+So yes, this is no need new sign JWT.
+
+471
+00:34:19,579 --> 00:34:20,260
+This is the sub.
+
+472
+00:34:20,280 --> 00:34:22,159
+This is the name email picture.
+
+473
+00:34:22,699 --> 00:34:29,920
+Just create on the basis of that this and then pass all of the other information that
+
+474
+00:34:29,921 --> 00:34:30,460
+we need.
+
+475
+00:34:30,699 --> 00:34:36,400
+So, we need the set protected header with this algorithm expiration time of seven days
+
+476
+00:34:37,239 --> 00:34:43,079
+when issued at and sign with this secret with secret this one which is basically store inside
+
+477
+00:34:43,080 --> 00:34:43,320
+this.
+
+478
+00:34:43,679 --> 00:34:45,400
+So, this is how we sign a JWT.
+
+479
+00:34:45,760 --> 00:34:47,179
+I hope you guys understand this.
+
+480
+00:34:48,000 --> 00:34:50,780
+They just a basic backend stuff.
+
+481
+00:34:50,980 --> 00:34:56,400
+So definitely if you don't understand this, you can research more and implement it.
+
+482
+00:34:56,639 --> 00:35:05,160
+So Jason, we wanted to simply return access token and inside this catch, I will return
+
+483
+00:35:05,260 --> 00:35:05,980
+this error.
+
+484
+00:35:06,240 --> 00:35:08,760
+So hopefully we are done with it.
+
+485
+00:35:08,940 --> 00:35:09,260
+Perfect.
+
+486
+00:35:10,160 --> 00:35:14,260
+Now I can close everything and now I can go inside my login.
+
+487
+00:35:15,520 --> 00:35:23,040
+Perfect. And inside this login, what I will do, I can simply first of all, import the
+
+488
+00:35:23,041 --> 00:35:27,100
+things that I need. I know there's a lot of things to implement, but okay, I'm loving
+
+489
+00:35:27,180 --> 00:35:36,860
+it. Hopefully you are also let me paste. I need a react and this is not we have a not
+
+490
+00:35:36,920 --> 00:35:37,600
+this.
+
+491
+00:35:40,060 --> 00:35:41,900
+context slash auth context.
+
+492
+00:35:42,140 --> 00:35:43,880
+So I have imported this use auth hook.
+
+493
+00:35:44,860 --> 00:35:50,280
+So first thing is I will get my sign in and is loading variable.
+
+494
+00:35:52,860 --> 00:35:58,860
+This will basically come from use auth and then what I will do, I will simply paste the
+
+495
+00:35:58,861 --> 00:35:59,640
+code for it.
+
+496
+00:35:59,980 --> 00:36:01,160
+So this is the code.
+
+497
+00:36:02,220 --> 00:36:03,860
+Let me paste the CSS for it.
+
+498
+00:36:04,040 --> 00:36:06,120
+You will get everything onto my GitHub.
+
+499
+00:36:06,220 --> 00:36:06,820
+So don't worry.
+
+500
+00:36:08,100 --> 00:36:09,500
+Let me paste them.
+
+501
+00:36:09,900 --> 00:36:10,800
+Let me save it.
+
+502
+00:36:10,880 --> 00:36:15,560
+So the moment, hopefully the moment I save it, I'm able to see the reflect and yes, but
+
+503
+00:36:15,620 --> 00:36:17,200
+let me show you something very interesting.
+
+504
+00:36:17,420 --> 00:36:20,960
+The moment I click on sign in with Google, nothing is happening.
+
+505
+00:36:21,860 --> 00:36:23,100
+I mean, nothing is happening.
+
+506
+00:36:23,360 --> 00:36:24,280
+I'm clicking it.
+
+507
+00:36:24,340 --> 00:36:25,140
+Nothing is happening.
+
+508
+00:36:25,800 --> 00:36:25,980
+Why?
+
+509
+00:36:26,660 --> 00:36:27,500
+Let's reload it.
+
+510
+00:36:27,640 --> 00:36:27,840
+Cool.
+
+511
+00:36:32,460 --> 00:36:36,040
+Okay, if I once again click nothing is happening.
+
+512
+00:36:36,160 --> 00:36:41,280
+What if I close my server and rerun this?
+
+513
+00:36:41,320 --> 00:36:42,579
+next exposed art.
+
+514
+00:36:44,200 --> 00:36:44,520
+Okay.
+
+515
+00:36:47,260 --> 00:36:54,820
+Nice, and then I will open once again this inside my android and now if I click it, ok,
+
+516
+00:36:55,000 --> 00:36:58,839
+if I reload it, android is bundled once again.
+
+517
+00:37:01,820 --> 00:37:02,140
+Cool.
+
+518
+00:37:03,000 --> 00:37:04,460
+Still clicking, nothing is happening.
+
+519
+00:37:04,940 --> 00:37:05,359
+Why?
+
+520
+00:37:05,600 --> 00:37:11,160
+Okay, so on press I have basically called this sign in method.
+
+521
+00:37:12,080 --> 00:37:19,460
+So this sign in is basically this async if we don't have any request, then simply return
+
+522
+00:37:19,461 --> 00:37:19,760
+it.
+
+523
+00:37:20,740 --> 00:37:26,780
+Okay, so is we have successfully implemented if I go to my app Jason.
+
+524
+00:37:27,820 --> 00:37:29,820
+Yes, we have the server right now.
+
+525
+00:37:31,280 --> 00:37:33,800
+Okay, this is also fine.
+
+526
+00:37:34,099 --> 00:37:34,880
+Let me see that.
+
+527
+00:37:35,720 --> 00:37:38,960
+Okay, so what we can do actually, let me try that.
+
+528
+00:37:39,859 --> 00:37:44,420
+I can make here one function, name it as handle sign in.
+
+529
+00:37:46,200 --> 00:37:50,240
+Okay, this is basically going to be the async function.
+
+530
+00:37:51,099 --> 00:37:51,500
+Nice.
+
+531
+00:37:52,079 --> 00:37:55,020
+And then I can call it here this sign in method.
+
+532
+00:37:55,600 --> 00:38:04,900
+Fine, let me coming to here and then what I will do, I will pass this handle sign in
+
+533
+00:38:05,100 --> 00:38:06,200
+instead of that.
+
+534
+00:38:06,640 --> 00:38:10,000
+But if I click right now, still nothing is happening.
+
+535
+00:38:10,160 --> 00:38:14,440
+So this means we are not getting any request from it.
+
+536
+00:38:14,840 --> 00:38:17,780
+So if I remove this, perfect.
+
+537
+00:38:18,860 --> 00:38:20,460
+And once if I click it.
+
+538
+00:38:48,460 --> 00:38:48,840
+So, I can see that the
+
+539
+00:38:48,841 --> 00:38:48,861
+Oh, nothing is happening.
+
+540
+00:38:48,862 --> 00:38:48,882
+Okay.
+
+541
+00:38:48,883 --> 00:38:48,903
+Let me just check that out.
+
+542
+00:38:48,904 --> 00:38:48,924
+Okay.
+
+543
+00:38:48,925 --> 00:38:48,945
+And I think I get the problem because we have created this auth provider.
+
+544
+00:38:48,946 --> 00:38:48,966
+Yeah.
+
+545
+00:38:48,967 --> 00:38:48,987
+But we haven't used it anywhere.
+
+546
+00:38:48,988 --> 00:38:49,008
+So that's the main problem.
+
+547
+00:38:49,009 --> 00:38:49,029
+All right.
+
+548
+00:38:49,030 --> 00:38:49,050
+So for wrapping that up, make sure that you come inside your layout.
+
+549
+00:38:49,051 --> 00:38:49,071
+And, inside this layout at the top of this you can simply say auth provider and make
+
+550
+00:38:49,072 --> 00:38:49,092
+sure to import this.
+
+551
+00:38:49,120 --> 00:38:53,460
+Let me close everything and let me wrap this up.
+
+552
+00:38:53,520 --> 00:38:57,520
+Nice and hopefully this will work right now.
+
+553
+00:38:58,180 --> 00:39:03,220
+So, what I can do now I can again coming to here reload it once so that everything is
+
+554
+00:39:03,221 --> 00:39:04,300
+properly synced up.
+
+555
+00:39:06,520 --> 00:39:07,079
+Fine.
+
+556
+00:39:07,880 --> 00:39:09,339
+So let's just wait for it.
+
+557
+00:39:09,940 --> 00:39:14,740
+So now if I just try to click on sign in with Google and look at that.
+
+558
+00:39:15,260 --> 00:39:21,980
+Now we are redirected to our Google and let's say let me choose any of my ID and hopefully
+
+559
+00:39:21,981 --> 00:39:25,339
+this will work and we'll see your sign in back.
+
+560
+00:39:25,619 --> 00:39:25,799
+Okay.
+
+561
+00:39:25,900 --> 00:39:31,380
+Let me simply press on continue and you will see this our back end is properly bundled
+
+562
+00:39:31,400 --> 00:39:32,440
+and we'll see.
+
+563
+00:39:32,500 --> 00:39:34,480
+And you will see that right now.
+
+564
+00:39:34,920 --> 00:39:37,240
+Let me tell you why this is just stuck here.
+
+565
+00:39:37,640 --> 00:39:38,100
+Why?
+
+566
+00:39:38,420 --> 00:39:42,120
+Because for using Google OAuth, we need a development build.
+
+567
+00:39:42,280 --> 00:39:44,880
+So let me close this because we don't need it.
+
+568
+00:39:44,960 --> 00:39:45,980
+Let me close everything.
+
+569
+00:39:46,360 --> 00:39:46,680
+Perfect.
+
+570
+00:39:47,180 --> 00:39:49,140
+And then simply say EAS in it.
+
+571
+00:39:51,440 --> 00:39:56,540
+And, after initializing this would you like to create a project and yes let us create
+
+572
+00:39:56,541 --> 00:39:57,420
+this.
+
+573
+00:39:59,040 --> 00:39:59,280
+Perfect.
+
+574
+00:39:59,281 --> 00:40:05,800
+So, let me just wait for it project added successfully and then what I will do I will
+
+575
+00:40:05,801 --> 00:40:07,660
+Simply say yes.
+
+576
+00:40:11,000 --> 00:40:16,900
+So, this is basically, ok, I think this spelling is right, not good.
+
+577
+00:40:18,100 --> 00:40:20,060
+I think I can directly run it.
+
+578
+00:40:20,160 --> 00:40:20,860
+We will see that.
+
+579
+00:40:20,980 --> 00:40:28,480
+But if I simply run EAS build perfect hyphen hyphen profile and the profile is going to
+
+580
+00:40:28,481 --> 00:40:36,800
+be as and instead EAS build hyphen hyphen platform is going to be as android.
+
+581
+00:40:38,060 --> 00:40:43,500
+And the next step is going to be hyphen hyphen profile as development.
+
+582
+00:40:45,300 --> 00:40:47,500
+Now if I hit this perfect.
+
+583
+00:40:47,900 --> 00:40:53,940
+So would you like to yes, let I wanted to install my export of client loaded this.
+
+584
+00:40:54,160 --> 00:40:58,640
+Now they are basically setting my environment variables, resolving all the issues.
+
+585
+00:40:59,340 --> 00:40:59,460
+Cool.
+
+586
+00:40:59,800 --> 00:41:02,300
+So let me just wait for it.
+
+587
+00:41:02,860 --> 00:41:03,220
+Nice.
+
+588
+00:41:05,740 --> 00:41:09,640
+Okay, so I can go with the same Android application ID.
+
+589
+00:41:11,160 --> 00:41:11,880
+New key store.
+
+590
+00:41:12,140 --> 00:41:16,319
+Yes, create that new key store for me.
+
+591
+00:41:17,680 --> 00:41:19,779
+Generating the key store in the cloud.
+
+592
+00:41:19,780 --> 00:41:20,020
+Cloud.
+
+593
+00:41:20,500 --> 00:41:22,119
+Okay, create that.
+
+594
+00:41:34,200 --> 00:41:34,380
+Okay.
+
+595
+00:41:34,381 --> 00:41:34,401
+Okay, so now you can see that a compressed file uploaded to EAS computed project fingerprint
+
+596
+00:41:34,402 --> 00:41:34,422
+and you can see there's my build is in queue.
+
+597
+00:41:34,423 --> 00:41:35,680
+So I can simply just open this up and let me show you.
+
+598
+00:41:35,900 --> 00:41:40,760
+So now you can see that waiting to start spinning up the build environment.
+
+599
+00:41:41,180 --> 00:41:45,260
+So yes, now our build is in progress so we can wait for a few minutes and then I'll be
+
+600
+00:41:45,261 --> 00:41:45,840
+right back.
+
+601
+00:41:46,100 --> 00:41:49,880
+Alright guys, so now you can see that we have our development build.
+
+602
+00:41:50,160 --> 00:41:53,000
+So let's just simply visit over here.
+
+603
+00:41:53,580 --> 00:41:57,460
+Perfect and let me just quickly download this.
+
+604
+00:41:57,660 --> 00:42:03,940
+So I can simply press on install and let me open my camera and scan this up.
+
+605
+00:42:04,140 --> 00:42:04,460
+Perfect.
+
+606
+00:42:04,560 --> 00:42:06,080
+Let me visit here.
+
+607
+00:42:07,160 --> 00:42:10,400
+And let's just wait for it and quickly start downloading.
+
+608
+00:42:10,520 --> 00:42:12,080
+So I can simply press on download.
+
+609
+00:42:12,900 --> 00:42:17,340
+So this is going to start downloading it and definitely I can wait for a few more seconds
+
+610
+00:42:17,341 --> 00:42:18,800
+and then we are good to go.
+
+611
+00:42:19,760 --> 00:42:21,920
+Alright, so now we have installed it successfully.
+
+612
+00:42:22,280 --> 00:42:24,600
+Let me just simply press on install.
+
+613
+00:42:24,920 --> 00:42:26,700
+So this is going to install it.
+
+614
+00:42:27,400 --> 00:42:29,420
+Alright, let me simply press on open.
+
+615
+00:42:29,700 --> 00:42:31,380
+So this is going to open this.
+
+616
+00:42:32,660 --> 00:42:33,520
+And perfect.
+
+617
+00:42:33,700 --> 00:42:36,160
+Let me clear everything first of all.
+
+618
+00:42:37,400 --> 00:42:38,900
+Nice close all.
+
+619
+00:42:39,880 --> 00:42:48,900
+Let me simply run bunx expose start and after this I can simply press on my module 13 and
+
+620
+00:42:48,901 --> 00:42:51,560
+yes at this point my application is up and running.
+
+621
+00:42:52,240 --> 00:42:52,920
+Yes continue.
+
+622
+00:42:54,120 --> 00:42:56,480
+Okay, let me reload it.
+
+623
+00:42:57,040 --> 00:42:57,340
+Nice.
+
+624
+00:42:57,580 --> 00:42:58,960
+This is what we actually getting.
+
+625
+00:43:00,220 --> 00:43:03,620
+And finger crossed, let me simply press on sign in with Google.
+
+626
+00:43:04,320 --> 00:43:04,780
+Okay.
+
+627
+00:43:05,360 --> 00:43:06,860
+Let me choose this account.
+
+628
+00:43:08,360 --> 00:43:08,740
+Nice.
+
+629
+00:43:10,120 --> 00:43:11,900
+And, okay, no problem.
+
+630
+00:43:12,160 --> 00:43:18,420
+We are redirected to this and now you can see that invalid value provide to secure store
+
+631
+00:43:18,520 --> 00:43:21,360
+value must be string consider JSON encoding.
+
+632
+00:43:21,660 --> 00:43:25,600
+Okay, so this is basically a problem from our end.
+
+633
+00:43:26,120 --> 00:43:30,480
+But right now you can see that we are redirecting to our page.
+
+634
+00:43:30,660 --> 00:43:32,080
+This is very nice thing.
+
+635
+00:43:32,100 --> 00:43:33,880
+Now let's move ahead and fix this issue.
+
+636
+00:43:33,940 --> 00:43:34,700
+Very simple issue.
+
+637
+00:43:35,100 --> 00:43:37,720
+Okay, so let's just check it out.
+
+638
+00:43:37,900 --> 00:43:40,040
+So initially we have all of this.
+
+639
+00:43:40,360 --> 00:43:40,900
+No problem.
+
+640
+00:43:40,940 --> 00:43:42,420
+We have this as well.
+
+641
+00:43:43,080 --> 00:43:44,680
+Then we got our code.
+
+642
+00:43:45,740 --> 00:43:48,600
+Then we basically, we can even console it here.
+
+643
+00:43:48,840 --> 00:43:52,860
+Like is we are actually exchanging our code or not just for a debug purpose.
+
+644
+00:43:53,400 --> 00:43:56,640
+Then, this is the token response that we are getting.
+
+645
+00:43:56,819 --> 00:44:01,099
+We are calling it and code, client ID, everything is fine.
+
+646
+00:44:01,799 --> 00:44:03,180
+One more thing we can do.
+
+647
+00:44:03,760 --> 00:44:09,720
+Let's say if the token response is not okay, then simply throw the error here.
+
+648
+00:44:09,940 --> 00:44:10,680
+No problem.
+
+649
+00:44:11,880 --> 00:44:13,460
+Then we got the token.
+
+650
+00:44:14,060 --> 00:44:22,060
+I can console it once again, which is got token from the Google so that we will satisfy
+
+651
+00:44:22,061 --> 00:44:24,380
+from our end like Google is working fine.
+
+652
+00:44:25,580 --> 00:44:26,480
+This is also fine.
+
+653
+00:44:27,640 --> 00:44:28,520
+This is also fine.
+
+654
+00:44:28,800 --> 00:44:33,780
+And I can even console entire user information, not only the email.
+
+655
+00:44:35,039 --> 00:44:40,880
+Then I think at this point, maybe we need to add the await.
+
+656
+00:44:41,680 --> 00:44:45,119
+Yes, I think this is the, this can be one problem.
+
+657
+00:44:46,599 --> 00:44:46,920
+All right.
+
+658
+00:44:47,380 --> 00:44:49,319
+And everything is then fine.
+
+659
+00:44:49,440 --> 00:44:55,839
+I can even add one more console just for debug purpose like created JWT token and we are
+
+660
+00:44:55,840 --> 00:44:56,260
+good to go.
+
+661
+00:44:56,400 --> 00:44:58,619
+So let me reload it once.
+
+662
+00:44:59,079 --> 00:44:59,380
+Perfect.
+
+663
+00:45:00,880 --> 00:45:03,740
+Let me simply press on sign in with Google.
+
+664
+00:45:05,800 --> 00:45:07,260
+After signing with Google
+
+665
+00:45:07,359 --> 00:45:11,800
+I can simply click it, click over it once again.
+
+666
+00:45:12,980 --> 00:45:15,380
+Okay, I'm still getting the error is
+
+667
+00:45:15,820 --> 00:45:18,800
+alright. So now you can see exchanging code with Google is fine.
+
+668
+00:45:19,480 --> 00:45:22,980
+The actual error is happening the invalid grant.
+
+669
+00:45:23,280 --> 00:45:26,160
+Okay, code verifier or verifier is not needed.
+
+670
+00:45:26,700 --> 00:45:27,339
+Nice.
+
+671
+00:45:27,600 --> 00:45:33,900
+And then we have the error handling auth is invalid value provided to secure store must
+
+672
+00:45:33,901 --> 00:45:34,480
+be the string.
+
+673
+00:45:34,820 --> 00:45:35,300
+Okay.
+
+674
+00:45:35,800 --> 00:45:36,080
+All right.
+
+675
+00:45:36,081 --> 00:45:38,780
+So I think we need to make few changes.
+
+676
+00:45:38,940 --> 00:45:44,160
+So for that, let me go to my auth context inside this auth context.
+
+677
+00:45:44,640 --> 00:45:48,100
+And at this point, you can say one thing here.
+
+678
+00:45:48,420 --> 00:45:50,580
+Use PKSAE as false.
+
+679
+00:45:51,380 --> 00:45:53,520
+This is the first step you need to do.
+
+680
+00:45:54,000 --> 00:46:00,820
+And after this, let me go to this token API and they don't need this code verifier.
+
+681
+00:46:01,120 --> 00:46:05,000
+So okay, I can simply pass this.
+
+682
+00:46:05,540 --> 00:46:07,940
+Hopefully this will actually going to work.
+
+683
+00:46:09,180 --> 00:46:13,300
+Alright, so what I can do first of all, let me just simply come into here.
+
+684
+00:46:13,800 --> 00:46:16,000
+We have just successfully removed it.
+
+685
+00:46:18,040 --> 00:46:21,600
+And let's see is this actually going to work or not.
+
+686
+00:46:21,920 --> 00:46:23,940
+Once again, let me reload it.
+
+687
+00:46:24,140 --> 00:46:24,760
+Perfect.
+
+688
+00:46:25,700 --> 00:46:26,740
+Sign in with Google.
+
+689
+00:46:28,980 --> 00:46:29,000
+Okay.
+
+690
+00:46:30,520 --> 00:46:33,020
+Coming here and yes, look at that.
+
+691
+00:46:33,420 --> 00:46:36,600
+Now we are exchanging the code, getting the token.
+
+692
+00:46:37,000 --> 00:46:41,680
+This is the user information and created the GWT.
+
+693
+00:46:41,940 --> 00:46:42,320
+Amazing.
+
+694
+00:46:42,620 --> 00:46:48,280
+Now, let's move ahead and what I wanted to implement here, if user is logged in, then
+
+695
+00:46:48,580 --> 00:46:52,000
+I will redirected them to the home page.
+
+696
+00:46:52,180 --> 00:46:52,400
+Perfect.
+
+697
+00:46:52,430 --> 00:46:57,440
+So, for that I simply need to go inside the layout page.
+
+698
+00:46:57,700 --> 00:47:03,339
+And instead of getting this from the previous use auth, I will get this use auth.
+
+699
+00:47:04,000 --> 00:47:04,859
+Let me show you how.
+
+700
+00:47:05,339 --> 00:47:06,640
+I can simply say const.
+
+701
+00:47:06,700 --> 00:47:10,780
+I will get my user and I will simply call the use auth.
+
+702
+00:47:11,859 --> 00:47:16,599
+But make sure to import this use auth not from here.
+
+703
+00:47:17,300 --> 00:47:22,240
+I will import this from the context use auth and is logged in.
+
+704
+00:47:22,500 --> 00:47:24,780
+I can simply say when user is logged in.
+
+705
+00:47:25,000 --> 00:47:32,900
+When the value of user is basically we can say to the perfect.
+
+706
+00:47:33,120 --> 00:47:34,260
+I will update it.
+
+707
+00:47:34,560 --> 00:47:40,920
+Now if I save it and if I try to reload it once, so hopefully I will be redirected to
+
+708
+00:47:41,060 --> 00:47:41,760
+home page.
+
+709
+00:47:42,340 --> 00:47:43,120
+No, I'm not.
+
+710
+00:47:46,880 --> 00:47:47,720
+It's fine.
+
+711
+00:47:48,100 --> 00:47:50,540
+Let me sign in with Google once again.
+
+712
+00:47:50,800 --> 00:47:52,460
+Let me log in with this information.
+
+713
+00:47:55,180 --> 00:47:55,660
+Continue.
+
+714
+00:47:57,500 --> 00:47:57,780
+Nice.
+
+715
+00:47:57,800 --> 00:47:58,580
+We are logged in.
+
+716
+00:47:58,620 --> 00:48:02,720
+We have the user information, but for some reason we are not be able to.
+
+717
+00:48:03,920 --> 00:48:10,620
+login. So what I will do, I will try to console my user just to see is we have any information
+
+718
+00:48:10,740 --> 00:48:15,900
+related to user not and we are getting null found now. It's fine. I'll fix it. Don't worry.
+
+719
+00:48:16,620 --> 00:48:20,560
+Alright guys, so now let me tell you where we are actually lacking. Let me show you one
+
+720
+00:48:20,620 --> 00:48:27,100
+very interesting thing. Whenever when we log in, no problem. We are getting this user information
+
+721
+00:48:27,101 --> 00:48:29,940
+and this is the log for user information.
+
+722
+00:48:31,360 --> 00:48:36,700
+Inside user information, does we have something known as sub?
+
+723
+00:48:36,860 --> 00:48:37,860
+No, we have ID.
+
+724
+00:48:38,580 --> 00:48:39,900
+Sub is coming from GitHub.
+
+725
+00:48:40,880 --> 00:48:42,280
+But we don't need right now.
+
+726
+00:48:42,620 --> 00:48:45,880
+You will see that we have ID, we have email, we have name, lot of things.
+
+727
+00:48:46,500 --> 00:48:51,920
+So, first thing you need to change is instead of sub you need to make it as id.
+
+728
+00:48:52,380 --> 00:48:55,320
+Yes, this is the problem which is happening.
+
+729
+00:48:56,740 --> 00:49:03,540
+This is the problem number 1 and if you fix this I think this will work now cool.
+
+730
+00:49:03,980 --> 00:49:06,040
+Just simply fix this to id.
+
+731
+00:49:06,300 --> 00:49:10,760
+And now if I come into here, let's say this is the auth user.
+
+732
+00:49:10,940 --> 00:49:11,040
+Okay.
+
+733
+00:49:11,041 --> 00:49:14,280
+We have sub, but this inside this we have ID.
+
+734
+00:49:15,180 --> 00:49:20,220
+So if I retry this, okay, reload it, sign in with Google.
+
+735
+00:49:21,360 --> 00:49:21,640
+Perfect.
+
+736
+00:49:21,820 --> 00:49:23,660
+Let me sign in with this account.
+
+737
+00:49:25,460 --> 00:49:27,500
+Sign in with Google created it.
+
+738
+00:49:27,680 --> 00:49:28,020
+Okay.
+
+739
+00:49:31,960 --> 00:49:35,599
+data, I wanted to console dot log my user.
+
+740
+00:49:36,579 --> 00:49:41,500
+I am getting this, but for some reason is I'm still not getting it.
+
+741
+00:49:41,660 --> 00:49:41,920
+Okay.
+
+742
+00:49:42,000 --> 00:49:47,480
+But if I simply log in, so still this is giving me null.
+
+743
+00:49:48,320 --> 00:49:48,520
+Okay.
+
+744
+00:49:48,560 --> 00:49:56,020
+So what if I close everything and rerun my application, close everything as well and
+
+745
+00:49:56,021 --> 00:49:57,760
+let me go to my module 13.
+
+746
+00:49:58,500 --> 00:50:02,900
+And let us simply create one build of sign in with Google.
+
+747
+00:50:03,180 --> 00:50:04,240
+Okay, we are getting null.
+
+748
+00:50:04,360 --> 00:50:05,060
+No problem.
+
+749
+00:50:06,380 --> 00:50:08,200
+Let me again coming to here.
+
+750
+00:50:08,680 --> 00:50:09,580
+Token is created.
+
+751
+00:50:09,700 --> 00:50:10,820
+Everything is working.
+
+752
+00:50:10,900 --> 00:50:17,960
+We are getting the user information, but for some reason, still we are getting the issue.
+
+753
+00:50:18,000 --> 00:50:20,080
+Okay, so what we can do right now.
+
+754
+00:50:20,100 --> 00:50:27,520
+Just to make things easy for us, we don't need to sign it, but if we don't sign the
+
+755
+00:50:27,521 --> 00:50:38,700
+user information and instead I can directly return something known as user info.
+
+756
+00:50:39,300 --> 00:50:47,840
+Yep, and inside this user info and if I go to my auth context whenever I am signing in
+
+757
+00:50:48,860 --> 00:50:57,020
+I don't need this and I don't even need this perfect because at this point I am going to
+
+758
+00:50:57,021 --> 00:50:59,480
+get something known as user info.
+
+759
+00:51:00,340 --> 00:51:03,400
+Perfect and what if I save this right now?
+
+760
+00:51:03,800 --> 00:51:09,260
+And if I just simply coming to here and console.log my tokens.
+
+761
+00:51:10,280 --> 00:51:10,540
+Perfect.
+
+762
+00:51:11,260 --> 00:51:14,300
+So, okay, I'm getting this failed to exchange the code.
+
+763
+00:51:14,740 --> 00:51:15,280
+It's fine.
+
+764
+00:51:15,920 --> 00:51:16,960
+Let me reload everything.
+
+765
+00:51:18,280 --> 00:51:20,040
+Let me sign in with Google once again.
+
+766
+00:51:21,160 --> 00:51:22,460
+Let me coming to here.
+
+767
+00:51:23,000 --> 00:51:29,560
+OK, and yes look at that token received this is the user information that we have.
+
+768
+00:51:30,340 --> 00:51:40,260
+So if I go inside my layout and if I try to console it once again this is the current
+
+769
+00:51:40,360 --> 00:51:43,640
+user information which is coming as null.
+
+770
+00:51:44,000 --> 00:51:44,540
+Why?
+
+771
+00:51:45,720 --> 00:51:48,960
+because we are directly storing this user info.
+
+772
+00:51:49,859 --> 00:51:50,279
+Okay.
+
+773
+00:51:51,059 --> 00:51:55,720
+Okay. So what we can actually do, let me go to my Auth context and right now,
+
+774
+00:51:56,460 --> 00:51:59,000
+you will see that we have a user information.
+
+775
+00:51:59,180 --> 00:52:02,460
+Alright. So instead of token, now I can say this as user info.
+
+776
+00:52:02,900 --> 00:52:13,299
+And, what I will do now, I will simply come into here and say const normalize user and
+
+777
+00:52:13,380 --> 00:52:24,200
+then first thing we have a sub, sub is going to be as user info, user info dot id in same
+
+778
+00:52:24,201 --> 00:52:26,520
+way we can have name, we can have picture.
+
+779
+00:52:26,900 --> 00:52:27,920
+Perfect.
+
+780
+00:52:27,980 --> 00:52:31,880
+And then I can set the user as normalize user.
+
+781
+00:52:32,520 --> 00:52:34,160
+So I think this is fine.
+
+782
+00:52:34,839 --> 00:52:39,960
+Hopefully and instead of sending this as an object, I can directly send the user info.
+
+783
+00:52:41,380 --> 00:52:41,680
+Perfect.
+
+784
+00:52:42,619 --> 00:52:45,700
+So I think this will work right now.
+
+785
+00:52:47,279 --> 00:52:54,980
+Or let's move ahead and what we can do inside this token we have a user info.
+
+786
+00:52:55,720 --> 00:52:58,160
+Okay, so let me cut this cool.
+
+787
+00:52:58,940 --> 00:53:04,760
+Let me come into here inside this we have a normalized user and then I can pass user
+
+788
+00:53:04,761 --> 00:53:06,920
+as normalized user.
+
+789
+00:53:07,200 --> 00:53:09,660
+Don't pass any token right now.
+
+790
+00:53:09,900 --> 00:53:11,559
+We are good to go with it.
+
+791
+00:53:11,700 --> 00:53:18,339
+And, then if I coming to here you will see that we are going to have the information.
+
+792
+00:53:18,820 --> 00:53:28,260
+So, this is your token still your token then I can say token dot user perfect and I think
+
+793
+00:53:28,261 --> 00:53:30,260
+this will work right now.
+
+794
+00:53:30,560 --> 00:53:33,220
+So, let me try let me reload it.
+
+795
+00:53:33,800 --> 00:53:36,420
+Let me sign in with Google.
+
+796
+00:53:38,620 --> 00:53:40,660
+Let me login it.
+
+797
+00:53:40,800 --> 00:53:41,260
+Okay.
+
+798
+00:53:41,300 --> 00:53:42,880
+Exchanging the token.
+
+799
+00:53:43,440 --> 00:53:45,040
+Got tokens from the Google.
+
+800
+00:53:46,420 --> 00:53:49,100
+And if I console.log my token.
+
+801
+00:53:50,080 --> 00:53:51,760
+So hopefully I'm able to see something.
+
+802
+00:53:51,940 --> 00:53:52,080
+Okay.
+
+803
+00:53:52,081 --> 00:53:52,860
+What I'm getting?
+
+804
+00:53:53,660 --> 00:53:56,200
+I'm getting token exchange failed.
+
+805
+00:53:56,940 --> 00:53:57,980
+Invalid grant.
+
+806
+00:53:58,320 --> 00:53:59,360
+Bad request.
+
+807
+00:53:59,760 --> 00:54:01,220
+fail to exchange token
+
+808
+00:54:02,180 --> 00:54:05,840
+Okay, but if I once again login, I am going to fix it anyhow.
+
+809
+00:54:08,220 --> 00:54:09,080
+Code snippet.
+
+810
+00:54:09,460 --> 00:54:09,720
+Okay.
+
+811
+00:54:10,860 --> 00:54:14,440
+Alright, so you will see this right now inside my user.
+
+812
+00:54:15,260 --> 00:54:21,580
+I am getting all of this information and if I just open it, you can see my images which
+
+813
+00:54:21,640 --> 00:54:22,500
+is basically showing.
+
+814
+00:54:22,600 --> 00:54:24,060
+So we are getting the information.
+
+815
+00:54:24,400 --> 00:54:33,119
+Alright, but for some reason we are not be able to update this user information.
+
+816
+00:54:33,440 --> 00:54:33,740
+Perfect.
+
+817
+00:54:34,160 --> 00:54:40,240
+And what more we can do according to me like inside this token API along with user.
+
+818
+00:54:41,079 --> 00:54:47,000
+Yes, you can see that right now we are sending this but along with user we can even send
+
+819
+00:54:47,001 --> 00:54:49,000
+the access token that we have.
+
+820
+00:54:49,300 --> 00:54:50,300
+Perfect.
+
+821
+00:54:50,420 --> 00:54:54,300
+So you can see that inside this tokens we have this.
+
+822
+00:54:54,460 --> 00:54:54,720
+Perfect.
+
+823
+00:54:54,820 --> 00:55:03,380
+So I can also send the tokens dot access token along with user as well with the name of access
+
+824
+00:55:03,381 --> 00:55:03,860
+token.
+
+825
+00:55:04,480 --> 00:55:04,620
+Cool.
+
+826
+00:55:04,740 --> 00:55:12,020
+So that onto the front end I have access of my access token and then I can save that.
+
+827
+00:55:12,021 --> 00:55:18,100
+Inside the secure store, so right now inside this we are getting two thing.
+
+828
+00:55:18,740 --> 00:55:23,740
+First thing is the user and second thing is the we can say token.
+
+829
+00:55:24,100 --> 00:55:24,320
+Perfect.
+
+830
+00:55:24,380 --> 00:55:27,980
+So, this is equals to token access token.
+
+831
+00:55:28,040 --> 00:55:29,560
+So, make sure to match this.
+
+832
+00:55:29,760 --> 00:55:31,200
+Yes, we have this access token.
+
+833
+00:55:32,520 --> 00:55:32,880
+Alright.
+
+834
+00:55:33,000 --> 00:55:34,500
+So, token dot access token.
+
+835
+00:55:34,620 --> 00:55:36,780
+I am just planning to set this out.
+
+836
+00:55:37,180 --> 00:55:39,200
+Hopefully, what I am getting?
+
+837
+00:55:40,720 --> 00:55:48,200
+value must be a string consider JSON encoding or value of you if they are serialize or I
+
+838
+00:55:48,299 --> 00:55:57,559
+can simply say JSON.stringify my the value I have perfect so hopefully this will work
+
+839
+00:55:57,560 --> 00:55:58,180
+now.
+
+840
+00:55:59,300 --> 00:56:05,140
+Okay, and let me tell you one very interesting thing, what wrong thing we are actually doing
+
+841
+00:56:05,740 --> 00:56:09,680
+and that is if I take you towards my layout.
+
+842
+00:56:10,220 --> 00:56:15,740
+So one thing you will see my entire app is wrapped inside auth provider, but right now
+
+843
+00:56:15,741 --> 00:56:17,660
+I am using this use auth.
+
+844
+00:56:18,740 --> 00:56:20,360
+outside of the auth provider.
+
+845
+00:56:20,860 --> 00:56:25,380
+So this is the core reason that's why this is not working.
+
+846
+00:56:25,640 --> 00:56:26,260
+All right.
+
+847
+00:56:27,000 --> 00:56:33,620
+So first thing first, let's just fix the issue is inside this token API, everything is fine.
+
+848
+00:56:33,740 --> 00:56:34,760
+Everything is working cool.
+
+849
+00:56:35,200 --> 00:56:36,920
+No need to change anything.
+
+850
+00:56:37,520 --> 00:56:43,880
+We can simply go into this and yes, they will always accept you the string value.
+
+851
+00:56:44,640 --> 00:56:44,940
+Perfect.
+
+852
+00:56:44,941 --> 00:56:52,720
+So, simply you can pass this and second thing is inside the handle auth response, you will
+
+853
+00:56:52,721 --> 00:56:54,440
+see we have a form data.
+
+854
+00:56:54,500 --> 00:56:55,300
+Perfect.
+
+855
+00:56:56,320 --> 00:56:57,660
+And this is the end.
+
+856
+00:56:57,900 --> 00:57:02,480
+I think we don't even need the code verifier because you need not to even pass this code
+
+857
+00:57:02,481 --> 00:57:02,920
+verifier.
+
+858
+00:57:03,480 --> 00:57:06,820
+We are good to go with it because we are not using it.
+
+859
+00:57:06,880 --> 00:57:08,340
+Then this is the token response.
+
+860
+00:57:08,660 --> 00:57:09,440
+Everything we are sending.
+
+861
+00:57:10,620 --> 00:57:11,100
+Perfect.
+
+862
+00:57:12,140 --> 00:57:17,040
+And then we are going to have a token and at the very end we are setting the user.
+
+863
+00:57:17,300 --> 00:57:22,940
+This is the one fix and if I now take you towards the something known as layout.
+
+864
+00:57:23,240 --> 00:57:31,820
+So inside this layout what you will do right now is let me show you at the top of it you
+
+865
+00:57:31,821 --> 00:57:35,140
+can simply going to create export default.
+
+866
+00:57:35,300 --> 00:57:36,700
+Yes, export this.
+
+867
+00:57:38,880 --> 00:57:48,080
+I can simply say export default and you can simply say function and name this as root
+
+868
+00:57:48,240 --> 00:57:48,520
+layout.
+
+869
+00:57:48,980 --> 00:57:49,260
+Yes.
+
+870
+00:57:49,880 --> 00:57:54,060
+Suppose this root layout will basically return.
+
+871
+00:57:54,200 --> 00:58:01,240
+and wrap my entire application into it. So, I can again say auth provider. Auth provider
+
+872
+00:58:02,200 --> 00:58:09,680
+will we exchange this name we can say this as root layout content and you need not to
+
+873
+00:58:09,780 --> 00:58:11,119
+export default this.
+
+874
+00:58:11,300 --> 00:58:17,260
+simply call this and yes wrap this root layout content inside this.
+
+875
+00:58:17,460 --> 00:58:23,540
+This is the one fix and second thing is right now we do not need any DB but it is fine and
+
+876
+00:58:23,541 --> 00:58:26,080
+remove this auth provider from this point.
+
+877
+00:58:27,400 --> 00:58:27,680
+Perfect.
+
+878
+00:58:27,700 --> 00:58:30,460
+So, this is the another change we need to make.
+
+879
+00:58:30,640 --> 00:58:31,000
+Perfect.
+
+880
+00:58:32,720 --> 00:58:33,160
+Nice.
+
+881
+00:58:33,840 --> 00:58:39,580
+Now, if I save it and look at that, I am redirected to my home page.
+
+882
+00:58:39,760 --> 00:58:40,000
+Why?
+
+883
+00:58:40,001 --> 00:58:41,460
+Because I am logged in now.
+
+884
+00:58:41,960 --> 00:58:43,240
+Everything is working fine.
+
+885
+00:58:43,460 --> 00:58:47,760
+But because of this one issue, we are not be able to use it.
+
+886
+00:58:47,840 --> 00:58:51,300
+So one last thing that I know the video is too big, but it's fine.
+
+887
+00:58:51,740 --> 00:58:55,340
+This is the nice part of development.
+
+888
+00:58:56,160 --> 00:58:59,460
+This is how you face the bugs and this is the investigative studies.
+
+889
+00:58:59,900 --> 00:59:07,200
+Let me go to component and let me create here something known as user button user button
+
+890
+00:59:07,240 --> 00:59:15,359
+dot t s x perfect and this user button this we can say that basically going to show the
+
+891
+00:59:15,360 --> 00:59:18,020
+users information are instead user button.
+
+892
+00:59:19,039 --> 00:59:22,599
+I will create one profile that is much better.
+
+893
+00:59:23,140 --> 00:59:23,380
+Perfect.
+
+894
+00:59:23,480 --> 00:59:29,880
+So let me go inside the app and at the root of it, I can simply create one profile dot
+
+895
+00:59:30,000 --> 00:59:30,339
+t s x.
+
+896
+00:59:30,340 --> 00:59:31,980
+And I think we already have one profile.
+
+897
+00:59:32,140 --> 00:59:32,859
+Yes, this one.
+
+898
+00:59:34,500 --> 00:59:37,500
+And inside this profile, what I will do basically.
+
+899
+00:59:38,100 --> 00:59:45,820
+I will simply come into here and try to get the user information and implement sign out
+
+900
+00:59:45,821 --> 00:59:50,280
+button and then instead of writing everything from scratch, I will just simply come into
+
+901
+00:59:50,281 --> 00:59:52,200
+here and try to copy and paste it.
+
+902
+00:59:52,201 --> 00:59:52,520
+Perfect.
+
+903
+00:59:53,060 --> 00:59:56,420
+So I have get here icons, user and sign out button.
+
+904
+00:59:56,880 --> 00:59:57,180
+Perfect.
+
+905
+00:59:58,260 --> 01:00:01,920
+And, yep, need not to import this safe area view from here.
+
+906
+01:00:02,080 --> 01:00:09,280
+We want it to import from react-native safe area view and hopefully everything is fine.
+
+907
+01:00:09,500 --> 01:00:09,720
+Nice.
+
+908
+01:00:09,740 --> 01:00:14,740
+And if I try to go to profile and yes, look at that.
+
+909
+01:00:15,420 --> 01:00:18,920
+This is the information that we are basically getting from.
+
+910
+01:00:18,921 --> 01:00:24,440
+the Google and this is how you will implement and if I press on sign out and sign out, let
+
+911
+01:00:24,460 --> 01:00:25,920
+me log in with Google once again.
+
+912
+01:00:26,640 --> 01:00:29,039
+Let me log in with this my code snippet ID.
+
+913
+01:00:29,960 --> 01:00:32,760
+Perfect and let's just wait for a few seconds.
+
+914
+01:00:33,279 --> 01:00:33,779
+All right.
+
+915
+01:00:34,020 --> 01:00:34,480
+Keep loading.
+
+916
+01:00:34,670 --> 01:00:35,160
+Still loading.
+
+917
+01:00:35,400 --> 01:00:41,039
+Hopefully, this will work and yes now if I say go to profile look at that.
+
+918
+01:00:41,339 --> 01:00:46,760
+So amazing job and I know there's a lot of bugs lot of things to figure out but this
+
+919
+01:00:46,761 --> 01:00:50,020
+is known as investigative study and this is what we are actually doing here.
+
+920
+01:00:50,460 --> 01:00:55,200
+So amazing job this is the end of this chapter and see you next time.
+

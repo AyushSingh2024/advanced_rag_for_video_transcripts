@@ -1,0 +1,383 @@
+WEBVTT
+
+00:00:00.440 --> 00:00:03.320
+Hey everyone and welcome to one more new chapter.
+
+00:00:04.280 --> 00:00:09.240
+Now that you know what API routes are, so let's build some in an expo router project
+
+00:00:10.050 --> 00:00:11.920
+and then we will see them in action.
+
+00:00:12.170 --> 00:00:18.020
+So in this lecture, we will create some endpoints and then handle different HTTP methods and
+
+00:00:18.100 --> 00:00:22.060
+understand how this routes are executed on server side.
+
+00:00:22.500 --> 00:00:23.260
+Perfect.
+
+00:00:24.040 --> 00:00:24.740
+So let's move ahead.
+
+00:00:24.940 --> 00:00:30.400
+We already have one a simple API endpoint which is named as hello and this hello is
+
+00:00:30.480 --> 00:00:32.460
+basically returning you up.
+
+00:00:33.080 --> 00:00:33.840
+Let me remove this.
+
+00:00:33.880 --> 00:00:34.640
+We don't need it.
+
+00:00:34.840 --> 00:00:36.980
+This hello is basically returning you a message.
+
+00:00:37.620 --> 00:00:38.060
+Hello world.
+
+00:00:38.500 --> 00:00:38.580
+Perfect.
+
+00:00:38.680 --> 00:00:44.300
+So instead of this, let me just simply say as message and I can also say hello from API.
+
+00:00:45.900 --> 00:00:52.900
+Alright, so this function runs when someone make a get request on API slash hello make
+
+00:00:52.960 --> 00:00:58.060
+sense and then it's going to return us a JSON using the standard response object.
+
+00:00:59.480 --> 00:00:59.560
+Perfect.
+
+00:01:00.200 --> 00:01:03.040
+Now let's see how you can create a post endpoint.
+
+00:01:03.560 --> 00:01:06.760
+So let me create a echo like for this is how you do it.
+
+00:01:07.040 --> 00:01:08.300
+You can name it whatever you want.
+
+00:01:08.920 --> 00:01:13.000
+So echo plus api.ts and then I can simply say export.
+
+00:01:15.100 --> 00:01:19.880
+Async function and the name of this function is going to be post, yes, this is important.
+
+00:01:20.960 --> 00:01:25.700
+And then this is going to be request and I can simply say this as request.
+
+00:01:26.940 --> 00:01:30.920
+Now let's say in post you always going to get some sort of data.
+
+00:01:31.360 --> 00:01:35.880
+So how you can receive that you can simply say const data, even you can destructure
+
+00:01:35.940 --> 00:01:41.800
+it, it's up to you is equals to await and I can simply say request dot json.
+
+00:01:43.400 --> 00:01:53.320
+And then let's say I can simply say return response.json and then let me say this you
+
+00:01:53.400 --> 00:01:56.200
+send the data whatever you wanted to send.
+
+00:01:56.940 --> 00:01:58.700
+So let me try to test this.
+
+00:01:58.920 --> 00:02:07.540
+So for that, let me go to my postman and inside this postman, let me pencil and let me add
+
+00:02:07.580 --> 00:02:08.660
+one more endpoint.
+
+00:02:09.220 --> 00:02:09.419
+Perfect.
+
+00:02:11.060 --> 00:02:16.500
+and at this time this is going to be this so let me copy this endpoint let me paste it
+
+00:02:16.599 --> 00:02:22.920
+so if I send this you will see we are getting a data as hello world no problem I think I
+
+00:02:22.959 --> 00:02:29.299
+need to reload it maybe I am wrong alright so now if I reload it and then if I go to
+
+00:02:29.359 --> 00:02:34.079
+my here and if I now it alright so I am getting a data as hello world
+
+00:02:36.580 --> 00:02:42.080
+cool and then let me add another endpoint because I have changed the data but no idea
+
+00:02:42.400 --> 00:02:48.340
+cool no worries now let me copy this let me come into here and this is going to be echo
+
+00:02:48.920 --> 00:02:52.860
+and inside body pretty straight forward nothing rocket science
+
+00:02:53.800 --> 00:03:04.740
+Let me send the data as let me going to say this as let me yeah, we say search perfect
+
+00:03:05.500 --> 00:03:12.660
+and now if I send this I am getting echo 8081 slash API.
+
+00:03:14.300 --> 00:03:15.680
+I guess, slash api
+
+00:03:18.940 --> 00:03:25.160
+So, why I am not able to hit this, let me try to close my server, let me rerun it, maybe
+
+00:03:25.400 --> 00:03:26.120
+now this will work.
+
+00:03:31.040 --> 00:03:36.900
+Perfect and let me just simply hit reload, so by reloading it, I am able to see this.
+
+00:03:40.620 --> 00:03:53.220
+Perfect, nice and then if I localhost 8081/api/echo and now if I hit this, yes look at that,
+
+00:03:53.310 --> 00:03:58.299
+now we are getting 200 okay and you send this data and the data and the value.
+
+00:03:58.659 --> 00:04:03.560
+you see this key value thing is getting from here and if I retry to hit this.
+
+00:04:04.000 --> 00:04:06.940
+You will see that now you are getting the latest data.
+
+00:04:07.100 --> 00:04:13.600
+So this is how you can basically same thing goes for port, same thing goes for patch.
+
+00:04:14.220 --> 00:04:15.640
+So I hope you got the point.
+
+00:04:16.480 --> 00:04:18.620
+Let's see how you can handle query parameters.
+
+00:04:18.940 --> 00:04:22.640
+Let's say you are searching something and you are passing queries into that.
+
+00:04:23.060 --> 00:04:24.160
+So how you can handle that?
+
+00:04:24.880 --> 00:04:27.340
+Let me just simply create a search.
+
+00:04:28.100 --> 00:04:37.440
+plus api.ts easy and then let me copy my get endpoint let me paste it easy and right now
+
+00:04:37.580 --> 00:04:44.460
+I wanted to handle the queries thing like what I am talking like this like we have hello
+
+00:04:45.000 --> 00:04:47.920
+and I have passed some data here perfect.
+
+00:04:48.500 --> 00:04:54.600
+this a question mark and let's say this question mark is basically going to have a query is
+
+00:04:54.660 --> 00:04:56.280
+equals to expo something like this.
+
+00:04:56.281 --> 00:05:02.080
+So now you will see that we are getting a query value not not always Q you can simple
+
+00:05:02.200 --> 00:05:05.220
+say this name you can whatever you wanted to say this.
+
+00:05:05.800 --> 00:05:09.500
+Perfect, so how you can handle this very straightforward.
+
+00:05:10.550 --> 00:05:15.479
+I can simply say, "conce URL = new URL" yes.
+
+00:05:16.460 --> 00:05:23.400
+And then this request have access to our URL and then you can basically extract them by
+
+00:05:23.620 --> 00:05:25.159
+simple using the methods.
+
+00:05:25.580 --> 00:05:29.020
+So you can simply say query is equals to URL.
+
+00:05:29.700 --> 00:05:36.460
+Dot search params, yes, search params is important and then this search params have bunch of
+
+00:05:36.580 --> 00:05:43.600
+method one of them is get, where is that here and then you have to know about your name
+
+00:05:43.800 --> 00:05:45.820
+of this, the key of this.
+
+00:05:46.100 --> 00:05:52.540
+So let's say let me add one endpoint, let me copy this, let me paste it, easy and instead
+
+00:05:52.680 --> 00:05:57.500
+of hello let me say this as search and let me add here queue, easy, keep it simple.
+
+00:05:58.600 --> 00:06:07.260
+And then what is going to be the name of the query key which is Q and then I can return
+
+00:06:07.380 --> 00:06:17.040
+the response I can simply say const response dot json and this json is going to be a query.
+
+00:06:18.220 --> 00:06:18.600
+All right.
+
+00:06:20.000 --> 00:06:23.140
+And now if I try to hit this.
+
+00:06:25.160 --> 00:06:27.560
+Why I am getting 404 not found?
+
+00:06:29.300 --> 00:06:31.060
+What is the preview I am getting?
+
+00:06:31.670 --> 00:06:32.240
+No preview.
+
+00:06:34.200 --> 00:06:34.960
+I have passed it.
+
+00:06:35.310 --> 00:06:35.960
+Same thing I think.
+
+00:06:36.140 --> 00:06:38.740
+Maybe I have to reload it and then this will work.
+
+00:06:39.900 --> 00:06:43.960
+Like this is going to bundled every time you had this, so that's why.
+
+00:06:45.340 --> 00:06:49.220
+API/search, yes I am hitting that only.
+
+00:06:50.380 --> 00:06:54.660
+So let me try to close this once again, let me try to run this once again.
+
+00:06:58.760 --> 00:07:07.340
+Let me try to reload it once again, alright and then we have this search and then search
+
+00:07:07.479 --> 00:07:12.740
+is going to have a question mark Q is equals to x4 and now if I hit this, look at that.
+
+00:07:12.800 --> 00:07:17.319
+Now we are getting the query, whatever I have passed here, let's say let me change the
+
+00:07:17.360 --> 00:07:23.240
+value to Suraj and then if I pass it, you will see that I am getting Suraj.
+
+00:07:23.599 --> 00:07:27.419
+So I hope so, this is how you can handle your queries as well.
+
+00:07:28.500 --> 00:07:34.440
+And same we have same error status code, you can read more about that if you wanted to.
+
+00:07:35.159 --> 00:07:39.440
+So why this is basically matters, why we are even reading this, why we are even understanding
+
+00:07:39.639 --> 00:07:39.720
+it.
+
+00:07:40.100 --> 00:07:45.420
+So, we are understanding this to write server side logic right inside your expo project.
+
+00:07:45.530 --> 00:07:46.400
+So, this is the beauty.
+
+00:07:47.920 --> 00:07:53.160
+We don't want it to be depend on some external server initially let's say in future you wanted
+
+00:07:53.190 --> 00:07:58.360
+to shift it, it's fine, but initially let's say you don't want it to depend on some external
+
+00:07:58.520 --> 00:08:04.660
+server and let's say you can handle bunch of secret keys sensitive logic onto the server
+
+00:08:04.661 --> 00:08:05.360
+side itself.
+
+00:08:06.000 --> 00:08:11.200
+And you can call this endpoint from your client screen using fetch.
+
+00:08:12.230 --> 00:08:18.040
+Yes, let's say if you wanted to use them from this to how so basically how you can do so,
+
+00:08:18.410 --> 00:08:22.980
+you can simply coming to here and let's say let me create a const.
+
+00:08:23.400 --> 00:08:32.620
+handle fetch data easy this is going to be a sync data and then I can simply do what
+
+00:08:32.679 --> 00:08:39.860
+I can simply say cons response is equals to await a fetch no problem and then I can hit
+
+00:08:39.980 --> 00:08:43.580
+my API slash let's say I am hitting hello.
+
+00:08:45.300 --> 00:08:56.279
+easy and then I'm going to get my data as await response dot json and then let's say
+
+00:08:56.280 --> 00:09:03.000
+for now let me console this console my data and I can even alert my data just to see the
+
+00:09:03.040 --> 00:09:10.480
+data perfect and below this text let me add here a pressable
+
+00:09:11.300 --> 00:09:20.440
+And this pressable is going to save me get data and now if I save it, exactly, you must
+
+00:09:20.680 --> 00:09:21.519
+be inside a text.
+
+00:09:21.899 --> 00:09:30.980
+So let me paste it and let me change this to get data and here on press, yes on press
+
+00:09:31.140 --> 00:09:33.899
+I can simply say handle fetch data.
+
+00:09:34.880 --> 00:09:35.160
+All right.
+
+00:09:35.380 --> 00:09:35.800
+Let's try.
+
+00:09:36.540 --> 00:09:37.480
+Let me reload it once.
+
+00:09:43.260 --> 00:09:51.560
+Let me wait for it and now if I press on get data you will see object, object, alright
+
+00:09:51.740 --> 00:09:57.620
+it's fine like we are at least getting something just to fix this you can simply say json.stringify
+
+00:09:58.200 --> 00:10:03.760
+and then you will get your data nothing rocket science in it cool and now if I press on get
+
+00:10:03.840 --> 00:10:12.920
+data message and hello from API so this is how you can even call your internal APIs so
+
+00:10:13.060 --> 00:10:19.240
+yes this is pretty much it for this chapter and I hope you guys loved it now in from next
+
+00:10:19.280 --> 00:10:23.300
+chapter we are basically going to see that how you can
+
+00:10:23.800 --> 00:10:30.080
+call external API's like this is our internal API's but in same way we wanted to call our
+
+00:10:30.180 --> 00:10:36.339
+some external API's although we have already talked about it inside our Pokemon application
+
+00:10:36.660 --> 00:10:43.260
+like we have used they are the API's of Pokemon but still just for revision purpose I am also
+
+00:10:43.339 --> 00:10:47.040
+going to talk about how you can call external API's.
+
+00:10:47.420 --> 00:10:52.019
+So yes this is pretty much it for this chapter and see you next time.
+

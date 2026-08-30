@@ -1,0 +1,588 @@
+1
+00:00:00,000 --> 00:00:03,640
+Alright everyone and welcome to one more new chapter.
+
+2
+00:00:03,860 --> 00:00:09,500
+In this chapter we are going to talk about our last X-Pos sensor that is a pedometer.
+
+3
+00:00:09,740 --> 00:00:12,120
+So what is this pedometer actually is?
+
+4
+00:00:12,600 --> 00:00:15,780
+So this is something that you are using on daily basis.
+
+5
+00:00:16,000 --> 00:00:20,060
+And that is we can say this will track your steps.
+
+6
+00:00:20,619 --> 00:00:26,520
+Yes, this is basically used to track your number of steps like you walked 10,000 step,
+
+7
+00:00:26,860 --> 00:00:28,760
+20,000 steps whatever is that.
+
+8
+00:00:29,050 --> 00:00:34,780
+So this is basically used to track your track steps.
+
+9
+00:00:35,300 --> 00:00:41,440
+And this is basically used to measure the physical activities like fitness tracker,
+
+10
+00:00:41,720 --> 00:00:42,680
+step goal dashboard.
+
+11
+00:00:43,100 --> 00:00:46,480
+You can make applications like this very easily.
+
+12
+00:00:47,300 --> 00:00:47,559
+Perfect.
+
+13
+00:00:47,739 --> 00:00:50,220
+So let's move ahead and start creating this.
+
+14
+00:00:50,379 --> 00:00:54,340
+So for that, first of all, let me comment this out.
+
+15
+00:00:54,900 --> 00:01:06,180
+And, inside this I will name this as stepcounter.tsx, Rn fes and this is going to become your stepcounter.
+
+16
+00:01:07,440 --> 00:01:11,240
+Let me import my stepcounter here.
+
+17
+00:01:13,220 --> 00:01:16,240
+And this is what they are showing to us.
+
+18
+00:01:16,460 --> 00:01:16,800
+Perfect.
+
+19
+00:01:17,560 --> 00:01:26,140
+And inside this step counter very easily like first of all let me just have a basic UI design
+
+20
+00:01:26,141 --> 00:01:26,560
+for it.
+
+21
+00:01:26,820 --> 00:01:30,100
+So first of all let me grab all my CSS that I have.
+
+22
+00:01:30,280 --> 00:01:32,340
+I don't want it to write them line by line.
+
+23
+00:01:34,000 --> 00:01:34,600
+Perfect.
+
+24
+00:01:34,900 --> 00:01:40,040
+So I have a basic card, emoji, account, a bar, a fill and a message.
+
+25
+00:01:40,920 --> 00:01:41,220
+Cool.
+
+26
+00:01:42,020 --> 00:01:45,520
+And then let's maintain two state variable.
+
+27
+00:01:47,250 --> 00:01:53,899
+So the first state variable that we have is steps and second we have set steps.
+
+28
+00:01:55,119 --> 00:02:00,380
+And this is equals to use state and let me just initially have the zero value.
+
+29
+00:02:00,900 --> 00:02:07,460
+And then let me just simply add here available and maybe this will work on Android or not.
+
+30
+00:02:07,580 --> 00:02:11,780
+I'm not 100% sure, but this is working fine on iOS.
+
+31
+00:02:12,040 --> 00:02:14,080
+So I will show you the value on iOS.
+
+32
+00:02:15,160 --> 00:02:15,420
+Perfect.
+
+33
+00:02:15,540 --> 00:02:18,260
+So available is equals to.
+
+34
+00:02:19,519 --> 00:02:25,459
+use state and let me just mention this as a true and let's add a threshold of daily
+
+35
+00:02:25,500 --> 00:02:25,660
+goal.
+
+36
+00:02:25,819 --> 00:02:29,800
+Let's say your daily goal is 2000 step like this is very less.
+
+37
+00:02:30,280 --> 00:02:30,480
+Perfect.
+
+38
+00:02:30,780 --> 00:02:35,420
+You at least have to walk a 10,000 steps, but all right, you are starting it out and
+
+39
+00:02:35,421 --> 00:02:37,680
+your daily goal is 2000 steps.
+
+40
+00:02:38,440 --> 00:02:40,160
+So how you can measure this?
+
+41
+00:02:40,900 --> 00:02:51,500
+So, for that first thing first let me import my padometer sensor and then I can simply
+
+42
+00:02:51,501 --> 00:02:57,859
+say use effect and then let me open it add an empty dependency array.
+
+43
+00:02:58,840 --> 00:03:04,180
+Alright, so how you can do like first thing first always while using it you have to check
+
+44
+00:03:04,540 --> 00:03:09,260
+like if is this available then this will return you a promise.
+
+45
+00:03:09,600 --> 00:03:13,940
+And this promise inside this we have avail value.
+
+46
+00:03:14,620 --> 00:03:22,680
+Alright and then this avail value if we have this sensor available then I will simply show
+
+47
+00:03:22,681 --> 00:03:24,560
+here what I simply show here avail.
+
+48
+00:03:25,620 --> 00:03:29,660
+If this sensor is not available then I will simply return it.
+
+49
+00:03:29,800 --> 00:03:29,940
+Cool.
+
+50
+00:03:30,010 --> 00:03:31,340
+I mean nothing rocket science.
+
+51
+00:03:31,820 --> 00:03:37,960
+I will simply say if this is not available then return from here need not to go ahead.
+
+52
+00:03:39,900 --> 00:03:47,780
+Alright, and then I will say first of all subscribe this so con sub pedometer and then we have
+
+53
+00:03:47,781 --> 00:03:53,180
+look you can see that we have bunch of method but only method that we need is watch step
+
+54
+00:03:53,181 --> 00:03:53,599
+cant.
+
+55
+00:03:53,900 --> 00:03:54,239
+Alright.
+
+56
+00:03:54,600 --> 00:04:00,700
+And you will see that right now I am using watch step count and what is this a callback
+
+57
+00:04:00,820 --> 00:04:03,940
+that invoke when new step count data is available.
+
+58
+00:04:04,880 --> 00:04:08,380
+Alright and then inside this we have a simple step.
+
+59
+00:04:08,780 --> 00:04:09,100
+Perfect.
+
+60
+00:04:10,020 --> 00:04:15,560
+And this step will simply say steps and then we have a simple step here.
+
+61
+00:04:15,720 --> 00:04:15,920
+Perfect.
+
+62
+00:04:16,040 --> 00:04:22,540
+And then what you will do you just unsubscribe to this sub so you can simply say return this.
+
+63
+00:04:23,600 --> 00:04:30,060
+Alright, then what I will do, why I am getting this, alright my mistake, this is steps, perfect.
+
+64
+00:04:31,520 --> 00:04:38,120
+And return here, from return you will see sub dot remove, perfect.
+
+65
+00:04:38,880 --> 00:04:44,240
+And let me just simply create here an emoji and a simple progress, just to show that.
+
+66
+00:04:44,800 --> 00:04:51,440
+here perfect and let me now simply paste the entire UI whatever I wanted to show let me
+
+67
+00:04:51,441 --> 00:04:58,639
+paste it perfect so we have a emoji so emoji will show on the basis of steps if the step
+
+68
+00:04:58,780 --> 00:05:03,520
+is greater than our daily goal then it will show us a trophy otherwise it will show us
+
+69
+00:05:03,620 --> 00:05:05,379
+this and otherwise this cool.
+
+70
+00:05:06,660 --> 00:05:13,380
+Now, if I save it, you will see right now, I have only walked zero steps.
+
+71
+00:05:13,620 --> 00:05:21,360
+Like let me just open that inside my iPhone, then let me just walk few steps and then I
+
+72
+00:05:21,361 --> 00:05:25,020
+will show you how we are basically tracking that out.
+
+73
+00:05:25,080 --> 00:05:25,300
+Cool.
+
+74
+00:05:25,700 --> 00:05:28,180
+And you will see what is happening.
+
+75
+00:05:28,181 --> 00:05:28,600
+I don't know.
+
+76
+00:05:28,639 --> 00:05:30,100
+Let me reload it.
+
+77
+00:05:30,340 --> 00:05:30,660
+Perfect.
+
+78
+00:05:31,740 --> 00:05:34,340
+Let me open the same inside my iPhone as well.
+
+79
+00:05:35,360 --> 00:05:36,460
+So just give me a minute.
+
+80
+00:05:36,960 --> 00:05:37,280
+Alright.
+
+81
+00:05:37,639 --> 00:05:39,000
+And then I'll showing you that.
+
+82
+00:05:44,580 --> 00:05:49,060
+Alright guys, so we have a small mistake here actually and that is my mistake.
+
+83
+00:05:49,240 --> 00:05:51,240
+Just let me just reset that first of all.
+
+84
+00:05:51,560 --> 00:05:51,840
+Cool.
+
+85
+00:05:52,220 --> 00:05:55,480
+So you will see we are immediately just returning this from here.
+
+86
+00:05:55,740 --> 00:05:56,860
+So that is our mistake.
+
+87
+00:05:57,660 --> 00:06:01,600
+What you need to do out of this, yes at this point.
+
+88
+00:06:02,180 --> 00:06:05,260
+So that is my simple typo and a mistake.
+
+89
+00:06:05,700 --> 00:06:09,120
+And let me just quickly fix it for you guys.
+
+90
+00:06:09,360 --> 00:06:09,500
+Cool.
+
+91
+00:06:10,000 --> 00:06:12,280
+So how I can basically fix it.
+
+92
+00:06:12,740 --> 00:06:13,880
+Let me just show you.
+
+93
+00:06:14,000 --> 00:06:20,960
+So what we can do instead of this, I can add the top of it, maintain a sub, which is, let's
+
+94
+00:06:20,961 --> 00:06:23,840
+say for now type of this.
+
+95
+00:06:24,520 --> 00:06:28,020
+And then here I will say sub is equals to this.
+
+96
+00:06:28,340 --> 00:06:31,020
+And let me just format this once.
+
+97
+00:06:31,320 --> 00:06:31,820
+Cool.
+
+98
+00:06:33,240 --> 00:06:36,160
+And I think right now we are good to go.
+
+99
+00:06:36,420 --> 00:06:37,340
+So, what is happening?
+
+100
+00:06:37,600 --> 00:06:42,800
+Remove is not available to undefined.
+
+101
+00:06:43,880 --> 00:06:46,220
+Alright, so we are updating this value.
+
+102
+00:06:46,540 --> 00:06:48,740
+So, we are not able to go there.
+
+103
+00:06:49,780 --> 00:06:51,660
+Alright, so just give me a minute.
+
+104
+00:06:52,080 --> 00:06:52,980
+Let me just fix it.
+
+105
+00:06:53,060 --> 00:06:53,960
+Then I'll be right back.
+
+106
+00:06:54,600 --> 00:06:57,480
+Alright, so I just made a basic changes here.
+
+107
+00:06:57,780 --> 00:07:01,420
+First thing first, I have just maintained here a let subscription as any.
+
+108
+00:07:02,380 --> 00:07:04,600
+Then I have just opened this pedometer thing.
+
+109
+00:07:04,900 --> 00:07:06,860
+If it is available, then set the value.
+
+110
+00:07:06,960 --> 00:07:07,580
+Same thing.
+
+111
+00:07:07,700 --> 00:07:12,580
+And otherwise, and then we are grabbing all the values inside this.
+
+112
+00:07:12,980 --> 00:07:17,620
+And if we have a subscription, then simply return it and remove it.
+
+113
+00:07:17,680 --> 00:07:17,820
+Cool.
+
+114
+00:07:17,821 --> 00:07:22,460
+And if we don't have available, then we are going to show here pedometer not available
+
+115
+00:07:23,360 --> 00:07:24,260
+on this device.
+
+116
+00:07:24,420 --> 00:07:29,820
+And let me just hard reload it and then let me try to show you the value.
+
+117
+00:07:30,380 --> 00:07:30,620
+Perfect.
+
+118
+00:07:37,560 --> 00:07:37,680
+So.
+
+119
+00:07:37,681 --> 00:07:37,701
+Alright guys, so I have made bunch of new changes just to simulate you in that on a
+
+120
+00:07:37,702 --> 00:07:37,722
+better way.
+
+121
+00:07:37,723 --> 00:07:37,860
+Perfect.
+
+122
+00:07:38,560 --> 00:07:43,540
+So, you will see everything is same just made bunch of changes here like available we are
+
+123
+00:07:43,541 --> 00:07:47,800
+checking the availability then on the basis of operating system.
+
+124
+00:07:48,100 --> 00:07:56,160
+Like we are getting the starting date like we wanted to get like in whole like 12 hours
+
+125
+00:07:56,300 --> 00:08:04,240
+like basically from 12 a.m. to right now it's 1 p.m. around so the number of steps you have
+
+126
+00:08:04,241 --> 00:08:11,200
+did so your device keep track of each of them then we are basically getting the past step
+
+127
+00:08:11,700 --> 00:08:18,420
+And we are setting that value and every time when you steps and when you walk newly then
+
+128
+00:08:18,421 --> 00:08:20,260
+you will get a new value.
+
+129
+00:08:20,700 --> 00:08:29,120
+Perfect and otherwise like for Android this feature is not supported for now that's why
+
+130
+00:08:29,121 --> 00:08:31,060
+we are just only getting this value.
+
+131
+00:08:31,360 --> 00:08:34,559
+Perfect and everything is very very very same.
+
+132
+00:08:34,799 --> 00:08:41,380
+So, let me just simply show you the value of my iOS.
+
+133
+00:08:42,380 --> 00:08:42,700
+Perfect.
+
+134
+00:08:43,339 --> 00:08:44,179
+So, just give me a minute.
+
+135
+00:08:44,260 --> 00:08:48,120
+Let me open my camera and you will see this is the value which is coming.
+
+136
+00:08:48,740 --> 00:08:54,580
+And right now I have walked for few steps and let me just update this value and then
+
+137
+00:08:54,581 --> 00:08:55,640
+I will show you once again.
+
+138
+00:08:55,700 --> 00:09:01,360
+And yes, now you will see that previously we are only able to show here some other value,
+
+139
+00:09:01,400 --> 00:09:05,680
+but right now you will see the value is coming as 438.
+
+140
+00:09:06,020 --> 00:09:06,360
+Perfect.
+
+141
+00:09:06,540 --> 00:09:13,680
+So this is how basically you can track your steps and build an application around this.
+
+142
+00:09:14,200 --> 00:09:16,020
+So amazing, amazing job.
+
+143
+00:09:16,460 --> 00:09:22,600
+And this is the end of our entire module where we have talked about a lot of
+
+144
+00:09:22,601 --> 00:09:28,880
+We can say sensors which is available inside the expo.
+
+145
+00:09:29,019 --> 00:09:29,279
+Perfect.
+
+146
+00:09:29,440 --> 00:09:33,959
+I hope you are loving it and if yes then make sure to drop your feedback.
+
+147
+00:09:34,420 --> 00:09:37,079
+So this is pretty much it and see you next time.
+

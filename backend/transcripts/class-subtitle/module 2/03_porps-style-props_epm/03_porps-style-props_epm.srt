@@ -1,0 +1,968 @@
+1
+00:00:00,000 --> 00:00:06,420
+Hey everyone and welcome to brand new lecture. In this lecture we are going to talk about
+
+2
+00:00:06,421 --> 00:00:12,840
+props and style props inside React Native. So, in this lecture we will write code together
+
+3
+00:00:13,040 --> 00:00:18,080
+and understand the most important styling properties in React Native.
+
+4
+00:00:18,300 --> 00:00:25,960
+And listen to me carefully, don't try to memorize everything, focus on understanding how layout
+
+5
+00:00:26,340 --> 00:00:27,880
+and styling works actually.
+
+6
+00:00:28,759 --> 00:00:34,820
+And but before moving ahead, I just wanted you to keep a bunch of rules inside your mind.
+
+7
+00:00:35,379 --> 00:00:37,000
+So just listen to me carefully.
+
+8
+00:00:37,400 --> 00:00:39,199
+This is what your important rule.
+
+9
+00:00:39,519 --> 00:00:44,019
+First, react native styling is inspired by CSS.
+
+10
+00:00:44,400 --> 00:00:46,120
+This is not your actual CSS.
+
+11
+00:00:48,860 --> 00:00:52,860
+Inspired, INS, inspired by CSS.
+
+12
+00:00:53,620 --> 00:00:55,739
+This is not CSS.
+
+13
+00:00:56,040 --> 00:00:57,500
+Make sure to keep that in mind.
+
+14
+00:00:57,680 --> 00:01:06,760
+Second, for layouting purpose, for now, on the latest version that we are using of React
+
+15
+00:01:07,700 --> 00:01:14,560
+They only support flexbox, but in future if you're watching this, maybe they are also
+
+16
+00:01:14,561 --> 00:01:21,240
+going to support grid, but for layouting for now, they only support flexbox only.
+
+17
+00:01:21,600 --> 00:01:21,979
+Perfect.
+
+18
+00:01:23,399 --> 00:01:28,679
+No grid CSS support yet, but they have a PR raised about it.
+
+19
+00:01:28,700 --> 00:01:30,740
+and they are actively working on it.
+
+20
+00:01:30,920 --> 00:01:35,100
+So maybe in future they are also going to support grid for us.
+
+21
+00:01:35,259 --> 00:01:41,039
+But for now make sure to keep only these three points into your mind.
+
+22
+00:01:41,360 --> 00:01:43,119
+First this is inspired by CSS.
+
+23
+00:01:43,299 --> 00:01:44,679
+This is not your actual CSS.
+
+24
+00:01:45,759 --> 00:01:49,720
+Then they use your flexbox only for layouting.
+
+25
+00:01:50,060 --> 00:01:51,899
+They don't support grid for now.
+
+26
+00:01:52,200 --> 00:01:53,240
+Perfect.
+
+27
+00:01:54,180 --> 00:02:00,500
+And so now let's move ahead and start understanding bunch of style properties that we have so
+
+28
+00:02:00,501 --> 00:02:06,220
+that in future whenever I am going to write any kind of react native CSS any kind of style
+
+29
+00:02:06,221 --> 00:02:09,660
+props you can easily follow along with me.
+
+30
+00:02:10,000 --> 00:02:11,280
+Perfect.
+
+31
+00:02:11,460 --> 00:02:18,360
+So right now I have just basically imported this and created a basic index.tsx file, a
+
+32
+00:02:18,361 --> 00:02:22,600
+basic react native component file with a view and a basic text.
+
+33
+00:02:23,220 --> 00:02:23,620
+Easy?
+
+34
+00:02:23,940 --> 00:02:24,220
+Nice.
+
+35
+00:02:24,800 --> 00:02:28,180
+Now let me just simply add a basic design for it.
+
+36
+00:02:28,200 --> 00:02:31,459
+So, let me just copy this and paste it.
+
+37
+00:02:31,640 --> 00:02:31,900
+Perfect.
+
+38
+00:02:32,020 --> 00:02:32,980
+I'm stopping myself.
+
+39
+00:02:33,120 --> 00:02:38,900
+You can basically stop this video and start writing this and I'm also copy pasting the
+
+40
+00:02:38,901 --> 00:02:44,860
+styles for it because I don't want to waste too much of time on writing this.
+
+41
+00:02:45,000 --> 00:02:45,319
+Perfect.
+
+42
+00:02:45,739 --> 00:02:46,780
+So, this is your style.
+
+43
+00:02:47,500 --> 00:02:53,900
+And this is your view and we are just basically using styles dot containers, styles dot title,
+
+44
+00:02:54,560 --> 00:02:58,540
+style dot card and style dot text and all the properties are here.
+
+45
+00:02:58,780 --> 00:02:59,040
+Perfect.
+
+46
+00:02:59,880 --> 00:03:00,480
+No problem.
+
+47
+00:03:00,880 --> 00:03:03,000
+So this is how they basically look.
+
+48
+00:03:03,840 --> 00:03:09,180
+But before moving ahead, one thing that I wanted to do, I wanted to change the color
+
+49
+00:03:09,181 --> 00:03:11,380
+of my this.
+
+50
+00:03:11,620 --> 00:03:14,380
+So let me change this to here.
+
+51
+00:03:14,800 --> 00:03:15,140
+Perfect.
+
+52
+00:03:15,600 --> 00:03:15,920
+Nice.
+
+53
+00:03:17,100 --> 00:03:17,440
+Cool.
+
+54
+00:03:18,960 --> 00:03:19,200
+Perfect.
+
+55
+00:03:19,320 --> 00:03:21,960
+I hope you guys just copied and pasted this.
+
+56
+00:03:22,880 --> 00:03:29,620
+Now let's move ahead and first of all start talking about the layout props that we have.
+
+57
+00:03:29,800 --> 00:03:30,160
+Perfect.
+
+58
+00:03:30,161 --> 00:03:34,320
+The layout props that we have, which is known as Flexbox.
+
+59
+00:03:35,380 --> 00:03:43,080
+So React Native uses Flexbox by default, like Vue by default support Flexbox into it.
+
+60
+00:03:43,400 --> 00:03:51,860
+And make sure to keep in mind this is different from web like inside the web by default direction
+
+61
+00:03:52,340 --> 00:03:58,040
+of our flex is always row but inside your react native we have column.
+
+62
+00:03:59,720 --> 00:04:00,640
+Perfect, nice.
+
+63
+00:04:01,200 --> 00:04:08,319
+Now, if I just simply move ahead and focus on my card, you will see I have bunch of other
+
+64
+00:04:08,320 --> 00:04:09,280
+properties as well.
+
+65
+00:04:09,760 --> 00:04:15,860
+I will come to it, but for now, let me just simply coming to here and try to center this
+
+66
+00:04:15,861 --> 00:04:16,339
+content.
+
+67
+00:04:16,760 --> 00:04:18,279
+So, how you can do that?
+
+68
+00:04:18,310 --> 00:04:21,019
+You need not to run write any display property.
+
+69
+00:04:21,300 --> 00:04:27,639
+Let's say if I just simply coming to here and try to write display content flags null
+
+70
+00:04:27,800 --> 00:04:31,240
+but by default all the display are flex itself.
+
+71
+00:04:31,400 --> 00:04:34,099
+So you can just simply cut this out.
+
+72
+00:04:34,580 --> 00:04:38,060
+Now let's move ahead and I wanted to make it center.
+
+73
+00:04:38,229 --> 00:04:43,960
+So for that I am going to use here the align item as center.
+
+74
+00:04:44,319 --> 00:04:44,840
+Easy.
+
+75
+00:04:47,159 --> 00:04:54,860
+Justify content as center and the moment I save it, you will see the content is in center
+
+76
+00:04:54,861 --> 00:04:55,280
+now.
+
+77
+00:04:56,180 --> 00:05:01,560
+So, the first thing I hope you guys understand like how you can center the content.
+
+78
+00:05:07,720 --> 00:05:18,580
+horizontal alignment perfect a l i g n I hope so I am right all right I need to remove it
+
+79
+00:05:18,581 --> 00:05:23,840
+perfect. So, this is for horizontal alignment and this is for vertical alignment.
+
+80
+00:05:26,980 --> 00:05:34,020
+Perfect. Now, in same way, we also have a flex property like this flex. I hope so you
+
+81
+00:05:34,021 --> 00:05:38,800
+guys understand this. This is basically to fill up all the available spaces that we have
+
+82
+00:05:39,260 --> 00:05:41,820
+a basic CSS, nothing rocket science.
+
+83
+00:05:42,000 --> 00:05:46,360
+Let us say I also wanted to center it perfect.
+
+84
+00:05:46,420 --> 00:05:51,640
+So, this is your main container like I am talking about this and I wanted to center
+
+85
+00:05:51,840 --> 00:05:54,220
+this and I mean everything I wanted to center.
+
+86
+00:05:54,221 --> 00:05:55,540
+So, how you can do so?
+
+87
+00:05:56,520 --> 00:05:57,560
+Easy same.
+
+88
+00:05:58,800 --> 00:06:04,479
+Justify content is going to be center and align item is also going to be center.
+
+89
+00:06:04,740 --> 00:06:05,580
+Let me save it.
+
+90
+00:06:05,740 --> 00:06:05,900
+Boom!
+
+91
+00:06:06,600 --> 00:06:07,540
+Look at that.
+
+92
+00:06:07,680 --> 00:06:09,820
+How beautifully you have done this.
+
+93
+00:06:10,500 --> 00:06:10,900
+Easy.
+
+94
+00:06:11,280 --> 00:06:12,040
+No problem.
+
+95
+00:06:12,900 --> 00:06:13,180
+Perfect.
+
+96
+00:06:13,580 --> 00:06:17,500
+Now, let's move ahead and start talking about some margin and padding.
+
+97
+00:06:17,800 --> 00:06:23,599
+So, for understanding margin and padding let me just simply go to my cards property and
+
+98
+00:06:23,600 --> 00:06:29,680
+you will see we have padding of 16, but if I just change the value to 20 you will see
+
+99
+00:06:29,819 --> 00:06:30,919
+this is how they look.
+
+100
+00:06:31,400 --> 00:06:38,520
+In same way I also have a margin again like if you have padding so you have all the directions
+
+101
+00:06:39,099 --> 00:06:44,240
+you have padding top you have padding bottom, padding left, padding right you got the point.
+
+102
+00:06:44,500 --> 00:06:50,640
+In the same way we have margin, let's say if I just add a margin of 20 and save it,
+
+103
+00:06:50,960 --> 00:06:56,140
+so you have definitely seen the shift towards up, no problem.
+
+104
+00:06:56,740 --> 00:06:59,280
+Margin is basically for outside space.
+
+105
+00:06:59,700 --> 00:07:02,100
+and padding is for inside space.
+
+106
+00:07:02,640 --> 00:07:05,060
+This is just a basic CSS property.
+
+107
+00:07:05,320 --> 00:07:11,020
+I am just again giving you a basic overview how you can write it.
+
+108
+00:07:11,200 --> 00:07:14,060
+Perfect. Again, this is not a detailed CSS course.
+
+109
+00:07:14,680 --> 00:07:16,080
+I am just giving you an overview.
+
+110
+00:07:17,020 --> 00:07:18,680
+You can take this as a bonus.
+
+111
+00:07:20,160 --> 00:07:23,920
+Now, let's move ahead and how you can basically style your text.
+
+112
+00:07:24,180 --> 00:07:25,040
+So this is your text.
+
+113
+00:07:25,360 --> 00:07:28,180
+Now, let's see how you can basically style your text.
+
+114
+00:07:28,740 --> 00:07:33,680
+First property we already know font size, like if I just make it 26, so the font size
+
+115
+00:07:33,681 --> 00:07:34,380
+become large.
+
+116
+00:07:35,700 --> 00:07:41,400
+In the same way, we have font weight and inside the font weight, you will see we have 100
+
+117
+00:07:41,560 --> 00:07:44,060
+to 900, then black, bold and condensed.
+
+118
+00:07:44,180 --> 00:07:47,380
+If I just simply write condensed, this is how they look.
+
+119
+00:07:47,700 --> 00:07:49,820
+If I write bold, this is how they look.
+
+120
+00:07:50,580 --> 00:07:58,280
+And in the same way, we have 900 to 900.
+
+121
+00:07:58,281 --> 00:07:59,759
+We have 800, 500, 700, the weight of your font.
+
+122
+00:08:00,199 --> 00:08:00,500
+Perfect.
+
+123
+00:08:01,580 --> 00:08:03,580
+In same way, we also have a color.
+
+124
+00:08:04,199 --> 00:08:07,400
+This is how you can basically control the color of your properties.
+
+125
+00:08:07,810 --> 00:08:12,940
+So if I just simply write #333, so you will see the change of the color.
+
+126
+00:08:13,620 --> 00:08:14,800
+Let me just shift it.
+
+127
+00:08:14,801 --> 00:08:17,440
+Let me just try to write this.
+
+128
+00:08:17,620 --> 00:08:22,620
+I don't know how it looks, but if I save it, yes, let me change it to white.
+
+129
+00:08:23,340 --> 00:08:25,900
+And if I save it, this is how they look.
+
+130
+00:08:26,740 --> 00:08:27,060
+Perfect.
+
+131
+00:08:27,560 --> 00:08:30,819
+In same way, we also have a line height.
+
+132
+00:08:31,139 --> 00:08:33,399
+Let's see if I just added a line height of 22.
+
+133
+00:08:34,019 --> 00:08:38,899
+So the height of all the characters that you have between them kind of perfect.
+
+134
+00:08:40,900 --> 00:08:44,460
+So, text style only work inside the text component.
+
+135
+00:08:44,461 --> 00:08:51,080
+So, make sure to keep that in mind like we have text height in same way we have text
+
+136
+00:08:51,260 --> 00:08:54,600
+align as well like if I just added the left here.
+
+137
+00:08:54,660 --> 00:08:59,840
+So, text will align in left if they have space if we have multiple text here.
+
+138
+00:09:01,480 --> 00:09:07,760
+Let me see if I just added here lorem30 and added this so you will see all your text is
+
+139
+00:09:07,800 --> 00:09:10,200
+aligned towards left for now.
+
+140
+00:09:11,540 --> 00:09:17,620
+And if I just make this in center you will see we are in center now.
+
+141
+00:09:17,900 --> 00:09:23,520
+In same way if I change this to right we are aligned towards right.
+
+142
+00:09:23,860 --> 00:09:25,600
+So I hope so I am making sense.
+
+143
+00:09:26,660 --> 00:09:27,220
+Perfect.
+
+144
+00:09:28,160 --> 00:09:33,220
+Line height, if I just add a 10, so this is how they look if I add just a 100.
+
+145
+00:09:33,519 --> 00:09:36,300
+So this is how much spacing that we have.
+
+146
+00:09:36,860 --> 00:09:38,720
+34 is a sweet spot.
+
+147
+00:09:39,180 --> 00:09:45,819
+I think yes, I can definitely change the size of my text and boom, this is how they look.
+
+148
+00:09:46,560 --> 00:09:48,759
+And let me just shift towards left.
+
+149
+00:09:50,100 --> 00:09:52,380
+Perfect and we can go with 24.
+
+150
+00:09:52,940 --> 00:09:54,660
+Yeah, this is pretty much it.
+
+151
+00:09:55,180 --> 00:10:01,960
+So how you can basically handle your text properties in same way, we also have some
+
+152
+00:10:02,120 --> 00:10:03,800
+properties related to views.
+
+153
+00:10:04,920 --> 00:10:06,180
+Let's say this is your container.
+
+154
+00:10:06,880 --> 00:10:10,400
+So inside the container, I mean card is also a container.
+
+155
+00:10:10,620 --> 00:10:12,160
+You can definitely manage that.
+
+156
+00:10:12,161 --> 00:10:14,300
+So this is how you can change background color.
+
+157
+00:10:14,600 --> 00:10:16,779
+This is how you can add paddings.
+
+158
+00:10:17,380 --> 00:10:19,079
+This is how you can add margins.
+
+159
+00:10:19,319 --> 00:10:21,000
+This is how you can add border radius.
+
+160
+00:10:21,779 --> 00:10:26,100
+So if I just change this to 20, this is how they look.
+
+161
+00:10:26,620 --> 00:10:27,600
+10 is fine.
+
+162
+00:10:28,680 --> 00:10:32,420
+In same way, we also have border color.
+
+163
+00:10:32,900 --> 00:10:36,860
+And let me change this color to #DDDD.
+
+164
+00:10:37,460 --> 00:10:38,760
+This will not show to us.
+
+165
+00:10:39,380 --> 00:10:41,140
+Let me change this color to red.
+
+166
+00:10:41,920 --> 00:10:43,000
+Maybe we'll see that.
+
+167
+00:10:43,120 --> 00:10:43,340
+All right.
+
+168
+00:10:43,360 --> 00:10:45,760
+We need to add definitely the border width.
+
+169
+00:10:46,060 --> 00:10:49,620
+So this is how you can add border width.
+
+170
+00:10:50,220 --> 00:10:54,340
+And if I save it, yes, now I hope you guys are able to see that.
+
+171
+00:10:54,580 --> 00:10:55,780
+And this is how they look.
+
+172
+00:10:57,459 --> 00:11:01,459
+Perfect, no problem, easy, very easy.
+
+173
+00:11:02,000 --> 00:11:06,620
+You have border width, you have border color, you have border radius, background color and
+
+174
+00:11:06,800 --> 00:11:09,740
+yeah, this is how you can basically handle them.
+
+175
+00:11:10,300 --> 00:11:17,500
+In same way for images, let's say you are using image, let me just import it below this,
+
+176
+00:11:17,680 --> 00:11:20,279
+let me paste it, let me import image.
+
+177
+00:11:22,220 --> 00:11:25,520
+And let me add a design for image.
+
+178
+00:11:25,900 --> 00:11:29,460
+So below this, let me use image property.
+
+179
+00:11:30,960 --> 00:11:35,420
+How I am using this image, you will see inside the styles dot image.
+
+180
+00:11:35,540 --> 00:11:36,820
+We have this.
+
+181
+00:11:37,780 --> 00:11:39,480
+So I can definitely add the width.
+
+182
+00:11:39,900 --> 00:11:42,320
+Let's say let me make it 100.
+
+183
+00:11:43,060 --> 00:11:44,660
+Height is also 100.
+
+184
+00:11:45,660 --> 00:11:48,840
+And I can even add margin bottom, not margin block.
+
+185
+00:11:49,600 --> 00:11:55,740
+10, margin bottom of 10 and if I save it, this is how they are going to look.
+
+186
+00:11:57,620 --> 00:11:59,339
+I hope so it's very easy.
+
+187
+00:12:00,019 --> 00:12:06,600
+In same way, we have a bunch of resize mode like you will see that we have a resize mode
+
+188
+00:12:07,700 --> 00:12:14,480
+We have the cover and we have repeat, we have stretch, a lot of other properties as well.
+
+189
+00:12:14,600 --> 00:12:20,240
+You can definitely play around them and see the different behavior of different resize
+
+190
+00:12:20,280 --> 00:12:20,580
+mode.
+
+191
+00:12:21,020 --> 00:12:23,660
+Now take that as an assignment and do it by yourself.
+
+192
+00:12:24,699 --> 00:12:25,259
+Easy.
+
+193
+00:12:25,880 --> 00:12:30,220
+In same way, we also have something related to shadows and elevation.
+
+194
+00:12:30,380 --> 00:12:32,819
+So shadow work differently on different platform.
+
+195
+00:12:34,139 --> 00:12:38,199
+Like how you can add a shadow like whenever you cross platform you are working.
+
+196
+00:12:38,440 --> 00:12:39,360
+Let's say this is your card.
+
+197
+00:12:40,259 --> 00:12:44,120
+Let me change this to white or maybe this color.
+
+198
+00:12:44,860 --> 00:12:45,120
+Perfect.
+
+199
+00:12:45,740 --> 00:12:48,360
+And let me change my text color as well.
+
+200
+00:12:49,840 --> 00:12:53,000
+Let me make this no problem easy.
+
+201
+00:12:53,860 --> 00:12:56,040
+Let me remove my border and border color.
+
+202
+00:12:56,540 --> 00:12:58,880
+This is what I am looking for.
+
+203
+00:12:58,980 --> 00:13:05,020
+Let me make it full FFF so that I can see it.
+
+204
+00:13:05,220 --> 00:13:06,860
+Yes, now I hope so this is visible.
+
+205
+00:13:08,160 --> 00:13:08,480
+Perfect.
+
+206
+00:13:09,100 --> 00:13:09,700
+No problem.
+
+207
+00:13:09,900 --> 00:13:14,500
+Now, let me show you how you can add a shadow into your Android.
+
+208
+00:13:14,780 --> 00:13:21,880
+So, inside adding Android like I cannot spin iOS into it, but do not worry.
+
+209
+00:13:22,620 --> 00:13:24,060
+We have an Android shadow.
+
+210
+00:13:24,360 --> 00:13:28,620
+Let us say elevation and then elevation is going to be 5.
+
+211
+00:13:28,800 --> 00:13:35,560
+And, if I save it, look at that how beautifully I am able to add shadow here.
+
+212
+00:13:36,000 --> 00:13:36,300
+Perfect.
+
+213
+00:13:37,040 --> 00:13:39,920
+In same way, let's say you are working on iOS device.
+
+214
+00:13:40,089 --> 00:13:43,320
+So, for adding a shadow into iOS device.
+
+215
+00:13:44,300 --> 00:13:47,519
+You simply need to write this much of code.
+
+216
+00:13:48,160 --> 00:13:54,160
+This is not simple like shadow color, the name, the color of the shadow you want, the
+
+217
+00:13:54,220 --> 00:14:00,540
+shadow offset like the position basically how much you wanted to show that, the opacity,
+
+218
+00:14:01,160 --> 00:14:06,060
+the radius, but whenever you are working with Android, this is what you need to write.
+
+219
+00:14:06,400 --> 00:14:13,900
+Easy, so basically for adding shadow inside your iOS, you need to write this and adding
+
+220
+00:14:13,940 --> 00:14:17,300
+shadow inside Android, you need to write only this.
+
+221
+00:14:18,080 --> 00:14:23,920
+And again, one very important point to mention once again, React Native for now does not
+
+222
+00:14:24,000 --> 00:14:27,060
+support CSS grid, they only use Flexbox.
+
+223
+00:14:27,100 --> 00:14:33,699
+Perfect, so the if I just simply tell you the key takeaway of this class like we have
+
+224
+00:14:33,700 --> 00:14:41,759
+seen that how you can styling or you can style with the help of JS, so styling JS based.
+
+225
+00:14:42,800 --> 00:14:44,459
+And second is flex.
+
+226
+00:14:45,100 --> 00:14:49,980
+Box is the only layout system, no problem.
+
+227
+00:14:50,399 --> 00:14:56,180
+Third, we have seen text, view, image have different style props as I shown you there.
+
+228
+00:14:56,620 --> 00:15:01,740
+Like we have text, we have view, we have image, they all have different style props.
+
+229
+00:15:02,959 --> 00:15:04,000
+No grid support.
+
+230
+00:15:04,900 --> 00:15:09,520
+And then practice is more important than memorizing.
+
+231
+00:15:09,720 --> 00:15:15,700
+So yes, make sure to keep in mind you need not to memorize any of this property, any
+
+232
+00:15:15,701 --> 00:15:16,900
+of the syntax of it.
+
+233
+00:15:17,340 --> 00:15:20,280
+You just write as much code as you can.
+
+234
+00:15:20,600 --> 00:15:25,520
+And ultimately you will see that yes, now I'm able to write and I'm able to build my
+
+235
+00:15:25,521 --> 00:15:25,960
+application.
+
+236
+00:15:26,000 --> 00:15:29,740
+So, in next chapter, we are basically going to create a mini project.
+
+237
+00:15:30,260 --> 00:15:31,940
+Yes, this is time for mini project.
+
+238
+00:15:32,420 --> 00:15:38,540
+Inside that mini project, we are going to make a photo gallery where you can basically
+
+239
+00:15:38,640 --> 00:15:40,840
+show all your galleries into it properly.
+
+240
+00:15:41,260 --> 00:15:46,800
+We will see that how much creativity I can add into it and give you a very, very, very
+
+241
+00:15:47,000 --> 00:15:48,500
+beautiful mini project.
+
+242
+00:15:48,880 --> 00:15:53,160
+So, yeah, this is pretty much it for this chapter and see you next time.
+

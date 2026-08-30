@@ -1,0 +1,1088 @@
+1
+00:00:00,620 --> 00:00:06,340
+Alright everyone and welcome to one more new module in this module we are going to talk
+
+2
+00:00:06,420 --> 00:00:09,580
+about camera, media and audio.
+
+3
+00:00:09,820 --> 00:00:15,240
+So with the help of Explore Outer how you can deal with your cameras, DK how you can
+
+4
+00:00:15,300 --> 00:00:17,640
+work with your media and audio.
+
+5
+00:00:18,060 --> 00:00:21,940
+So in this chapter our main goal is to talking about camera.
+
+6
+00:00:22,400 --> 00:00:28,900
+Alright, so this is what we are going to talk about expo camera package, a react component.
+
+7
+00:00:29,320 --> 00:00:37,059
+Yes, this is work as a component that renders a preview of the device's front or back camera.
+
+8
+00:00:38,780 --> 00:00:41,180
+Expo camera provide a react component.
+
+9
+00:00:41,270 --> 00:00:45,860
+Yes, that renders a preview of the device's front or back camera.
+
+10
+00:00:46,600 --> 00:00:52,699
+The cameras parameters such as zoom, torch and flash mode are adjustable.
+
+11
+00:00:53,519 --> 00:00:59,600
+Using camera view, you can take photos, yes and record videos that are saved to the app
+
+12
+00:00:59,719 --> 00:01:00,100
+cache.
+
+13
+00:01:01,500 --> 00:01:06,659
+The component is also capable of detecting barcodes appearing in the preview.
+
+14
+00:01:07,300 --> 00:01:09,100
+Just run this example and you can see it.
+
+15
+00:01:09,119 --> 00:01:09,899
+We'll see that in a while.
+
+16
+00:01:10,159 --> 00:01:10,440
+Don't worry.
+
+17
+00:01:11,000 --> 00:01:14,880
+And then you will see that something the usage of it.
+
+18
+00:01:14,890 --> 00:01:16,300
+So I think this is the right time.
+
+19
+00:01:16,460 --> 00:01:18,140
+Let's move ahead and start using it.
+
+20
+00:01:19,090 --> 00:01:23,580
+So for that, now I am on my VS code with the module number eight.
+
+21
+00:01:24,380 --> 00:01:29,160
+Inside this, quickly move ahead and let me install a new project.
+
+22
+00:01:29,290 --> 00:01:36,200
+So Banex create expo app at the latest app should we go inside the same module eight
+
+23
+00:01:36,479 --> 00:01:36,600
+folder.
+
+24
+00:01:37,440 --> 00:01:39,479
+And then let me wait for installation.
+
+25
+00:01:40,520 --> 00:01:51,579
+Alright, so now we have installed it successfully, let me simply run run reset project.
+
+26
+00:01:52,360 --> 00:01:57,340
+So this is going to reset my project and amazing, amazing job.
+
+27
+00:01:57,341 --> 00:02:03,759
+But before writing any single line of code, let's move ahead and try to understand a
+
+28
+00:02:03,840 --> 00:02:05,399
+bit more about this.
+
+29
+00:02:07,219 --> 00:02:15,720
+So, the first thing first like in this whole chapter the only focus is on how you can work
+
+30
+00:02:15,860 --> 00:02:20,959
+with camera, but why do we even need a camera module?
+
+31
+00:02:21,489 --> 00:02:22,620
+So, that is the main question.
+
+32
+00:02:23,300 --> 00:02:29,820
+Like let's say you are creating any social media application, you are creating any QR
+
+33
+00:02:30,020 --> 00:02:37,360
+codes scanner app and something we can say virtual AR features into your apps that you
+
+34
+00:02:37,400 --> 00:02:38,860
+can do with the help of expo.
+
+35
+00:02:38,900 --> 00:02:46,079
+So, something document and photos related things in all of that scenarios you need a
+
+36
+00:02:46,099 --> 00:02:46,959
+camera integration.
+
+37
+00:02:47,989 --> 00:02:51,480
+So, that's why this module is very important in itself.
+
+38
+00:02:52,269 --> 00:02:57,159
+So, first thing first for using this module you need to give permission like you can see
+
+39
+00:02:57,220 --> 00:02:59,099
+that only one camera.
+
+40
+00:02:59,319 --> 00:02:59,780
+All right.
+
+41
+00:02:59,781 --> 00:03:00,819
+So, this is the another thing.
+
+42
+00:03:01,500 --> 00:03:05,440
+Like they also support in web as well.
+
+43
+00:03:06,100 --> 00:03:07,060
+I think this is the high time.
+
+44
+00:03:07,300 --> 00:03:08,840
+Let's move ahead and start using it.
+
+45
+00:03:08,850 --> 00:03:11,520
+So for using it, you need to install this.
+
+46
+00:03:11,590 --> 00:03:13,740
+So simply copy from here till here.
+
+47
+00:03:14,690 --> 00:03:15,000
+All right.
+
+48
+00:03:15,200 --> 00:03:19,720
+And then I can simply say 1x expo install expo camera.
+
+49
+00:03:19,950 --> 00:03:26,080
+So this is going to install my expo camera and then simply run 1x expo start.
+
+50
+00:03:28,099 --> 00:03:37,380
+And after starting it, I can simply press a so by this they are going to open that inside my Android phone.
+
+51
+00:03:38,300 --> 00:03:48,239
+Perfect. So for using it like let's move ahead and I just wanted you to build again a mini project and that project is very important.
+
+52
+00:03:48,600 --> 00:03:57,800
+So, for that what I can do inside the app or maybe let us be inside it, but in future
+
+53
+00:03:57,960 --> 00:03:58,700
+we need it.
+
+54
+00:03:59,250 --> 00:04:00,140
+So, what I can do?
+
+55
+00:04:00,690 --> 00:04:07,020
+I can simply again create here a folder name as component and inside this I will simply
+
+56
+00:04:07,080 --> 00:04:14,160
+going to say here camera component or something
+
+57
+00:04:17,940 --> 00:04:24,800
+CameraScreen.tsx and RNFES and I can simply say this as CameraScreen.
+
+58
+00:04:25,660 --> 00:04:31,500
+Alright and we don't need any kind of design for now, I can remove it completely and I
+
+59
+00:04:31,540 --> 00:04:37,220
+can say this as CameraScreen and if I save it, you will see a CameraScreen at the top
+
+60
+00:04:37,320 --> 00:04:37,660
+of it.
+
+61
+00:04:38,160 --> 00:04:38,240
+Nice.
+
+62
+00:04:39,000 --> 00:04:40,700
+Now, let me close it.
+
+63
+00:04:40,740 --> 00:04:46,780
+So for using the camera, you will see that they are saying you to install it and then
+
+64
+00:04:47,680 --> 00:04:56,360
+import camera view, camera type and for asking permission, they are providing us a use camera
+
+65
+00:04:56,460 --> 00:04:56,920
+permission.
+
+66
+00:04:57,880 --> 00:04:58,060
+Perfect.
+
+67
+00:04:58,640 --> 00:05:02,200
+So, first of all, let me install few things.
+
+68
+00:05:02,900 --> 00:05:12,840
+Let me just coming to here and only install here, bunnix expo install, just coming to
+
+69
+00:05:12,880 --> 00:05:19,880
+here and search for slider because for zooming in and zoom out, we need this slider.
+
+70
+00:05:20,449 --> 00:05:22,979
+So just coming to here and copy this.
+
+71
+00:05:26,140 --> 00:05:33,060
+simply paste that here we are not using npx we are using bunx so this is going to be
+
+72
+00:05:33,140 --> 00:05:41,200
+bunx expo install react native community slider alright so just we are going to keep building
+
+73
+00:05:41,320 --> 00:05:47,060
+the project and you are eventually going to learn about camera module so let's import
+
+74
+00:05:47,360 --> 00:05:49,700
+bunch of things from our expo camera
+
+75
+00:05:50,500 --> 00:05:57,940
+So, I have imported here camera type, camera view, this is the main component, then flash
+
+76
+00:05:58,080 --> 00:06:01,600
+mode, perfect and use camera permission.
+
+77
+00:06:01,900 --> 00:06:07,320
+Along with that you will see we have bunch of other thing as well like available lens
+
+78
+00:06:08,260 --> 00:06:13,840
+change camera mode, ratio, image size, image type, lot of things.
+
+79
+00:06:15,360 --> 00:06:23,280
+Perfect, but right now we are good to go with this and then I will import bunch of component
+
+80
+00:06:23,960 --> 00:06:24,320
+as well.
+
+81
+00:06:26,300 --> 00:06:31,620
+So below this let me just paste it and let me remove this and let me remove this as well.
+
+82
+00:06:31,820 --> 00:06:39,240
+So I have imported react use ref and use state along with that I also have an image, style
+
+83
+00:06:39,241 --> 00:06:42,340
+text, touchable opacity and a view.
+
+84
+00:06:42,900 --> 00:06:45,780
+And at the last I need a slider.
+
+85
+00:06:46,889 --> 00:06:50,560
+Alright, so let me import my slider as well.
+
+86
+00:06:50,561 --> 00:06:56,040
+So this slider is coming from the React Native Community / Slider.
+
+87
+00:06:58,169 --> 00:06:58,380
+Perfect.
+
+88
+00:07:00,320 --> 00:07:08,000
+Now, let's move ahead and first thing first I wanted you to initialize a ref and then
+
+89
+00:07:08,220 --> 00:07:16,139
+I can simply say camera ref is equals to use ref just giving for a reference and on a re-render
+
+90
+00:07:16,280 --> 00:07:21,320
+we don't want it to remount it that's why we are getting a ref and this is going to
+
+91
+00:07:21,440 --> 00:07:25,800
+be the type of camera view and initialize this as a null.
+
+92
+00:07:27,460 --> 00:07:27,979
+Perfect.
+
+93
+00:07:28,729 --> 00:07:33,639
+Along with this, I also wanted you to initialize bunch of state variable.
+
+94
+00:07:34,159 --> 00:07:36,199
+Let me explain you about each of them.
+
+95
+00:07:36,879 --> 00:07:37,720
+First we have a type.
+
+96
+00:07:38,180 --> 00:07:42,759
+This type is basically for your front camera or your back camera.
+
+97
+00:07:43,099 --> 00:07:46,419
+If you just hover over it, you will see we have two type of camera type.
+
+98
+00:07:47,139 --> 00:07:50,720
+First is front camera and second one is back camera.
+
+99
+00:07:50,900 --> 00:07:55,919
+Then we have same for flash and here you will see off.
+
+100
+00:07:56,100 --> 00:08:02,680
+So I think let's keep this as an auto and then we have a zoom for zooming it out and
+
+101
+00:08:02,780 --> 00:08:03,479
+photo you are.
+
+102
+00:08:03,540 --> 00:08:07,199
+So whenever you click any photo, we wanted to grab that as well.
+
+103
+00:08:08,300 --> 00:08:08,600
+All right.
+
+104
+00:08:09,180 --> 00:08:15,440
+So now let's move ahead and first thing we are going to ask for a permission.
+
+105
+00:08:16,500 --> 00:08:24,140
+So, for that you can simply say const permission and then second thing is going to be as request
+
+106
+00:08:24,360 --> 00:08:34,860
+permission is equals to use camera permission yes and you will see like we have this use
+
+107
+00:08:34,980 --> 00:08:39,220
+camera permissions if this permission is given granted.
+
+108
+00:08:39,900 --> 00:08:46,860
+Or like let me just simply come into here and say if we don't have any permission, then
+
+109
+00:08:46,940 --> 00:08:49,680
+I simply wanted to say checking permission.
+
+110
+00:08:50,420 --> 00:08:55,200
+All right, then I will return here a safe area view with the design.
+
+111
+00:08:55,320 --> 00:08:58,260
+So first of all, let me paste all of my designs for it.
+
+112
+00:08:58,720 --> 00:09:01,840
+And again, you will find all the design into the same rapport.
+
+113
+00:09:02,020 --> 00:09:04,220
+So I just wanted you to follow along with me.
+
+114
+00:09:04,700 --> 00:09:09,960
+So, I am just pasting all the design because I don't want it to waste your and my time
+
+115
+00:09:10,100 --> 00:09:11,060
+on designing stuffs.
+
+116
+00:09:11,960 --> 00:09:14,100
+This is not a design class, this is an expo class.
+
+117
+00:09:14,300 --> 00:09:17,820
+So, main feature is on understanding all the expo features.
+
+118
+00:09:18,060 --> 00:09:19,180
+I hope so I am making sense.
+
+119
+00:09:20,680 --> 00:09:20,820
+Perfect.
+
+120
+00:09:21,600 --> 00:09:26,860
+So, what we have did here, I have just written here permission and request permissions.
+
+121
+00:09:27,060 --> 00:09:33,380
+If we don't have any permission, we are simply saying here checking the user's permission,
+
+122
+00:09:33,649 --> 00:09:39,579
+but this permission have one property name as granted.
+
+123
+00:09:40,089 --> 00:09:40,720
+Look at that.
+
+124
+00:09:40,900 --> 00:09:47,680
+So, if not of permission is granted, then I will say here camera permission is required
+
+125
+00:09:48,380 --> 00:09:51,580
+and then we are simply going to say grant permission.
+
+126
+00:09:52,920 --> 00:09:53,120
+Perfect.
+
+127
+00:09:53,600 --> 00:09:59,180
+And then for granting permission, we are going to call this function request permission and
+
+128
+00:09:59,280 --> 00:10:01,900
+then you will ask for allow or deny something like that.
+
+129
+00:10:02,840 --> 00:10:05,580
+So, first of all, let me just return it.
+
+130
+00:10:06,300 --> 00:10:12,740
+And we are returning a view which is showing us a text as camera permission is required
+
+131
+00:10:13,580 --> 00:10:20,240
+and then a touchable opacity which is basically on press triggering this function request
+
+132
+00:10:20,459 --> 00:10:26,000
+permission and this request permission if I just save it and you will see something
+
+133
+00:10:26,140 --> 00:10:27,860
+like this perfect and look at that.
+
+134
+00:10:28,100 --> 00:10:31,839
+Module 8 needs permission for accessing camera.
+
+135
+00:10:32,449 --> 00:10:37,540
+You have already granted permission to another expo experience allow module 8 to also use
+
+136
+00:10:37,639 --> 00:10:37,779
+it.
+
+137
+00:10:38,459 --> 00:10:44,199
+So, I think let me just simply press and allow and yes, now we are able to see this.
+
+138
+00:10:45,630 --> 00:10:45,839
+Perfect.
+
+139
+00:10:46,600 --> 00:10:54,100
+Now, inside this return, what I wanted you to do, simply say here, safe area view and
+
+140
+00:10:54,180 --> 00:10:59,500
+this safe area view is going to have a style as styles.container.
+
+141
+00:11:01,480 --> 00:11:01,660
+Perfect.
+
+142
+00:11:02,860 --> 00:11:08,300
+And then first thing, the main component that we have is camera view where you are actually
+
+143
+00:11:08,420 --> 00:11:10,079
+going to see your camera.
+
+144
+00:11:10,700 --> 00:11:20,260
+Perfect, so let me just come into here and say here camera view and inside this camera
+
+145
+00:11:20,360 --> 00:11:27,680
+view I will simply say ref, this ref is going to be camera ref and then style is going to
+
+146
+00:11:27,681 --> 00:11:34,960
+be as styles.camera and then facing, so facing is going to be as.
+
+147
+00:11:36,339 --> 00:11:42,660
+type of the camera I wanted to have so I will simply say type perfect they also accept you
+
+148
+00:11:42,700 --> 00:11:49,399
+something as flash and flash is also going to be flash mode and last thing is we have
+
+149
+00:11:49,410 --> 00:11:58,700
+a zoom so now if I save it and you will see something like this alright and why I am seeing
+
+150
+00:11:59,279 --> 00:12:04,180
+not the whole camera, maybe what if I reload it once.
+
+151
+00:12:04,800 --> 00:12:05,620
+Perfect.
+
+152
+00:12:07,269 --> 00:12:07,500
+All right.
+
+153
+00:12:07,760 --> 00:12:09,580
+So I think no problem.
+
+154
+00:12:09,760 --> 00:12:12,339
+Let's move ahead and first of all design it completely.
+
+155
+00:12:12,760 --> 00:12:13,820
+Then we'll fix it.
+
+156
+00:12:14,529 --> 00:12:14,800
+All right.
+
+157
+00:12:15,120 --> 00:12:23,140
+So right now in same way, we, like you will see that right now we have a view at this
+
+158
+00:12:23,260 --> 00:12:23,560
+point.
+
+159
+00:12:24,089 --> 00:12:25,500
+Maybe I need to fix this.
+
+160
+00:12:26,019 --> 00:12:29,080
+Like if we don't have any permission, we are showing this.
+
+161
+00:12:29,900 --> 00:12:34,680
+Alright guys, so the main issue is here you will see that right now they are wrapped inside
+
+162
+00:12:34,900 --> 00:12:38,680
+a view and if I go outside of it now look at that.
+
+163
+00:12:39,400 --> 00:12:41,840
+This is showing us inside a full screen.
+
+164
+00:12:42,830 --> 00:12:42,960
+Perfect.
+
+165
+00:12:43,460 --> 00:12:43,560
+Nice.
+
+166
+00:12:43,920 --> 00:12:51,520
+And if I just take it out and look at that this is my beast and you will just see my keyboard
+
+167
+00:12:51,660 --> 00:12:52,140
+my hand.
+
+168
+00:12:53,060 --> 00:12:53,180
+Alright.
+
+169
+00:12:53,530 --> 00:12:53,680
+Perfect.
+
+170
+00:12:53,860 --> 00:12:54,880
+So let me just keep it here.
+
+171
+00:12:54,970 --> 00:12:56,640
+I just don't want to show you everything.
+
+172
+00:12:57,000 --> 00:13:02,440
+Right now perfect but yes our camera is open and I hope you guys are able to see that.
+
+173
+00:13:03,640 --> 00:13:04,120
+Nice.
+
+174
+00:13:04,870 --> 00:13:06,780
+So this is your main camera view.
+
+175
+00:13:07,670 --> 00:13:08,640
+But is this enough?
+
+176
+00:13:09,150 --> 00:13:14,720
+Like I just wanted to zoom it, I wanted to click pictures, I wanted to...
+
+177
+00:13:16,020 --> 00:13:20,620
+like I just wanted to change it like from back to front, front to back how I can do it.
+
+178
+00:13:20,760 --> 00:13:25,940
+So for that let's move ahead and start adding camera controls.
+
+179
+00:13:27,540 --> 00:13:34,920
+So for that we have a view and this view have a style and inside this style so we have a
+
+180
+00:13:34,960 --> 00:13:35,300
+style.
+
+181
+00:13:36,500 --> 00:13:42,180
+top controls and inside this we have let's say a touchable opacity.
+
+182
+00:13:42,560 --> 00:13:51,200
+This is basically used to show we can say lightning like this is for setting flash mode
+
+183
+00:13:51,320 --> 00:13:51,960
+on or off.
+
+184
+00:13:52,760 --> 00:13:54,140
+Perfect nice look at that.
+
+185
+00:13:55,720 --> 00:14:05,000
+In same way, just below this we can have another touchable opacity, but at that time, this
+
+186
+00:14:05,120 --> 00:14:07,220
+is for changing the camera position.
+
+187
+00:14:07,350 --> 00:14:12,720
+So you will see the set type either in front or either in back.
+
+188
+00:14:13,230 --> 00:14:18,820
+And if I save it, and if I just try to show you like right now you will see the camera
+
+189
+00:14:18,959 --> 00:14:19,519
+side is in.
+
+190
+00:14:21,500 --> 00:14:27,480
+back perfect but in same way if I just turn it out and I hope so you guys are
+
+191
+00:14:27,520 --> 00:14:31,980
+seeing me for the first time here so hi to all of you perfect so this is how you
+
+192
+00:14:32,080 --> 00:14:36,440
+can basically change the side of our camera from a front to back and back to
+
+193
+00:14:36,460 --> 00:14:37,180
+front alright
+
+194
+00:14:38,860 --> 00:14:41,900
+Nice, so this is how you can basically control it.
+
+195
+00:14:42,340 --> 00:14:48,700
+In same way, let's move ahead and let me add a zoom in and zoom out controls as well.
+
+196
+00:14:49,100 --> 00:14:53,800
+So for that, these are our top controls.
+
+197
+00:14:54,400 --> 00:15:02,380
+Just the bottom of it, we can have another view and this view can have a style and this
+
+198
+00:15:02,460 --> 00:15:06,560
+style is going to be a styles.bottom.
+
+199
+00:15:06,800 --> 00:15:13,080
+Let me just come into it and say bottom controls and then I can show my zoom slider something
+
+200
+00:15:13,240 --> 00:15:13,700
+like this.
+
+201
+00:15:14,720 --> 00:15:14,900
+Perfect.
+
+202
+00:15:15,380 --> 00:15:16,920
+So, I am getting this.
+
+203
+00:15:17,500 --> 00:15:20,160
+Can't find the name as slider.
+
+204
+00:15:21,200 --> 00:15:24,120
+Alright, so I need to import slider.
+
+205
+00:15:25,100 --> 00:15:26,220
+So just give me a minute.
+
+206
+00:15:28,240 --> 00:15:30,120
+And let me import my slider.
+
+207
+00:15:31,460 --> 00:15:33,240
+So this is at this point.
+
+208
+00:15:34,080 --> 00:15:34,220
+Perfect.
+
+209
+00:15:34,700 --> 00:15:35,600
+Now if I save it.
+
+210
+00:15:36,720 --> 00:15:37,640
+Oh, what just happened?
+
+211
+00:15:38,300 --> 00:15:49,200
+This is my slider, alright and if I unable to resolve from component this, alright I
+
+212
+00:15:49,240 --> 00:15:53,500
+think my slider name will come from here, alright.
+
+213
+00:15:54,040 --> 00:16:00,040
+So the name is different, it will be imported from here I hope, perfect.
+
+214
+00:16:02,959 --> 00:16:05,819
+Unable to resolve this, why?
+
+215
+00:16:06,639 --> 00:16:10,319
+As I have installed it, let me try to reinstall it.
+
+216
+00:16:10,699 --> 00:16:19,860
+So let me come into here and then 1x expo install this component and let me just fix
+
+217
+00:16:19,980 --> 00:16:21,120
+my installation command.
+
+218
+00:16:22,300 --> 00:16:35,580
+invalid project root. Why? I am inside my module. Let me copy this once again. Let me
+
+219
+00:16:35,620 --> 00:16:42,080
+simply write 1x, expo install, react native component. Alright, we have installed it successfully.
+
+220
+00:16:43,700 --> 00:16:45,980
+Let me import this from here as well.
+
+221
+00:16:48,199 --> 00:16:56,480
+Perfect and now if I save it and if I come into here and if I reload it, alright let
+
+222
+00:16:56,540 --> 00:17:00,019
+me close it, let me try to rerun it maybe right now this will work.
+
+223
+00:17:01,660 --> 00:17:04,520
+Sometimes this things is pretty normal, no problem.
+
+224
+00:17:06,760 --> 00:17:13,520
+Perfect, now let me try to reload it and as I said look at that, now you are able to see
+
+225
+00:17:13,580 --> 00:17:18,840
+that this zoom button and as I just zooming it you will see this is how you can zoom it,
+
+226
+00:17:19,020 --> 00:17:22,760
+you can go back, you can zoom it once again and you can go back.
+
+227
+00:17:23,000 --> 00:17:29,800
+Alright, so yes, I hope you are loving this, this is how you can basically control your
+
+228
+00:17:29,840 --> 00:17:37,180
+entire camera hardware from the expo router, I mean this is the power of expo, nice.
+
+229
+00:17:38,040 --> 00:17:43,740
+Let's add a capture button, so below this view, I just wanted you to paste this capture
+
+230
+00:17:43,840 --> 00:17:47,200
+button, this capture button is going to call a take photo.
+
+231
+00:17:47,700 --> 00:17:53,679
+And, this take photo is basically going to basically save your photo and cache memory
+
+232
+00:17:53,820 --> 00:17:55,179
+for few seconds.
+
+233
+00:17:57,840 --> 00:18:05,460
+So, at the bottom of permission granted, I will simply going to say sync function and
+
+234
+00:18:05,559 --> 00:18:07,360
+this is going to be a stake photo.
+
+235
+00:18:08,400 --> 00:18:18,800
+And, this take photo is basically if we have camera ref dot current, yes then you can simply
+
+236
+00:18:18,900 --> 00:18:28,940
+say const photo is equals to await camera ref dot current dot take picture async, yes
+
+237
+00:18:29,020 --> 00:18:32,520
+this is the function, this is the API provided by expo router.
+
+238
+00:18:33,100 --> 00:18:43,820
+And you can give here the quality, alright so let me simply say quality as 0.7 and if
+
+239
+00:18:43,900 --> 00:18:54,400
+we have a photo then I can simply say set photo URI equal to photo dot look at that
+
+240
+00:18:54,500 --> 00:18:59,440
+base 64, format height but I just wanted to see my photo URI.
+
+241
+00:18:59,700 --> 00:19:03,700
+Along with this, like how you can see the output of your photo.
+
+242
+00:19:04,360 --> 00:19:11,360
+So it's pretty easy, like below this capture button and out of this view, we can simply
+
+243
+00:19:11,460 --> 00:19:12,580
+show a preview model.
+
+244
+00:19:12,820 --> 00:19:15,299
+So let me just paste it entirely, easy.
+
+245
+00:19:15,980 --> 00:19:18,559
+Let me copy that UI and paste it.
+
+246
+00:19:18,919 --> 00:19:22,519
+So you will see, let me first of all import my image from React Native.
+
+247
+00:19:22,980 --> 00:19:28,220
+whatever if I have any photo URI then and only render this model.
+
+248
+00:19:28,600 --> 00:19:33,760
+And you will see the image and whatever the photo is coming and in same way you can set
+
+249
+00:19:33,840 --> 00:19:41,299
+this to null and like this is simple just alert photo saved and let me just save it
+
+250
+00:19:41,500 --> 00:19:44,720
+and try to rerun this.
+
+251
+00:19:45,100 --> 00:19:45,360
+All right.
+
+252
+00:19:45,820 --> 00:19:48,580
+So, let me try to click my photo.
+
+253
+00:19:48,660 --> 00:19:50,320
+So, if I just simply say cheese.
+
+254
+00:19:51,780 --> 00:19:53,580
+And if I click it, look at that.
+
+255
+00:19:53,790 --> 00:20:00,220
+In few seconds you are able to, I don't know the sound is comes to you, come to you or
+
+256
+00:20:00,280 --> 00:20:01,800
+not, but look at that.
+
+257
+00:20:02,000 --> 00:20:05,280
+This is the photo which is taken by our camera screen app.
+
+258
+00:20:05,630 --> 00:20:11,420
+And if I simply press on save, alright you can definitely save this inside your, let
+
+259
+00:20:11,421 --> 00:20:12,400
+me first of all flip it.
+
+260
+00:20:12,600 --> 00:20:19,960
+So, definitely you can save this up inside your gallery, inside your document in cache
+
+261
+00:20:20,120 --> 00:20:21,980
+memory by using expo file.
+
+262
+00:20:22,720 --> 00:20:28,280
+Now it is up to you how you want it to take it, but this is the power of expo and you
+
+263
+00:20:28,320 --> 00:20:32,820
+can zoom in, zoom out and I do not know, but for some reason my flashlights are not working
+
+264
+00:20:32,980 --> 00:20:33,140
+here.
+
+265
+00:20:34,480 --> 00:20:40,120
+If it is working on your device then let me know, but alright I mean here you will see
+
+266
+00:20:40,200 --> 00:20:45,300
+can't turn on torch because the light isn't used but I don't know why I am not able to
+
+267
+00:20:45,360 --> 00:20:49,780
+control it, but it's fine I mean if this is working then everything is definitely going
+
+268
+00:20:49,900 --> 00:20:51,200
+to work perfectly.
+
+269
+00:20:51,500 --> 00:20:57,520
+So, this is the end of our this shifter and in this shifter we have talked about how you
+
+270
+00:20:57,560 --> 00:20:59,200
+can use camera.
+
+271
+00:20:59,690 --> 00:20:59,860
+Perfect.
+
+272
+00:21:00,070 --> 00:21:03,380
+So, this is the end of the shifter and see you next time.
+

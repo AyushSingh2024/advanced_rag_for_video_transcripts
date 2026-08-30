@@ -1,0 +1,1028 @@
+1
+00:00:00,000 --> 00:00:03,680
+Alright everyone and welcome to chapter number 3.
+
+2
+00:00:03,720 --> 00:00:07,600
+In this chapter we are going to implement the index page where we are actually going
+
+3
+00:00:07,700 --> 00:00:13,500
+to see that how you can implement the background images related to the current weather condition
+
+4
+00:00:13,980 --> 00:00:18,180
+and then going to fetch bunch of other parameters and simply going to show that.
+
+5
+00:00:18,700 --> 00:00:23,220
+onto this screen. So this is going to very interesting chapter for you guys.
+
+6
+00:00:23,440 --> 00:00:27,560
+So let's move ahead and start implementing it. First thing is, I'm not
+
+7
+00:00:27,720 --> 00:00:31,300
+I'm not liking this. You can see that. This index thing.
+
+8
+00:00:31,560 --> 00:00:33,560
+So for that, let me go to my layout.
+
+9
+00:00:35,200 --> 00:00:39,100
+And inside my layout, I wanted to hide this up.
+
+10
+00:00:39,280 --> 00:00:41,920
+So for that, I can simply say screen options.
+
+11
+00:00:43,190 --> 00:00:49,500
+And this is screen options have something known as header shown and mark this as a false.
+
+12
+00:00:50,680 --> 00:00:51,200
+Perfect.
+
+13
+00:00:51,660 --> 00:00:53,300
+So hopefully this will work now.
+
+14
+00:00:54,430 --> 00:00:54,620
+Okay.
+
+15
+00:00:54,621 --> 00:00:55,860
+I think I need to reload it.
+
+16
+00:00:56,030 --> 00:00:57,739
+So let me just wait for a few seconds.
+
+17
+00:01:01,160 --> 00:01:05,420
+Okay, so now you can see that now everything is in proper sync and we are not be able to
+
+18
+00:01:05,500 --> 00:01:06,760
+see anything perfect.
+
+19
+00:01:08,270 --> 00:01:08,400
+Nice.
+
+20
+00:01:09,860 --> 00:01:10,020
+Cool.
+
+21
+00:01:10,210 --> 00:01:10,840
+So what next?
+
+22
+00:01:11,240 --> 00:01:14,700
+Next is simply go inside your index dot TSX.
+
+23
+00:01:15,200 --> 00:01:23,659
+And inside the index.tsx, first thing is simply coming to here and use your hook that you
+
+24
+00:01:23,759 --> 00:01:25,840
+have created with the name of use weather.
+
+25
+00:01:26,939 --> 00:01:29,659
+This use weather is going to have lot of methods.
+
+26
+00:01:31,039 --> 00:01:33,079
+So let me just add them one by one.
+
+27
+00:01:33,900 --> 00:01:40,960
+First, first variable that we have is the loading, then error message, weather forecast
+
+28
+00:01:41,360 --> 00:01:46,360
+AQI, get location weather, this is the method and this is also the method.
+
+29
+00:01:46,840 --> 00:01:46,960
+Perfect.
+
+30
+00:01:47,800 --> 00:01:47,880
+Nice.
+
+31
+00:01:48,470 --> 00:01:52,400
+And first thing first, if we are in the loading state, perfect.
+
+32
+00:01:52,890 --> 00:01:59,680
+So for that, what I can do, I can return a view and that view will basically show us
+
+33
+00:01:59,780 --> 00:02:01,080
+the activity indicator.
+
+34
+00:02:01,500 --> 00:02:07,040
+So, this activity indicator is basically we can say or loading kind of things.
+
+35
+00:02:07,460 --> 00:02:11,920
+So first of all, I think let me paste my all of the designs that I need.
+
+36
+00:02:13,060 --> 00:02:17,360
+So, let me come into here and at the bottom of it, I will paste it.
+
+37
+00:02:18,300 --> 00:02:25,460
+Perfect and then let me import my style sheet and let me also import this platform.
+
+38
+00:02:26,320 --> 00:02:26,920
+Perfect.
+
+39
+00:02:27,200 --> 00:02:30,060
+Let me also import this status bar.
+
+40
+00:02:31,040 --> 00:02:31,160
+Nice.
+
+41
+00:02:31,450 --> 00:02:34,340
+So if I save it, nothing is happened.
+
+42
+00:02:36,840 --> 00:02:37,360
+Why?
+
+43
+00:02:39,450 --> 00:02:43,420
+Okay, if I reloaded this will definitely going to work, but for now you will see that if
+
+44
+00:02:43,520 --> 00:02:47,820
+you are in a loading state then I wanted to show this.
+
+45
+00:02:48,370 --> 00:02:55,120
+In same way if we have a error message and we don't have any weather then I basically
+
+46
+00:02:55,300 --> 00:02:56,600
+wanted to render this.
+
+47
+00:02:57,600 --> 00:03:02,860
+First of all, let me import the material community icon from expo vector icons.
+
+48
+00:03:05,040 --> 00:03:12,440
+Yes, so you will see that this is rendering a view, a icon and then a touchable opacity
+
+49
+00:03:14,120 --> 00:03:18,580
+and also showing the error message, otherwise a fallback something went wrong.
+
+50
+00:03:19,630 --> 00:03:23,260
+And then we have a simple touchable opacity which is again calling.
+
+51
+00:03:24,000 --> 00:03:26,360
+the get location weather.
+
+52
+00:03:27,340 --> 00:03:31,640
+Alright, so after this what I will do, I will get my background image.
+
+53
+00:03:31,840 --> 00:03:39,140
+So I can simply say const bg image is equals to get background image.
+
+54
+00:03:40,020 --> 00:03:42,680
+They are going to accept the weather dot.
+
+55
+00:03:43,739 --> 00:03:54,019
+weather of 0th index dot main and then second thing is weather dot weather of 0th index
+
+56
+00:03:54,220 --> 00:03:54,980
+dot icon.
+
+57
+00:03:56,200 --> 00:04:01,480
+Alright and then we have very interesting component and that component is I think for
+
+58
+00:04:01,481 --> 00:04:05,260
+the first time we are using here name as image background.
+
+59
+00:04:06,700 --> 00:04:11,720
+Perfect and make sure to import this image background component from the React Native.
+
+60
+00:04:13,320 --> 00:04:16,140
+Okay, nice.
+
+61
+00:04:17,519 --> 00:04:20,440
+And after this, let me again coming to here.
+
+62
+00:04:20,480 --> 00:04:23,180
+So you will see that this is your image background component.
+
+63
+00:04:24,820 --> 00:04:29,800
+And this image background component is going to accept something known as source.
+
+64
+00:04:30,700 --> 00:04:34,280
+And this source is going to have a background image.
+
+65
+00:04:35,140 --> 00:04:37,980
+And then I wanted to show the style.
+
+66
+00:04:39,220 --> 00:04:42,660
+Style is equals to the styles.bg image.
+
+67
+00:04:44,840 --> 00:04:45,500
+Okay.
+
+68
+00:04:46,300 --> 00:04:54,000
+And then I can even have something known as resize, not method, resize mode is equals
+
+69
+00:04:54,200 --> 00:04:56,000
+to cover.
+
+70
+00:04:57,460 --> 00:05:06,780
+Okay, and then they are going to have a simple view that view, let me open a view and that
+
+71
+00:05:06,880 --> 00:05:08,820
+view is going to have a style.
+
+72
+00:05:09,820 --> 00:05:13,479
+This style is have something on as styles.overlay.
+
+73
+00:05:14,100 --> 00:05:20,920
+Perfect, then we can have a simple safe area view, make sure to import the safe area view
+
+74
+00:05:22,000 --> 00:05:29,860
+and you can even add the style into the safe area view with the name of styles.container.
+
+75
+00:05:30,500 --> 00:05:32,920
+And then they contain a status bar.
+
+76
+00:05:33,800 --> 00:05:41,060
+They have a bar style, bar style is type of light content and then background color of
+
+77
+00:05:41,199 --> 00:05:49,580
+we can say transparent and then translucent and then I will self close this and if I save
+
+78
+00:05:49,680 --> 00:05:53,620
+it ok nothing is showing to us ok, but if I close everything.
+
+79
+00:05:55,180 --> 00:06:04,620
+Expo one start let me close this as well let me reopen it ok and yes now you can see that
+
+80
+00:06:04,680 --> 00:06:10,259
+they are also showing us some warning new expo go version is coming soon so ok when
+
+81
+00:06:10,320 --> 00:06:13,919
+this come we will update our expo go application no problem into it.
+
+82
+00:06:16,080 --> 00:06:22,300
+Okay, so the moment I open it and now you can see that they have already fetched and
+
+83
+00:06:22,380 --> 00:06:27,540
+maybe they will going to ask you for the first time for the location permission, you can
+
+84
+00:06:27,580 --> 00:06:30,020
+definitely allow them and yes look at that.
+
+85
+00:06:30,580 --> 00:06:35,240
+The area in which I live we have definitely a sunny weather, so that's why we are able
+
+86
+00:06:35,400 --> 00:06:36,800
+to see this.
+
+87
+00:06:37,300 --> 00:06:40,300
+So this is the beauty of a react native.
+
+88
+00:06:40,960 --> 00:06:41,060
+Nice.
+
+89
+00:06:41,680 --> 00:06:43,300
+Let's move at we already have a.
+
+90
+00:06:43,700 --> 00:06:50,440
+status bar here, so this is the status bar that you are seeing this one got it and after
+
+91
+00:06:50,520 --> 00:06:56,720
+this what you need to do let's add another component and the name of that component is
+
+92
+00:06:57,100 --> 00:07:04,220
+search bar that accept event name as on search and then we will simply pass the search city
+
+93
+00:07:04,900 --> 00:07:05,340
+method.
+
+94
+00:07:05,900 --> 00:07:12,860
+and let me close everything and let's create this search bar component so into source let
+
+95
+00:07:12,919 --> 00:07:20,820
+me create one components folder then they have a search bar dot tsx rn fes
+
+96
+00:07:21,700 --> 00:07:31,400
+and let me save it. Let me import that from here. Perfect. And then I will save it. And
+
+97
+00:07:31,480 --> 00:07:39,600
+then inside this, yep, we can have on search. Nice. So this on search is basically going
+
+98
+00:07:39,720 --> 00:07:40,720
+to have an interface.
+
+99
+00:07:41,600 --> 00:07:48,960
+Okay, so let me add the interface of search bar prop having accepting the city type of
+
+100
+00:07:49,000 --> 00:07:50,840
+string and returning null.
+
+101
+00:07:51,640 --> 00:07:57,020
+And then what I can do, I can simply add the type for it, which is going to be the search
+
+102
+00:07:57,120 --> 00:07:58,520
+bar props.
+
+103
+00:07:59,880 --> 00:08:03,340
+Okay, implicitly have type any maybe I am adding at the wrong place.
+
+104
+00:08:06,060 --> 00:08:12,520
+Instead what I can do, I will show you something interesting, the better practice and that
+
+105
+00:08:12,660 --> 00:08:15,560
+is let me show you, that is this one.
+
+106
+00:08:16,220 --> 00:08:20,120
+Okay, so you will see that we have a react.fc and they have the search bar props.
+
+107
+00:08:20,140 --> 00:08:21,220
+You can also go with this.
+
+108
+00:08:22,000 --> 00:08:24,300
+And another approach as well.
+
+109
+00:08:25,780 --> 00:08:28,000
+Then they are going to have two thing.
+
+110
+00:08:28,620 --> 00:08:31,260
+First is the query, second thing is the set query.
+
+111
+00:08:32,260 --> 00:08:37,000
+This is equals to use state which is empty string for now.
+
+112
+00:08:37,929 --> 00:08:41,220
+And then what I will do, we can have a handle submit.
+
+113
+00:08:42,419 --> 00:08:46,940
+This handle submit, first of all the query, let me trim this up.
+
+114
+00:08:47,700 --> 00:08:53,380
+so that we don't have any extra spaces from on the left hand side and right hand side
+
+115
+00:08:53,960 --> 00:09:00,080
+and then on search whatever the query is coming simply call it and then set query as empty string
+
+116
+00:09:01,080 --> 00:09:04,720
+perfect and what if I just directly copy and paste my UI here
+
+117
+00:09:05,280 --> 00:09:09,200
+a simple text input you can see that let me import the text input
+
+118
+00:09:10,320 --> 00:09:11,700
+the touchable opacity
+
+119
+00:09:12,200 --> 00:09:18,960
+and material community icon which have the name of magnify and then let me also paste
+
+120
+00:09:19,080 --> 00:09:19,940
+my style here.
+
+121
+00:09:21,260 --> 00:09:27,800
+Okay, so now if I save it, you can see that a search bar, okay and whenever you hit something
+
+122
+00:09:28,310 --> 00:09:30,380
+you can definitely able to see that.
+
+123
+00:09:30,630 --> 00:09:35,500
+Okay, let's say if I just simply hit Jaipur, I think Jaipur have also same weather condition
+
+124
+00:09:35,600 --> 00:09:36,240
+if I am not wrong.
+
+125
+00:09:36,700 --> 00:09:41,320
+Definitely, I can wait for a few seconds and I can have a better implementation for them.
+
+126
+00:09:42,460 --> 00:09:46,000
+Then we are able to see and yes, you can see that I think the same.
+
+127
+00:09:46,740 --> 00:09:58,500
+What if I had something, what if I just say Jammu and now if I had this, okay, maybe because
+
+128
+00:09:58,660 --> 00:10:03,540
+of some reason we are not be able to see the correct weather condition, okay, I will fix
+
+129
+00:10:03,620 --> 00:10:04,220
+that in a while.
+
+130
+00:10:04,580 --> 00:10:05,620
+But now it's okay.
+
+131
+00:10:06,000 --> 00:10:08,060
+We are getting this, no problem.
+
+132
+00:10:08,180 --> 00:10:13,060
+We have a text input, we are able to enter the data and this is how this actually look
+
+133
+00:10:13,140 --> 00:10:14,040
+to us, no problem.
+
+134
+00:10:14,460 --> 00:10:22,560
+Let's move ahead and implement two more component, but that is inside the scroll view.
+
+135
+00:10:22,700 --> 00:10:25,940
+So I can first of all get my scroll view from React Native.
+
+136
+00:10:27,000 --> 00:10:31,060
+This scroll view is going to contain a style.
+
+137
+00:10:31,380 --> 00:10:37,420
+This style is type of styles.scroll view.
+
+138
+00:10:39,500 --> 00:10:43,080
+Then we have content container style.
+
+139
+00:10:43,660 --> 00:10:52,260
+This is equal to styles.scroll content and then show vertical scroll indicator as false.
+
+140
+00:10:53,480 --> 00:10:54,220
+Perfect.
+
+141
+00:10:55,200 --> 00:11:00,960
+Then the component we are going to render here is named as current weather.
+
+142
+00:11:02,130 --> 00:11:09,680
+Okay, so let me go inside my components and let me simply create one current weather dot
+
+143
+00:11:09,940 --> 00:11:11,900
+TSX and then R and FES.
+
+144
+00:11:12,680 --> 00:11:17,160
+This is your current weather and then I will import it.
+
+145
+00:11:17,660 --> 00:11:17,740
+Okay.
+
+146
+00:11:19,400 --> 00:11:19,880
+Perfect.
+
+147
+00:11:20,240 --> 00:11:24,000
+So, now you can see that we have this component, no problem.
+
+148
+00:11:24,920 --> 00:11:29,100
+And inside this component, they are again going to accept two things.
+
+149
+00:11:30,080 --> 00:11:31,000
+First is the weather.
+
+150
+00:11:32,460 --> 00:11:34,680
+Second is the AQI.
+
+151
+00:11:35,600 --> 00:11:35,700
+Okay.
+
+152
+00:11:36,160 --> 00:11:38,600
+And then they are again going to have an interface.
+
+153
+00:11:38,940 --> 00:11:40,260
+So let me get my interface.
+
+154
+00:11:41,340 --> 00:11:46,260
+Yes, they are type of weather data and they are type of AQI data.
+
+155
+00:11:46,700 --> 00:11:56,980
+easy. And then I can again put the types for it. Nice. And then what next? Next is let
+
+156
+00:11:57,040 --> 00:12:04,140
+me get the width here. So width will basically come from dimensions.get of window whatever
+
+157
+00:12:04,320 --> 00:12:06,360
+the width for it and we are getting it nice.
+
+158
+00:12:08,180 --> 00:12:14,240
+And what I will actually do here, I will try to copy and paste the entire component and
+
+159
+00:12:14,980 --> 00:12:18,340
+I think we can write bunch of them just to have a better understanding.
+
+160
+00:12:18,600 --> 00:12:21,000
+First of all, let me paste all of the styles that I have.
+
+161
+00:12:22,900 --> 00:12:24,940
+So we have a lot of styles.
+
+162
+00:12:25,340 --> 00:12:32,880
+Let me show you them one by one container, a city name, data text, temperature container.
+
+163
+00:12:34,100 --> 00:12:40,860
+And then we have weather icon, temperature, weather descriptions, stats grid, stat item,
+
+164
+00:12:41,560 --> 00:12:43,400
+stat value, stat a lot of them.
+
+165
+00:12:44,420 --> 00:12:51,560
+Okay, so one component that we need to create right now is name as stat item.
+
+166
+00:12:52,839 --> 00:13:01,360
+This stat item is going to accept the icon, the value, the label and last thing is the
+
+167
+00:13:01,860 --> 00:13:02,100
+color.
+
+168
+00:13:03,079 --> 00:13:03,160
+Okay.
+
+169
+00:13:03,670 --> 00:13:07,740
+And they are the type of we can say this object.
+
+170
+00:13:08,019 --> 00:13:09,440
+First of all, let me off my AI.
+
+171
+00:13:11,800 --> 00:13:14,660
+Okay, and after adding this, let me add the type.
+
+172
+00:13:15,190 --> 00:13:21,740
+So the type is icon, which is the type of string, then we have a value, then we have
+
+173
+00:13:21,820 --> 00:13:24,600
+all of this and then let me simply open it.
+
+174
+00:13:25,020 --> 00:13:26,040
+Okay, nice.
+
+175
+00:13:26,750 --> 00:13:33,160
+And then they are going to use something known as a glass view component, although we don't
+
+176
+00:13:33,320 --> 00:13:35,280
+need this glass view component.
+
+177
+00:13:36,560 --> 00:13:38,120
+So what we can do?
+
+178
+00:13:38,600 --> 00:13:44,940
+Okay, so let me just come into here and here I will create one more new component with
+
+179
+00:13:44,941 --> 00:13:47,620
+the name of glass view dot TSX.
+
+180
+00:13:47,800 --> 00:13:51,740
+This is a simple copy and paste component because we don't have any style for it.
+
+181
+00:13:52,089 --> 00:13:53,819
+You can even definitely enhance that.
+
+182
+00:13:54,329 --> 00:14:00,480
+So this is a simple reusable view component, nothing else, which accept our children and
+
+183
+00:14:00,560 --> 00:14:00,880
+a style.
+
+184
+00:14:02,100 --> 00:14:02,180
+Okay.
+
+185
+00:14:02,519 --> 00:14:05,660
+So, this is basically just going to return you.
+
+186
+00:14:07,020 --> 00:14:11,980
+And again, simply coming to here and then they are going to return you a glass view,
+
+187
+00:14:12,960 --> 00:14:19,940
+which is the design of this stat item and then material community icon from here.
+
+188
+00:14:20,280 --> 00:14:20,380
+Perfect.
+
+189
+00:14:21,680 --> 00:14:21,920
+All right.
+
+190
+00:14:21,960 --> 00:14:24,780
+So this is the component which is basically a stat item.
+
+191
+00:14:24,781 --> 00:14:26,640
+I'm going to show all the stats that we have.
+
+192
+00:14:27,100 --> 00:14:27,540
+Very easy.
+
+193
+00:14:27,900 --> 00:14:33,060
+And after this what I wanted to do is to simply coming to here and then we will simply implement
+
+194
+00:14:33,110 --> 00:14:33,640
+the style.
+
+195
+00:14:33,780 --> 00:14:40,560
+Style is equals to styles.container and this container is first of all going to show the
+
+196
+00:14:40,960 --> 00:14:44,680
+city name and we can say whatever the date time is happening.
+
+197
+00:14:44,900 --> 00:14:49,380
+If I save it, you can see that, I don't know you are able to see it not, yes look at that.
+
+198
+00:14:49,980 --> 00:14:55,900
+This is how they are basically showing the Gautam Buddha Nagar India, Monday February
+
+199
+00:14:56,120 --> 00:14:57,600
+to 2026.
+
+200
+00:14:57,780 --> 00:15:02,680
+So this is how we are basically showing it in same way, I can show the image.
+
+201
+00:15:03,260 --> 00:15:04,100
+So what is the image?
+
+202
+00:15:04,380 --> 00:15:05,960
+Let me show you below this text.
+
+203
+00:15:07,220 --> 00:15:08,340
+I will paste this.
+
+204
+00:15:08,740 --> 00:15:11,100
+So let me import my image component.
+
+205
+00:15:11,600 --> 00:15:18,120
+So now you can see that this is a image temperature container showing the image URL.
+
+206
+00:15:18,840 --> 00:15:23,160
+So let me get this function and if I save it, yes, this is the cloud basically I am
+
+207
+00:15:23,200 --> 00:15:29,140
+getting and then the temperature in a round off format is 14 degree Celsius.
+
+208
+00:15:29,680 --> 00:15:29,920
+All right.
+
+209
+00:15:31,279 --> 00:15:36,759
+And after this what I can do I can even show the description for the temperature.
+
+210
+00:15:37,360 --> 00:15:45,839
+So if I save it scattered clouds okay and then I can show all the stats that we have.
+
+211
+00:15:46,000 --> 00:15:51,279
+So if I save it and if I do something like this I hope you guys are able to see this.
+
+212
+00:15:51,459 --> 00:15:55,740
+This is the wind, this is the humidity, this is the fields like and this is the AQI that
+
+213
+00:15:55,880 --> 00:15:56,180
+we have.
+
+214
+00:15:56,600 --> 00:16:03,860
+So, this is the stat item 1, stat item 2, 3 and if we have any AQI then we wanted to
+
+215
+00:16:04,399 --> 00:16:05,360
+show the AQI.
+
+216
+00:16:07,110 --> 00:16:10,319
+Okay, so this is how this basically shows to us, nice.
+
+217
+00:16:10,529 --> 00:16:13,160
+So this is your current weather component.
+
+218
+00:16:13,920 --> 00:16:20,980
+Let me go to index and one more component that you wanted to show if there is something
+
+219
+00:16:21,079 --> 00:16:22,440
+known as forecast list.
+
+220
+00:16:22,720 --> 00:16:24,319
+What if I change this?
+
+221
+00:16:25,000 --> 00:16:29,820
+to let's just say Delhi.
+
+222
+00:16:31,160 --> 00:16:33,700
+Okay, and if I just simply press on search.
+
+223
+00:16:34,360 --> 00:16:37,820
+Okay, so now you can see that this is how the Delhi's temperature is.
+
+224
+00:16:38,380 --> 00:16:40,940
+What if I change this to Jaapur?
+
+225
+00:16:41,400 --> 00:16:43,440
+And now if I search it, look at that.
+
+226
+00:16:43,600 --> 00:16:45,480
+This is how they basically look.
+
+227
+00:16:47,200 --> 00:16:51,320
+In same way you can change the city and just get the temperature out of it.
+
+228
+00:16:51,500 --> 00:16:54,160
+In Pune, we have 27 degree, okay.
+
+229
+00:16:54,740 --> 00:16:55,720
+And this is the clear sky.
+
+230
+00:16:56,060 --> 00:16:57,600
+This is all the...
+
+231
+00:16:58,000 --> 00:17:03,980
+stats that we have when the humidity fees like I think we are not able to get the AQIs
+
+232
+00:17:04,099 --> 00:17:09,839
+but yes this is how this actually work perfect and you can even see on the basis of weather
+
+233
+00:17:09,960 --> 00:17:18,980
+condition we are changing our background images perfect so let me also add one more component
+
+234
+00:17:19,339 --> 00:17:23,640
+That is Namaskar, overcast list dot.
+
+235
+00:17:25,160 --> 00:17:29,840
+TSX and I paste it directly and then let me save it and we will see that.
+
+236
+00:17:29,940 --> 00:17:35,340
+This is basically accepting the forecast data and again the glass view showing whatever
+
+237
+00:17:35,520 --> 00:17:38,380
+the icon we have and the color we have.
+
+238
+00:17:38,610 --> 00:17:38,820
+Okay.
+
+239
+00:17:39,550 --> 00:17:45,320
+We are basically getting the icons name according to the material icon.
+
+240
+00:17:46,320 --> 00:17:52,980
+We see we are using the vector icons, so whatever the correct name we are able to show that.
+
+241
+00:17:53,260 --> 00:17:54,920
+So hopefully this will also work.
+
+242
+00:17:55,080 --> 00:18:00,260
+So below this if I just simply paste the weather forecast list.
+
+243
+00:18:01,500 --> 00:18:10,860
+They are going to accept the data, data have a forecast data and if I save it, so we will
+
+244
+00:18:10,880 --> 00:18:13,820
+see is this going to show us something or not and yes look at that.
+
+245
+00:18:13,960 --> 00:18:17,640
+Below this we have early forecast, this is how they actually look.
+
+246
+00:18:18,100 --> 00:18:26,539
+And, if I again shift this to Delhi and search this, okay, so you can see that definitely
+
+247
+00:18:26,780 --> 00:18:33,580
+you can play more with background colors because right now they are not able to show us in
+
+248
+00:18:33,660 --> 00:18:35,059
+a better format, okay.
+
+249
+00:18:35,610 --> 00:18:39,760
+So, this is how this actually look and you can see all the weather forecast that we have
+
+250
+00:18:39,840 --> 00:18:41,260
+in a proper scrawlable view.
+
+251
+00:18:42,169 --> 00:18:42,960
+Yes, look at that.
+
+252
+00:18:43,400 --> 00:18:46,200
+This is how this actually looks to us.
+
+253
+00:18:46,540 --> 00:18:51,220
+So I hope you guys are able to understand this, how we have built this mini application,
+
+254
+00:18:51,370 --> 00:18:55,840
+a mini weather application, but such a really useful application for it.
+
+255
+00:18:56,150 --> 00:19:01,560
+With this, this is the end of our weather app intermediate level project.
+
+256
+00:19:01,820 --> 00:19:02,780
+Hopefully you love it.
+
+257
+00:19:03,370 --> 00:19:06,960
+So for now, bye bye take care, see ya and see you next time.
+

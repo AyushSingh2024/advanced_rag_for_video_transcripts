@@ -1,0 +1,352 @@
+1
+00:00:00,580 --> 00:00:05,560
+Here everyone and in this lecture we will learn how to create dynamic routes with the
+
+2
+00:00:05,640 --> 00:00:06,940
+help of expo routers.
+
+3
+00:00:07,780 --> 00:00:14,860
+Dynamic routes let you build screen that accept parameters from the URL or we can say navigation
+
+4
+00:00:15,080 --> 00:00:21,060
+path just like dynamic URL on the web and this makes your navigation feel more flexible.
+
+5
+00:00:21,600 --> 00:00:29,680
+Perfect. So what are dynamic routes? So in let's say in Xpo route basically here you
+
+6
+00:00:29,740 --> 00:00:38,140
+wanted to have let's say you are on post. But as you know we have multiple posts onto
+
+7
+00:00:38,220 --> 00:00:43,000
+our platform like post one, post two and each post have different ID.
+
+8
+00:00:43,500 --> 00:00:47,600
+And for each post, I wanted to have a route segment.
+
+9
+00:00:48,750 --> 00:00:53,300
+All right, for each post, I wanted to have a separate route.
+
+10
+00:00:54,510 --> 00:01:02,260
+So instead of separately creating for every post ID, we can use something known as dynamic
+
+11
+00:01:02,400 --> 00:01:07,520
+routes because let's say right now you only have three posts.
+
+12
+00:01:07,630 --> 00:01:09,300
+So you are basically going to create.
+
+13
+00:01:10,200 --> 00:01:19,759
+We can say post1.tsx exactly post2.tsx, post3.tsx and in future let's say you have millions
+
+14
+00:01:19,840 --> 00:01:27,039
+of posts then is this feasible to create post1 to post1 million.tsx?
+
+15
+00:01:27,500 --> 00:01:27,759
+No.
+
+16
+00:01:28,240 --> 00:01:30,979
+This is where the use of dynamic routes come.
+
+17
+00:01:31,200 --> 00:01:33,740
+Perfect, so how this actually work?
+
+18
+00:01:34,250 --> 00:01:38,119
+This is going to be basically work something like square notation.
+
+19
+00:01:38,960 --> 00:01:44,659
+Perfect, so you are basically going to use your parameters as we can say brackets and
+
+20
+00:01:44,860 --> 00:01:51,259
+explore outer automatically treat that parameter as a variable in the path and then with the
+
+21
+00:01:51,299 --> 00:01:56,360
+help of some hook, we will going to understand that in a while, you can basically create
+
+22
+00:01:56,479 --> 00:01:57,259
+dynamic routes.
+
+23
+00:01:57,700 --> 00:02:04,539
+Let's say if I just try to give you an example of this, so you can treat this as a dynamic
+
+24
+00:02:04,680 --> 00:02:04,820
+route.
+
+25
+00:02:04,960 --> 00:02:10,759
+Let's say we have a app router and inside this app router we have this post and each
+
+26
+00:02:10,860 --> 00:02:17,120
+post have this unique square bracket and inside that square bracket we basically have something
+
+27
+00:02:17,260 --> 00:02:18,180
+on as post ID.
+
+28
+00:02:18,700 --> 00:02:21,300
+So, this post ID is a dynamic route.
+
+29
+00:02:21,620 --> 00:02:27,920
+So, every time for post one, this one is going to replace this post ID same for two, same
+
+30
+00:02:28,000 --> 00:02:30,739
+for the one million that we have perfect.
+
+31
+00:02:30,860 --> 00:02:34,959
+So, by doing this, we are going to follow the best practice.
+
+32
+00:02:35,660 --> 00:02:39,340
+So, now let's move ahead and we'll see how you can basically create it.
+
+33
+00:02:40,000 --> 00:02:46,320
+So, for that, let me go to my VS Code and inside this app, let's say inside this profile,
+
+34
+00:02:46,880 --> 00:02:49,700
+we have this user, but let's take the post example.
+
+35
+00:02:50,700 --> 00:02:55,460
+So let me say this as a post and inside this post create a new file.
+
+36
+00:02:56,000 --> 00:03:03,520
+and use the square bracket here and let me call this as a post ID dot TSX. Easy step number one is done.
+
+37
+00:03:03,760 --> 00:03:14,060
+Then simply initialize a React component as RNFES and instead of this you can simply say this as post ID screen.
+
+38
+00:03:16,580 --> 00:03:21,860
+Perfect. Now how you can use it and how you can basically design it to see.
+
+39
+00:03:21,980 --> 00:03:24,300
+So for that let me just add some basic design.
+
+40
+00:03:25,200 --> 00:03:31,280
+So, I have just basically added a container which is centralizing everything and then
+
+41
+00:03:31,379 --> 00:03:34,280
+a basic title with font size and font weight, easy.
+
+42
+00:03:36,220 --> 00:03:40,780
+And then let me just simply use that here for now.
+
+43
+00:03:42,820 --> 00:03:46,780
+This one and you might be thinking from where this post ID will come.
+
+44
+00:03:47,000 --> 00:03:50,180
+So for that, we have this hook.
+
+45
+00:03:50,320 --> 00:03:56,540
+So first of all, let me extract post ID from a use local search param.
+
+46
+00:03:57,600 --> 00:04:00,180
+Easy and definitely you can give type to it.
+
+47
+00:04:00,320 --> 00:04:02,600
+But for now, let me just simply use it.
+
+48
+00:04:03,120 --> 00:04:09,400
+And this is coming from expo router and yeah, our dynamic route is up and running.
+
+49
+00:04:09,959 --> 00:04:10,040
+Perfect.
+
+50
+00:04:11,500 --> 00:04:17,600
+and close it. Now how you can visit to this page? Very easy, nothing is rocket science
+
+51
+00:04:17,839 --> 00:04:23,520
+here, you can simply create a link. This link will going to be redirect myself, let's say
+
+52
+00:04:23,600 --> 00:04:29,960
+post id page and then here let me off my AI, disturbing me a lot.
+
+53
+00:04:30,300 --> 00:04:36,340
+And here I can simply say and you will see that we have a suggestion this one, but instead
+
+54
+00:04:36,539 --> 00:04:41,080
+of passing something like this, I can pass some random number.
+
+55
+00:04:41,800 --> 00:04:43,620
+Is the ignore this type error for now?
+
+56
+00:04:43,729 --> 00:04:51,460
+And if I save it and now if I press this post ID page, you will see I am redirected to this
+
+57
+00:04:51,539 --> 00:04:52,460
+dynamic route.
+
+58
+00:04:52,740 --> 00:04:55,159
+And if I just change this number to 1.
+
+59
+00:04:55,600 --> 00:05:00,560
+And once again, I coming to here once again, if I press, you will see data is coming as one.
+
+60
+00:05:00,620 --> 00:05:05,360
+So this means I need not to create a separate route for each ID.
+
+61
+00:05:06,040 --> 00:05:08,480
+Instead, I can go with this notation.
+
+62
+00:05:09,800 --> 00:05:10,260
+Make sense.
+
+63
+00:05:10,960 --> 00:05:19,300
+I hope so. This is not any rocket science. And again, in same way, you can create nested, we can say dynamic route as well.
+
+64
+00:05:19,420 --> 00:05:21,320
+Let's say inside this post ID.
+
+65
+00:05:21,800 --> 00:05:25,060
+And into this, you again wanted to create some folder.
+
+66
+00:05:25,250 --> 00:05:31,800
+We can say post detail and this post detail inside this, we have some other data as well.
+
+67
+00:05:31,900 --> 00:05:35,240
+So you can create nested IDs as well.
+
+68
+00:05:35,629 --> 00:05:36,979
+So let's ignore that for now.
+
+69
+00:05:37,220 --> 00:05:38,879
+For now, you just focus over this.
+
+70
+00:05:39,020 --> 00:05:43,199
+This is how you can create dynamic routes inside your application.
+
+71
+00:05:43,599 --> 00:05:43,699
+Perfect.
+
+72
+00:05:43,729 --> 00:05:46,560
+And make sure to keep this thing in mind.
+
+73
+00:05:47,300 --> 00:05:52,259
+The name you are writing here is going to be destructured from here.
+
+74
+00:05:52,419 --> 00:05:57,159
+Don't misspell this otherwise you are going to be encountered with an error.
+
+75
+00:05:58,440 --> 00:05:58,580
+Perfect.
+
+76
+00:05:59,159 --> 00:06:04,780
+And again, as I say, you can definitely use some advanced routing nested routing techniques.
+
+77
+00:06:04,919 --> 00:06:08,460
+Let's say this is just a basic thing, but you can even go with this approach.
+
+78
+00:06:09,200 --> 00:06:16,220
+Like you have app inside this app you have this users, users we have user ID that have
+
+79
+00:06:16,700 --> 00:06:19,120
+post and then we have post ID for it.
+
+80
+00:06:19,240 --> 00:06:23,720
+So yes this is how you can even create nested dynamic routes as well.
+
+81
+00:06:23,750 --> 00:06:28,680
+So I am assuming you guys can do this and take this as an assignment and try to implement
+
+82
+00:06:28,920 --> 00:06:30,240
+that by yourself.
+
+83
+00:06:30,800 --> 00:06:31,539
+Perfect.
+
+84
+00:06:32,539 --> 00:06:37,879
+So yeah, this is pretty much it for this dynamic routes and from next chapter we are
+
+85
+00:06:37,919 --> 00:06:43,580
+going to understand more about we can say cache all route segment and then we can move
+
+86
+00:06:43,699 --> 00:06:45,699
+to layout and we have a lot of things to cover.
+
+87
+00:06:45,740 --> 00:06:46,780
+So don't worry about it.
+
+88
+00:06:47,099 --> 00:06:50,860
+But for now, this is pretty much it and see you next time.
+

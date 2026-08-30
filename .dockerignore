@@ -1,0 +1,28 @@
+# Read from the build context root, which is now the repository root rather than
+# backend/. Every pattern below is anchored there — this is why the paths carry a
+# `backend/` prefix and why several use `**/`: a bare `.env` would no longer match
+# `backend/.env`, and that file holds a live OPENAI_API_KEY.
+**/node_modules
+**/.env
+.git
+**/coverage
+**/data/private
+**/*.log
+
+# Patterns match the whole relative path, so a bare `.DS_Store` would only catch
+# the one at the root. macOS scatters them through every transcript folder.
+**/.DS_Store
+
+# The image serves; it never ingests. At runtime the only thing needed from
+# transcripts/ is the spine named by CURRICULUM_PATH, so the 87 lessons and the
+# concept-graph cache stay out of the build context — about 4.8 MB of 5.4 MB.
+# Keep backend/transcripts/class-subtitle/curriculum.json.
+**/transcripts/**/*.vtt
+**/transcripts/**/*.srt
+**/transcripts/**/concept-graph*.json
+**/transcripts/**/transcript-manifest.json
+
+# Documentation and tests are not needed to run the server. frontend/public is
+# deliberately absent from this list: the server serves it.
+**/*.md
+backend/test

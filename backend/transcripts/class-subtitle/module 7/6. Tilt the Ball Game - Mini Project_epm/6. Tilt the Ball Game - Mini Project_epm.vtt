@@ -1,0 +1,254 @@
+WEBVTT
+
+00:00:00.739 --> 00:00:04.019
+Alright everyone and welcome to a mini project video.
+
+00:00:04.240 --> 00:00:10.520
+In this video with the help of our expo sensors we are going to create a tilt game mini project
+
+00:00:10.521 --> 00:00:13.360
+like we are into the same project that you can see this.
+
+00:00:14.010 --> 00:00:18.780
+But with the help of accelerometer we are going to create a tilt game.
+
+00:00:19.980 --> 00:00:27.720
+project. Perfect. So for that, let's move ahead and reset this towards the perfect.
+
+00:00:27.840 --> 00:00:33.440
+So now let's move ahead and first thing first, whatever the things that I need to build this,
+
+00:00:34.580 --> 00:00:35.900
+Let me import that.
+
+00:00:36.400 --> 00:00:44.540
+So, I need accelerometer, status bar and then use effect, use state, dimensions, style sheet,
+
+00:00:44.740 --> 00:00:46.080
+text and view.
+
+00:00:47.500 --> 00:00:47.780
+Perfect.
+
+00:00:48.100 --> 00:00:52.260
+And then initially first of all I wanted to get the width of my screen.
+
+00:00:52.460 --> 00:01:00.020
+So for that I wanted to use dimensions.get and I need for window.
+
+00:01:00.680 --> 00:01:01.000
+Perfect.
+
+00:01:02.600 --> 00:01:11.240
+I can simply say box_size is equal to with -40.
+
+00:01:13.619 --> 00:01:18.800
+And then let me create a ball_size is equal to 30.
+
+00:01:20.680 --> 00:01:30.640
+And, inside this I wanted you to set a position. So, position and then this is going to be
+
+00:01:30.641 --> 00:01:36.280
+set position and then use state for it and for x-axis.
+
+00:01:37.100 --> 00:01:46.320
+Whatever, whatever the box size minus the ball size and then divided by 2, so that we
+
+00:01:46.330 --> 00:01:55.340
+keep that in centre kind of cool, is not as constant.
+
+00:01:56.000 --> 00:02:01.700
+But we have that and same thing we have for this.
+
+00:02:02.500 --> 00:02:02.900
+Perfect.
+
+00:02:04.340 --> 00:02:05.780
+What is happening?
+
+00:02:05.979 --> 00:02:09.060
+Alright, so we don't equal to this is going to become minus.
+
+00:02:10.440 --> 00:02:14.640
+And from accelerometer we can have the x and y axis values.
+
+00:02:15.000 --> 00:02:19.760
+So let's get a sensor values and set sensor values.
+
+00:02:20.200 --> 00:02:29.980
+And this is equals to U state and then I can have x-axis as 0 and y-axis as 0.
+
+00:02:30.110 --> 00:02:30.640
+All right.
+
+00:02:31.180 --> 00:02:34.340
+And then what we can do basically right now.
+
+00:02:34.819 --> 00:02:35.540
+Let's move ahead.
+
+00:02:36.200 --> 00:02:39.860
+And first of all, let me initialize my design.
+
+00:02:40.000 --> 00:02:41.780
+So we have entire style.
+
+00:02:42.760 --> 00:02:44.459
+Let me simply paste it here.
+
+00:02:44.660 --> 00:02:44.920
+Perfect.
+
+00:02:45.080 --> 00:02:53.640
+So all the styles, container, title, game box, ball, info container, info text and instructions.
+
+00:02:54.940 --> 00:02:57.819
+And then let me paste my entire view for it.
+
+00:02:58.120 --> 00:03:03.060
+So let me copy the entire view and let me paste it.
+
+00:03:04.240 --> 00:03:11.300
+All right, and if I save it right now and try to close this and bunnx expose start once
+
+00:03:11.301 --> 00:03:19.900
+again and then let me simply press A. So this is going to open this onto Android and let
+
+00:03:19.901 --> 00:03:21.140
+me reload it.
+
+00:03:21.160 --> 00:03:21.860
+All right.
+
+00:03:24.040 --> 00:03:28.020
+And you will see UI something like this.
+
+00:03:28.440 --> 00:03:28.700
+Perfect.
+
+00:03:29.400 --> 00:03:32.800
+So, what like you can see that right now my ball is in center.
+
+00:03:33.500 --> 00:03:33.720
+Perfect.
+
+00:03:33.900 --> 00:03:40.120
+Every time when I move my screen, I wanted to see the position of my ball where it is
+
+00:03:40.121 --> 00:03:40.820
+actually going.
+
+00:03:42.360 --> 00:03:45.840
+So for that I can simply use my use effect.
+
+00:03:46.600 --> 00:03:52.440
+And this use effect is basically something like this.
+
+00:03:52.490 --> 00:03:55.100
+Like we have here an empty dependency.
+
+00:03:56.960 --> 00:04:05.260
+And what I can do every 2 milliseconds, 20 milliseconds, I wanted to add a update interval
+
+00:04:05.460 --> 00:04:09.160
+to set update interval is going to be 20.
+
+00:04:10.000 --> 00:04:12.920
+And then we have const subs.
+
+00:04:13.840 --> 00:04:23.100
+encryption is equals to accelerometer dot add listener then we have a basic data and
+
+00:04:23.139 --> 00:04:33.139
+let first of all set sensor values as x is going to be data dot x and for y data dot
+
+00:04:33.380 --> 00:04:41.479
+y all right and for positioning set position whatever the previous position is coming and
+
+00:04:41.500 --> 00:04:49.880
+And inside this first of all I need a sensitivity and then we are calculating the new position
+
+00:04:49.900 --> 00:04:56.400
+by multiplying this whatever the sensitivity is and then we are changing the position for
+
+00:04:56.401 --> 00:04:56.680
+it.
+
+00:04:56.720 --> 00:05:04.380
+So, for x-axis ball size minus box size and new position will come and then we are returning
+
+00:05:04.381 --> 00:05:06.220
+the new value of my ball.
+
+00:05:07.180 --> 00:05:07.580
+Perfect.
+
+00:05:07.720 --> 00:05:09.920
+And if I save it, look at that.
+
+00:05:10.480 --> 00:05:13.800
+And I can also unsubscribe to this.
+
+00:05:14.020 --> 00:05:15.560
+So this is going to be return.
+
+00:05:17.080 --> 00:05:21.520
+Call this value and subscription dot remove.
+
+00:05:22.160 --> 00:05:22.360
+All right.
+
+00:05:22.480 --> 00:05:24.600
+And you will see right now my phone is here.
+
+00:05:24.800 --> 00:05:29.419
+And as I keep moving my phone, you will see, look at that.
+
+00:05:29.900 --> 00:05:30.460
+Look at that.
+
+00:05:30.520 --> 00:05:36.360
+How beautifully I can tilt my this phone in different directions.
+
+00:05:37.500 --> 00:05:38.819
+And this is how they are working.
+
+00:05:39.819 --> 00:05:40.819
+Amazing, isn't it?
+
+00:05:40.960 --> 00:05:45.419
+And you will also see the value of this at the bottom of it.
+
+00:05:45.500 --> 00:05:49.220
+So, yep, this is pretty much amazing for it.
+
+00:05:49.340 --> 00:05:51.900
+And if I just try to explain you, this is your sensitivity.
+
+00:05:52.060 --> 00:05:57.360
+Like you will see the new x-axis is whatever the previous value of x and whatever the data
+
+00:05:57.560 --> 00:05:58.820
+is coming from here.
+
+00:05:59.440 --> 00:06:02.200
+Add it and then add a basic sensitivity to it.
+
+00:06:02.500 --> 00:06:07.140
+Easy and same thing same and we are just updating it something like that.
+
+00:06:07.141 --> 00:06:13.240
+this. I know it's bit confusing but it's fine. This is how you can use this. Look at
+
+00:06:13.241 --> 00:06:19.520
+that and take that as an assignment and try to build same applications with the help of
+
+00:06:19.521 --> 00:06:24.880
+other sensors and tag me on Twitter and tag Ateesha on Twitter and we'll see where we
+
+00:06:24.900 --> 00:06:33.480
+can take this to. Alright, so this is the end of our entire module and see you next
+
+00:06:33.481 --> 00:06:33.880
+time.
+

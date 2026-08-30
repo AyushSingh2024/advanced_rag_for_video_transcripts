@@ -1,0 +1,544 @@
+1
+00:00:00,619 --> 00:00:06,280
+Alright everyone and welcome to one more new chapter and we can say one more new project
+
+2
+00:00:06,281 --> 00:00:12,440
+video in this project in this video basically we are going to build something known as wallpaper
+
+3
+00:00:12,540 --> 00:00:13,020
+app.
+
+4
+00:00:13,180 --> 00:00:18,560
+Alright you guys just thinking this is just a simple wallpaper but let me tell you in
+
+5
+00:00:18,561 --> 00:00:22,880
+this app we are going to follow the Pinterest
+
+6
+00:00:23,300 --> 00:00:28,880
+kind of we can say like I am assuming that you guys have used Pinterest.
+
+7
+00:00:29,580 --> 00:00:31,919
+Pinterest has such a nice layouting.
+
+8
+00:00:32,000 --> 00:00:38,420
+So we are definitely going to use the Pinterest layout and then search functionality and lot
+
+9
+00:00:38,460 --> 00:00:42,699
+of filters functionality on the basis of category and on the basis of colors.
+
+10
+00:00:43,480 --> 00:00:43,739
+Yes.
+
+11
+00:00:44,100 --> 00:00:45,840
+So there's a lot of very interesting.
+
+12
+00:00:46,640 --> 00:00:52,500
+project, you can even download that images inside your local phone as well.
+
+13
+00:00:52,700 --> 00:00:55,380
+So we will see that local directory basically.
+
+14
+00:00:55,580 --> 00:00:57,700
+So let's move ahead and start implementing this.
+
+15
+00:00:58,080 --> 00:01:02,840
+So this is the chapter number one for this wallpaper app, which is again a simple project
+
+16
+00:01:03,420 --> 00:01:07,620
+initialization and we are definitely going to set up the pixabay APIs.
+
+17
+00:01:07,860 --> 00:01:10,120
+So first step first let me just.
+
+18
+00:01:10,820 --> 00:01:16,880
+Coming to here and then run Bunnx create expo app at the latest.
+
+19
+00:01:17,420 --> 00:01:20,560
+So this is going to create me the latest expo application.
+
+20
+00:01:22,380 --> 00:01:24,560
+Alright and definitely we can wait for it.
+
+21
+00:01:25,600 --> 00:01:29,500
+Alright, so now we have installed it successfully and then what next?
+
+22
+00:01:29,740 --> 00:01:34,100
+Next I can simply say, "Bun run a reset project".
+
+23
+00:01:34,220 --> 00:01:38,320
+So this is going to reset my project and yep, perfect.
+
+24
+00:01:38,580 --> 00:01:39,140
+What next?
+
+25
+00:01:39,759 --> 00:01:44,259
+Next you need to visit a website named as pixabay.com.
+
+26
+00:01:44,400 --> 00:01:48,580
+and make sure you are going to logged in here and the moment you come you will see that
+
+27
+00:01:48,581 --> 00:01:49,700
+we have lot of images.
+
+28
+00:01:50,000 --> 00:01:56,500
+Yes, we are definitely going to use all of this images to on our website on our application
+
+29
+00:01:56,560 --> 00:01:58,680
+and then we can filter them.
+
+30
+00:01:58,800 --> 00:02:04,940
+We can search bunch of another images and on the basis of that images we can select
+
+31
+00:02:04,960 --> 00:02:07,140
+them see them in a proper preview mode.
+
+32
+00:02:07,180 --> 00:02:08,419
+We can even download them.
+
+33
+00:02:08,520 --> 00:02:10,400
+So we'll see and how we can improve it.
+
+34
+00:02:10,401 --> 00:02:17,959
+But the moment you click on explore you will find at the right bottom name as API simply
+
+35
+00:02:17,960 --> 00:02:23,140
+press here and the moment you coming to here simply press on view documentation and at
+
+36
+00:02:23,141 --> 00:02:27,780
+the very bottom you will find your API endpoint and your API key.
+
+37
+00:02:28,019 --> 00:02:29,760
+So make sure to copy this API key.
+
+38
+00:02:29,900 --> 00:02:36,319
+Yes, this is your API key that will coming to here and after this what you can do.
+
+39
+00:02:36,400 --> 00:02:40,079
+You can again simply close everything.
+
+40
+00:02:41,280 --> 00:02:47,379
+Alright and at the top of it let's create one new folder name as services inside this
+
+41
+00:02:47,380 --> 00:02:54,680
+I can simply say pixabay.ts and what I can do.
+
+42
+00:02:55,340 --> 00:02:59,460
+I can first of all paste the API key that we have.
+
+43
+00:02:59,600 --> 00:03:04,660
+Okay, I'll fix it in a while and then this is the image endpoint that we need.
+
+44
+00:03:05,420 --> 00:03:07,540
+Okay, so this is your image endpoint.
+
+45
+00:03:07,940 --> 00:03:15,660
+So first of all, what I will do here, I will simply say const base_url and then this base
+
+46
+00:03:15,780 --> 00:03:18,520
+URL is going to have this URL.
+
+47
+00:03:19,480 --> 00:03:19,880
+Okay.
+
+48
+00:03:20,100 --> 00:03:22,540
+And this is your API key.
+
+49
+00:03:23,100 --> 00:03:28,640
+So for getting this API key, what you will do, let me close everything, simply create
+
+50
+00:03:28,940 --> 00:03:36,140
+constants and inside this constant, I can create one file config dot ts.
+
+51
+00:03:37,140 --> 00:03:43,760
+And at this point, I can have a API underscore key is equals to the key we have.
+
+52
+00:03:43,860 --> 00:03:47,100
+So, let me just cut it out and paste it here.
+
+53
+00:03:47,300 --> 00:03:49,360
+Okay, nice.
+
+54
+00:03:50,860 --> 00:03:51,720
+Then what next?
+
+55
+00:03:52,200 --> 00:03:56,660
+Next is simply let me have the Pixabay image interface.
+
+56
+00:03:56,720 --> 00:03:58,440
+You will see there are lot of things.
+
+57
+00:03:59,500 --> 00:04:00,560
+Let me show you that.
+
+58
+00:04:01,320 --> 00:04:03,740
+This is all the image types that we have.
+
+59
+00:04:03,741 --> 00:04:07,480
+We have ID, we have page URL, we have type.
+
+60
+00:04:08,220 --> 00:04:14,160
+tags, preview URL, preview width, height, web format, web format, web format height,
+
+61
+00:04:14,960 --> 00:04:20,240
+large image, full HDR, lot of things, I mean you can just see and from where I am getting
+
+62
+00:04:20,241 --> 00:04:24,560
+all of this, if you just simply come into here, you will see all of them, yes, something
+
+63
+00:04:25,340 --> 00:04:26,960
+like this, look at that.
+
+64
+00:04:27,640 --> 00:04:29,860
+Got it from here I am getting all of this.
+
+65
+00:04:30,020 --> 00:04:30,380
+Nice.
+
+66
+00:04:30,400 --> 00:04:35,800
+So these are all the pixabay image types that we will get inside the hits.
+
+67
+00:04:36,660 --> 00:04:37,140
+Okay.
+
+68
+00:04:37,780 --> 00:04:38,100
+Nice.
+
+69
+00:04:38,980 --> 00:04:41,200
+And in same way we can have the response.
+
+70
+00:04:41,480 --> 00:04:46,920
+So now we know the response contain total hits and hits.
+
+71
+00:04:47,260 --> 00:04:47,460
+Okay.
+
+72
+00:04:47,461 --> 00:04:49,740
+And yes this is the response that we have.
+
+73
+00:04:50,100 --> 00:04:56,100
+So, what I will do in same way I can create the pixabay response interface that contain
+
+74
+00:04:56,101 --> 00:05:03,380
+total which is type of number total hits again type of number and the hits this hits contain
+
+75
+00:05:03,860 --> 00:05:05,680
+this images which is the array.
+
+76
+00:05:06,660 --> 00:05:12,880
+So, yes this is the array of pixabay image look at that easy perfect now I can simply
+
+77
+00:05:12,881 --> 00:05:16,700
+create one function which is export const.
+
+78
+00:05:19,380 --> 00:05:24,400
+fetch wallpapers is equals to async and then I can simply copy it.
+
+79
+00:05:24,440 --> 00:05:25,880
+Let me off my AI.
+
+80
+00:05:27,420 --> 00:05:34,520
+Alright, and this async is going to accept bunch of information like query, category,
+
+81
+00:05:35,740 --> 00:05:37,400
+colors and then page.
+
+82
+00:05:37,760 --> 00:05:39,480
+Okay, let me paste all of them.
+
+83
+00:05:39,860 --> 00:05:40,260
+Perfect.
+
+84
+00:05:40,500 --> 00:05:45,880
+All right, and after this what I can do, I can simply open one try and catch and then
+
+85
+00:05:45,881 --> 00:05:51,200
+I can say params is equals to new URL search params.
+
+86
+00:05:52,560 --> 00:05:55,400
+And then they are going to contain first thing as the key.
+
+87
+00:05:55,820 --> 00:06:01,740
+So key is equals to API underscore key that will come from constant.
+
+88
+00:06:02,000 --> 00:06:06,960
+Okay, second thing that we wanted to pass here is the query.
+
+89
+00:06:07,300 --> 00:06:09,820
+So query is equals to whatever the query is coming.
+
+90
+00:06:11,220 --> 00:06:16,260
+Then we have image_type and yes, this is the photo.
+
+91
+00:06:17,340 --> 00:06:18,900
+Then we have save search.
+
+92
+00:06:19,500 --> 00:06:26,680
+Safe search is true for now, then we have editors choice, yes that is also true for
+
+93
+00:06:26,681 --> 00:06:36,640
+now, then we can have per page, so per page is equals to 20 and then page, page dot, page
+
+94
+00:06:49,320 --> 00:06:49,480
+dot.
+
+95
+00:06:49,481 --> 00:06:49,501
+I can simply say page.toString and let me just simply format this.
+
+96
+00:06:49,502 --> 00:06:50,840
+And then what I will do if we like if we have a category then I also wanted to append the
+
+97
+00:06:50,841 --> 00:06:53,599
+category inside my search params.
+
+98
+00:06:53,900 --> 00:07:00,720
+This is your category and if we have colors as well in future then I am also wanted to
+
+99
+00:07:00,740 --> 00:07:01,379
+Append.
+
+100
+00:07:07,040 --> 00:07:10,040
+And the colors is equals to colors.
+
+101
+00:07:10,600 --> 00:07:10,919
+Nice.
+
+102
+00:07:11,139 --> 00:07:12,400
+And then what I will have?
+
+103
+00:07:13,040 --> 00:07:22,400
+I can simply say cons response is equals to await fetch and then this fetch is first of
+
+104
+00:07:22,401 --> 00:07:26,760
+all we are going to have the base underscore URL.
+
+105
+00:07:27,300 --> 00:07:27,720
+Very good.
+
+106
+00:07:28,340 --> 00:07:30,400
+and then I can have the another.
+
+107
+00:07:32,640 --> 00:07:40,160
+params.toString, nice, so this is your response, perfect, this is your base URL and all the
+
+108
+00:07:40,161 --> 00:07:47,620
+parameters after appending if we have them something like this, then what I will do if
+
+109
+00:07:47,660 --> 00:07:55,080
+not of response.ok, if the response is not ok then I wanted to first of all console the
+
+110
+00:07:55,081 --> 00:08:00,020
+error so that we can debug them and whatever the text message will come.
+
+111
+00:08:00,400 --> 00:08:10,199
+error and then I can also console it and then I can throw a new error ok perfect. So, console
+
+112
+00:08:10,220 --> 00:08:16,720
+error we are getting the text again consoling them and throwing the error, but if we have
+
+113
+00:08:16,721 --> 00:08:27,280
+a data which is going to be the type of PIXABE response is equals to await response dot JSON.
+
+114
+00:08:28,820 --> 00:08:35,360
+Okay, and then what I will do, I can simply return data.heads because we only need the
+
+115
+00:08:35,480 --> 00:08:35,760
+heads.
+
+116
+00:08:36,380 --> 00:08:39,000
+Okay, what is the heads here?
+
+117
+00:08:39,720 --> 00:08:41,780
+This one, we only need this thing.
+
+118
+00:08:43,299 --> 00:08:44,600
+Okay, nice.
+
+119
+00:08:45,000 --> 00:08:51,640
+So, this is your hits and then what I will do by any chance if we have any error.
+
+120
+00:08:52,200 --> 00:08:56,940
+So, what I will do, I will try to fall back to some data, something like that.
+
+121
+00:08:57,360 --> 00:09:03,300
+So, that we will at least show some data and some demo user, but for now, I think it's
+
+122
+00:09:03,301 --> 00:09:03,640
+fine.
+
+123
+00:09:04,280 --> 00:09:10,080
+This is all the categories we have and by any chance if we have any error, then I can
+
+124
+00:09:10,800 --> 00:09:18,620
+simply coming to here and then I will say console.log the error perfect and instead
+
+125
+00:09:18,720 --> 00:09:29,480
+I will show console.error no problem nice perfect then this we are done with this pixabay.ts
+
+126
+00:09:29,560 --> 00:09:35,800
+so now we are done with configuration and this one last thing if I go to my config.ts
+
+127
+00:09:35,801 --> 00:09:38,360
+You will see right now we only have API key.
+
+128
+00:09:38,600 --> 00:09:44,779
+But as we know we are going to have bunch of filters based on category and based on
+
+129
+00:09:44,780 --> 00:09:45,139
+colours.
+
+130
+00:09:45,819 --> 00:09:50,259
+So, let me first of all add bunch of categories here.
+
+131
+00:09:50,540 --> 00:09:59,759
+So, this is all the categories we have, backgrounds, fashion, nature, science to music got it.
+
+132
+00:10:00,220 --> 00:10:03,959
+In same way we can have the colours constant as well.
+
+133
+00:10:05,260 --> 00:10:12,380
+Grey scale, transparent, red, orange, yellow, green, lot of other colours, ok.
+
+134
+00:10:12,840 --> 00:10:20,340
+So nice, this is just a basic configuration related to the chapter number one of our weather
+
+135
+00:10:20,341 --> 00:10:20,600
+app.
+
+136
+00:10:21,020 --> 00:10:24,960
+So with this we are done with this chapter and see you next time.
+

@@ -1,0 +1,880 @@
+1
+00:00:00,000 --> 00:00:04,300
+Alright everyone and welcome to one more new module.
+
+2
+00:00:05,080 --> 00:00:08,420
+In this module we are going to talk about the EAS.
+
+3
+00:00:09,020 --> 00:00:10,660
+Alright now what is this actually?
+
+4
+00:00:10,860 --> 00:00:18,020
+If I just simply visit to the export documentation and here you will find something known as
+
+5
+00:00:18,180 --> 00:00:18,980
+EAS build.
+
+6
+00:00:19,700 --> 00:00:19,880
+Perfect.
+
+7
+00:00:20,040 --> 00:00:21,940
+And if you simply click on introduction.
+
+8
+00:00:22,600 --> 00:00:32,100
+Now, EAS build is a hosted service for building apps binaries for your expo and the ag native
+
+9
+00:00:32,240 --> 00:00:32,479
+app.
+
+10
+00:00:32,630 --> 00:00:34,880
+Now, what do you mean by this?
+
+11
+00:00:35,730 --> 00:00:42,620
+So first of all, the first question that is arise here is what is actually EAS?
+
+12
+00:00:43,400 --> 00:00:53,300
+So, if I try to explain you, first of all, the full form of EAS is expo application services,
+
+13
+00:00:53,720 --> 00:00:55,760
+alright, this is good, no problem.
+
+14
+00:00:57,270 --> 00:01:02,060
+We can say it is a suit of cloud based services.
+
+15
+00:01:02,530 --> 00:01:03,280
+Yes, what is this?
+
+16
+00:01:04,160 --> 00:01:06,880
+It is a suit of
+
+17
+00:01:08,540 --> 00:01:19,140
+cloud based services which is provided by expo that help developers to build yes in
+
+18
+00:01:19,299 --> 00:01:24,520
+first of all whenever you wanted to build your application build for android build for
+
+19
+00:01:24,640 --> 00:01:34,000
+iOS I'll explain you that then we have submit then and we can say that update their expo
+
+20
+00:01:34,700 --> 00:01:39,020
+and react native applications perfect.
+
+21
+00:01:40,049 --> 00:01:47,340
+So thing we can say that AS is we can say a complete deployment pipeline in the cloud
+
+22
+00:01:48,020 --> 00:01:49,439
+got it alright.
+
+23
+00:01:51,070 --> 00:02:04,679
+Now let us see.
+
+24
+00:02:04,680 --> 00:02:04,700
+So, EAS provide you the three main services.
+
+25
+00:02:04,701 --> 00:02:04,721
+All right, like let's say this is your EAS, they provide you three main services.
+
+26
+00:02:04,722 --> 00:02:06,440
+So, the first services they provide you is EAS bed.
+
+27
+00:02:06,620 --> 00:02:08,259
+Now, what is this EAS bed?
+
+28
+00:02:09,400 --> 00:02:12,900
+This is a cloud based service for EAS.
+
+29
+00:02:14,420 --> 00:02:21,880
+creating iOS and Android app perfect and there's something on as binaries and come to it.
+
+30
+00:02:21,881 --> 00:02:22,320
+What is that?
+
+31
+00:02:22,410 --> 00:02:22,800
+Don't worry.
+
+32
+00:02:23,820 --> 00:02:28,200
+And the another services they provide you is.
+
+33
+00:02:28,900 --> 00:02:32,099
+Yes, very nice service.
+
+34
+00:02:32,360 --> 00:02:34,900
+This is your ES submit and what is this?
+
+35
+00:02:35,590 --> 00:02:39,760
+We can say this is a automated app store submission.
+
+36
+00:02:40,140 --> 00:02:45,940
+Yes, you can automatically submit your app towards the Play Store and towards the App
+
+37
+00:02:46,079 --> 00:02:46,239
+Store.
+
+38
+00:02:46,940 --> 00:02:47,040
+Perfect.
+
+39
+00:02:47,470 --> 00:02:51,340
+So, automated app store submission service.
+
+40
+00:02:52,140 --> 00:02:52,220
+Nice.
+
+41
+00:02:52,930 --> 00:02:53,900
+We have one more thing.
+
+42
+00:02:54,400 --> 00:02:57,700
+And that is known as EAS update.
+
+43
+00:02:58,019 --> 00:02:59,700
+Now what is this EAS update?
+
+44
+00:03:00,579 --> 00:03:05,799
+This EAS update means there is something known as over the air.
+
+45
+00:03:06,120 --> 00:03:06,780
+Now what is this?
+
+46
+00:03:07,739 --> 00:03:11,519
+Let's say you have installed some app.
+
+47
+00:03:12,400 --> 00:03:12,620
+Perfect.
+
+48
+00:03:12,920 --> 00:03:13,579
+This is your app.
+
+49
+00:03:13,659 --> 00:03:15,599
+You have actually installed it.
+
+50
+00:03:16,060 --> 00:03:17,500
+No problem inside your phone.
+
+51
+00:03:18,000 --> 00:03:25,360
+So, without updating them, perfect, let's say this is your actual app the users are using
+
+52
+00:03:25,500 --> 00:03:26,980
+and this is the app you are developing.
+
+53
+00:03:27,400 --> 00:03:32,720
+So this is a dev app which is ready to go into the production, but you don't want user
+
+54
+00:03:32,860 --> 00:03:34,920
+to update their application once again.
+
+55
+00:03:35,380 --> 00:03:37,580
+So there is something known as over the top.
+
+56
+00:03:38,700 --> 00:03:46,560
+over the air updates for your published app will break it down more in upcoming modules.
+
+57
+00:03:46,769 --> 00:03:53,400
+So right now just keep that in mind over the air which is named as OTA.
+
+58
+00:03:54,540 --> 00:03:58,220
+Perfect updates for your yes for your.
+
+59
+00:04:03,459 --> 00:04:07,939
+Now, why do we even need to learn about this?
+
+60
+00:04:08,819 --> 00:04:09,760
+This is the biggest question.
+
+61
+00:04:10,819 --> 00:04:13,040
+Why do we even need the EAS?
+
+62
+00:04:13,319 --> 00:04:15,959
+We already have expo go, we can test that out.
+
+63
+00:04:16,139 --> 00:04:18,539
+So why do we even need EAS?
+
+64
+00:04:18,979 --> 00:04:21,539
+Why EAS actually exist?
+
+65
+00:04:22,200 --> 00:04:30,460
+So, before EAS, let's say you don't have an EAS, Expo Application Services or you wanted
+
+66
+00:04:30,720 --> 00:04:38,280
+to create a, we can say iOS application, you locally wanted to install that application,
+
+67
+00:04:38,380 --> 00:04:40,940
+you wanted to have an APK for Android.
+
+68
+00:04:41,380 --> 00:04:42,620
+So, how you can do that?
+
+69
+00:04:43,080 --> 00:04:44,180
+There is no another way.
+
+70
+00:04:44,280 --> 00:04:45,740
+So, before EAS, yes.
+
+71
+00:04:46,500 --> 00:04:54,100
+What you have to do, let's say you wanted to create a local build environment.
+
+72
+00:04:54,280 --> 00:05:02,880
+So you will going to set up something known as local build environment using Xcode for
+
+73
+00:05:03,020 --> 00:05:04,920
+iOS and Android Studio.
+
+74
+00:05:05,420 --> 00:05:05,540
+Yes.
+
+75
+00:05:07,120 --> 00:05:13,680
+Android Studio for Android and these are such a heavy software which is not going to run
+
+76
+00:05:13,800 --> 00:05:14,960
+in your normal computers.
+
+77
+00:05:15,630 --> 00:05:21,180
+So this is the limitation but by using EAS you need not to set up anything like this.
+
+78
+00:05:21,820 --> 00:05:22,000
+Cool.
+
+79
+00:05:22,750 --> 00:05:29,500
+So for set up a local build environment you need a Xcode and you need a Android Studio
+
+80
+00:05:30,160 --> 00:05:30,500
+before.
+
+81
+00:05:33,200 --> 00:05:33,680
+Perfect.
+
+82
+00:05:34,420 --> 00:05:39,120
+Then we have, let's say you definitely you need to manage certificates, provisioning
+
+83
+00:05:39,200 --> 00:05:40,580
+profiles, there is a lot of things.
+
+84
+00:05:41,360 --> 00:05:45,820
+Then deal with platform specific build configurations, a lot of things.
+
+85
+00:05:46,560 --> 00:05:46,880
+Got it.
+
+86
+00:05:46,960 --> 00:05:48,020
+You have to deal with.
+
+87
+00:05:48,900 --> 00:05:56,699
+a platform specific configs then handle App Store submission individually.
+
+88
+00:05:56,860 --> 00:06:02,880
+Let's say you wanted to submit your app to Play Store or App Store, then you need to
+
+89
+00:06:02,979 --> 00:06:04,160
+individually do that.
+
+90
+00:06:04,850 --> 00:06:05,060
+Perfect.
+
+91
+00:06:05,130 --> 00:06:07,400
+So there's a lot of frictions into it.
+
+92
+00:06:07,900 --> 00:06:16,020
+So, handle app store submissions individually excuse me for my spellings if they are getting
+
+93
+00:06:16,120 --> 00:06:16,300
+wrong.
+
+94
+00:06:16,960 --> 00:06:22,620
+So, but with the help of EAS, EAS simplifies all of this.
+
+95
+00:06:23,940 --> 00:06:24,460
+Got it?
+
+96
+00:06:24,740 --> 00:06:27,200
+You need not to do all of this circus.
+
+97
+00:06:27,400 --> 00:06:34,320
+You just simply coming to here and with the help of ES, they like we have ES build, ES
+
+98
+00:06:34,420 --> 00:06:40,200
+submit, ES update, all of these things are built by keeping these problems in mind.
+
+99
+00:06:41,460 --> 00:06:46,540
+Now you might be thinking, alright, now then what is the use of expo go?
+
+100
+00:06:47,200 --> 00:06:54,660
+So, whenever let's say if I just simply coming to here and let's say if I search for notifications
+
+101
+00:06:55,820 --> 00:07:02,900
+perfect, hopefully I will find the package for it and let me show you or instead of notification
+
+102
+00:07:03,260 --> 00:07:08,200
+let me search for maps perfect, let's say this is your expo map cool.
+
+103
+00:07:08,930 --> 00:07:10,360
+So, what is this look at that.
+
+104
+00:07:11,760 --> 00:07:17,480
+They are pointing out two thing, one is Android and one is iOS, there is nothing as expoGo
+
+105
+00:07:18,000 --> 00:07:18,720
+here, got it?
+
+106
+00:07:18,721 --> 00:07:27,360
+So this means, this expo map will only work inside the development build of Android or
+
+107
+00:07:27,500 --> 00:07:27,800
+iOS.
+
+108
+00:07:28,320 --> 00:07:33,700
+You can't test this expo map inside your expoGo application.
+
+109
+00:07:34,020 --> 00:07:36,280
+So that is the limitation with expoGo.
+
+110
+00:07:36,860 --> 00:07:37,360
+library.
+
+111
+00:07:38,000 --> 00:07:43,660
+that provides access to Google Maps on Android and Apple Maps on iOS.
+
+112
+00:07:44,660 --> 00:07:50,900
+And if we simply coming to here and hopefully they have told us that they are not supported into Expo
+
+113
+00:07:51,420 --> 00:07:56,000
+and yes, if you don't see Expo Go here, this means they don't support.
+
+114
+00:07:56,520 --> 00:08:00,580
+Let's say if I search for an application that support in all of the
+
+115
+00:08:01,200 --> 00:08:07,920
+environments. I think that is Expo image and yes look at that. They are available in Android,
+
+116
+00:08:08,560 --> 00:08:16,300
+iOS and included in Expo Go as well. So this is where the concept of development build
+
+117
+00:08:16,680 --> 00:08:16,760
+come.
+
+118
+00:08:17,300 --> 00:08:25,740
+So, we have now one of the biggest question, expo go versus development build.
+
+119
+00:08:26,960 --> 00:08:28,440
+Alright, this is the question.
+
+120
+00:08:29,419 --> 00:08:30,400
+So, what is expo go?
+
+121
+00:08:30,740 --> 00:08:36,140
+We know that expo go is a pre-built app that is available on App Store and Google Play.
+
+122
+00:08:36,141 --> 00:08:40,320
+We can just simply download that and they act as a sandbox.
+
+123
+00:08:41,480 --> 00:08:41,959
+We know that.
+
+124
+00:08:42,500 --> 00:08:49,540
+If I just simply get this, so let's say this is your expo, go application, perfect, this
+
+125
+00:08:49,600 --> 00:08:51,300
+is your expo, go.
+
+126
+00:08:51,910 --> 00:08:57,120
+So what is this expo go is actually used for, they are basically going to use, they are
+
+127
+00:08:57,180 --> 00:08:58,800
+basically act as a sandbox.
+
+128
+00:09:00,000 --> 00:09:06,000
+And inside this sandbox you can run your Android and iOS application.
+
+129
+00:09:06,730 --> 00:09:07,300
+No problem.
+
+130
+00:09:07,630 --> 00:09:14,940
+You can just simply install this and the moment you hit a Banex expose start or NPX expose
+
+131
+00:09:15,120 --> 00:09:15,300
+start.
+
+132
+00:09:15,301 --> 00:09:17,080
+So this is the basic command that we hit.
+
+133
+00:09:17,300 --> 00:09:23,820
+So, this is the expo start that we hit and by hitting this we know that our development
+
+134
+00:09:24,000 --> 00:09:30,620
+server will start inside the sandbox yes or no simply scanning the QR code we know that
+
+135
+00:09:30,740 --> 00:09:31,140
+cool.
+
+136
+00:09:32,450 --> 00:09:33,839
+But what is the limitation?
+
+137
+00:09:34,200 --> 00:09:35,780
+So, lot of limitations.
+
+138
+00:09:35,870 --> 00:09:41,860
+So, the first limitation that we have is they do not provide you lot of API.
+
+139
+00:09:41,910 --> 00:09:46,880
+So, we can say simply limited to expo SDK APIs only.
+
+140
+00:09:48,150 --> 00:09:52,700
+So, you can only use packages that are already included in expo.
+
+141
+00:09:52,890 --> 00:09:55,620
+So, this is one of the biggest limitation.
+
+142
+00:09:55,990 --> 00:10:01,560
+Let us say we wanted to test out some other APIs that is not available in expo go.
+
+143
+00:10:02,330 --> 00:10:03,360
+So, how we can do so?
+
+144
+00:10:03,600 --> 00:10:05,800
+So, that's why you needed a development build.
+
+145
+00:10:06,329 --> 00:10:10,060
+You can't do anything known as no custom native code.
+
+146
+00:10:11,009 --> 00:10:15,639
+So, you can't use libraries that required native code modification.
+
+147
+00:10:15,920 --> 00:10:20,720
+There's something known as Bluetooth, NFC, specialized camera libraries, lot of that.
+
+148
+00:10:21,480 --> 00:10:24,699
+Need not to dig into all of the topics.
+
+149
+00:10:25,040 --> 00:10:27,319
+Just try to understand what I'm telling you.
+
+150
+00:10:27,700 --> 00:10:32,160
+Then expo go is tied to a specific SDK version.
+
+151
+00:10:32,580 --> 00:10:32,900
+Got it.
+
+152
+00:10:32,960 --> 00:10:39,040
+So there's something known as fixed expo SDK version.
+
+153
+00:10:39,260 --> 00:10:42,980
+So expo go is always tied to a specific SDK version.
+
+154
+00:10:43,020 --> 00:10:46,040
+You can't test and push notification fully.
+
+155
+00:10:46,440 --> 00:10:46,600
+Yes.
+
+156
+00:10:47,100 --> 00:10:53,180
+Like some native features, we can say that behaved differently in expo go and in builds.
+
+157
+00:10:54,020 --> 00:10:54,120
+Cool.
+
+158
+00:10:54,420 --> 00:10:56,500
+These are a bunch of we can say.
+
+159
+00:10:59,199 --> 00:11:05,560
+limitations, one more limitation and that is you cannot, we can say you cannot add a
+
+160
+00:11:05,680 --> 00:11:11,120
+custom icons and splash screens for it, got it?
+
+161
+00:11:11,699 --> 00:11:18,139
+And definitely you cannot test the performance of your application by only, by only relying
+
+162
+00:11:18,339 --> 00:11:19,579
+towards the expo go.
+
+163
+00:11:20,200 --> 00:11:26,620
+So, when to use expogo whenever you wanted to do a quick prototyping we can say whenever
+
+164
+00:11:26,621 --> 00:11:34,980
+you learning something and you only using expo SDKs related APIs, you want a rapid development
+
+165
+00:11:35,620 --> 00:11:40,500
+that's why and in that case you need expogo now.
+
+166
+00:11:40,900 --> 00:11:42,640
+What is development build?
+
+167
+00:11:43,000 --> 00:11:48,020
+Cool, if I just simply add a line here and let me just simply coming to here.
+
+168
+00:11:48,390 --> 00:11:49,880
+Now what is development build?
+
+169
+00:11:50,080 --> 00:11:51,600
+Cool, let me take this.
+
+170
+00:11:53,020 --> 00:11:56,700
+This is your expo again and this time this is a development build.
+
+171
+00:11:57,750 --> 00:11:57,900
+Perfect.
+
+172
+00:11:59,160 --> 00:12:04,860
+So development build we can say that is like creating your own
+
+173
+00:12:06,260 --> 00:12:08,040
+Custom version of expo go.
+
+174
+00:12:08,380 --> 00:12:09,640
+Alright, what do you mean by this?
+
+175
+00:12:09,800 --> 00:12:15,820
+This means you are basically downloading this, we will see that how to create then these
+
+176
+00:12:15,940 --> 00:12:17,380
+things will more clear to you.
+
+177
+00:12:17,880 --> 00:12:25,280
+So just simple meaning of this, creating own custom, yes, own custom version.
+
+178
+00:12:26,100 --> 00:12:28,180
+of expo go.
+
+179
+00:12:28,540 --> 00:12:36,220
+So tailored specifically for that specific project, you have all the native dependencies
+
+180
+00:12:36,480 --> 00:12:37,839
+included inside that.
+
+181
+00:12:38,440 --> 00:12:44,600
+Alright, so what is the, we can say they contain, you can use all the APIs that is available.
+
+182
+00:12:45,279 --> 00:12:46,899
+Alright, so we can say.
+
+183
+00:12:47,900 --> 00:12:55,980
+All code and dependencies is basically already included inside this, all right?
+
+184
+00:12:56,280 --> 00:12:59,960
+All code and dependencies are already into it.
+
+185
+00:13:00,370 --> 00:13:07,420
+Then we can say they have a very nice point, we can say that they act like a debug.
+
+186
+00:13:07,550 --> 00:13:09,900
+Yes, they act like a debug version.
+
+187
+00:13:10,900 --> 00:13:20,620
+of your app. Got it. And we can say this support fast refresh and instant update during development.
+
+188
+00:13:20,740 --> 00:13:26,620
+Yes, you can also whenever whatever you make changes inside your code, they are instantly
+
+189
+00:13:26,820 --> 00:13:29,500
+reflect inside your development build as well.
+
+190
+00:13:30,000 --> 00:13:30,800
+Perfect.
+
+191
+00:13:31,600 --> 00:13:38,500
+And how they basically solve the limitations because they provide you all the, yes, I can
+
+192
+00:13:38,560 --> 00:13:46,260
+say they provide you all the custom native modules like you can install any React native
+
+193
+00:13:46,360 --> 00:13:47,680
+libraries got it.
+
+194
+00:13:48,220 --> 00:13:51,280
+Then second, they provide you native code modifications.
+
+195
+00:13:51,600 --> 00:13:56,620
+So this means there whenever you create in next chapter, we will see that.
+
+196
+00:13:57,000 --> 00:13:59,020
+whenever you build your application.
+
+197
+00:13:59,710 --> 00:14:03,740
+So you will see two extra folder, one is for iOS and another one is for Android.
+
+198
+00:14:04,130 --> 00:14:08,640
+You can go and you can actually modify that, but you need not to do anything by yourself.
+
+199
+00:14:09,040 --> 00:14:11,000
+Everything is handled by EAS build.
+
+200
+00:14:11,570 --> 00:14:11,840
+All right.
+
+201
+00:14:12,270 --> 00:14:14,780
+So we can say that native code modification.
+
+202
+00:14:14,990 --> 00:14:18,760
+So for Android's, you can make specific changes for iOS.
+
+203
+00:14:19,230 --> 00:14:20,940
+You can also make specific changes.
+
+204
+00:14:21,680 --> 00:14:23,720
+support all the third party.
+
+205
+00:14:27,019 --> 00:14:32,279
+SDKs like you can go with Firebase, Stripe or any native SDK, alright.
+
+206
+00:14:32,760 --> 00:14:35,380
+You can test full features, perfect.
+
+207
+00:14:35,440 --> 00:14:38,360
+You can test all the features into it.
+
+208
+00:14:38,940 --> 00:14:44,580
+Like you can test the real push notification, deep linking and all the native features that
+
+209
+00:14:44,700 --> 00:14:47,240
+are available and they are telling you the true performance.
+
+210
+00:14:48,100 --> 00:14:54,199
+of your applications. This is really needed. And then you can do the custom branding. Yes,
+
+211
+00:14:54,380 --> 00:14:59,259
+very nice point. You can do the custom branding of your application. You can put your own
+
+212
+00:14:59,339 --> 00:15:06,680
+icons, own splash screens, depends. Cool. All right. So this is the basic
+
+213
+00:15:07,300 --> 00:15:13,899
+an intro of ES and a basic difference between expo go and development build.
+
+214
+00:15:14,660 --> 00:15:19,380
+So for this chapter, let's just stop here and definitely that's all about just basic
+
+215
+00:15:19,540 --> 00:15:20,740
+theory of it.
+
+216
+00:15:21,480 --> 00:15:21,860
+Got it.
+
+217
+00:15:22,180 --> 00:15:24,220
+So let me just again go to the ES.
+
+218
+00:15:24,900 --> 00:15:31,600
+Perfect. And then simply say get started. So you can just simply move ahead and whenever
+
+219
+00:15:31,660 --> 00:15:37,080
+you wanted to get started in next chapter, we see that how we can start using this. So
+
+220
+00:15:37,140 --> 00:15:40,820
+for now, this is pretty much it and see you next time.
+

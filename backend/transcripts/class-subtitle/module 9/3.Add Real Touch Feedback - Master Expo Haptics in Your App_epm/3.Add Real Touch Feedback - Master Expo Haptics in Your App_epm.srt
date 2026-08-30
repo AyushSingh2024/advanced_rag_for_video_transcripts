@@ -1,0 +1,332 @@
+1
+00:00:00,460 --> 00:00:03,540
+Alright everyone and welcome to one more new lecture.
+
+2
+00:00:03,750 --> 00:00:06,320
+In this lecture we are going to talk about haptics.
+
+3
+00:00:06,630 --> 00:00:08,700
+So what is this haptics actually means?
+
+4
+00:00:10,080 --> 00:00:15,860
+So a library that provide access to a system's vibration effect on Android, the haptics engine
+
+5
+00:00:15,960 --> 00:00:19,840
+on iOS and web, a web vibration API on web.
+
+6
+00:00:20,270 --> 00:00:24,120
+So basically let's see that this is the direct use case.
+
+7
+00:00:24,190 --> 00:00:28,599
+So let me just simply copy this and we'll see how you can use it and how you can see
+
+8
+00:00:29,400 --> 00:00:36,540
+So, let me just simply say 1x expo install expo haptics, alright, installed in 100 milliseconds.
+
+9
+00:00:36,670 --> 00:00:42,000
+So, basically in 1 seconds and let us see that how you can implement this.
+
+10
+00:00:42,340 --> 00:00:46,220
+So, in components, let me create a haptics.
+
+11
+00:00:46,900 --> 00:00:56,240
+inside this what I will say, I will simply say press haptics dot tsx rnfs press haptics
+
+12
+00:00:56,740 --> 00:00:56,920
+easy.
+
+13
+00:00:57,380 --> 00:01:04,520
+Let me save it, let me go to my index and below this let me simply say press haptics.
+
+14
+00:01:05,680 --> 00:01:06,119
+Cool.
+
+15
+00:01:06,880 --> 00:01:13,360
+And let me save this and inside this first of all let me import haptics from haptics
+
+16
+00:01:13,720 --> 00:01:14,280
+easy.
+
+17
+00:01:15,560 --> 00:01:17,700
+And then let me create three functions.
+
+18
+00:01:18,040 --> 00:01:19,479
+Just see that how I'm creating it.
+
+19
+00:01:20,340 --> 00:01:24,920
+So the first function is handle press where just listen to me carefully.
+
+20
+00:01:25,159 --> 00:01:31,680
+I have used haptics impact a sync and then inside this haptics I have added light then
+
+21
+00:01:31,780 --> 00:01:32,960
+medium and then heavy.
+
+22
+00:01:33,220 --> 00:01:33,520
+All right.
+
+23
+00:01:34,100 --> 00:01:40,000
+Let's see that and let me import and let use that on to the UI as well.
+
+24
+00:01:40,640 --> 00:01:40,799
+Cool.
+
+25
+00:01:42,540 --> 00:01:44,500
+And let me just paste it easy.
+
+26
+00:01:44,960 --> 00:01:51,720
+Let me import my touchable opacity and then let me paste the design that I wanted to use
+
+27
+00:01:51,899 --> 00:01:52,000
+here.
+
+28
+00:01:52,399 --> 00:01:52,540
+Cool.
+
+29
+00:01:54,399 --> 00:01:57,680
+And if I just simply paste it and save it.
+
+30
+00:01:57,940 --> 00:01:58,020
+Cool.
+
+31
+00:01:58,740 --> 00:02:01,420
+So let's try to first of all, but press that.
+
+32
+00:02:03,299 --> 00:02:08,840
+So, you will see that your, if I am not wrong, your app has just vibrated a bit.
+
+33
+00:02:09,440 --> 00:02:16,220
+If you just press a long, perfect, then second option that we have is a press in, if you
+
+34
+00:02:16,240 --> 00:02:20,940
+just keep press and if you just press long, precious, look at that, your app has vibrated
+
+35
+00:02:21,600 --> 00:02:28,900
+Look at that, cool, yes, this is your long press, look at that, got it and press in,
+
+36
+00:02:29,120 --> 00:02:31,100
+this is showing us a pressed, perfect.
+
+37
+00:02:31,580 --> 00:02:32,800
+So what is this basically?
+
+38
+00:02:33,600 --> 00:02:42,040
+This is actually for controlling the intensity of the vibration you wanted to have into your
+
+39
+00:02:43,640 --> 00:02:49,740
+So, this is basically giving you the access of your, you can even see that a library that
+
+40
+00:02:49,820 --> 00:02:52,400
+provide access to the system's vibration effect.
+
+41
+00:02:52,860 --> 00:02:55,340
+This is literally a game changing thing.
+
+42
+00:02:55,960 --> 00:02:58,980
+Got it and you can definitely read more about it.
+
+43
+00:02:59,850 --> 00:03:04,220
+You can see notification async, yes we also have a notification async.
+
+44
+00:03:04,709 --> 00:03:07,180
+So, let me try to show you that, cool.
+
+45
+00:03:07,470 --> 00:03:12,480
+So, let me try to show you that.
+
+46
+00:03:12,481 --> 00:03:17,420
+So, what I will do I can completely copy this file, perfect and what I will do inside this
+
+47
+00:03:17,579 --> 00:03:28,459
+I can simply say example 2.tsx easy and let me save it, no problem and inside this example
+
+48
+00:03:28,700 --> 00:03:34,379
+2. We have some bunch of styles. Don't we have that here right now?
+
+49
+00:03:36,140 --> 00:03:42,599
+We should have but it's fine but I can do I can simply coming to here and get a design
+
+50
+00:03:42,879 --> 00:03:44,200
+for my text as well.
+
+51
+00:03:45,720 --> 00:03:45,819
+Perfect.
+
+52
+00:03:47,060 --> 00:03:49,040
+So font of 18, medium.
+
+53
+00:03:49,280 --> 00:03:49,480
+Alright.
+
+54
+00:03:50,239 --> 00:03:54,000
+Now let me save it and let me go to my index.tsx.
+
+55
+00:03:54,519 --> 00:03:56,260
+We don't need this press haptics.
+
+56
+00:03:56,660 --> 00:03:58,459
+Let me try to render here.
+
+57
+00:03:59,360 --> 00:04:01,560
+I think the name of that is app.
+
+58
+00:04:02,380 --> 00:04:02,980
+Maybe I'm wrong.
+
+59
+00:04:03,400 --> 00:04:09,379
+But now if I save it, alright, so you will see a lot of examples, perfect.
+
+60
+00:04:09,860 --> 00:04:16,600
+So the first example that we have here is the moment you simply press selection.
+
+61
+00:04:17,660 --> 00:04:17,860
+Cool?
+
+62
+00:04:18,199 --> 00:04:21,880
+Look at this is just for selecting it, nothing is happening, no problem.
+
+63
+00:04:22,720 --> 00:04:26,240
+Let's move ahead and you will see that we have a button which is showing us a notification
+
+64
+00:04:26,580 --> 00:04:27,880
+async and success.
+
+65
+00:04:28,280 --> 00:04:31,660
+If I just simply press over it in same way we have error and warning.
+
+66
+00:04:32,400 --> 00:04:40,080
+Why this is not working as my application is up and yes, let me try to reload it once.
+
+67
+00:04:41,960 --> 00:04:46,220
+All right, I don't know, due to some reason they are not showing us the kind of notification
+
+68
+00:04:46,360 --> 00:04:51,660
+we want, but it's completely fine because we have already seen that inside our press
+
+69
+00:04:51,680 --> 00:04:52,780
+septic's example.
+
+70
+00:04:53,100 --> 00:04:59,120
+And if I just import my press haptics from here and yes jump the moment I press yes my
+
+71
+00:04:59,200 --> 00:05:03,780
+application is vibrating if I press long pressed and yes that is how they are also working.
+
+72
+00:05:04,130 --> 00:05:12,500
+So the main thing and the main motive behind this expo haptics library is basically provide
+
+73
+00:05:12,880 --> 00:05:14,020
+you the touch feedback.
+
+74
+00:05:14,200 --> 00:05:21,820
+Alright, like Android device using vibrator system iOS 10 and plus basically device use
+
+75
+00:05:22,080 --> 00:05:26,220
+Taptic Engine they have their own implementation of it cool.
+
+76
+00:05:27,280 --> 00:05:32,040
+So they have given you a bunch of examples, you can definitely give it a try but trust
+
+77
+00:05:32,140 --> 00:05:34,420
+me you never going to use it as much as you think.
+
+78
+00:05:34,700 --> 00:05:40,660
+So, these are all the miscellaneous modules that we are doing, but I hope you are enjoying
+
+79
+00:05:40,780 --> 00:05:47,540
+it and if yes, so this is the end of our chapter number three and with this we can end this
+
+80
+00:05:47,620 --> 00:05:49,060
+device and system APIs.
+
+81
+00:05:49,520 --> 00:05:54,640
+Initially, we have seen how you can work with network same how you can work with links and
+
+82
+00:05:54,860 --> 00:05:56,660
+then how you can work with haptics.
+
+83
+00:05:57,150 --> 00:06:00,560
+So, this is the end of the chapter and see you next time.
+

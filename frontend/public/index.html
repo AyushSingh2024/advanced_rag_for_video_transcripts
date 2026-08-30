@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="dark light">
+<meta name="theme-color" content="#14100c">
+<title>Course Study Assistant — React Native & Expo</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<!-- The masthead is full-bleed and is the only place the wave band appears. It
+     holds the title and nothing else, on purpose: small type over the waves
+     cannot clear AA in either theme, so the band's box is the title's box.
+     The measurement is in frontend/verify-ui.mjs. -->
+<div class="titlebar">
+  <div class="waves" id="waves" aria-hidden="true"></div>
+  <div class="titlebar-inner">
+    <h1>Course Study <span class="ember">Assistant</span></h1>
+  </div>
+</div>
+
+<div class="wrap">
+  <header>
+    <div class="header-top">
+      <div class="greeting-row">
+        <span class="greeting" id="greeting-text">Welcome back!</span>
+        <span class="streak-badge" id="streak-badge" style="display: none;"></span>
+      </div>
+      <div class="health" id="health"></div>
+    </div>
+    <div class="course-meta" id="course-meta">Loading the course spine…</div>
+  </header>
+
+  <section class="spine">
+    <div class="spine-head">
+      <span class="spine-title">The course</span>
+      <span class="position-readout" id="position-readout">Searching the whole course</span>
+    </div>
+    <div class="modules" id="modules" aria-hidden="true"></div>
+    <div class="rail" id="rail"></div>
+    <div class="playhead-row">
+      <label for="position" class="sr">How far you have watched</label>
+      <input type="range" id="position" min="0" max="87" value="0" step="1">
+    </div>
+    <div class="legend">
+      <span><i style="background:var(--vla-dim)"></i> watched</span>
+      <span><i style="background:var(--vla-line)"></i> not yet</span>
+      <span><i style="background:var(--vla-ember)"></i> cited by the answer</span>
+      <span><i style="background:var(--vla-cold)"></i> cited but ahead of you</span>
+    </div>
+  </section>
+
+  <nav class="tabs" role="tablist">
+    <button class="tab" role="tab" id="tab-ask" aria-selected="true" aria-controls="panel-ask">Ask</button>
+    <button class="tab" role="tab" id="tab-concepts" aria-selected="false" aria-controls="panel-concepts">Concepts</button>
+  </nav>
+
+  <main>
+    <!-- ============ ASK ============ -->
+    <section id="panel-ask" class="tab-panel" role="tabpanel" aria-labelledby="tab-ask">
+      <div class="card">
+        <div class="input-group">
+          <label for="question">Your question</label>
+          <textarea id="question" placeholder="How do I store an auth token securely?"></textarea>
+        </div>
+        <div class="chips" id="starters"></div>
+        <div class="row">
+          <div class="input-group">
+            <label for="mode">Mode</label>
+            <select id="mode">
+              <option value="ask">Ask — answer the question</option>
+              <option value="plan">Plan — route me through the lessons</option>
+              <option value="explain">Explain — teach me this</option>
+              <option value="summarize">Summarize a lesson</option>
+              <option value="key_points">Key points</option>
+              <option value="quiz">Quiz me</option>
+              <option value="catch_up">Catch me up</option>
+            </select>
+          </div>
+        </div>
+        <div class="actions">
+          <button class="go" id="ask">Ask Question</button>
+          <button class="ghost" id="clear-thread" hidden>New thread</button>
+          <span class="hint" id="ask-hint"></span>
+        </div>
+      </div>
+      <div id="answer-slot"></div>
+    </section>
+
+    <!-- ============ CONCEPTS ============ -->
+    <section id="panel-concepts" class="tab-panel" role="tabpanel" aria-labelledby="tab-concepts" hidden>
+      <div class="card">
+        <div class="row" style="margin-top:0">
+          <div style="flex:2 1 18rem" class="input-group">
+            <label for="concept-q">Search concepts</label>
+            <input type="search" id="concept-q" placeholder="secure store, navigation, notifications…">
+          </div>
+          <div class="input-group">
+            <label for="concept-kind">Show</label>
+            <select id="concept-kind">
+              <option value="">Course outline (core)</option>
+              <option value="background">Entry requirements (background)</option>
+              <option value="detail">One-off details</option>
+              <option value="all">Everything</option>
+            </select>
+          </div>
+        </div>
+        <div class="hint" style="margin-top:.6rem">
+          <strong>core</strong> means something depends on it — that is the course's actual structure.
+          <strong>detail</strong> is taught once with nothing built on it. <strong>background</strong> is never
+          taught: it is what the course expects you to already know.
+        </div>
+      </div>
+      <div class="card" id="concept-list"><div class="empty">Loading…</div></div>
+      <div id="concept-detail"></div>
+    </section>
+  </main>
+
+  <div class="shortcuts">
+    <span><strong>Ctrl+K</strong> focus the question</span>
+    <span><strong>Ctrl+Enter</strong> ask</span>
+    <span><strong>Ctrl+N</strong> new thread</span>
+  </div>
+
+  <p class="sr" id="sr-status" role="status" aria-live="polite"></p>
+</div>
+
+<script src="waves.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

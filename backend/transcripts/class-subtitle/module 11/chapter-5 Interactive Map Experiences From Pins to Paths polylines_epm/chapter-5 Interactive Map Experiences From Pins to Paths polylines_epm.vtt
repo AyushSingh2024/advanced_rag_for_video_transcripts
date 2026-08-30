@@ -1,0 +1,206 @@
+WEBVTT
+
+00:00:00.200 --> 00:00:02.980
+Alright everyone, welcome to one more new chapter.
+
+00:00:03.220 --> 00:00:10.400
+In this chapter we are basically going to play around polylines and bunch of map settings
+
+00:00:10.580 --> 00:00:14.360
+that we have already seen in chapter number one, but that is just a surface level knowledge.
+
+00:00:14.880 --> 00:00:19.460
+Here we are reusing it just to understand and taking much more context out of it.
+
+00:00:20.040 --> 00:00:20.380
+Got it.
+
+00:00:20.620 --> 00:00:25.860
+So basically we are again going to implement that inside this mini project.
+
+00:00:27.660 --> 00:00:30.480
+So, let us move ahead and start implementing it.
+
+00:00:31.160 --> 00:00:37.040
+First of all, let me take some demo coordinates and I can say demo points of the cities.
+
+00:00:39.120 --> 00:00:47.340
+So, we have longitude, latitude and longitude for Delhi same with Mumbai and then same for
+
+00:00:48.560 --> 00:00:55.660
+Bangalore. Perfect. And let's take three different state variables. So the first state variable
+
+00:00:55.920 --> 00:01:01.860
+that I have is the traffic, then I have a satellite, then I have a selection. All right.
+
+00:01:02.020 --> 00:01:05.640
+And let me create here one property for polylines as well.
+
+00:01:06.100 --> 00:01:12.299
+So, this is what we have, this is the ID route coordinates and then a color and then this
+
+00:01:12.340 --> 00:01:13.520
+is what we basically have.
+
+00:01:13.740 --> 00:01:17.460
+Right now, this buttons, I do not need it anymore.
+
+00:01:17.820 --> 00:01:22.580
+So, I can definitely comment them out so that we have better space just to use it.
+
+00:01:23.100 --> 00:01:25.700
+And let me also create one marker.
+
+00:01:26.780 --> 00:01:26.880
+Perfect.
+
+00:01:26.881 --> 00:01:30.460
+So how my marker is basically going to look something like this.
+
+00:01:30.580 --> 00:01:37.100
+A marker, points we are basically mapping all of them for the specific there coordinates
+
+00:01:37.360 --> 00:01:38.060
+that we have.
+
+00:01:38.460 --> 00:01:38.900
+Got it.
+
+00:01:39.960 --> 00:01:45.320
+And then same title, snippet and direct draggable as false for now.
+
+00:01:46.780 --> 00:01:52.520
+Then what I will do, I can simply go to my Google Maps, you will see that we already
+
+00:01:52.740 --> 00:01:57.960
+have this thing, but below this we have something known as properties, yes we know that.
+
+00:01:59.580 --> 00:02:04.420
+Inside this first thing is traffic enabled, I can say here the traffic.
+
+00:02:04.900 --> 00:02:14.840
+Nice, same I can have a map type, map type can be type of satellite or this can be basically
+
+00:02:14.960 --> 00:02:24.140
+if we have a satellite then simply say map dot Google maps dot map type dot basically
+
+00:02:24.360 --> 00:02:26.760
+I wanted to show here the satellite.
+
+00:02:27.540 --> 00:02:28.340
+Hopefully this will work.
+
+00:02:31.040 --> 00:02:33.920
+Otherwise, basically show the standard one, got it?
+
+00:02:34.780 --> 00:02:43.840
+So if I just copy this and here if I just try to paste that instead of satellite, I
+
+00:02:43.880 --> 00:02:48.840
+wanted to have the standard, okay, we do not have standard, maybe we can go with normal.
+
+00:02:49.700 --> 00:02:53.940
+Hopefully this will work, nothing is break, I think yes, nothing is breaking for now.
+
+00:02:54.600 --> 00:03:02.540
+nice and then in same way we can have a selection enabled is equals to the selection state variable
+
+00:03:02.820 --> 00:03:11.520
+that we have perfect and below this again but I can have I can have some other buttons
+
+00:03:11.620 --> 00:03:13.760
+don't need this one.
+
+00:03:14.590 --> 00:03:16.840
+So again let me import the button.
+
+00:03:17.500 --> 00:03:23.860
+on press again set camera to this specific coordinate and zoom so this is dilly this
+
+00:03:23.861 --> 00:03:30.340
+is Mumbai and this is Bangalore alright no problem now let's add a bunch of UI control
+
+00:03:30.960 --> 00:03:39.180
+one is for we can say traffic toggle another one is for satellite and the another one is
+
+00:03:39.280 --> 00:03:40.959
+for selection through or false.
+
+00:03:42.260 --> 00:03:46.880
+So, we already have bunch of toggles just below this I can paste it nice.
+
+00:03:47.640 --> 00:03:53.400
+So, now you will see we have one traffic the moment I enable this and what if I go little
+
+00:03:54.300 --> 00:03:56.760
+closer hopefully I can see that ok.
+
+00:03:56.960 --> 00:04:00.840
+Let me see the in satellite view, let me go little back.
+
+00:04:03.080 --> 00:04:07.060
+Why I am not be able to see something, maybe because of internet?
+
+00:04:08.000 --> 00:04:13.540
+Yes, I think my internet is not connected, let me try to reconnect it, cool.
+
+00:04:16.180 --> 00:04:19.120
+They are checking my quality, nice.
+
+00:04:19.560 --> 00:04:23.740
+Now let me say this and let me try to reload it once.
+
+00:04:24.300 --> 00:04:33.039
+Perfect and yes, let us go towards the Delhi hopefully this will take me towards that and
+
+00:04:33.199 --> 00:04:38.539
+yes now if I simply open this traffic look at that this is how they are basically showing
+
+00:04:38.740 --> 00:04:44.560
+the traffic of Delhi and the one of the dangerous traffic that we have in Bangalore and look
+
+00:04:44.860 --> 00:04:45.400
+at that.
+
+00:04:45.500 --> 00:04:48.920
+This is how the traffic of Bangalore look like.
+
+00:04:49.760 --> 00:04:50.920
+Yes, look at that.
+
+00:04:51.500 --> 00:04:51.620
+Cool.
+
+00:04:52.100 --> 00:04:55.120
+In same way you can view all of them in properly satellite view.
+
+00:04:55.380 --> 00:04:57.660
+Now it's up to you and this is the magic of Google Maps.
+
+00:04:58.480 --> 00:04:58.960
+Perfect.
+
+00:04:59.300 --> 00:04:59.800
+Look at that.
+
+00:04:59.880 --> 00:05:05.040
+Let's go to Delhi and again you can little make it closer, closer, closer.
+
+00:05:05.300 --> 00:05:11.260
+This is how they are basically going to show you the specific traffic if we have.
+
+00:05:11.600 --> 00:05:12.420
+Yes, look at that.
+
+00:05:13.300 --> 00:05:13.400
+Nice.
+
+00:05:14.200 --> 00:05:20.960
+So, this is how you can basically use bunch of other properties as well, perfect.
+
+00:05:21.050 --> 00:05:24.760
+So, hopefully you guys are able to understand them, nice.
+
+00:05:25.700 --> 00:05:36.080
+So, yep, this is pretty much it for this entire we can say module and see you next time.
+

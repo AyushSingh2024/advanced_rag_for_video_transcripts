@@ -1,0 +1,1184 @@
+WEBVTT
+
+00:00:00.700 --> 00:00:05.940
+Alright everyone and welcome to a mini project series in this mini project series we are
+
+00:00:05.980 --> 00:00:11.720
+basically going to create a news app where you will going to understand all the things
+
+00:00:11.800 --> 00:00:17.280
+that we have learned till now into this module like how you can call your third party APIs,
+
+00:00:17.660 --> 00:00:21.540
+create your own APIs and use that inside your X-Wap.
+
+00:00:22.080 --> 00:00:26.820
+So without wasting any time let's move ahead and start initializing the project.
+
+00:00:27.000 --> 00:00:29.140
+So this is the chapter number 1 for our project.
+
+00:00:29.600 --> 00:00:35.940
+So, let me simply go to my VS code and simply hit this command, "Bunix create expo app
+
+00:00:36.080 --> 00:00:37.220
+at the rate latest".
+
+00:00:37.221 --> 00:00:43.520
+So, this is going to create a latest expo app for me, then dot slash, alright and then
+
+00:00:44.720 --> 00:00:47.640
+this is basically going to install all the dependency for me.
+
+00:00:48.120 --> 00:00:49.120
+So, let me wait for it.
+
+00:00:49.920 --> 00:00:54.120
+Alright guys, so now you can see that we have successfully installed our expo app.
+
+00:00:55.410 --> 00:00:55.579
+Perfect.
+
+00:00:56.329 --> 00:00:59.199
+Then let me simply hit "Bonex Expo Start".
+
+00:01:00.019 --> 00:01:03.460
+A bit 081 is already in use, so just give me a minute.
+
+00:01:04.319 --> 00:01:08.880
+Let me quickly close my another server and then let me hit this once again.
+
+00:01:12.420 --> 00:01:18.380
+So, yes, now this is working, let me simply press A, so this is going to start inside
+
+00:01:18.520 --> 00:01:26.740
+my Android and let me wait for it just to open and yes, now you can see that this is
+
+00:01:26.800 --> 00:01:28.479
+the default version of our application.
+
+00:01:29.619 --> 00:01:33.860
+Now let me simply run it, so burn, run, reset project.
+
+00:01:34.600 --> 00:01:41.960
+So, this is going to reset it and simply say no and clear it and then let me simply hit
+
+00:01:42.500 --> 00:01:50.500
+1x expose start once again and after hitting this I am simply going to say R so this is
+
+00:01:50.540 --> 00:01:51.240
+going to reload it.
+
+00:01:55.820 --> 00:01:58.240
+All right, perfect.
+
+00:01:58.860 --> 00:02:01.100
+Now what is the main goal of our this chapter?
+
+00:02:01.320 --> 00:02:04.179
+So chapter number one is all about foundation and setup.
+
+00:02:05.479 --> 00:02:09.380
+So first thing that we have did successfully is to we have initialize our project.
+
+00:02:10.180 --> 00:02:12.940
+Next thing that we wanted to create a news app.
+
+00:02:13.500 --> 00:02:17.800
+So, for creating a news app, we need a news API.
+
+00:02:18.820 --> 00:02:24.200
+So for that, I wanted you to visit a simple, simply search here, a news API.
+
+00:02:24.460 --> 00:02:25.940
+So you will found this website.
+
+00:02:26.140 --> 00:02:29.620
+The name of this website is newsapi.org.
+
+00:02:30.200 --> 00:02:35.700
+and then simply login and press on get API key. So after pressing here you will
+
+00:02:35.760 --> 00:02:41.239
+found your API key. Don't try to use mine because I'm definitely going to
+
+00:02:41.360 --> 00:02:46.700
+invalidate this. So please bring your own API keys and implement this. So I hope
+
+00:02:46.780 --> 00:02:48.700
+so you guys can understand that. Cool.
+
+00:02:49.200 --> 00:02:54.840
+So, now you will see this is my API key perfect, simply copy this API key.
+
+00:02:55.010 --> 00:03:02.260
+So, let me simply copy this, close this and then let us go inside our folder structure
+
+00:03:03.000 --> 00:03:09.380
+and then open a ENV and then simply say news API key.
+
+00:03:09.800 --> 00:03:13.700
+Alright, and this is basically equal to this.
+
+00:03:14.800 --> 00:03:24.360
+Alright, now let me close this, let me close everything and out of the folder structure
+
+00:03:24.480 --> 00:03:32.200
+basically, simply create a config file and inside this config file, I wanted you to create
+
+00:03:32.201 --> 00:03:33.900
+an API.ts file.
+
+00:03:34.760 --> 00:03:35.000
+Perfect.
+
+00:03:36.100 --> 00:03:42.400
+And, inside this api.ts file, I wanted you to do two things here.
+
+00:03:42.520 --> 00:03:51.060
+First thing is simply write export const and ews news underscore api underscore key is
+
+00:03:51.140 --> 00:03:54.620
+equals to process dot env news api key.
+
+00:03:55.510 --> 00:03:57.160
+Perfect, make sure to confirm this.
+
+00:04:00.660 --> 00:04:03.640
+And then next thing is going to be simple.
+
+00:04:05.280 --> 00:04:14.180
+which is export const news underscore api underscore base underscore url and then simply
+
+00:04:14.220 --> 00:04:15.600
+bring your base url.
+
+00:04:15.700 --> 00:04:24.700
+So this is going to be a stdps and then this is going to be as news api dot org slash v2
+
+00:04:25.120 --> 00:04:30.620
+yes these are the official api base url that we need to use for now.
+
+00:04:32.300 --> 00:04:34.940
+Now let me close this close this as well.
+
+00:04:35.200 --> 00:04:35.560
+What next?
+
+00:04:36.420 --> 00:04:45.520
+Next, I wanted you to simply at the very top of it, create a types folder and inside this
+
+00:04:45.620 --> 00:04:52.980
+types folder, simply say this as news.ts and then paste the type I am pasting.
+
+00:04:52.981 --> 00:04:57.460
+You will find all the source code onto my GitHub itself.
+
+00:04:57.700 --> 00:04:58.000
+All right.
+
+00:04:59.100 --> 00:05:06.080
+So, now you will see that we have export interface news article source, source can have ID and
+
+00:05:06.180 --> 00:05:13.720
+the name then same we have author, title, description, URL, URL to image, published at
+
+00:05:13.860 --> 00:05:14.580
+and the content.
+
+00:05:15.370 --> 00:05:22.180
+And in same way we also have API news response which is status total result for a pagination
+
+00:05:22.320 --> 00:05:26.980
+thing and then we have articles and articles is the type of news article, cool.
+
+00:05:29.700 --> 00:05:33.580
+Now, let's move ahead and then simply create.
+
+00:05:34.290 --> 00:05:41.800
+Yes, now let me close this close everything simply create one services folder inside this
+
+00:05:41.860 --> 00:05:47.660
+services folder create a new file name as news API.
+
+00:05:50.520 --> 00:05:56.060
+.ts and this news API.ts is going to import bunch of things.
+
+00:05:56.061 --> 00:06:03.360
+So the first thing is going to be news underscore base API URL and then another thing is going
+
+00:06:03.460 --> 00:06:05.300
+to be news underscore API key.
+
+00:06:05.979 --> 00:06:06.860
+Perfect.
+
+00:06:08.070 --> 00:06:18.280
+And then I am also going to import here news API response types and then create a we can
+
+00:06:18.380 --> 00:06:26.479
+say two functions or let me just first of all add bunch of interfaces like the first
+
+00:06:26.580 --> 00:06:29.479
+interface is going to be cons export interface.
+
+00:06:30.000 --> 00:06:36.460
+And I can say this as "Witch news params" and from where I am implementing all of them.
+
+00:06:36.990 --> 00:06:43.680
+So if you simply go to news API, you will see all the related APIs thing that you need.
+
+00:06:43.880 --> 00:06:44.080
+Perfect.
+
+00:06:44.220 --> 00:06:46.740
+Like we have everything in same way.
+
+00:06:47.600 --> 00:06:48.980
+We also have this like.
+
+00:06:50.220 --> 00:06:56.120
+V2 everything, then you can see that we have this endpoint, we also have top headlines
+
+00:06:56.400 --> 00:07:02.620
+endpoint, we also have on the basis of sources you can pass it, then we have everything common
+
+00:07:02.820 --> 00:07:04.580
+domains like a lot of things.
+
+00:07:04.690 --> 00:07:09.920
+So this is how you can fetch all of this data and only thing that you need to do is to simply
+
+00:07:10.040 --> 00:07:13.340
+render them onto the UI, a very simple thing.
+
+00:07:13.520 --> 00:07:16.600
+But I am definitely going to add a bunch of new thing here as well.
+
+00:07:17.200 --> 00:07:23.960
+So, this interface is basically going to have bunch of things like we are going to have
+
+00:07:24.020 --> 00:07:31.020
+page and the page size then we have category country very important and then query all
+
+00:07:31.040 --> 00:07:32.700
+right perfect.
+
+00:07:33.490 --> 00:07:39.900
+And then let me just simply add a method and I don't think so that we need it so we can
+
+00:07:39.960 --> 00:07:41.740
+simply move and then simply say.
+
+00:07:43.320 --> 00:07:46.560
+export const fetch top headlines.
+
+00:07:47.490 --> 00:07:50.940
+So this is basically going to fetch all the top headlines.
+
+00:07:51.210 --> 00:07:53.520
+So from where we can fetch the top headlines.
+
+00:07:54.440 --> 00:07:57.080
+Yes, this one, like you just simply need to.
+
+00:07:57.900 --> 00:08:05.280
+call this endpoint. Perfect. So, let me just simply come into here and say async. So, this
+
+00:08:05.340 --> 00:08:10.720
+is going to accept params. Params is going to be the type of fetch news params, which
+
+00:08:10.820 --> 00:08:15.760
+is initially empty. And then I can simply say this.
+
+00:08:16.300 --> 00:08:21.819
+So, first of all, what I am going to do like this params, let me initialize initial values
+
+00:08:22.020 --> 00:08:29.220
+for this params like page number is one, page size is 20 and then category we can go with
+
+00:08:29.259 --> 00:08:35.260
+general and then country let's keep us and then query can be empty for now.
+
+00:08:36.230 --> 00:08:36.539
+All right.
+
+00:08:37.400 --> 00:08:40.220
+So, this is how this is basically going to look.
+
+00:08:40.740 --> 00:08:46.880
+So page is equals to one page size is 20 category is general country is US and then query is
+
+00:08:46.940 --> 00:08:47.620
+empty for now.
+
+00:08:48.520 --> 00:08:52.600
+And then I'm basically going to create a query params.
+
+00:08:53.100 --> 00:08:54.680
+What is the query params?
+
+00:08:54.699 --> 00:08:57.880
+You will see that we are passing queries something like this.
+
+00:08:58.360 --> 00:09:01.019
+So we need to create a query params object.
+
+00:09:01.319 --> 00:09:09.420
+So I can simply say const query params is equals to new url search params.
+
+00:09:10.000 --> 00:09:10.180
+Yes.
+
+00:09:11.000 --> 00:09:17.279
+And then this is going to have first thing as API key, which is basically equal to news
+
+00:09:17.459 --> 00:09:18.040
+API key.
+
+00:09:18.500 --> 00:09:21.400
+Then second thing we are going to have is the page.
+
+00:09:21.880 --> 00:09:29.040
+So page is equals to page dot two string and then we are going to have a page size.
+
+00:09:30.340 --> 00:09:39.400
+This is equals to page size and again let me convert this to string and then we can have
+
+00:09:39.600 --> 00:09:44.060
+basically all the categories that we have like this one and this one.
+
+00:09:45.900 --> 00:09:51.320
+Perfect, so I am basically going to do here a simple logic, I am going to spread this,
+
+00:09:52.410 --> 00:10:00.960
+so inside this spread, we are going to have the category and simple basic check and category
+
+00:10:01.600 --> 00:10:03.240
+should not equal to all.
+
+00:10:05.240 --> 00:10:09.540
+Then, I wanted you to add the category object, perfect.
+
+00:10:10.350 --> 00:10:15.560
+So category object and in same way I can do for query.
+
+00:10:16.870 --> 00:10:19.080
+So Q is basically equal to query.
+
+00:10:19.149 --> 00:10:25.180
+So I have this is how I have created it and Q undefined is not assignable to this.
+
+00:10:26.000 --> 00:10:29.780
+I think this is happening because of news API key.
+
+00:10:29.781 --> 00:10:39.240
+So I can simply add if we do not have any news API key then I can simply return yes and
+
+00:10:39.241 --> 00:10:45.060
+I can simply return maybe instead of return I can throw a new error.
+
+00:10:46.000 --> 00:10:52.000
+And this error is going to be API key not found easy.
+
+00:10:52.980 --> 00:10:54.740
+Now you will see this is top-crime.
+
+00:10:56.020 --> 00:10:56.260
+Perfect.
+
+00:10:57.140 --> 00:10:59.360
+And then I can simply create a URL.
+
+00:10:59.560 --> 00:11:01.020
+So this is equals to URL.
+
+00:11:02.640 --> 00:11:03.280
+Backticks.
+
+00:11:04.220 --> 00:11:08.320
+We have a simple news underscore API base URL.
+
+00:11:09.700 --> 00:11:12.200
+This is equal to we can say top headlines.
+
+00:11:13.300 --> 00:11:17.860
+And then query is equals to the query params that we have.
+
+00:11:19.920 --> 00:11:23.519
+So this is equals to query params dot to string.
+
+00:11:25.640 --> 00:11:31.920
+And then this URL is basically going to be used inside the fetch and we can get our data.
+
+00:11:32.550 --> 00:11:41.019
+So I can simply coming to here add a try and catch cons response is equals to await fetch
+
+00:11:42.600 --> 00:11:52.540
+easy and in same way you can add bunch of we can say status handling thing but now we
+
+00:11:52.541 --> 00:11:59.300
+are going to have a data, data is going to type of news API response and this can be await
+
+00:12:00.240 --> 00:12:02.019
+response dot json.
+
+00:12:02.500 --> 00:12:05.940
+And then I can simply return my data.
+
+00:12:06.280 --> 00:12:08.740
+So I can simply say return data.
+
+00:12:09.560 --> 00:12:10.580
+All right, very simple.
+
+00:12:11.220 --> 00:12:16.360
+And by any chance, if we have any error, then console that error and throw the error.
+
+00:12:17.100 --> 00:12:17.200
+Perfect.
+
+00:12:18.100 --> 00:12:23.960
+So this is the first function that we have, which is named basically fetch top headlines.
+
+00:12:25.120 --> 00:12:30.000
+And now let's move ahead and we'll see that how you can use this fetch top headlines.
+
+00:12:31.459 --> 00:12:39.640
+So, for using it, I wanted you to simply go inside your app, yes first of all let me save
+
+00:12:39.779 --> 00:12:50.120
+it, let me go inside my app, inside my index, inside this index I wanted you to modify this
+
+00:12:50.240 --> 00:12:50.500
+a bit.
+
+00:12:51.300 --> 00:12:55.240
+So, for modification, first thing, remove everything.
+
+00:12:56.339 --> 00:13:01.760
+And then we need a safe area view from React Native safe area context.
+
+00:13:02.700 --> 00:13:08.560
+And this safe area view is going to return me a component name as newsfeed, which is
+
+00:13:08.620 --> 00:13:09.660
+don't exist for now.
+
+00:13:10.100 --> 00:13:16.920
+So, I can simply close everything, create here one folder name as components and this
+
+00:13:16.980 --> 00:13:20.699
+components is going to have something known as news feed.
+
+00:13:21.639 --> 00:13:29.279
+So, I can simply say here news feed dot TSX, RNFES and I can say this as news feed.
+
+00:13:30.560 --> 00:13:34.100
+Let me come into here and let me import it.
+
+00:13:35.080 --> 00:13:36.060
+Now let me close this.
+
+00:13:37.240 --> 00:13:42.780
+Let me go inside my news feed and what we can do now?
+
+00:13:44.920 --> 00:13:47.460
+I can basically get my news.
+
+00:13:49.699 --> 00:13:57.720
+So, first of all, I need to maintain bunch of yes, I need to maintain a lot of categories,
+
+00:13:58.440 --> 00:14:00.940
+so for that, a lot of state variables.
+
+00:14:00.941 --> 00:14:08.360
+So, the first state variable that we need is articles and set articles is equals to
+
+00:14:08.500 --> 00:14:16.000
+used it which is going to be the type of news article, easy and we can have inside the array.
+
+00:14:16.600 --> 00:14:19.120
+and initialize them as an MT array.
+
+00:14:20.139 --> 00:14:27.100
+In same way we have loading, we can have refreshing, loading more, pages has more for pagination,
+
+00:14:27.300 --> 00:14:27.899
+so lot of things.
+
+00:14:29.139 --> 00:14:33.120
+So for now let me bring them whatever we need.
+
+00:14:33.500 --> 00:14:37.980
+So, I have loading, I have refreshing, load more just for pagination purpose.
+
+00:14:38.630 --> 00:14:43.740
+Same with page has more belong to basically that pagination thing.
+
+00:14:43.930 --> 00:14:48.820
+Then we have error and then category like I am going to render the chips of category
+
+00:14:48.920 --> 00:14:52.800
+same kind of in Pokemon app that we did same thing going to be here.
+
+00:14:54.819 --> 00:14:58.639
+And then we have this country, perfect.
+
+00:14:59.980 --> 00:15:08.459
+And then I am going to create here a method name as load news is equals to use callback
+
+00:15:09.660 --> 00:15:16.180
+and this use callback is going to create here one sync callback.
+
+00:15:16.750 --> 00:15:21.220
+So this is going to be a sync callback with empty dependency for now.
+
+00:15:21.700 --> 00:15:28.940
+This async is going to accept first thing as page number which is type of number is equals to 1.
+
+00:15:29.520 --> 00:15:38.020
+Second thing is reset which is equals to boolean and then this is basically equal to false.
+
+00:15:38.500 --> 00:15:45.600
+Now, let me come into here and then what I can do I can simply use my fetch top headlines
+
+00:15:45.800 --> 00:15:47.960
+method and we are good to go.
+
+00:15:48.830 --> 00:15:57.600
+So I can basically maintain here a slight response is equals to await fetch top headlines
+
+00:15:58.620 --> 00:16:01.980
+and then we can basically pass all the data that we have.
+
+00:16:01.981 --> 00:16:04.220
+So for page I can pass page number.
+
+00:16:05.400 --> 00:16:18.040
+And same for page size, let me have the 20 for category is basic if category is, where
+
+00:16:18.120 --> 00:16:24.960
+is that categories equal to equal to all then need not to pass anything as a category.
+
+00:16:25.750 --> 00:16:27.880
+So I can simply password undefined.
+
+00:16:28.680 --> 00:16:32.320
+Otherwise, whatever category you are passing, we are going to pass that.
+
+00:16:32.800 --> 00:16:40.640
+And then the country name and for yes, in future we are definitely going to handle the
+
+00:16:40.700 --> 00:16:43.360
+searching feature then we will implement that as well.
+
+00:16:45.500 --> 00:16:48.839
+And I can say what I can simply say.
+
+00:16:50.500 --> 00:16:58.540
+So, if reset is true, so we are basically resetting them, I can simply say, consetarticle
+
+00:16:58.760 --> 00:17:02.720
+is equals to response dot articles, yes.
+
+00:17:04.300 --> 00:17:10.660
+Otherwise, if this is false, like we are not resetting it, we are fetching one after another.
+
+00:17:10.760 --> 00:17:16.359
+So, I can simply say, let articles setarticle is equals to all the previous data and append
+
+00:17:16.360 --> 00:17:17.300
+continue data, simple.
+
+00:17:18.500 --> 00:17:26.579
+So, previous data and then whatever our new data, so I can simply say response dot articles
+
+00:17:28.099 --> 00:17:34.580
+and if we have more like let's say that we have more then we are going to pass that as
+
+00:17:34.660 --> 00:17:36.240
+well so that we can load more data.
+
+00:17:36.920 --> 00:17:39.760
+So out of this else I can simply pass this.
+
+00:17:40.700 --> 00:17:49.360
+set has more, so if response.article length is greater than 0 and page.number into 20
+
+00:17:49.740 --> 00:17:51.800
+is less than response total result.
+
+00:17:52.800 --> 00:17:58.260
+This means we have basically like we are setting up true and false kind of that.
+
+00:17:58.350 --> 00:18:02.040
+So if it is true then has more if it is false then we don't have more.
+
+00:18:02.390 --> 00:18:07.500
+So we need not to fetch anything and then simply say set page is equals to whatever
+
+00:18:10.960 --> 00:18:16.280
+And yep, and in same way by any chance if we have any error, so you can definitely show
+
+00:18:16.400 --> 00:18:17.060
+that error.
+
+00:18:18.060 --> 00:18:18.380
+All right.
+
+00:18:19.240 --> 00:18:26.200
+And then out of this we can do like inside this.
+
+00:18:28.019 --> 00:18:34.519
+Like from here we are starting it alright from here till here I can cut this out I can
+
+00:18:34.620 --> 00:18:41.260
+simply add try and catch inside try let me add all my logic like you guys can see this
+
+00:18:41.340 --> 00:18:49.519
+is my try block into catch what I can do like if we have any error then I can simply going
+
+00:18:49.620 --> 00:18:53.779
+to say set error is equals to error whatever is that perfect.
+
+00:18:54.720 --> 00:18:55.899
+I can see is
+
+00:18:56.600 --> 00:19:10.520
+Like me set this error dot I wanted to set my error as error error dot message we have
+
+00:19:10.559 --> 00:19:17.080
+that I don't know it's fine so what I can do
+
+00:19:19.500 --> 00:19:24.140
+So, let me just make it type safe, I mean it is easy but still I can simply say error
+
+00:19:24.260 --> 00:19:32.620
+message is equals to whatever the error, if this error is the instance of error, so I
+
+00:19:32.660 --> 00:19:39.260
+can simply going to return the error dot message look at that, this is how you can do so, otherwise
+
+00:19:39.460 --> 00:19:42.700
+you can simply return fail to load news, easy.
+
+00:19:43.300 --> 00:19:46.200
+And here you will simply pass error message.
+
+00:19:47.270 --> 00:19:53.140
+Yes, this is bit more complex, complex I can say, but this is how you will grow, this
+
+00:19:53.220 --> 00:19:53.940
+is how you will learn.
+
+00:19:54.770 --> 00:20:01.980
+And then inside the finally, I can do set loading, set refreshing, set load more to
+
+00:20:02.260 --> 00:20:02.580
+false.
+
+00:20:03.440 --> 00:20:03.880
+Perfect.
+
+00:20:04.600 --> 00:20:11.020
+And then I can simply add the dependency, first dependency is category, second is country,
+
+00:20:11.460 --> 00:20:16.039
+third we do not have for now, so yes for now we only have two dependency.
+
+00:20:17.320 --> 00:20:25.500
+And then out of this I can simply call my use effect, this use effect is basically going
+
+00:20:25.700 --> 00:20:31.039
+to call my load news like one, pages one and then true.
+
+00:20:32.820 --> 00:20:38.240
+And inside this, I can pass my category and the country.
+
+00:20:39.660 --> 00:20:40.080
+Perfect.
+
+00:20:40.960 --> 00:20:47.380
+Now let's move ahead and then what I can do, I can in same way I can add handle refresh
+
+00:20:47.640 --> 00:20:51.140
+method like the moment you scroll down, you wanted to refresh data.
+
+00:20:51.760 --> 00:20:57.299
+So this is how this is going to work like set refresh true set pages as one has more
+
+00:20:57.360 --> 00:20:58.900
+true load news once again.
+
+00:21:01.820 --> 00:21:06.840
+And what I'm going to do, I'm in same way going to create one more method, which is
+
+00:21:06.960 --> 00:21:07.960
+handle load more.
+
+00:21:08.120 --> 00:21:10.260
+So they are basically going to load more data.
+
+00:21:10.300 --> 00:21:13.940
+The moment you move a one page ahead.
+
+00:21:15.820 --> 00:21:18.400
+And then I can have one more method as.
+
+00:21:20.540 --> 00:21:24.160
+like we don't need it for now handle category change.
+
+00:21:24.380 --> 00:21:29.400
+So this is how you will change it set page has more in same way we can have a handle
+
+00:21:29.520 --> 00:21:30.180
+country change.
+
+00:21:31.240 --> 00:21:32.580
+So let me add that as well.
+
+00:21:32.860 --> 00:21:36.080
+This is how whatever the country name is coming we are going to change it.
+
+00:21:37.600 --> 00:21:37.700
+Perfect.
+
+00:21:39.300 --> 00:21:39.780
+Nice.
+
+00:21:40.040 --> 00:21:44.860
+In future we are going to have two, three more features but right now let me simply
+
+00:21:44.940 --> 00:21:46.340
+create render footer.
+
+00:21:47.300 --> 00:21:55.000
+But this is equal to if we do not have any like I can say if we do not have any loading
+
+00:21:55.160 --> 00:22:01.720
+more then we are simply going to return null, but if we have in load more mode then I can
+
+00:22:01.780 --> 00:22:07.840
+simply going to return a view that is showing us activity indicator basically a loader we
+
+00:22:07.880 --> 00:22:08.240
+can say.
+
+00:22:08.960 --> 00:22:15.340
+Cool, let me import my activity indicator and let me paste all of my designs that I
+
+00:22:15.400 --> 00:22:16.160
+have for this.
+
+00:22:17.030 --> 00:22:19.720
+You will get all of that inside my source code.
+
+00:22:20.700 --> 00:22:26.980
+So now you will see that I have a container list content, footer loader, empty container,
+
+00:22:27.260 --> 00:22:29.400
+empty text, retry button, lot of things.
+
+00:22:29.580 --> 00:22:30.920
+I mean everything is there.
+
+00:22:31.120 --> 00:22:31.240
+Cool.
+
+00:22:32.650 --> 00:22:32.840
+Perfect.
+
+00:22:34.540 --> 00:22:40.000
+Now, let's move ahead and start implementing the UI for it.
+
+00:22:40.980 --> 00:22:47.320
+So for implementing the UI, first thing we have did render a footer in the same way I
+
+00:22:47.380 --> 00:22:48.920
+can render my empty as well.
+
+00:22:48.980 --> 00:22:55.480
+Empty state is basically like whenever you don't found any news.
+
+00:22:56.000 --> 00:22:57.660
+So for that you can show that.
+
+00:22:58.020 --> 00:22:59.280
+So I can simply say const.
+
+00:23:00.940 --> 00:23:11.360
+render empty is equals to I can come into here and I can simply say if we are in loading
+
+00:23:11.500 --> 00:23:15.920
+mode yes then simply coming to here and return null.
+
+00:23:16.500 --> 00:23:24.560
+Otherwise, simply say return, return a view that is basically going to do what?
+
+00:23:24.860 --> 00:23:31.940
+Let me show you, this is your view, this view is going to have a style, style of styles.
+
+00:23:33.100 --> 00:23:40.799
+empty container and then we are going to have a text which is going to say us this like
+
+00:23:41.000 --> 00:23:45.980
+we don't have this error for now so you can ignore it otherwise they are going to show
+
+00:23:46.059 --> 00:23:54.960
+us this what is that no article found pull down and then get it cool and you can even
+
+00:23:55.020 --> 00:23:58.539
+add a retry button here so what if I add that retry.
+
+00:23:59.500 --> 00:24:07.020
+And I can show the error message as well like we can show the error and then out of this
+
+00:24:07.160 --> 00:24:15.540
+text but I can do I can simply say if we have any error then I wanted you to render a simple
+
+00:24:15.720 --> 00:24:22.440
+pressable cool attachable opacity which is basically going to prompt you to retry nothing
+
+00:24:23.160 --> 00:24:23.840
+rocket science.
+
+00:24:26.800 --> 00:24:33.260
+So, this is your empty render like we are rendering a touchable opacity then basic style
+
+00:24:33.920 --> 00:24:43.360
+and on press we are loading more data easy I hope so cool and then in same way you can
+
+00:24:43.540 --> 00:24:45.780
+render a lot more other thing as well.
+
+00:24:47.260 --> 00:24:52.380
+But for now, like I don't like in upcoming chapters, we are going to implement other
+
+00:24:52.480 --> 00:24:53.179
+things as well.
+
+00:24:53.919 --> 00:25:00.100
+But for now, I think I can just simply show you a flat list that would be good and then
+
+00:25:00.159 --> 00:25:01.100
+we can end this chapter.
+
+00:25:01.340 --> 00:25:02.860
+So style is equals to this.
+
+00:25:03.779 --> 00:25:07.600
+And then I can simply say this is styles.container.
+
+00:25:08.860 --> 00:25:12.380
+And for now, in future, we are going to create a render here.
+
+00:25:13.340 --> 00:25:14.519
+me add a basic to do.
+
+00:25:16.760 --> 00:25:22.740
+This to-do is going to show us the header like that header have a search bar that header
+
+00:25:22.900 --> 00:25:25.880
+has a country change bar will show you that everything.
+
+00:25:29.200 --> 00:25:32.600
+But for now I think we can have.
+
+00:25:33.600 --> 00:25:44.320
+A flat list, yes and this flat list is going to have a data as articles and then key extractor
+
+00:25:44.820 --> 00:25:47.179
+would be equal to we can say URL.
+
+00:25:49.169 --> 00:25:51.880
+So let me copy my key extractor and paste it.
+
+00:25:52.010 --> 00:25:53.880
+So you will see we have item and index.
+
+00:25:54.500 --> 00:26:00.300
+We are creating a key something like this whatever the URL add index into that and
+
+00:26:00.410 --> 00:26:07.940
+yep otherwise you can simply return index but never treat index as a key you will understand
+
+00:26:08.160 --> 00:26:10.240
+that but for now we are good to go.
+
+00:26:11.300 --> 00:26:25.900
+And then I can simply say render item is equals to something like item and this item is going
+
+00:26:26.000 --> 00:26:27.340
+to render a news feed.
+
+00:26:27.620 --> 00:26:34.580
+Yes, this news feed not news feed sorry news card component which is going to accept articles
+
+00:26:35.620 --> 00:26:38.300
+and then this article is going to accept this.
+
+00:26:39.000 --> 00:26:41.820
+Cool, what is happening?
+
+00:26:42.320 --> 00:26:44.900
+I think I need to close this.
+
+00:26:46.620 --> 00:26:49.840
+All right, a basic syntax issue, let me fix it quickly.
+
+00:26:51.360 --> 00:26:52.860
+All right, so yep.
+
+00:26:53.820 --> 00:26:57.080
+Now we need to render this and the moment you do this.
+
+00:26:58.840 --> 00:26:59.940
+And we are good to go.
+
+00:27:00.360 --> 00:27:00.440
+Cool.
+
+00:27:01.840 --> 00:27:05.920
+So let's move ahead and start creating this then and only this going to work otherwise
+
+00:27:07.200 --> 00:27:09.980
+and let me add a self closing tag as well.
+
+00:27:10.280 --> 00:27:15.060
+So let's create this simple component and then in upcoming chapter we are going to create
+
+00:27:15.200 --> 00:27:17.080
+bunch of other components as well.
+
+00:27:18.340 --> 00:27:26.600
+So, I can simply say this as newscard.tsx and this newscard is very pretty straightforward
+
+00:27:26.760 --> 00:27:27.280
+we can say.
+
+00:27:28.050 --> 00:27:31.300
+So, first of all, let me import all the thing that we need.
+
+00:27:31.540 --> 00:27:37.140
+We need a react, bunch of components, this type and then image.
+
+00:27:37.600 --> 00:27:39.080
+Perfect from ExpoImage.
+
+00:27:39.800 --> 00:27:47.620
+And then let me create here interface interface have articles and on press and then I can
+
+00:27:47.700 --> 00:27:58.000
+simply say export const and this will be going to be news card and this is going to accept
+
+00:27:58.080 --> 00:28:06.560
+articles and then on press this is going to be the type of news card prop.
+
+00:28:08.920 --> 00:28:22.040
+Like something this is right or I think this one export news card yes I am doing it right
+
+00:28:23.420 --> 00:28:31.960
+then where I am looking just give me a minute like this one and I think here I need to pass
+
+00:28:31.980 --> 00:28:36.080
+my news card props not news articles of this one.
+
+00:28:38.360 --> 00:28:44.180
+Yep, property article, yep, this is not articles, this is article.
+
+00:28:44.660 --> 00:28:45.820
+Now I think this will work.
+
+00:28:47.880 --> 00:28:51.860
+And now we are also going to have equal to yep, now we are good to go.
+
+00:28:52.500 --> 00:28:56.700
+And then this is basically going to have a handle press method.
+
+00:28:57.680 --> 00:28:59.880
+And that handle press will do something.
+
+00:28:59.950 --> 00:29:02.580
+But for now, let me just simply initialize that.
+
+00:29:04.020 --> 00:29:04.500
+Perfect.
+
+00:29:05.740 --> 00:29:08.320
+And then let me add here one simple utility.
+
+00:29:09.100 --> 00:29:09.920
+This is format date.
+
+00:29:09.940 --> 00:29:11.820
+You need not to understand this for now.
+
+00:29:11.960 --> 00:29:12.140
+Cool.
+
+00:29:12.260 --> 00:29:14.600
+This is basically going to format a date for you.
+
+00:29:15.880 --> 00:29:19.580
+And then I wanted to return a basic UI.
+
+00:29:19.880 --> 00:29:24.840
+So let me just simply copy and paste that UI because I don't want it to type line by line.
+
+00:29:25.060 --> 00:29:27.740
+You should also copy and paste this if you wanted to.
+
+00:29:28.560 --> 00:29:28.760
+Cool.
+
+00:29:30.040 --> 00:29:32.220
+And then let me paste my styles as well.
+
+00:29:34.820 --> 00:29:37.700
+And let me try to explain you what is happening.
+
+00:29:37.809 --> 00:29:43.340
+So you will see that we have a touchable opacity which have a style and then on press handle
+
+00:29:43.480 --> 00:29:43.720
+press.
+
+00:29:43.789 --> 00:29:50.320
+So the moment you press on any news card, I wanted myself to redirect to that specific
+
+00:29:50.480 --> 00:29:50.700
+news.
+
+00:29:51.100 --> 00:29:57.059
+Then, if we have any image then I wanted to render here image, same bunch of design like
+
+00:29:57.299 --> 00:30:04.080
+we are showing number of article name, source name, when it is published and then title,
+
+00:30:04.400 --> 00:30:05.640
+description and author.
+
+00:30:06.400 --> 00:30:10.400
+Easy and if I save it and import it.
+
+00:30:11.940 --> 00:30:12.380
+Perfect.
+
+00:30:13.740 --> 00:30:16.720
+And then I don't know how this is going to work.
+
+00:30:17.320 --> 00:30:21.720
+But let me see finger crossed and if it's not work no problem will fix that in next
+
+00:30:21.820 --> 00:30:21.960
+shift.
+
+00:30:23.010 --> 00:30:24.520
+All right, they are not showing us anything.
+
+00:30:28.140 --> 00:30:28.740
+Why?
+
+00:30:30.490 --> 00:30:32.980
+Is render empty and render footer?
+
+00:30:33.780 --> 00:30:35.380
+Yes, this is fine.
+
+00:30:35.680 --> 00:30:40.540
+If I just go to my key extractor, we have render item.
+
+00:30:41.400 --> 00:30:44.900
+In same way, we can have on and reach method here.
+
+00:30:46.220 --> 00:30:47.580
+Not here, I mean here.
+
+00:30:47.790 --> 00:30:52.380
+So on and reach is going to call handle load more.
+
+00:30:53.100 --> 00:30:57.980
+Easy, and then in same way we can give on and threshold.
+
+00:30:59.370 --> 00:31:00.440
+This is also fine.
+
+00:31:01.520 --> 00:31:05.620
+Then I can list my footer component and empty component as well.
+
+00:31:07.220 --> 00:31:12.440
+Then I can give container style, maybe because of this they are not showing us anything.
+
+00:31:13.440 --> 00:31:19.320
+And then I can simply say show vertical scroll indicator as false and like this.
+
+00:31:20.760 --> 00:31:24.900
+Alright, I think they are still not showing me anything.
+
+00:31:25.780 --> 00:31:31.480
+If I reload it once again, what if I close my server?
+
+00:31:32.600 --> 00:31:33.160
+We started.
+
+00:31:34.980 --> 00:31:36.180
+Let me close everything.
+
+00:31:37.600 --> 00:31:38.660
+Let me run it once again.
+
+00:31:39.080 --> 00:31:39.180
+Cool.
+
+00:31:40.000 --> 00:31:41.580
+And if I press on my news feed.
+
+00:31:43.660 --> 00:31:43.980
+Let's see.
+
+00:31:45.720 --> 00:31:49.320
+So, they are still not showing us anything.
+
+00:31:49.419 --> 00:31:52.580
+So, is my data is coming?
+
+00:31:53.660 --> 00:31:54.679
+Let's check that cool.
+
+00:31:55.160 --> 00:31:56.440
+So this is your load news.
+
+00:31:58.160 --> 00:32:00.340
+So let me go to my load news method.
+
+00:32:01.460 --> 00:32:06.419
+This load news have a response and then we have articles.
+
+00:32:08.640 --> 00:32:18.260
+Alright, let me try to see is I have any response so I can simply say const response perfect
+
+00:32:19.320 --> 00:32:20.179
+and if I reload it.
+
+00:32:26.280 --> 00:32:35.340
+Alright, so is it I am not using it correctly maybe if I go to my index we have this then
+
+00:32:35.400 --> 00:32:36.400
+why it is not working.
+
+00:32:39.210 --> 00:32:44.840
+If I go to my index we have this and I am not be able to show anything.
+
+00:32:45.700 --> 00:32:49.279
+Cool, let me debug it and then see you in upcoming chapter.
+
+00:32:49.590 --> 00:32:51.399
+So for this chapter, we are good to go.
+
+00:32:51.559 --> 00:32:53.059
+We'll see the output in next chapter.
+
+00:32:53.490 --> 00:32:57.340
+So for now, yeah, this is pretty much it and see you next time.
+

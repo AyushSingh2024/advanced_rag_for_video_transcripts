@@ -1,0 +1,1397 @@
+WEBVTT
+
+00:00:00.080 --> 00:00:07.920
+Alright everyone and welcome to a brand new module and the name of that module is known
+
+00:00:08.039 --> 00:00:09.200
+as expo maps.
+
+00:00:09.940 --> 00:00:17.020
+Alright, so right now we know very well how to create a production and development build
+
+00:00:17.080 --> 00:00:18.700
+and a preview build of your application.
+
+00:00:19.420 --> 00:00:20.920
+So expo map.
+
+00:00:21.300 --> 00:00:23.480
+will allow us to use this.
+
+00:00:23.560 --> 00:00:23.800
+All right.
+
+00:00:23.880 --> 00:00:30.020
+And if you just simply coming to here and read it, this library is currently in alpha
+
+00:00:30.939 --> 00:00:34.020
+and will frequently experience breaking changes.
+
+00:00:34.720 --> 00:00:37.000
+So it is not available in expo go app.
+
+00:00:37.199 --> 00:00:37.760
+No problem.
+
+00:00:38.100 --> 00:00:43.820
+So, use development build to try it out and we know how to create a development build.
+
+00:00:43.920 --> 00:00:50.680
+That's the reason I have in between introduced how you can basically use ES build and use
+
+00:00:50.860 --> 00:00:53.100
+all of this libraries without any limitations.
+
+00:00:54.180 --> 00:00:54.379
+Perfect.
+
+00:00:54.420 --> 00:00:58.620
+So, first thing first, let me just simply go to my VS Code app and let's just simply
+
+00:00:58.680 --> 00:01:00.699
+create a new expo application.
+
+00:01:01.220 --> 00:01:04.680
+So, bunnix create.
+
+00:01:05.500 --> 00:01:11.380
+expo app, add the rate latest, so this is going to create it and then dot slash
+
+00:01:12.320 --> 00:01:15.800
+alright let's just wait for their installation then I'll be right back
+
+00:01:16.760 --> 00:01:20.780
+alright so now we have successfully installed it what next I can simply say
+
+00:01:20.920 --> 00:01:22.479
+burn run
+
+00:01:24.600 --> 00:01:25.640
+Reset project.
+
+00:01:25.790 --> 00:01:32.140
+So this is basically going to reset my project and I think we'll create a build in a while
+
+00:01:32.820 --> 00:01:37.920
+but for now let's just simply coming to here and we'll see what are all the things that
+
+00:01:38.020 --> 00:01:39.320
+we need to implement here.
+
+00:01:40.490 --> 00:01:40.640
+Perfect.
+
+00:01:41.300 --> 00:01:45.340
+First thing first let me just simply coming to here and say what is expo maps?
+
+00:01:46.100 --> 00:01:52.900
+So, we can say that Xpermapp is a cross, a cross platform map component.
+
+00:01:53.009 --> 00:02:01.860
+Yes, there are nothing just a map component that provides, that's provide a unified, very
+
+00:02:01.940 --> 00:02:09.220
+nice line which is provide a unified API for displaying maps.
+
+00:02:10.000 --> 00:02:18.540
+displaying maps on both of the system like be it Android and be it iOS.
+
+00:02:19.280 --> 00:02:25.160
+Alright, so in both of the ecosystem you can simply use this single component and
+
+00:02:25.200 --> 00:02:29.320
+you can use it like anything. So what are all the features they provide? First thing
+
+00:02:29.400 --> 00:02:32.300
+they provide you display
+
+00:02:35.640 --> 00:02:41.960
+Interactive maps, then another one is basically for you can even use something known as add
+
+00:02:42.000 --> 00:02:48.360
+markers and annotations, then they provide you, you can customize.
+
+00:02:49.100 --> 00:02:55.340
+The maps, according to your need, their appearance and they work on both Android and iOS.
+
+00:02:55.780 --> 00:02:57.940
+They support user location tracking.
+
+00:02:58.560 --> 00:03:02.880
+They also support handle user interaction like tapping, dragging a lot of things.
+
+00:03:04.320 --> 00:03:04.580
+Perfect.
+
+00:03:05.160 --> 00:03:07.120
+So under the hood, like for iOS.
+
+00:03:07.900 --> 00:03:11.599
+They use their own Apple Maps.
+
+00:03:12.480 --> 00:03:12.540
+Perfect.
+
+00:03:12.659 --> 00:03:16.640
+They use their own Apple Maps, which is named as MapKit.
+
+00:03:17.220 --> 00:03:20.079
+When it's come to Android, they use Google Maps.
+
+00:03:21.019 --> 00:03:21.280
+All right.
+
+00:03:21.379 --> 00:03:25.359
+When it's come to this, they use something known as Google Maps.
+
+00:03:25.959 --> 00:03:26.579
+All right.
+
+00:03:26.959 --> 00:03:27.379
+Nice.
+
+00:03:28.599 --> 00:03:32.159
+Now, let's move ahead and just install a bunch of things with me.
+
+00:03:32.540 --> 00:03:34.700
+So the first thing that I wanted you to install.
+
+00:03:35.600 --> 00:03:45.160
+is expo map. So, simply run bunx install expo map. So, this is basically going to install
+
+00:03:45.650 --> 00:03:51.940
+a map library for us. Alright, so in less than 6 seconds we have installed it successfully.
+
+00:03:52.500 --> 00:03:54.680
+Next, they are saying for configuration.
+
+00:03:55.220 --> 00:04:02.800
+So Xpermapp provide access to the platform native map API on Android and iOS.
+
+00:04:03.240 --> 00:04:08.740
+So Apple Maps available on iOS only, Google Maps available on Android only.
+
+00:04:09.000 --> 00:04:14.920
+Perfect, no additional configuration is required to use it after installing this package.
+
+00:04:15.160 --> 00:04:20.500
+So if you are using expo maps for iOS, you need not to do anything.
+
+00:04:21.170 --> 00:04:28.920
+But when it's come to Android, while Google provide a Google map SDK for iOS, expo maps
+
+00:04:29.200 --> 00:04:32.120
+support it exclusively on Android.
+
+00:04:32.600 --> 00:04:39.660
+If you want to use Google map on iOS, you can look into an alternative library or writing your own, but all right, we already have it.
+
+00:04:40.240 --> 00:04:44.720
+So first thing first, you need a Google Cloud API setup.
+
+00:04:45.420 --> 00:04:47.820
+So before you can use Google map on Android.
+
+00:04:48.700 --> 00:04:53.820
+You need to register a Google Cloud API project.
+
+00:04:54.980 --> 00:05:01.120
+Enables the map SDK for Android and add the associated configuration to your project.
+
+00:05:01.640 --> 00:05:06.440
+So first thing they are basically saying you is to register a Google Cloud API project
+
+00:05:07.080 --> 00:05:08.860
+and enable the map SDK.
+
+00:05:08.861 --> 00:05:11.120
+So simply press on Google API Manager.
+
+00:05:13.039 --> 00:05:19.639
+Alright and inside make sure that you are already logged in here and inside you basically
+
+00:05:19.819 --> 00:05:27.319
+need to search for something known as Google Maps and what I will suggest you, let us
+
+00:05:27.500 --> 00:05:29.900
+start understanding this from starting.
+
+00:05:30.659 --> 00:05:33.060
+So initially you will be at this.
+
+00:05:33.700 --> 00:05:41.420
+page and then you simply need to click on APIs and services alright and also before
+
+00:05:41.580 --> 00:05:48.180
+coming to this page make sure you have some existing project perfect so definitely you
+
+00:05:48.220 --> 00:05:54.100
+can create one if you wanted to so let me just simply say new project and I will simply
+
+00:05:54.101 --> 00:06:01.420
+this is name this as expo maps app perfect and then I can simply press on create
+
+00:06:02.400 --> 00:06:08.060
+Project, you can definitely wait for few seconds, so this is basically going to create a new
+
+00:06:08.139 --> 00:06:08.479
+project.
+
+00:06:09.139 --> 00:06:16.340
+Look at that, simply say select this project and now I am inside expo maps and then what
+
+00:06:16.400 --> 00:06:20.900
+you can do, you can again simply press on APIs and services.
+
+00:06:21.600 --> 00:06:25.280
+Just wait for few seconds, everything is booting it up, setting it up.
+
+00:06:25.940 --> 00:06:26.600
+It's fine.
+
+00:06:27.270 --> 00:06:27.420
+Perfect.
+
+00:06:28.280 --> 00:06:32.520
+Alright, so for that, what you need to do, first of all, simply search for Google Map
+
+00:06:32.720 --> 00:06:39.360
+SDK and this one simply just press and after pressing this, you will get some UI and then
+
+00:06:39.460 --> 00:06:40.440
+simply say enable.
+
+00:06:41.180 --> 00:06:46.380
+So right now we are basically enabling the map SDK for this specific Google project.
+
+00:06:47.180 --> 00:06:47.420
+Perfect.
+
+00:06:47.900 --> 00:06:50.979
+Alright, so now they are basically saying me is to verify.
+
+00:06:51.300 --> 00:06:54.540
+I don't, I hope so they will don't ask for any credit cards.
+
+00:06:57.100 --> 00:06:58.660
+Let me just wait for it.
+
+00:06:58.880 --> 00:06:59.120
+Alright.
+
+00:07:00.060 --> 00:07:03.720
+And now you guys can see that definitely I have to set up my cards, but it's fine.
+
+00:07:03.840 --> 00:07:07.440
+I mean, they're not going to charge you anything unless you just, uh,
+
+00:07:08.100 --> 00:07:10.280
+Choose that specific plan.
+
+00:07:10.440 --> 00:07:11.620
+I am on my free plan.
+
+00:07:11.770 --> 00:07:13.980
+Let me just simply copy this API key.
+
+00:07:14.720 --> 00:07:16.700
+Definitely I am going to revoke that in a while.
+
+00:07:17.290 --> 00:07:20.800
+But for now into ENV, let me just simply paste it.
+
+00:07:21.160 --> 00:07:21.260
+Cool.
+
+00:07:21.810 --> 00:07:24.960
+And then I can simply say go to Google Maps platform.
+
+00:07:26.800 --> 00:07:32.280
+Perfect, so protect your API key, so yes I wanted to go on Android apps and you will
+
+00:07:32.320 --> 00:07:34.960
+see on Android app they are asking me 2 information.
+
+00:07:35.900 --> 00:07:41.740
+First one is the package name and another one is the SHA1 certificate fingerprint.
+
+00:07:42.400 --> 00:07:45.120
+But we don't have any one of them.
+
+00:07:45.650 --> 00:07:47.340
+So how you can basically get it?
+
+00:07:48.250 --> 00:07:49.820
+Alright, so that's a good question.
+
+00:07:50.570 --> 00:07:54.680
+And if you just simply coming to it, you will already see register your Google Cloud API
+
+00:07:55.400 --> 00:07:58.120
+and copy your apps, shaven certificate.
+
+00:07:58.350 --> 00:08:01.740
+But right now we wanted to go with development build.
+
+00:08:02.539 --> 00:08:08.660
+So definitely let's just wait for a few minutes and install all of the other things that maybe
+
+00:08:08.780 --> 00:08:09.780
+or maybe not we need.
+
+00:08:10.360 --> 00:08:10.940
+phone now.
+
+00:08:11.700 --> 00:08:23.800
+also install bun add expo locations and I think bun add expo image alright these
+
+00:08:23.940 --> 00:08:29.760
+are some packages were just happened just give me a minute alright there is
+
+00:08:29.800 --> 00:08:33.140
+something wrong here it's fine let me just search for expo
+
+00:08:33.700 --> 00:08:40.000
+location, perfect and then let me just simply run this, alright.
+
+00:08:40.280 --> 00:08:47.300
+Again simply run 1x, expo install expo location and expo image, then hopefully this will going
+
+00:08:47.400 --> 00:08:48.780
+to install it, alright.
+
+00:08:48.960 --> 00:09:03.680
+In less than
+
+00:09:03.681 --> 00:09:03.701
+So, we can say 1.3 seconds, we have installed whatever we need, perfect.
+
+00:09:03.702 --> 00:09:03.722
+So, now let us move ahead and let us configure.
+
+00:09:03.723 --> 00:09:03.780
+First of all, let me just again go to expo maps.
+
+00:09:06.000 --> 00:09:09.040
+Inside this expo map, perfect.
+
+00:09:09.380 --> 00:09:13.100
+Inside the plugins, let me just simply copy this.
+
+00:09:14.270 --> 00:09:14.480
+Perfect.
+
+00:09:14.700 --> 00:09:19.160
+Let go to app Jason and search for plugins.
+
+00:09:19.680 --> 00:09:20.460
+So where is that?
+
+00:09:20.820 --> 00:09:21.140
+This one.
+
+00:09:21.770 --> 00:09:26.580
+And then inside this, you simply need to paste it.
+
+00:09:26.720 --> 00:09:27.320
+So which one?
+
+00:09:28.800 --> 00:09:30.200
+From here to here.
+
+00:09:31.000 --> 00:09:36.180
+Perfect, I think we are doing it right hopefully let me paste it nice.
+
+00:09:36.330 --> 00:09:41.800
+So first thing is they are asking for the permission and second thing they are basically
+
+00:09:42.180 --> 00:09:47.220
+true and location permission allow whatever the product name that we have.
+
+00:09:48.000 --> 00:09:49.800
+to use your location.
+
+00:09:50.060 --> 00:09:51.320
+All right, this is the first thing.
+
+00:09:52.460 --> 00:09:54.920
+And what is the next thing we wanted to do?
+
+00:09:55.000 --> 00:09:59.000
+Next thing I wanted you to add here the API key.
+
+00:09:59.800 --> 00:10:04.040
+But before adding plugins, I think we need to add that inside array.
+
+00:10:04.600 --> 00:10:07.100
+Yes, right now this is working completely fine. Perfect.
+
+00:10:07.560 --> 00:10:09.880
+Now let's move ahead and start adding API keys.
+
+00:10:10.340 --> 00:10:12.420
+All right, so let's search for Android section.
+
+00:10:13.000 --> 00:10:15.000
+Here you will see that we have an Android section.
+
+00:10:15.500 --> 00:10:21.400
+Below this simply open a config file inside this config file, what you can do basically
+
+00:10:21.580 --> 00:10:28.140
+you can open this and say Google Maps, yes look at that and inside this I wanted to add
+
+00:10:28.200 --> 00:10:30.200
+the API key that we have copied here.
+
+00:10:30.201 --> 00:10:36.540
+So let me just cut this out, let me just paste it, close this we don't need it anymore and
+
+00:10:36.780 --> 00:10:39.140
+now let's move ahead and we'll see what more we can do.
+
+00:10:40.020 --> 00:10:40.520
+Perfect.
+
+00:10:41.530 --> 00:10:46.920
+Once we have successfully configured our Google Maps API and also this permission, this is
+
+00:10:46.960 --> 00:10:55.520
+the right time to simply move ahead and start writing the command AS build hyphen pan drid
+
+00:10:55.600 --> 00:11:00.860
+android and profile is basically definitely we need to add double hyphen.
+
+00:11:01.700 --> 00:11:07.500
+So, this is going to be profile and profile is going to be as development, alright.
+
+00:11:08.080 --> 00:11:14.460
+Let me just simply hit this up, perfect and yes, we detect that you do not have expo client.
+
+00:11:14.960 --> 00:11:19.540
+So, do you want a ESCLI to install expo dev client for you?
+
+00:11:20.120 --> 00:11:21.860
+Yes, please install that for me.
+
+00:11:22.300 --> 00:11:27.800
+And I think we have installed that successfully. Perfect. So would you like to automatically
+
+00:11:27.940 --> 00:11:35.500
+create a EIS project? Yes, simply create it. Perfect. Let's just wait for it. And they
+
+00:11:35.529 --> 00:11:41.339
+are saying me, would you like your Android application ID? So yes, I just wanted to go
+
+00:11:41.399 --> 00:11:46.519
+with this ID, whichever you are suggesting me. Perfect. Yes, we wanted to have a new
+
+00:11:46.760 --> 00:11:47.180
+key store.
+
+00:11:47.800 --> 00:11:52.120
+Perfect. So now they are generating a new key store into the cloud.
+
+00:11:52.740 --> 00:11:55.940
+Let's just wait for this. And yes, we have successfully generating it.
+
+00:11:56.480 --> 00:12:02.880
+They are creating the key store, compressing my files and going to create a development
+
+00:12:03.100 --> 00:12:04.560
+build for us.
+
+00:12:04.959 --> 00:12:05.100
+Perfect.
+
+00:12:05.600 --> 00:12:09.980
+So, right now you will see that our build is in progress, but you can also see the logs
+
+00:12:10.100 --> 00:12:10.240
+here.
+
+00:12:10.339 --> 00:12:15.139
+So, let me just simply click it and let me open that here.
+
+00:12:15.949 --> 00:12:16.100
+Perfect.
+
+00:12:16.980 --> 00:12:20.740
+And you can see still in progress right now.
+
+00:12:21.560 --> 00:12:25.720
+If you search for something known as credentials, you can simply go inside credentials.
+
+00:12:26.400 --> 00:12:31.100
+So, inside this credential, first thing you will get your application identifier.
+
+00:12:31.450 --> 00:12:31.700
+Perfect.
+
+00:12:32.430 --> 00:12:36.460
+So, you can first of all see this is your SHA one fingerprint.
+
+00:12:37.110 --> 00:12:43.920
+So simply paste that and along with that, this is the application identifier.
+
+00:12:44.050 --> 00:12:45.320
+So also paste.
+
+00:12:46.640 --> 00:12:53.260
+Android app yes and here let me paste that and then simply say restrict key cool
+
+00:12:54.320 --> 00:12:59.360
+alright for some reason I think this is failed what I can do alright so I think
+
+00:12:59.460 --> 00:13:07.880
+let me just once again coming to here and search for Google map SDK and
+
+00:13:07.980 --> 00:13:14.000
+definitely this one I definitely wanted to go for Android
+
+00:13:14.600 --> 00:13:17.339
+Okay, I think I need to enable it once more.
+
+00:13:17.580 --> 00:13:19.380
+So let me just again press on enable.
+
+00:13:20.600 --> 00:13:22.500
+Alright, they are again asking me for this.
+
+00:13:22.560 --> 00:13:24.240
+So let me just go with Android app.
+
+00:13:26.100 --> 00:13:30.779
+Yes, this one is the key and this one is the SHA.
+
+00:13:31.040 --> 00:13:32.839
+Let me simply again say restrict key.
+
+00:13:33.400 --> 00:13:39.220
+Perfect and again saying me fail to restrict API key, visit to go to API key page.
+
+00:13:40.290 --> 00:13:42.260
+Let me retry to do so this cool.
+
+00:13:43.720 --> 00:13:44.300
+Oh, okay.
+
+00:13:44.370 --> 00:13:46.340
+We can again select Android app.
+
+00:13:48.020 --> 00:13:48.100
+Perfect.
+
+00:13:49.520 --> 00:13:51.940
+And then this is the package name.
+
+00:13:52.500 --> 00:13:58.320
+and the fingerprints. So, let me just simply press on package name and this is the fingerprint,
+
+00:13:58.600 --> 00:14:05.620
+let me simply say done and what if I save this hopefully this will work right now and
+
+00:14:05.840 --> 00:14:12.600
+I think yes we have successfully set it up. Let me research it once again just to see
+
+00:14:12.660 --> 00:14:18.220
+is this enable or not and if this is enable then we are definitely good to go. Let me
+
+00:14:18.221 --> 00:14:19.780
+again coming to my android.
+
+00:14:21.640 --> 00:14:24.100
+And yes, look at that they are showing us enabled.
+
+00:14:24.500 --> 00:14:28.700
+So this means now we have successfully created this and connected this.
+
+00:14:29.260 --> 00:14:32.740
+Definitely we need to wait for a few minutes and then I'll be right back.
+
+00:14:33.760 --> 00:14:39.160
+Alright guys, so now we have successfully created the build and let me show you in 55
+
+00:14:39.600 --> 00:14:41.220
+minutes we have created this build.
+
+00:14:41.860 --> 00:14:45.320
+It's fine sometime it take this much of time we can't do anything into it.
+
+00:14:45.880 --> 00:14:46.800
+Let me simply say no.
+
+00:14:47.300 --> 00:14:55.240
+And, let just coming to here and simply open this install and let me just scan this and
+
+00:14:55.300 --> 00:14:56.000
+try to install.
+
+00:14:59.180 --> 00:14:59.300
+Perfect.
+
+00:15:00.190 --> 00:15:02.220
+So, let me just quickly install this up.
+
+00:15:03.620 --> 00:15:08.279
+Cool, let's just wait for their installation and what I am getting just give me a minute.
+
+00:15:08.829 --> 00:15:15.459
+Alright let me just reload it and yes we are back to online and let me just simply press
+
+00:15:15.600 --> 00:15:16.120
+on install.
+
+00:15:17.279 --> 00:15:19.959
+This is basically going to start installing my application.
+
+00:15:21.019 --> 00:15:22.639
+Perfect and then we are good to go.
+
+00:15:23.400 --> 00:15:29.760
+Perfect, so you can see that in just few seconds we are successfully going to install it, nice.
+
+00:15:30.540 --> 00:15:36.800
+Now let me just simply press and then simply say this as install, perfect so this is going
+
+00:15:36.900 --> 00:15:41.080
+to install this application and let me just wait for it.
+
+00:15:41.500 --> 00:15:47.840
+Perfect and then let me just simply press on open, so by just simply pressing on open
+
+00:15:48.680 --> 00:15:54.760
+you can see that they are fetching the development server, let me just hit my Banex expose start,
+
+00:15:55.950 --> 00:15:57.580
+so this is basically going to run.
+
+00:15:58.200 --> 00:16:04.740
+And you will see that now we are inside the development build and I can say a perfect
+
+00:16:05.420 --> 00:16:10.700
+alright and now you can see that this is what our development build will look like.
+
+00:16:11.300 --> 00:16:16.120
+Now first thing first let's move ahead and first of all try to understand about something
+
+00:16:16.220 --> 00:16:16.640
+known as
+
+00:16:17.200 --> 00:16:20.480
+camera position, so how you can handle that out.
+
+00:16:21.460 --> 00:16:28.640
+So for that what I will do I can simply go to my apps and index.tx and here I just basically
+
+00:16:28.780 --> 00:16:34.100
+wanted to install my this packet, so I can simply go to usage.
+
+00:16:34.600 --> 00:16:40.120
+And then let me just simply copy this perfect and let me import it.
+
+00:16:40.250 --> 00:16:44.959
+So first thing you will see we have Apple Maps and second thing that we have you can
+
+00:16:45.019 --> 00:16:53.160
+see a Google Map perfect and yes let me just simply copy this code and instead of this
+
+00:16:53.360 --> 00:16:59.639
+I can paste it perfect and not definitely not in return statement let me repaste it
+
+00:17:00.400 --> 00:17:08.839
+And what I can do, again copy this and cut this out and paste it, perfect.
+
+00:17:09.020 --> 00:17:11.680
+And we can simply import the platform.
+
+00:17:12.380 --> 00:17:19.940
+So if the platform is iOS, we wanted to basically show the Apple Maps, but if the platform is
+
+00:17:20.180 --> 00:17:20.580
+Android.
+
+00:17:20.900 --> 00:17:25.700
+Then I wanted to show the Google map and if I am not wrong look at that.
+
+00:17:26.240 --> 00:17:30.520
+We are basically able to see this Google map in some different way.
+
+00:17:31.480 --> 00:17:37.740
+Alright definitely we can make something known as camera position changes and you will see
+
+00:17:37.940 --> 00:17:39.760
+how we can use it.
+
+00:17:40.380 --> 00:17:41.580
+Perfect, nice.
+
+00:17:42.340 --> 00:17:50.880
+Now let's move ahead and then definitely I just wanted to use something known as Google
+
+00:17:50.881 --> 00:17:59.480
+Google map, what I can do, I can open this perfect and maybe let's try to go inside coordinates
+
+00:18:00.240 --> 00:18:03.059
+perfect and inside this camera position.
+
+00:18:03.690 --> 00:18:07.240
+So this camera position is give you access of two things.
+
+00:18:07.600 --> 00:18:12.500
+First thing is known as coordinates and second thing is known as zoom.
+
+00:18:12.630 --> 00:18:19.039
+If I just simply press on coordinates, so coordinates have longitude and latitude.
+
+00:18:19.380 --> 00:18:19.660
+Perfect.
+
+00:18:20.380 --> 00:18:28.220
+So, let me just try to paste some sample longitude and latitude, then I will try to show you
+
+00:18:28.260 --> 00:18:28.740
+this out.
+
+00:18:29.070 --> 00:18:29.260
+Perfect.
+
+00:18:29.760 --> 00:18:33.480
+So, for that what I can do, let me again open this.
+
+00:18:34.419 --> 00:18:41.460
+No problem and inside this let me just work on this Google map and this Google map have
+
+00:18:41.559 --> 00:18:43.820
+something known as camera position, no problem.
+
+00:18:44.500 --> 00:18:49.860
+This camera position have coordinates and then we have a longitude.
+
+00:18:50.760 --> 00:18:57.520
+Let me just simply give the longitude as 49, I am just randomly giving it and first thing
+
+00:18:57.600 --> 00:18:59.320
+is latitude, second thing is longitude.
+
+00:19:00.740 --> 00:19:07.600
+Let a -148, I don't know, I'm just randomly giving it cool and I can even give the zoom
+
+00:19:07.720 --> 00:19:15.880
+value as 10 and the moment I save it, all right, I am getting them in this way.
+
+00:19:17.120 --> 00:19:22.740
+Why I'm not be able to see anything, what if I just remove it and definitely if you
+
+00:19:22.880 --> 00:19:26.299
+don't have any flex one, we not be able to see this.
+
+00:19:26.519 --> 00:19:28.220
+if I reload this app once.
+
+00:19:29.679 --> 00:19:34.240
+And still I am seeing the oceans, it is fine.
+
+00:19:34.539 --> 00:19:36.299
+So with the help of this definitely.
+
+00:20:11.679 --> 00:20:17.720
+But before doing that what I wanted you to do, simply just coming to here and inside
+
+00:20:17.960 --> 00:20:25.480
+this I can simply maintain here a state variable as I can simply say this as location index
+
+00:20:26.120 --> 00:20:32.320
+and then comma set location index and initially let me keep this as view state perfect.
+
+00:20:34.100 --> 00:20:35.799
+Keep that as zero.
+
+00:20:37.530 --> 00:20:42.820
+And then let me move ahead and simply say camera position and this camera position is
+
+00:20:42.960 --> 00:20:44.900
+definitely going to have the coordinates.
+
+00:20:46.580 --> 00:20:48.059
+So we have coordinates.
+
+00:20:49.940 --> 00:20:53.140
+I'm talking about this and then we also have this value.
+
+00:20:53.169 --> 00:20:55.720
+So let me just try to paste that out.
+
+00:20:56.320 --> 00:20:56.400
+Perfect.
+
+00:20:56.900 --> 00:21:04.680
+And then what I wanted you to show you will see that instead of showing this thing I can
+
+00:21:04.760 --> 00:21:11.940
+simply search for something known as location list.
+
+00:21:12.020 --> 00:21:16.920
+So, LOCA, location list perfect.
+
+00:21:18.180 --> 00:21:18.600
+Oh.
+
+00:21:19.500 --> 00:21:24.900
+I think location list will come from expo location if I am not wrong.
+
+00:21:25.370 --> 00:21:33.660
+So I can simply say location list and this will come from expo location I think does
+
+00:21:33.780 --> 00:21:35.780
+not have a exported member perfect.
+
+00:21:36.200 --> 00:21:44.960
+or definitely instead of importing that from thing, we can have a bunch of we can say sample
+
+00:21:45.120 --> 00:21:45.919
+location list.
+
+00:21:46.549 --> 00:21:52.419
+Alright, so what I will do basically, definitely I am taking help from documentation and here
+
+00:21:52.500 --> 00:22:01.760
+what I will do, inside my apps or at the root level of it, I can simply create something
+
+00:22:01.761 --> 00:22:03.559
+known as location.
+
+00:22:04.720 --> 00:22:11.420
+list, you will get all of that inside my rapport and this is just a sample locations, perfect.
+
+00:22:11.890 --> 00:22:16.520
+So we have ID, we have name and the stores which is showing us this address, address
+
+00:22:16.640 --> 00:22:20.300
+this, this address, lot of addresses that we have, cool?
+
+00:22:21.200 --> 00:22:26.840
+And then inside this definitely we wanted to import the location list.
+
+00:22:27.899 --> 00:22:34.600
+This location list will going to accept the location index and then we they have something
+
+00:22:34.720 --> 00:22:42.100
+known as stories, yes stores sorry and at the 0th index we will name this as point and
+
+00:22:42.279 --> 00:22:43.480
+point of 0.
+
+00:22:44.120 --> 00:22:49.260
+This is how we are basically accessing that and same thing will be for.
+
+00:22:49.900 --> 00:22:55.320
+I can say, this will the one perfect longitude.
+
+00:22:55.940 --> 00:22:58.460
+And for now let's keep the zoom value same.
+
+00:22:59.220 --> 00:23:04.260
+And instead of passing things like this, I can simply going to pass the camera position
+
+00:23:04.420 --> 00:23:09.480
+something like this and this is somewhere we are basically able to see all of them.
+
+00:23:10.000 --> 00:23:12.100
+Cool, nice.
+
+00:23:12.620 --> 00:23:19.060
+So next, definitely we wanted to talk about how you can create your own maps control.
+
+00:23:19.620 --> 00:23:19.700
+Perfect.
+
+00:23:20.080 --> 00:23:26.640
+So for that, I just basically wanted to create here one simple function that is basically
+
+00:23:26.740 --> 00:23:29.880
+going to render something known as two buttons.
+
+00:23:30.300 --> 00:23:30.520
+Perfect.
+
+00:23:31.260 --> 00:23:36.620
+So for that, what I will do below this, I can create here const.
+
+00:23:37.400 --> 00:23:47.460
+render, map controls and inside this what I will do open this perfect and then going
+
+00:23:47.580 --> 00:23:55.220
+to add here perfect you need to implicit return them so make sure to keep that in mind up
+
+00:23:55.221 --> 00:23:58.880
+yes now we are good inside this what I will do I will open a view.
+
+00:23:59.500 --> 00:24:06.620
+This view is basically going to have a very very simple design as flex of it and then
+
+00:24:06.940 --> 00:24:08.720
+this is the basic position alright.
+
+00:24:09.630 --> 00:24:15.260
+We don't need it, this is going to be a self closing and let me import the view and next
+
+00:24:15.380 --> 00:24:22.280
+thing that is going to have is the controls and for that first of all let me paste the
+
+00:24:22.320 --> 00:24:22.680
+design.
+
+00:24:23.700 --> 00:24:27.300
+So out of this, below this, I have a styles which is name S.
+
+00:24:28.900 --> 00:24:32.179
+control containers and let me import my style sheet.
+
+00:24:33.200 --> 00:24:39.880
+Okay, this is the second thing and after that what I will do first thing is let me just
+
+00:24:40.280 --> 00:24:42.380
+open here one new diff.
+
+00:24:42.700 --> 00:24:46.100
+So this is the name of the diff which have a style.
+
+00:24:48.100 --> 00:24:53.720
+Perfect and then as pointer event as null and then we are going to have two buttons.
+
+00:24:53.940 --> 00:25:01.520
+So button one is going to say us the previous and button two is going to say us next and
+
+00:25:01.620 --> 00:25:07.640
+then we have two method one is handle change with rough they are basically accepting the
+
+00:25:07.740 --> 00:25:11.960
+previous and next and we are doing nothing with it simple let me paste the method.
+
+00:25:12.600 --> 00:25:13.400
+Perfect.
+
+00:25:14.160 --> 00:25:15.640
+Let me just try to explain you.
+
+00:25:15.669 --> 00:25:18.980
+But before that, let me create a ref for it.
+
+00:25:19.400 --> 00:25:20.720
+So this is the ref we have.
+
+00:25:21.039 --> 00:25:23.600
+Let me import this use ref.
+
+00:25:24.309 --> 00:25:24.440
+Perfect.
+
+00:25:24.980 --> 00:25:29.100
+First ref that we have is the Apple map, second dot view.
+
+00:25:29.280 --> 00:25:31.299
+But right now we are using the Google maps.
+
+00:25:31.480 --> 00:25:34.559
+So I can simply say Google maps dot view.
+
+00:25:34.750 --> 00:25:35.559
+So this is the ref.
+
+00:25:35.900 --> 00:25:40.700
+This is simple method and for SFZoom let me just keep it as 10.
+
+00:25:41.420 --> 00:25:43.200
+This is just a hard coded value.
+
+00:25:44.360 --> 00:25:44.440
+Perfect.
+
+00:25:45.000 --> 00:25:45.220
+Perfect.
+
+00:25:45.500 --> 00:25:48.940
+And then what I can do like wanted to render this.
+
+00:25:49.300 --> 00:25:49.460
+Cool.
+
+00:25:50.100 --> 00:25:52.860
+So you will see that we have a Google map view.
+
+00:25:53.300 --> 00:25:59.640
+So, inside this Google map view, so first of all, let me just cut this out and let me
+
+00:25:59.880 --> 00:26:01.060
+just paste this out.
+
+00:26:01.360 --> 00:26:01.480
+Perfect.
+
+00:26:01.950 --> 00:26:08.400
+And below this, we can have a safe area that is basically going to render this.
+
+00:26:09.150 --> 00:26:10.440
+First of all, let me import it.
+
+00:26:10.800 --> 00:26:15.300
+cool and then definitely padding is going to be as a bottom.
+
+00:26:15.400 --> 00:26:22.680
+So let me just first of all there is one very nice I can say methods that we have is known
+
+00:26:22.760 --> 00:26:29.100
+as a hook basically tab bar background but for now let me just hard code this with 20.
+
+00:26:29.520 --> 00:26:36.240
+So the moment I say 20 you will find something like this but if I say 30 cool what if I say
+
+00:26:36.241 --> 00:26:38.300
+20 or 10 is fine.
+
+00:26:39.620 --> 00:26:44.900
+Let us keep it, so first value that we have is previous and then we have next.
+
+00:26:45.180 --> 00:26:49.600
+If I simply say next, this is how you can see that we are moving it out and if I simply
+
+00:26:49.660 --> 00:26:53.480
+say previous, this is how we are basically moving it at.
+
+00:26:53.940 --> 00:26:54.340
+Got it?
+
+00:26:54.780 --> 00:26:54.840
+Nice.
+
+00:26:54.940 --> 00:26:57.280
+Let me retry and reload it definitely.
+
+00:26:58.300 --> 00:27:06.500
+Perfect and I wanted you to do next thing is, next thing is simply going to be, this
+
+00:27:06.580 --> 00:27:09.940
+is how you can basically add your own map controls.
+
+00:27:10.140 --> 00:27:13.600
+So what is this basically expo map controls means?
+
+00:27:14.100 --> 00:27:18.600
+Alright, so this is how you can basically work it and definitely if you wanted to see
+
+00:27:18.679 --> 00:27:22.740
+that onto the full screen, so instead of this, definitely there is something known as absolute
+
+00:27:22.900 --> 00:27:30.100
+fill, you can use that and bring this map towards the whole screen, it's up to you and
+
+00:27:30.179 --> 00:27:35.679
+you will also see that they are just not, they have a proper transition in between them.
+
+00:27:36.299 --> 00:27:38.980
+So for that what you can do?
+
+00:27:39.700 --> 00:27:48.460
+You can simply use this ref, perfect and inside this map view you can pass this ref is equals
+
+00:27:48.620 --> 00:27:55.120
+to the value of ref that we have and you will definitely change some basic data and this
+
+00:27:55.200 --> 00:27:56.700
+is how they are basically going to work.
+
+00:27:57.019 --> 00:28:00.460
+So right now you will see this is the method that we have.
+
+00:28:01.100 --> 00:28:06.679
+And if you use it, they are basically going to change that according to the reference.
+
+00:28:07.580 --> 00:28:13.380
+But for now, let's move ahead and we'll see how you can basically put marks on to your
+
+00:28:13.919 --> 00:28:16.200
+we can say Apple and Google Maps.
+
+00:28:16.700 --> 00:28:20.840
+So, for using marker, I have bunch of other data as well.
+
+00:28:21.159 --> 00:28:25.740
+So, let me just bring all of them and below this, let me just paste it down.
+
+00:28:25.799 --> 00:28:28.260
+So, this is definitely only for marker Googles.
+
+00:28:28.760 --> 00:28:35.899
+In same way, you can even have this for I can say Apple as well and let me also paste
+
+00:28:36.059 --> 00:28:37.360
+here polyline coordinates.
+
+00:28:38.260 --> 00:28:40.080
+These are just a basic random data.
+
+00:28:41.220 --> 00:28:45.480
+So, now you can see this is the marker Google which have first thing as coordinate except
+
+00:28:45.639 --> 00:28:50.659
+latitude and longitude then the title and then the snippet and is it draggable or not
+
+00:28:50.740 --> 00:28:56.380
+and yes you can see that this is properly draggable pointer events you can use it here.
+
+00:28:57.100 --> 00:28:58.120
+Nice.
+
+00:28:58.910 --> 00:29:03.020
+Now, let us move ahead and we will see that how you can basically use marker.
+
+00:29:03.460 --> 00:29:10.740
+So, for that inside your Google map, yep, what you can do, you can, inside Google map,
+
+00:29:11.250 --> 00:29:15.640
+you can search for markers and inside this you can pass the markers.
+
+00:29:16.000 --> 00:29:20.980
+Google and the moment I save it look at that this is how you can have your own custom markers
+
+00:29:21.660 --> 00:29:26.380
+at different positions into your area you can definitely get the real area right now
+
+00:29:26.420 --> 00:29:31.400
+I am not using my actual location that is why I have to do this much of things perfect.
+
+00:29:31.780 --> 00:29:36.580
+So this is how you can put markers on to the and the moment you click it yes look at that.
+
+00:29:36.900 --> 00:29:39.520
+the moment I click over it, look at that.
+
+00:29:39.800 --> 00:29:44.920
+This is how we can see the actual information, what is on to that specific pointer.
+
+00:29:44.990 --> 00:29:49.600
+So this is how you can have your own markers as well, nice.
+
+00:29:50.110 --> 00:29:53.040
+And let me show you how you can have your own polylines.
+
+00:29:53.640 --> 00:29:55.420
+So if I just simply say polylines.
+
+00:29:56.100 --> 00:30:00.220
+Open this first thing they accept is the color of the line.
+
+00:30:00.460 --> 00:30:02.160
+Let me keep that as red or blue.
+
+00:30:02.650 --> 00:30:08.440
+Let me keep the width as 20 and then we have a coordinates and coordinates is equals to
+
+00:30:08.500 --> 00:30:09.580
+polyline coordinates.
+
+00:30:10.559 --> 00:30:13.240
+And now if I save it perfect.
+
+00:30:13.919 --> 00:30:21.980
+So let me just try to show you that where we can basically use it and see perfect.
+
+00:30:23.600 --> 00:30:27.460
+Alright, I don't know for some reason we are not be able to see the polylines.
+
+00:30:28.080 --> 00:30:28.240
+Perfect.
+
+00:30:28.420 --> 00:30:30.600
+But if I try to reload, what I'm getting?
+
+00:30:31.940 --> 00:30:35.940
+Camera position has been rejected by Java animation cancelled.
+
+00:30:37.020 --> 00:30:37.660
+It's okay.
+
+00:30:38.660 --> 00:30:40.680
+I don't know why I'm not getting the polylines.
+
+00:30:41.600 --> 00:30:51.220
+Cool is my polylines data is fine, this is the polylines yes then we have a width for
+
+00:30:51.320 --> 00:30:57.100
+it perfect and what if below the marker if I try to put this out.
+
+00:30:57.400 --> 00:31:03.520
+Let's say we have this markers perfect, we have this camera position and what if at the
+
+00:31:03.600 --> 00:31:11.040
+below of camera position, if I try to paste this out and let me go little here, okay,
+
+00:31:11.220 --> 00:31:15.600
+I'm still not able to see that, it's fine, okay, we will see that in a while.
+
+00:31:16.300 --> 00:31:20.960
+But if we move ahead and let me try to show you some properties which is available.
+
+00:31:21.430 --> 00:31:26.300
+Like first thing is inside this that we have, let me open one more object.
+
+00:31:26.900 --> 00:31:31.360
+First thing that we have is the map type, like which type of map you wanted to show.
+
+00:31:31.850 --> 00:31:34.540
+So first thing that we have Google Maps Map type.
+
+00:31:36.240 --> 00:31:42.260
+Perfect. You will see that we have at least four type of maps. So, first thing if I show
+
+00:31:42.320 --> 00:31:49.140
+you satellite and if I save it, I think this is how the satellite view of your map. Perfect.
+
+00:31:49.620 --> 00:31:55.240
+In same way I can have a t-rain. So, this is how they basically show to us. Perfect.
+
+00:31:55.500 --> 00:32:00.820
+If I go a little closer, this is how we can see it. Definitely I can go more closer as
+
+00:32:01.700 --> 00:32:10.320
+look and that and in same way I can also change this to let us say right now normal.
+
+00:32:10.519 --> 00:32:13.840
+So this is definitely going to shift towards the normal.
+
+00:32:14.299 --> 00:32:16.019
+I can also change this to hybrid.
+
+00:32:16.559 --> 00:32:20.600
+So this is how a hybrid map is basically going to look perfect.
+
+00:32:21.300 --> 00:32:24.420
+You can even see the traffic of that specific area.
+
+00:32:24.660 --> 00:32:29.140
+So, if I simply say is traffic true, so this is how they are basically going to show you
+
+00:32:29.180 --> 00:32:31.720
+the specific traffic of that area.
+
+00:32:32.940 --> 00:32:35.440
+Then we have is my location enabled.
+
+00:32:36.040 --> 00:32:43.200
+So, if I just simply say is my location enabled true and if I save it, so we have I am not
+
+00:32:43.280 --> 00:32:46.060
+able to get it for some reason which is fine.
+
+00:32:46.720 --> 00:32:47.460
+Let me reload it.
+
+00:32:48.300 --> 00:32:55.480
+Let me mark this as false, perfect and let me reload it and maybe I will close this.
+
+00:32:56.440 --> 00:33:00.900
+Let's go to module 11 once again and hopefully this will work right now.
+
+00:33:03.110 --> 00:33:04.280
+If I try to reload it.
+
+00:33:04.900 --> 00:33:08.480
+Let me again go to close this app.
+
+00:33:08.900 --> 00:33:10.280
+Let me go to module 11.
+
+00:33:11.570 --> 00:33:11.720
+Perfect.
+
+00:33:12.700 --> 00:33:14.600
+I think there is something wrong with this property.
+
+00:33:15.660 --> 00:33:16.180
+It's okay.
+
+00:33:16.350 --> 00:33:22.800
+Let me just remove that property and let's again go to module 11 and hopefully this will
+
+00:33:22.840 --> 00:33:23.680
+work at this time.
+
+00:33:24.130 --> 00:33:24.320
+Perfect.
+
+00:33:25.180 --> 00:33:25.500
+So nice.
+
+00:33:26.050 --> 00:33:29.220
+In same way we have is end-o enabled a lot of things.
+
+00:33:29.910 --> 00:33:32.960
+I don't know why this one is especially not working.
+
+00:33:33.600 --> 00:33:35.539
+What if I change this to blue?
+
+00:33:37.350 --> 00:33:39.100
+We are still not be able to see that.
+
+00:33:40.140 --> 00:33:40.860
+It's okay.
+
+00:33:41.100 --> 00:33:41.419
+It's fine.
+
+00:33:41.690 --> 00:33:42.200
+No problem.
+
+00:33:42.270 --> 00:33:45.760
+But this is how you can basically work with it.
+
+00:33:45.940 --> 00:33:48.160
+In same way, we have map events as well.
+
+00:33:48.370 --> 00:33:54.480
+So if you just simply see this first event that we have is on polyline click.
+
+00:33:54.660 --> 00:33:57.780
+But for some reason, we are definitely not be able to see the polyline.
+
+00:33:57.940 --> 00:33:59.380
+So hopefully you are able to see that.
+
+00:33:59.900 --> 00:34:07.400
+So, we have on map click, on map long click, these are all the events that we have inside
+
+00:34:07.620 --> 00:34:07.860
+this.
+
+00:34:08.440 --> 00:34:14.420
+On POI click, on marker click, on camera move, in all of that events, you can make decisions
+
+00:34:15.239 --> 00:34:17.580
+and work according to your things.
+
+00:34:17.739 --> 00:34:17.980
+Perfect.
+
+00:34:18.400 --> 00:34:19.040
+So, yes.
+
+00:34:20.030 --> 00:34:25.540
+So, we can say this is how you can basically take use of entire camera map.
+
+00:34:27.219 --> 00:34:32.860
+API and you can again see there is lot of things available inside this.
+
+00:34:33.580 --> 00:34:39.900
+So access course location access find location foreground service for iOS we have different
+
+00:34:40.020 --> 00:34:41.739
+different properties.
+
+00:34:41.850 --> 00:34:46.980
+So definitely you can check that out and try to learn more about this if you wanted to
+
+00:34:47.120 --> 00:34:51.980
+but with this this is pretty much it how you can use expo maps and see you next time.
+

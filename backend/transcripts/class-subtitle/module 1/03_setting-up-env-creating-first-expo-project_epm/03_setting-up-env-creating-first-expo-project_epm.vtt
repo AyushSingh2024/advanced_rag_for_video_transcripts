@@ -1,0 +1,587 @@
+WEBVTT
+
+00:00:00.639 --> 00:00:03.820
+Alright guys and welcome to one more new chapter.
+
+00:00:04.040 --> 00:00:10.500
+In this chapter we are going to do our environment setup and going to write our first expo project.
+
+00:00:11.020 --> 00:00:15.500
+So before you can build any mobile app you need a proper development server.
+
+00:00:15.760 --> 00:00:20.100
+Like if you don't have any setup then you are going to have lot of errors and lot of
+
+00:00:20.101 --> 00:00:23.480
+frustration and lot of time going to be wasted.
+
+00:00:23.700 --> 00:00:28.940
+So, in this video we will set up everything step by step and going to create our first
+
+00:00:29.240 --> 00:00:29.700
+expo app.
+
+00:00:30.460 --> 00:00:32.400
+So, let's start with the tool we need.
+
+00:00:32.880 --> 00:00:36.100
+So, the first tool that make sure you have is the VS code.
+
+00:00:36.340 --> 00:00:36.500
+Perfect.
+
+00:00:36.501 --> 00:00:37.320
+I mean it depends.
+
+00:00:37.940 --> 00:00:39.360
+You are using VS code.
+
+00:00:39.500 --> 00:00:45.400
+You are using cursor and then a please, please, please don't use notebook if anyone you are
+
+00:00:45.401 --> 00:00:46.140
+using it.
+
+00:00:46.200 --> 00:00:51.480
+So make sure you are using VS code, cursor, anti-gravity and it depends like my suggestion
+
+00:00:51.481 --> 00:00:53.380
+is go with VS code.
+
+00:00:53.580 --> 00:00:55.260
+So how you can install VS code?
+
+00:00:55.400 --> 00:01:01.340
+You can simply visit to code.vslstudio.com and if you are using macOS, if you are using
+
+00:01:01.341 --> 00:01:01.940
+Windows.
+
+00:01:02.300 --> 00:01:08.900
+On the basis of that you can simply install it and make it up and running something like
+
+00:01:08.901 --> 00:01:09.560
+this.
+
+00:01:09.900 --> 00:01:10.200
+Perfect.
+
+00:01:10.500 --> 00:01:17.380
+After that what you can do you can simply move ahead and then make sure that you have
+
+00:01:17.560 --> 00:01:19.400
+bun install inside your system.
+
+00:01:19.619 --> 00:01:19.860
+Yes.
+
+00:01:20.080 --> 00:01:20.900
+So what is bun?
+
+00:01:21.160 --> 00:01:25.340
+Bun is a fast JavaScript runtime and all in one toolkit.
+
+00:01:27.680 --> 00:01:32.920
+Incrementally adoptable all in one JavaScript, TypeScript and JSX toolkit are basically runtime
+
+00:01:33.060 --> 00:01:36.080
+same as we can say kind of NodeJS.
+
+00:01:36.880 --> 00:01:39.600
+Perfect, this is fast and easy to set up.
+
+00:01:39.700 --> 00:01:45.220
+So what you need to do, you simply need to if you are on Linux or Mac OS run this command.
+
+00:01:45.360 --> 00:01:50.120
+If you are on Windows, then run this command inside your PowerShell or terminal.
+
+00:01:50.600 --> 00:01:51.720
+Perfect.
+
+00:01:52.540 --> 00:01:55.320
+So the first thing is that you need VS code.
+
+00:01:56.340 --> 00:01:59.360
+Second thing you need is a bun.
+
+00:01:59.840 --> 00:02:00.119
+Perfect.
+
+00:02:00.720 --> 00:02:07.920
+And third thing that you need is simply go to your expo and make sure to log in, create
+
+00:02:07.921 --> 00:02:08.239
+ID.
+
+00:02:08.419 --> 00:02:09.979
+I mean, it depends on basic thing.
+
+00:02:10.300 --> 00:02:13.580
+And then you can simply run this command.
+
+00:02:13.760 --> 00:02:15.940
+But as you guys know, we are using bun.
+
+00:02:16.140 --> 00:02:21.620
+So instead of writing NPX, we are going to run bun X create expo app.
+
+00:02:21.680 --> 00:02:24.780
+So the first thing, make sure you have a visual studio code.
+
+00:02:25.560 --> 00:02:27.280
+Second thing, make sure you have a bun.
+
+00:02:27.500 --> 00:02:35.840
+Third thing and this is very optional like if you can set up an emulator of Android and
+
+00:02:35.841 --> 00:02:40.480
+let's say I am using Windows so that's why I am going with Android but if you are using
+
+00:02:40.580 --> 00:02:46.980
+Mac OS you can simply set up simulator but if you are developing a expo app one of the
+
+00:02:46.981 --> 00:02:50.820
+best thing about it you can simply go to your Play Store.
+
+00:02:51.980 --> 00:02:56.420
+and app store and you can simply search for expo go app.
+
+00:02:57.239 --> 00:03:02.660
+Perfect, so the moment you simply go to expo go and install it, so this is something you
+
+00:03:02.680 --> 00:03:07.480
+can simply scan, I will show you everything, you can scan the scanner given by expo and
+
+00:03:07.481 --> 00:03:12.440
+you will see all the output inside your actual physical device.
+
+00:03:12.900 --> 00:03:13.879
+Perfect.
+
+00:03:14.280 --> 00:03:16.180
+So, I hope so this makes sense.
+
+00:03:16.540 --> 00:03:16.900
+Perfect.
+
+00:03:17.500 --> 00:03:23.980
+Now, let's move ahead and simply copy this command and make sure to go inside your VS
+
+00:03:23.981 --> 00:03:24.159
+code.
+
+00:03:24.220 --> 00:03:28.120
+I have created here module 1 and inside this.
+
+00:03:28.500 --> 00:03:31.460
+Let me simply just give me a minute.
+
+00:03:31.740 --> 00:03:34.900
+Let me just quickly set up my VS code and then I'll be right back.
+
+00:03:35.840 --> 00:03:41.240
+Alright guys, so this is how I have basically added my phone simulator basically at this
+
+00:03:41.241 --> 00:03:48.860
+emulator and this is here my VS code and simply need to run bunX and the command of that is
+
+00:03:48.861 --> 00:03:56.459
+going to be let me simply paste that perfect and instead of NPX I'm simply going to run
+
+00:03:56.460 --> 00:03:57.200
+Bunn-X.
+
+00:03:57.800 --> 00:04:06.480
+Create Expo at the latest and the moment you hit this you are going to see something like
+
+00:04:06.481 --> 00:04:06.800
+this.
+
+00:04:07.440 --> 00:04:09.620
+Now what is your app name?
+
+00:04:09.621 --> 00:04:13.860
+So we wanted to install our application inside the current folder.
+
+00:04:13.920 --> 00:04:17.160
+So, I am simply going to write dot slash.
+
+00:04:17.500 --> 00:04:23.140
+And after that you will see like burn is installing all the dependencies for it.
+
+00:04:23.160 --> 00:04:27.200
+So you can definitely wait for it and see the output.
+
+00:04:29.540 --> 00:04:37.040
+All right, so now you will see that this command has installed a bunch of dependencies and
+
+00:04:37.041 --> 00:04:38.120
+a lot of other things.
+
+00:04:38.340 --> 00:04:42.500
+And now they are even giving you the command to run something like this.
+
+00:04:42.640 --> 00:04:44.580
+But for now let me clear everything.
+
+00:04:44.900 --> 00:04:52.540
+Perfect, and let me shift to my bash command so that I have a proper Linux like that, but
+
+00:04:52.740 --> 00:04:54.199
+I just wanted to be inside bash.
+
+00:04:54.800 --> 00:04:56.220
+That's all I wanted to say.
+
+00:04:56.520 --> 00:04:56.720
+Cool.
+
+00:04:57.479 --> 00:05:02.500
+Now, before start writing anything, a lot of you may have a question like which theme
+
+00:05:02.501 --> 00:05:05.160
+you are using, which icons you are using.
+
+00:05:05.900 --> 00:05:08.479
+So the theme that I am using here.
+
+00:05:08.700 --> 00:05:15.420
+You can definitely see that this is the theme they look at the name of the theme is a Vesper.
+
+00:05:16.940 --> 00:05:23.600
+Perfect if you wanted to use same theme as me so you can definitely install that and
+
+00:05:23.601 --> 00:05:27.140
+if I am not wrong file icon name is material icon theme.
+
+00:05:27.680 --> 00:05:27.900
+Perfect.
+
+00:05:27.920 --> 00:05:29.960
+So this is what I am basically using.
+
+00:05:30.760 --> 00:05:32.040
+Now we are good to go.
+
+00:05:32.540 --> 00:05:34.240
+Now listen to me carefully.
+
+00:05:34.400 --> 00:05:39.400
+You will see a bunch of file, a bunch of folders are here.
+
+00:05:40.300 --> 00:05:41.940
+Let me start from the starting.
+
+00:05:42.300 --> 00:05:44.840
+First thing that we have is a dot VS code.
+
+00:05:45.380 --> 00:05:45.979
+What is this?
+
+00:05:46.180 --> 00:05:48.060
+This is related to VS code.
+
+00:05:48.199 --> 00:05:50.320
+Like we have extensions, we have settings.
+
+00:05:50.580 --> 00:05:52.620
+So all right, this is related to VS code.
+
+00:05:52.680 --> 00:05:54.220
+You can ignore it.
+
+00:05:54.580 --> 00:05:58.160
+Now we have the main folder, which is your app folder.
+
+00:05:58.639 --> 00:06:01.740
+Inside that we have some tabs, some layout model.
+
+00:06:02.000 --> 00:06:02.560
+Ignore it.
+
+00:06:02.600 --> 00:06:10.560
+Then we have the asset inside the asset as the name is defining itself for having your
+
+00:06:10.561 --> 00:06:17.180
+fonts for have your fonts for your image for your audios for your videos all of that will
+
+00:06:17.181 --> 00:06:20.900
+coming inside this asset folder in same way.
+
+00:06:21.200 --> 00:06:29.340
+We have components and you will see this components is resembling with the react like this is how
+
+00:06:29.640 --> 00:06:31.540
+we write react native react code.
+
+00:06:31.700 --> 00:06:36.940
+So yeah, this is your component folder where you are going to write all the components.
+
+00:06:37.000 --> 00:06:43.100
+In the same way we have constants, constants are for your constant values and something
+
+00:06:43.120 --> 00:06:43.840
+like that.
+
+00:06:44.040 --> 00:06:46.000
+In the same way we also have hooks.
+
+00:06:46.800 --> 00:06:49.180
+Script, what is this script is for?
+
+00:06:49.220 --> 00:06:52.620
+I'll show you that but in the same way we have node modules.
+
+00:06:52.840 --> 00:06:54.040
+What is node modules?
+
+00:06:54.760 --> 00:06:59.360
+Node modules have all the dependencies packages inside the node modules.
+
+00:06:59.920 --> 00:07:00.960
+Then we have get ignore.
+
+00:07:05.800 --> 00:07:08.440
+You will see that we have node modules,
+
+00:07:08.840 --> 00:07:11.419
+export, dist, web builds, all of that file.
+
+00:07:12.500 --> 00:07:16.379
+So inside this, like all the ignoring file,
+
+00:07:16.400 --> 00:07:20.020
+like the file you don't want it to push onto the GitHub,
+
+00:07:20.460 --> 00:07:22.919
+we are going to write that here, the path of that.
+
+00:07:23.100 --> 00:07:24.880
+Then we have app.json.
+
+00:07:25.040 --> 00:07:26.100
+This is something new.
+
+00:07:26.760 --> 00:07:30.540
+Like from here you can definitely configure your expo application.
+
+00:07:30.720 --> 00:07:31.560
+Then we have bunlock.
+
+00:07:31.980 --> 00:07:32.540
+No problem.
+
+00:07:32.660 --> 00:07:33.600
+Then we have eslink.
+
+00:07:34.080 --> 00:07:35.320
+Then we have package.json.
+
+00:07:35.400 --> 00:07:37.880
+So every node.js and bun project have this.
+
+00:07:38.420 --> 00:07:41.180
+So you will see inside this we have bunch of command.
+
+00:07:41.800 --> 00:07:48.220
+We have bunch of dependencies, we have bunch of dev dependencies and lot of other things
+
+00:07:48.419 --> 00:07:48.919
+as well.
+
+00:07:49.620 --> 00:07:55.259
+Then we have readme and then we have tsconfig like if you are using typescript and yes for
+
+00:07:55.260 --> 00:07:58.819
+the entire course we are going to use typescript here.
+
+00:07:59.240 --> 00:07:59.620
+Perfect.
+
+00:08:00.039 --> 00:08:01.780
+Now how you can start this?
+
+00:08:02.419 --> 00:08:06.580
+So for that you can simply run burnx expose start.
+
+00:08:07.200 --> 00:08:14.260
+So, this is going to you will see the started project react compiler and then they are going
+
+00:08:14.261 --> 00:08:19.460
+to start Metro bundler they are using something known as Metro bundler and you will see a
+
+00:08:19.461 --> 00:08:26.520
+QR code here alright then you will see IP address like expo and then this is the IP
+
+00:08:26.521 --> 00:08:29.420
+address the port where your application is up and running.
+
+00:08:29.700 --> 00:08:36.040
+Then they are also prompting you this scan the QR code above with expogo if you are using
+
+00:08:36.200 --> 00:08:42.020
+Android they will provide you that or if you are using iOS make sure that you have installed
+
+00:08:42.040 --> 00:08:47.380
+expogo application and with the help of iOS camera you can scan this and you will see
+
+00:08:47.381 --> 00:08:49.120
+something like this I will show you.
+
+00:08:49.200 --> 00:08:55.460
+using expo go you can simply press on S A to open Android W to open web lot of things
+
+00:08:55.820 --> 00:09:01.000
+but let's say I wanted to open Android so the moment I press A you will see opening
+
+00:09:01.001 --> 00:09:08.300
+on Android and opening at this port so make sure your computer and your computer is connected
+
+00:09:19.080 --> 00:09:19.180
+to the computer.
+
+00:09:19.181 --> 00:09:19.201
+Your phone are connected to same network and of the moment I press A you will see that
+
+00:09:19.202 --> 00:09:23.360
+automatically they have installed a new application name as expogo and the moment you open this
+
+00:09:23.361 --> 00:09:27.100
+pogo and again if I just simply press A.
+
+00:09:27.200 --> 00:09:28.460
+Look at that.
+
+00:09:29.220 --> 00:09:33.340
+This is our one of the first mobile application that we have home.
+
+00:09:33.520 --> 00:09:39.620
+We have Explorer and inside this you will see they are saying us welcome step one, step
+
+00:09:39.621 --> 00:09:43.600
+two, but this is little confusing for us.
+
+00:09:43.760 --> 00:09:44.040
+Perfect.
+
+00:09:44.800 --> 00:09:50.960
+And let me just once again open it, press open A and you can definitely log into it
+
+00:09:50.961 --> 00:09:56.600
+so that you will see all the development app right into the expogo app.
+
+00:09:56.800 --> 00:09:58.000
+So, perfect.
+
+00:09:58.720 --> 00:10:06.200
+Now if I just simply close this, clear everything inside the app you will see we have lot of
+
+00:10:06.201 --> 00:10:08.920
+files that we haven't even talked about it.
+
+00:10:09.279 --> 00:10:11.040
+So never touch this.
+
+00:10:11.420 --> 00:10:14.560
+They have provided you something known as scripts.
+
+00:10:15.200 --> 00:10:19.240
+So simply go inside the script and we have reset project.
+
+00:10:19.800 --> 00:10:23.740
+Yes, so we wanted to reset it and back to normal.
+
+00:10:23.839 --> 00:10:25.820
+So for that you can simply write bun.
+
+00:10:26.300 --> 00:10:33.680
+Go inside your scripts slash reset project and hit this.
+
+00:10:34.140 --> 00:10:41.040
+And now they are asking you, do you want to move existing file to slash app example instead
+
+00:10:41.100 --> 00:10:41.800
+of deleting them?
+
+00:10:41.839 --> 00:10:44.700
+So I said, no, I don't want it to move my existing app.
+
+00:10:44.800 --> 00:10:47.480
+Anywhere, I just wanted to reset it.
+
+00:10:47.560 --> 00:10:54.120
+So simply say no and now you will see all the extra files are deleted and then we are
+
+00:10:54.200 --> 00:10:55.440
+back to normal.
+
+00:10:55.720 --> 00:11:02.000
+So now if I clear this and go to my app, you will see we have only two files.
+
+00:11:02.279 --> 00:11:14.779
+One is _layout.tsx and another one is index.tsx and if I rerun this 1x expose start, it will
+
+00:11:14.780 --> 00:11:20.760
+And the react compiler enabled starting Metro bundler and the moment again press A you will
+
+00:11:20.761 --> 00:11:23.220
+see something very interesting.
+
+00:11:23.980 --> 00:11:24.260
+Perfect.
+
+00:11:24.760 --> 00:11:27.959
+So opening on Android and maybe I think I need to reload it.
+
+00:11:28.080 --> 00:11:30.380
+So for reloading you can simply press on R.
+
+00:11:30.600 --> 00:11:35.199
+So, the moment I press on R let me see perfect.
+
+00:11:35.500 --> 00:11:43.180
+So, if this takes time you can simply close all the files from here and you can sorry
+
+00:11:43.181 --> 00:11:48.819
+for that perfect you can restart it perfect opening an app like you can see they are bundling
+
+00:11:48.820 --> 00:11:50.680
+it and yes.
+
+00:11:51.200 --> 00:11:57.260
+For edit this what they are saying edit app/index.tsx to edit the screen.
+
+00:11:57.720 --> 00:12:03.480
+So I am here I can simply inside the text we are going to talk about all of them don't
+
+00:12:03.540 --> 00:12:03.700
+worry.
+
+00:12:04.320 --> 00:12:11.260
+So inside that this I can simply remove all of that and write hello world and boom.
+
+00:12:12.100 --> 00:12:18.400
+clap for yourself because for the first time you have written this by yourself.
+
+00:12:18.560 --> 00:12:23.560
+This is your first application inside your Android and if you're using iOS you will see
+
+00:12:23.561 --> 00:12:24.140
+that.
+
+00:12:24.440 --> 00:12:27.400
+So yeah, pretty amazing, amazing job.
+
+00:12:27.840 --> 00:12:29.780
+So let me just push this.
+
+00:12:30.080 --> 00:12:33.900
+So 01 setup of expo.
+
+00:12:34.200 --> 00:12:38.060
+Let me simply commit this so that all the code are available to you guys.
+
+00:12:39.740 --> 00:12:45.000
+Perfect, so this is pretty much it for today guys and see you next time.
+

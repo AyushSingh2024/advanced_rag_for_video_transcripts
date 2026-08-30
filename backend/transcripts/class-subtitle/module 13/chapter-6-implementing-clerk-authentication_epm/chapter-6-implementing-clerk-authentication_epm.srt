@@ -1,0 +1,908 @@
+1
+00:00:00,700 --> 00:00:06,080
+Alright everyone and welcome to one more new chapter in this chapter we are going to implement
+
+2
+00:00:06,260 --> 00:00:13,000
+the clerk authentication inside our expo quick start you can use all of these videos as a
+
+3
+00:00:13,001 --> 00:00:17,580
+reference video so every time whenever you wanted to implement your own custom authentication
+
+4
+00:00:17,820 --> 00:00:21,580
+you can use our all the previous chapters whenever you wanted to implement.
+
+5
+00:00:21,700 --> 00:00:27,040
+authentication with the help of better auth you can use the last recorded chapters I think
+
+6
+00:00:27,120 --> 00:00:31,600
+that is chapter number four or five I don't know exactly and this is the chapter where
+
+7
+00:00:31,601 --> 00:00:37,500
+you can see the guide related to clerk like how you can implement clerk authentication
+
+8
+00:00:39,020 --> 00:00:40,480
+inside your app perfect.
+
+9
+00:00:40,660 --> 00:00:41,660
+First thing is...
+
+10
+00:00:42,940 --> 00:00:48,120
+Enable native API in clerk dashboard navigate to native application page ensure the native
+
+11
+00:00:48,180 --> 00:00:48,920
+API is enabled.
+
+12
+00:00:49,920 --> 00:00:57,039
+Okay, so we will see that what they are basically saying you is to enable the native API.
+
+13
+00:00:57,300 --> 00:01:00,140
+Okay, I do not think so that we need to do anything extra here.
+
+14
+00:01:00,780 --> 00:01:02,519
+now what we can do.
+
+15
+00:01:02,520 --> 00:01:07,720
+is I think we need some publishable key up.
+
+16
+00:01:07,800 --> 00:01:09,600
+So we definitely need to sign up here.
+
+17
+00:01:09,720 --> 00:01:10,640
+So perfect. No problem.
+
+18
+00:01:10,740 --> 00:01:14,720
+Let me open it and let me log in with Google.
+
+19
+00:01:17,800 --> 00:01:19,060
+Let me just wait for it.
+
+20
+00:01:19,200 --> 00:01:22,180
+Okay. So let me log in with any of one of my account.
+
+21
+00:01:25,240 --> 00:01:26,120
+And okay.
+
+22
+00:01:30,420 --> 00:01:30,939
+Nice.
+
+23
+00:01:31,020 --> 00:01:33,479
+So you will see that I already have two applications.
+
+24
+00:01:33,899 --> 00:01:35,240
+They are just previous application.
+
+25
+00:01:35,360 --> 00:01:44,299
+I can simply press on new application and I can name it as expo authentication or expo
+
+26
+00:01:44,300 --> 00:01:44,780
+or the guide.
+
+27
+00:01:45,000 --> 00:01:50,920
+I think much better name and yes, you can enable the email and I think I can even enable
+
+28
+00:01:50,960 --> 00:01:51,539
+the GitHub.
+
+29
+00:01:52,760 --> 00:01:54,200
+And, yep, we are good.
+
+30
+00:01:54,600 --> 00:01:56,540
+I can simply say create application.
+
+31
+00:01:56,700 --> 00:01:58,960
+So this is going to create application for me.
+
+32
+00:01:59,680 --> 00:02:03,380
+And yes, we wanted to create this for the expo.
+
+33
+00:02:04,040 --> 00:02:09,580
+Okay, so whenever you wanted to create this for a expo, these are all the steps you need
+
+34
+00:02:09,660 --> 00:02:10,020
+to follow.
+
+35
+00:02:10,100 --> 00:02:12,680
+So first step is definitely we are using one.
+
+36
+00:02:13,140 --> 00:02:16,900
+You need to install clerk, clerk expo.
+
+37
+00:02:17,120 --> 00:02:18,240
+So okay.
+
+38
+00:02:18,300 --> 00:02:24,660
+Let me just simply coming to here first of all let me fix this nice.
+
+39
+00:02:25,740 --> 00:02:32,380
+So let me close my currently running application and again if you wanted to create the separate
+
+40
+00:02:32,440 --> 00:02:38,000
+build for it you can also do that and then let me again clear everything.
+
+41
+00:02:39,980 --> 00:02:41,140
+Where is that?
+
+42
+00:02:41,299 --> 00:02:43,579
+I think this one.
+
+43
+00:02:44,659 --> 00:02:48,159
+Now I can simply copy this command and then I can paste it.
+
+44
+00:02:48,400 --> 00:02:53,500
+So this is basically going to install the clerk slash clerk expo.
+
+45
+00:02:53,680 --> 00:02:53,980
+Perfect.
+
+46
+00:02:54,800 --> 00:03:01,680
+Okay, so now you can see that in 52 seconds we have installed around 176 packages.
+
+47
+00:03:02,640 --> 00:03:08,680
+Okay, and then what I will do second thing is you need to add this publishable key.
+
+48
+00:03:09,440 --> 00:03:16,500
+So simply copy this key and then I can simply go inside my.env file and then I will paste
+
+49
+00:03:16,501 --> 00:03:16,680
+it.
+
+50
+00:03:16,700 --> 00:03:23,580
+So you will see that right now we have this expo public clerk publishable key.
+
+51
+00:03:24,000 --> 00:03:32,940
+Nice, and after that next step is add a clerk provider to your root layout ok.
+
+52
+00:03:33,440 --> 00:03:40,160
+The clerk provider component provides session and user context to clerk hooks and component.
+
+53
+00:03:40,800 --> 00:03:46,360
+It is recommended to wrap your entire app at the entry point with clerk provider and
+
+54
+00:03:46,361 --> 00:03:48,800
+to make authentication globally accessible.
+
+55
+00:03:50,080 --> 00:03:50,320
+Nice.
+
+56
+00:03:50,980 --> 00:03:54,480
+So let me try to copy this.
+
+57
+00:03:55,080 --> 00:03:58,400
+Perfect and they are basically saying us is to.
+
+58
+00:04:00,420 --> 00:04:02,020
+Create this root layout.
+
+59
+00:04:03,720 --> 00:04:08,720
+So let me go to my slash this and I think I can paste it.
+
+60
+00:04:09,420 --> 00:04:11,980
+And right now you can see that they are using slots.
+
+61
+00:04:12,420 --> 00:04:12,519
+Okay.
+
+62
+00:04:12,520 --> 00:04:14,180
+So I hope you guys know about slots.
+
+63
+00:04:14,800 --> 00:04:18,959
+And then configure the token cache with expo.
+
+64
+00:04:19,160 --> 00:04:24,380
+So we already have the secure store need not to install anything and then again copy this
+
+65
+00:04:24,720 --> 00:04:26,900
+and again paste it perfect.
+
+66
+00:04:26,901 --> 00:04:32,780
+So right now you can see that we have a clerk provider a token cache from clerk, clerk expo
+
+67
+00:04:32,781 --> 00:04:34,980
+token cache and then a slot.
+
+68
+00:04:36,180 --> 00:04:36,840
+No problem.
+
+69
+00:04:37,100 --> 00:04:41,820
+And then what I can do, protect your auth route in the layout.
+
+70
+00:04:42,440 --> 00:04:42,640
+Okay.
+
+71
+00:04:43,240 --> 00:04:47,920
+So, Clark currently only support control component for Expo.
+
+72
+00:04:47,960 --> 00:04:53,060
+You can definitely read more about control components kind of things.
+
+73
+00:04:53,660 --> 00:04:57,940
+But right now, let's move ahead and for Expo native UI components are only available for
+
+74
+00:04:57,941 --> 00:04:58,820
+Expo web.
+
+75
+00:04:59,300 --> 00:05:03,080
+Instead, you must build custom flow using Clark API.
+
+76
+00:05:03,340 --> 00:05:09,300
+The following section demonstrate how to build custom email password sign up sign in flow
+
+77
+00:05:09,340 --> 00:05:16,520
+if you want to use different authentication methods such as passwordless or see the dedicated
+
+78
+00:05:16,539 --> 00:05:17,500
+custom flow guide.
+
+79
+00:05:17,580 --> 00:05:19,259
+So, you can definitely read them and see.
+
+80
+00:05:20,479 --> 00:05:26,259
+First, protect your sign up and sign in page, create a new route group with this name and
+
+81
+00:05:26,260 --> 00:05:29,320
+with underscore layout file within the following code.
+
+82
+00:05:29,440 --> 00:05:30,500
+So why not?
+
+83
+00:05:30,530 --> 00:05:33,000
+Let us move ahead and try to create it.
+
+84
+00:05:33,460 --> 00:05:36,479
+So inside this I will just simply create this auth.
+
+85
+00:05:36,900 --> 00:05:46,120
+All right, and now first of all, what I will do, I will try to make the changes so that
+
+86
+00:05:46,121 --> 00:05:47,560
+you have a track of the GitHub.
+
+87
+00:05:48,259 --> 00:05:52,900
+So I can say better auth implemented in last chapter definitely.
+
+88
+00:05:52,960 --> 00:05:53,840
+I just forget.
+
+89
+00:05:55,200 --> 00:05:56,360
+to push this up.
+
+90
+00:05:56,470 --> 00:06:00,300
+Okay, now I have pushed it up so that you have a track because I'm definitely going
+
+91
+00:06:01,020 --> 00:06:02,220
+to remove them.
+
+92
+00:06:03,200 --> 00:06:05,240
+Alright, and what just happened?
+
+93
+00:06:05,420 --> 00:06:07,280
+Why I'm pushing my environment variables?
+
+94
+00:06:08,060 --> 00:06:09,660
+Alright, so I'll fix them in a while.
+
+95
+00:06:10,020 --> 00:06:11,080
+Right now we are good to go.
+
+96
+00:06:11,180 --> 00:06:11,600
+Don't worry.
+
+97
+00:06:13,479 --> 00:06:23,520
+So, okay, so inside the app auth first thing we need to create underscore layout dot TSX.
+
+98
+00:06:23,659 --> 00:06:28,740
+Okay, so let me simply create underscore layout dot TSX and then I will paste it.
+
+99
+00:06:28,819 --> 00:06:35,060
+So you will see we have a redirect and stack and then a simple use auth hook basically
+
+100
+00:06:35,220 --> 00:06:37,560
+coming from clerk Expo.
+
+101
+00:06:38,919 --> 00:06:40,759
+And then you need to add a signup page.
+
+102
+00:06:42,120 --> 00:06:44,320
+So, let me simply add that.
+
+103
+00:06:44,880 --> 00:06:47,660
+I can simply say signup.tsx.
+
+104
+00:06:48,480 --> 00:06:48,660
+Okay.
+
+105
+00:06:48,820 --> 00:06:50,340
+So, this is all of the things.
+
+106
+00:06:51,340 --> 00:06:59,060
+We have a simple use signup hook, some link and router and then bunch of component and
+
+107
+00:06:59,120 --> 00:07:02,680
+I think simple implementation of them if I am not wrong.
+
+108
+00:07:02,940 --> 00:07:06,780
+So, yes need not to get too depth.
+
+109
+00:07:07,100 --> 00:07:13,120
+into it and then let me move ahead and let me also implement sign in page.
+
+110
+00:07:13,720 --> 00:07:21,340
+So along with sign up, I can have a sign in dot t s x and then I'll paste it as well.
+
+111
+00:07:21,540 --> 00:07:21,840
+Perfect.
+
+112
+00:07:22,640 --> 00:07:26,200
+Then what I will do, you can even create your own sign out button.
+
+113
+00:07:26,400 --> 00:07:26,960
+So why not?
+
+114
+00:07:27,120 --> 00:07:28,440
+Let's just copy and paste it.
+
+115
+00:07:28,780 --> 00:07:33,520
+Let me show you how easy to integrate a clerk inside your application.
+
+116
+00:07:33,680 --> 00:07:34,220
+So easy.
+
+117
+00:07:34,740 --> 00:07:36,400
+implementation is so straight forward.
+
+118
+00:07:38,740 --> 00:07:46,080
+component and this will be our sign out button dot TSX.
+
+119
+00:07:46,580 --> 00:07:48,060
+Then I'll paste it.
+
+120
+00:07:48,460 --> 00:07:48,660
+Okay.
+
+121
+00:07:48,820 --> 00:07:50,840
+So I think we are good to go.
+
+122
+00:07:51,500 --> 00:07:51,740
+All right.
+
+123
+00:07:51,900 --> 00:07:54,920
+And then next is you need to create one home route.
+
+124
+00:07:55,600 --> 00:07:56,740
+Nice.
+
+125
+00:07:56,880 --> 00:08:04,820
+So let me just simply copy this and then I'll create one home inside this home.
+
+126
+00:08:04,900 --> 00:08:11,880
+I can have again underscore layout layout dot t six and then I'll paste it.
+
+127
+00:08:12,080 --> 00:08:12,740
+No problem.
+
+128
+00:08:13,100 --> 00:08:17,200
+And then we can have one index dot t s x inside this.
+
+129
+00:08:17,860 --> 00:08:18,860
+So this is one.
+
+130
+00:08:19,040 --> 00:08:22,380
+So I'll delete this for now because we don't need it.
+
+131
+00:08:22,620 --> 00:08:27,700
+And inside this, I'll create the another index dot t s x and then I'll paste in this one.
+
+132
+00:08:28,560 --> 00:08:28,880
+Okay.
+
+133
+00:08:29,800 --> 00:08:31,940
+And, yep, I think we are good to go.
+
+134
+00:08:32,460 --> 00:08:37,500
+So let's move ahead and you can definitely continue to expo guide how you can protect
+
+135
+00:08:37,501 --> 00:08:42,960
+your user auth examples, how you can get your user data, lot of things to do.
+
+136
+00:08:43,120 --> 00:08:46,980
+So a finger crossed, hopefully without any issue this will work.
+
+137
+00:08:48,220 --> 00:08:53,120
+Let me first of all clear this and module 13.
+
+138
+00:08:54,319 --> 00:08:59,000
+Let me run burnx expostart, clear all the caches that we have.
+
+139
+00:08:59,620 --> 00:09:00,180
+Okay.
+
+140
+00:09:01,920 --> 00:09:02,880
+And nice.
+
+141
+00:09:04,120 --> 00:09:06,639
+But if I try to open this.
+
+142
+00:09:07,959 --> 00:09:13,540
+Alright, so we are getting one simple issue, I think, and that is this one.
+
+143
+00:09:15,320 --> 00:09:20,360
+Okay, so let me go to my index and definitely this is the wrong path.
+
+144
+00:09:20,700 --> 00:09:26,240
+I need to import that from the right place and if I now reload it, hopefully this will
+
+145
+00:09:26,241 --> 00:09:27,200
+work.
+
+146
+00:09:28,860 --> 00:09:30,940
+Let me again open that onto my Android.
+
+147
+00:09:35,259 --> 00:09:41,720
+Okay, so now you can see that right now I am into my index page and I am getting a sign
+
+148
+00:09:41,721 --> 00:09:42,519
+in and sign up.
+
+149
+00:09:42,699 --> 00:09:47,639
+Okay, so what if I just simply press on sign up, I am redirected to my sign up page.
+
+150
+00:09:48,500 --> 00:09:51,899
+Okay and definitely I can put some data.
+
+151
+00:09:54,720 --> 00:09:57,100
+Gmail.com and password.
+
+152
+00:09:57,400 --> 00:09:59,440
+I know the UI is not that good.
+
+153
+00:10:00,360 --> 00:10:02,040
+Then I can simply press on continue.
+
+154
+00:10:04,320 --> 00:10:04,620
+Okay.
+
+155
+00:10:04,740 --> 00:10:06,360
+So I'm doing saying this done.
+
+156
+00:10:07,560 --> 00:10:08,860
+Why nothing is happening?
+
+157
+00:10:10,120 --> 00:10:11,880
+Because I am getting it.
+
+158
+00:10:13,440 --> 00:10:20,100
+Clark has been loaded with development key development have a strict usage limit should
+
+159
+00:10:20,101 --> 00:10:23,620
+not used when deploying an application to production.
+
+160
+00:10:25,450 --> 00:10:28,300
+Password has been found in an online data breach.
+
+161
+00:10:28,660 --> 00:10:28,880
+Okay.
+
+162
+00:10:29,020 --> 00:10:29,620
+Oh, nice.
+
+163
+00:10:29,720 --> 00:10:31,040
+This is actually a good thing.
+
+164
+00:10:31,450 --> 00:10:33,580
+Now you can't put this simple password.
+
+165
+00:10:33,640 --> 00:10:34,840
+So such a nice practice.
+
+166
+00:10:35,200 --> 00:10:42,780
+I can simply say add the rate double eight two six five six seven six nine six some some
+
+167
+00:10:42,781 --> 00:10:46,340
+hard password but let me put something that I remember.
+
+168
+00:10:50,100 --> 00:10:57,400
+Okay so I have put some nice password if I now try to login and then if I say continue
+
+169
+00:10:57,720 --> 00:11:00,240
+hopefully this will work now and yes look at that.
+
+170
+00:11:02,000 --> 00:11:04,720
+If I try to save it, we'll see that.
+
+171
+00:11:05,380 --> 00:11:06,920
+Okay, now we are verifying this.
+
+172
+00:11:06,960 --> 00:11:07,420
+What is this?
+
+173
+00:11:07,440 --> 00:11:09,080
+This is actually opening into my phone.
+
+174
+00:11:09,140 --> 00:11:10,140
+I don't want that.
+
+175
+00:11:11,040 --> 00:11:13,500
+Okay, let me try to reload it once again.
+
+176
+00:11:13,960 --> 00:11:14,320
+Perfect.
+
+177
+00:11:14,960 --> 00:11:16,840
+And you can see one very interesting thing.
+
+178
+00:11:17,100 --> 00:11:22,320
+I don't know you are seeing it or not because I got the email onto the email that I am using.
+
+179
+00:11:23,000 --> 00:11:27,260
+So such a powerful thing and I think I can log in with the same information.
+
+180
+00:11:27,620 --> 00:11:29,080
+Let me try to re-login.
+
+181
+00:11:29,260 --> 00:11:29,620
+Perfect.
+
+182
+00:11:29,700 --> 00:11:37,620
+because I don't know I'm just not getting satisfied with it or maybe I can just enhance my design and then I'll be right back.
+
+183
+00:11:38,280 --> 00:11:45,560
+Alright guys so I've just applied some basic styles into my application so hopefully this will look much better right now.
+
+184
+00:11:45,700 --> 00:11:49,900
+And again, you will get all the design files, everything onto my GitHub.
+
+185
+00:11:50,400 --> 00:11:55,140
+And let's say by any chance you are not be able to find the code exact and writing here.
+
+186
+00:11:55,600 --> 00:12:00,900
+So there's a high chance that is overwritten by the latest commit.
+
+187
+00:12:01,160 --> 00:12:03,920
+So what you can do, you can always go to the repo.
+
+188
+00:12:04,400 --> 00:12:08,340
+And yes, you can always just keep track of this commits.
+
+189
+00:12:08,540 --> 00:12:12,100
+The moment you press here, you will get all of the commits name.
+
+190
+00:12:12,560 --> 00:12:12,860
+Perfect.
+
+191
+00:12:13,260 --> 00:12:16,740
+And you will find that that is much easier for you.
+
+192
+00:12:16,900 --> 00:12:17,340
+Perfect.
+
+193
+00:12:18,060 --> 00:12:18,280
+Nice.
+
+194
+00:12:18,540 --> 00:12:24,760
+So let me again try to sign up and let me try to put some another data.
+
+195
+00:12:27,360 --> 00:12:27,580
+Okay.
+
+196
+00:12:27,800 --> 00:12:29,900
+Let me try to login once again.
+
+197
+00:12:34,280 --> 00:12:40,260
+Okay, let me press on sign up and nice and yes, I got some verification code.
+
+198
+00:12:40,700 --> 00:12:41,800
+So just give me a minute.
+
+199
+00:12:42,060 --> 00:12:47,400
+Let me just quickly put that verification code here and then I will show you that.
+
+200
+00:12:47,640 --> 00:12:54,440
+So that is 366208 and if I try to simply verify.
+
+201
+00:12:59,820 --> 00:13:06,840
+And if I try to verify this once again, ok, I think I got some error for it.
+
+202
+00:13:09,220 --> 00:13:12,700
+And ok, let me try to reload it once again, cancel it.
+
+203
+00:13:15,459 --> 00:13:20,240
+All right, so let me just retry to sign up once again and hopefully at this time I will
+
+204
+00:13:20,241 --> 00:13:21,920
+put all the credentials correctly.
+
+205
+00:13:22,600 --> 00:13:26,319
+So just give me a minute and let me try to re log in.
+
+206
+00:13:26,839 --> 00:13:29,600
+And yes, look at that right now you can see this.
+
+207
+00:13:29,660 --> 00:13:31,319
+This is the email I am logged in with.
+
+208
+00:13:31,759 --> 00:13:37,220
+This is the username I am getting a simple hello and a simple avatar and whole Gmail
+
+209
+00:13:37,221 --> 00:13:39,240
+and I can simply press on sign out.
+
+210
+00:13:39,720 --> 00:13:43,300
+Definitely I can implement sign out functionalities as well and you can look at that.
+
+211
+00:13:44,280 --> 00:13:47,860
+This is how they all are working, you are sign out.
+
+212
+00:13:49,340 --> 00:13:53,840
+I can now again simply sign in with the same information that I have put.
+
+213
+00:13:54,160 --> 00:13:57,280
+So let me try to sign in only right now.
+
+214
+00:14:00,020 --> 00:14:04,660
+And let me simply say sign in and yep look at that.
+
+215
+00:14:04,860 --> 00:14:06,900
+So this is how you can use clerk.
+
+216
+00:14:07,320 --> 00:14:13,620
+So clerk is much more easier than all of the others auth provider but definitely they are
+
+217
+00:14:13,621 --> 00:14:14,560
+bit expensive.
+
+218
+00:14:15,360 --> 00:14:18,900
+So if you can afford to use clerk you can definitely go with it.
+
+219
+00:14:19,260 --> 00:14:24,320
+In same way if you wanted to go with some other features as well like you wanted to
+
+220
+00:14:25,779 --> 00:14:31,560
+with Google Auth, with GitHub, with Apple, you can definitely give it a try and try to
+
+221
+00:14:31,561 --> 00:14:32,500
+implement by yourself.
+
+222
+00:14:32,680 --> 00:14:39,519
+So with this, this is the end of the entire OAuth and we can say authentication module.
+
+223
+00:14:39,660 --> 00:14:40,899
+Hopefully you loved it.
+
+224
+00:14:41,060 --> 00:14:44,720
+And if yes, then make sure to drop your feedback with this.
+
+225
+00:14:44,860 --> 00:14:45,120
+Bye bye.
+
+226
+00:14:45,121 --> 00:14:45,580
+Take care.
+
+227
+00:14:45,740 --> 00:14:48,180
+See ya and see you next time.
+

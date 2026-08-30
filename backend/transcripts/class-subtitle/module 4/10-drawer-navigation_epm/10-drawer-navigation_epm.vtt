@@ -1,0 +1,197 @@
+WEBVTT
+
+00:00:00.300 --> 00:00:05.240
+Alright everyone and in this lecture we are going to talk about drawer navigation.
+
+00:00:05.710 --> 00:00:08.020
+This is going to be one of the easiest lecture so far.
+
+00:00:08.590 --> 00:00:11.280
+So drawer navigation is pretty straightforward.
+
+00:00:12.040 --> 00:00:15.200
+So how you can basically implement a drawer navigation?
+
+00:00:15.890 --> 00:00:19.860
+So for implementing that you need to install a bunch of things.
+
+00:00:20.100 --> 00:00:26.900
+So make sure to visit this page docs.expo.dev/router/advanced/draw.
+
+00:00:29.000 --> 00:00:32.500
+Copy from expo to here, perfect.
+
+00:00:33.340 --> 00:00:42.560
+And after that, just basically open your terminal and simply hit 1x, just a minute, 1x and
+
+00:00:42.561 --> 00:00:43.239
+then paste it.
+
+00:00:44.260 --> 00:00:50.460
+I have already installed all of them and you can see in less than 500 millisecond, we have
+
+00:00:50.520 --> 00:00:51.640
+installed it successfully.
+
+00:00:52.760 --> 00:00:55.900
+Now, what you need to do for implementing it?
+
+00:00:56.650 --> 00:00:57.720
+Go inside your layout.
+
+00:00:58.400 --> 00:01:04.240
+And instead of using stack you can import a drawer perfect.
+
+00:01:04.800 --> 00:01:11.600
+So drawer you can import this drawer from explore outer drawer perfect.
+
+00:01:12.720 --> 00:01:15.580
+Let me save it and let me add bunch of file.
+
+00:01:15.760 --> 00:01:21.180
+Let's say let me import settings.tsx, rn, fe s.
+
+00:01:22.899 --> 00:01:33.439
+In same way, let me import dashboard, so R and FES and in same way, let me also create
+
+00:01:33.560 --> 00:01:34.439
+one more file.
+
+00:01:35.799 --> 00:01:37.740
+I can call this as profile.
+
+00:01:38.700 --> 00:01:46.140
+and R and FES and this is going to be profile, alright easy nothing rocket science.
+
+00:01:47.200 --> 00:01:54.880
+Now what you can do right now, you can simply coming to here close everything and clear
+
+00:01:54.979 --> 00:02:01.299
+this as well and simply once again hit this server and wait for it.
+
+00:02:03.060 --> 00:02:06.960
+Alright, and then let me just reload my current application, what is happening?
+
+00:02:09.620 --> 00:02:16.200
+Alright, so let me close everything, let me again go to expo go and alright, I am getting
+
+00:02:16.319 --> 00:02:16.480
+it.
+
+00:02:18.180 --> 00:02:24.880
+So if I go to my layout, I have export, alright, so the spelling is different here, that is
+
+00:02:24.900 --> 00:02:27.520
+why they are showing us error, let me go to once again here.
+
+00:02:28.100 --> 00:02:30.580
+And I think we are good to go now.
+
+00:02:31.260 --> 00:02:37.440
+Maybe this will throw another once again, but let's just wait for it and then we can
+
+00:02:37.500 --> 00:02:38.120
+see the output.
+
+00:02:40.200 --> 00:02:45.380
+Alright, now look at that at the top of it, you will see index, you will see profile,
+
+00:02:45.900 --> 00:02:49.560
+you will see settings and you will also see dashboard.
+
+00:02:50.100 --> 00:02:55.820
+And again, if you wanted to modify the design of it, so let me give you a spoiler, this
+
+00:02:55.900 --> 00:02:59.120
+is going to be ads same as a tab navigation.
+
+00:03:00.000 --> 00:03:06.920
+So let me just coming to here, do something like this, not this, let me close it, let
+
+00:03:06.960 --> 00:03:07.880
+me snooze my AI.
+
+00:03:08.800 --> 00:03:17.100
+And then inside this, I can simply say draw and draw dot screen, all right and self close.
+
+00:03:17.320 --> 00:03:22.820
+Same let us say we have index, we have profile, we have settings and we have dashboard.
+
+00:03:23.320 --> 00:03:25.320
+So I can in same way add a name.
+
+00:03:25.700 --> 00:03:27.860
+So first one is going to be for index.
+
+00:03:30.120 --> 00:03:38.800
+And then second one is going to be for dashboard and third one is going for profile and this
+
+00:03:38.880 --> 00:03:40.780
+is going to be as settings, alright.
+
+00:03:41.670 --> 00:03:44.680
+And if I save it, you will still see everything is working fine.
+
+00:03:45.459 --> 00:03:51.519
+But now as you can see that we have multiple options, you can change whatever you want.
+
+00:03:51.680 --> 00:03:53.599
+Let's say you wanted to change the drawer icon.
+
+00:03:54.100 --> 00:03:57.640
+Alright, so let me just add here draw icon.
+
+00:03:58.470 --> 00:04:03.600
+You can again return the props, you can import the same icons and change it.
+
+00:04:03.670 --> 00:04:05.260
+So let me wait and change it.
+
+00:04:05.810 --> 00:04:10.900
+And now you will see that in place of draw icon, I have added basically the font or
+
+00:04:10.910 --> 00:04:17.200
+some icon and I have imported this and look at that for index, I have added index.
+
+00:04:17.420 --> 00:04:20.060
+I mean, again, you can change this draw.
+
+00:04:21.100 --> 00:04:31.160
+Tint title basically and let me just search for it draw label yes or draw label I can
+
+00:04:31.320 --> 00:04:35.940
+add whatever I want let's say let me call this as an home and you can even return here
+
+00:04:36.040 --> 00:04:41.400
+a proper JSX with the help of that JSX you can modify according to your requirement.
+
+00:04:42.020 --> 00:04:48.100
+So take this as an assignment and design it properly like add bunch of other icons.
+
+00:04:49.760 --> 00:04:55.700
+bunch of other designs, different design for draw or active like home is active.
+
+00:04:55.730 --> 00:05:00.020
+So, I wanted to see different design for it, change this to dark mode.
+
+00:05:00.070 --> 00:05:02.760
+Now, it is up to you that how you wanted to modify it.
+
+00:05:03.240 --> 00:05:06.920
+So, take this as an assignment and try to do everything by yourself.
+
+00:05:08.419 --> 00:05:14.500
+Perfect, so in next chapter basically we are going to see how you can write platform specific
+
+00:05:14.819 --> 00:05:14.979
+code.
+
+00:05:15.080 --> 00:05:20.360
+Let us say if you are on Android device, how you can see the output only for Android device
+
+00:05:20.979 --> 00:05:25.539
+and if you are on web and same if you are on iOS, you will see bunch of different design.
+
+00:05:25.819 --> 00:05:30.280
+So yes, this is pretty much it for this chapter and see you next time.
+

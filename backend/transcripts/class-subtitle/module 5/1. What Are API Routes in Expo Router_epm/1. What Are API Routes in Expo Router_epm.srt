@@ -1,0 +1,548 @@
+1
+00:00:01,140 --> 00:00:06,440
+Hey everyone and welcome to one more new module in this module we are basically going to talk
+
+2
+00:00:06,540 --> 00:00:08,700
+about networking and backend integration.
+
+3
+00:00:09,350 --> 00:00:14,420
+So this is the chapter one in this lecture we are going to learn about API routes in
+
+4
+00:00:14,560 --> 00:00:15,300
+expo router.
+
+5
+00:00:15,800 --> 00:00:22,680
+So, this is a really exciting feature because it's allow you to write server side endpoints
+
+6
+00:00:23,220 --> 00:00:24,900
+right inside your expo project.
+
+7
+00:00:25,600 --> 00:00:31,820
+It is interesting like using the same file based routing system you already know.
+
+8
+00:00:32,700 --> 00:00:33,940
+So, what are API routes?
+
+9
+00:00:34,100 --> 00:00:37,240
+I mean, I hope you guys know about what are API routes.
+
+10
+00:00:37,380 --> 00:00:41,780
+If I just simply coming to here and write what are API routes?
+
+11
+00:00:42,300 --> 00:00:52,160
+So, API routes we can say that they are special server functions, they are server functions
+
+12
+00:00:52,579 --> 00:00:59,080
+you can create inside your expo router, you can basically create them inside your expo
+
+13
+00:00:59,580 --> 00:01:00,420
+router project.
+
+14
+00:01:01,100 --> 00:01:10,720
+and they are going to act like they are going to and let me just simply say they are going
+
+15
+00:01:10,820 --> 00:01:19,460
+to act like a internet alright so let me get them cool so this API routes is basically going
+
+16
+00:01:19,600 --> 00:01:25,380
+to act like a API we can say that you are creating back-end in express in fastify in
+
+17
+00:01:25,800 --> 00:01:28,580
+fast api whatever you are using for it.
+
+18
+00:01:28,581 --> 00:01:32,380
+So kind of them they are going to act like this endpoints.
+
+19
+00:01:33,160 --> 00:01:37,160
+So this is definitely similar to the backend endpoint.
+
+20
+00:01:37,980 --> 00:01:42,720
+You had normally build with node express or other backend frameworks.
+
+21
+00:01:43,500 --> 00:01:43,660
+Cool.
+
+22
+00:01:44,180 --> 00:01:47,820
+So these endpoints can be called from your app.
+
+23
+00:01:48,500 --> 00:01:54,660
+from external even from external system to fetch and we can say the process or data.
+
+24
+00:01:56,380 --> 00:01:56,480
+Cool.
+
+25
+00:01:56,560 --> 00:02:05,760
+So if in in simple words I can say API routes, let your expo app act like both print and plus
+
+26
+00:02:05,920 --> 00:02:06,340
+back end.
+
+27
+00:02:06,800 --> 00:02:08,820
+This means you can create.
+
+28
+00:02:09,500 --> 00:02:16,080
+Rent inside of your app by using expo, you can even create back inside your application
+
+29
+00:02:16,320 --> 00:02:20,960
+by using expo without needing any separate server project.
+
+30
+00:02:21,460 --> 00:02:24,420
+So this is the beauty of we can say.
+
+31
+00:02:26,000 --> 00:02:27,819
+All right, perfect.
+
+32
+00:02:28,489 --> 00:02:31,840
+So let's move ahead and we'll see how you can basically create them.
+
+33
+00:02:32,439 --> 00:02:38,879
+So this is going to very straightforward syntax like you are always going to use this syntax.
+
+34
+00:02:39,349 --> 00:02:44,959
+So what is the syntax is this is your app and let me just organize them inside API folder
+
+35
+00:02:45,599 --> 00:02:50,200
+and the name of the route you wanted to create and then simple convention plus API.
+
+36
+00:02:50,640 --> 00:02:50,940
+That's all.
+
+37
+00:02:51,800 --> 00:02:59,140
+inside that file you are like inside this file like the we are creating you can define
+
+38
+00:02:59,370 --> 00:03:04,560
+get endpoint you can define post endpoint you can even define put you can define delete
+
+39
+00:03:04,900 --> 00:03:06,540
+you can define patch whatever you want.
+
+40
+00:03:07,070 --> 00:03:15,300
+So when a request matches the route path and we can say method expo will execute that function
+
+41
+00:03:15,540 --> 00:03:16,960
+and return you a response.
+
+42
+00:03:17,700 --> 00:03:17,840
+Cool.
+
+43
+00:03:18,800 --> 00:03:21,940
+So, let's say and let me move ahead.
+
+44
+00:03:22,680 --> 00:03:26,660
+So for that, let me start installing my expo application.
+
+45
+00:03:26,960 --> 00:03:28,240
+So how you can install that?
+
+46
+00:03:29,320 --> 00:03:34,280
+So for installing that, you can simply run the command and install it cool.
+
+47
+00:03:35,360 --> 00:03:40,819
+Alright, so let me just simply go to the documentation and now you guys can see this is the command
+
+48
+00:03:41,000 --> 00:03:41,659
+of creating it.
+
+49
+00:03:41,879 --> 00:03:42,640
+Let me copy it.
+
+50
+00:03:42,840 --> 00:03:49,400
+Let me come to my VS code, bun X and then simply paste it, create expo app at the latest.
+
+51
+00:03:49,640 --> 00:03:51,440
+I have already created a module 5.
+
+52
+00:03:51,560 --> 00:03:56,060
+Sorry, this is module 5 whatever number can be changed, but this is how I'm just trying
+
+53
+00:03:56,159 --> 00:03:56,840
+to be in sequence.
+
+54
+00:03:57,530 --> 00:03:59,739
+And then let me simply what is your app name.
+
+55
+00:04:00,099 --> 00:04:02,299
+to be inside the same folder.
+
+56
+00:04:02,800 --> 00:04:07,600
+And then this is going to install all the dependencies that we need.
+
+57
+00:04:08,980 --> 00:04:12,920
+Alright so now I have successfully installed it.
+
+58
+00:04:13,570 --> 00:04:20,860
+Now let me simply run 1x expose start and then this is going to start my server.
+
+59
+00:04:21,220 --> 00:04:22,260
+So let me wait for it.
+
+60
+00:04:22,530 --> 00:04:24,200
+Alright and then simply press a.
+
+61
+00:04:25,120 --> 00:04:31,860
+So after pressing A they are going to open this module 5 inside my module 5.
+
+62
+00:04:31,861 --> 00:04:35,480
+Expo Go App, perfect, nice.
+
+63
+00:04:35,630 --> 00:04:42,280
+Now you can see this is the by default Expo router which is coming but let move ahead
+
+64
+00:04:42,420 --> 00:04:43,220
+and reset it.
+
+65
+00:04:43,470 --> 00:04:47,680
+So simply say burn run reset project.
+
+66
+00:04:48,130 --> 00:04:52,220
+So by doing this you will see that they are going to run it and simply say no.
+
+67
+00:04:52,600 --> 00:05:00,040
+And yes, now let me run it once, not this, sorry, let me run it once again, bun x expose
+
+68
+00:05:00,220 --> 00:05:08,880
+start and then let me reload it and after reloading it, you are basically going to see
+
+69
+00:05:08,980 --> 00:05:14,080
+a simple page which is saying us edit this, I mean, you know, cool.
+
+70
+00:05:15,720 --> 00:05:16,200
+Perfect.
+
+71
+00:05:17,380 --> 00:05:22,320
+So now let's move ahead and we'll see how you can basically create the API routes.
+
+72
+00:05:22,540 --> 00:05:24,280
+So this is very straightforward.
+
+73
+00:05:25,100 --> 00:05:31,380
+So let me go to my app and inside this, let me create a API folder, always create a API
+
+74
+00:05:31,460 --> 00:05:31,740
+folder.
+
+75
+00:05:31,840 --> 00:05:32,840
+This is the good practice.
+
+76
+00:05:33,520 --> 00:05:35,800
+And let's say I simple wanted to create a hello world.
+
+77
+00:05:36,200 --> 00:05:38,580
+So, I can simply going to name it.
+
+78
+00:05:38,980 --> 00:05:46,120
+So, name should be hello and then I wanted to treat this as a expo backend API route.
+
+79
+00:05:46,460 --> 00:05:53,200
+So, I can simply say plus API dot ts yes and then you can simply say.
+
+80
+00:05:55,060 --> 00:06:04,780
+export function, I can let make it get yes, make sure to make this capital, just give
+
+81
+00:06:04,781 --> 00:06:07,360
+me a minute, let me off my AI.
+
+82
+00:06:09,800 --> 00:06:16,099
+Alright, and after that, same here you are basically going to have access of response
+
+83
+00:06:16,340 --> 00:06:21,740
+and request, let me get my request, and this is going to be the type of request.
+
+84
+00:06:22,759 --> 00:06:31,240
+And then I can simply return a response dot, and we return JSON, and then a simple this
+
+85
+00:06:31,659 --> 00:06:36,319
+and I can say data, and inside the data, I can simply say hello world.
+
+86
+00:06:37,220 --> 00:06:38,039
+Easy? Yes.
+
+87
+00:06:38,600 --> 00:06:43,620
+This is how you can basically create API route inside your Xpo app.
+
+88
+00:06:44,670 --> 00:06:48,900
+Here you can do DB call, you wanted to have some heavy logic, you can do whatever you
+
+89
+00:06:48,980 --> 00:06:49,180
+want.
+
+90
+00:06:49,470 --> 00:06:53,820
+Alright, so now how you can use this endpoint, that's the main point.
+
+91
+00:06:54,780 --> 00:06:56,159
+Easy, very easy.
+
+92
+00:06:56,169 --> 00:07:02,159
+You can simply go to our index and wherever you want it to go and then what you can do,
+
+93
+00:07:02,280 --> 00:07:04,720
+you can just simply coming to here and start using it.
+
+94
+00:07:04,721 --> 00:07:09,919
+We will see that in upcoming chapters like how you can integrate this and use this in
+
+95
+00:07:10,000 --> 00:07:10,520
+same way.
+
+96
+00:07:11,000 --> 00:07:14,580
+Let's say you wanted to create something else.
+
+97
+00:07:15,210 --> 00:07:21,080
+So in same file, yes, in same file, you can also create another function name as post.
+
+98
+00:07:21,940 --> 00:07:27,500
+And here inside this post, let's say you have received some data, you can simply say data
+
+99
+00:07:28,240 --> 00:07:30,180
+await request dot json.
+
+100
+00:07:30,210 --> 00:07:30,420
+Yes.
+
+101
+00:07:31,760 --> 00:07:39,080
+easy and don't forget you can also mark this as a sync this is a good practice and also
+
+102
+00:07:39,200 --> 00:07:40,360
+add here a sync cool.
+
+103
+00:07:41,180 --> 00:07:48,220
+Now what you can do you can simply return your data easy and if you wanted to create
+
+104
+00:07:48,360 --> 00:07:54,620
+a separate we can say get data so you can simply do so here get data and then simple
+
+105
+00:07:54,760 --> 00:07:56,140
+plus API dot TS.
+
+106
+00:07:56,520 --> 00:07:58,480
+This is also going to be completely valid.
+
+107
+00:07:59,300 --> 00:08:03,520
+Alright, so yep, but there is a point for using it.
+
+108
+00:08:04,420 --> 00:08:08,800
+You need to make sure need some changes inside your app json.
+
+109
+00:08:09,080 --> 00:08:15,960
+So for that, you simply search for app json and search for web and inside this web you
+
+110
+00:08:16,040 --> 00:08:17,120
+will find output.
+
+111
+00:08:17,580 --> 00:08:22,140
+This is by default static, but we wanted to use the server as well.
+
+112
+00:08:22,560 --> 00:08:24,020
+So that's why we need it.
+
+113
+00:08:24,280 --> 00:08:27,460
+Cool because in future whenever you are going to deploy your app
+
+114
+00:08:27,900 --> 00:08:31,620
+You separately need to deploy your API routes as well.
+
+115
+00:08:31,621 --> 00:08:35,600
+So you will see that don't worry that's bit of advanced thing but I'm talk about that
+
+116
+00:08:36,039 --> 00:08:37,080
+in upcoming chapter school.
+
+117
+00:08:38,500 --> 00:08:42,159
+All right and yes you can simply hit by this as well.
+
+118
+00:08:42,200 --> 00:08:45,660
+So let me try to show you like what I'm talking about.
+
+119
+00:08:46,740 --> 00:08:48,100
+Let me try to reload it.
+
+120
+00:08:49,200 --> 00:08:58,100
+Perfect, so let's let's say let me go to this endpoint perfect and where is that this one
+
+121
+00:08:58,220 --> 00:09:05,160
+now they are showing us this but right now if I go to API slash hello and hit this look
+
+122
+00:09:05,240 --> 00:09:13,420
+at that we are getting a data a backend data from this endpoint by default we are hitting
+
+123
+00:09:13,440 --> 00:09:15,180
+the get request and you can even see.
+
+124
+00:09:16,620 --> 00:09:21,019
+Lambda bundled web bundled and they are basically showing us the output.
+
+125
+00:09:21,360 --> 00:09:21,519
+Cool.
+
+126
+00:09:21,800 --> 00:09:23,100
+Nothing to worry much about it.
+
+127
+00:09:23,839 --> 00:09:27,920
+So yes, this is how you can basically create APR out.
+
+128
+00:09:28,120 --> 00:09:28,899
+What is APR out?
+
+129
+00:09:29,070 --> 00:09:30,820
+You have a good idea out of it.
+
+130
+00:09:31,600 --> 00:09:38,880
+Perfect. So if I just try to give you a quick recap, API routes are server endpoints, which
+
+131
+00:09:38,980 --> 00:09:44,940
+is create inside your folder structure inside your expo folder structure expo is a framework
+
+132
+00:09:45,580 --> 00:09:51,220
+which support frontend and back end both and they run server side code as well. And this
+
+133
+00:09:51,300 --> 00:09:54,440
+is how you can basically create your server side of API routes.
+
+134
+00:09:54,600 --> 00:09:59,360
+Be it get, be it post, be it put, delete doesn't matter.
+
+135
+00:10:00,240 --> 00:10:05,079
+So in next lecture, we will get to see that how you can basically create here some bunch
+
+136
+00:10:05,160 --> 00:10:10,620
+of other API routes and then we are going to see how to call it from screen using fetch.
+
+137
+00:10:11,440 --> 00:10:17,220
+Alright, so yes, this is pretty much it for this chapter and see you next time.
+

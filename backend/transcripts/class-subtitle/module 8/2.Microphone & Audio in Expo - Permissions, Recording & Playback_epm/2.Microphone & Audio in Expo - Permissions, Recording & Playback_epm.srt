@@ -1,0 +1,480 @@
+1
+00:00:00,000 --> 00:00:03,260
+Alright everyone, welcome to One More New Chapter.
+
+2
+00:00:03,520 --> 00:00:06,580
+In this chapter we are going to talk about Expo Audio.
+
+3
+00:00:06,740 --> 00:00:12,020
+So how you can basically tackle audios inside your Expo application.
+
+4
+00:00:12,840 --> 00:00:12,920
+Perfect.
+
+5
+00:00:13,500 --> 00:00:20,660
+So Expo Audio is a cross-platform audio library for accessing the native audio capabilities
+
+6
+00:00:20,980 --> 00:00:21,540
+of the device.
+
+7
+00:00:22,340 --> 00:00:27,380
+Note that audio automatically stops if headphones, Bluetooth, audio devices are disconnected.
+
+8
+00:00:27,900 --> 00:00:28,720
+Perfect.
+
+9
+00:00:28,800 --> 00:00:34,160
+So for installation, you can just simply copy this and install it.
+
+10
+00:00:34,239 --> 00:00:39,340
+I have already installed it, but let me first of all rerun my application and install it
+
+11
+00:00:39,420 --> 00:00:40,040
+once again.
+
+12
+00:00:42,340 --> 00:00:45,460
+So this is going to be Banex, Expo, install, Expo Audio.
+
+13
+00:00:45,960 --> 00:00:46,140
+Perfect.
+
+14
+00:00:46,960 --> 00:00:52,500
+And for using it, what you will do, you will just come down and this is how you can use
+
+15
+00:00:52,620 --> 00:00:52,680
+it.
+
+16
+00:00:53,540 --> 00:00:55,760
+Let's say you wanted to play some
+
+17
+00:00:57,380 --> 00:01:02,120
+So, for that I have already grabbed here asset with the name of Hello MP3.
+
+18
+00:01:03,000 --> 00:01:03,180
+Perfect.
+
+19
+00:01:03,420 --> 00:01:07,740
+So, if you wanted to place this audio inside your app, so what you will do, let's say let
+
+20
+00:01:07,860 --> 00:01:16,979
+me go to my screen and simply create an audio screen.tsx, rn, fes and then I can simply say
+
+21
+00:01:20,060 --> 00:01:21,700
+Perfect and let me save it.
+
+22
+00:01:22,040 --> 00:01:26,080
+Let me go to my index and instead of this I will use my audio screen.
+
+23
+00:01:26,640 --> 00:01:26,800
+Perfect.
+
+24
+00:01:30,300 --> 00:01:36,640
+Nice and if I just reload it just to update this and you will see a audio screen here.
+
+25
+00:01:36,760 --> 00:01:37,040
+Perfect.
+
+26
+00:01:37,480 --> 00:01:37,740
+Nice.
+
+27
+00:01:38,400 --> 00:01:41,380
+So for using it let me just simply coming to here.
+
+28
+00:01:42,000 --> 00:01:49,220
+and import it perfect I will just copying it and paste here nice so you will see first
+
+29
+00:01:49,221 --> 00:01:54,979
+of all we are importing the audio source so for importing it don't import like this because
+
+30
+00:01:55,380 --> 00:02:04,260
+I need to go one step back so double dot slash assets and inside this I have hello dot mp3
+
+31
+00:02:04,899 --> 00:02:09,379
+Perfect and change their naming to basically something else.
+
+32
+00:02:09,780 --> 00:02:11,060
+So perfect.
+
+33
+00:02:11,459 --> 00:02:19,620
+So now let me just come into here and instead of app I will just change their name to audio
+
+34
+00:02:19,739 --> 00:02:20,000
+screen.
+
+35
+00:02:21,480 --> 00:02:21,580
+Perfect.
+
+36
+00:02:22,580 --> 00:02:25,840
+And yes, now you will see that they are giving us two options.
+
+37
+00:02:26,560 --> 00:02:27,540
+One is play sound.
+
+38
+00:02:29,060 --> 00:02:30,700
+And I think sound is playing.
+
+39
+00:02:30,920 --> 00:02:35,600
+I don't know you guys are able to listen that or not because I have off to my system sound.
+
+40
+00:02:36,000 --> 00:02:40,660
+But yes, let me just, I don't know you are able to listen it or not.
+
+41
+00:02:41,000 --> 00:02:43,260
+But yes, this is working perfectly fine.
+
+42
+00:02:44,080 --> 00:02:45,720
+And in same way I can replay it.
+
+43
+00:02:46,020 --> 00:02:49,540
+We can have a multiple options for stopping it out.
+
+44
+00:02:49,820 --> 00:02:51,060
+Like let's say you will see.
+
+45
+00:02:53,180 --> 00:02:58,920
+We have on press play to seek and in same way I can have a stop as well.
+
+46
+00:02:59,050 --> 00:03:00,860
+So I can definitely search for it.
+
+47
+00:03:02,380 --> 00:03:03,400
+Look at that.
+
+48
+00:03:04,120 --> 00:03:05,260
+This is just for audio.
+
+49
+00:03:07,570 --> 00:03:12,060
+Maybe I can just copy this perfect paste this.
+
+50
+00:03:13,780 --> 00:03:21,920
+And let me simply say stop and then I can say this as I don't know how I can stop it
+
+51
+00:03:22,620 --> 00:03:29,200
+just we have stop I don't know this will work or not but if I just reloaded once.
+
+52
+00:03:30,340 --> 00:03:33,220
+Let me just save it and let me just reload it.
+
+53
+00:03:33,420 --> 00:03:36,400
+So after I reload it, you will see my sound will stop.
+
+54
+00:03:37,680 --> 00:03:37,739
+Perfect.
+
+55
+00:03:37,900 --> 00:03:44,640
+So this is how you can play your sound and this is how you can basically replay your
+
+56
+00:03:44,720 --> 00:03:44,980
+song.
+
+57
+00:03:45,760 --> 00:03:45,860
+Perfect.
+
+58
+00:03:46,040 --> 00:03:48,519
+So I think I think I have I got that idea.
+
+59
+00:03:48,780 --> 00:03:51,560
+What you can do instead of play, we can have a pause.
+
+60
+00:03:51,739 --> 00:03:53,220
+Yes, I'm searching for stop.
+
+61
+00:03:53,840 --> 00:03:55,799
+But like we have a play in same way.
+
+62
+00:03:55,859 --> 00:03:56,459
+We have a pause.
+
+63
+00:03:56,720 --> 00:03:57,400
+Yes, look at that.
+
+64
+00:03:57,600 --> 00:04:01,260
+And then I can simply say PAUSP, pause sound.
+
+65
+00:04:02,360 --> 00:04:02,420
+Perfect.
+
+66
+00:04:02,580 --> 00:04:03,520
+I can play from here.
+
+67
+00:04:03,760 --> 00:04:05,360
+Yes, sound is playing into my head.
+
+68
+00:04:05,440 --> 00:04:10,220
+I don't know you guys are able to listen it or not because I have off to my system sound.
+
+69
+00:04:10,860 --> 00:04:11,620
+I can pause it.
+
+70
+00:04:12,060 --> 00:04:14,360
+And yes, my sound is paused now.
+
+71
+00:04:14,840 --> 00:04:15,000
+Perfect.
+
+72
+00:04:15,500 --> 00:04:19,860
+So this is how you can basically control and listen to any sound.
+
+73
+00:04:20,100 --> 00:04:23,160
+But let's say right now you wanted to record something.
+
+74
+00:04:23,800 --> 00:04:26,159
+So, how you can do so that?
+
+75
+00:04:26,690 --> 00:04:30,740
+So, for that we also have a recording sounds option.
+
+76
+00:04:31,150 --> 00:04:38,220
+So, these are bunch of hooks that we have and you can just simply let me copy this perfect.
+
+77
+00:04:38,530 --> 00:04:42,659
+So, let me just copy this coming to here and let me paste the same.
+
+78
+00:04:44,520 --> 00:04:50,180
+And let me import my alert component from react native and if I save it, they are going
+
+79
+00:04:50,259 --> 00:04:53,180
+to ask me for a permission if I just click on start recording.
+
+80
+00:04:54,319 --> 00:04:58,259
+And I have already given the permission and you will see, I don't know you are able to
+
+81
+00:04:58,319 --> 00:05:03,360
+see that or not a simple green dot here, look at that they are showing us this microphone
+
+82
+00:05:03,780 --> 00:05:04,000
+simple.
+
+83
+00:05:04,699 --> 00:05:10,740
+This means my microphone is on and whatever I am saying here, this is recording perfect.
+
+84
+00:05:11,300 --> 00:05:14,400
+and I can definitely stop the recording as well.
+
+85
+00:05:15,180 --> 00:05:16,699
+So let's try to break it down.
+
+86
+00:05:17,000 --> 00:05:18,300
+All right, so you will see that I have
+
+87
+00:05:18,599 --> 00:05:22,460
+audio module recording presets, set audio mode sync.
+
+88
+00:05:23,479 --> 00:05:24,539
+These are recorders.
+
+89
+00:05:25,319 --> 00:05:26,879
+Perfect, we have initialized this
+
+90
+00:05:27,139 --> 00:05:31,099
+and in what way you wanted to record your video,
+
+91
+00:05:31,300 --> 00:05:32,560
+these are bunch of settings.
+
+92
+00:05:33,240 --> 00:05:34,979
+Like you want high quality videos,
+
+93
+00:05:35,159 --> 00:05:36,699
+you want low quality videos.
+
+94
+00:05:36,879 --> 00:05:40,400
+This is how you have an entire control over it.
+
+95
+00:05:40,700 --> 00:05:46,520
+Perfect and this is for asking permissions and from here you can definitely record it.
+
+96
+00:05:46,760 --> 00:05:47,060
+Perfect.
+
+97
+00:05:48,160 --> 00:05:50,800
+But now let's say you wanted to save your recording.
+
+98
+00:05:50,940 --> 00:05:56,860
+So for that you need to use something known as expo file media.
+
+99
+00:05:57,340 --> 00:06:01,420
+But for using that you need to create an Android and iOS build.
+
+100
+00:06:02,060 --> 00:06:07,760
+Then only you have a complete permission to access the local file system of your device.
+
+101
+00:06:08,300 --> 00:06:13,319
+So, that's why I'm not saving anywhere and not be able to grab that.
+
+102
+00:06:13,620 --> 00:06:15,840
+For that I have to do a lot of lengthy procedures.
+
+103
+00:06:17,000 --> 00:06:21,240
+But right now, I just don't want it to get into ES builds thing.
+
+104
+00:06:21,460 --> 00:06:22,900
+We'll cover that, don't worry.
+
+105
+00:06:23,400 --> 00:06:27,060
+But right now, this is how you can access your camera.
+
+106
+00:06:27,620 --> 00:06:28,800
+You can access your audio.
+
+107
+00:06:29,000 --> 00:06:37,900
+Right now, I'm going to go ahead and do the same.
+
+108
+00:06:37,901 --> 00:06:37,921
+If you wanted to use media, then you need to create iOS and Android build.
+
+109
+00:06:37,922 --> 00:06:39,140
+But I think this is not the right time for covering that.
+
+110
+00:06:39,640 --> 00:06:42,020
+But I think we have an image picker.
+
+111
+00:06:42,080 --> 00:06:44,220
+So you can definitely use the image picker thing.
+
+112
+00:06:45,020 --> 00:06:50,400
+So from here, you will basically pick the images from your like look at that something
+
+113
+00:06:50,500 --> 00:06:52,340
+like this from your devices.
+
+114
+00:06:52,980 --> 00:06:54,580
+So you can definitely give it a try.
+
+115
+00:06:55,200 --> 00:07:01,800
+a very simple way of using it, ask for a permission and then this is how you can launch your libraries
+
+116
+00:07:02,480 --> 00:07:05,700
+and access that and show that image onto this.
+
+117
+00:07:07,010 --> 00:07:07,160
+Perfect.
+
+118
+00:07:08,200 --> 00:07:13,100
+So, yes, this is pretty much it for this chapter where we have covered about recording sounds,
+
+119
+00:07:13,380 --> 00:07:19,280
+playing the sounds definitely and you can read more about it, read more about settings
+
+120
+00:07:19,800 --> 00:07:25,979
+Perfect. So this is the end of our audio chapter and see you next time.
+

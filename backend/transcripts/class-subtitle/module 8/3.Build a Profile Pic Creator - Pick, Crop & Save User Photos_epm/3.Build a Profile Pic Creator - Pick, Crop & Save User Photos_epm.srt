@@ -1,0 +1,440 @@
+1
+00:00:00,000 --> 00:00:03,980
+Alright everyone and welcome to one more new mini project video.
+
+2
+00:00:04,230 --> 00:00:10,640
+In this chapter we are basically going to create a profile image picker mini project.
+
+3
+00:00:11,010 --> 00:00:13,280
+So let's move ahead and start building it.
+
+4
+00:00:14,210 --> 00:00:20,360
+Right now let me come into here and then simply initialize R and FeS and then let me simply
+
+5
+00:00:20,480 --> 00:00:21,560
+say index.
+
+6
+00:00:22,470 --> 00:00:22,660
+Perfect.
+
+7
+00:00:23,560 --> 00:00:27,580
+And then let me try to reload it once so that we are back to normal.
+
+8
+00:00:29,600 --> 00:00:37,480
+And for creating this, you need a bunch of things, but we already have other things,
+
+9
+00:00:37,600 --> 00:00:42,820
+but first of all, let me simply CLS it and then run Banex Expo install.
+
+10
+00:00:43,280 --> 00:00:49,620
+And first thing I wanted you to install is Expo image picker so that we can understand
+
+11
+00:00:49,760 --> 00:00:50,800
+about this as well.
+
+12
+00:00:51,100 --> 00:00:58,699
+Then we can import expo image manipulator like we have a tons of libraries, manipulator
+
+13
+00:01:00,079 --> 00:01:07,500
+and I think yes this is what we need for now and then I can simply say expo image manipulator
+
+14
+00:01:07,820 --> 00:01:08,040
+perfect.
+
+15
+00:01:09,360 --> 00:01:10,420
+Let me just clear it.
+
+16
+00:01:11,200 --> 00:01:14,560
+And let me import all of the thing that I need.
+
+17
+00:01:15,399 --> 00:01:18,799
+So I need an image manipulator from Expo image manipulator.
+
+18
+00:01:19,200 --> 00:01:22,060
+I need an image picker from Expo image picker.
+
+19
+00:01:22,640 --> 00:01:23,240
+Use router.
+
+20
+00:01:24,200 --> 00:01:24,640
+Use state.
+
+21
+00:01:25,280 --> 00:01:25,399
+Alert.
+
+22
+00:01:25,939 --> 00:01:26,299
+Image.
+
+23
+00:01:26,759 --> 00:01:27,179
+Style sheet.
+
+24
+00:01:27,560 --> 00:01:27,780
+Text.
+
+25
+00:01:28,000 --> 00:01:29,520
+Touchable opacity and view.
+
+26
+00:01:29,679 --> 00:01:29,899
+Perfect.
+
+27
+00:01:32,659 --> 00:01:38,960
+And then what I can do first of all let me simply maintain and first of all let me just
+
+28
+00:01:41,220 --> 00:01:46,820
+add all the styles that I need so I can come into here and save it perfect.
+
+29
+00:01:47,700 --> 00:01:55,259
+So, all the styles related to container, title, profile container, profile image, placeholder,
+
+30
+00:01:55,720 --> 00:02:00,560
+placeholder text, button container, button and button text, alright.
+
+31
+00:02:01,820 --> 00:02:17,680
+Then what I can do, I can move ahead and first of all initialize all the
+
+32
+00:02:17,681 --> 00:02:17,701
+state variable that I need. So, I only need one state variable that is as profile image
+
+33
+00:02:17,702 --> 00:02:21,880
+and set profile image perfect. And along with that let me first of all paste my entire
+
+34
+00:02:22,140 --> 00:02:22,300
+UI.
+
+35
+00:02:24,860 --> 00:02:27,620
+So, this is the entire UI I need.
+
+36
+00:02:28,040 --> 00:02:29,260
+So we have a view.
+
+37
+00:02:30,420 --> 00:02:32,640
+This view have a text as profile picture.
+
+38
+00:02:33,060 --> 00:02:39,260
+Then we have a profile picture container, something like this, whatever the profile image is coming,
+
+39
+00:02:39,420 --> 00:02:45,019
+otherwise we are showing no photo and then a titchable opacity, which is calling a take
+
+40
+00:02:45,140 --> 00:02:46,739
+photo and then a pic photo.
+
+41
+00:02:47,379 --> 00:02:47,680
+All right.
+
+42
+00:02:48,239 --> 00:02:48,420
+Nice.
+
+43
+00:02:48,421 --> 00:02:53,579
+Now let's move ahead and first of all ask for a permission.
+
+44
+00:02:54,530 --> 00:03:00,799
+So for asking for a permission I can simply say const request permissions is equals to
+
+45
+00:03:00,849 --> 00:03:11,040
+a sync and then I can say const status and I will say this as camera status is equals
+
+46
+00:03:11,099 --> 00:03:14,099
+to await image picker.
+
+47
+00:03:17,540 --> 00:03:23,319
+.Request camera permission async in same way I can ask for media permission so I can
+
+48
+00:03:23,320 --> 00:03:33,019
+say status and this will equal to media status and I can say this as await again image picker
+
+49
+00:03:35,040 --> 00:03:43,380
+.request media library permission async perfect and a simple check if we don't get any permission
+
+50
+00:03:43,600 --> 00:03:49,760
+then I can simply say I need permission bro please allow me otherwise I will return a
+
+51
+00:03:49,780 --> 00:03:55,160
+simple true perfect if we are not getting any permission we are showing alert and returning
+
+52
+00:03:55,161 --> 00:03:58,860
+a false otherwise we are returning a true nice.
+
+53
+00:03:59,400 --> 00:04:06,099
+Now, let's move ahead and create first method name as take photo.
+
+54
+00:04:06,180 --> 00:04:16,060
+So I can say simply take photo is equals to async async async and this is first of all
+
+55
+00:04:16,139 --> 00:04:17,459
+check has permission.
+
+56
+00:04:18,800 --> 00:04:26,840
+and await request permission perfect and again if we don't have any permission so I can
+
+57
+00:04:26,940 --> 00:04:34,099
+simply return it otherwise I will say try and catch inside the try first thing first
+
+58
+00:04:34,300 --> 00:04:36,240
+let's launch our camera.
+
+59
+00:04:37,200 --> 00:04:43,880
+So, I will write something like this, image picker launch camera sync, yes you can also
+
+60
+00:04:44,000 --> 00:04:50,920
+launch from here and say media type as image, allow editing true, aspect ratio of our image
+
+61
+00:04:51,080 --> 00:04:53,740
+is 1 is to 1 and then quality is 0.8.
+
+62
+00:04:54,980 --> 00:05:02,580
+But if result is now become cancelled, then I can say if not of result dot cancelled
+
+63
+00:05:03,500 --> 00:05:14,680
+and result assets is something like this then what I will do I will resize to square or
+
+64
+00:05:14,740 --> 00:05:15,400
+profile pic.
+
+65
+00:05:15,430 --> 00:05:17,640
+So we are basically resizing bunch of thing.
+
+66
+00:05:18,660 --> 00:05:24,420
+First of all let me get my image ref and you just get confused after this but no problem
+
+67
+00:05:24,520 --> 00:05:25,240
+let me paste it.
+
+68
+00:05:25,700 --> 00:05:32,760
+I have a image ref, I am just getting with this, so await image manipulator dot image
+
+69
+00:05:32,880 --> 00:05:38,660
+manipulator dot manipulate and result dot asset at the zeroth index we have the access
+
+70
+00:05:38,840 --> 00:05:42,980
+of URI and the size is something like this and then render this image.
+
+71
+00:05:44,000 --> 00:05:55,000
+Then, I will simply say const menuPulateImage is equals to await imageRef.SaveAsync.
+
+72
+00:05:55,700 --> 00:06:03,380
+So, we are saving this and I can first of all say compress this image 0.8 and then format
+
+73
+00:06:03,700 --> 00:06:05,860
+will be saved.
+
+74
+00:06:06,100 --> 00:06:16,440
+is image manipulator dot save format and let's save in JPEG PNG or the P let's save in JPEG
+
+75
+00:06:16,820 --> 00:06:27,020
+perfect and then I will set my profile image equal to manipulate image dot URI so something
+
+76
+00:06:27,021 --> 00:06:27,220
+like
+
+77
+00:06:28,000 --> 00:06:38,000
+this manipulated image dot URI nice and but any chance if we have any error then we will
+
+78
+00:06:38,040 --> 00:06:39,240
+simply show this error.
+
+79
+00:06:39,680 --> 00:06:41,620
+So let me save it perfect.
+
+80
+00:06:42,660 --> 00:06:46,380
+All right, we don't have a method I think if I'm not wrong but no problem.
+
+81
+00:06:46,720 --> 00:06:47,680
+Let me come into here.
+
+82
+00:06:47,940 --> 00:06:48,920
+This is our take photo.
+
+83
+00:06:49,960 --> 00:06:52,040
+In same way I can have a pic photo.
+
+84
+00:06:53,100 --> 00:07:00,060
+pick photo is also same kind of like that. So let me just copy and paste my pick photo.
+
+85
+00:07:02,080 --> 00:07:07,020
+So this is my pick photo also everything is same. We are just manipulating the result
+
+86
+00:07:07,200 --> 00:07:14,580
+and asset saving in JPEG and setting the profile like this. Alright, and if I reloaded once
+
+87
+00:07:14,620 --> 00:07:17,100
+again let me close everything rerun my application.
+
+88
+00:07:18,660 --> 00:07:22,180
+Let me close all, where is my expo go?
+
+89
+00:07:22,460 --> 00:07:24,020
+This one, perfect.
+
+90
+00:07:25,460 --> 00:07:36,920
+Now let me open my module 8 and look at that, this is our no photo and now if I press on
+
+91
+00:07:37,040 --> 00:07:42,440
+take photo, so you will see I am able to open my camera and if I let's say just take the
+
+92
+00:07:42,441 --> 00:07:43,520
+photo of my PC.
+
+93
+00:07:44,100 --> 00:07:46,260
+And if I save it, look at that.
+
+94
+00:07:46,740 --> 00:07:51,640
+This is what my image is coming and if I press on OK, all right.
+
+95
+00:07:51,780 --> 00:07:55,660
+Now they are asking me to crop because we are setting this up for our profile.
+
+96
+00:07:55,920 --> 00:07:58,920
+If I simply say crop, look at that.
+
+97
+00:07:59,300 --> 00:08:01,360
+Now we are able to set this.
+
+98
+00:08:01,800 --> 00:08:08,199
+image as my profile. If I press on choose from gallery, look at that. Now my gallery
+
+99
+00:08:08,379 --> 00:08:14,099
+is I am able to access my gallery. Perfect. And let's say if I just select this photo
+
+100
+00:08:14,400 --> 00:08:20,419
+and if I simply press on crop, look at that. So this is how you can basically access your
+
+101
+00:08:20,580 --> 00:08:27,440
+user's gallery with the help of these library image manipulator and image picker. But if
+
+102
+00:08:27,441 --> 00:08:28,460
+you wanted to use.
+
+103
+00:08:29,000 --> 00:08:36,480
+Expo some another media library for that you need to create a build but yes this is how
+
+104
+00:08:36,481 --> 00:08:43,539
+you can choose your images, take photos and set that as a profile picture but you can definitely
+
+105
+00:08:43,679 --> 00:08:47,340
+change as background, set as wallpapers, it's up to you.
+
+106
+00:08:48,000 --> 00:08:48,880
+Perfect.
+
+107
+00:08:49,480 --> 00:08:58,020
+So this is how you can basically take the help of expose, expose lot of libraries like
+
+108
+00:08:58,220 --> 00:09:05,020
+camera, media, audio, file picker, image picker, image manipulator, you can do bunch of things.
+
+109
+00:09:05,400 --> 00:09:05,680
+Perfect.
+
+110
+00:09:06,500 --> 00:09:11,660
+So with this, this is pretty much it for this entire module and see you next time.
+

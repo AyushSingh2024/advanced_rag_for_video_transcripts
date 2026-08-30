@@ -1,0 +1,1204 @@
+1
+00:00:00,960 --> 00:00:04,860
+Hey everyone and welcome to one more new mini project video.
+
+2
+00:00:05,120 --> 00:00:11,320
+In this video we are basically going to build a nodes buddy with the help of xposequelite
+
+3
+00:00:11,440 --> 00:00:17,500
+so that we can understand more about xposequelite and how you can build your offline first mobile
+
+4
+00:00:17,501 --> 00:00:18,320
+applications.
+
+5
+00:00:19,120 --> 00:00:24,720
+Alright, so for that first step is going to be install our application and reset that.
+
+6
+00:00:25,060 --> 00:00:25,300
+Cool.
+
+7
+00:00:28,939 --> 00:00:35,079
+And first of all, let me clear it and then this is going to be 1x create Expo app at
+
+8
+00:00:35,080 --> 00:00:35,780
+the latest.
+
+9
+00:00:36,480 --> 00:00:42,559
+So with that, let me just simply initialize inside a folder name as notes buddy and then
+
+10
+00:00:42,560 --> 00:00:43,520
+I'll be right back.
+
+11
+00:00:44,540 --> 00:00:47,060
+And now we have successfully installed it.
+
+12
+00:00:47,380 --> 00:00:52,660
+The next step is simply going to be burn run and then reset project.
+
+13
+00:00:52,980 --> 00:00:57,360
+So with the help of that they are going to reset it and then let me simply say no.
+
+14
+00:00:58,360 --> 00:00:59,760
+Let me reset it.
+
+15
+00:00:59,880 --> 00:01:00,100
+No.
+
+16
+00:01:00,740 --> 00:01:00,980
+All right.
+
+17
+00:01:00,981 --> 00:01:02,320
+Now we are good to go.
+
+18
+00:01:02,420 --> 00:01:04,380
+So the first step is always bunnux.
+
+19
+00:01:05,220 --> 00:01:11,680
+Expo start. So with the help of this we have started our Expo dub server. I can
+
+20
+00:01:11,740 --> 00:01:17,440
+simply say A. The moment I press A my application is up and running into my
+
+21
+00:01:17,441 --> 00:01:21,979
+physical device which is connected to my system and you are able to see this.
+
+22
+00:01:22,000 --> 00:01:29,620
+Alright, now you can see that we have index at the top and then this edit app/index.tsx
+
+23
+00:01:29,900 --> 00:01:31,020
+to edit this screen.
+
+24
+00:01:32,000 --> 00:01:38,580
+Now let's move ahead and first step is going to be very very very easy and that is going
+
+25
+00:01:38,581 --> 00:01:45,340
+to be first of all initialize our all the we can say database related functions and
+
+26
+00:01:45,640 --> 00:01:48,120
+basically install a SQLite.
+
+27
+00:01:48,500 --> 00:01:49,100
+Perfect.
+
+28
+00:01:49,600 --> 00:02:02,979
+So, for that let me open it up and simply say bunx expo install expo sqlite perfect
+
+29
+00:02:03,700 --> 00:02:05,659
+and then let me simply hit this.
+
+30
+00:02:05,880 --> 00:02:12,280
+Now our expo SQLite installed successfully in less than one second and then let me close
+
+31
+00:02:12,281 --> 00:02:14,880
+this and inside the.
+
+32
+00:02:15,700 --> 00:02:27,459
+folder structure, I can create here a DB file in this DB we can have index.ts file and then
+
+33
+00:02:27,700 --> 00:02:30,519
+let me just import bunch of utilities.
+
+34
+00:02:30,580 --> 00:02:38,580
+I can simply say import asterisk as SQLite from SQLite.
+
+35
+00:02:40,580 --> 00:02:42,740
+Expo or SQLite.
+
+36
+00:02:43,140 --> 00:02:49,820
+Perfect and then first thing is always going to be create a variable with the proper typing,
+
+37
+00:02:49,980 --> 00:02:50,720
+which is good.
+
+38
+00:02:51,030 --> 00:02:56,240
+So simply say let DB this is going to be the type of SQLite.
+
+39
+00:02:57,540 --> 00:02:58,820
+SQLite database.
+
+40
+00:03:00,940 --> 00:03:04,000
+All right and this is or maybe this can be null.
+
+41
+00:03:04,220 --> 00:03:12,300
+So right now initially this is going to become null and then I am going to create here we
+
+42
+00:03:12,380 --> 00:03:17,220
+can say database which is basically simple.
+
+43
+00:03:17,280 --> 00:03:22,700
+I can simply create const get data base is equals to async.
+
+44
+00:03:23,000 --> 00:03:31,860
+And this is basically going to call this and then if we do not have a DB initialize basically.
+
+45
+00:03:32,660 --> 00:03:42,959
+So then I am going to say DB is equals to await SQLite.openDatabaseAsync and then name
+
+46
+00:03:42,960 --> 00:03:43,560
+of the data.
+
+47
+00:03:43,620 --> 00:03:45,440
+So we are creating a notes buddy.
+
+48
+00:03:45,540 --> 00:03:47,360
+So I can simply say notes.db.
+
+49
+00:03:49,400 --> 00:03:56,220
+And then I'm going to create a table which is simply going to have a ID and then title
+
+50
+00:03:56,579 --> 00:04:00,099
+and we can say content and then it's created at simple.
+
+51
+00:04:01,700 --> 00:04:11,220
+So I can say await db.executeAsync and then simply add here a backticks and the query
+
+52
+00:04:11,221 --> 00:04:12,819
+is basically going to be.
+
+53
+00:04:15,700 --> 00:04:26,139
+Create table if not exist yes if not exi exist name of that table is nodes and the type is
+
+54
+00:04:26,140 --> 00:04:31,380
+is going to be first we have a id which is type of integer.
+
+55
+00:04:31,800 --> 00:04:38,139
+And then we are going to have a primary key constraints basically and then this is going
+
+56
+00:04:38,140 --> 00:04:46,000
+to be auto increment and then simply add here a comma and then we can have a title.
+
+57
+00:04:47,139 --> 00:04:50,479
+So this is a title which is type of text.
+
+58
+00:04:51,039 --> 00:04:52,159
+Yes, basically that.
+
+59
+00:04:53,759 --> 00:04:55,560
+Data type of it, we can say that.
+
+60
+00:04:56,000 --> 00:04:57,400
+And then we have a content.
+
+61
+00:04:57,680 --> 00:05:00,100
+This is also type of we can say text.
+
+62
+00:05:00,759 --> 00:05:04,199
+And then we have a created created at.
+
+63
+00:05:05,419 --> 00:05:08,340
+And this is also going to be the type of text.
+
+64
+00:05:08,860 --> 00:05:09,039
+Easy.
+
+65
+00:05:10,060 --> 00:05:12,900
+And this is basically going to return a DP.
+
+66
+00:05:13,800 --> 00:05:15,400
+Perfect.
+
+67
+00:05:16,259 --> 00:05:18,340
+Now this is your get database function.
+
+68
+00:05:19,080 --> 00:05:29,340
+In same way I can simply create export const init database is equals to async and then this
+
+69
+00:05:29,341 --> 00:05:32,699
+is going to simply call await get database.
+
+70
+00:05:33,180 --> 00:05:33,620
+Easy.
+
+71
+00:05:35,260 --> 00:05:39,820
+In the same way, I am going to basically add three different functions.
+
+72
+00:05:40,780 --> 00:05:43,520
+Alright, so the first is going to be for adding the notes.
+
+73
+00:05:44,200 --> 00:05:47,940
+Second is for we can say getting the note updating and deleting.
+
+74
+00:05:48,200 --> 00:05:53,560
+So let me just simply add all of them at once and you can pause this video and write all
+
+75
+00:05:53,561 --> 00:05:54,340
+of them one by one.
+
+76
+00:05:54,500 --> 00:05:56,340
+So the first we have get notes.
+
+77
+00:05:57,340 --> 00:05:58,640
+This is a async.
+
+78
+00:05:59,010 --> 00:06:00,740
+Returning a promise of type any.
+
+79
+00:06:01,280 --> 00:06:02,280
+Getting our database.
+
+80
+00:06:02,600 --> 00:06:06,000
+And then returning this get all sync.
+
+81
+00:06:06,060 --> 00:06:08,320
+We are basically calling it in same way.
+
+82
+00:06:08,321 --> 00:06:10,500
+We have add note in same way.
+
+83
+00:06:10,501 --> 00:06:13,820
+We have update note and then delete note easy.
+
+84
+00:06:14,640 --> 00:06:15,100
+Perfect.
+
+85
+00:06:15,460 --> 00:06:19,080
+Now we are done with the main logical part.
+
+86
+00:06:20,180 --> 00:06:27,100
+Now what I can do, I can simply close this and then I can go to my we can say first of
+
+87
+00:06:27,101 --> 00:06:30,020
+all layout file inside this layout file.
+
+88
+00:06:31,360 --> 00:06:35,360
+I can do something like this.
+
+89
+00:06:35,919 --> 00:06:42,139
+Add a fragments first thing that we need a status bar and make sure to import that from
+
+90
+00:06:42,320 --> 00:06:43,979
+expo status bar much better.
+
+91
+00:06:45,240 --> 00:06:50,120
+And then this is going to be the style of light because we are going to create our node
+
+92
+00:06:50,220 --> 00:06:52,199
+sample into the dark mode.
+
+93
+00:06:53,139 --> 00:06:57,060
+And then I'm basically going to say here.
+
+94
+00:06:58,760 --> 00:07:06,340
+And this stack is going to have a screen options, which is basically going to have a header
+
+95
+00:07:06,400 --> 00:07:12,500
+shown option and header shown is going to be pulse because we don't wanted to show any
+
+96
+00:07:12,540 --> 00:07:21,760
+header and then if I remove it and self close this, this is how this basically going to
+
+97
+00:07:21,761 --> 00:07:24,420
+look and then I'm going to change the background colors.
+
+98
+00:07:25,280 --> 00:07:55,260
+So inside, we have a
+
+99
+00:07:55,261 --> 00:07:55,281
+the screen option itself, I can say content style is going to have a background color
+
+100
+00:07:55,282 --> 00:07:55,302
+and this background color is going to be #121212 and now if I save it, look at that how beautifully
+
+101
+00:07:55,303 --> 00:07:55,323
+we have aligned everything.
+
+102
+00:07:55,324 --> 00:07:55,344
+Cool?
+
+103
+00:07:55,345 --> 00:07:55,365
+Yes, we are done with this layout.tsx file as well.
+
+104
+00:07:55,366 --> 00:07:59,139
+Now, move inside our index.tsx file and this is the main file where we wanted to write
+
+105
+00:07:59,140 --> 00:08:00,540
+our main business logic.
+
+106
+00:08:02,300 --> 00:08:07,540
+So, first thing first I wanted to initialize and import bunch of thing that we need.
+
+107
+00:08:08,340 --> 00:08:09,780
+So, we need this much of thing.
+
+108
+00:08:10,300 --> 00:08:16,580
+We need a use effect, use state, bunch of flat list, model, style sheet, text, text
+
+109
+00:08:16,599 --> 00:08:18,720
+input, touchable opacity and view.
+
+110
+00:08:19,960 --> 00:08:28,900
+And now we have this inside the @/db so that if I go to here, now I am able to access all
+
+111
+00:08:28,901 --> 00:08:30,520
+my functions that we have.
+
+112
+00:08:30,659 --> 00:08:31,360
+No problem.
+
+113
+00:08:32,039 --> 00:08:32,279
+Perfect.
+
+114
+00:08:32,760 --> 00:08:37,700
+Now let's move ahead and then initialize all the state variables that we need.
+
+115
+00:08:38,100 --> 00:08:44,380
+So, and let me also import, let me also create here an interface for the notes.
+
+116
+00:08:44,600 --> 00:08:52,720
+So the interface note, this is basically going to be the type of ID, title, content and created
+
+117
+00:08:52,721 --> 00:08:53,699
+it.
+
+118
+00:08:54,900 --> 00:08:55,460
+Perfect.
+
+119
+00:08:57,200 --> 00:09:04,260
+So now you guys can see that we have a notes, use state, model visible state, editing note
+
+120
+00:09:04,261 --> 00:09:06,300
+state, title and content.
+
+121
+00:09:06,500 --> 00:09:09,020
+They both are just for forms or thing.
+
+122
+00:09:09,500 --> 00:09:09,940
+Easy.
+
+123
+00:09:10,360 --> 00:09:17,260
+So the first thing that I wanted to do every time when I come to my this index.tsx, I wanted
+
+124
+00:09:17,261 --> 00:09:18,960
+to initialize my database.
+
+125
+00:09:19,140 --> 00:09:20,960
+So I can simply say use effect.
+
+126
+00:09:21,200 --> 00:09:29,360
+and run this function and add empty dependency inside this function I am basically going
+
+127
+00:09:29,361 --> 00:09:38,420
+to have a function which is going to say const setup and this is equals to async and then
+
+128
+00:09:38,480 --> 00:09:41,800
+I will say await init database no problem.
+
+129
+00:09:42,400 --> 00:09:46,000
+And let's say I also wanted to load my notes.
+
+130
+00:09:47,020 --> 00:09:51,500
+So I can also say await load notes.
+
+131
+00:09:52,780 --> 00:09:56,760
+Easy but you will see that we have don't have any method related to it.
+
+132
+00:09:56,820 --> 00:10:01,180
+I will create it in a while and then I will call a simple setup.
+
+133
+00:10:01,780 --> 00:10:02,140
+Easy.
+
+134
+00:10:02,480 --> 00:10:05,940
+Now let's move ahead and first of all create a load notes method.
+
+135
+00:10:06,100 --> 00:10:08,139
+This is quite straight forward.
+
+136
+00:10:08,319 --> 00:10:16,899
+I will simply say const loadNodes is equals to async function and this async function
+
+137
+00:10:17,040 --> 00:10:22,440
+is simply going to say const allNodes is equals to await getNodes.
+
+138
+00:10:23,000 --> 00:10:26,860
+Easy and then setNodes is equals to allNodes.
+
+139
+00:10:27,620 --> 00:10:28,100
+Perfect.
+
+140
+00:10:28,740 --> 00:10:35,460
+In same way, I can create a, we can say save, handle, save, handle, edit a lot of things.
+
+141
+00:10:36,060 --> 00:10:40,180
+So first of all, let's move ahead and start.
+
+142
+00:10:40,520 --> 00:10:44,720
+First of all, let me paste all of my styling related thing so that we can see something
+
+143
+00:10:44,721 --> 00:10:45,380
+out of it.
+
+144
+00:10:45,400 --> 00:10:48,920
+So, let me come into here and paste this.
+
+145
+00:10:49,140 --> 00:10:52,040
+So these are all the styles that we are going to use.
+
+146
+00:10:52,740 --> 00:10:52,940
+Perfect.
+
+147
+00:10:53,040 --> 00:10:55,040
+You can also copy and paste it directly.
+
+148
+00:10:55,360 --> 00:10:57,080
+Need not to write anything by yourself.
+
+149
+00:10:57,220 --> 00:10:59,340
+If you wanted to write, you can definitely write.
+
+150
+00:11:00,220 --> 00:11:01,100
+We have a container.
+
+151
+00:11:01,700 --> 00:11:03,020
+Then we have a bunch of headers.
+
+152
+00:11:03,760 --> 00:11:07,480
+header title for adding button for button text.
+
+153
+00:11:08,120 --> 00:11:15,240
+Same with all the empty states, notes card, model overlay, input, cancel, save button
+
+154
+00:11:15,360 --> 00:11:16,760
+text, a lot of them.
+
+155
+00:11:17,560 --> 00:11:17,820
+Easy.
+
+156
+00:11:18,900 --> 00:11:22,220
+I just don't want it to waste your time on writing the CSS.
+
+157
+00:11:22,560 --> 00:11:24,040
+That's why I'm wasting it out.
+
+158
+00:11:24,680 --> 00:11:27,640
+I hope so you guys able to understand that strategy.
+
+159
+00:11:28,660 --> 00:11:29,000
+Easy.
+
+160
+00:11:29,180 --> 00:11:31,180
+So the first thing I wanted to do.
+
+161
+00:11:31,900 --> 00:11:38,840
+is to inside this view like let me remove everything. Let me just initialize a view.
+
+162
+00:11:39,160 --> 00:11:46,180
+This view is basically going to have a style and style is going to be the type styles.container.
+
+163
+00:11:46,400 --> 00:11:50,100
+This is first and inside this view at the top level.
+
+164
+00:11:50,500 --> 00:11:57,660
+We are going to have this view which is rendering a text which is saying as notes and then add
+
+165
+00:11:57,661 --> 00:12:03,080
+button which is calling a handle new note and the moment you press simple plus this
+
+166
+00:12:03,100 --> 00:12:09,240
+handle new note will going to call and then you will see a model that is basically prompting
+
+167
+00:12:09,241 --> 00:12:12,580
+you to add the title and we can say description.
+
+168
+00:12:12,800 --> 00:12:18,260
+So, first of all let me create a handle new note function.
+
+169
+00:12:18,360 --> 00:12:27,760
+So, the handle new note is simply I can simply say handle new note is basically going to
+
+170
+00:12:27,761 --> 00:12:34,380
+be something like this and then first thing is going to be set editing note as null.
+
+171
+00:12:36,140 --> 00:12:45,060
+Set title as empty and then set content as empty as well and then just make model visible
+
+172
+00:12:45,160 --> 00:12:50,940
+true so that the moment you click over it, your model visible is become true and on the
+
+173
+00:12:50,941 --> 00:12:54,820
+basis of that true condition, we can render a model here.
+
+174
+00:12:55,300 --> 00:13:01,480
+So, after this what I can do out of it I can show all the content that I am writing.
+
+175
+00:13:01,620 --> 00:13:08,459
+So, bill out of this view here I will going to render my items, but right now we do not
+
+176
+00:13:08,519 --> 00:13:10,060
+have anything related to items.
+
+177
+00:13:10,260 --> 00:13:12,880
+So, no problem I will do it in a while.
+
+178
+00:13:13,019 --> 00:13:13,779
+But for now...
+
+179
+00:13:15,540 --> 00:13:17,079
+We are good to go.
+
+180
+00:13:17,860 --> 00:13:23,100
+So let me come into here and now what we can do, we can let me first of all initialize
+
+181
+00:13:23,259 --> 00:13:25,000
+all the methods that we need.
+
+182
+00:13:25,279 --> 00:13:30,680
+So right now we have added handle new note in same way I can add a handle delete so that
+
+183
+00:13:30,759 --> 00:13:35,819
+the moment you call a handle delete you will going to call a delete note which is accepting
+
+184
+00:13:35,820 --> 00:13:36,980
+ID of a node.
+
+185
+00:13:37,100 --> 00:13:41,500
+and we are running this delete query. I don't think so that I need to explain this very
+
+186
+00:13:41,501 --> 00:13:46,800
+much and then we are again calling a load notes. So, this is going to load the new notes.
+
+187
+00:13:47,380 --> 00:13:53,560
+In same way, I am going to add the handle edit method. So, the moment you edit some
+
+188
+00:13:53,561 --> 00:14:01,139
+note you will going to get a pre popped up title and content and then notes data and
+
+189
+00:14:01,140 --> 00:14:03,639
+this model visible is again going to become true.
+
+190
+00:14:04,100 --> 00:14:07,819
+In the same way, we also have a handle save method.
+
+191
+00:14:08,680 --> 00:14:12,220
+So handle save method is just try to understand.
+
+192
+00:14:12,899 --> 00:14:14,319
+We have a two type of save.
+
+193
+00:14:14,660 --> 00:14:19,540
+One you wanted to edit something and another one you wanted to add a new note.
+
+194
+00:14:20,139 --> 00:14:26,040
+So whenever you wanted to edit, so edit note, simple call this thing if we are in editing
+
+195
+00:14:26,060 --> 00:14:29,120
+mode, but else simply call add note.
+
+196
+00:14:29,600 --> 00:14:33,920
+And then bunch of resetting and again load new nodes.
+
+197
+00:14:34,940 --> 00:14:35,300
+Easy.
+
+198
+00:14:36,040 --> 00:14:36,319
+Perfect.
+
+199
+00:14:37,519 --> 00:14:43,019
+Let's move ahead and then simply create a variable name as render node.
+
+200
+00:14:43,639 --> 00:14:46,600
+This render node is basically going to have item.
+
+201
+00:14:47,400 --> 00:14:54,040
+And this item is going to be the type of note that we have perfect.
+
+202
+00:14:54,860 --> 00:14:56,660
+Then I am going to call this.
+
+203
+00:14:57,080 --> 00:15:02,140
+Now this is basically going to render a touchable opacity, something like this.
+
+204
+00:15:02,340 --> 00:15:03,860
+So we have a touchable opacity.
+
+205
+00:15:04,100 --> 00:15:07,720
+which is having a style of note card on press.
+
+206
+00:15:07,839 --> 00:15:13,779
+They are calling handle edit easy and then a view and a text inside the view.
+
+207
+00:15:13,899 --> 00:15:21,600
+We are rendering a text with whichever the title is inside that specific note and then
+
+208
+00:15:21,899 --> 00:15:24,639
+a delete something like this cross one easy.
+
+209
+00:15:26,100 --> 00:15:33,600
+Perfect, now what I can do, I can simply coming to here and out of this view, I can render
+
+210
+00:15:33,601 --> 00:15:34,560
+here a flat list.
+
+211
+00:15:34,839 --> 00:15:38,080
+Yes, I can render here a flat list.
+
+212
+00:15:38,820 --> 00:15:43,860
+This flat list is going to accept the notes data like the notes array we have.
+
+213
+00:15:44,000 --> 00:15:47,840
+So, first of all, I can pass the data as notes.
+
+214
+00:15:48,840 --> 00:15:51,500
+Second thing I can say what I wanted to render.
+
+215
+00:15:51,620 --> 00:15:55,920
+So, I wanted to render my render notes component that I have created.
+
+216
+00:15:56,220 --> 00:15:56,780
+Easy.
+
+217
+00:15:57,900 --> 00:15:59,280
+Then what I wanted to do?
+
+218
+00:15:59,900 --> 00:16:03,060
+Then, I wanted to get a key extractor.
+
+219
+00:16:03,160 --> 00:16:06,140
+So, the key extractor is id simple.
+
+220
+00:16:06,780 --> 00:16:14,760
+So, I can say item dot id dot to string so that this everything is in string and then
+
+221
+00:16:14,761 --> 00:16:16,660
+simply add a container style.
+
+222
+00:16:17,300 --> 00:16:19,920
+So, now we have a container style.
+
+223
+00:16:20,360 --> 00:16:25,540
+So, if length is zero, then add empty container style, otherwise add a style list.
+
+224
+00:16:26,360 --> 00:16:33,019
+So, now if we have us empty component, this means we don't have any notes, then I wanted
+
+225
+00:16:33,020 --> 00:16:40,060
+to render something like this, a view, which is basically rendering this icon, this emoji,
+
+226
+00:16:40,640 --> 00:16:42,019
+which is saying no notes yet.
+
+227
+00:16:42,180 --> 00:16:45,080
+and then tap plus icon to create your first.
+
+228
+00:16:47,319 --> 00:16:47,759
+Perfect.
+
+229
+00:16:48,560 --> 00:16:55,420
+So why I am not be, why I am getting this is not assignable to void is if I try to save
+
+230
+00:16:55,421 --> 00:16:56,819
+it, look at that.
+
+231
+00:16:57,019 --> 00:17:00,720
+The moment I have saved it, you will see we don't have any notes.
+
+232
+00:17:01,079 --> 00:17:02,259
+That's why we are getting this.
+
+233
+00:17:02,319 --> 00:17:04,319
+We have all the, so the moment you click over it.
+
+234
+00:17:04,400 --> 00:17:09,580
+Let's move ahead and create a model view so that the moment you click, I wanted to show
+
+235
+00:17:09,581 --> 00:17:12,119
+here a model and we can use it.
+
+236
+00:17:12,200 --> 00:17:16,200
+But right now you will see inside this notes, this is completely empty.
+
+237
+00:17:17,200 --> 00:17:22,400
+That's why we are rendering this list empty component, which is basically showing us this.
+
+238
+00:17:22,980 --> 00:17:23,500
+All right.
+
+239
+00:17:23,980 --> 00:17:24,900
+I hope so.
+
+240
+00:17:24,901 --> 00:17:25,960
+This is making sense.
+
+241
+00:17:26,520 --> 00:17:27,940
+Now let me create a model.
+
+242
+00:17:28,160 --> 00:17:30,900
+So we have a model coming from react native.
+
+243
+00:17:31,600 --> 00:17:40,480
+And this model is only visible when model visible state variable is true like this one.
+
+244
+00:17:41,320 --> 00:17:48,059
+This is only going to visible when model state visible is equals to true and we have animation
+
+245
+00:17:48,080 --> 00:17:48,539
+type.
+
+246
+00:17:48,799 --> 00:17:54,580
+We can say a slide type of animation we need and then make it a transparent which is going
+
+247
+00:17:54,660 --> 00:17:55,220
+to be true.
+
+248
+00:17:56,000 --> 00:18:00,320
+And then inside this I wanted to have a view.
+
+249
+00:18:03,080 --> 00:18:09,700
+So, this view is going to have a style of model overlay so that they can blur all the
+
+250
+00:18:10,100 --> 00:18:11,760
+things behind the model.
+
+251
+00:18:11,820 --> 00:18:18,480
+So, I will simply say model overlay easy and then inside this we can have a main model
+
+252
+00:18:18,481 --> 00:18:19,100
+content.
+
+253
+00:18:19,101 --> 00:18:20,960
+So, I am just copy and pasting that.
+
+254
+00:18:21,200 --> 00:18:25,019
+You guys also do so this no, no problem at all.
+
+255
+00:18:25,460 --> 00:18:27,600
+And then let me try to explain you.
+
+256
+00:18:27,860 --> 00:18:32,639
+So inside this model overlay, first of all, let me format it and then I'll try to explain
+
+257
+00:18:32,640 --> 00:18:33,659
+you.
+
+258
+00:18:34,760 --> 00:18:34,960
+All right.
+
+259
+00:18:34,970 --> 00:18:41,019
+So now we inside a model overlay, we have a model content view.
+
+260
+00:18:41,300 --> 00:18:48,820
+First, we have a text input for title, then we have a text input for content and then
+
+261
+00:18:48,821 --> 00:18:51,160
+we have or you will see two buttons.
+
+262
+00:18:51,600 --> 00:18:57,900
+First one is a cancel button, second one is a save button and that save button basically
+
+263
+00:18:57,901 --> 00:19:03,420
+we can say this is a touchable opacity basically you can touch that kind of and this is basically
+
+264
+00:19:03,421 --> 00:19:05,120
+calling a handle save method.
+
+265
+00:19:06,700 --> 00:19:13,060
+Easy, so now if I save it and if I click on plus icon look at that now we are getting
+
+266
+00:19:13,100 --> 00:19:19,740
+this and let us say I have added a notes here learning about expo.
+
+267
+00:19:21,300 --> 00:19:25,660
+And then I can say simple hello world, Suraj from this side.
+
+268
+00:19:25,880 --> 00:19:29,500
+And the moment I press on save, I have to call that data.
+
+269
+00:19:29,680 --> 00:19:34,640
+But all right, due to some reason, they are not rendering our file.
+
+270
+00:19:34,920 --> 00:19:35,220
+It's fine.
+
+271
+00:19:35,460 --> 00:19:38,160
+Let me just try to check that out.
+
+272
+00:19:38,540 --> 00:19:40,100
+Why we are not be able to.
+
+273
+00:19:42,060 --> 00:19:46,680
+render our data because we are writing something like this.
+
+274
+00:19:46,690 --> 00:19:49,080
+So we need to explicit return it.
+
+275
+00:19:49,580 --> 00:19:53,680
+So instead of curly braces we need to add this here.
+
+276
+00:19:54,100 --> 00:19:56,820
+Yes and now if I save it look at that.
+
+277
+00:19:57,420 --> 00:19:58,820
+This is our created.
+
+278
+00:19:59,100 --> 00:20:05,059
+notes. And if you click over it, you will basically popping up the handle edit model.
+
+279
+00:20:05,179 --> 00:20:10,299
+So the moment you are editing it, we are already popping the data which already exists and
+
+280
+00:20:10,300 --> 00:20:15,660
+you can definitely aside. I will simply say edited and then if I save it and if I open
+
+281
+00:20:15,661 --> 00:20:20,559
+it again, you will see that we have edited in same way. The moment I press on cross,
+
+282
+00:20:20,640 --> 00:20:21,600
+I will delete it.
+
+283
+00:20:21,601 --> 00:20:24,760
+I can again add some random data.
+
+284
+00:20:25,039 --> 00:20:25,919
+Let me save it.
+
+285
+00:20:26,120 --> 00:20:30,020
+You can add multiple notes as you wanted to look at that.
+
+286
+00:20:30,520 --> 00:20:36,320
+How beautifully we have created this app and you can delete it in real time and everything
+
+287
+00:20:36,440 --> 00:20:37,140
+is offline.
+
+288
+00:20:37,900 --> 00:20:42,580
+Yes, you need not to get any database and then connect over here and then you should
+
+289
+00:20:42,679 --> 00:20:43,880
+apply any CRUD operation.
+
+290
+00:20:44,039 --> 00:20:48,620
+No, you can do that with the help of Xpo SQLite.
+
+291
+00:20:49,360 --> 00:20:49,500
+Cool.
+
+292
+00:20:50,100 --> 00:20:52,760
+So, I hope so you guys able to understand.
+
+293
+00:20:52,789 --> 00:20:58,059
+I have not writing this much of code because they are just a repetitive code and they are
+
+294
+00:20:58,060 --> 00:20:59,280
+just for UI purpose.
+
+295
+00:20:59,760 --> 00:21:05,539
+So the main thing is your logic that how you can use it, how you can basically use the
+
+296
+00:21:05,540 --> 00:21:07,760
+features which available inside Xposed.
+
+297
+00:21:07,980 --> 00:21:08,960
+That's the main goal.
+
+298
+00:21:09,520 --> 00:21:10,000
+All right.
+
+299
+00:21:10,100 --> 00:21:13,940
+So, yes this is pretty much it for this mini project.
+
+300
+00:21:14,140 --> 00:21:20,200
+I hope you love this project and this is pretty much it for this entire module and see you
+
+301
+00:21:20,320 --> 00:21:21,059
+next time.
+

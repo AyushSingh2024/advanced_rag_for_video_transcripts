@@ -1,0 +1,7196 @@
+[
+  {
+    "lessonId": "m00-l01",
+    "order": 1,
+    "label": "Before You Start · Bonus 1",
+    "title": "Something personal for Mobile development",
+    "introduces": [
+      {
+        "label": "mobile application development",
+        "aliases": [],
+        "summary": "The process of creating software applications that run on mobile devices.",
+        "requires": [
+          "programming basics",
+          "software development lifecycle"
+        ],
+        "at": 45
+      },
+      {
+        "label": "AI-powered applications",
+        "aliases": [],
+        "summary": "Applications that utilize artificial intelligence to enhance functionality or user experience.",
+        "requires": [
+          "mobile application development"
+        ],
+        "at": null
+      }
+    ],
+    "revisits": []
+  },
+  {
+    "lessonId": "m00-l02",
+    "order": 2,
+    "label": "Before You Start · Bonus 2",
+    "title": "Expo Version change so quickly",
+    "introduces": [
+      {
+        "label": "Expo",
+        "aliases": [],
+        "summary": "Expo is a platform for building modern applications that can run on both Android and iOS.",
+        "requires": [],
+        "at": 1
+      },
+      {
+        "label": "React Native CLI",
+        "aliases": [],
+        "summary": "The traditional method for building React Native applications before Expo became mature.",
+        "requires": [],
+        "at": 49
+      },
+      {
+        "label": "semver versioning",
+        "aliases": [
+          "semantic versioning"
+        ],
+        "summary": "A versioning scheme that uses a three-part version number to indicate changes in software, which Expo does not follow consistently.",
+        "requires": [],
+        "at": 144
+      },
+      {
+        "label": "backward compatibility",
+        "aliases": [],
+        "summary": "The ability of newer software versions to work with older versions without issues, which Expo maintains.",
+        "requires": [],
+        "at": null
+      },
+      {
+        "label": "Expo Go application",
+        "aliases": [],
+        "summary": "An application that supports specific versions of Expo, which may not always align with the latest version available.",
+        "requires": [],
+        "at": 233
+      }
+    ],
+    "revisits": [
+      {
+        "label": "JavaScript",
+        "at": 106
+      },
+      {
+        "label": "TypeScript",
+        "at": 106
+      }
+    ]
+  },
+  {
+    "lessonId": "m01-l01",
+    "order": 3,
+    "label": "Module 1 · Lesson 1",
+    "title": "what is mobile development",
+    "introduces": [
+      {
+        "label": "mobile development",
+        "aliases": [],
+        "summary": "Building apps for mobile devices like smartphones and tablets, which run on operating systems like Android and iOS.",
+        "requires": [],
+        "at": 4
+      },
+      {
+        "label": "native apps",
+        "aliases": [],
+        "summary": "Apps built for only one platform.",
+        "requires": [
+          "mobile development"
+        ],
+        "at": 259
+      },
+      {
+        "label": "cross platform apps",
+        "aliases": [],
+        "summary": "Apps that have one code base that works on both Android and iOS.",
+        "requires": [
+          "mobile development"
+        ],
+        "at": null
+      },
+      {
+        "label": "hybrid apps",
+        "aliases": [],
+        "summary": "Apps that are mostly web apps inside a mobile app.",
+        "requires": [
+          "mobile development"
+        ],
+        "at": null
+      }
+    ],
+    "revisits": [
+      {
+        "label": "JavaScript",
+        "at": 378
+      },
+      {
+        "label": "React",
+        "at": 378
+      }
+    ]
+  },
+  {
+    "lessonId": "m01-l02",
+    "order": 4,
+    "label": "Module 1 · Lesson 2",
+    "title": "react native vs expo",
+    "introduces": [
+      {
+        "label": "React Native",
+        "aliases": [
+          "RN"
+        ],
+        "summary": "A framework that allows developers to build real mobile apps using JavaScript and React with a single codebase for both iOS and Android.",
+        "requires": [
+          "JavaScript",
+          "React"
+        ],
+        "at": 6
+      },
+      {
+        "label": "Expo",
+        "aliases": [],
+        "summary": "A framework built on top of React Native that simplifies the development of Android and iOS apps, providing minimal setup and ready-to-use APIs.",
+        "requires": [
+          "React Native"
+        ],
+        "at": 12
+      },
+      {
+        "label": "file-based routing",
+        "aliases": [],
+        "summary": "A routing system similar to that used in Next.js, provided by Expo to manage navigation in applications.",
+        "requires": [
+          "React Native"
+        ],
+        "at": 533
+      }
+    ],
+    "revisits": [
+      {
+        "label": "native components",
+        "at": 205
+      },
+      {
+        "label": "native performance",
+        "at": 354
+      },
+      {
+        "label": "APIs",
+        "at": 481
+      },
+      {
+        "label": "camera API",
+        "at": 650
+      },
+      {
+        "label": "media API",
+        "at": 650
+      },
+      {
+        "label": "location API",
+        "at": 650
+      },
+      {
+        "label": "production ready apps",
+        "at": 489
+      }
+    ]
+  },
+  {
+    "lessonId": "m01-l03",
+    "order": 5,
+    "label": "Module 1 · Lesson 3",
+    "title": "setting up env creating first expo project",
+    "introduces": [
+      {
+        "label": "VS Code",
+        "aliases": [],
+        "summary": "A code editor recommended for developing Expo applications.",
+        "requires": [],
+        "at": 33
+      },
+      {
+        "label": "bun",
+        "aliases": [],
+        "summary": "A fast JavaScript runtime and all-in-one toolkit for JavaScript, TypeScript, and JSX.",
+        "requires": [],
+        "at": null
+      },
+      {
+        "label": "expo-go",
+        "aliases": [],
+        "summary": "An application that allows you to run and test your Expo projects on physical devices.",
+        "requires": [],
+        "at": 172
+      },
+      {
+        "label": "create-expo-app",
+        "aliases": [],
+        "summary": "A command to create a new Expo application using Bun instead of NPX.",
+        "requires": [
+          "bun"
+        ],
+        "at": 136
+      },
+      {
+        "label": "Metro bundler",
+        "aliases": [],
+        "summary": "A JavaScript bundler used by Expo to serve the application.",
+        "requires": [],
+        "at": 494
+      },
+      {
+        "label": "app.json",
+        "aliases": [],
+        "summary": "A configuration file for the Expo application.",
+        "requires": [],
+        "at": 443
+      },
+      {
+        "label": "package.json",
+        "aliases": [],
+        "summary": "A file that contains metadata about the project and its dependencies.",
+        "requires": [
+          "bun"
+        ],
+        "at": 454
+      },
+      {
+        "label": "TypeScript",
+        "aliases": [],
+        "summary": "A superset of JavaScript that adds static types, used throughout the course.",
+        "requires": [],
+        "at": 88
+      },
+      {
+        "label": "reset project script",
+        "aliases": [],
+        "summary": "A script to reset the Expo project to its initial state.",
+        "requires": [
+          "bun"
+        ],
+        "at": null
+      },
+      {
+        "label": "index.tsx",
+        "aliases": [],
+        "summary": "The main entry file for the Expo application where the initial screen is defined.",
+        "requires": [
+          "TypeScript"
+        ],
+        "at": 662
+      },
+      {
+        "label": "_layout.tsx",
+        "aliases": [],
+        "summary": "A layout file used in the Expo application to define the structure of the app.",
+        "requires": [
+          "TypeScript"
+        ],
+        "at": 662
+      }
+    ],
+    "revisits": [
+      {
+        "label": "Node.js",
+        "at": 93
+      },
+      {
+        "label": "npm",
+        "at": null
+      }
+    ]
+  },
+  {
+    "lessonId": "m02-l01",
+    "order": 6,
+    "label": "Module 2 · Lesson 1",
+    "title": "native components vs core components",
+    "introduces": [
+      {
+        "label": "native components",
+        "aliases": [],
+        "summary": "UI elements provided by the operating system (iOS or Android).",
+        "requires": [],
+        "at": 17
+      },
+      {
+        "label": "core components",
+        "aliases": [],
+        "summary": "Components provided by React Native that are used in code, acting as a cross-platform interface.",
+        "requires": [
+          "native components"
+        ],
+        "at": 0
+      },
+      {
+        "label": "cross-platform interface",
+        "aliases": [],
+        "summary": "Allows the same code to be used for both iOS and Android, with React Native handling platform-specific implementations.",
+        "requires": [
+          "core components"
+        ],
+        "at": 270
+      }
+    ],
+    "revisits": [
+      {
+        "label": "iOS",
+        "at": null
+      },
+      {
+        "label": "Android",
+        "at": 40
+      },
+      {
+        "label": "Java",
+        "at": 145
+      },
+      {
+        "label": "Kotlin",
+        "at": 153
+      },
+      {
+        "label": "Objective-C",
+        "at": 95
+      },
+      {
+        "label": "Swift",
+        "at": null
+      }
+    ]
+  },
+  {
+    "lessonId": "m02-l02",
+    "order": 7,
+    "label": "Module 2 · Lesson 2",
+    "title": "essential core components(view , text , image , textinput , pressable , stylesheet)",
+    "introduces": [
+      {
+        "label": "view",
+        "aliases": [],
+        "summary": "The most basic layout component in React Native, used for grouping components and creating layouts.",
+        "requires": [],
+        "at": 17
+      },
+      {
+        "label": "text",
+        "aliases": [],
+        "summary": "Component used to display text on the screen; all text must be inside this component.",
+        "requires": [],
+        "at": 17
+      },
+      {
+        "label": "image",
+        "aliases": [],
+        "summary": "Component used to render images; requires a source URI and dimensions (width and height).",
+        "requires": [],
+        "at": 17
+      },
+      {
+        "label": "text input",
+        "aliases": [],
+        "summary": "Component used for forms, allowing user input; includes props like placeholder and style.",
+        "requires": [],
+        "at": 17
+      },
+      {
+        "label": "pressable",
+        "aliases": [],
+        "summary": "A core component that detects various stages of press interaction on its children, replacing traditional onClick with onPress.",
+        "requires": [],
+        "at": 17
+      },
+      {
+        "label": "scroll view",
+        "aliases": [],
+        "summary": "Component used to create a scrollable view for rendering multiple items at once.",
+        "requires": [],
+        "at": 26
+      },
+      {
+        "label": "stylesheet",
+        "aliases": [],
+        "summary": "Utility for styling components in React Native, allowing the creation of styles similar to CSS.",
+        "requires": [],
+        "at": 26
+      }
+    ],
+    "revisits": [
+      {
+        "label": "button",
+        "at": 743
+      },
+      {
+        "label": "flat list",
+        "at": 863
+      }
+    ]
+  },
+  {
+    "lessonId": "m02-l03",
+    "order": 8,
+    "label": "Module 2 · Lesson 3",
+    "title": "porps style props",
+    "introduces": [
+      {
+        "label": "props",
+        "aliases": [],
+        "summary": "Props are used to pass data and configuration to React Native components.",
+        "requires": [],
+        "at": 6
+      },
+      {
+        "label": "style props",
+        "aliases": [],
+        "summary": "Style props are used to apply styling to React Native components, similar to CSS but with differences.",
+        "requires": [
+          "props"
+        ],
+        "at": 6
+      },
+      {
+        "label": "Flexbox",
+        "aliases": [],
+        "summary": "Flexbox is the layout system used in React Native for arranging components.",
+        "requires": [],
+        "at": 68
+      },
+      {
+        "label": "margin",
+        "aliases": [],
+        "summary": "Margin is used to create space outside of a component.",
+        "requires": [
+          "style props"
+        ],
+        "at": 374
+      },
+      {
+        "label": "padding",
+        "aliases": [],
+        "summary": "Padding is used to create space inside a component.",
+        "requires": [
+          "style props"
+        ],
+        "at": 374
+      },
+      {
+        "label": "font size",
+        "aliases": [],
+        "summary": "Font size is a style property that controls the size of text in a component.",
+        "requires": [
+          "style props"
+        ],
+        "at": 449
+      },
+      {
+        "label": "font weight",
+        "aliases": [],
+        "summary": "Font weight is a style property that controls the thickness of text in a component.",
+        "requires": [
+          "style props"
+        ],
+        "at": 456
+      },
+      {
+        "label": "line height",
+        "aliases": [],
+        "summary": "Line height is a style property that controls the spacing between lines of text.",
+        "requires": [
+          "style props"
+        ],
+        "at": 508
+      },
+      {
+        "label": "text align",
+        "aliases": [],
+        "summary": "Text align is a style property that controls the alignment of text within a component.",
+        "requires": [
+          "style props"
+        ],
+        "at": 524
+      },
+      {
+        "label": "background color",
+        "aliases": [],
+        "summary": "Background color is a style property that sets the background color of a component.",
+        "requires": [
+          "style props"
+        ],
+        "at": 612
+      },
+      {
+        "label": "border radius",
+        "aliases": [],
+        "summary": "Border radius is a style property that rounds the corners of a component's border.",
+        "requires": [
+          "style props"
+        ],
+        "at": 619
+      },
+      {
+        "label": "border color",
+        "aliases": [],
+        "summary": "Border color is a style property that sets the color of a component's border.",
+        "requires": [
+          "style props"
+        ],
+        "at": 629
+      }
+    ],
+    "revisits": [
+      {
+        "label": "CSS",
+        "at": null
+      },
+      {
+        "label": "JavaScript",
+        "at": null
+      },
+      {
+        "label": "React",
+        "at": 6
+      },
+      {
+        "label": "npm",
+        "at": null
+      }
+    ]
+  },
+  {
+    "lessonId": "m02-l04",
+    "order": 9,
+    "label": "Module 2 · Lesson 4",
+    "title": "list & data display components",
+    "introduces": [
+      {
+        "label": "flat list",
+        "aliases": [],
+        "summary": "A performance interface for rendering basic flat lists, optimized for performance and only rendering items when needed.",
+        "requires": [
+          "React Native",
+          "JSX"
+        ],
+        "at": 15
+      },
+      {
+        "label": "section list",
+        "aliases": [],
+        "summary": "A component for rendering lists with grouped data and headers, similar to flat list but with support for sections.",
+        "requires": [
+          "React Native",
+          "JSX"
+        ],
+        "at": 15
+      },
+      {
+        "label": "virtualization",
+        "aliases": [],
+        "summary": "A concept where only items currently visible on the screen are rendered, improving performance and user experience.",
+        "requires": [
+          "React Native"
+        ],
+        "at": 155
+      }
+    ],
+    "revisits": [
+      {
+        "label": "dot map method",
+        "at": 47
+      },
+      {
+        "label": "JSX",
+        "at": null
+      },
+      {
+        "label": "React Native components",
+        "at": null
+      },
+      {
+        "label": "props",
+        "at": 278
+      },
+      {
+        "label": "key extractor",
+        "at": 295
+      },
+      {
+        "label": "render item",
+        "at": 152
+      },
+      {
+        "label": "item separator",
+        "at": 510
+      },
+      {
+        "label": "on refresh",
+        "at": 555
+      },
+      {
+        "label": "render section header",
+        "at": 699
+      }
+    ]
+  },
+  {
+    "lessonId": "m02-l05",
+    "order": 10,
+    "label": "Module 2 · Lesson 5",
+    "title": "profile card gallery",
+    "introduces": [
+      {
+        "label": "profile card gallery",
+        "aliases": [],
+        "summary": "Creating a profile card gallery mini project using React Native and Expo.",
+        "requires": [
+          "React Native",
+          "Expo"
+        ],
+        "at": 4
+      },
+      {
+        "label": "random user API",
+        "aliases": [],
+        "summary": "Using the random user API to fetch user data for the profile cards.",
+        "requires": [
+          "API basics",
+          "fetch API"
+        ],
+        "at": 10
+      },
+      {
+        "label": "flat list",
+        "aliases": [],
+        "summary": "Using FlatList to efficiently display multiple profile cards.",
+        "requires": [
+          "React Native"
+        ],
+        "at": 16
+      },
+      {
+        "label": "useEffect",
+        "aliases": [],
+        "summary": "Using useEffect to fetch data from the API when the component mounts.",
+        "requires": [
+          "React",
+          "React hooks"
+        ],
+        "at": 224
+      },
+      {
+        "label": "useState",
+        "aliases": [],
+        "summary": "Using useState to manage loading state and user data.",
+        "requires": [
+          "React",
+          "React hooks"
+        ],
+        "at": 230
+      },
+      {
+        "label": "activity indicator",
+        "aliases": [],
+        "summary": "Using ActivityIndicator to show a loading spinner while data is being fetched.",
+        "requires": [
+          "React Native"
+        ],
+        "at": 244
+      },
+      {
+        "label": "color scheme",
+        "aliases": [],
+        "summary": "Using useColorScheme to determine if the app is in dark mode or light mode.",
+        "requires": [
+          "React Native"
+        ],
+        "at": null
+      }
+    ],
+    "revisits": [
+      {
+        "label": "React",
+        "at": 270
+      },
+      {
+        "label": "React hooks",
+        "at": null
+      },
+      {
+        "label": "JavaScript",
+        "at": null
+      },
+      {
+        "label": "API basics",
+        "at": null
+      },
+      {
+        "label": "Expo",
+        "at": 48
+      }
+    ]
+  },
+  {
+    "lessonId": "m03-l01",
+    "order": 11,
+    "label": "Module 3 · Lesson 1",
+    "title": "introduction to navigation in react native",
+    "introduces": [
+      {
+        "label": "navigation",
+        "aliases": [],
+        "summary": "Understanding the importance of navigation in mobile apps and how it enhances user experience by allowing movement between multiple screens.",
+        "requires": [],
+        "at": 4
+      },
+      {
+        "label": "React Navigation",
+        "aliases": [],
+        "summary": "A core library for routing and navigation in React Native and web apps, allowing for screen transitions and navigation history management.",
+        "requires": [],
+        "at": 21
+      },
+      {
+        "label": "stack navigation",
+        "aliases": [],
+        "summary": "A navigation pattern where screens are stacked on top of each other, allowing users to push and pop screens, similar to browser navigation.",
+        "requires": [
+          "navigation"
+        ],
+        "at": 372
+      },
+      {
+        "label": "tab navigation",
+        "aliases": [],
+        "summary": "A navigation pattern that allows switching between screens without stacking them, typically represented by tabs at the bottom or top of the app.",
+        "requires": [
+          "navigation"
+        ],
+        "at": 444
+      },
+      {
+        "label": "drawer navigation",
+        "aliases": [],
+        "summary": "A navigation pattern that features a side menu that slides in, useful for large apps with many sections.",
+        "requires": [
+          "navigation"
+        ],
+        "at": 563
+      },
+      {
+        "label": "modal screens",
+        "aliases": [],
+        "summary": "A navigation pattern where a new screen appears on top of the current screen, commonly used for alerts or temporary actions.",
+        "requires": [
+          "navigation"
+        ],
+        "at": null
+      },
+      {
+        "label": "expo-router",
+        "aliases": [],
+        "summary": "A file-based routing system built on top of React Native, allowing for automatic route creation based on file structure.",
+        "requires": [
+          "React Navigation"
+        ],
+        "at": 21
+      }
+    ],
+    "revisits": [
+      {
+        "label": "file-based routing",
+        "at": 783
+      },
+      {
+        "label": "push notification token",
+        "at": null
+      }
+    ]
+  },
+  {
+    "lessonId": "m03-l02",
+    "order": 12,
+    "label": "Module 3 · Lesson 2",
+    "title": "Setting Up React Navigation in Expo",
+    "introduces": [
+      {
+        "label": "React Navigation",
+        "aliases": [],
+        "summary": "A library for managing navigation in React Native applications, allowing for multiple screens and navigation stacks.",
+        "requires": [
+          "Expo",
+          "JavaScript"
+        ],
+        "at": 244
+      },
+      {
+        "label": "stack navigator",
+        "aliases": [],
+        "summary": "A type of navigator in React Navigation that manages a stack of screens, allowing for navigation between them in a push/pop manner.",
+        "requires": [
+          "React Navigation"
+        ],
+        "at": 337
+      },
+      {
+        "label": "root stack",
+        "aliases": [],
+        "summary": "The main stack navigator that contains all the screens of the application, such as home and detail screens.",
+        "requires": [
+          "stack navigator"
+        ],
+        "at": 337
+      },
+      {
+        "label": "Link component",
+        "aliases": [],
+        "summary": "A component provided by React Navigation that allows for navigation between screens by specifying the target screen name.",
+        "requires": [
+          "React Navigation"
+        ],
+        "at": 609
+      },
+      {
+        "label": "app.tsx",
+        "aliases": [],
+        "summary": "The main application file where the root stack navigator is defined and screens are registered.",
+        "requires": [
+          "React Navigation",
+          "stack navigator"
+        ],
+        "at": 342
+      },
+      {
+        "label": "details screen",
+        "aliases": [],
+        "summary": "A screen in the application that displays detailed information, navigated to from the home screen.",
+        "requires": [
+          "stack navigator"
+        ],
+        "at": null
+      },
+      {
+        "label": "profile screen",
+        "aliases": [],
+        "summary": "An additional screen in the application that can be navigated to from the details screen.",
+        "requires": [
+          "stack navigator"
+        ],
+        "at": 693
+      }
+    ],
+    "revisits": [
+      {
+        "label": "ExpoGo",
+        "at": 37
+      },
+      {
+        "label": "JavaScript",
+        "at": null
+      },
+      {
+        "label": "npm",
+        "at": null
+      },
+      {
+        "label": "React Router DOM",
+        "at": 408
+      }
+    ]
+  },
+  {
+    "lessonId": "m03-l03",
+    "order": 13,
+    "label": "Module 3 · Lesson 3",
+    "title": "Navigation Between Screens",
+    "introduces": [
+      {
+        "label": "React Navigation",
+        "aliases": [],
+        "summary": "A library for navigating between screens in a React Native app.",
+        "requires": [
+          "React",
+          "JavaScript"
+        ],
+        "at": 9
+      },
+      {
+        "label": "useNavigation hook",
+        "aliases": [],
+        "summary": "A hook that provides access to the navigation object in screen components.",
+        "requires": [
+          "React Navigation"
+        ],
+        "at": 57
+      },
+      {
+        "label": "navigation.navigate",
+        "aliases": [],
+        "summary": "A method to navigate to a specific screen in the navigation stack.",
+        "requires": [
+          "useNavigation hook"
+        ],
+        "at": 363
+      },
+      {
+        "label": "navigation.push",
+        "aliases": [],
+        "summary": "A method to add a new route to the navigation stack, even if already on that screen.",
+        "requires": [
+          "useNavigation hook"
+        ],
+        "at": null
+      },
+      {
+        "label": "navigation.goBack",
+        "aliases": [],
+        "summary": "A method to go back to the previous screen in the navigation stack.",
+        "requires": [
+          "useNavigation hook"
+        ],
+        "at": null
+      },
+      {
+        "label": "navigation.pop",
+        "aliases": [],
+        "summary": "A method to go back a specified number of screens in the navigation stack.",
+        "requires": [
+          "useNavigation hook"
+        ],
+        "at": null
+      },
+      {
+        "label": "navigation.popToTop",
+        "aliases": [],
+        "summary": "A method to go back to the first screen in the navigation stack.",
+        "requires": [
+          "useNavigation hook"
+        ],
+        "at": null
+      },
+      {
+        "label": "navigation.replace",
+        "aliases": [],
+        "summary": "A method to replace the current screen with a new one in the navigation stack.",
+        "requires": [
+          "useNavigation hook"
+        ],
+        "at": null
+      }
+    ],
+    "revisits": [
+      {
+        "label": "navigation object",
+        "at": 17
+      },
+      {
+        "label": "navigation stack",
+        "at": 18
+      }
+    ]
+  },
+  {
+    "lessonId": "m03-l04",
+    "order": 14,
+    "label": "Module 3 · Lesson 4",
+    "title": "Params, Initial Params & Header Customization",
+    "introduces": [
+      {
+        "label": "navigation params",
+        "aliases": [],
+        "summary": "Learn how to pass data between screens using navigation parameters in React Navigation.",
+        "requires": [
+          "React Navigation"
+        ],
+        "at": 0
+      },
+      {
+        "label": "initial params",
+        "aliases": [],
+        "summary": "Understand how to set initial parameters for a screen in React Navigation.",
+        "requires": [
+          "React Navigation"
+        ],
+        "at": 282
+      },
+      {
+        "label": "header customization",
+        "aliases": [],
+        "summary": "Learn how to customize the header of screens in React Navigation, including title and style.",
+        "requires": [
+          "React Navigation"
+        ],
+        "at": null
+      },
+      {
+        "label": "header right button",
+        "aliases": [],
+        "summary": "Learn how to add a button to the right side of the header in React Navigation.",
+        "requires": [
+          "React Navigation"
+        ],
+        "at": null
+      }
+    ],
+    "revisits": [
+      {
+        "label": "React Navigation",
+        "at": 31
+      }
+    ]
+  },
+  {
+    "lessonId": "m03-l05",
+    "order": 15,
+    "label": "Module 3 · Lesson 5",
+    "title": "Navigation Patterns , Tab , modal & drawer",
+    "introduces": [
+      {
+        "label": "tab navigation",
+        "aliases": [],
+        "summary": "Tab navigation provides a way to organize screens in a mobile app using tabs at the bottom of the screen.",
+        "requires": [
+          "expo",
+          "react-navigation"
+        ],
+        "at": 32
+      },
+      {
+        "label": "modal",
+        "aliases": [],
+        "summary": "A modal is a temporary overlay screen that can be used to display additional content without navigating away from the current screen.",
+        "requires": [
+          "expo",
+          "react-navigation"
+        ],
+        "at": null
+      },
+      {
+        "label": "drawer navigation",
+        "aliases": [],
+        "summary": "Drawer navigation allows users to access different sections of the app through a side menu that can be opened and closed.",
+        "requires": [
+          "expo",
+          "react-navigation"
+        ],
+        "at": null
+      }
+    ],
+    "revisits": [
+      {
+        "label": "expo",
+        "at": 41
+      },
+      {
+        "label": "react-navigation",
+        "at": 82
+      }
+    ]
+  },
+  {
+    "lessonId": "m03-l06",
+    "order": 16,
+    "label": "Module 3 · Mini-project 1",
+    "title": "init project setup screens and react navigation",
+    "introduces": [
+      {
+        "label": "expo-router",
+        "aliases": [],
+        "summary": "Introduction to expo-router as the navigation solution for the course, replacing React Navigation in future modules.",
+        "requires": [],
+        "at": 35
+      },
+      {
+        "label": "react-navigation",
+        "aliases": [],
+        "summary": "Overview of React Navigation and its role in multi-screen applications, specifically for navigating between different screens in the app.",
+        "requires": [],
+        "at": 30
+      },
+      {
+        "label": "app navigator",
+        "aliases": [],
+        "summary": "Creating an app navigator using React Navigation to manage navigation between different screens in the application.",
+        "requires": [
+          "react-navigation"
+        ],
+        "at": 283
+      },
+      {
+        "label": "stack navigator",
+        "aliases": [],
+        "summary": "Setting up a stack navigator to manage screen transitions in the app, allowing navigation between the home screen and detail screen.",
+        "requires": [
+          "react-navigation"
+        ],
+        "at": 350
+      },
+      {
+        "label": "tab navigator",
+        "aliases": [],
+        "summary": "Implementing a tab navigator to switch between different sections of the app, such as the home screen and the Pokemon list.",
+        "requires": [
+          "react-navigation"
+        ],
+        "at": 363
+      },
+      {
+        "label": "screen options",
+        "aliases": [],
+        "summary": "Configuring screen options for the tab navigator, including header visibility and tab bar styles.",
+        "requires": [
+          "react-navigation"
+        ],
+        "at": 883
+      },
+      {
+        "label": "navigation container",
+        "aliases": [],
+        "summary": "Using a navigation container to wrap the app navigator, which is necessary for React Navigation to function properly.",
+        "requires": [
+          "react-navigation"
+        ],
+        "at": 323
+      },
+      {
+        "label": "types.ts",
+        "aliases": [],
+        "summary": "Creating a types.ts file to define TypeScript types for navigation props and route parameters in the app.",
+        "requires": [
+          "TypeScript",
+          "react-navigation"
+        ],
+        "at": 641
+      },
+      {
+        "label": "safe area view",
+        "aliases": [],
+        "summary": "Using SafeAreaView to ensure the app content is displayed correctly within the safe area of the device's screen.",
+        "requires": [
+          "react-native"
+        ],
+        "at": 775
+      }
+    ],
+    "revisits": [
+      {
+        "label": "expo",
+        "at": 35
+      },
+      {
+        "label": "JavaScript",
+        "at": null
+      },
+      {
+        "label": "TypeScript",
+        "at": null
+      },
+      {
+        "label": "React",
+        "at": 30
+      },
+      {
+        "label": "npm",
+        "at": null
+      }
+    ]
+  },
+  {
+    "lessonId": "m03-l07",
+    "order": 17,
+    "label": "Module 3 · Mini-project 2",
+    "title": "backend api and constants",
+    "introduces": [
+      {
+        "label": "Pokemon API",
+        "aliases": [],
+        "summary": "Introduction to the Pokemon API for fetching data about Pokemon.",
+        "requires": [],
+        "at": 6
+      },
+      {
+        "label": "Pokemon list",
+        "aliases": [],
+        "summary": "Definition of the Pokemon list interface for handling API responses.",
+        "requires": [],
+        "at": 50
+      },
+      {
+        "label": "Pokemon details",
+        "aliases": [],
+        "summary": "Definition of the Pokemon details interface for handling detailed Pokemon data.",
+        "requires": [],
+        "at": 68
+      },
+      {
+        "label": "getPokemonList",
+        "aliases": [],
+        "summary": "Function to fetch a list of Pokemon from the API with pagination support.",
+        "requires": [
+          "Pokemon API"
+        ],
+        "at": 113
+      },
+      {
+        "label": "getPokemonDetail",
+        "aliases": [],
+        "summary": "Function to fetch details of a specific Pokemon by name or ID.",
+        "requires": [
+          "Pokemon API"
+        ],
+        "at": 237
+      },
+      {
+        "label": "getPokemonByType",
+        "aliases": [],
+        "summary": "Function to fetch Pokemon by their type from the API.",
+        "requires": [
+          "Pokemon API"
+        ],
+        "at": 324
+      },
+      {
+        "label": "constants",
+        "aliases": [],
+        "summary": "Creation of constants for colors used in the application.",
+        "requires": [],
+        "at": null
+      },
+      {
+        "label": "getTypeColor",
+        "aliases": [],
+        "summary": "Function to retrieve the color associated with a specific Pokemon type.",
+        "requires": [
+          "constants"
+        ],
+        "at": 483
+      }
+    ],
+    "revisits": [
+      {
+        "label": "fetch API",
+        "at": 164
+      },
+      {
+        "label": "async/await",
+        "at": null
+      },
+      {
+        "label": "TypeScript",
+        "at": null
+      },
+      {
+        "label": "promises",
+        "at": null
+      },
+      {
+        "label": "React navigation",
+        "at": 505
+      }
+    ]
+  },
+  {
+    "lessonId": "m03-l08",
+    "order": 18,
+    "label": "Module 3 · Mini-project 3",
+    "title": "implementing homescreen add other components",
+    "introduces": [
+      {
+        "label": "home screen",
+        "aliases": [],
+        "summary": "The home screen is a key component of the mini project, featuring various functionalities such as search and filtering.",
+        "requires": [
+          "React Navigation",
+          "React Native",
+          "useState",
+          "useEffect",
+          "useMemo"
+        ],
+        "at": 9
+      },
+      {
+        "label": "fetch data method",
+        "aliases": [],
+        "summary": "A method to fetch Pokémon data based on selected type and pagination, utilizing async/await for asynchronous operations.",
+        "requires": [
+          "async/await",
+          "useState"
+        ],
+        "at": 176
+      },
+      {
+        "label": "pagination",
+        "aliases": [],
+        "summary": "The concept of displaying data in pages, where only a subset of data is shown at a time, controlled by a page state variable.",
+        "requires": [
+          "useState"
+        ],
+        "at": 183
+      },
+      {
+        "label": "filtering",
+        "aliases": [],
+        "summary": "The process of filtering the master list of Pokémon based on search text and selected types, implemented using useMemo.",
+        "requires": [
+          "useMemo",
+          "useState"
+        ],
+        "at": null
+      },
+      {
+        "label": "flat list",
+        "aliases": [],
+        "summary": "A component used to render a list of items efficiently, allowing for scrolling and dynamic loading of data.",
+        "requires": [
+          "React Native"
+        ],
+        "at": 1411
+      },
+      {
+        "label": "activity indicator",
+        "aliases": [],
+        "summary": "A visual component that indicates loading status while data is being fetched.",
+        "requires": [
+          "React Native"
+        ],
+        "at": 1377
+      },
+      {
+        "label": "type safety",
+        "aliases": [],
+        "summary": "The practice of ensuring that variables are of the expected type, particularly when navigating to detail pages.",
+        "requires": [
+          "TypeScript"
+        ],
+        "at": 499
+      },
+      {
+        "label": "type badge",
+        "aliases": [],
+        "summary": "A component that displays the type of Pokémon with appropriate styling based on the type.",
+        "requires": [
+          "React Native"
+        ],
+        "at": 2021
+      },
+      {
+        "label": "filter chips",
+        "aliases": [],
+        "summary": "A component that allows users to select Pokémon types for filtering the displayed list.",
+        "requires": [
+          "React Native"
+        ],
+        "at": 1071
+      },
+      {
+        "label": "useEffect",
+        "aliases": [],
+        "summary": "A React hook that allows you to perform side effects in function components, such as fetching data when a component mounts or updates.",
+        "requires": [
+          "React"
+        ],
+        "at": 338
+      },
+      {
+        "label": "useMemo",
+        "aliases": [],
+        "summary": "A React hook that memoizes the result of a computation, optimizing performance by preventing unnecessary recalculations.",
+        "requires": [
+          "React"
+        ],
+        "at": 372
+      }
+    ],
+    "revisits": [
+      {
+        "label": "React Navigation",
+        "at": 123
+      },
+      {
+        "label": "useState",
+        "at": 195
+      },
+      {
+        "label": "useEffect",
+        "at": 338
+      },
+      {
+        "label": "useMemo",
+        "at": 372
+      },
+      {
+        "label": "TypeScript",
+        "at": 502
+      },
+      {
+        "label": "React Native",
+        "at": 610
+      }
+    ]
+  },
+  {
+    "lessonId": "m03-l09",
+    "order": 19,
+    "label": "Module 3 · Mini-project 4",
+    "title": "implementing pokemondetail screen",
+    "introduces": [
+      {
+        "label": "Pokemon detail screen",
+        "aliases": [],
+        "summary": "Implementing the detail screen for a selected Pokemon, including navigation and data extraction from route parameters.",
+        "requires": [
+          "React Navigation",
+          "React Native",
+          "TypeScript"
+        ],
+        "at": 4
+      },
+      {
+        "label": "useRoute",
+        "aliases": [],
+        "summary": "Using the useRoute hook from React Navigation to access route parameters for the Pokemon detail screen.",
+        "requires": [
+          "React Navigation"
+        ],
+        "at": 83
+      },
+      {
+        "label": "expo-status-bar",
+        "aliases": [],
+        "summary": "Using the StatusBar component from Expo to manage the status bar appearance in the app.",
+        "requires": [
+          "React Native"
+        ],
+        "at": 202
+      },
+      {
+        "label": "scroll view",
+        "aliases": [],
+        "summary": "Implementing a ScrollView to allow vertical scrolling of the Pokemon detail content.",
+        "requires": [
+          "React Native"
+        ],
+        "at": 228
+      },
+      {
+        "label": "type badges",
+        "aliases": [],
+        "summary": "Rendering badges for each Pokemon type using a previously created component.",
+        "requires": [
+          "React Native"
+        ],
+        "at": 521
+      },
+      {
+        "label": "stat bar",
+        "aliases": [],
+        "summary": "Creating a stat bar component to visually represent Pokemon stats like HP, attack, and defense.",
+        "requires": [
+          "React Native"
+        ],
+        "at": 867
+      },
+      {
+        "label": "CSS styles",
+        "aliases": [],
+        "summary": "Applying CSS styles to various components in the Pokemon detail screen for layout and design.",
+        "requires": [
+          "React Native"
+        ],
+        "at": null
+      }
+    ],
+    "revisits": [
+      {
+        "label": "Pokemon types",
+        "at": 539
+      },
+      {
+        "label": "handle card press",
+        "at": 130
+      },
+      {
+        "label": "get type color",
+        "at": 165
+      },
+      {
+        "label": "image component",
+        "at": 405
+      },
+      {
+        "label": "vector icons",
+        "at": 316
+      },
+      {
+        "label": "props",
+        "at": null
+      },
+      {
+        "label": "map function",
+        "at": null
+      },
+      {
+        "label": "component composition",
+        "at": null
+      }
+    ]
+  },
+  {
+    "lessonId": "m03-l10",
+    "order": 20,
+    "label": "Module 3 · Mini-project 5",
+    "title": "implementing pokemonList screen",
+    "introduces": [
+      {
+        "label": "useNavigation",
+        "aliases": [],
+        "summary": "A hook from React Navigation that allows access to the navigation prop in functional components.",
+        "requires": [
+          "React",
+          "React Navigation"
+        ],
+        "at": 33
+      },
+      {
+        "label": "useState",
+        "aliases": [],
+        "summary": "A React hook that allows you to add state to functional components.",
+        "requires": [
+          "React"
+        ],
+        "at": 51
+      },
+      {
+        "label": "load more method",
+        "aliases": [],
+        "summary": "An asynchronous method to load more Pokémon data when scrolling, handling pagination and loading states.",
+        "requires": [
+          "useState",
+          "async/await"
+        ],
+        "at": 65
+      },
+      {
+        "label": "FlatList",
+        "aliases": [],
+        "summary": "A component for rendering a list of items in a scrollable view, optimized for performance.",
+        "requires": [
+          "React",
+          "React Native"
+        ],
+        "at": 381
+      },
+      {
+        "label": "ActivityIndicator",
+        "aliases": [],
+        "summary": "A component that displays a loading spinner while data is being fetched.",
+        "requires": [
+          "React Native"
+        ],
+        "at": 404
+      },
+      {
+        "label": "pagination",
+        "aliases": [],
+        "summary": "A technique for loading data in chunks, allowing for infinite scrolling in the Pokémon list.",
+        "requires": [
+          "load more method"
+        ],
+        "at": 149
+      },
+      {
+        "label": "app header",
+        "aliases": [],
+        "summary": "A component that displays the title of the current screen, enhancing the user interface.",
+        "requires": [
+          "React Native"
+        ],
+        "at": 217
+      }
+    ],
+    "revisits": [
+      {
+        "label": "Pokemon detail",
+        "at": 190
+      },
+      {
+        "label": "navigation",
+        "at": 25
+      },
+      {
+        "label": "button",
+        "at": 279
+      },
+      {
+        "label": "styles",
+        "at": 197
+      },
+      {
+        "label": "colors",
+        "at": 202
+      }
+    ]
+  },
+  {
+    "lessonId": "m03-l11",
+    "order": 21,
+    "label": "Module 3 · Mini-project 6",
+    "title": "changin splash screens and icons",
+    "introduces": [
+      {
+        "label": "app.json",
+        "aliases": [],
+        "summary": "The app.json file is used to configure the app's icon and splash screen settings.",
+        "requires": [
+          "expo"
+        ],
+        "at": 23
+      },
+      {
+        "label": "splash screen",
+        "aliases": [],
+        "summary": "The splash screen is the initial screen displayed when the app is launched, which can be customized in the app.json file.",
+        "requires": [
+          "expo"
+        ],
+        "at": 12
+      },
+      {
+        "label": "icon",
+        "aliases": [],
+        "summary": "The app's icon can be changed by specifying a different image file in the app.json configuration.",
+        "requires": [
+          "expo"
+        ],
+        "at": 4
+      },
+      {
+        "label": "background color",
+        "aliases": [],
+        "summary": "The background color of the app can be set in the app.json file.",
+        "requires": [
+          "expo"
+        ],
+        "at": 53
+      }
+    ],
+    "revisits": [
+      {
+        "label": "react navigation",
+        "at": 105
+      },
+      {
+        "label": "expo-router",
+        "at": null
+      }
+    ]
+  },
+  {
+    "lessonId": "m04-l01",
+    "order": 22,
+    "label": "Module 4 · Lesson 1",
+    "title": "Introduction to Expo Router",
+    "introduces": [
+      {
+        "label": "expo-router",
+        "aliases": [],
+        "summary": "Expo Router is a file-based navigation system for React Native applications, allowing automatic route creation based on the file structure.",
+        "requires": [
+          "React Native",
+          "file-based routing"
+        ],
+        "at": 0
+      },
+      {
+        "label": "file-based routing",
+        "aliases": [],
+        "summary": "File-based routing means that the file and folder structure in the app directory defines the navigation routes automatically, eliminating the need for manual route definitions.",
+        "requires": [
+          "React Native"
+        ],
+        "at": 6
+      }
+    ],
+    "revisits": [
+      {
+        "label": "React Navigation",
+        "at": 53
+      },
+      {
+        "label": "deep linking",
+        "at": null
+      },
+      {
+        "label": "offline-first",
+        "at": 148
+      },
+      {
+        "label": "static rendering",
+        "at": 416
+      }
+    ]
+  },
+  {
+    "lessonId": "m04-l02",
+    "order": 23,
+    "label": "Module 4 · Lesson 2",
+    "title": "File Based Routing Basics",
+    "introduces": [
+      {
+        "label": "file-based routing",
+        "aliases": [],
+        "summary": "A routing system where the file and folder structure defines the navigation routes automatically, eliminating the need for manual route definitions.",
+        "requires": [
+          "expo-router",
+          "React"
+        ],
+        "at": 1
+      },
+      {
+        "label": "expo-router",
+        "aliases": [],
+        "summary": "A library that facilitates file-based routing in Expo applications, allowing for automatic route generation based on the file structure.",
+        "requires": [
+          "React"
+        ],
+        "at": 1
+      },
+      {
+        "label": "nested routes",
+        "aliases": [],
+        "summary": "Routes that are defined within other routes, allowing for a hierarchical navigation structure based on the file system.",
+        "requires": [
+          "file-based routing"
+        ],
+        "at": 350
+      },
+      {
+        "label": "link component",
+        "aliases": [],
+        "summary": "A component provided by expo-router that allows navigation between different routes in the application.",
+        "requires": [
+          "file-based routing"
+        ],
+        "at": 184
+      }
+    ],
+    "revisits": [
+      {
+        "label": "React Navigation",
+        "at": 7
+      }
+    ]
+  },
+  {
+    "lessonId": "m04-l03",
+    "order": 24,
+    "label": "Module 4 · Lesson 3",
+    "title": "Dynamic Routes",
+    "introduces": [
+      {
+        "label": "dynamic routes",
+        "aliases": [],
+        "summary": "Dynamic routes allow you to create screens that accept parameters from the URL, making navigation more flexible without needing to create separate files for each parameter.",
+        "requires": [
+          "expo-router"
+        ],
+        "at": 1
+      },
+      {
+        "label": "expo-router",
+        "aliases": [],
+        "summary": "A library that helps manage routing in Expo applications, allowing for dynamic routing and parameter handling.",
+        "requires": [
+          "React",
+          "JavaScript"
+        ],
+        "at": 6
+      },
+      {
+        "label": "useLocalSearchParam",
+        "aliases": [],
+        "summary": "A hook from expo-router used to extract parameters from the URL, such as post IDs in dynamic routes.",
+        "requires": [
+          "expo-router"
+        ],
+        "at": 230
+      }
+    ],
+    "revisits": [
+      {
+        "label": "nested dynamic routes",
+        "at": 379
+      }
+    ]
+  },
+  {
+    "lessonId": "m04-l04",
+    "order": 25,
+    "label": "Module 4 · Lesson 4",
+    "title": "catch all route segments",
+    "introduces": [
+      {
+        "label": "catch all route segments",
+        "aliases": [],
+        "summary": "A method to match any path under a directory in file-based routing, allowing for dynamic route segments without knowing the exact structure in advance.",
+        "requires": [
+          "file-based routing",
+          "dynamic routes",
+          "TypeScript"
+        ],
+        "at": 5
+      },
+      {
+        "label": "file-based routing",
+        "aliases": [],
+        "summary": "A routing method where routes are defined based on the file structure, allowing for dynamic routes using specific syntax.",
+        "requires": [
+          "basic routing concepts"
+        ],
+        "at": 64
+      },
+      {
+        "label": "dynamic routes",
+        "aliases": [],
+        "summary": "Routes that can change based on parameters, allowing for more flexible navigation within applications.",
+        "requires": [
+          "file-based routing"
+        ],
+        "at": 64
+      },
+      {
+        "label": "local search params",
+        "aliases": [],
+        "summary": "A hook used to access parameters from the URL, useful for rendering different data based on the route.",
+        "requires": [
+          "React hooks",
+          "TypeScript"
+        ],
+        "at": 370
+      }
+    ],
+    "revisits": [
+      {
+        "label": "TypeScript",
+        "at": 403
+      },
+      {
+        "label": "React hooks",
+        "at": null
+      }
+    ]
+  },
+  {
+    "lessonId": "m04-l05",
+    "order": 26,
+    "label": "Module 4 · Lesson 5",
+    "title": "not found route",
+    "introduces": [
+      {
+        "label": "unmatched route",
+        "aliases": [],
+        "summary": "Handling unmatched routes in the expo router, including default behavior and customization.",
+        "requires": [
+          "expo-router"
+        ],
+        "at": 0
+      },
+      {
+        "label": "plus-not-found.tsx",
+        "aliases": [],
+        "summary": "A special file name notation used to create a custom unmatched route page in the expo router.",
+        "requires": [
+          "unmatched route"
+        ],
+        "at": 59
+      }
+    ],
+    "revisits": [
+      {
+        "label": "404 page",
+        "at": 16
+      },
+      {
+        "label": "expo-router",
+        "at": 7
+      }
+    ]
+  },
+  {
+    "lessonId": "m04-l06",
+    "order": 27,
+    "label": "Module 4 · Lesson 6",
+    "title": "Layouts & Slot Components",
+    "introduces": [
+      {
+        "label": "layouts",
+        "aliases": [],
+        "summary": "Layouts in Expo Router help wrap common UI around screens, defining how pages within a directory are arranged.",
+        "requires": [],
+        "at": 0
+      },
+      {
+        "label": "slot component",
+        "aliases": [],
+        "summary": "The slot component renders the current route inside the layout, serving as a placeholder for the current child route.",
+        "requires": [
+          "layouts"
+        ],
+        "at": 17
+      },
+      {
+        "label": "nested layout",
+        "aliases": [],
+        "summary": "A nested layout allows for creating layouts within specific directories, such as a profile layout that can override the root layout.",
+        "requires": [
+          "layouts"
+        ],
+        "at": 360
+      },
+      {
+        "label": "root layout",
+        "aliases": [],
+        "summary": "The root layout is the main layout file that defines the overall structure of the app, typically found in the app directory as _layout.tsx.",
+        "requires": [],
+        "at": 91
+      },
+      {
+        "label": "safe area view",
+        "aliases": [],
+        "summary": "Safe area view is a component used to ensure that content is rendered within the safe boundaries of a device's screen.",
+        "requires": [
+          "React Native"
+        ],
+        "at": 184
+      }
+    ],
+    "revisits": [
+      {
+        "label": "stack navigator",
+        "at": 49
+      },
+      {
+        "label": "tab navigator",
+        "at": 54
+      },
+      {
+        "label": "drawer navigator",
+        "at": 54
+      }
+    ]
+  },
+  {
+    "lessonId": "m04-l07",
+    "order": 28,
+    "label": "Module 4 · Lesson 7",
+    "title": "route groups",
+    "introduces": [
+      {
+        "label": "route groups",
+        "aliases": [],
+        "summary": "A feature that allows organizing file-based routes without affecting the URL structure, improving project organization and scalability.",
+        "requires": [
+          "file-based routing"
+        ],
+        "at": 0
+      },
+      {
+        "label": "file-based routing",
+        "aliases": [],
+        "summary": "A routing system where each file corresponds to a route segment, allowing for easy navigation and organization of screens.",
+        "requires": [
+          "basic file structure"
+        ],
+        "at": 84
+      },
+      {
+        "label": "nested groups",
+        "aliases": [],
+        "summary": "A method to create groups within groups for further organization of routes and shared layouts.",
+        "requires": [
+          "route groups"
+        ],
+        "at": 500
+      },
+      {
+        "label": "shared layout",
+        "aliases": [],
+        "summary": "A layout that can be shared among multiple routes, allowing for consistent design across different screens.",
+        "requires": [
+          "route groups"
+        ],
+        "at": null
+      }
+    ],
+    "revisits": [
+      {
+        "label": "URL structure",
+        "at": 7
+      },
+      {
+        "label": "authentication",
+        "at": 139
+      },
+      {
+        "label": "folder structure",
+        "at": 397
+      },
+      {
+        "label": "layout",
+        "at": 68
+      }
+    ]
+  },
+  {
+    "lessonId": "m04-l08",
+    "order": 29,
+    "label": "Module 4 · Lesson 8",
+    "title": "stack and modal navigation",
+    "introduces": [
+      {
+        "label": "stack navigation",
+        "aliases": [],
+        "summary": "A method of navigating between different screens in a React Native application using a stack-based approach.",
+        "requires": [
+          "react-navigation"
+        ],
+        "at": 0
+      },
+      {
+        "label": "screen options",
+        "aliases": [],
+        "summary": "A way to define common options for multiple screens in stack navigation, such as header styles and titles.",
+        "requires": [
+          "stack navigation"
+        ],
+        "at": 312
+      },
+      {
+        "label": "modal presentation",
+        "aliases": [],
+        "summary": "A way to present a screen as a modal, changing its display style in the navigation stack.",
+        "requires": [
+          "stack navigation"
+        ],
+        "at": null
+      }
+    ],
+    "revisits": [
+      {
+        "label": "react navigation",
+        "at": 19
+      }
+    ]
+  },
+  {
+    "lessonId": "m04-l09",
+    "order": 30,
+    "label": "Module 4 · Lesson 9",
+    "title": "tab navigation",
+    "introduces": [
+      {
+        "label": "tab navigation",
+        "aliases": [],
+        "summary": "Implementing tab navigation in an Expo project using a tab navigator.",
+        "requires": [
+          "expo",
+          "React Navigation"
+        ],
+        "at": 4
+      },
+      {
+        "label": "tab navigator",
+        "aliases": [],
+        "summary": "A component that allows for tab-based navigation between different screens in a React Native app.",
+        "requires": [
+          "tab navigation"
+        ],
+        "at": 9
+      },
+      {
+        "label": "tab screen",
+        "aliases": [],
+        "summary": "A screen that is part of a tab navigator, defined within the tab navigation structure.",
+        "requires": [
+          "tab navigator"
+        ],
+        "at": 261
+      },
+      {
+        "label": "tab bar label",
+        "aliases": [],
+        "summary": "A label that appears on the tab bar for each tab screen, allowing users to identify the screen.",
+        "requires": [
+          "tab screen"
+        ],
+        "at": 276
+      },
+      {
+        "label": "Font Awesome",
+        "aliases": [],
+        "summary": "A library for using vector icons in React Native applications, allowing customization of tab icons.",
+        "requires": [
+          "tab screen"
+        ],
+        "at": 357
+      }
+    ],
+    "revisits": [
+      {
+        "label": "stack navigation",
+        "at": 469
+      },
+      {
+        "label": "React Navigation",
+        "at": null
+      }
+    ]
+  },
+  {
+    "lessonId": "m04-l10",
+    "order": 31,
+    "label": "Module 4 · Lesson 10",
+    "title": "drawer navigation",
+    "introduces": [
+      {
+        "label": "drawer navigation",
+        "aliases": [],
+        "summary": "A method for implementing navigation in a React Native application using a drawer interface.",
+        "requires": [
+          "React Native",
+          "expo-router"
+        ],
+        "at": 0
+      },
+      {
+        "label": "expo-router",
+        "aliases": [],
+        "summary": "A library used for routing in Expo applications, allowing for file-based routing and navigation management.",
+        "requires": [
+          "React Native"
+        ],
+        "at": null
+      },
+      {
+        "label": "file-based routing",
+        "aliases": [],
+        "summary": "A routing method where the file structure of the project determines the routes of the application.",
+        "requires": [
+          "React Native",
+          "expo-router"
+        ],
+        "at": null
+      }
+    ],
+    "revisits": [
+      {
+        "label": "React Native",
+        "at": null
+      },
+      {
+        "label": "JavaScript",
+        "at": null
+      }
+    ]
+  },
+  {
+    "lessonId": "m04-l11",
+    "order": 32,
+    "label": "Module 4 · Lesson 11",
+    "title": "platform specific components",
+    "introduces": [
+      {
+        "label": "platform specific code",
+        "aliases": [],
+        "summary": "How to write code that behaves differently depending on the platform (iOS, Android, web) in an Expo app.",
+        "requires": [
+          "expo-router",
+          "React components"
+        ],
+        "at": 4
+      },
+      {
+        "label": "dashboard component",
+        "aliases": [
+          "dashboard.dsx",
+          "dashboard.ios.tsx",
+          "dashboard.android.tsx",
+          "dashboard.web.tsx"
+        ],
+        "summary": "Creating platform-specific versions of a dashboard component for iOS, Android, and web.",
+        "requires": [
+          "React components"
+        ],
+        "at": 70
+      }
+    ],
+    "revisits": [
+      {
+        "label": "expo-router",
+        "at": 269
+      }
+    ]
+  },
+  {
+    "lessonId": "m05-l01",
+    "order": 33,
+    "label": "Module 5 · Lesson 1",
+    "title": "What Are API Routes in Expo Router",
+    "introduces": [
+      {
+        "label": "API routes",
+        "aliases": [],
+        "summary": "API routes are special server functions that can be created inside an Expo project, allowing the app to act as both frontend and backend without needing a separate server.",
+        "requires": [
+          "expo-router",
+          "file-based routing"
+        ],
+        "at": 9
+      },
+      {
+        "label": "file-based routing",
+        "aliases": [],
+        "summary": "A system in Expo that allows the creation of routes based on the file structure, which is used for defining API routes as well.",
+        "requires": [
+          "expo-router"
+        ],
+        "at": 26
+      }
+    ],
+    "revisits": [
+      {
+        "label": "Expo",
+        "at": 15
+      },
+      {
+        "label": "backend integration",
+        "at": 7
+      },
+      {
+        "label": "Express",
+        "at": 80
+      },
+      {
+        "label": "Fastify",
+        "at": 80
+      },
+      {
+        "label": "FastAPI",
+        "at": 86
+      },
+      {
+        "label": "Node.js",
+        "at": null
+      },
+      {
+        "label": "GET request",
+        "at": 553
+      },
+      {
+        "label": "POST request",
+        "at": null
+      },
+      {
+        "label": "PUT request",
+        "at": null
+      },
+      {
+        "label": "DELETE request",
+        "at": null
+      },
+      {
+        "label": "PATCH request",
+        "at": null
+      },
+      {
+        "label": "async/await",
+        "at": null
+      }
+    ]
+  },
+  {
+    "lessonId": "m05-l02",
+    "order": 34,
+    "label": "Module 5 · Lesson 2",
+    "title": "Creating apis routes and calling from client side of screen",
+    "introduces": [
+      {
+        "label": "API routes",
+        "aliases": [],
+        "summary": "Creating and handling API routes in an Expo router project, including GET and POST methods.",
+        "requires": [],
+        "at": 4
+      },
+      {
+        "label": "GET request",
+        "aliases": [],
+        "summary": "Understanding how to create a GET endpoint that returns a JSON response.",
+        "requires": [
+          "API routes"
+        ],
+        "at": 46
+      },
+      {
+        "label": "POST request",
+        "aliases": [],
+        "summary": "Creating a POST endpoint to receive and return data using request and response objects.",
+        "requires": [
+          "API routes"
+        ],
+        "at": null
+      },
+      {
+        "label": "query parameters",
+        "aliases": [],
+        "summary": "Handling query parameters in API requests and extracting values from them.",
+        "requires": [
+          "API routes"
+        ],
+        "at": 256
+      },
+      {
+        "label": "fetch API",
+        "aliases": [],
+        "summary": "Using the fetch API to call internal endpoints from the client side and handle responses.",
+        "requires": [
+          "API routes"
+        ],
+        "at": null
+      }
+    ],
+    "revisits": [
+      {
+        "label": "external APIs",
+        "at": 624
+      },
+      {
+        "label": "error status codes",
+        "at": null
+      }
+    ]
+  },
+  {
+    "lessonId": "m05-l03",
+    "order": 35,
+    "label": "Module 5 · Lesson 3",
+    "title": "Consuming external apis",
+    "introduces": [
+      {
+        "label": "fetch API",
+        "aliases": [],
+        "summary": "Learn how to use the fetch API to retrieve data from external APIs in an Expo app.",
+        "requires": [
+          "JavaScript",
+          "React",
+          "useEffect",
+          "useState"
+        ],
+        "at": 359
+      },
+      {
+        "label": "useEffect",
+        "aliases": [],
+        "summary": "Understand how to use the useEffect hook to perform side effects in functional components, such as fetching data when the component mounts.",
+        "requires": [
+          "React"
+        ],
+        "at": 139
+      },
+      {
+        "label": "useState",
+        "aliases": [],
+        "summary": "Learn how to use the useState hook to manage state in functional components, specifically for storing fetched data and loading states.",
+        "requires": [
+          "React"
+        ],
+        "at": 139
+      },
+      {
+        "label": "JSONPlaceholder",
+        "aliases": [],
+        "summary": "Introduction to JSONPlaceholder as a sample API for fetching posts data.",
+        "requires": [],
+        "at": 110
+      },
+      {
+        "label": "FlatList",
+        "aliases": [],
+        "summary": "Learn how to use FlatList to render a list of data efficiently in a React Native application.",
+        "requires": [
+          "React Native"
+        ],
+        "at": 312
+      },
+      {
+        "label": "ActivityIndicator",
+        "aliases": [],
+        "summary": "Understand how to use ActivityIndicator to show a loading spinner while data is being fetched.",
+        "requires": [
+          "React Native"
+        ],
+        "at": 302
+      }
+    ],
+    "revisits": [
+      {
+        "label": "axios",
+        "at": 240
+      },
+      {
+        "label": "external APIs",
+        "at": 1
+      },
+      {
+        "label": "async/await",
+        "at": null
+      },
+      {
+        "label": "try/catch",
+        "at": null
+      },
+      {
+        "label": "error handling",
+        "at": null
+      },
+      {
+        "label": "loading state",
+        "at": 299
+      }
+    ]
+  },
+  {
+    "lessonId": "m05-l04",
+    "order": 36,
+    "label": "Module 5 · Lesson 4",
+    "title": "init project and add api services and news feed screen and debugging",
+    "introduces": [
+      {
+        "label": "expo app initialization",
+        "aliases": [
+          "create expo app"
+        ],
+        "summary": "How to initialize a new Expo app using the command line.",
+        "requires": [
+          "npm",
+          "basic command line usage"
+        ],
+        "at": 30
+      },
+      {
+        "label": "news API",
+        "aliases": [
+          "newsapi.org"
+        ],
+        "summary": "How to obtain an API key from newsapi.org for fetching news articles.",
+        "requires": [],
+        "at": 134
+      },
+      {
+        "label": "API key management",
+        "aliases": [],
+        "summary": "How to store and manage the API key in a configuration file.",
+        "requires": [],
+        "at": null
+      },
+      {
+        "label": "TypeScript interfaces",
+        "aliases": [],
+        "summary": "Creating TypeScript interfaces for news articles and API responses.",
+        "requires": [
+          "TypeScript"
+        ],
+        "at": null
+      },
+      {
+        "label": "fetch top headlines",
+        "aliases": [],
+        "summary": "How to create a function to fetch top headlines from the news API.",
+        "requires": [
+          "async/await",
+          "fetch API"
+        ],
+        "at": 463
+      },
+      {
+        "label": "React state management",
+        "aliases": [
+          "useState",
+          "useEffect"
+        ],
+        "summary": "Using React hooks to manage state and side effects in a functional component.",
+        "requires": [
+          "React"
+        ],
+        "at": 1217
+      },
+      {
+        "label": "flat list",
+        "aliases": [],
+        "summary": "Rendering a list of news articles using FlatList in React Native.",
+        "requires": [
+          "React Native"
+        ],
+        "at": 1494
+      },
+      {
+        "label": "error handling",
+        "aliases": [],
+        "summary": "Implementing error handling in API calls and displaying error messages.",
+        "requires": [
+          "JavaScript error handling"
+        ],
+        "at": null
+      }
+    ],
+    "revisits": [
+      {
+        "label": "npm",
+        "at": null
+      },
+      {
+        "label": "React",
+        "at": 776
+      },
+      {
+        "label": "TypeScript",
+        "at": null
+      },
+      {
+        "label": "JavaScript",
+        "at": null
+      },
+      {
+        "label": "async/await",
+        "at": null
+      },
+      {
+        "label": "fetch API",
+        "at": null
+      },
+      {
+        "label": "React Native",
+        "at": 776
+      }
+    ]
+  },
+  {
+    "lessonId": "m05-l05",
+    "order": 37,
+    "label": "Module 5 · Lesson 5",
+    "title": "added news feed card and search bar functions",
+    "introduces": [
+      {
+        "label": "expo public API key",
+        "aliases": [],
+        "summary": "How to set up the expo public API key for fetching data from the news API.",
+        "requires": [],
+        "at": null
+      },
+      {
+        "label": "refresh control",
+        "aliases": [],
+        "summary": "Introduction to the refresh control component in React Native and how to implement it in a FlatList.",
+        "requires": [],
+        "at": 182
+      },
+      {
+        "label": "header component",
+        "aliases": [],
+        "summary": "Creating a header component for the news feed that includes a search bar and category filter.",
+        "requires": [],
+        "at": 370
+      },
+      {
+        "label": "search functionality",
+        "aliases": [],
+        "summary": "Implementing search functionality in the news feed to filter articles based on user input.",
+        "requires": [
+          "header component"
+        ],
+        "at": null
+      },
+      {
+        "label": "category filter bar",
+        "aliases": [],
+        "summary": "Creating a category filter bar to filter news articles by category.",
+        "requires": [],
+        "at": 505
+      },
+      {
+        "label": "activity indicator",
+        "aliases": [],
+        "summary": "Using the activity indicator to show loading status while fetching news articles.",
+        "requires": [],
+        "at": 873
+      },
+      {
+        "label": "deep linking",
+        "aliases": [],
+        "summary": "Implementing deep linking to open news articles in a web browser.",
+        "requires": [],
+        "at": 1198
+      },
+      {
+        "label": "status bar",
+        "aliases": [],
+        "summary": "Using the status bar component to manage the appearance of the status bar in the app.",
+        "requires": [],
+        "at": 1278
+      },
+      {
+        "label": "error handling",
+        "aliases": [],
+        "summary": "Implementing error handling for API responses and rendering error messages.",
+        "requires": [],
+        "at": 1030
+      },
+      {
+        "label": "flat list",
+        "aliases": [],
+        "summary": "Using FlatList to render a list of news articles efficiently.",
+        "requires": [],
+        "at": 173
+      },
+      {
+        "label": "state management",
+        "aliases": [],
+        "summary": "Managing component state for search queries and loading states in the news feed.",
+        "requires": [],
+        "at": null
+      },
+      {
+        "label": "conditional rendering",
+        "aliases": [],
+        "summary": "Using conditional rendering to display loading indicators, error messages, and content based on state.",
+        "requires": [
+          "state management"
+        ],
+        "at": null
+      }
+    ],
+    "revisits": [
+      {
+        "label": "API fetching",
+        "at": null
+      },
+      {
+        "label": "React Native components",
+        "at": null
+      },
+      {
+        "label": "props",
+        "at": 196
+      },
+      {
+        "label": "state",
+        "at": 304
+      },
+      {
+        "label": "JavaScript basics",
+        "at": null
+      },
+      {
+        "label": "React basics",
+        "at": null
+      }
+    ]
+  },
+  {
+    "lessonId": "m06-l01",
+    "order": 38,
+    "label": "Module 6 · Lesson 1",
+    "title": "react native async storage",
+    "introduces": [
+      {
+        "label": "async storage",
+        "aliases": [],
+        "summary": "Async storage is a key-value storage system for React Native apps that allows for storing data locally on a device without blocking the UI. It is suitable for non-sensitive data like user preferences and app state.",
+        "requires": [
+          "React Native",
+          "key-value storage",
+          "asynchronous programming"
+        ],
+        "at": 32
+      }
+    ],
+    "revisits": [
+      {
+        "label": "Expo Secure Store",
+        "at": 45
+      },
+      {
+        "label": "Expo SQLite",
+        "at": 48
+      },
+      {
+        "label": "Expo file system",
+        "at": 48
+      }
+    ]
+  },
+  {
+    "lessonId": "m06-l02",
+    "order": 39,
+    "label": "Module 6 · Lesson 2",
+    "title": "expo secure store",
+    "introduces": [
+      {
+        "label": "expo-secure-store",
+        "aliases": [],
+        "summary": "A library that provides a way to encrypt and securely store key-value pairs locally on the device.",
+        "requires": [
+          "React Native",
+          "npm"
+        ],
+        "at": 40
+      },
+      {
+        "label": "secure storage",
+        "aliases": [],
+        "summary": "A method to save sensitive data such as API keys, tokens, and passwords on a user device, ensuring data is encrypted and safe from unauthorized access.",
+        "requires": [
+          "expo-secure-store"
+        ],
+        "at": 23
+      },
+      {
+        "label": "setItemAsync",
+        "aliases": [],
+        "summary": "An API method to store data asynchronously in secure storage.",
+        "requires": [
+          "expo-secure-store"
+        ],
+        "at": 407
+      },
+      {
+        "label": "getItemAsync",
+        "aliases": [],
+        "summary": "An API method to retrieve data asynchronously from secure storage.",
+        "requires": [
+          "expo-secure-store"
+        ],
+        "at": 566
+      },
+      {
+        "label": "biometric authentication",
+        "aliases": [],
+        "summary": "A method to secure access to stored data using biometric verification, such as fingerprint or facial recognition.",
+        "requires": [
+          "expo-secure-store"
+        ],
+        "at": 976
+      },
+      {
+        "label": "canUseBiometrics",
+        "aliases": [],
+        "summary": "An API method to check if the device supports biometric authentication.",
+        "requires": [
+          "expo-secure-store"
+        ],
+        "at": 984
+      },
+      {
+        "label": "clear credentials",
+        "aliases": [],
+        "summary": "A method to delete stored credentials from secure storage.",
+        "requires": [
+          "expo-secure-store"
+        ],
+        "at": 700
+      }
+    ],
+    "revisits": [
+      {
+        "label": "async storage",
+        "at": 1280
+      },
+      {
+        "label": "Expo file system",
+        "at": 87
+      }
+    ]
+  },
+  {
+    "lessonId": "m06-l03",
+    "order": 40,
+    "label": "Module 6 · Lesson 3",
+    "title": "expo sqllite creating basic crud app",
+    "introduces": [
+      {
+        "label": "expo-sqlite",
+        "aliases": [],
+        "summary": "A library that provides access to a local database on the device, useful for offline applications.",
+        "requires": [],
+        "at": 4
+      },
+      {
+        "label": "CRUD operations",
+        "aliases": [],
+        "summary": "Create, Read, Update, and Delete operations that can be performed on the SQLite database.",
+        "requires": [
+          "expo-sqlite"
+        ],
+        "at": 368
+      },
+      {
+        "label": "create tables",
+        "aliases": [],
+        "summary": "A function to create tables in the SQLite database using SQL queries.",
+        "requires": [
+          "expo-sqlite"
+        ],
+        "at": 147
+      },
+      {
+        "label": "async/await",
+        "aliases": [],
+        "summary": "JavaScript syntax for handling asynchronous operations, used for database access in this lesson.",
+        "requires": [
+          "JavaScript"
+        ],
+        "at": null
+      },
+      {
+        "label": "SQL queries",
+        "aliases": [],
+        "summary": "Structured Query Language used to interact with the SQLite database, including creating tables and performing CRUD operations.",
+        "requires": [
+          "expo-sqlite"
+        ],
+        "at": 142
+      },
+      {
+        "label": "insert user",
+        "aliases": [],
+        "summary": "A function to insert a new user into the users table in the SQLite database.",
+        "requires": [
+          "CRUD operations",
+          "SQL queries"
+        ],
+        "at": 394
+      },
+      {
+        "label": "get users",
+        "aliases": [],
+        "summary": "A function to retrieve users from the SQLite database.",
+        "requires": [
+          "CRUD operations",
+          "SQL queries"
+        ],
+        "at": 444
+      },
+      {
+        "label": "delete user",
+        "aliases": [],
+        "summary": "A function to delete a user from the SQLite database.",
+        "requires": [
+          "CRUD operations",
+          "SQL queries"
+        ],
+        "at": 452
+      },
+      {
+        "label": "update user",
+        "aliases": [],
+        "summary": "A function to update user information in the SQLite database.",
+        "requires": [
+          "CRUD operations",
+          "SQL queries"
+        ],
+        "at": 459
+      },
+      {
+        "label": "expo-router",
+        "aliases": [],
+        "summary": "A routing library for Expo applications, used to navigate between screens.",
+        "requires": [
+          "React",
+          "JavaScript"
+        ],
+        "at": 519
+      }
+    ],
+    "revisits": [
+      {
+        "label": "JavaScript",
+        "at": null
+      },
+      {
+        "label": "React",
+        "at": 540
+      }
+    ]
+  },
+  {
+    "lessonId": "m06-l04",
+    "order": 41,
+    "label": "Module 6 · Lesson 4",
+    "title": "expo file system",
+    "introduces": [
+      {
+        "label": "expo-file-system",
+        "aliases": [],
+        "summary": "A powerful API that allows apps to manage files on the device, enabling CRUD operations, downloading, and uploading files.",
+        "requires": [
+          "React Native",
+          "npm"
+        ],
+        "at": 5
+      },
+      {
+        "label": "paths.document",
+        "aliases": [],
+        "summary": "A directory for storing files that are safe from being deleted by the operating system, used for long-term storage.",
+        "requires": [
+          "expo-file-system"
+        ],
+        "at": 298
+      },
+      {
+        "label": "paths.cache",
+        "aliases": [],
+        "summary": "A directory for temporary files that can be removed by the operating system at any time.",
+        "requires": [
+          "expo-file-system"
+        ],
+        "at": 309
+      },
+      {
+        "label": "paths.bundle",
+        "aliases": [],
+        "summary": "A read-only directory for app bundled assets, such as images and configuration files.",
+        "requires": [
+          "expo-file-system"
+        ],
+        "at": 309
+      },
+      {
+        "label": "file operations",
+        "aliases": [],
+        "summary": "Methods for creating, reading, writing, copying, and deleting files using the expo-file-system API.",
+        "requires": [
+          "expo-file-system"
+        ],
+        "at": null
+      },
+      {
+        "label": "upload file",
+        "aliases": [],
+        "summary": "A method to upload files to a server using fetch, specifically with form data.",
+        "requires": [
+          "expo-file-system",
+          "fetch"
+        ],
+        "at": 18
+      },
+      {
+        "label": "base64 encoding",
+        "aliases": [],
+        "summary": "A method to read file content in base64 format, useful for encoding binary data as text.",
+        "requires": [
+          "expo-file-system"
+        ],
+        "at": null
+      },
+      {
+        "label": "list directory",
+        "aliases": [],
+        "summary": "A method to list all items in a specified directory using the expo-file-system API.",
+        "requires": [
+          "expo-file-system"
+        ],
+        "at": 1477
+      }
+    ],
+    "revisits": [
+      {
+        "label": "async storage",
+        "at": 143
+      },
+      {
+        "label": "fetch",
+        "at": 1609
+      },
+      {
+        "label": "React Native",
+        "at": 976
+      },
+      {
+        "label": "npm",
+        "at": null
+      }
+    ]
+  },
+  {
+    "lessonId": "m06-l05",
+    "order": 42,
+    "label": "Module 6 · Lesson 5",
+    "title": "notes buddy mini project",
+    "introduces": [
+      {
+        "label": "expo-sqlite",
+        "aliases": [],
+        "summary": "Using expo-sqlite to build offline-first mobile applications with a SQLite database.",
+        "requires": [
+          "expo",
+          "React Native"
+        ],
+        "at": 110
+      },
+      {
+        "label": "database initialization",
+        "aliases": [],
+        "summary": "Creating and initializing a SQLite database for storing notes.",
+        "requires": [
+          "expo-sqlite"
+        ],
+        "at": null
+      },
+      {
+        "label": "CRUD operations",
+        "aliases": [],
+        "summary": "Implementing create, read, update, and delete operations for notes in the SQLite database.",
+        "requires": [
+          "expo-sqlite",
+          "database initialization"
+        ],
+        "at": null
+      },
+      {
+        "label": "React useEffect",
+        "aliases": [],
+        "summary": "Using the useEffect hook to initialize the database and load notes when the component mounts.",
+        "requires": [
+          "React"
+        ],
+        "at": null
+      },
+      {
+        "label": "React useState",
+        "aliases": [],
+        "summary": "Using the useState hook to manage state for notes and modal visibility.",
+        "requires": [
+          "React"
+        ],
+        "at": null
+      },
+      {
+        "label": "FlatList",
+        "aliases": [],
+        "summary": "Rendering a list of notes using FlatList component from React Native.",
+        "requires": [
+          "React Native"
+        ],
+        "at": 490
+      },
+      {
+        "label": "modal",
+        "aliases": [],
+        "summary": "Creating a modal for adding and editing notes.",
+        "requires": [
+          "React Native"
+        ],
+        "at": null
+      },
+      {
+        "label": "TypeScript interfaces",
+        "aliases": [],
+        "summary": "Defining TypeScript interfaces for note objects to enforce type safety.",
+        "requires": [
+          "TypeScript"
+        ],
+        "at": null
+      }
+    ],
+    "revisits": [
+      {
+        "label": "Expo",
+        "at": 29
+      },
+      {
+        "label": "React Native",
+        "at": 1048
+      },
+      {
+        "label": "TypeScript",
+        "at": null
+      }
+    ]
+  },
+  {
+    "lessonId": "m07-l01",
+    "order": 43,
+    "label": "Module 7 · Lesson 1",
+    "title": "introduction of expo sensor and accelerometer",
+    "introduces": [
+      {
+        "label": "expo-sensors",
+        "aliases": [],
+        "summary": "A library that provides access to device sensors such as accelerometer, barometer, and magnetometer.",
+        "requires": [],
+        "at": 4
+      },
+      {
+        "label": "accelerometer",
+        "aliases": [],
+        "summary": "A sensor that measures the phone's movement and tilt in three dimensions: forward/backward, left/right, and up/down.",
+        "requires": [
+          "expo-sensors"
+        ],
+        "at": 16
+      },
+      {
+        "label": "device movement",
+        "aliases": [],
+        "summary": "The concept of responding to physical movement of the device, such as tilting or shaking.",
+        "requires": [
+          "accelerometer"
+        ],
+        "at": 234
+      },
+      {
+        "label": "shake to refresh",
+        "aliases": [],
+        "summary": "A feature that allows refreshing content by shaking the device, implemented using the accelerometer.",
+        "requires": [
+          "device movement"
+        ],
+        "at": 320
+      }
+    ],
+    "revisits": [
+      {
+        "label": "barometer",
+        "at": 16
+      },
+      {
+        "label": "magnetometer",
+        "at": 25
+      },
+      {
+        "label": "gyroscope",
+        "at": 270
+      },
+      {
+        "label": "pedometer",
+        "at": 151
+      },
+      {
+        "label": "device motion",
+        "at": 151
+      }
+    ]
+  },
+  {
+    "lessonId": "m07-l02",
+    "order": 44,
+    "label": "Module 7 · Lesson 2",
+    "title": "Understanding the Gyroscope The Secret Behind Motion & Orientation",
+    "introduces": [
+      {
+        "label": "gyroscope",
+        "aliases": [],
+        "summary": "Sensors that measure how quickly the device is rotating around different axes (x, y, z). Used for creating responsive experiences in applications like games and camera controls.",
+        "requires": [
+          "basic understanding of sensors",
+          "React Native"
+        ],
+        "at": 68
+      },
+      {
+        "label": "rotation indicator",
+        "aliases": [],
+        "summary": "A UI component that visually represents the rotation of the device, updating based on gyroscope data.",
+        "requires": [
+          "React Native",
+          "useState",
+          "useEffect"
+        ],
+        "at": 104
+      },
+      {
+        "label": "set update interval",
+        "aliases": [],
+        "summary": "Method to define how frequently the gyroscope updates its readings in milliseconds.",
+        "requires": [
+          "gyroscope"
+        ],
+        "at": 373
+      },
+      {
+        "label": "progress bar",
+        "aliases": [],
+        "summary": "A visual representation of the amount of rotation detected by the gyroscope, displayed as a percentage.",
+        "requires": [
+          "React Native",
+          "useState"
+        ],
+        "at": 347
+      }
+    ],
+    "revisits": [
+      {
+        "label": "useState",
+        "at": 172
+      },
+      {
+        "label": "useEffect",
+        "at": 206
+      },
+      {
+        "label": "React Native",
+        "at": null
+      }
+    ]
+  },
+  {
+    "lessonId": "m07-l03",
+    "order": 45,
+    "label": "Module 7 · Lesson 3",
+    "title": "Magnetometer Turn Your App Into a Digital Compass",
+    "introduces": [
+      {
+        "label": "magnetometer",
+        "aliases": [],
+        "summary": "A sensor that detects the magnetic field around the phone, allowing it to function as a digital compass.",
+        "requires": [
+          "basic understanding of sensors",
+          "React hooks (useState, useEffect)"
+        ],
+        "at": 6
+      },
+      {
+        "label": "directional maps",
+        "aliases": [],
+        "summary": "Maps that provide direction based on the orientation of the device, utilizing the magnetometer.",
+        "requires": [
+          "basic understanding of maps",
+          "React components"
+        ],
+        "at": 51
+      },
+      {
+        "label": "useState",
+        "aliases": [],
+        "summary": "A React hook used to manage state in functional components, demonstrated with direction state.",
+        "requires": [
+          "basic understanding of React"
+        ],
+        "at": 107
+      },
+      {
+        "label": "useEffect",
+        "aliases": [],
+        "summary": "A React hook used to perform side effects in functional components, shown with subscribing to the magnetometer.",
+        "requires": [
+          "basic understanding of React"
+        ],
+        "at": 135
+      },
+      {
+        "label": "Cartesian Plane",
+        "aliases": [],
+        "summary": "A mathematical concept used to explain the relationship between x and y values in determining direction.",
+        "requires": [
+          "basic understanding of mathematics"
+        ],
+        "at": null
+      }
+    ],
+    "revisits": [
+      {
+        "label": "React components",
+        "at": null
+      },
+      {
+        "label": "React hooks",
+        "at": null
+      },
+      {
+        "label": "state management",
+        "at": null
+      },
+      {
+        "label": "event listeners",
+        "at": null
+      },
+      {
+        "label": "conditional rendering",
+        "at": null
+      }
+    ]
+  },
+  {
+    "lessonId": "m07-l04",
+    "order": 46,
+    "label": "Module 7 · Lesson 4",
+    "title": "Light Sensors & Ambient Illumination",
+    "introduces": [
+      {
+        "label": "light sensor",
+        "aliases": [],
+        "summary": "The light sensor measures ambient light levels (LUX) and can be used to adapt UI based on light conditions, such as implementing auto dark and light mode features.",
+        "requires": [
+          "expo-sensors",
+          "React Native component lifecycle"
+        ],
+        "at": 70
+      },
+      {
+        "label": "ambient light level",
+        "aliases": [],
+        "summary": "The ambient light level is measured in LUX and indicates the brightness of the environment, affecting UI brightness adjustments.",
+        "requires": [
+          "light sensor"
+        ],
+        "at": 163
+      },
+      {
+        "label": "brightness aware UI changes",
+        "aliases": [],
+        "summary": "UI changes that adapt based on the ambient light level, such as adjusting brightness in response to light conditions.",
+        "requires": [
+          "light sensor"
+        ],
+        "at": 214
+      }
+    ],
+    "revisits": [
+      {
+        "label": "expo-sensors",
+        "at": null
+      }
+    ]
+  },
+  {
+    "lessonId": "m07-l05",
+    "order": 47,
+    "label": "Module 7 · Lesson 5",
+    "title": "Pedometer & Step Tracking",
+    "introduces": [
+      {
+        "label": "pedometer",
+        "aliases": [],
+        "summary": "A pedometer is a sensor used to track the number of steps taken, often used in fitness applications.",
+        "requires": [
+          "expo-sensors",
+          "React useState",
+          "React useEffect"
+        ],
+        "at": 4
+      },
+      {
+        "label": "step counter",
+        "aliases": [
+          "stepcounter.tsx"
+        ],
+        "summary": "A component that tracks and displays the number of steps taken using the pedometer sensor.",
+        "requires": [
+          "pedometer",
+          "React useState",
+          "React useEffect"
+        ],
+        "at": 55
+      },
+      {
+        "label": "watch step count",
+        "aliases": [],
+        "summary": "A method that subscribes to updates from the pedometer sensor, providing new step count data when available.",
+        "requires": [
+          "pedometer"
+        ],
+        "at": 235
+      },
+      {
+        "label": "availability check",
+        "aliases": [],
+        "summary": "A check to determine if the pedometer sensor is available on the device before attempting to use it.",
+        "requires": [
+          "pedometer"
+        ],
+        "at": null
+      },
+      {
+        "label": "unsubscribe from sensor",
+        "aliases": [],
+        "summary": "A method to stop receiving updates from the pedometer sensor when it is no longer needed.",
+        "requires": [
+          "watch step count"
+        ],
+        "at": null
+      }
+    ],
+    "revisits": [
+      {
+        "label": "expo-sensors",
+        "at": null
+      },
+      {
+        "label": "React useState",
+        "at": null
+      },
+      {
+        "label": "React useEffect",
+        "at": null
+      }
+    ]
+  },
+  {
+    "lessonId": "m07-l06",
+    "order": 48,
+    "label": "Module 7 · Lesson 6",
+    "title": "Tilt the Ball Game Mini Project",
+    "introduces": [
+      {
+        "label": "tilt game",
+        "aliases": [],
+        "summary": "Creating a tilt game mini project using Expo sensors, specifically the accelerometer.",
+        "requires": [
+          "expo-sensors",
+          "useState",
+          "useEffect",
+          "React Native components"
+        ],
+        "at": 4
+      },
+      {
+        "label": "accelerometer",
+        "aliases": [],
+        "summary": "Using the accelerometer to get x and y axis values for controlling the position of a ball in the tilt game.",
+        "requires": [
+          "React Native components"
+        ],
+        "at": 14
+      },
+      {
+        "label": "useEffect",
+        "aliases": [],
+        "summary": "Using useEffect to set up an interval for updating the ball's position based on accelerometer data.",
+        "requires": [
+          "React",
+          "JavaScript"
+        ],
+        "at": 36
+      },
+      {
+        "label": "useState",
+        "aliases": [],
+        "summary": "Using useState to manage the state of the ball's position and sensor values.",
+        "requires": [
+          "React",
+          "JavaScript"
+        ],
+        "at": 36
+      },
+      {
+        "label": "dimensions",
+        "aliases": [],
+        "summary": "Using dimensions to get the width of the screen for positioning elements in the game.",
+        "requires": [
+          "React Native components"
+        ],
+        "at": 36
+      },
+      {
+        "label": "sensitivity",
+        "aliases": [],
+        "summary": "Adjusting the sensitivity of the ball's movement based on accelerometer data.",
+        "requires": [
+          "JavaScript"
+        ],
+        "at": 282
+      }
+    ],
+    "revisits": [
+      {
+        "label": "React Native components",
+        "at": null
+      },
+      {
+        "label": "JavaScript",
+        "at": null
+      }
+    ]
+  },
+  {
+    "lessonId": "m08-l01",
+    "order": 49,
+    "label": "Module 8 · Lesson 1",
+    "title": "Getting Started with Expo Camera Setup, Permissions & First Capture",
+    "introduces": [
+      {
+        "label": "expo-camera",
+        "aliases": [],
+        "summary": "A React component that renders a preview of the device's front or back camera, allowing for photo capture and video recording.",
+        "requires": [
+          "React",
+          "JavaScript",
+          "npm"
+        ],
+        "at": 22
+      },
+      {
+        "label": "useCameraPermissions",
+        "aliases": [],
+        "summary": "A hook to request and manage camera permissions in the app.",
+        "requires": [
+          "expo-camera"
+        ],
+        "at": 504
+      },
+      {
+        "label": "camera view",
+        "aliases": [],
+        "summary": "The main component used to display the camera interface and capture images.",
+        "requires": [
+          "expo-camera"
+        ],
+        "at": 54
+      },
+      {
+        "label": "camera type",
+        "aliases": [],
+        "summary": "Defines the type of camera to use (front or back).",
+        "requires": [
+          "expo-camera"
+        ],
+        "at": 288
+      },
+      {
+        "label": "flash mode",
+        "aliases": [],
+        "summary": "Controls the flash settings of the camera (on, off, auto).",
+        "requires": [
+          "expo-camera"
+        ],
+        "at": 47
+      },
+      {
+        "label": "zoom",
+        "aliases": [],
+        "summary": "Allows for zooming in and out using a slider component.",
+        "requires": [
+          "expo-camera"
+        ],
+        "at": 47
+      },
+      {
+        "label": "take picture async",
+        "aliases": [],
+        "summary": "An API function to capture a photo and return its URI.",
+        "requires": [
+          "expo-camera"
+        ],
+        "at": 1099
+      },
+      {
+        "label": "slider",
+        "aliases": [],
+        "summary": "A component used for adjusting the zoom level of the camera.",
+        "requires": [
+          "React",
+          "JavaScript",
+          "npm"
+        ],
+        "at": 313
+      }
+    ],
+    "revisits": [
+      {
+        "label": "React",
+        "at": 22
+      },
+      {
+        "label": "JavaScript",
+        "at": null
+      },
+      {
+        "label": "npm",
+        "at": null
+      }
+    ]
+  },
+  {
+    "lessonId": "m08-l02",
+    "order": 50,
+    "label": "Module 8 · Lesson 2",
+    "title": "Microphone & Audio in Expo Permissions, Recording & Playback",
+    "introduces": [
+      {
+        "label": "expo-audio",
+        "aliases": [],
+        "summary": "A cross-platform audio library for accessing the native audio capabilities of the device.",
+        "requires": [],
+        "at": 4
+      },
+      {
+        "label": "recording sounds",
+        "aliases": [],
+        "summary": "How to record audio using Expo Audio, including permission handling and recording settings.",
+        "requires": [
+          "expo-audio"
+        ],
+        "at": 267
+      },
+      {
+        "label": "audio playback",
+        "aliases": [],
+        "summary": "How to play, pause, and stop audio using Expo Audio.",
+        "requires": [
+          "expo-audio"
+        ],
+        "at": null
+      },
+      {
+        "label": "expo-file-system",
+        "aliases": [],
+        "summary": "Used for saving recordings, requires creating an Android and iOS build to access the local file system.",
+        "requires": [
+          "expo-audio"
+        ],
+        "at": null
+      }
+    ],
+    "revisits": [
+      {
+        "label": "image picker",
+        "at": 400
+      },
+      {
+        "label": "permissions",
+        "at": 341
+      }
+    ]
+  },
+  {
+    "lessonId": "m08-l03",
+    "order": 51,
+    "label": "Module 8 · Lesson 3",
+    "title": "Build a Profile Pic Creator Pick, Crop & Save User Photos",
+    "introduces": [
+      {
+        "label": "expo-image-picker",
+        "aliases": [],
+        "summary": "A library for selecting images from the device's camera or gallery.",
+        "requires": [
+          "React Native",
+          "npm"
+        ],
+        "at": 43
+      },
+      {
+        "label": "expo-image-manipulator",
+        "aliases": [],
+        "summary": "A library for manipulating images, such as resizing and saving them.",
+        "requires": [
+          "React Native",
+          "npm"
+        ],
+        "at": 51
+      },
+      {
+        "label": "request permissions",
+        "aliases": [],
+        "summary": "A method to request camera and media library permissions from the user.",
+        "requires": [
+          "expo-image-picker"
+        ],
+        "at": 175
+      },
+      {
+        "label": "take photo",
+        "aliases": [],
+        "summary": "A method to launch the camera and take a photo, then manipulate and save it.",
+        "requires": [
+          "expo-image-picker",
+          "expo-image-manipulator"
+        ],
+        "at": 159
+      },
+      {
+        "label": "pick photo",
+        "aliases": [],
+        "summary": "A method to select a photo from the gallery and manipulate it.",
+        "requires": [
+          "expo-image-picker",
+          "expo-image-manipulator"
+        ],
+        "at": 413
+      }
+    ],
+    "revisits": [
+      {
+        "label": "camera",
+        "at": 181
+      },
+      {
+        "label": "media library",
+        "at": 215
+      },
+      {
+        "label": "image manipulation",
+        "at": null
+      },
+      {
+        "label": "React hooks",
+        "at": null
+      },
+      {
+        "label": "state management",
+        "at": null
+      }
+    ]
+  },
+  {
+    "lessonId": "m09-l01",
+    "order": 52,
+    "label": "Module 9 · Lesson 1",
+    "title": "Expo Network Essentials Detect Connectivity, IP & Airplane Mode",
+    "introduces": [
+      {
+        "label": "network API",
+        "aliases": [],
+        "summary": "The network API in Expo allows checking internet connectivity, connection type, and real-time network changes.",
+        "requires": [
+          "expo",
+          "React Native"
+        ],
+        "at": 8
+      },
+      {
+        "label": "internet connectivity",
+        "aliases": [],
+        "summary": "Ability to check if the device is connected to the internet.",
+        "requires": [
+          "network API"
+        ],
+        "at": 26
+      },
+      {
+        "label": "connection type",
+        "aliases": [],
+        "summary": "Determining the type of connection (Wi-Fi, cellular, etc.).",
+        "requires": [
+          "network API"
+        ],
+        "at": 70
+      },
+      {
+        "label": "real-time network changes",
+        "aliases": [],
+        "summary": "Listening for changes in network connectivity in real-time.",
+        "requires": [
+          "network API"
+        ],
+        "at": null
+      },
+      {
+        "label": "IP address",
+        "aliases": [],
+        "summary": "Fetching the device's IP address using the network API.",
+        "requires": [
+          "network API"
+        ],
+        "at": 92
+      },
+      {
+        "label": "network state listener",
+        "aliases": [],
+        "summary": "Using a listener to respond to changes in network state.",
+        "requires": [
+          "network API"
+        ],
+        "at": 1147
+      },
+      {
+        "label": "network state",
+        "aliases": [],
+        "summary": "Understanding the structure of network state including connection status and type.",
+        "requires": [
+          "network API"
+        ],
+        "at": 673
+      },
+      {
+        "label": "offline handling",
+        "aliases": [],
+        "summary": "Implementing features to handle offline scenarios, such as pausing downloads or preventing checkout.",
+        "requires": [
+          "network API"
+        ],
+        "at": null
+      },
+      {
+        "label": "network details",
+        "aliases": [],
+        "summary": "Fetching detailed network information such as IP address and connection status.",
+        "requires": [
+          "network API"
+        ],
+        "at": 1461
+      }
+    ],
+    "revisits": [
+      {
+        "label": "expo",
+        "at": 34
+      },
+      {
+        "label": "React Native",
+        "at": 34
+      }
+    ]
+  },
+  {
+    "lessonId": "m09-l02",
+    "order": 53,
+    "label": "Module 9 · Lesson 2",
+    "title": "Master Expo Linking Deep Links, Universal URLs & Navigation Hooks",
+    "introduces": [
+      {
+        "label": "linking API",
+        "aliases": [],
+        "summary": "The linking API allows your app to open external URLs, handle deep links, and interact with other apps.",
+        "requires": [],
+        "at": 7
+      },
+      {
+        "label": "expo-linking",
+        "aliases": [],
+        "summary": "A library that provides methods to create and open deep links universally.",
+        "requires": [
+          "linking API"
+        ],
+        "at": 266
+      },
+      {
+        "label": "deep linking",
+        "aliases": [],
+        "summary": "A method to handle URLs that open your app and navigate to specific content within it.",
+        "requires": [
+          "linking API"
+        ],
+        "at": 752
+      },
+      {
+        "label": "initial URL",
+        "aliases": [],
+        "summary": "The URL that opened the app when it was launched.",
+        "requires": [
+          "linking API",
+          "deep linking"
+        ],
+        "at": 783
+      },
+      {
+        "label": "universal link",
+        "aliases": [],
+        "summary": "A type of link that redirects users to specific content in apps like YouTube, Instagram, etc.",
+        "requires": [
+          "linking API"
+        ],
+        "at": 1118
+      },
+      {
+        "label": "share sheet",
+        "aliases": [],
+        "summary": "A UI component that allows users to share content from the app to other platforms.",
+        "requires": [
+          "linking API"
+        ],
+        "at": 206
+      },
+      {
+        "label": "canOpenURL",
+        "aliases": [],
+        "summary": "A method to check if a URL can be opened by the app.",
+        "requires": [
+          "linking API"
+        ],
+        "at": 432
+      },
+      {
+        "label": "openURL",
+        "aliases": [],
+        "summary": "A method to open a specified URL.",
+        "requires": [
+          "linking API"
+        ],
+        "at": 432
+      },
+      {
+        "label": "parse",
+        "aliases": [],
+        "summary": "A method to extract components from a deep link URL, such as scheme, hostname, path, and query parameters.",
+        "requires": [
+          "linking API",
+          "deep linking"
+        ],
+        "at": 113
+      }
+    ],
+    "revisits": [
+      {
+        "label": "deep links",
+        "at": 16
+      },
+      {
+        "label": "external URLs",
+        "at": null
+      },
+      {
+        "label": "navigation",
+        "at": 113
+      },
+      {
+        "label": "email",
+        "at": 16
+      },
+      {
+        "label": "SMS",
+        "at": null
+      },
+      {
+        "label": "phone calls",
+        "at": 16
+      },
+      {
+        "label": "map integration",
+        "at": null
+      },
+      {
+        "label": "WhatsApp integration",
+        "at": null
+      },
+      {
+        "label": "product sharing",
+        "at": null
+      },
+      {
+        "label": "customer support links",
+        "at": null
+      },
+      {
+        "label": "tracking URLs",
+        "at": 167
+      },
+      {
+        "label": "payment links",
+        "at": null
+      }
+    ]
+  },
+  {
+    "lessonId": "m09-l03",
+    "order": 54,
+    "label": "Module 9 · Lesson 3",
+    "title": "Add Real Touch Feedback Master Expo Haptics in Your App",
+    "introduces": [
+      {
+        "label": "expo-haptics",
+        "aliases": [],
+        "summary": "A library that provides access to a system's vibration effects on Android and iOS, as well as the web vibration API.",
+        "requires": [
+          "React Native",
+          "npm"
+        ],
+        "at": 29
+      },
+      {
+        "label": "haptics impact",
+        "aliases": [],
+        "summary": "A method to trigger different levels of vibration feedback (light, medium, heavy) in response to user interactions.",
+        "requires": [
+          "expo-haptics"
+        ],
+        "at": 85
+      },
+      {
+        "label": "notification async",
+        "aliases": [],
+        "summary": "A method to trigger haptic feedback in response to notifications, such as success, error, and warning notifications.",
+        "requires": [
+          "expo-haptics"
+        ],
+        "at": 180
+      }
+    ],
+    "revisits": [
+      {
+        "label": "React Native",
+        "at": null
+      },
+      {
+        "label": "npm",
+        "at": null
+      }
+    ]
+  },
+  {
+    "lessonId": "m09-l04",
+    "order": 55,
+    "label": "Module 9 · Lesson 4",
+    "title": "Expo Battery Essentials Detect Battery Level & Power State",
+    "introduces": [
+      {
+        "label": "expo-battery",
+        "aliases": [],
+        "summary": "A library that provides battery information for the physical device, including battery level, charging status, and event listeners for battery changes.",
+        "requires": [
+          "React",
+          "JavaScript",
+          "npm"
+        ],
+        "at": 20
+      },
+      {
+        "label": "battery API",
+        "aliases": [],
+        "summary": "An API used to check the battery level, charging status, and monitor battery states in real time.",
+        "requires": [
+          "expo-battery"
+        ],
+        "at": 40
+      },
+      {
+        "label": "get battery level async",
+        "aliases": [],
+        "summary": "A method to retrieve the current battery level of the device asynchronously.",
+        "requires": [
+          "expo-battery"
+        ],
+        "at": 261
+      },
+      {
+        "label": "get battery state async",
+        "aliases": [],
+        "summary": "A method to retrieve the current charging state of the device asynchronously.",
+        "requires": [
+          "expo-battery"
+        ],
+        "at": null
+      },
+      {
+        "label": "is low power mode enabled async",
+        "aliases": [],
+        "summary": "A method to check if the device is in low power mode asynchronously.",
+        "requires": [
+          "expo-battery"
+        ],
+        "at": 272
+      },
+      {
+        "label": "battery state enums",
+        "aliases": [],
+        "summary": "Enumerations representing different battery states such as charging, full, unplugged, and unknown.",
+        "requires": [
+          "expo-battery"
+        ],
+        "at": 543
+      }
+    ],
+    "revisits": [
+      {
+        "label": "React",
+        "at": null
+      },
+      {
+        "label": "JavaScript",
+        "at": null
+      },
+      {
+        "label": "npm",
+        "at": null
+      }
+    ]
+  },
+  {
+    "lessonId": "m10-l01",
+    "order": 56,
+    "label": "Module 10 · Lesson 1",
+    "title": "What Is EAS Build Why You Need It & Dev Builds vs Expo Go",
+    "introduces": [
+      {
+        "label": "EAS Build",
+        "aliases": [],
+        "summary": "A hosted service for building app binaries for Expo and React Native apps.",
+        "requires": [
+          "expo",
+          "React Native"
+        ],
+        "at": 18
+      },
+      {
+        "label": "EAS",
+        "aliases": [
+          "Expo Application Services"
+        ],
+        "summary": "A suite of cloud-based services provided by Expo to help developers build, submit, and update their applications.",
+        "requires": [
+          "expo",
+          "React Native"
+        ],
+        "at": 43
+      },
+      {
+        "label": "EAS Submit",
+        "aliases": [],
+        "summary": "An automated app store submission service for submitting apps to the Play Store and App Store.",
+        "requires": [
+          "EAS"
+        ],
+        "at": null
+      },
+      {
+        "label": "EAS Update",
+        "aliases": [
+          "OTA updates"
+        ],
+        "summary": "Over-the-air updates for published apps, allowing updates without requiring users to download a new version.",
+        "requires": [
+          "EAS"
+        ],
+        "at": 174
+      },
+      {
+        "label": "Development Build",
+        "aliases": [],
+        "summary": "A custom version of Expo Go tailored for a specific project, allowing the use of all native dependencies and APIs.",
+        "requires": [
+          "expo",
+          "React Native"
+        ],
+        "at": 439
+      },
+      {
+        "label": "Expo Go",
+        "aliases": [],
+        "summary": "A pre-built app available on App Store and Google Play that acts as a sandbox for running Android and iOS applications.",
+        "requires": [
+          "expo",
+          "React Native"
+        ],
+        "at": 253
+      }
+    ],
+    "revisits": [
+      {
+        "label": "Expo SDK",
+        "at": 582
+      },
+      {
+        "label": "native code",
+        "at": 606
+      },
+      {
+        "label": "push notifications",
+        "at": null
+      },
+      {
+        "label": "deep linking",
+        "at": 879
+      },
+      {
+        "label": "Firebase",
+        "at": 867
+      },
+      {
+        "label": "Stripe",
+        "at": 867
+      }
+    ]
+  },
+  {
+    "lessonId": "m10-l02",
+    "order": 57,
+    "label": "Module 10 · Lesson 2",
+    "title": "EAS Development Builds Configure, Build & Run Your Custom Dev Client",
+    "introduces": [
+      {
+        "label": "EAS Build",
+        "aliases": [],
+        "summary": "EAS Build is a hosted service for building app binaries for Expo and React Native projects, allowing submission to app stores.",
+        "requires": [],
+        "at": 503
+      },
+      {
+        "label": "Expo Dev Client",
+        "aliases": [],
+        "summary": "The Expo Dev Client is a library that allows for the creation of a custom development build of an Expo application.",
+        "requires": [
+          "EAS Build"
+        ],
+        "at": 465
+      },
+      {
+        "label": "EAS CLI",
+        "aliases": [],
+        "summary": "EAS CLI is a command line tool for managing builds and configurations for Expo applications.",
+        "requires": [],
+        "at": 247
+      },
+      {
+        "label": "Development Build",
+        "aliases": [],
+        "summary": "A Development Build is a version of the app that includes debugging capabilities and connects to the Metro server for live reloading.",
+        "requires": [
+          "Expo Dev Client"
+        ],
+        "at": 7
+      },
+      {
+        "label": "Build Profiles",
+        "aliases": [],
+        "summary": "Build profiles define different configurations for building the app, including development, preview, and production profiles.",
+        "requires": [
+          "EAS Build"
+        ],
+        "at": null
+      },
+      {
+        "label": "app.json Configuration",
+        "aliases": [],
+        "summary": "The app.json file contains configuration settings for the Expo application, including project ID and extra parameters for the development build.",
+        "requires": [
+          "EAS Build"
+        ],
+        "at": null
+      }
+    ],
+    "revisits": [
+      {
+        "label": "Expo Go",
+        "at": 176
+      },
+      {
+        "label": "npm",
+        "at": null
+      },
+      {
+        "label": "React Native",
+        "at": 30
+      }
+    ]
+  },
+  {
+    "lessonId": "m10-l03",
+    "order": 58,
+    "label": "Module 10 · Lesson 3",
+    "title": "Configure, Create & Test EAS Development Builds From Setup to Device",
+    "introduces": [
+      {
+        "label": "EAS build",
+        "aliases": [],
+        "summary": "Creating and running a cloud build for an Android application using EAS build.",
+        "requires": [
+          "expo",
+          "Android application structure"
+        ],
+        "at": 116
+      },
+      {
+        "label": "APK",
+        "aliases": [],
+        "summary": "The format required for development builds on Android, as opposed to AAB which is for Google Play Store distribution.",
+        "requires": [
+          "Android application structure"
+        ],
+        "at": null
+      },
+      {
+        "label": "EAS JSON",
+        "aliases": [],
+        "summary": "Configuration file where the development client must be set to true for creating a development build.",
+        "requires": [
+          "EAS build"
+        ],
+        "at": null
+      },
+      {
+        "label": "development profile",
+        "aliases": [],
+        "summary": "A specific profile used when creating a development build with EAS build.",
+        "requires": [
+          "EAS build"
+        ],
+        "at": 103
+      },
+      {
+        "label": "Android application ID",
+        "aliases": [],
+        "summary": "A unique identifier for the Android application that is set during the build process.",
+        "requires": [
+          "EAS build"
+        ],
+        "at": 124
+      },
+      {
+        "label": "key store",
+        "aliases": [],
+        "summary": "A file used to sign the Android application, which is generated automatically by EAS build.",
+        "requires": [
+          "EAS build"
+        ],
+        "at": 173
+      },
+      {
+        "label": "development build",
+        "aliases": [],
+        "summary": "A build that allows for real-time changes and debugging, distinct from production builds.",
+        "requires": [
+          "EAS build",
+          "APK"
+        ],
+        "at": 10
+      }
+    ],
+    "revisits": [
+      {
+        "label": "AAB",
+        "at": null
+      },
+      {
+        "label": "expo-go",
+        "at": 349
+      },
+      {
+        "label": "expo start",
+        "at": 368
+      }
+    ]
+  },
+  {
+    "lessonId": "m10-l04",
+    "order": 59,
+    "label": "Module 10 · Lesson 4",
+    "title": "Configure Multiple App Variants with EAS Install & Test on One Device",
+    "introduces": [
+      {
+        "label": "multiple app variants",
+        "aliases": [],
+        "summary": "Configuring multiple variations of an app for different environments (development, preview, production).",
+        "requires": [
+          "app.json",
+          "EAS Build"
+        ],
+        "at": 0
+      },
+      {
+        "label": "unique Android application ID",
+        "aliases": [],
+        "summary": "Each app variant requires a unique Android application ID for installation on one device.",
+        "requires": [
+          "multiple app variants"
+        ],
+        "at": 38
+      },
+      {
+        "label": "bundle identifier",
+        "aliases": [],
+        "summary": "A unique identifier for iOS apps, necessary for distinguishing apps in the App Store.",
+        "requires": [
+          "multiple app variants"
+        ],
+        "at": 45
+      },
+      {
+        "label": "app.config.js",
+        "aliases": [
+          "app.config.ts"
+        ],
+        "summary": "Renaming app.json to app.config.js or app.config.ts to configure app variants.",
+        "requires": [
+          "multiple app variants"
+        ],
+        "at": 113
+      },
+      {
+        "label": "environment variables",
+        "aliases": [],
+        "summary": "Using environment variables to manage app variants in EAS JSON.",
+        "requires": [
+          "multiple app variants"
+        ],
+        "at": 545
+      },
+      {
+        "label": "EAS JSON",
+        "aliases": [],
+        "summary": "Configuration file for EAS Build that includes app variant settings.",
+        "requires": [
+          "multiple app variants"
+        ],
+        "at": 538
+      },
+      {
+        "label": "get unique identifier",
+        "aliases": [],
+        "summary": "Function to retrieve a unique identifier for the app based on the environment.",
+        "requires": [
+          "bundle identifier",
+          "environment variables"
+        ],
+        "at": 329
+      }
+    ],
+    "revisits": [
+      {
+        "label": "EAS Build",
+        "at": null
+      },
+      {
+        "label": "app.json",
+        "at": 63
+      },
+      {
+        "label": "TypeScript",
+        "at": 234
+      },
+      {
+        "label": "Expo",
+        "at": 152
+      }
+    ]
+  },
+  {
+    "lessonId": "m11-l01",
+    "order": 60,
+    "label": "Module 11 · Chapter 1",
+    "title": "Bring Native Maps Into Your App Expo Maps Overview",
+    "introduces": [
+      {
+        "label": "expo-maps",
+        "aliases": [],
+        "summary": "A cross-platform map component that provides a unified API for displaying maps on both Android and iOS, using Apple Maps on iOS and Google Maps on Android.",
+        "requires": [
+          "development build",
+          "basic understanding of React Native"
+        ],
+        "at": 8
+      },
+      {
+        "label": "Google Cloud API",
+        "aliases": [],
+        "summary": "A service that allows you to register a project and enable the Google Maps SDK for Android, which is necessary for using Google Maps in your Expo app.",
+        "requires": [
+          "expo-maps"
+        ],
+        "at": 280
+      },
+      {
+        "label": "camera position",
+        "aliases": [],
+        "summary": "A property that allows you to set the coordinates and zoom level for the map view.",
+        "requires": [
+          "expo-maps"
+        ],
+        "at": 977
+      },
+      {
+        "label": "markers",
+        "aliases": [],
+        "summary": "Custom points on the map that can display information and be draggable.",
+        "requires": [
+          "expo-maps"
+        ],
+        "at": 162
+      },
+      {
+        "label": "polylines",
+        "aliases": [],
+        "summary": "Lines on the map that connect multiple points, defined by coordinates and customizable properties like color and width.",
+        "requires": [
+          "expo-maps"
+        ],
+        "at": 1790
+      },
+      {
+        "label": "map events",
+        "aliases": [],
+        "summary": "Events that can be handled in the map, such as clicks on markers or the map itself, allowing for interactive features.",
+        "requires": [
+          "expo-maps"
+        ],
+        "at": 2026
+      }
+    ],
+    "revisits": [
+      {
+        "label": "development build",
+        "at": 10
+      },
+      {
+        "label": "React Native components",
+        "at": null
+      },
+      {
+        "label": "JavaScript basics",
+        "at": null
+      }
+    ]
+  },
+  {
+    "lessonId": "m11-l02",
+    "order": 61,
+    "label": "Module 11 · Chapter 2",
+    "title": "Map Camera Jump Demo Programmatically Move & Focus the Map",
+    "introduces": [
+      {
+        "label": "camera positioning",
+        "aliases": [],
+        "summary": "Understanding how to programmatically move and focus the map using camera positioning.",
+        "requires": [
+          "expo-map",
+          "latitude and longitude",
+          "React Native"
+        ],
+        "at": 21
+      },
+      {
+        "label": "camera position prop",
+        "aliases": [],
+        "summary": "Using the camera position prop to control the map's camera view, including coordinates and zoom level.",
+        "requires": [
+          "expo-map",
+          "latitude and longitude"
+        ],
+        "at": 79
+      },
+      {
+        "label": "map container style",
+        "aliases": [],
+        "summary": "Applying styles to the map container for proper layout and design.",
+        "requires": [
+          "React Native"
+        ],
+        "at": null
+      },
+      {
+        "label": "button component",
+        "aliases": [],
+        "summary": "Creating buttons to change the map's camera position based on city coordinates.",
+        "requires": [
+          "React Native"
+        ],
+        "at": null
+      },
+      {
+        "label": "longitude and latitude",
+        "aliases": [],
+        "summary": "Using longitude and latitude to specify locations on the map.",
+        "requires": [
+          "geolocation basics"
+        ],
+        "at": 73
+      },
+      {
+        "label": "zoom level",
+        "aliases": [],
+        "summary": "Controlling the zoom level of the map to focus on specific areas.",
+        "requires": [
+          "expo-map"
+        ],
+        "at": null
+      }
+    ],
+    "revisits": [
+      {
+        "label": "expo-map",
+        "at": 6
+      },
+      {
+        "label": "React Native",
+        "at": 244
+      }
+    ]
+  },
+  {
+    "lessonId": "m11-l03",
+    "order": 62,
+    "label": "Module 11 · Chapter 3",
+    "title": "Markers, Routes & Interactions Map Features",
+    "introduces": [
+      {
+        "label": "map controls",
+        "aliases": [],
+        "summary": "Controls for interacting with the map, including toggling UI elements and changing camera positions.",
+        "requires": [
+          "React Native",
+          "Google Maps"
+        ],
+        "at": 3
+      },
+      {
+        "label": "camera position",
+        "aliases": [],
+        "summary": "Setting and updating the camera position on the map.",
+        "requires": [
+          "map controls"
+        ],
+        "at": 20
+      },
+      {
+        "label": "UI settings",
+        "aliases": [],
+        "summary": "Settings for enabling or disabling UI elements like compass and zoom controls on the map.",
+        "requires": [
+          "map controls"
+        ],
+        "at": 34
+      },
+      {
+        "label": "compass",
+        "aliases": [],
+        "summary": "A UI element that shows the direction on the map.",
+        "requires": [
+          "UI settings"
+        ],
+        "at": 29
+      },
+      {
+        "label": "zoom control",
+        "aliases": [],
+        "summary": "A UI element that allows users to zoom in and out on the map.",
+        "requires": [
+          "UI settings"
+        ],
+        "at": 58
+      },
+      {
+        "label": "scroll gesture",
+        "aliases": [],
+        "summary": "Gesture control for scrolling the map view.",
+        "requires": [
+          "UI settings"
+        ],
+        "at": 58
+      },
+      {
+        "label": "zoom gesture",
+        "aliases": [],
+        "summary": "Gesture control for zooming the map view using fingers.",
+        "requires": [
+          "UI settings"
+        ],
+        "at": 64
+      }
+    ],
+    "revisits": []
+  },
+  {
+    "lessonId": "m11-l04",
+    "order": 63,
+    "label": "Module 11 · Chapter 4",
+    "title": "Build Smart Maps Map Controls, Markers & Routing in Expo",
+    "introduces": [
+      {
+        "label": "markers",
+        "aliases": [],
+        "summary": "Introduction to markers in maps, including properties like coordinates, titles, snippets, and draggable functionality.",
+        "requires": [
+          "expo-map"
+        ],
+        "at": 8
+      },
+      {
+        "label": "draggable markers",
+        "aliases": [],
+        "summary": "Explanation of how to implement draggable markers on a map, allowing users to move them to different locations.",
+        "requires": [
+          "markers"
+        ],
+        "at": null
+      },
+      {
+        "label": "map camera",
+        "aliases": [],
+        "summary": "Discussion on integrating map camera functionality with markers to enhance user interaction.",
+        "requires": [
+          "expo-map"
+        ],
+        "at": 14
+      }
+    ],
+    "revisits": [
+      {
+        "label": "expo-map",
+        "at": 61
+      }
+    ]
+  },
+  {
+    "lessonId": "m11-l05",
+    "order": 64,
+    "label": "Module 11 · Chapter 5",
+    "title": "Interactive Map Experiences From Pins to Paths polylines",
+    "introduces": [
+      {
+        "label": "polylines",
+        "aliases": [],
+        "summary": "Using polylines to represent routes on a map with specific coordinates and properties.",
+        "requires": [
+          "Google Maps API",
+          "React Native"
+        ],
+        "at": 3
+      },
+      {
+        "label": "state variables",
+        "aliases": [
+          "React state"
+        ],
+        "summary": "Creating and managing state variables for traffic, satellite view, and selection in a React component.",
+        "requires": [
+          "React",
+          "JavaScript"
+        ],
+        "at": 49
+      },
+      {
+        "label": "traffic enabled",
+        "aliases": [],
+        "summary": "Enabling traffic view on the map using a state variable.",
+        "requires": [
+          "Google Maps API",
+          "React Native"
+        ],
+        "at": 120
+      },
+      {
+        "label": "map type",
+        "aliases": [],
+        "summary": "Setting the type of map view (satellite or standard) based on user selection.",
+        "requires": [
+          "Google Maps API",
+          "React Native"
+        ],
+        "at": 125
+      },
+      {
+        "label": "marker",
+        "aliases": [],
+        "summary": "Creating markers on the map for specific coordinates with titles and snippets.",
+        "requires": [
+          "Google Maps API",
+          "React Native"
+        ],
+        "at": 83
+      }
+    ],
+    "revisits": [
+      {
+        "label": "Google Maps",
+        "at": 107
+      },
+      {
+        "label": "React Native",
+        "at": null
+      }
+    ]
+  },
+  {
+    "lessonId": "m12-l01",
+    "order": 65,
+    "label": "Module 12 · Chapter 1",
+    "title": "what is notification types of notificaiton in app notification",
+    "introduces": [
+      {
+        "label": "expo notifications",
+        "aliases": [],
+        "summary": "Introduction to the expo notifications module and its purpose.",
+        "requires": [],
+        "at": 5
+      },
+      {
+        "label": "notification types",
+        "aliases": [],
+        "summary": "Explanation of different types of notifications: local and remote (push) notifications.",
+        "requires": [],
+        "at": null
+      },
+      {
+        "label": "local notification",
+        "aliases": [
+          "offline notification",
+          "alarm notification",
+          "reminder notification"
+        ],
+        "summary": "Local notifications are triggered directly from the device without needing internet or a backend.",
+        "requires": [],
+        "at": 23
+      },
+      {
+        "label": "remote notification",
+        "aliases": [
+          "push notification"
+        ],
+        "summary": "Remote notifications are sent from a server and require internet and a backend to function.",
+        "requires": [],
+        "at": 23
+      },
+      {
+        "label": "notification permissions",
+        "aliases": [],
+        "summary": "Understanding the need for permissions to send notifications in an app.",
+        "requires": [],
+        "at": null
+      },
+      {
+        "label": "EAS build",
+        "aliases": [],
+        "summary": "Introduction to creating a development build using EAS for push notifications.",
+        "requires": [
+          "expo notifications"
+        ],
+        "at": 429
+      }
+    ],
+    "revisits": [
+      {
+        "label": "React Native",
+        "at": 72
+      },
+      {
+        "label": "JavaScript",
+        "at": 72
+      },
+      {
+        "label": "npm",
+        "at": null
+      }
+    ]
+  },
+  {
+    "lessonId": "m12-l02",
+    "order": 66,
+    "label": "Module 12 · Chapter 2",
+    "title": "push notification",
+    "introduces": [
+      {
+        "label": "push notification",
+        "aliases": [],
+        "summary": "How to set up push notifications in an Expo application, including necessary libraries and configurations.",
+        "requires": [
+          "expo-notifications",
+          "expo-device",
+          "expo-constants",
+          "Firebase Cloud Messaging (FCM)",
+          "Apple Push Notification service (APNs)"
+        ],
+        "at": 4
+      },
+      {
+        "label": "expo-push-token",
+        "aliases": [],
+        "summary": "The token issued by Expo servers used to send notifications to a device.",
+        "requires": [
+          "push notification"
+        ],
+        "at": 129
+      },
+      {
+        "label": "Firebase Cloud Messaging (FCM)",
+        "aliases": [
+          "FCM"
+        ],
+        "summary": "Google's push notification delivery service for Android devices.",
+        "requires": [
+          "push notification"
+        ],
+        "at": null
+      },
+      {
+        "label": "APNs",
+        "aliases": [],
+        "summary": "Apple's push notification service for iOS devices.",
+        "requires": [
+          "push notification"
+        ],
+        "at": 444
+      },
+      {
+        "label": "notification channel",
+        "aliases": [],
+        "summary": "A required setup for Android to ensure notifications are delivered properly.",
+        "requires": [
+          "push notification"
+        ],
+        "at": 2092
+      },
+      {
+        "label": "EAS build",
+        "aliases": [],
+        "summary": "A command to build the Expo application for deployment, including setting up credentials for push notifications.",
+        "requires": [
+          "expo-cli"
+        ],
+        "at": 239
+      },
+      {
+        "label": "Google services file",
+        "aliases": [
+          "google-services.json"
+        ],
+        "summary": "A configuration file required for Firebase setup in an Android application.",
+        "requires": [
+          "Firebase Cloud Messaging (FCM)"
+        ],
+        "at": 1638
+      }
+    ],
+    "revisits": [
+      {
+        "label": "expo-secure-store",
+        "at": null
+      },
+      {
+        "label": "file-based routing",
+        "at": null
+      }
+    ]
+  },
+  {
+    "lessonId": "m12-l03",
+    "order": 67,
+    "label": "Module 12 · Chapter 3",
+    "title": "remainder buddy application using expo push notification",
+    "introduces": [
+      {
+        "label": "reminder buddy application",
+        "aliases": [],
+        "summary": "Creating a reminder buddy application that schedules notifications.",
+        "requires": [],
+        "at": 11
+      },
+      {
+        "label": "schedule notification",
+        "aliases": [
+          "schedule reminder"
+        ],
+        "summary": "Function to schedule a notification based on user input.",
+        "requires": [
+          "state variables",
+          "async functions"
+        ],
+        "at": 185
+      },
+      {
+        "label": "expo push notifications",
+        "aliases": [
+          "push notifications"
+        ],
+        "summary": "Using Expo's notification API to send push notifications at scheduled times.",
+        "requires": [
+          "schedule notification"
+        ],
+        "at": null
+      },
+      {
+        "label": "state variables",
+        "aliases": [],
+        "summary": "Using state variables to manage reminders and form inputs.",
+        "requires": [
+          "React state management"
+        ],
+        "at": 115
+      },
+      {
+        "label": "flat list",
+        "aliases": [],
+        "summary": "Displaying a list of reminders using FlatList component.",
+        "requires": [
+          "React Native components"
+        ],
+        "at": 50
+      },
+      {
+        "label": "modal",
+        "aliases": [],
+        "summary": "Using a modal to input reminder details.",
+        "requires": [
+          "React Native components"
+        ],
+        "at": null
+      },
+      {
+        "label": "trigger options",
+        "aliases": [],
+        "summary": "Defining trigger options for notifications, such as time intervals.",
+        "requires": [
+          "schedule notification"
+        ],
+        "at": 293
+      },
+      {
+        "label": "notification ID",
+        "aliases": [],
+        "summary": "Managing notification IDs for scheduled reminders.",
+        "requires": [
+          "schedule notification"
+        ],
+        "at": 75
+      }
+    ],
+    "revisits": [
+      {
+        "label": "async functions",
+        "at": null
+      },
+      {
+        "label": "React Native components",
+        "at": null
+      },
+      {
+        "label": "React state management",
+        "at": null
+      }
+    ]
+  },
+  {
+    "lessonId": "m13-l01",
+    "order": 68,
+    "label": "Module 13 · Chapter 1",
+    "title": "auth in expo protected routes and auth flow",
+    "introduces": [
+      {
+        "label": "protected routes",
+        "aliases": [],
+        "summary": "Protected routes separate public screens from protected screens based on user authentication status.",
+        "requires": [
+          "expo-router"
+        ],
+        "at": 17
+      },
+      {
+        "label": "navigation auth flow",
+        "aliases": [],
+        "summary": "The navigation auth flow determines which screens a user can access based on their authentication status.",
+        "requires": [
+          "protected routes"
+        ],
+        "at": 48
+      },
+      {
+        "label": "expo-router",
+        "aliases": [],
+        "summary": "A routing library for Expo that allows for protected routes and navigation based on authentication.",
+        "requires": [
+          "React Navigation"
+        ],
+        "at": 26
+      }
+    ],
+    "revisits": [
+      {
+        "label": "authentication",
+        "at": 1
+      },
+      {
+        "label": "public screens",
+        "at": 146
+      },
+      {
+        "label": "private screens",
+        "at": null
+      },
+      {
+        "label": "client-side navigation",
+        "at": 188
+      },
+      {
+        "label": "Google authentication",
+        "at": null
+      },
+      {
+        "label": "GitHub authentication",
+        "at": 289
+      },
+      {
+        "label": "BetterAuth",
+        "at": 31
+      },
+      {
+        "label": "Clerk",
+        "at": 97
+      },
+      {
+        "label": "nested routing",
+        "at": 905
+      },
+      {
+        "label": "protected tabs",
+        "at": 1012
+      },
+      {
+        "label": "drawer navigation",
+        "at": null
+      }
+    ]
+  },
+  {
+    "lessonId": "m13-l02",
+    "order": 69,
+    "label": "Module 13 · Chapter 2",
+    "title": "credentials login",
+    "introduces": [
+      {
+        "label": "Expo SQLite",
+        "aliases": [],
+        "summary": "A library for using SQLite databases in Expo applications.",
+        "requires": [],
+        "at": 36
+      },
+      {
+        "label": "expo-secure-store",
+        "aliases": [],
+        "summary": "A library for securely storing sensitive data, such as authentication tokens, on the device.",
+        "requires": [],
+        "at": 44
+      },
+      {
+        "label": "JWT (JSON Web Token)",
+        "aliases": [],
+        "summary": "A compact, URL-safe means of representing claims to be transferred between two parties, used for authentication.",
+        "requires": [],
+        "at": null
+      },
+      {
+        "label": "local database",
+        "aliases": [],
+        "summary": "A database that is stored locally on the device, used for storing user credentials in this context.",
+        "requires": [],
+        "at": 74
+      },
+      {
+        "label": "global state management",
+        "aliases": [
+          "Zustand"
+        ],
+        "summary": "A method for managing application state globally, allowing components to access and modify state easily.",
+        "requires": [],
+        "at": 371
+      },
+      {
+        "label": "authentication flow",
+        "aliases": [],
+        "summary": "The process of signing up, logging in, and logging out users in an application.",
+        "requires": [
+          "Expo SQLite",
+          "expo-secure-store"
+        ],
+        "at": null
+      },
+      {
+        "label": "sign up",
+        "aliases": [],
+        "summary": "The process of creating a new user account with email and password.",
+        "requires": [
+          "authentication flow"
+        ],
+        "at": 328
+      },
+      {
+        "label": "login",
+        "aliases": [],
+        "summary": "The process of authenticating a user with their email and password.",
+        "requires": [
+          "authentication flow"
+        ],
+        "at": 341
+      },
+      {
+        "label": "logout",
+        "aliases": [],
+        "summary": "The process of signing out a user and removing their authentication token.",
+        "requires": [
+          "authentication flow"
+        ],
+        "at": 358
+      }
+    ],
+    "revisits": [
+      {
+        "label": "email and password authentication",
+        "at": 5
+      },
+      {
+        "label": "base64 URL encoding",
+        "at": null
+      },
+      {
+        "label": "token management",
+        "at": null
+      },
+      {
+        "label": "error handling",
+        "at": null
+      },
+      {
+        "label": "React Native components",
+        "at": null
+      },
+      {
+        "label": "useEffect hook",
+        "at": null
+      }
+    ]
+  },
+  {
+    "lessonId": "m13-l03",
+    "order": 70,
+    "label": "Module 13 · Chapter 3",
+    "title": "implementing google oauth",
+    "introduces": [
+      {
+        "label": "Google OAuth",
+        "aliases": [],
+        "summary": "Implementing Google OAuth in an Expo app using OAuth 2.0 protocol for user authentication without managing passwords.",
+        "requires": [
+          "expo-auth-session",
+          "expo-secure-store",
+          "JavaScript",
+          "React"
+        ],
+        "at": 4
+      },
+      {
+        "label": "OAuth 2.0",
+        "aliases": [],
+        "summary": "A secure protocol that allows applications to access user information from third-party services without handling passwords.",
+        "requires": [],
+        "at": 10
+      },
+      {
+        "label": "Expo API routes",
+        "aliases": [],
+        "summary": "Using Expo API routes to handle authentication requests and responses during the OAuth flow.",
+        "requires": [
+          "Expo",
+          "JavaScript"
+        ],
+        "at": 198
+      },
+      {
+        "label": "Expo Auth Session",
+        "aliases": [],
+        "summary": "A library used to manage the OAuth authentication flow in Expo applications.",
+        "requires": [
+          "Expo",
+          "JavaScript"
+        ],
+        "at": 307
+      },
+      {
+        "label": "JWT (JSON Web Token)",
+        "aliases": [],
+        "summary": "A compact, URL-safe means of representing claims to be transferred between two parties, used for securely transmitting information as a JSON object.",
+        "requires": [
+          "JavaScript"
+        ],
+        "at": null
+      },
+      {
+        "label": "Expo Secure Store",
+        "aliases": [],
+        "summary": "A module for securely storing key-value pairs in an Expo app, used for storing access tokens.",
+        "requires": [
+          "Expo",
+          "JavaScript"
+        ],
+        "at": 336
+      },
+      {
+        "label": "Authorization Code Flow",
+        "aliases": [],
+        "summary": "A method of obtaining an access token by exchanging an authorization code received from the authorization server.",
+        "requires": [
+          "OAuth 2.0",
+          "JavaScript"
+        ],
+        "at": null
+      },
+      {
+        "label": "Access Token",
+        "aliases": [],
+        "summary": "A token that allows access to user information after successful authentication via OAuth.",
+        "requires": [
+          "OAuth 2.0",
+          "JavaScript"
+        ],
+        "at": 180
+      },
+      {
+        "label": "User Info Endpoint",
+        "aliases": [],
+        "summary": "An endpoint provided by Google to retrieve user information after obtaining an access token.",
+        "requires": [
+          "OAuth 2.0",
+          "JavaScript"
+        ],
+        "at": null
+      }
+    ],
+    "revisits": [
+      {
+        "label": "expo-secure-store",
+        "at": 336
+      },
+      {
+        "label": "expo-auth-session",
+        "at": 307
+      },
+      {
+        "label": "expo-api-routes",
+        "at": 198
+      },
+      {
+        "label": "JWT",
+        "at": null
+      },
+      {
+        "label": "OAuth 2.0",
+        "at": 10
+      }
+    ]
+  },
+  {
+    "lessonId": "m13-l04",
+    "order": 71,
+    "label": "Module 13 · Chapter 4",
+    "title": "implementing github authenitcation",
+    "introduces": [
+      {
+        "label": "GitHub authentication",
+        "aliases": [],
+        "summary": "Implementing authentication using GitHub's OAuth.",
+        "requires": [
+          "OAuth",
+          "API requests"
+        ],
+        "at": 4
+      },
+      {
+        "label": "GitHub client ID",
+        "aliases": [],
+        "summary": "A unique identifier for the GitHub application used in authentication.",
+        "requires": [
+          "GitHub authentication"
+        ],
+        "at": 951
+      },
+      {
+        "label": "GitHub client secret",
+        "aliases": [],
+        "summary": "A secret key used in conjunction with the client ID for secure authentication.",
+        "requires": [
+          "GitHub authentication"
+        ],
+        "at": 73
+      },
+      {
+        "label": "GitHub auth URL",
+        "aliases": [],
+        "summary": "The URL used to initiate the OAuth flow with GitHub.",
+        "requires": [
+          "GitHub authentication"
+        ],
+        "at": 77
+      },
+      {
+        "label": "GitHub token URL",
+        "aliases": [],
+        "summary": "The URL used to exchange the authorization code for an access token.",
+        "requires": [
+          "GitHub authentication"
+        ],
+        "at": 77
+      },
+      {
+        "label": "GitHub user API",
+        "aliases": [],
+        "summary": "The API endpoint to fetch user information from GitHub after authentication.",
+        "requires": [
+          "GitHub authentication"
+        ],
+        "at": 100
+      },
+      {
+        "label": "scope",
+        "aliases": [],
+        "summary": "Permissions requested from the user during the OAuth process, such as email access.",
+        "requires": [
+          "GitHub authentication"
+        ],
+        "at": 160
+      },
+      {
+        "label": "useAuthRequest",
+        "aliases": [],
+        "summary": "A hook used to manage authentication requests in the application.",
+        "requires": [
+          "React",
+          "React hooks"
+        ],
+        "at": 676
+      },
+      {
+        "label": "normalize user",
+        "aliases": [],
+        "summary": "A process to format user data received from GitHub into a usable structure.",
+        "requires": [
+          "GitHub user API"
+        ],
+        "at": 515
+      }
+    ],
+    "revisits": [
+      {
+        "label": "Google authentication",
+        "at": null
+      },
+      {
+        "label": "API requests",
+        "at": null
+      },
+      {
+        "label": "React",
+        "at": null
+      },
+      {
+        "label": "React hooks",
+        "at": null
+      }
+    ]
+  },
+  {
+    "lessonId": "m13-l05",
+    "order": 72,
+    "label": "Module 13 · Chapter 5",
+    "title": "implementing credential and oauth authentication using better auth",
+    "introduces": [
+      {
+        "label": "better auth",
+        "aliases": [],
+        "summary": "A comprehensive authentication framework for TypeScript that supports various authentication methods including email/password and OAuth.",
+        "requires": [
+          "TypeScript",
+          "OAuth",
+          "email/password authentication"
+        ],
+        "at": 5
+      },
+      {
+        "label": "OAuth authentication",
+        "aliases": [
+          "Google authentication",
+          "GitHub authentication"
+        ],
+        "summary": "A method of authentication that allows users to log in using their existing accounts from other platforms like Google and GitHub.",
+        "requires": [
+          "better auth"
+        ],
+        "at": 16
+      },
+      {
+        "label": "expo-secure-store",
+        "aliases": [],
+        "summary": "A package used to securely store sensitive data in Expo applications.",
+        "requires": [
+          "Expo"
+        ],
+        "at": 485
+      },
+      {
+        "label": "deep linking",
+        "aliases": [],
+        "summary": "A method that allows users to be redirected back to the app after authentication.",
+        "requires": [
+          "better auth"
+        ],
+        "at": 692
+      },
+      {
+        "label": "Metro config",
+        "aliases": [],
+        "summary": "Configuration file for Metro bundler to enable package exports for better auth.",
+        "requires": [
+          "Expo"
+        ],
+        "at": 709
+      },
+      {
+        "label": "auth client",
+        "aliases": [],
+        "summary": "An instance used to manage authentication state and perform authentication actions in the app.",
+        "requires": [
+          "better auth"
+        ],
+        "at": 463
+      },
+      {
+        "label": "social sign-in",
+        "aliases": [],
+        "summary": "A feature that allows users to log in using social media accounts like Google and GitHub.",
+        "requires": [
+          "OAuth authentication",
+          "better auth"
+        ],
+        "at": 1407
+      }
+    ],
+    "revisits": [
+      {
+        "label": "Expo",
+        "at": 84
+      },
+      {
+        "label": "TypeScript",
+        "at": 47
+      },
+      {
+        "label": "email/password authentication",
+        "at": null
+      }
+    ]
+  },
+  {
+    "lessonId": "m13-l06",
+    "order": 73,
+    "label": "Module 13 · Chapter 6",
+    "title": "implementing clerk authentication",
+    "introduces": [
+      {
+        "label": "clerk authentication",
+        "aliases": [],
+        "summary": "Implementing clerk authentication in an Expo app, including setup and configuration steps.",
+        "requires": [
+          "expo",
+          "npm",
+          "React"
+        ],
+        "at": 6
+      },
+      {
+        "label": "clerk provider",
+        "aliases": [],
+        "summary": "Using the clerk provider component to provide session and user context to clerk hooks and components.",
+        "requires": [
+          "clerk authentication"
+        ],
+        "at": 204
+      },
+      {
+        "label": "token cache",
+        "aliases": [],
+        "summary": "Configuring the token cache with Expo using expo-secure-store.",
+        "requires": [
+          "expo",
+          "clerk authentication"
+        ],
+        "at": 255
+      },
+      {
+        "label": "sign up flow",
+        "aliases": [],
+        "summary": "Creating a custom sign up page using clerk hooks and components.",
+        "requires": [
+          "clerk authentication",
+          "clerk provider"
+        ],
+        "at": null
+      },
+      {
+        "label": "sign in flow",
+        "aliases": [],
+        "summary": "Creating a custom sign in page using clerk hooks and components.",
+        "requires": [
+          "clerk authentication",
+          "clerk provider"
+        ],
+        "at": 303
+      },
+      {
+        "label": "sign out button",
+        "aliases": [],
+        "summary": "Implementing a sign out button in the application.",
+        "requires": [
+          "clerk authentication",
+          "clerk provider"
+        ],
+        "at": 443
+      },
+      {
+        "label": "home route",
+        "aliases": [],
+        "summary": "Creating a home route for the application after authentication.",
+        "requires": [
+          "clerk authentication",
+          "clerk provider"
+        ],
+        "at": 472
+      }
+    ],
+    "revisits": [
+      {
+        "label": "expo-secure-store",
+        "at": null
+      },
+      {
+        "label": "OAuth",
+        "at": 95
+      },
+      {
+        "label": "custom authentication",
+        "at": 13
+      },
+      {
+        "label": "GitHub authentication",
+        "at": null
+      },
+      {
+        "label": "Google authentication",
+        "at": null
+      },
+      {
+        "label": "Apple authentication",
+        "at": null
+      }
+    ]
+  },
+  {
+    "lessonId": "m14-l01",
+    "order": 74,
+    "label": "Module 14 · Lesson 1",
+    "title": "eas workflows",
+    "introduces": [
+      {
+        "label": "EAS workflows",
+        "aliases": [],
+        "summary": "Learn how to use EAS workflows to automate your React Native CI/CD development, continuous integration, continuous development, and release processes.",
+        "requires": [
+          "expo account",
+          "basic project setup",
+          "GitHub integration"
+        ],
+        "at": 4
+      },
+      {
+        "label": "EAS JSON file",
+        "aliases": [],
+        "summary": "Create an EAS JSON file to define workflows for your project.",
+        "requires": [
+          "EAS workflows"
+        ],
+        "at": 39
+      },
+      {
+        "label": "GitHub integration",
+        "aliases": [],
+        "summary": "Connect your GitHub application to EAS to trigger workflows on commits.",
+        "requires": [
+          "EAS workflows"
+        ],
+        "at": null
+      },
+      {
+        "label": "workflow file",
+        "aliases": [],
+        "summary": "Create a .yml file inside the .eas directory to define specific workflows for your project.",
+        "requires": [
+          "EAS JSON file"
+        ],
+        "at": 269
+      },
+      {
+        "label": "cron job",
+        "aliases": [],
+        "summary": "Schedule builds to run at specific times using cron syntax.",
+        "requires": [
+          "EAS workflows"
+        ],
+        "at": 396
+      },
+      {
+        "label": "preview build",
+        "aliases": [],
+        "summary": "Trigger builds for preview purposes, which can be done manually or automatically.",
+        "requires": [
+          "EAS workflows"
+        ],
+        "at": 408
+      }
+    ],
+    "revisits": [
+      {
+        "label": "continuous integration",
+        "at": 11
+      },
+      {
+        "label": "continuous development",
+        "at": 17
+      },
+      {
+        "label": "React Native",
+        "at": 11
+      },
+      {
+        "label": "Expo",
+        "at": 24
+      }
+    ]
+  },
+  {
+    "lessonId": "m14-l02",
+    "order": 75,
+    "label": "Module 14 · Lesson 2",
+    "title": "eas update",
+    "introduces": [
+      {
+        "label": "EAS update",
+        "aliases": [],
+        "summary": "A cloud service that serves updates for projects using the expo update library, allowing for quick fixes without going through app store submissions.",
+        "requires": [
+          "expo-update library",
+          "OTA (Over The Air) updates"
+        ],
+        "at": 16
+      },
+      {
+        "label": "EAS workflows",
+        "aliases": [],
+        "summary": "Processes involved in managing the build and update lifecycle of an Expo application.",
+        "requires": [],
+        "at": 18
+      },
+      {
+        "label": "EAS submit",
+        "aliases": [],
+        "summary": "A tool for submitting applications to the Play Store or App Store.",
+        "requires": [],
+        "at": 19
+      },
+      {
+        "label": "OTA (Over The Air) updates",
+        "aliases": [],
+        "summary": "A method for delivering updates directly to users' installed applications without going through the app store verification process.",
+        "requires": [
+          "EAS update"
+        ],
+        "at": 94
+      },
+      {
+        "label": "development build",
+        "aliases": [],
+        "summary": "A build type used for testing and development purposes, allowing developers to test their applications before production.",
+        "requires": [],
+        "at": 319
+      },
+      {
+        "label": "preview build",
+        "aliases": [],
+        "summary": "A type of build that allows developers to test their applications in a production-like environment before full release.",
+        "requires": [
+          "EAS update"
+        ],
+        "at": 329
+      },
+      {
+        "label": "expo-updates",
+        "aliases": [],
+        "summary": "A library that enables applications to receive updates over the air.",
+        "requires": [],
+        "at": 296
+      },
+      {
+        "label": "useUpdates hook",
+        "aliases": [],
+        "summary": "A React hook provided by expo-updates to manage and check for updates in an application.",
+        "requires": [
+          "expo-updates"
+        ],
+        "at": null
+      }
+    ],
+    "revisits": [
+      {
+        "label": "EAS JSON",
+        "at": 630
+      },
+      {
+        "label": "Expo Go",
+        "at": 480
+      },
+      {
+        "label": "EAS build",
+        "at": 692
+      },
+      {
+        "label": "Expo application",
+        "at": 366
+      },
+      {
+        "label": "APK",
+        "at": null
+      },
+      {
+        "label": "JavaScript",
+        "at": 289
+      },
+      {
+        "label": "React",
+        "at": 1185
+      }
+    ]
+  },
+  {
+    "lessonId": "m14-l03",
+    "order": 76,
+    "label": "Module 14 · Lesson 3",
+    "title": "how to publish your app to google playstore and app store",
+    "introduces": [
+      {
+        "label": "Google Play Console account",
+        "aliases": [],
+        "summary": "You need a Google Play Console account to publish apps, which requires a one-time fee of $25.",
+        "requires": [],
+        "at": 17
+      },
+      {
+        "label": "app listing requirements",
+        "aliases": [],
+        "summary": "Before publishing, you need to prepare your app's name, package name, descriptions, and privacy policy.",
+        "requires": [
+          "Google Play Console account"
+        ],
+        "at": null
+      },
+      {
+        "label": "app bundle",
+        "aliases": [],
+        "summary": "You need to create a production app bundle (.aab) to upload to the Google Play Store.",
+        "requires": [
+          "EAS build command"
+        ],
+        "at": 959
+      },
+      {
+        "label": "privacy policy",
+        "aliases": [],
+        "summary": "You must create and provide a link to a privacy policy for your app.",
+        "requires": [],
+        "at": 98
+      },
+      {
+        "label": "content rating questionnaire",
+        "aliases": [],
+        "summary": "You need to complete a content rating questionnaire to receive an official rating for your app.",
+        "requires": [],
+        "at": 386
+      },
+      {
+        "label": "app testing",
+        "aliases": [],
+        "summary": "You can share your app with testers before the official release.",
+        "requires": [
+          "Google Play Console account"
+        ],
+        "at": null
+      },
+      {
+        "label": "Apple Developer account",
+        "aliases": [],
+        "summary": "To publish on the Apple App Store, you need an Apple Developer account, which costs around $100 per year.",
+        "requires": [],
+        "at": 1212
+      },
+      {
+        "label": "bundle ID",
+        "aliases": [],
+        "summary": "You need a unique bundle ID for your iOS application, which can be found in app.json.",
+        "requires": [],
+        "at": 1232
+      }
+    ],
+    "revisits": [
+      {
+        "label": "EAS build",
+        "at": 980
+      },
+      {
+        "label": "app.json",
+        "at": 156
+      }
+    ]
+  },
+  {
+    "lessonId": "m15-l01",
+    "order": 77,
+    "label": "Module 15 · Chapter 1",
+    "title": "Project Initialization & Weather API Setup",
+    "introduces": [
+      {
+        "label": "project initialization",
+        "aliases": [],
+        "summary": "Steps to initialize a new Expo project using the command line.",
+        "requires": [
+          "npm",
+          "Expo"
+        ],
+        "at": 41
+      },
+      {
+        "label": "OpenWeatherMap API",
+        "aliases": [],
+        "summary": "Setting up and using the OpenWeatherMap API for weather data.",
+        "requires": [
+          "API keys",
+          "HTTP requests"
+        ],
+        "at": 201
+      },
+      {
+        "label": "Axios",
+        "aliases": [],
+        "summary": "Using Axios for making HTTP requests to the OpenWeatherMap API.",
+        "requires": [
+          "JavaScript promises",
+          "HTTP requests"
+        ],
+        "at": 427
+      },
+      {
+        "label": "fetch weather by coordinates",
+        "aliases": [],
+        "summary": "Function to fetch weather data based on user's latitude and longitude.",
+        "requires": [
+          "OpenWeatherMap API",
+          "Axios"
+        ],
+        "at": 404
+      },
+      {
+        "label": "fetch weather by city",
+        "aliases": [],
+        "summary": "Function to fetch weather data based on city name.",
+        "requires": [
+          "OpenWeatherMap API",
+          "Axios"
+        ],
+        "at": null
+      }
+    ],
+    "revisits": [
+      {
+        "label": "Expo",
+        "at": 74
+      },
+      {
+        "label": "npm",
+        "at": null
+      },
+      {
+        "label": "JavaScript promises",
+        "at": null
+      },
+      {
+        "label": "HTTP requests",
+        "at": null
+      }
+    ]
+  },
+  {
+    "lessonId": "m15-l02",
+    "order": 78,
+    "label": "Module 15 · Chapter 2",
+    "title": "adding assets and weather api",
+    "introduces": [
+      {
+        "label": "assets",
+        "aliases": [
+          "images"
+        ],
+        "summary": "Adding various weather-related images to the application.",
+        "requires": [],
+        "at": 6
+      },
+      {
+        "label": "useWeather hook",
+        "aliases": [],
+        "summary": "Creating a custom hook to manage weather data and location permissions.",
+        "requires": [
+          "expo-location",
+          "React hooks (useEffect, useState)"
+        ],
+        "at": 11
+      },
+      {
+        "label": "weather types",
+        "aliases": [],
+        "summary": "Defining TypeScript types for weather data, including temperature, humidity, and AQI.",
+        "requires": [
+          "TypeScript"
+        ],
+        "at": null
+      },
+      {
+        "label": "loadWeatherData",
+        "aliases": [],
+        "summary": "Function to fetch weather data based on location coordinates.",
+        "requires": [
+          "fetchWeatherByCoords"
+        ],
+        "at": 355
+      },
+      {
+        "label": "searchCity",
+        "aliases": [],
+        "summary": "Function to fetch weather data based on a city name.",
+        "requires": [
+          "fetchCoordsByCity"
+        ],
+        "at": 539
+      },
+      {
+        "label": "getBackgroundImage",
+        "aliases": [],
+        "summary": "Function to return background images based on weather conditions.",
+        "requires": [],
+        "at": 854
+      },
+      {
+        "label": "getWeatherIcon",
+        "aliases": [],
+        "summary": "Function to return weather icons based on conditions and time of day.",
+        "requires": [],
+        "at": 854
+      },
+      {
+        "label": "getWeatherColor",
+        "aliases": [],
+        "summary": "Function to return colors based on weather conditions.",
+        "requires": [],
+        "at": 1028
+      },
+      {
+        "label": "getWeatherImageURL",
+        "aliases": [],
+        "summary": "Function to construct a URL for weather icons based on icon codes.",
+        "requires": [],
+        "at": 973
+      },
+      {
+        "label": "expo-location",
+        "aliases": [],
+        "summary": "Using Expo's location services to get the user's current location.",
+        "requires": [
+          "React Native",
+          "JavaScript"
+        ],
+        "at": 114
+      }
+    ],
+    "revisits": [
+      {
+        "label": "fetchWeatherByCoords",
+        "at": null
+      },
+      {
+        "label": "fetchCoordsByCity",
+        "at": null
+      },
+      {
+        "label": "TypeScript",
+        "at": null
+      }
+    ]
+  },
+  {
+    "lessonId": "m15-l03",
+    "order": 79,
+    "label": "Module 15 · Chapter 3",
+    "title": "chapter-3",
+    "introduces": [
+      {
+        "label": "background images",
+        "aliases": [],
+        "summary": "Implementing background images based on current weather conditions.",
+        "requires": [
+          "React Native",
+          "JavaScript"
+        ],
+        "at": 8
+      },
+      {
+        "label": "useWeather hook",
+        "aliases": [],
+        "summary": "Using a custom hook to manage weather data and loading states.",
+        "requires": [
+          "React",
+          "JavaScript"
+        ],
+        "at": null
+      },
+      {
+        "label": "activity indicator",
+        "aliases": [],
+        "summary": "Displaying a loading indicator while fetching weather data.",
+        "requires": [
+          "React Native",
+          "JavaScript"
+        ],
+        "at": 120
+      },
+      {
+        "label": "error handling",
+        "aliases": [],
+        "summary": "Rendering error messages when weather data cannot be fetched.",
+        "requires": [
+          "React Native",
+          "JavaScript"
+        ],
+        "at": null
+      },
+      {
+        "label": "image background",
+        "aliases": [],
+        "summary": "Using the ImageBackground component to display background images.",
+        "requires": [
+          "React Native",
+          "JavaScript"
+        ],
+        "at": 241
+      },
+      {
+        "label": "search bar",
+        "aliases": [],
+        "summary": "Creating a search bar component to input city names for weather queries.",
+        "requires": [
+          "React Native",
+          "JavaScript"
+        ],
+        "at": 417
+      },
+      {
+        "label": "current weather component",
+        "aliases": [],
+        "summary": "Creating a component to display current weather information.",
+        "requires": [
+          "React Native",
+          "JavaScript"
+        ],
+        "at": 971
+      },
+      {
+        "label": "forecast list",
+        "aliases": [],
+        "summary": "Displaying a list of weather forecasts for different days.",
+        "requires": [
+          "React Native",
+          "JavaScript"
+        ],
+        "at": 981
+      },
+      {
+        "label": "stat item component",
+        "aliases": [],
+        "summary": "Creating a component to display individual weather statistics.",
+        "requires": [
+          "React Native",
+          "JavaScript"
+        ],
+        "at": null
+      },
+      {
+        "label": "glass view component",
+        "aliases": [],
+        "summary": "Creating a reusable view component for styling purposes.",
+        "requires": [
+          "React Native",
+          "JavaScript"
+        ],
+        "at": 807
+      }
+    ],
+    "revisits": [
+      {
+        "label": "React Native",
+        "at": 247
+      },
+      {
+        "label": "JavaScript",
+        "at": null
+      },
+      {
+        "label": "npm",
+        "at": null
+      }
+    ]
+  },
+  {
+    "lessonId": "m16-l01",
+    "order": 80,
+    "label": "Module 16 · Chapter 1",
+    "title": "project init and setup the pixabay api",
+    "introduces": [
+      {
+        "label": "pixabay API",
+        "aliases": [],
+        "summary": "Introduction to the Pixabay API for fetching images, including how to obtain the API key and endpoint.",
+        "requires": [
+          "API keys",
+          "HTTP requests"
+        ],
+        "at": 63
+      },
+      {
+        "label": "project initialization",
+        "aliases": [
+          "expo app setup"
+        ],
+        "summary": "Setting up a new Expo project using Bun.",
+        "requires": [
+          "Expo",
+          "Bun"
+        ],
+        "at": 58
+      },
+      {
+        "label": "Pixabay image interface",
+        "aliases": [],
+        "summary": "Creating a TypeScript interface for the structure of images returned by the Pixabay API.",
+        "requires": [
+          "TypeScript",
+          "interfaces"
+        ],
+        "at": 232
+      },
+      {
+        "label": "Pixabay response interface",
+        "aliases": [],
+        "summary": "Defining a TypeScript interface for the response structure from the Pixabay API, including total hits and hits array.",
+        "requires": [
+          "TypeScript",
+          "interfaces"
+        ],
+        "at": 290
+      },
+      {
+        "label": "fetch wallpapers function",
+        "aliases": [],
+        "summary": "Creating an asynchronous function to fetch wallpapers from the Pixabay API based on various parameters.",
+        "requires": [
+          "async/await",
+          "fetch API",
+          "URLSearchParams"
+        ],
+        "at": null
+      },
+      {
+        "label": "error handling in API calls",
+        "aliases": [],
+        "summary": "Implementing error handling for the fetch request to the Pixabay API.",
+        "requires": [
+          "JavaScript error handling"
+        ],
+        "at": null
+      },
+      {
+        "label": "configuration file",
+        "aliases": [
+          "config.ts"
+        ],
+        "summary": "Creating a configuration file to store the API key and other constants for the application.",
+        "requires": [
+          "TypeScript",
+          "file structure"
+        ],
+        "at": 570
+      }
+    ],
+    "revisits": [
+      {
+        "label": "Bun",
+        "at": null
+      },
+      {
+        "label": "Expo",
+        "at": 71
+      },
+      {
+        "label": "TypeScript",
+        "at": null
+      },
+      {
+        "label": "JavaScript",
+        "at": null
+      },
+      {
+        "label": "HTTP requests",
+        "at": null
+      },
+      {
+        "label": "async/await",
+        "at": null
+      },
+      {
+        "label": "error handling",
+        "at": null
+      }
+    ]
+  },
+  {
+    "lessonId": "m16-l02",
+    "order": 81,
+    "label": "Module 16 · Chapter 2",
+    "title": "create header and content components",
+    "introduces": [
+      {
+        "label": "header component",
+        "aliases": [],
+        "summary": "Creating a header component for the wallpaper app.",
+        "requires": [
+          "React Native",
+          "JSX"
+        ],
+        "at": null
+      },
+      {
+        "label": "content component",
+        "aliases": [],
+        "summary": "Creating a content component to display wallpapers.",
+        "requires": [
+          "React Native",
+          "JSX"
+        ],
+        "at": 4
+      },
+      {
+        "label": "theme.ts",
+        "aliases": [],
+        "summary": "Creating a theme file to manage color and style variables.",
+        "requires": [
+          "TypeScript"
+        ],
+        "at": 116
+      },
+      {
+        "label": "SafeAreaView",
+        "aliases": [],
+        "summary": "Using SafeAreaView to ensure content is displayed within safe boundaries on devices.",
+        "requires": [
+          "React Native"
+        ],
+        "at": 188
+      },
+      {
+        "label": "status bar",
+        "aliases": [],
+        "summary": "Managing the status bar style in the app.",
+        "requires": [
+          "React Native"
+        ],
+        "at": 218
+      },
+      {
+        "label": "search bar",
+        "aliases": [],
+        "summary": "Implementing a search bar for querying wallpapers.",
+        "requires": [
+          "React Native",
+          "state management"
+        ],
+        "at": 302
+      },
+      {
+        "label": "useState",
+        "aliases": [],
+        "summary": "Using useState to manage the search query state.",
+        "requires": [
+          "React",
+          "hooks"
+        ],
+        "at": null
+      },
+      {
+        "label": "useEffect",
+        "aliases": [],
+        "summary": "Using useEffect to load wallpapers when the component mounts or when dependencies change.",
+        "requires": [
+          "React",
+          "hooks"
+        ],
+        "at": 900
+      },
+      {
+        "label": "load wallpapers",
+        "aliases": [],
+        "summary": "Creating a function to fetch wallpapers from an API.",
+        "requires": [
+          "async/await",
+          "API calls"
+        ],
+        "at": 920
+      },
+      {
+        "label": "masonry list",
+        "aliases": [],
+        "summary": "Using a masonry list component to display wallpapers in a grid format.",
+        "requires": [
+          "React Native",
+          "third-party libraries"
+        ],
+        "at": 1053
+      },
+      {
+        "label": "image card",
+        "aliases": [],
+        "summary": "Creating an image card component to display individual wallpapers.",
+        "requires": [
+          "React Native",
+          "JSX"
+        ],
+        "at": 954
+      },
+      {
+        "label": "refresh button",
+        "aliases": [],
+        "summary": "Adding a refresh button to reload wallpapers.",
+        "requires": [
+          "React Native"
+        ],
+        "at": 1340
+      }
+    ],
+    "revisits": [
+      {
+        "label": "React Native",
+        "at": 200
+      },
+      {
+        "label": "JSX",
+        "at": null
+      },
+      {
+        "label": "TypeScript",
+        "at": null
+      },
+      {
+        "label": "state management",
+        "at": null
+      },
+      {
+        "label": "async/await",
+        "at": null
+      },
+      {
+        "label": "API calls",
+        "at": null
+      },
+      {
+        "label": "third-party libraries",
+        "at": null
+      },
+      {
+        "label": "hooks",
+        "at": null
+      }
+    ]
+  },
+  {
+    "lessonId": "m16-l03",
+    "order": 82,
+    "label": "Module 16 · Chapter 3",
+    "title": "Implementing filtermodal components",
+    "introduces": [
+      {
+        "label": "filter modal component",
+        "aliases": [],
+        "summary": "A component that allows users to apply filters based on category and color.",
+        "requires": [
+          "React",
+          "React Native"
+        ],
+        "at": null
+      },
+      {
+        "label": "filter modal props",
+        "aliases": [],
+        "summary": "An interface defining the properties accepted by the filter modal component.",
+        "requires": [
+          "TypeScript"
+        ],
+        "at": null
+      },
+      {
+        "label": "useEffect",
+        "aliases": [],
+        "summary": "A React hook used to synchronize state with props in the filter modal.",
+        "requires": [
+          "React",
+          "React Native"
+        ],
+        "at": 120
+      },
+      {
+        "label": "handle apply",
+        "aliases": [],
+        "summary": "A method that applies the selected filters and returns the active category and color to the parent component.",
+        "requires": [
+          "React",
+          "React Native"
+        ],
+        "at": 161
+      },
+      {
+        "label": "handle reset",
+        "aliases": [],
+        "summary": "A method that resets the selected filters in the filter modal.",
+        "requires": [
+          "React",
+          "React Native"
+        ],
+        "at": 161
+      },
+      {
+        "label": "expo-blur",
+        "aliases": [],
+        "summary": "A component from the Expo library that adds a blur effect to the background of the modal.",
+        "requires": [
+          "Expo"
+        ],
+        "at": 264
+      },
+      {
+        "label": "pressable",
+        "aliases": [],
+        "summary": "A component that responds to touch events, used for buttons in the filter modal.",
+        "requires": [
+          "React Native"
+        ],
+        "at": 318
+      },
+      {
+        "label": "scroll view",
+        "aliases": [],
+        "summary": "A component that allows for scrolling through a list of items, used to display filter options.",
+        "requires": [
+          "React Native"
+        ],
+        "at": 525
+      },
+      {
+        "label": "filter colors",
+        "aliases": [],
+        "summary": "An array of colors used for filtering options in the filter modal.",
+        "requires": [
+          "React Native"
+        ],
+        "at": 714
+      },
+      {
+        "label": "reset and apply buttons",
+        "aliases": [],
+        "summary": "Buttons in the filter modal for resetting and applying selected filters.",
+        "requires": [
+          "React Native"
+        ],
+        "at": null
+      }
+    ],
+    "revisits": [
+      {
+        "label": "React",
+        "at": 473
+      },
+      {
+        "label": "React Native",
+        "at": null
+      },
+      {
+        "label": "TypeScript",
+        "at": null
+      },
+      {
+        "label": "Expo",
+        "at": 264
+      }
+    ]
+  },
+  {
+    "lessonId": "m16-l04",
+    "order": 83,
+    "label": "Module 16 · Chapter 4",
+    "title": "implementing imageDetailModal components",
+    "introduces": [
+      {
+        "label": "ImageDetailModal",
+        "aliases": [],
+        "summary": "A component to display a full-size image with options to close, download, and share.",
+        "requires": [
+          "React Native",
+          "Expo"
+        ],
+        "at": null
+      },
+      {
+        "label": "Expo Media Library",
+        "aliases": [],
+        "summary": "A library that provides access to the user's media library for accessing and saving images and videos.",
+        "requires": [
+          "Expo",
+          "React Native"
+        ],
+        "at": 120
+      },
+      {
+        "label": "Expo File System",
+        "aliases": [],
+        "summary": "A library for interacting with the file system, including downloading files and saving them to the media library.",
+        "requires": [
+          "Expo",
+          "React Native"
+        ],
+        "at": 754
+      },
+      {
+        "label": "Expo Sharing",
+        "aliases": [],
+        "summary": "A library for sharing files with other applications on the device.",
+        "requires": [
+          "Expo",
+          "React Native"
+        ],
+        "at": 966
+      },
+      {
+        "label": "Permissions",
+        "aliases": [],
+        "summary": "Requesting permissions to access the media library and save images.",
+        "requires": [
+          "React Native",
+          "Expo"
+        ],
+        "at": 177
+      },
+      {
+        "label": "Animated Modal",
+        "aliases": [],
+        "summary": "A modal component that can be animated, used to display the image detail.",
+        "requires": [
+          "React Native"
+        ],
+        "at": null
+      },
+      {
+        "label": "Async/Await",
+        "aliases": [],
+        "summary": "A syntax for handling asynchronous operations in JavaScript, used for downloading and sharing images.",
+        "requires": [
+          "JavaScript"
+        ],
+        "at": null
+      }
+    ],
+    "revisits": [
+      {
+        "label": "React Native",
+        "at": 188
+      },
+      {
+        "label": "JavaScript",
+        "at": null
+      },
+      {
+        "label": "npm",
+        "at": null
+      }
+    ]
+  },
+  {
+    "lessonId": "m17-l01",
+    "order": 84,
+    "label": "Module 17 · Chapter 1",
+    "title": "chapter-1",
+    "introduces": [
+      {
+        "label": "AI Story Generator",
+        "aliases": [],
+        "summary": "A project that generates stories based on user prompts and creates images using AI.",
+        "requires": [],
+        "at": 9
+      },
+      {
+        "label": "expo API",
+        "aliases": [],
+        "summary": "An API used to interact with the backend for generating responses based on user prompts.",
+        "requires": [],
+        "at": 39
+      },
+      {
+        "label": "AISDK",
+        "aliases": [],
+        "summary": "A software development kit used for AI-related functionalities in the project.",
+        "requires": [],
+        "at": 43
+      },
+      {
+        "label": "theme provider",
+        "aliases": [],
+        "summary": "A component from React Navigation used to manage themes in the application, including dark mode.",
+        "requires": [
+          "React Navigation"
+        ],
+        "at": 291
+      },
+      {
+        "label": "dark theme",
+        "aliases": [],
+        "summary": "A predefined theme that can be applied to the application for a dark mode appearance.",
+        "requires": [],
+        "at": 279
+      },
+      {
+        "label": "stack navigation",
+        "aliases": [],
+        "summary": "A navigation pattern used to manage different screens in the application.",
+        "requires": [
+          "React Navigation"
+        ],
+        "at": null
+      },
+      {
+        "label": "status bar",
+        "aliases": [],
+        "summary": "A component used to control the appearance of the status bar in the application.",
+        "requires": [
+          "expo-status-bar"
+        ],
+        "at": 456
+      },
+      {
+        "label": "index screen",
+        "aliases": [],
+        "summary": "The main screen of the application where users start their interaction.",
+        "requires": [],
+        "at": 380
+      },
+      {
+        "label": "story screen",
+        "aliases": [],
+        "summary": "A screen that displays the generated story and images based on user input.",
+        "requires": [
+          "index screen"
+        ],
+        "at": 380
+      },
+      {
+        "label": "header options",
+        "aliases": [],
+        "summary": "Configuration options for the header in the navigation stack, such as visibility and title.",
+        "requires": [
+          "stack navigation"
+        ],
+        "at": null
+      },
+      {
+        "label": "constants file",
+        "aliases": [],
+        "summary": "A file where all the constants, such as themes and colors, are defined for easy management.",
+        "requires": [],
+        "at": null
+      },
+      {
+        "label": "Tailwind's design strategy",
+        "aliases": [],
+        "summary": "A design approach used for styling the application, particularly for colors and themes.",
+        "requires": [],
+        "at": 212
+      }
+    ],
+    "revisits": [
+      {
+        "label": "React Navigation",
+        "at": 291
+      },
+      {
+        "label": "expo-status-bar",
+        "at": null
+      }
+    ]
+  },
+  {
+    "lessonId": "m17-l02",
+    "order": 85,
+    "label": "Module 17 · Chapter 2",
+    "title": "chapter-2",
+    "introduces": [
+      {
+        "label": "keyboard avoiding view",
+        "aliases": [],
+        "summary": "A component that adjusts the position of input fields when the keyboard is displayed, preventing overlap.",
+        "requires": [
+          "React Native basics",
+          "Component usage"
+        ],
+        "at": 83
+      },
+      {
+        "label": "scroll view",
+        "aliases": [],
+        "summary": "A component that allows for scrolling through content that exceeds the screen size.",
+        "requires": [
+          "React Native basics",
+          "Component usage"
+        ],
+        "at": 147
+      },
+      {
+        "label": "text input",
+        "aliases": [],
+        "summary": "A component for user input, allowing text entry.",
+        "requires": [
+          "React Native basics",
+          "Component usage"
+        ],
+        "at": 207
+      },
+      {
+        "label": "useState",
+        "aliases": [],
+        "summary": "A React Hook that allows you to add state to functional components.",
+        "requires": [
+          "React basics"
+        ],
+        "at": 375
+      },
+      {
+        "label": "touchable opacity",
+        "aliases": [],
+        "summary": "A component that responds to touch events, often used for buttons.",
+        "requires": [
+          "React Native basics",
+          "Component usage"
+        ],
+        "at": 446
+      },
+      {
+        "label": "activity indicator",
+        "aliases": [],
+        "summary": "A component that shows a loading spinner to indicate ongoing processes.",
+        "requires": [
+          "React Native basics",
+          "Component usage"
+        ],
+        "at": 510
+      },
+      {
+        "label": "flexbox",
+        "aliases": [],
+        "summary": "A layout model that allows for responsive design in React Native applications.",
+        "requires": [
+          "CSS basics"
+        ],
+        "at": 631
+      },
+      {
+        "label": "example prompts",
+        "aliases": [],
+        "summary": "Sample text inputs that can be used to generate stories.",
+        "requires": [
+          "React Native basics",
+          "Component usage"
+        ],
+        "at": 559
+      },
+      {
+        "label": "handle example prompt",
+        "aliases": [],
+        "summary": "A function that sets the prompt state based on selected example prompts.",
+        "requires": [
+          "React basics",
+          "useState"
+        ],
+        "at": 708
+      },
+      {
+        "label": "handle generate",
+        "aliases": [],
+        "summary": "A placeholder function for generating stories based on user input.",
+        "requires": [
+          "React basics"
+        ],
+        "at": 747
+      },
+      {
+        "label": "useLocalSearchParams",
+        "aliases": [],
+        "summary": "A hook for accessing search parameters in the router context.",
+        "requires": [
+          "React Router basics"
+        ],
+        "at": 897
+      },
+      {
+        "label": "expo-image",
+        "aliases": [],
+        "summary": "A component from Expo for displaying images with additional features.",
+        "requires": [
+          "React Native basics",
+          "Component usage"
+        ],
+        "at": 1474
+      }
+    ],
+    "revisits": [
+      {
+        "label": "React basics",
+        "at": null
+      },
+      {
+        "label": "React Native basics",
+        "at": null
+      },
+      {
+        "label": "Component usage",
+        "at": null
+      },
+      {
+        "label": "CSS basics",
+        "at": null
+      }
+    ]
+  },
+  {
+    "lessonId": "m17-l03",
+    "order": 86,
+    "label": "Module 17 · Chapter 3",
+    "title": "chapter-3",
+    "introduces": [
+      {
+        "label": "async storage",
+        "aliases": [],
+        "summary": "A local storage solution for React Native applications that allows for storing data persistently.",
+        "requires": [
+          "React Native",
+          "JavaScript"
+        ],
+        "at": 82
+      },
+      {
+        "label": "React Native Async Storage",
+        "aliases": [],
+        "summary": "A specific implementation of async storage for React Native, used to store and retrieve data.",
+        "requires": [
+          "async storage",
+          "React Native"
+        ],
+        "at": 219
+      },
+      {
+        "label": "save story",
+        "aliases": [],
+        "summary": "A function to save a story object to async storage.",
+        "requires": [
+          "async storage"
+        ],
+        "at": 102
+      },
+      {
+        "label": "get stories",
+        "aliases": [],
+        "summary": "A function to retrieve all stories from async storage.",
+        "requires": [
+          "async storage"
+        ],
+        "at": 126
+      },
+      {
+        "label": "get story",
+        "aliases": [],
+        "summary": "A function to retrieve a specific story by ID from async storage.",
+        "requires": [
+          "get stories"
+        ],
+        "at": 158
+      },
+      {
+        "label": "delete story",
+        "aliases": [],
+        "summary": "A function to delete a specific story from async storage by ID.",
+        "requires": [
+          "get stories"
+        ],
+        "at": 178
+      },
+      {
+        "label": "clear stories",
+        "aliases": [],
+        "summary": "A function to remove all stories from async storage.",
+        "requires": [
+          "get stories"
+        ],
+        "at": 186
+      },
+      {
+        "label": "saved story",
+        "aliases": [],
+        "summary": "An interface defining the structure of a story object to be saved, including title, paragraphs, ID, created date, and prompt.",
+        "requires": [
+          "async storage"
+        ],
+        "at": 720
+      },
+      {
+        "label": "load stories",
+        "aliases": [],
+        "summary": "A function to load stories from async storage and update the state in the component.",
+        "requires": [
+          "get stories",
+          "React state management"
+        ],
+        "at": 1745
+      },
+      {
+        "label": "recent stories",
+        "aliases": [],
+        "summary": "A state variable to hold the most recent stories fetched from async storage.",
+        "requires": [
+          "React state management"
+        ],
+        "at": 16
+      }
+    ],
+    "revisits": [
+      {
+        "label": "story.tsx",
+        "at": 33
+      },
+      {
+        "label": "useEffect",
+        "at": 1760
+      },
+      {
+        "label": "useState",
+        "at": 1809
+      },
+      {
+        "label": "npm",
+        "at": null
+      }
+    ]
+  },
+  {
+    "lessonId": "m17-l04",
+    "order": 87,
+    "label": "Module 17 · Chapter 4",
+    "title": "chapter-4",
+    "introduces": [
+      {
+        "label": "AI integration",
+        "aliases": [],
+        "summary": "Integrating AI into the application to generate stories and images based on user prompts.",
+        "requires": [
+          "expo API routes",
+          "backend API",
+          "REST API",
+          "large language models (LLMs)"
+        ],
+        "at": 7
+      },
+      {
+        "label": "OpenRouter",
+        "aliases": [
+          "open router"
+        ],
+        "summary": "A unified API gateway that provides access to various AI models from different providers.",
+        "requires": [
+          "REST API",
+          "API key management"
+        ],
+        "at": 114
+      },
+      {
+        "label": "AISDK",
+        "aliases": [],
+        "summary": "A software development kit that simplifies the integration of AI models into applications.",
+        "requires": [
+          "JavaScript",
+          "API integration"
+        ],
+        "at": 233
+      },
+      {
+        "label": "generate text",
+        "aliases": [],
+        "summary": "A method from AISDK to generate text based on a given model and prompt.",
+        "requires": [
+          "AISDK",
+          "JavaScript"
+        ],
+        "at": 688
+      },
+      {
+        "label": "Zod",
+        "aliases": [],
+        "summary": "A schema validation library used to define the structure of data in the application.",
+        "requires": [
+          "JavaScript"
+        ],
+        "at": null
+      },
+      {
+        "label": "structured output",
+        "aliases": [],
+        "summary": "The format in which the AI-generated data is returned, including title and paragraphs.",
+        "requires": [
+          "AI integration",
+          "generate text"
+        ],
+        "at": 588
+      },
+      {
+        "label": "system prompt",
+        "aliases": [],
+        "summary": "An additional prompt given to the LLM to guide the generation process.",
+        "requires": [
+          "AI integration",
+          "large language models (LLMs)"
+        ],
+        "at": 1600
+      },
+      {
+        "label": "temperature",
+        "aliases": [],
+        "summary": "A setting that controls the creativity of the AI model's output.",
+        "requires": [
+          "AI integration",
+          "large language models (LLMs)"
+        ],
+        "at": 1765
+      }
+    ],
+    "revisits": [
+      {
+        "label": "REST API",
+        "at": 119
+      },
+      {
+        "label": "large language models (LLMs)",
+        "at": null
+      },
+      {
+        "label": "API key management",
+        "at": null
+      },
+      {
+        "label": "JavaScript",
+        "at": 268
+      }
+    ]
+  }
+]

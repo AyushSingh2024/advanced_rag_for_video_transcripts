@@ -1,0 +1,677 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:03.820
+All right, everyone, and welcome to chapter number four.
+
+00:00:03.900 --> 00:00:08.039
+In this chapter, we are going to implement the Pokemon detail screen.
+
+00:00:08.380 --> 00:00:13.820
+So the moment you click on any Pokemon card, you are going to be redirected towards the
+
+00:00:13.900 --> 00:00:16.340
+detail page of that specific Pokemon.
+
+00:00:16.480 --> 00:00:18.300
+So this chapter is all about that.
+
+00:00:18.590 --> 00:00:23.800
+So let's move ahead and without wasting any time, start implementing it.
+
+00:00:23.900 --> 00:00:30.400
+So, for that definitely you just simply need to click on any of the Pokemon and you will
+
+00:00:30.401 --> 00:00:33.120
+be redirected to this empty screen.
+
+00:00:33.739 --> 00:00:40.660
+So, let me just click it once again and let us move inside this Pokemon detail page and
+
+00:00:40.661 --> 00:00:42.239
+start implementing it.
+
+00:00:43.120 --> 00:00:49.380
+So, for that definitely first of all, let me just paste all my styles related thing
+
+00:00:49.900 --> 00:00:52.560
+and definitely you guys also need to do the same.
+
+00:00:53.420 --> 00:00:56.640
+So, let me paste all the styles related thing first of all.
+
+00:00:56.760 --> 00:00:58.540
+So, let me import my colors.
+
+00:00:59.540 --> 00:01:07.360
+So, you will see that I have container header safe area and lot of bunch of CSS related
+
+00:01:07.361 --> 00:01:07.600
+things.
+
+00:01:07.780 --> 00:01:07.979
+Cool.
+
+00:01:09.060 --> 00:01:09.340
+Perfect.
+
+00:01:10.220 --> 00:01:11.120
+Let's move ahead.
+
+00:01:11.600 --> 00:01:15.060
+And start importing bunch of other thing as well.
+
+00:01:15.500 --> 00:01:21.060
+Like let me just simply write here const route and let me off my AI.
+
+00:01:22.220 --> 00:01:22.479
+Perfect.
+
+00:01:22.979 --> 00:01:28.420
+So const route is equals to use route and make sure to import from react navigation.
+
+00:01:29.100 --> 00:01:37.780
+And this route is going to be the type of Pokemon detail screen route prop, perfect
+
+00:01:37.781 --> 00:01:44.220
+because they have this Pokemon detail and Pokemon detail is the type of this simple
+
+00:01:45.680 --> 00:01:46.720
+basic typescript thing.
+
+00:01:47.360 --> 00:01:54.380
+And then let me also initialize my navigation, navigation should also come from expo navigation
+
+00:01:55.800 --> 00:02:03.340
+And then let me extract my Pokemon from route params. Why this is coming from route params?
+
+00:02:03.860 --> 00:02:10.260
+Because every time when let me go to home screen and then let you know. So every time when you
+
+00:02:10.261 --> 00:02:17.280
+click on any card you will see that we are calling this function name as handle card press.
+
+00:02:17.600 --> 00:02:22.500
+And by pressing here we are navigating to this page by this data.
+
+00:02:22.501 --> 00:02:26.360
+So this is what I am talking about and we are extracting that.
+
+00:02:26.900 --> 00:02:27.120
+Cool.
+
+00:02:27.720 --> 00:02:34.540
+And then let me just simply write here the main type and this is going to be as Pokemon
+
+00:02:35.060 --> 00:02:41.560
+dot types the 0 because a Pokemon can have multiple types but let me just simply extract
+
+00:02:41.561 --> 00:02:43.760
+the 0th index type.
+
+00:02:45.400 --> 00:02:54.780
+name and let me just get the color of it. So, accent color is equals to get type color
+
+00:02:55.120 --> 00:02:58.880
+and then let me just pass my main type effect.
+
+00:03:00.100 --> 00:03:02.980
+And then let me start implementing the design.
+
+00:03:03.120 --> 00:03:09.760
+So the first thing is going to be view, which is the type of styles.container.
+
+00:03:10.200 --> 00:03:14.260
+And then inside this, let me also import this status bar.
+
+00:03:14.980 --> 00:03:21.020
+And this status bar will also basically come from a component named as status bar.
+
+00:03:21.800 --> 00:03:29.560
+For now, let me just import this specific status bar from expo status bar.
+
+00:03:29.720 --> 00:03:29.880
+Perfect.
+
+00:03:29.960 --> 00:03:38.040
+So, below this just simply says status bar and make sure to import that from expo and
+
+00:03:38.041 --> 00:03:43.140
+then add the style as light and then let me simply paste it.
+
+00:03:43.320 --> 00:03:43.520
+Cool.
+
+00:03:43.840 --> 00:03:47.940
+And then below this, let me handle the scroll area.
+
+00:03:48.100 --> 00:03:51.240
+So, let me simply say this as scroll view.
+
+00:03:52.120 --> 00:03:59.200
+This scroll view is first of all going to accept a prop as show vertical scroll indicator
+
+00:04:00.120 --> 00:04:02.000
+and this is going to be as false.
+
+00:04:02.560 --> 00:04:07.380
+And inside this scroll view, I wanted to show my header image area.
+
+00:04:07.900 --> 00:04:15.420
+So, I am just simply going to say this as view perfect and this view is basically going
+
+00:04:15.421 --> 00:04:16.919
+to have bunch of style.
+
+00:04:17.899 --> 00:04:24.539
+So, let me just first of all open here array and first is going to be header perfect and
+
+00:04:24.740 --> 00:04:31.260
+cool and then second after adding simple comma let me just simply say this as background
+
+00:04:31.800 --> 00:04:36.620
+color has co colors dot card.
+
+00:04:38.099 --> 00:04:38.300
+Perfect.
+
+00:04:38.460 --> 00:04:38.940
+Look at that.
+
+00:04:39.120 --> 00:04:40.900
+This is what I'm talking about.
+
+00:04:41.340 --> 00:04:46.099
+And then below this, let me have a safe area view.
+
+00:04:46.539 --> 00:04:50.020
+Make sure to import this from area context.
+
+00:04:50.800 --> 00:04:54.080
+And, then we are basically going to have a style.
+
+00:04:54.759 --> 00:04:59.259
+This style is also going to be equals to styles.safeArea.
+
+00:05:00.940 --> 00:05:07.060
+And then inside this I am going to render one view and this view is going to show us
+
+00:05:07.199 --> 00:05:09.240
+the iron icon of arrow back.
+
+00:05:09.500 --> 00:05:15.820
+Perfect, so let me paste that, you will see that and let me import my iron icons from
+
+00:05:15.821 --> 00:05:21.860
+vector icons, the name of arrow back, size, color and go back and if I save it, this is
+
+00:05:21.861 --> 00:05:23.060
+how they are going to look.
+
+00:05:23.660 --> 00:05:26.400
+But let me just add bunch of styles here as well.
+
+00:05:27.080 --> 00:05:33.360
+So this is going to be styles.navbar and now if I save it, this is how they aligned properly.
+
+00:05:34.980 --> 00:05:35.500
+Perfect.
+
+00:05:35.780 --> 00:05:38.760
+And then below this, I wanted to show my Pokemon ID.
+
+00:05:39.640 --> 00:05:41.940
+So this is going to be a simple hashtag.
+
+00:05:42.900 --> 00:05:45.560
+And then inside this, let me get this string.
+
+00:05:47.320 --> 00:05:53.920
+And this string is going to accept Pokemon dot and we have the ID for it.
+
+00:05:54.440 --> 00:05:56.540
+Let me just simply say pad start.
+
+00:06:02.180 --> 00:06:09.360
+This is going to be something like this and if I save it, this is how this #0001 looks
+
+00:06:09.419 --> 00:06:09.940
+to us.
+
+00:06:10.979 --> 00:06:16.180
+Then, let me simply add one style here as well and then I am simply going to say this
+
+00:06:16.240 --> 00:06:21.820
+as styles.headerId and now if I save it, this is how they look.
+
+00:06:22.200 --> 00:06:30.260
+Perfect, now out of this view let me coming to here, let me open one more new view, this
+
+00:06:30.261 --> 00:06:40.940
+view is going to have a style of styles.imageContainer, so this will become now image container and
+
+00:06:40.941 --> 00:06:44.340
+this image container is going to show us the image.
+
+00:06:44.600 --> 00:06:49.620
+So, now let me import my image component from react native.
+
+00:06:50.350 --> 00:06:53.300
+So, now this is how my store, source of it.
+
+00:06:53.320 --> 00:06:55.980
+So, Pokemon sprites other official artwork.
+
+00:06:56.160 --> 00:07:02.320
+This is how they come and front default and this is the style of image and if I save it,
+
+00:07:02.700 --> 00:07:07.220
+this is the style of our opened tabbed Pokemon.
+
+00:07:07.340 --> 00:07:08.220
+Let me show you once again.
+
+00:07:09.200 --> 00:07:13.260
+Let me search for electric and let me press on Pikachu.
+
+00:07:13.360 --> 00:07:16.260
+You will see that the image is showing off Pikachu.
+
+00:07:16.780 --> 00:07:16.940
+Easy.
+
+00:07:17.140 --> 00:07:22.240
+And you can definitely grab multiple images as well.
+
+00:07:22.520 --> 00:07:25.680
+Like below this you can add basic carousal kind of thing.
+
+00:07:26.340 --> 00:07:30.380
+And like we have front default in same way we can have back side as well.
+
+00:07:30.520 --> 00:07:34.260
+If you search for it, then you can also render that if you wanted to.
+
+00:07:35.740 --> 00:07:42.740
+Perfect, now out of this view like you will see that we have this scroll area and let
+
+00:07:42.741 --> 00:07:49.840
+me remove this text and out of this scroll area and this view I wanted you to do one
+
+00:07:49.841 --> 00:07:53.860
+thing more and first of all this is a scroll and this view.
+
+00:07:54.740 --> 00:07:55.180
+Cool.
+
+00:07:56.360 --> 00:08:01.360
+So, this is basically going to be something like cool.
+
+00:08:01.659 --> 00:08:05.940
+So, you will see that we have the scroll area, scroll view basically not scroll area.
+
+00:08:06.639 --> 00:08:10.879
+So, this one is for header and below this we wanted to show the content.
+
+00:08:11.460 --> 00:08:17.620
+So, simply here I am just basically going to open one more new view and this view is
+
+00:08:17.621 --> 00:08:21.560
+going to have a style, styles of content.
+
+00:08:21.800 --> 00:08:25.280
+not container, this is going to be style of container.
+
+00:08:26.099 --> 00:08:30.960
+And first thing we wanted to show the name of our basically Pokemon.
+
+00:08:31.199 --> 00:08:34.839
+And now if I save it, the name is coming something like this.
+
+00:08:35.399 --> 00:08:35.720
+Perfect.
+
+00:08:36.080 --> 00:08:38.299
+And let me also try to format it.
+
+00:08:38.700 --> 00:08:39.820
+And this is how they look.
+
+00:08:40.679 --> 00:08:43.559
+And we can also render the type badges of it.
+
+00:08:43.860 --> 00:08:45.920
+So this will going to become now view.
+
+00:08:46.600 --> 00:08:55.100
+This view is going to have a style and this style is going to become styles.typeContainer
+
+00:08:56.079 --> 00:08:59.160
+and inside this let me just simply render them.
+
+00:08:59.279 --> 00:09:09.380
+So Pokemon.types.map and they are going to have the access of type, all the type, implicit
+
+00:09:09.660 --> 00:09:10.079
+return it.
+
+00:09:10.480 --> 00:09:15.300
+And now I wanted to use the previously created type batch component.
+
+00:09:15.800 --> 00:09:25.500
+And this is going to accept the t.type.name and then also going to accept the type and
+
+00:09:25.700 --> 00:09:32.839
+this is going to be t.type.name once again and then size is going to become large.
+
+00:09:35.300 --> 00:09:39.100
+Now, if I save it, this is how they are going to show us.
+
+00:09:39.600 --> 00:09:39.920
+Perfect.
+
+00:09:41.420 --> 00:09:46.960
+Now, out of this div, simply let's create a about section.
+
+00:09:47.220 --> 00:09:49.380
+So let me just wrap this.
+
+00:09:49.400 --> 00:09:55.720
+thing only and here I just simply wanted to create about section so this is going to become
+
+00:09:55.721 --> 00:09:56.800
+one more new view.
+
+00:09:57.600 --> 00:10:03.680
+This view is going to have a style and then style is going to become now styles.section
+
+00:10:04.720 --> 00:10:10.640
+perfect and this style section is going to show us the about text some with this bunch
+
+00:10:10.641 --> 00:10:13.840
+of styles something like this.
+
+00:10:15.060 --> 00:10:20.980
+And then here I simply wanted to show a bunch of weight, height, lot of information that
+
+00:10:20.981 --> 00:10:21.440
+we have.
+
+00:10:22.380 --> 00:10:24.160
+So let me just open one more view.
+
+00:10:24.779 --> 00:10:28.740
+This view is going to have a style, style of styles.row.
+
+00:10:30.540 --> 00:10:32.660
+And then we are going to have another view.
+
+00:10:34.180 --> 00:10:40.940
+And this another view is also going to have a style, style of styles.statitem.
+
+00:10:42.680 --> 00:10:50.420
+This stat item is going to have another view and this view is going to show another style,
+
+00:10:51.660 --> 00:10:54.899
+which is basically equal to styles.staticon.
+
+00:10:56.579 --> 00:10:56.800
+Perfect.
+
+00:10:56.980 --> 00:11:02.160
+And then I am going to show the scale outline icon, something like this.
+
+00:11:02.339 --> 00:11:08.000
+And if I save it, this is how the scale outline icon going to show to us.
+
+00:11:08.400 --> 00:11:14.920
+Perfect and then below this I wanted to show the text out of this view.
+
+00:11:16.340 --> 00:11:18.980
+So this one like if I save it.
+
+00:11:19.380 --> 00:11:21.540
+Alright why they are coming at this point?
+
+00:11:22.320 --> 00:11:24.340
+So let me check and then I'll be right back.
+
+00:11:25.300 --> 00:11:27.819
+All right, our design is already fine.
+
+00:11:28.319 --> 00:11:29.079
+Just come here a minute.
+
+00:11:29.160 --> 00:11:33.959
+Let me save it because this will basically going to show in kind of an grid format.
+
+00:11:34.259 --> 00:11:35.319
+That's why the name is row.
+
+00:11:35.899 --> 00:11:36.959
+So no, no problem.
+
+00:11:36.960 --> 00:11:38.139
+We are doing good.
+
+00:11:38.680 --> 00:11:40.360
+So you will see that we have this view.
+
+00:11:41.220 --> 00:11:44.639
+You just need to copy this view and paste it once again.
+
+00:11:45.399 --> 00:11:53.720
+And now instead of showing this scale outline I wanted to show the resize outline.
+
+00:11:55.279 --> 00:12:01.220
+And instead of weight, I am going to say this as height and then this is going to become
+
+00:12:01.221 --> 00:12:07.959
+your height and instead of kg, this will become meter.
+
+00:12:08.560 --> 00:12:08.800
+Perfect.
+
+00:12:08.920 --> 00:12:11.540
+And if I save it, this is how they are going to look to us.
+
+00:12:11.720 --> 00:12:11.860
+Cool.
+
+00:12:13.380 --> 00:12:18.040
+Now, in same way, we have another item as well, StatItem.
+
+00:12:18.420 --> 00:12:19.980
+So let me paste it once again.
+
+00:12:20.820 --> 00:12:26.880
+And then now instead of like everything is same, StatItem.
+
+00:12:27.460 --> 00:12:29.940
+But now we don't need any icon for this.
+
+00:12:30.880 --> 00:12:33.640
+Instead of icon, I need a basic text.
+
+00:12:34.040 --> 00:12:35.860
+So let me paste that text.
+
+00:12:36.000 --> 00:12:43.840
+which is basically going to style.status label, which is as moves and then for moves, I am
+
+00:12:43.841 --> 00:12:45.960
+going to show all the moves that we have.
+
+00:12:46.140 --> 00:12:49.420
+So let me remove this and let me paste this only.
+
+00:12:50.160 --> 00:12:52.340
+So you will see the moves is now static.
+
+00:12:52.740 --> 00:12:52.900
+Perfect.
+
+00:12:52.960 --> 00:12:58.260
+You can even add here on the like multiple moves can have different icons.
+
+00:12:58.500 --> 00:13:05.500
+And then on the basis of ability name, you can render that icons as well.
+
+00:13:05.560 --> 00:13:09.320
+So take that as an assignment and try to implement by yourself.
+
+00:13:09.460 --> 00:13:11.120
+You can use AI for that as well.
+
+00:13:11.220 --> 00:13:12.740
+So no problem in it.
+
+00:13:13.080 --> 00:13:13.580
+Not at all.
+
+00:13:13.680 --> 00:13:19.460
+You can use AI, but while learning, try to avoid using that and write code by yourself
+
+00:13:19.461 --> 00:13:22.060
+so that your muscle memory could build.
+
+00:13:22.700 --> 00:13:25.240
+And then you can understand things very clearly.
+
+00:13:26.900 --> 00:13:27.580
+Perfect.
+
+00:13:28.090 --> 00:13:32.760
+So now out of this style.rows, I wanted to create another style.
+
+00:13:32.940 --> 00:13:34.620
+So our about section is done.
+
+00:13:35.120 --> 00:13:35.380
+Cool.
+
+00:13:35.420 --> 00:13:41.820
+So this content section is basically like this content have this thing.
+
+00:13:42.100 --> 00:13:46.880
+something known as this section so this is your about section is done let's
+
+00:13:47.019 --> 00:13:51.920
+create another section so let me call this once again view and same thing
+
+00:13:52.100 --> 00:13:57.920
+nothing different style and this style is again going to become styles dot
+
+00:13:58.440 --> 00:13:59.560
+section easy
+
+00:13:59.900 --> 00:14:07.200
+Now, this style.section first of all going to show me the base status that why I have
+
+00:14:07.380 --> 00:14:19.120
+this and then I need to create one more new component to pokemon.stats.map and this is
+
+00:14:19.121 --> 00:14:20.040
+going to be stat.
+
+00:14:21.100 --> 00:14:26.380
+And then inside this, I simply wanted to show here the status bar.
+
+00:14:27.380 --> 00:14:31.319
+This is not an inbuilt component, stat bar, not the status bar.
+
+00:14:31.380 --> 00:14:39.060
+Sorry, this is going to be stat bar and they are going to accept label, value, color and
+
+00:14:39.061 --> 00:14:39.399
+key.
+
+00:14:40.019 --> 00:14:40.279
+Easy.
+
+00:14:40.860 --> 00:14:45.259
+So, let's move ahead and let me just directly and copy and paste this component.
+
+00:14:45.260 --> 00:14:48.199
+So, inside component stat bar.
+
+00:14:48.200 --> 00:14:52.760
+And I can directly write that and simply paste it.
+
+00:14:53.460 --> 00:15:00.400
+So you will see that this is your interface perfect and this is your component.
+
+00:15:00.680 --> 00:15:06.940
+They are accepting this calculating some percentages and on a view we are rendering all of that
+
+00:15:07.000 --> 00:15:11.200
+a kind of basic I'll show you what is progress kind of bar.
+
+00:15:11.480 --> 00:15:13.320
+So now if I import it.
+
+00:15:13.400 --> 00:15:16.380
+And then I will show you this is what I am talking about.
+
+00:15:16.540 --> 00:15:21.720
+You will see the HP is this, attack is this, defense is this, special attack, special defense
+
+00:15:21.780 --> 00:15:22.360
+and speed.
+
+00:15:23.540 --> 00:15:23.860
+Perfect.
+
+00:15:24.260 --> 00:15:30.500
+So, let me just try to search for fighting and if I just open it, so this is how they
+
+00:15:30.501 --> 00:15:33.820
+are going to look and you can keep changing it.
+
+00:15:33.821 --> 00:15:34.300
+So cool.
+
+00:15:34.560 --> 00:15:39.380
+If I go to psychic and this one, so this is how they are going to work.
+
+00:15:42.260 --> 00:15:46.540
+Rock and if I go with it, so this is how they are going to look.
+
+00:15:47.660 --> 00:15:52.000
+And if I search for dragon and this one, so this is how they are going to look so cool.
+
+00:15:52.860 --> 00:15:58.520
+Now we have successfully implemented the Pokemon detail page as well and we are fetching the
+
+00:15:58.521 --> 00:16:00.360
+details very, very nicely.
+
+00:16:00.890 --> 00:16:03.360
+You I look charming and I'm loving it.
+
+00:16:03.620 --> 00:16:04.480
+You can see that.
+
+00:16:04.600 --> 00:16:09.120
+So, yes, now let me close everything and close this.
+
+00:16:09.560 --> 00:16:12.740
+So, this is the end of chapter number 4.
+
+00:16:13.100 --> 00:16:18.420
+In chapter number 5, we are basically going to implement the Pokemon list screen like
+
+00:16:18.421 --> 00:16:19.220
+this one.
+
+00:16:19.221 --> 00:16:20.759
+Everything is going to same.
+
+00:16:20.819 --> 00:16:25.519
+We are just directly showing there all the list instead of adding this searching and
+
+00:16:25.520 --> 00:16:27.399
+this filtration properties.
+
+00:16:27.920 --> 00:16:31.699
+So, yes, this is pretty much it for this chapter and see you next time.
+

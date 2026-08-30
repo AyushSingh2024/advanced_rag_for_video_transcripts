@@ -1,0 +1,869 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:03.160
+Alright guys, welcome to one more new lecture.
+
+00:00:03.360 --> 00:00:09.840
+In this lecture, we will explore different type of navigators that help to organize screens
+
+00:00:10.280 --> 00:00:11.100
+in real app.
+
+00:00:11.220 --> 00:00:17.500
+Like we have bottom tab for main section, drawer for side menus, model screen for temporary
+
+00:00:17.501 --> 00:00:19.080
+or overlay content.
+
+00:00:19.100 --> 00:00:26.040
+So, these navigators make it easy to structure your app navigation in a way that user can
+
+00:00:26.041 --> 00:00:28.360
+basically have a nice experience.
+
+00:00:28.980 --> 00:00:31.680
+Alright, so we are going to implement them step by step.
+
+00:00:31.700 --> 00:00:35.860
+So the first implementation we are going to do is for tab navigation.
+
+00:00:35.920 --> 00:00:37.000
+So what is it?
+
+00:00:37.220 --> 00:00:41.239
+Tab navigation provide like if I just take you towards this.
+
+00:00:41.480 --> 00:00:46.000
+Perfect, like this is our expogo app and at the very bottom you will see that we have
+
+00:00:46.001 --> 00:00:46.600
+two tabs.
+
+00:00:46.700 --> 00:00:49.700
+One is for settings, another one is for home.
+
+00:00:49.701 --> 00:00:53.700
+So we will see that how you can implement this inside your application.
+
+00:00:53.820 --> 00:00:54.520
+Very easy.
+
+00:00:54.860 --> 00:00:55.760
+Not rocket science.
+
+00:00:56.260 --> 00:01:02.340
+So for that first thing that you need to do is to install bunch of dependencies.
+
+00:01:02.820 --> 00:01:03.080
+Perfect.
+
+00:01:03.960 --> 00:01:14.220
+So for implementing tabs just simply run bunnex expo and then after that.
+
+00:01:14.221 --> 00:01:22.320
+is going to be at the rate react perfect expo install.
+
+00:01:22.479 --> 00:01:29.400
+Sorry, this is going to be at the rate react navigation slash bottom tabs.
+
+00:01:29.900 --> 00:01:30.220
+Perfect.
+
+00:01:30.479 --> 00:01:36.380
+So the moment you hit this, this is going to install this dependency after installing
+
+00:01:36.520 --> 00:01:38.640
+this successfully very easy approach.
+
+00:01:38.840 --> 00:01:42.940
+you need to do is to simply go inside your app.tsx.
+
+00:01:44.000 --> 00:01:48.340
+And whatever is written here, I just wanted you to cut them out.
+
+00:01:48.540 --> 00:01:48.840
+Perfect.
+
+00:01:50.100 --> 00:01:57.520
+Now, first step is to simply write here, import, create bottom tab navigator.
+
+00:01:57.740 --> 00:01:57.960
+Perfect.
+
+00:01:58.040 --> 00:02:00.700
+You need to import bottom tab navigator.
+
+00:02:00.900 --> 00:02:02.500
+from bottom tags.
+
+00:02:03.080 --> 00:02:07.620
+And after that, you need to import some icons if you wanted to.
+
+00:02:07.660 --> 00:02:13.080
+Let's say, let me just get my ION icons from expo vector icon.
+
+00:02:13.260 --> 00:02:15.200
+We definitely need to install them.
+
+00:02:15.960 --> 00:02:18.420
+And I think already we have it.
+
+00:02:18.680 --> 00:02:19.280
+I don't know.
+
+00:02:19.620 --> 00:02:22.440
+I think yes, we already have this vector icons installed.
+
+00:02:23.060 --> 00:02:25.000
+And first of all, let me off my AI.
+
+00:02:25.600 --> 00:02:26.660
+Perfect.
+
+00:02:27.300 --> 00:02:37.600
+And then simple, you can simply say const tab is equals to create bottom tab navigator
+
+00:02:37.860 --> 00:02:46.100
+and then call this and then you can simply say function tab navigator and then I can
+
+00:02:46.101 --> 00:02:50.040
+simply come into here and then say return, return what?
+
+00:02:50.180 --> 00:02:51.820
+So the first thing is going to be.
+
+00:02:52.500 --> 00:02:55.400
+Tab.navigator.
+
+00:02:55.900 --> 00:02:56.180
+Perfect.
+
+00:02:56.760 --> 00:03:00.360
+And this tab navigator is going to accept tab screens.
+
+00:03:00.720 --> 00:03:01.760
+Same like stack.
+
+00:03:02.200 --> 00:03:08.120
+So you can simply say tab.screen and this and make itself closing.
+
+00:03:08.660 --> 00:03:08.980
+Sorry.
+
+00:03:09.459 --> 00:03:15.080
+And then let's say so this screen is going to be the name of our home.
+
+00:03:15.400 --> 00:03:18.579
+And let me just call this in this way.
+
+00:03:18.620 --> 00:03:19.920
+This is going to be home.
+
+00:03:20.900 --> 00:03:23.400
+Then you can definitely render the component.
+
+00:03:23.640 --> 00:03:26.000
+So let me render my home component.
+
+00:03:26.680 --> 00:03:27.000
+Perfect.
+
+00:03:27.480 --> 00:03:28.860
+And then let's move ahead.
+
+00:03:28.959 --> 00:03:32.780
+Let me just copy this once again and paste this once again.
+
+00:03:33.500 --> 00:03:39.799
+And let me call this a details and let me render my details page here in same way.
+
+00:03:39.930 --> 00:03:43.700
+I can render another one and this is going to be for profile.
+
+00:03:44.200 --> 00:03:47.640
+And then this is also going to be for profile.
+
+00:03:48.200 --> 00:03:48.620
+Easy.
+
+00:03:49.000 --> 00:03:55.180
+And then I can simply say export default function, name this as an app.
+
+00:03:56.599 --> 00:04:00.239
+And then this is going to be written as tab navigator.
+
+00:04:00.819 --> 00:04:01.140
+Perfect.
+
+00:04:01.280 --> 00:04:02.180
+Let me save it.
+
+00:04:02.200 --> 00:04:08.459
+So, boom look at that the moment you save it at the bottom you will see home details
+
+00:04:09.099 --> 00:04:09.879
+and item.
+
+00:04:10.020 --> 00:04:13.260
+I already this is just basically related to this.
+
+00:04:13.580 --> 00:04:17.820
+So, let me remove everything and then simply write this one.
+
+00:04:17.860 --> 00:04:18.440
+All right.
+
+00:04:21.520 --> 00:04:28.460
+PAILSDETAILS and then let me just simply save it and boom and I can go to details in same
+
+00:04:28.461 --> 00:04:29.820
+way I can go to profile.
+
+00:04:30.400 --> 00:04:33.560
+So I hope so you guys able to understand this for now.
+
+00:04:34.460 --> 00:04:39.620
+Alright so now let's move ahead and we'll see that how you can customize them and add
+
+00:04:39.621 --> 00:04:41.140
+bunch of designing over it.
+
+00:04:41.300 --> 00:04:48.159
+So, first of all let me just try to customize this tab navigator very easy simple search
+
+00:04:48.160 --> 00:04:54.639
+for a screen options and then inside this we have like first thing that we have tab
+
+00:04:54.759 --> 00:04:59.319
+bar active tint color and then you can definitely add bunch of colors.
+
+00:04:59.320 --> 00:05:06.259
+So, let me add F4511E and if I save it look at that.
+
+00:05:06.400 --> 00:05:15.639
+And then we have a tab bar inactive background color or inactive tint color for now.
+
+00:05:15.979 --> 00:05:17.560
+So I can make this as a gray.
+
+00:05:18.060 --> 00:05:21.840
+So this is how they are going to look to us.
+
+00:05:22.020 --> 00:05:22.400
+Perfect.
+
+00:05:36.260 --> 00:05:36.380
+So.
+
+00:05:36.381 --> 00:05:36.401
+We will see what more you can do here.
+
+00:05:36.402 --> 00:05:36.422
+So in same way we have an option known as tab bar style and inside this tab bar style
+
+00:05:36.423 --> 00:05:38.680
+you can add background color, top width, border, a lot of things.
+
+00:05:38.760 --> 00:05:39.720
+Let me just add them.
+
+00:05:40.100 --> 00:05:45.460
+And now you will see that so the moment I'm adding it we have this background color border
+
+00:05:45.461 --> 00:05:47.140
+top with border top color.
+
+00:05:47.540 --> 00:05:48.540
+Definitely they are white.
+
+00:05:49.520 --> 00:05:50.860
+That's why they are not visible.
+
+00:05:52.120 --> 00:05:56.840
+Now let's move ahead and then in same way you can add header styles a lot of I mean
+
+00:05:57.060 --> 00:06:00.380
+a lot of options is coming need not to remember anything.
+
+00:06:00.920 --> 00:06:05.700
+Let me just try to add header style header tint color and the font weight for it.
+
+00:06:05.800 --> 00:06:06.680
+So look at that.
+
+00:06:06.900 --> 00:06:09.000
+This is how you can customize your
+
+00:06:09.300 --> 00:06:10.460
+headers as well.
+
+00:06:10.860 --> 00:06:13.500
+Let's see now how you can add icons here.
+
+00:06:13.860 --> 00:06:19.599
+So let me go to this tab screen for home and then open the options.
+
+00:06:20.199 --> 00:06:23.599
+Inside the option first thing is going to be is the title.
+
+00:06:23.940 --> 00:06:28.860
+So let me just say this as home and search for this home icon.
+
+00:06:29.159 --> 00:06:32.659
+And if I save it, this is how they are going to look to us.
+
+00:06:32.800 --> 00:06:39.759
+In same way you can search for tab bar icon and this icon having two things one is color
+
+00:06:40.159 --> 00:06:41.599
+another one is size.
+
+00:06:42.979 --> 00:06:48.500
+Have other thing as well but for now let's be with it and then you can basically use
+
+00:06:48.501 --> 00:06:51.240
+the iron icon and give the name of it.
+
+00:06:51.500 --> 00:06:52.020
+So.
+
+00:06:52.021 --> 00:06:56.940
+I can't find the name, but why I have imported it.
+
+00:06:56.980 --> 00:07:03.500
+Alright, so let me import my iron icons and then I can basically use them.
+
+00:07:03.501 --> 00:07:08.560
+So if I save it, you will see the home icon we are using it easy.
+
+00:07:09.140 --> 00:07:10.760
+So let me copy this once again.
+
+00:07:11.400 --> 00:07:13.600
+Let me paste on the here.
+
+00:07:13.860 --> 00:07:14.140
+Perfect.
+
+00:07:14.600 --> 00:07:19.380
+And then I can call this as a details page.
+
+00:07:20.000 --> 00:07:20.280
+Perfect.
+
+00:07:20.780 --> 00:07:23.140
+So, let me just simply save it.
+
+00:07:23.440 --> 00:07:28.440
+So, you will see this is how details is coming and for details what I can use.
+
+00:07:28.441 --> 00:07:32.760
+I mean, I don't remember the name of them, but let me search for it.
+
+00:07:33.540 --> 00:07:37.020
+So, I have basically visited to this specific website.
+
+00:07:37.300 --> 00:07:37.400
+Cool.
+
+00:07:37.700 --> 00:07:39.300
+And then let me search for details.
+
+00:07:39.500 --> 00:07:45.260
+So, maybe I can import it and I can use something like this, but I am using ION.
+
+00:07:46.100 --> 00:07:50.220
+So, I am just adding like ION icon and for detail we don't have.
+
+00:07:51.060 --> 00:07:52.860
+So, we can use any I mean.
+
+00:07:53.580 --> 00:07:53.680
+Cool.
+
+00:07:53.760 --> 00:07:56.460
+So, what if I just use this folder for details?
+
+00:07:56.920 --> 00:07:57.280
+Cool.
+
+00:07:57.281 --> 00:07:59.440
+So, let me just call this as a folder.
+
+00:07:59.800 --> 00:08:00.220
+Perfect.
+
+00:08:00.400 --> 00:08:06.880
+So, if I just simply add here folder, so this is how this details is coming, cool and then
+
+00:08:07.060 --> 00:08:09.580
+profile is pretty easy.
+
+00:08:09.840 --> 00:08:13.139
+So, for profile I can use the person, perfect.
+
+00:08:13.140 --> 00:08:15.800
+So, let me copy this option.
+
+00:08:16.200 --> 00:08:18.680
+Let me paste this option.
+
+00:08:19.040 --> 00:08:24.300
+Title is going to be as profile and name is going to be as person.
+
+00:08:24.460 --> 00:08:24.700
+Easy.
+
+00:08:24.740 --> 00:08:30.300
+And if I save it, look at that how beautifully they are looking and this looks a bit unprofessional.
+
+00:08:30.760 --> 00:08:35.600
+So let me remove the emoji and look at that.
+
+00:08:36.160 --> 00:08:41.380
+How easily you can simply create your bottom tab navigations like this.
+
+00:08:42.000 --> 00:08:42.559
+Perfect.
+
+00:08:43.480 --> 00:08:43.840
+Nice.
+
+00:08:44.180 --> 00:08:48.400
+Now, let's move ahead and start understanding bunch of other thing as well.
+
+00:08:49.620 --> 00:08:53.120
+But before moving ahead, I just wanted to organize them here.
+
+00:08:53.460 --> 00:08:58.600
+So what I'm going to do at the very top, I'm going to create here a navigation folder.
+
+00:08:58.800 --> 00:09:06.720
+Inside this navigation first is going to be for tab navigation.tsx and I am simply going
+
+00:09:06.721 --> 00:09:09.420
+to copy this course code and paste this code.
+
+00:09:09.680 --> 00:09:09.899
+Perfect.
+
+00:09:09.959 --> 00:09:11.560
+You need not to do anything for it.
+
+00:09:11.700 --> 00:09:15.080
+Just keep it here and once again let me make it empty.
+
+00:09:16.080 --> 00:09:21.100
+Now I just wanted to implement the other thing which is model.
+
+00:09:22.759 --> 00:09:25.740
+Basically, so how model is going to work?
+
+00:09:26.220 --> 00:09:27.319
+Model is very simple.
+
+00:09:27.420 --> 00:09:30.519
+I mean model is just a behavior you are going to see.
+
+00:09:31.120 --> 00:09:35.920
+So for that very simple you just simply need to add a tag.
+
+00:09:36.319 --> 00:09:38.959
+Let me just go one screen back.
+
+00:09:40.139 --> 00:09:40.459
+Perfect.
+
+00:09:41.240 --> 00:09:45.800
+Let me just close this and we don't need tab navigator.
+
+00:09:46.040 --> 00:09:48.079
+Let me just go back from here.
+
+00:09:49.940 --> 00:09:54.440
+Instead, I don't need, I'm just giving back, just give me a minute, I'll be right back.
+
+00:09:55.200 --> 00:10:00.440
+Alright, so now you guys can see that I am on my previous screen, which is the stack
+
+00:10:00.540 --> 00:10:00.959
+navigator.
+
+00:10:01.000 --> 00:10:05.959
+We have a home screen, we have details, we have profile as well.
+
+00:10:06.380 --> 00:10:09.839
+So how you can basically treat any screen as a tab.
+
+00:10:10.760 --> 00:10:15.360
+So for that, what you can do, let me just try to show you that into the screen.
+
+00:10:15.600 --> 00:10:17.860
+Let me add here something on his model screen.
+
+00:10:18.879 --> 00:10:26.120
+Simple, not rocket science and in this model screen basically I am just adding a basic
+
+00:10:26.121 --> 00:10:31.680
+component you need not to write this from scratch I am just writing this just for demonstration
+
+00:10:31.681 --> 00:10:33.680
+purpose cool.
+
+00:10:33.980 --> 00:10:39.600
+So you will see that this is the UI of a model screen we are basically showing the view then
+
+00:10:39.601 --> 00:10:42.899
+we have simple scroll view then we are showing bunch of titles.
+
+00:10:43.100 --> 00:10:46.680
+And bunch of other thing, nothing, nothing rocket science, a basic design.
+
+00:10:46.839 --> 00:10:48.500
+You will get all the code for it.
+
+00:10:48.620 --> 00:10:48.740
+Cool.
+
+00:10:49.079 --> 00:10:53.040
+So let me save it and let me see that how we can implement this.
+
+00:10:53.620 --> 00:10:54.819
+So it's very easy.
+
+00:10:55.139 --> 00:10:59.139
+So for using it, go inside your app below this profile.
+
+00:10:59.500 --> 00:11:05.400
+Listen to me carefully below this profile let me just simply say a stack dot screen
+
+00:11:05.680 --> 00:11:12.080
+simple same thing that you are doing and give this a name let me name it as model you can
+
+00:11:12.081 --> 00:11:17.180
+name it whatever you want then simply add here the component, component is going to
+
+00:11:17.181 --> 00:11:18.300
+be as model screen.
+
+00:11:18.600 --> 00:11:21.560
+And then option is very important here.
+
+00:11:21.880 --> 00:11:28.839
+So first thing for making it as a model you can simply say presentation and presentation
+
+00:11:28.840 --> 00:11:33.120
+you can see we have bunch of options but right now I wanted to go with model.
+
+00:11:34.000 --> 00:11:37.320
+Easy, then in same way you can give it a title.
+
+00:11:38.160 --> 00:11:43.140
+So let me give the title as filter options, whatever you want.
+
+00:11:44.000 --> 00:11:46.440
+In same way I can add bunch of header styles.
+
+00:11:46.540 --> 00:11:51.500
+So I'm just simply copy and pasting that because now you have understanding that how you can
+
+00:11:51.960 --> 00:11:52.520
+write them.
+
+00:11:52.680 --> 00:11:52.820
+Cool.
+
+00:11:53.400 --> 00:11:59.560
+So, if I just simply paste it nothing going on wrong this is the your header style this
+
+00:11:59.620 --> 00:12:05.120
+is your tint color this is your header left header right just for a done perfect let me
+
+00:12:05.121 --> 00:12:12.600
+remove this white color we do not need it easy and for home I also wanted to remove
+
+00:12:12.740 --> 00:12:19.860
+the this white color perfect and if I save it and if I just press R just to reload it
+
+00:12:22.460 --> 00:12:25.420
+Perfect, and if I come into here, this is how they are showing.
+
+00:12:25.780 --> 00:12:32.600
+Now let's go to our home page and instead of going to details, let me just simply say
+
+00:12:32.601 --> 00:12:39.520
+this is go to model and instead of saying go to model, let me say this as open model.
+
+00:12:40.380 --> 00:12:46.420
+Perfect, and if I save it and if I just simply press on open model you will see the behavior
+
+00:12:46.421 --> 00:12:47.500
+something like this.
+
+00:12:48.240 --> 00:12:51.740
+But if I try to show you just give me a minute.
+
+00:12:52.380 --> 00:12:52.580
+Cool.
+
+00:12:53.920 --> 00:12:57.520
+One minute let me just connect my iPhone and then I will show you something.
+
+00:12:58.140 --> 00:13:03.440
+Alright, so right now I have opened my application onto my iPhone and then if I just simply try
+
+00:13:03.520 --> 00:13:04.220
+to show you that.
+
+00:13:04.320 --> 00:13:04.920
+Look at that.
+
+00:13:04.921 --> 00:13:05.280
+Cool.
+
+00:13:06.300 --> 00:13:08.800
+I simply press over this open model.
+
+00:13:09.680 --> 00:13:14.040
+Alright, look at that, the behavior you are able to see like this is your model behavior,
+
+00:13:14.240 --> 00:13:14.480
+perfect.
+
+00:13:15.200 --> 00:13:19.560
+And in same way you can close this and this is how they are going to close.
+
+00:13:19.820 --> 00:13:20.460
+So perfect.
+
+00:13:20.920 --> 00:13:22.480
+So I hope so that makes sense now.
+
+00:13:22.640 --> 00:13:25.400
+Let me once again open my this.
+
+00:13:25.760 --> 00:13:25.920
+Cool.
+
+00:13:26.940 --> 00:13:27.380
+Perfect.
+
+00:13:27.760 --> 00:13:32.740
+So this is how and this is how this is basically going to show inside your Android and if you
+
+00:13:32.741 --> 00:13:36.660
+simply press on done you can do bunch of other actions if I close this.
+
+00:13:36.959 --> 00:13:41.500
+So this is going to close if I open it this is going to open if you simply press on go
+
+00:13:41.501 --> 00:13:43.660
+to home and now you are on home.
+
+00:13:45.140 --> 00:13:51.420
+Perfect and on iPhone home if I just let me show you once again let me open my camera
+
+00:13:51.899 --> 00:13:54.120
+and then I will show you that once again cool.
+
+00:13:55.420 --> 00:14:00.040
+So look at that this is my phone and if I click on open model this is how my model is
+
+00:14:00.041 --> 00:14:05.880
+opening and if I just simply press on go to home you will see that this is how that go
+
+00:14:05.881 --> 00:14:07.240
+to home is working.
+
+00:14:08.019 --> 00:14:08.279
+Cool.
+
+00:14:09.100 --> 00:14:13.980
+Like in kind of a same way that we are able to see.
+
+00:14:15.060 --> 00:14:15.360
+Perfect.
+
+00:14:15.940 --> 00:14:18.880
+So yeah, this is how you can basically create your models.
+
+00:14:19.399 --> 00:14:25.800
+Now let's move ahead and see like for creating model just a simple flag and the name of that
+
+00:14:25.801 --> 00:14:28.399
+flag is presentation as model.
+
+00:14:28.779 --> 00:14:29.259
+That's it.
+
+00:14:29.399 --> 00:14:31.579
+And then this is going to work as model.
+
+00:14:31.600 --> 00:14:37.860
+Now, last thing which is left for this chapter and then from next chapter definitely we are
+
+00:14:37.861 --> 00:14:39.019
+going to create the project.
+
+00:14:39.259 --> 00:14:39.639
+Don't worry.
+
+00:14:40.100 --> 00:14:43.459
+So the last chapter for this is going to be create a drawer.
+
+00:14:43.899 --> 00:14:46.519
+So now let's move ahead and start implementing that.
+
+00:14:47.000 --> 00:14:53.120
+So now I have cleared this and for using drawer, you basically need to install a bunch of things.
+
+00:14:53.550 --> 00:14:57.980
+So the first thing is you need to install this React navigation drawer.
+
+00:14:58.300 --> 00:15:05.760
+So, let me open my terminal, let me clear this and then simply add one add react navigation
+
+00:15:05.920 --> 00:15:09.620
+and make sure to close your application and then open it otherwise this will going to
+
+00:15:09.621 --> 00:15:15.620
+show you some error and then also make sure just to check that you have react native gesture
+
+00:15:15.621 --> 00:15:19.459
+handler react native reanimated and react native worklets.
+
+00:15:19.760 --> 00:15:21.940
+These are bunch of dependencies that you need.
+
+00:15:22.100 --> 00:15:29.100
+And, instead of using NPMX make sure to using bunnx.
+
+00:15:29.779 --> 00:15:31.720
+That's all you need to do.
+
+00:15:31.880 --> 00:15:32.139
+Cool.
+
+00:15:32.699 --> 00:15:38.180
+Now, let's move ahead and we will see that how you can implement it.
+
+00:15:38.399 --> 00:15:39.279
+So, very simple.
+
+00:15:39.380 --> 00:15:43.420
+First thing is you need to import your create drawer navigator.
+
+00:15:43.600 --> 00:15:48.319
+So, let me coming to here and let me just copy this much of code.
+
+00:15:48.639 --> 00:15:49.380
+Yes.
+
+00:15:50.360 --> 00:15:55.160
+Simple, no problem and let me just copy this, nothing rocket science.
+
+00:15:55.780 --> 00:15:56.660
+Let me paste it.
+
+00:15:56.960 --> 00:16:04.340
+So let me get my home component and in same way let me try to get my profile component
+
+00:16:05.040 --> 00:16:06.800
+and I can even get my details.
+
+00:16:07.240 --> 00:16:08.380
+So nothing.
+
+00:16:08.900 --> 00:16:17.720
+So, let me just add here this and let me remove this instead of home let me call this as detail
+
+00:16:18.000 --> 00:16:24.260
+and again you can change their name in small letters and let me get my details page as
+
+00:16:24.261 --> 00:16:24.320
+well.
+
+00:16:24.321 --> 00:16:26.240
+So, the step number one is done.
+
+00:16:27.160 --> 00:16:34.900
+Step number two is very simple that you need to do what you simply need to say export default
+
+00:16:34.901 --> 00:16:36.100
+function app.
+
+00:16:37.780 --> 00:16:48.500
+And this export default function app is going to return you this drawer like this my drawer.
+
+00:16:49.660 --> 00:16:49.960
+Perfect.
+
+00:16:51.000 --> 00:16:57.400
+So let me just coming to here simply add this and then this is how you can add this and
+
+00:16:57.460 --> 00:16:58.740
+let me save it.
+
+00:16:58.760 --> 00:16:59.180
+Perfect.
+
+00:16:59.520 --> 00:17:02.720
+Now try to close your currently running application.
+
+00:17:02.900 --> 00:17:06.300
+Clear everything and rerun this.
+
+00:17:06.560 --> 00:17:10.560
+Perfect so that we can have a fresh development build.
+
+00:17:11.280 --> 00:17:14.820
+And let me just simply write R just to reload this.
+
+00:17:15.280 --> 00:17:15.560
+Perfect.
+
+00:17:15.740 --> 00:17:18.760
+So ignore this iOS 1 because it is also running on my iPhone.
+
+00:17:20.859 --> 00:17:27.260
+That's why, so I hope so this will open in a while and perfect, finger cross because
+
+00:17:27.319 --> 00:17:34.080
+sometime models is behave in weird way, if I just simply press over it and look at that,
+
+00:17:34.419 --> 00:17:39.880
+if you press on details you are on details page, if you press on profile you are on profile
+
+00:17:39.881 --> 00:17:44.820
+page, press on go back definitely you need because you can't do so this, look at that.
+
+00:17:45.000 --> 00:17:50.780
+not handled by any navigator, so you can definitely handle them initialize navigator and you can
+
+00:17:50.781 --> 00:17:52.020
+do so that as well.
+
+00:17:52.900 --> 00:17:58.160
+So but right now our main focus is to see like this is how you can basically implement
+
+00:17:58.720 --> 00:17:59.980
+drawer as well.
+
+00:18:00.400 --> 00:18:06.240
+So, yes, we have seen how you can implement stack, how you can implement tabs, how you
+
+00:18:06.300 --> 00:18:09.660
+can implement models, how you can implement draw.
+
+00:18:10.380 --> 00:18:10.720
+Cool.
+
+00:18:10.960 --> 00:18:16.420
+So, yes, this is pretty much it for this chapter and from next chapter we are going to create
+
+00:18:16.421 --> 00:18:18.240
+our Pokemon application.
+
+00:18:18.480 --> 00:18:20.080
+So, see you next time.
+

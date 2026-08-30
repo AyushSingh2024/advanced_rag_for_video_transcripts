@@ -1,0 +1,908 @@
+WEBVTT
+
+00:00:01.060 --> 00:00:06.980
+Hey everyone and welcome to one more new lecture and today we are diving into something super
+
+00:00:07.140 --> 00:00:10.360
+powerful named as linking API in expo.
+
+00:00:11.090 --> 00:00:15.920
+This is chapter 2 of our device and system APIs module and trust me after this lecture
+
+00:00:16.100 --> 00:00:22.000
+you will be able to open URLs, handles, deep links and send emails, make phone calls and
+
+00:00:22.060 --> 00:00:24.960
+even integrate URL schemes like a pro.
+
+00:00:25.300 --> 00:00:27.660
+So, let's jump right in perfect.
+
+00:00:27.750 --> 00:00:30.300
+So, first of all, what do you mean by linking API?
+
+00:00:31.890 --> 00:00:37.120
+So, the linking API allow you your app to open external URL.
+
+00:00:37.610 --> 00:00:37.860
+All right.
+
+00:00:38.800 --> 00:00:41.820
+So, if I just simply say what is linking API?
+
+00:00:42.350 --> 00:00:43.400
+So, the first thing is.
+
+00:00:44.200 --> 00:00:55.760
+Open external APIs. Second, handle deep link. They are using just to handle deep links like
+
+00:00:55.880 --> 00:01:03.800
+URLs that open your app. Perfect. Have you ever used any shopping application like Amazon,
+
+00:01:04.700 --> 00:01:05.940
+like something else?
+
+00:01:06.200 --> 00:01:12.259
+So, the moment someone share that product link with you and you click over it, you are
+
+00:01:12.280 --> 00:01:17.380
+redirected to the app to the same product got it.
+
+00:01:17.381 --> 00:01:21.460
+So, how they are basically working, they are working with the help of deep links.
+
+00:01:22.700 --> 00:01:29.979
+Then we have let us say you wanted to send emails and SMS messages, then and only also
+
+00:01:30.080 --> 00:01:30.299
+needed.
+
+00:01:30.400 --> 00:01:34.799
+Sometimes you receive a notification and the moment you click on this notification, you
+
+00:01:34.820 --> 00:01:41.460
+are redirected to that specific page from where that notification for that notification
+
+00:01:41.759 --> 00:01:43.440
+was generated, got it.
+
+00:01:43.960 --> 00:01:44.880
+So you need it.
+
+00:01:45.899 --> 00:01:48.200
+like you wanted to make phone calls.
+
+00:01:48.800 --> 00:01:52.560
+You wanted to open other apps like map, WhatsApp, etc.
+
+00:01:53.210 --> 00:01:58.480
+And whenever you wanted to parse your URL parameters and wanted to handle navigation,
+
+00:01:59.130 --> 00:02:03.380
+in all of that case, you need a linking API.
+
+00:02:03.810 --> 00:02:09.139
+So think of it as a bridge between your app and the outside world.
+
+00:02:11.860 --> 00:02:14.820
+Why do we even need the linking API?
+
+00:02:15.160 --> 00:02:17.820
+So let's again, let's take the scenario one.
+
+00:02:18.540 --> 00:02:21.820
+You are making a e-commerce app.
+
+00:02:22.500 --> 00:02:27.760
+So whenever let's say user click on customer support, we want user to open their email.
+
+00:02:27.900 --> 00:02:29.940
+Whenever user share any product.
+
+00:02:30.200 --> 00:02:31.700
+Yes, this is what I'm talking about.
+
+00:02:32.260 --> 00:02:37.420
+Whenever users share any product, so they can basically share the dialogue and the moment
+
+00:02:37.421 --> 00:02:40.580
+you click over it, they are redirected to that specific product page.
+
+00:02:41.519 --> 00:02:46.720
+Whenever you wanted to track your orders, so we can say you need it like open external
+
+00:02:46.880 --> 00:02:49.340
+tracking URLs in that case you need it.
+
+00:02:49.739 --> 00:02:54.220
+Whenever you wanted to call your customer care services, then let's say you are creating
+
+00:02:54.340 --> 00:02:55.640
+a social media application.
+
+00:02:56.800 --> 00:03:04.300
+Let's say you just simply here and creating a social media app, then user click a link
+
+00:03:04.420 --> 00:03:06.440
+in bio and then we are opening the browser.
+
+00:03:07.900 --> 00:03:08.140
+Perfect.
+
+00:03:08.640 --> 00:03:11.640
+So user click link in bio.
+
+00:03:12.200 --> 00:03:19.540
+And then we basically opens the browser second whenever you open the Instagram.
+
+00:03:20.220 --> 00:03:25.800
+So how they are basically launches that is the main thing that we have a share button
+
+00:03:26.080 --> 00:03:33.120
+which open the native share sheet will see that how you can create your own share sheets
+
+00:03:33.300 --> 00:03:33.819
+will see that.
+
+00:03:34.500 --> 00:03:37.880
+In same way, we have a forward delivery app.
+
+00:03:38.120 --> 00:03:45.660
+So in forward delivery app, you basically can able to get directions like just to open
+
+00:03:45.780 --> 00:03:46.420
+the Google map.
+
+00:03:47.160 --> 00:03:47.240
+Perfect.
+
+00:03:47.310 --> 00:03:50.060
+So we can simply say open Google maps.
+
+00:03:50.470 --> 00:03:51.540
+You can call restaurant.
+
+00:03:51.920 --> 00:03:53.160
+You have a payment link.
+
+00:03:53.300 --> 00:03:54.060
+This is very important.
+
+00:03:54.630 --> 00:03:55.220
+So opens.
+
+00:03:55.520 --> 00:03:56.840
+We can say a payment app.
+
+00:03:57.500 --> 00:04:03.900
+So all of this scenario is only possible with the, one of the reason this is only possible
+
+00:04:04.080 --> 00:04:05.680
+with the help of linking APIs.
+
+00:04:06.680 --> 00:04:06.940
+Perfect.
+
+00:04:06.960 --> 00:04:10.380
+So without linking API, your app would be isolated.
+
+00:04:10.820 --> 00:04:11.500
+You can say that.
+
+00:04:12.180 --> 00:04:18.600
+And there is no way to interact with other apps or we can say URLs for it.
+
+00:04:20.399 --> 00:04:25.460
+So, let us see that how we can basically implement that.
+
+00:04:25.780 --> 00:04:34.500
+So for that, there is one library for it, name as expo-linking, an API that provide methods
+
+00:04:34.740 --> 00:04:37.340
+to create and open deep link universally.
+
+00:04:37.460 --> 00:04:41.880
+So simply copy this and just give me a minute.
+
+00:04:42.090 --> 00:04:44.460
+Let me fix it as well and let me open.
+
+00:04:46.180 --> 00:04:55.700
+My VS code alright and let just open one PowerShell and simply hit burn x expo install
+
+00:04:56.040 --> 00:04:57.120
+expo linking alright.
+
+00:04:57.190 --> 00:05:02.660
+So in 200 milliseconds we have successfully done it.
+
+00:05:04.280 --> 00:05:11.180
+Now let me go to my app and index, we do not need this index details for now, nice.
+
+00:05:11.820 --> 00:05:18.660
+So let us take the example number one and that example is basically going to be used
+
+00:05:19.320 --> 00:05:24.800
+for we can say opening the URL and let us say just to make some sort of call.
+
+00:05:25.600 --> 00:05:27.080
+Let us see how you can basically.
+
+00:05:27.600 --> 00:05:37.000
+So, basically let me go inside this and let me name this as linking link so that we have
+
+00:05:37.780 --> 00:05:44.040
+and what I can do, I can create one folder and it's fine let's just organize them into
+
+00:05:44.200 --> 00:05:47.080
+the link and you can simply again say.
+
+00:05:47.700 --> 00:05:57.860
+basic linking dot tsx rafce and basic linking. Let me save it. Let us copy this. Let us
+
+00:05:57.880 --> 00:06:03.440
+go to index and below this, let us grab the basic linking component.
+
+00:06:04.920 --> 00:06:10.900
+So, how you can basically make this basic linking even without config callback div.
+
+00:06:11.480 --> 00:06:12.460
+Oh, what just happened?
+
+00:06:12.580 --> 00:06:13.420
+Sorry, my mistake.
+
+00:06:14.200 --> 00:06:14.900
+R and FES.
+
+00:06:15.820 --> 00:06:16.980
+Then this is basic linking.
+
+00:06:17.280 --> 00:06:17.840
+Let me save it.
+
+00:06:17.980 --> 00:06:19.840
+Now we are able to see it.
+
+00:06:20.760 --> 00:06:20.820
+Perfect.
+
+00:06:20.910 --> 00:06:23.780
+So, first of all, let me import all of the things that I need.
+
+00:06:24.160 --> 00:06:28.580
+So, I have just basically imported linking from expo linking.
+
+00:06:29.000 --> 00:06:35.040
+easy. So, first of all let's create one utility that will help us to open a website. So, I
+
+00:06:35.060 --> 00:06:44.300
+can simply say const open a website is equals to a simple async function no problem and
+
+00:06:45.060 --> 00:06:51.500
+then what I will do I can let's say take one URL. So, for now I can simply take Google
+
+00:06:51.760 --> 00:06:53.780
+urls/sttp/lens.
+
+00:06:55.880 --> 00:07:02.780
+Google.com and we can check if URL can be open or not.
+
+00:07:02.850 --> 00:07:05.360
+So for that we have some utilities.
+
+00:07:05.580 --> 00:07:11.979
+I can simply say can open is equals to await and then I can say linking and they we have
+
+00:07:12.080 --> 00:07:17.400
+one function name as can open URL and then we pass the URL inside this.
+
+00:07:18.160 --> 00:07:20.940
+Then this can open can return a true and false.
+
+00:07:21.280 --> 00:07:22.000
+If this is true.
+
+00:07:22.800 --> 00:07:33.259
+Then simply say linking dot open URL and then simply pass the URL that we have otherwise
+
+00:07:33.819 --> 00:07:37.159
+simply go inside else and then we can show the alert.
+
+00:07:38.500 --> 00:07:45.379
+All right, so this is we have alert and alert dot alert and then simply say error.
+
+00:07:46.620 --> 00:07:47.620
+We can simply...
+
+00:07:50.680 --> 00:07:57.379
+What I will say I can simply say cannot open this URL.
+
+00:07:58.259 --> 00:07:59.580
+Let's see how we can use it.
+
+00:08:00.060 --> 00:08:07.379
+So for using that let me go to my view perfect first of all let me paste all the UI that
+
+00:08:07.380 --> 00:08:07.780
+I need.
+
+00:08:08.400 --> 00:08:15.500
+So, let me just copy this and let me paste it cool and then inside the view first thing
+
+00:08:15.580 --> 00:08:24.500
+that I need I can simply say style and this style is going to be a styles.container and
+
+00:08:25.100 --> 00:08:28.440
+initially I can simply show here the linking examples.
+
+00:08:29.400 --> 00:08:34.380
+And below this I can have one name as touchable opacity.
+
+00:08:36.140 --> 00:08:39.360
+This touchable opacity is going to show us a text.
+
+00:08:40.700 --> 00:08:45.440
+That text is basically saying open website and then what I will do I can simply say on
+
+00:08:45.580 --> 00:08:45.820
+press.
+
+00:08:46.430 --> 00:08:52.120
+Yes, whenever I press I wanted to call my open website function easy, simple.
+
+00:08:52.800 --> 00:08:59.140
+And then let me pass all the styles that we have easy now let me save it and the moment
+
+00:08:59.200 --> 00:09:08.100
+I click on open website you will see we are redirected towards the Google.com perfect
+
+00:09:08.839 --> 00:09:22.779
+nice in same way let's say instead of this I wanted to take
+
+00:09:22.780 --> 00:09:22.800
+Oh, what just happened to my personal site.
+
+00:09:22.801 --> 00:09:25.380
+So I can simply say www.surechkumarjha.me.
+
+00:09:26.560 --> 00:09:27.940
+Hopefully this is the right URL.
+
+00:09:28.740 --> 00:09:29.080
+I don't know.
+
+00:09:29.120 --> 00:09:32.380
+Let me go back and if I again press on open website.
+
+00:09:34.460 --> 00:09:36.020
+So what just happened?
+
+00:09:36.220 --> 00:09:37.260
+I am not redirected.
+
+00:09:41.880 --> 00:09:52.160
+Let me try to reload it once, maybe this will work right now and alright this is still loading
+
+00:09:52.260 --> 00:09:56.300
+and if I again press on open website and yes look at that.
+
+00:09:56.560 --> 00:10:00.820
+Now I am redirected to my personal portfolio site, cool?
+
+00:10:01.560 --> 00:10:04.500
+So this is how they basically look to us, cool?
+
+00:10:06.040 --> 00:10:06.519
+Nice.
+
+00:10:06.760 --> 00:10:08.000
+So this is the first utility.
+
+00:10:09.160 --> 00:10:13.620
+Now let's say you wanted to open your WhatsApp, you wanted to open your maps.
+
+00:10:13.899 --> 00:10:18.880
+So how you can do, you wanted to send some SMS to someone else.
+
+00:10:19.060 --> 00:10:21.680
+So let me just keep adding the example for all of them.
+
+00:10:21.820 --> 00:10:23.640
+Same thing, same utility, open URL.
+
+00:10:24.100 --> 00:10:28.240
+You just need to know that how you can create URLs for that.
+
+00:10:28.380 --> 00:10:31.560
+Let's say whenever you wanted to send SMS to someone else.
+
+00:10:31.800 --> 00:10:32.500
+Got it.
+
+00:10:32.620 --> 00:10:37.279
+So first thing you need a phone number, second thing is the message and for iOS definitely
+
+00:10:37.480 --> 00:10:42.760
+you need to go through this and for Android this is how you need to go with it and simple
+
+00:10:42.920 --> 00:10:46.000
+whenever you say send SMS you can send SMS.
+
+00:10:47.720 --> 00:10:50.200
+Let's say I wanted to open a maps.
+
+00:10:50.459 --> 00:10:51.600
+So how you can open a map?
+
+00:10:52.100 --> 00:10:57.720
+Whatever the location address you wanted to pass here and the URL and whatever the address
+
+00:10:57.819 --> 00:11:01.440
+the moment you click over it you are redirected to that specific location.
+
+00:11:01.579 --> 00:11:02.600
+I am not clicking here.
+
+00:11:02.910 --> 00:11:09.000
+I just wanted to don't show my location for now and in same way whenever you wanted to
+
+00:11:09.060 --> 00:11:12.600
+open WhatsApp Instagram same thing you just need to know.
+
+00:11:13.100 --> 00:11:17.380
+something like let's say this is someone's phone number, you wanted to send this hello
+
+00:11:17.459 --> 00:11:23.699
+message and simply say URL and this is the WhatsApp and can open, we are just understanding
+
+00:11:23.839 --> 00:11:25.899
+about this and can open thing, cool.
+
+00:11:27.440 --> 00:11:32.040
+And we can implement all of the utilities that we have, cool.
+
+00:11:32.149 --> 00:11:36.800
+So you can definitely give it a try that how you can implement that.
+
+00:11:37.300 --> 00:11:44.320
+nice and if I save it, so you will in same way like only we have for now in same way
+
+00:11:44.321 --> 00:11:48.000
+you can even send emails you can send whatever you want cool.
+
+00:11:49.310 --> 00:11:51.680
+So let me for now comment this out and.
+
+00:11:53.000 --> 00:11:56.040
+Why it is not reloading in real time?
+
+00:11:56.290 --> 00:11:58.940
+There is something wrong in it, it's fine.
+
+00:11:59.890 --> 00:12:07.300
+So now we have sent SMS, open maps, open WhatsApp and all of is going to show here and the moment
+
+00:12:07.410 --> 00:12:22.980
+I click any of the button, they will be redirecting us towards that specific
+
+00:12:22.981 --> 00:12:23.001
+page. Alright, so now you guys can see that this is what actually showing to us and again
+
+00:12:23.002 --> 00:12:25.120
+the moment you click any one of them you are redirected to that specific URL. Perfect, so
+
+00:12:25.180 --> 00:12:31.459
+this is the basics of linking. Now let's go one step ahead and start learning about something
+
+00:12:31.600 --> 00:12:34.080
+known as deep linking receiving URL.
+
+00:12:34.600 --> 00:12:43.819
+So, for that let me just go to this link and create one component name as deeplinking.tsx
+
+00:12:44.019 --> 00:12:50.899
+and then RNFES and this is going to be deeplinkinj linking perfect.
+
+00:12:51.700 --> 00:12:55.800
+And let's let's start again from basics.
+
+00:12:55.920 --> 00:13:01.340
+So first of all, let me import all of the things that I need just to simulate this.
+
+00:13:02.800 --> 00:13:09.900
+And after this, what I will do, I can simply initialize two state variables, initial URL
+
+00:13:10.180 --> 00:13:11.360
+and received URL.
+
+00:13:12.640 --> 00:13:12.720
+Perfect.
+
+00:13:13.360 --> 00:13:20.000
+And then what I will do, I can simply run a use effect here.
+
+00:13:20.700 --> 00:13:29.300
+So, that use effect will something like simply say use effect call this callback add empty
+
+00:13:29.420 --> 00:13:37.860
+array and then say linking yes linking dot get initial URL yes this is how you can get
+
+00:13:37.940 --> 00:13:43.660
+your initial URL like get the URL that open the app if if binary chance you have opened
+
+00:13:44.220 --> 00:13:48.400
+and then we have a then then inside this we have access of URLs.
+
+00:13:49.300 --> 00:13:56.680
+perfect. And then what you can do inside this simply move ahead and say if we have any URL
+
+00:13:56.839 --> 00:14:04.820
+for it then simply say set initial URL equal to the URL and then in future in a while I
+
+00:14:04.821 --> 00:14:10.720
+am going to create here a function name as handle deep link. Then listen for URL while
+
+00:14:10.820 --> 00:14:16.839
+app is running so I can simply say const subscription is equals to
+
+00:14:17.900 --> 00:14:27.160
+So, linking dot add event listener and that event listener is URL then listen for that
+
+00:14:27.280 --> 00:14:34.120
+specific event perfect and then you can definitely console that out whatever the URL event is
+
+00:14:34.240 --> 00:14:38.020
+coming and at the end we wanted to clean this up.
+
+00:14:38.300 --> 00:14:40.360
+So, this is how we will clean it up.
+
+00:14:40.361 --> 00:14:45.100
+So, let us move ahead and this is such a big function, you again need not to get too much
+
+00:14:45.200 --> 00:14:46.000
+depth into it.
+
+00:14:46.470 --> 00:14:50.080
+So, let me just try to paste it down entirely, cool.
+
+00:14:50.820 --> 00:14:54.480
+And let us try to understand what is going on here, perfect.
+
+00:14:54.589 --> 00:14:59.360
+So, first of all, let me just simply say here any, cool.
+
+00:14:59.500 --> 00:15:06.420
+So, we have a handle deep link method that will be used inside this you can simply pass
+
+00:15:07.080 --> 00:15:13.340
+the handle deep link method and in same way for the URL first of all so handle deep link
+
+00:15:14.240 --> 00:15:14.460
+URL.
+
+00:15:14.900 --> 00:15:20.140
+So, this deep link is going to first of all accept a link and we are parsing it.
+
+00:15:20.400 --> 00:15:23.060
+So, in parse you will see we have the scheme.
+
+00:15:23.180 --> 00:15:24.480
+What is the scheme basically?
+
+00:15:24.840 --> 00:15:28.300
+Scheme is we can say let's say your app name is Instagram.
+
+00:15:28.610 --> 00:15:31.940
+So, Instagram colon slash less is the scheme for that.
+
+00:15:33.160 --> 00:15:36.959
+Then we have hostname, then we have path, then we have query parameters.
+
+00:15:37.339 --> 00:15:42.740
+This is the property that is available inside a deep linking object.
+
+00:15:43.540 --> 00:15:45.440
+Then this is the received URL we are saying.
+
+00:15:45.720 --> 00:15:50.600
+If the parse path is equals to product, get the product ID and show that.
+
+00:15:50.660 --> 00:15:52.240
+This is just a simple simulation.
+
+00:15:52.241 --> 00:15:54.399
+There is nothing as such which is exist for now.
+
+00:15:54.870 --> 00:15:57.639
+We are just basically uptesting it out.
+
+00:15:57.900 --> 00:16:05.040
+So, let us I have basically created here one URL deep link which is URL is product and then
+
+00:16:05.300 --> 00:16:09.800
+they have query parameter of 1, 2, 3 and name of that product is cool product.
+
+00:16:10.840 --> 00:16:10.960
+Perfect.
+
+00:16:13.080 --> 00:16:17.100
+Let me try to first of all paste the entire URI for it.
+
+00:16:18.050 --> 00:16:19.540
+So, let me just quite big.
+
+00:16:20.500 --> 00:16:27.380
+And then let me try to explain you what is this going to do for us, but for now, first
+
+00:16:27.480 --> 00:16:33.120
+of all, let me paste the entire UI again, you again need not to write anything.
+
+00:16:33.900 --> 00:16:37.020
+You can also just bring that out and paste it.
+
+00:16:38.470 --> 00:16:40.120
+We are just understanding about it.
+
+00:16:40.200 --> 00:16:40.360
+Cool.
+
+00:16:41.000 --> 00:16:42.640
+And this, this lot of.
+
+00:16:43.500 --> 00:16:48.980
+concept that you learn while using that in a real world.
+
+00:16:49.030 --> 00:16:56.740
+So right now I am just explaining you things in a better way so that if I save it and if
+
+00:16:56.800 --> 00:17:03.760
+I go to my index.app, I don't need any basic linking below this if I just simply paste a
+
+00:17:03.840 --> 00:17:06.480
+deep linking and now if I save it.
+
+00:17:07.440 --> 00:17:13.599
+and look at that. So this is your app URL scheme. This is the URL scheme that we have basically
+
+00:17:13.740 --> 00:17:21.380
+created. Then we have this is the URL and this is the received URL. And if you just simply
+
+00:17:21.460 --> 00:17:26.660
+coming to your consoles, you can even see. So this is the host name. This is the path
+
+00:17:26.819 --> 00:17:32.920
+we don't have any. There's no query perms. The scheme for our app is exposed. So these
+
+00:17:32.921 --> 00:17:34.500
+These are basically a bunch of examples.
+
+00:17:34.720 --> 00:17:36.400
+Just try to understand that.
+
+00:17:36.600 --> 00:17:44.000
+The main thing is, main thing is like how you can get the initial URLs and how you can
+
+00:17:44.160 --> 00:17:48.919
+parse that URL and after parsing it you have access of this much of properties.
+
+00:17:49.200 --> 00:17:51.320
+That's all we wanted to understand here, cool?
+
+00:17:52.520 --> 00:17:57.600
+So basically whenever you receive a link when app you are open, so you basically listen
+
+00:17:57.780 --> 00:17:59.500
+to that specific link.
+
+00:17:59.880 --> 00:18:04.880
+You can parse that, you can show the history of the received URL and you can just...
+
+00:18:04.900 --> 00:18:08.120
+We can say you have better control over your URL.
+
+00:18:08.240 --> 00:18:10.920
+That's why we basically using it.
+
+00:18:11.700 --> 00:18:11.800
+Cool.
+
+00:18:13.080 --> 00:18:13.160
+Nice.
+
+00:18:13.180 --> 00:18:15.300
+You can see that we have one method can open.
+
+00:18:15.860 --> 00:18:17.200
+You can even collect manifest.
+
+00:18:17.460 --> 00:18:18.760
+There's a lot of initial URLs.
+
+00:18:19.000 --> 00:18:21.800
+So get the URL that was used to launch the app.
+
+00:18:22.100 --> 00:18:28.539
+If it was launched by a link, so whenever your app is launched by a link, so basically
+
+00:18:28.620 --> 00:18:32.400
+they are saying whenever you wanted to test this out, this is how you can test it, but
+
+00:18:32.440 --> 00:18:36.320
+for now it's fine, we need not to even test it, so we are good to go, cool.
+
+00:18:37.900 --> 00:18:44.140
+Now let's move ahead and we'll see how we can basically create a universal link.
+
+00:18:45.060 --> 00:18:45.240
+Perfect.
+
+00:18:46.080 --> 00:18:48.620
+So for what do you mean by universal link?
+
+00:18:49.300 --> 00:18:54.860
+Universal link means let's say you wanted to redirect to YouTube, Instagram, Twitter,
+
+00:18:55.120 --> 00:18:56.700
+Facebook, Spotify, Maps.
+
+00:18:57.000 --> 00:18:58.580
+App Store, Play Store.
+
+00:18:58.980 --> 00:19:06.060
+So simple thing is again use the methods, scan, open URL and then redirect user to that
+
+00:19:06.200 --> 00:19:07.180
+specific URL.
+
+00:19:07.780 --> 00:19:10.360
+That's all you can basically do with it.
+
+00:19:11.020 --> 00:19:11.320
+Got it?
+
+00:19:11.600 --> 00:19:15.420
+So the important method that we need to understand inside it.
+
+00:19:15.700 --> 00:19:18.040
+So if I just try to explain you that, cool.
+
+00:19:18.800 --> 00:19:24.620
+So, the first method that we have is scan open URL, you just need to understand about
+
+00:19:24.760 --> 00:19:24.880
+it.
+
+00:19:25.410 --> 00:19:30.880
+Second is whenever you wanted to get the initial URL whenever your app or launch for the first
+
+00:19:30.980 --> 00:19:34.860
+time, then we have one known as create URL and then parse.
+
+00:19:35.540 --> 00:19:40.420
+These are the four method that you guys need to keep in mind for now.
+
+00:19:41.220 --> 00:19:43.760
+easy, I hope so, perfect.
+
+00:19:44.420 --> 00:19:50.660
+So, these are the four method that you need to keep in your mind, perfect.
+
+00:19:52.060 --> 00:19:56.320
+So, yes, we can say that this is how you can linking your applications.
+
+00:19:56.540 --> 00:19:58.360
+So, I wanted to take one more example.
+
+00:19:59.000 --> 00:20:03.020
+and show you whenever you wanted to share something.
+
+00:20:03.090 --> 00:20:05.240
+So how you can show the sharing sheet.
+
+00:20:05.720 --> 00:20:09.720
+So for that what you can do, let's try to test that out here.
+
+00:20:09.830 --> 00:20:18.080
+So inside the react native if I am not wrong, so we have one component name as share and
+
+00:20:18.340 --> 00:20:20.840
+how this share is actually working.
+
+00:20:21.600 --> 00:20:29.100
+This is pretty simple, I mean you can just simply use it cool and let me just show you
+
+00:20:29.160 --> 00:20:29.400
+how.
+
+00:20:30.030 --> 00:20:36.820
+So for that what we can do at the very bottom of this let's say we don't need this steps
+
+00:20:36.980 --> 00:20:38.860
+let me just cut this out cool.
+
+00:20:39.520 --> 00:20:43.919
+So below this I can have we can say a touchable opacity.
+
+00:20:44.800 --> 00:20:56.760
+So, I can simply say touchable opacity, alright, thus we don't have it touchable opacity and
+
+00:20:56.840 --> 00:21:02.920
+this touchable opacity is basically going to say the on press and on press what I wanted
+
+00:21:03.100 --> 00:21:10.600
+to do, I wanted to create a function name as on share, cool and inside the text I can
+
+00:21:12.600 --> 00:21:19.760
+And if I go at the top of it and at the bottom of it, if I simply create a const on share
+
+00:21:20.160 --> 00:21:27.980
+is equals to a sync inside this a sync if I simply say share, share dot look at that
+
+00:21:28.059 --> 00:21:34.000
+we have three things but we basically need a share and you can simply show a message
+
+00:21:34.080 --> 00:21:37.440
+here check out this amazing
+
+00:21:39.399 --> 00:21:43.080
+app and if I save it, let's see cool.
+
+00:21:43.519 --> 00:21:48.659
+So where is my share button?
+
+00:21:49.600 --> 00:21:50.059
+I don't know.
+
+00:21:50.820 --> 00:21:58.059
+But if I just cut this down and out of it, if I show here as we have yes, the moment
+
+00:21:58.080 --> 00:22:02.480
+I click on share, right, so I am not able to click it.
+
+00:22:03.500 --> 00:22:06.980
+if I go at the top of it and here if I pay
+
+00:22:07.000 --> 00:22:13.940
+it nice and if I just try to simply click on share yes look at that this is how we have
+
+00:22:14.020 --> 00:22:19.720
+opened our sharing sheet whenever you wanted to share this anywhere and this is the message
+
+00:22:20.260 --> 00:22:25.340
+check out this amazing example you can copy this you can send somewhere you want you can
+
+00:22:25.400 --> 00:22:30.220
+even add links of your component and this is how you can use it.
+
+00:22:30.300 --> 00:22:36.880
+In same way with the help in we have share, we also have dismissed action, we have share
+
+00:22:37.000 --> 00:22:40.960
+action as well and this share action have bunch of other things as well.
+
+00:22:40.961 --> 00:22:42.800
+But for now the main thing is the share.
+
+00:22:42.820 --> 00:22:47.560
+So, the moment you click here, you will see something like this and if you are using iOS,
+
+00:22:48.100 --> 00:22:49.860
+you will see related to that, cool.
+
+00:22:51.820 --> 00:22:54.640
+So, yes, this is how you can basically use expo linking.
+
+00:22:54.770 --> 00:22:58.380
+So, these are the main functions you need to keep in mind for now.
+
+00:22:58.770 --> 00:23:02.140
+And this is how you can open your sharing sheet as well.
+
+00:23:02.700 --> 00:23:06.440
+So, amazing, amazing job and this is the end of chapter number 2.
+
+00:23:06.960 --> 00:23:07.940
+See you next time.
+

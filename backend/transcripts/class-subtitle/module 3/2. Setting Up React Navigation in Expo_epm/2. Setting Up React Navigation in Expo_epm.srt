@@ -1,0 +1,808 @@
+1
+00:00:00,000 --> 00:00:04,140
+Hey everyone and welcome to one more new lecture.
+
+2
+00:00:04,760 --> 00:00:10,420
+In this lecture we are going to learn that how you can basically set up navigation inside
+
+3
+00:00:10,820 --> 00:00:12,080
+your Expo application.
+
+4
+00:00:12,400 --> 00:00:17,100
+In today's lecture definitely going to see that how you can manage multiple screens.
+
+5
+00:00:18,319 --> 00:00:20,900
+and set up navigation from scratch.
+
+6
+00:00:21,439 --> 00:00:25,640
+Perfect, but before moving ahead, I just wanted to set up a device.
+
+7
+00:00:26,020 --> 00:00:29,759
+But before we begin installing navigation libraries and do anything,
+
+8
+00:00:30,419 --> 00:00:34,580
+you don't need any Android Studio or Xcode to test your app.
+
+9
+00:00:34,760 --> 00:00:36,519
+And I'm assuming you guys know that.
+
+10
+00:00:37,019 --> 00:00:38,379
+We will use ExpoGo.
+
+11
+00:00:38,840 --> 00:00:42,600
+And app, you basically just going to install on your phone.
+
+12
+00:00:43,100 --> 00:00:45,320
+to run your project instantly.
+
+13
+00:00:45,859 --> 00:00:50,140
+You just run the export of server and scan the QR code and everything is going to work.
+
+14
+00:00:50,640 --> 00:00:50,920
+Cool.
+
+15
+00:00:51,300 --> 00:00:51,839
+So don't worry.
+
+16
+00:00:52,079 --> 00:00:57,379
+But for just simulating and just show you guys, I'm just connecting my physical phone
+
+17
+00:00:57,380 --> 00:01:00,000
+to my system and opening that here.
+
+18
+00:01:00,140 --> 00:01:00,360
+Perfect.
+
+19
+00:01:00,479 --> 00:01:01,440
+So just give me a minute.
+
+20
+00:01:01,960 --> 00:01:03,379
+Let me quickly open that.
+
+21
+00:01:03,380 --> 00:01:08,600
+Cool. So I hope so that this is now up and visible to you.
+
+22
+00:01:08,900 --> 00:01:10,680
+Like this is my physical connected device.
+
+23
+00:01:10,820 --> 00:01:12,500
+I'm just to show you the screen.
+
+24
+00:01:12,979 --> 00:01:14,680
+That's why I'm doing this. Perfect.
+
+25
+00:01:14,760 --> 00:01:18,340
+And I'm using a screen copy for that.
+
+26
+00:01:18,341 --> 00:01:21,940
+You can just definitely go and search for screen copy.
+
+27
+00:01:21,979 --> 00:01:24,280
+And this is again completely optional.
+
+28
+00:01:24,340 --> 00:01:25,759
+You need not to do so.
+
+29
+00:01:25,960 --> 00:01:30,619
+You just simply open your phone and scan the QR code in your ExpoGo app.
+
+30
+00:01:30,620 --> 00:01:32,460
+And that is going to work perfectly.
+
+31
+00:01:32,500 --> 00:01:34,680
+Cool, nice.
+
+32
+00:01:35,860 --> 00:01:39,060
+Now let's move ahead and start talking about this.
+
+33
+00:01:39,260 --> 00:01:45,680
+So for doing so you just simply need to go inside your VS code and inside your VS code
+
+34
+00:01:45,900 --> 00:01:48,900
+make sure that I am on module 3, I mean it depends.
+
+35
+00:01:49,700 --> 00:01:56,460
+Now, let me just clear everything and first thing that I am going to do is to install
+
+36
+00:01:56,461 --> 00:01:57,119
+my expo.
+
+37
+00:01:57,320 --> 00:02:03,420
+So, for installing my expo application, I am going to copy this command and this is
+
+38
+00:02:03,421 --> 00:02:12,060
+going to be burnx create expo app at the latest and what is your app name?
+
+39
+00:02:12,061 --> 00:02:14,200
+So let me install in current directory.
+
+40
+00:02:15,220 --> 00:02:15,700
+Perfect.
+
+41
+00:02:15,760 --> 00:02:17,860
+So, this is going to install my expo app.
+
+42
+00:02:18,080 --> 00:02:19,080
+Let me wait for it.
+
+43
+00:02:20,379 --> 00:02:20,860
+All right, guys.
+
+44
+00:02:21,060 --> 00:02:23,400
+So, now my application is installed successfully.
+
+45
+00:02:24,220 --> 00:02:25,360
+Now what is the next step?
+
+46
+00:02:25,720 --> 00:02:28,220
+Next step is basically going to reset my project.
+
+47
+00:02:28,880 --> 00:02:36,319
+So, for that you can simply say 1x run reset project.
+
+48
+00:02:36,780 --> 00:02:39,459
+So, this is basically going to reset my project.
+
+49
+00:02:41,760 --> 00:02:43,000
+All right, no problem.
+
+50
+00:02:43,079 --> 00:02:52,500
+I can just simply run scripts slash reset and then I can simply say project.
+
+51
+00:02:53,159 --> 00:02:56,799
+Now I don't want it to move any existing file in any folder.
+
+52
+00:02:57,319 --> 00:03:00,359
+Let me just simply say no and clear this out.
+
+53
+00:03:01,200 --> 00:03:06,800
+Perfect, so now you will see that we are reset to properly normal and if I now simply hit
+
+54
+00:03:07,100 --> 00:03:09,100
+1x Expo Start.
+
+55
+00:03:09,980 --> 00:03:16,260
+So this is going to make up and running my application and now you can simply open your
+
+56
+00:03:16,261 --> 00:03:18,040
+camera and start running it.
+
+57
+00:03:18,060 --> 00:03:20,060
+Let me just simply my expo go app.
+
+58
+00:03:20,600 --> 00:03:27,480
+Then for opening this in Android, I'm simply going to say A. So, after pressing on A, you
+
+59
+00:03:27,481 --> 00:03:34,040
+will see they are doing so this and edit app/index.tss to edit this screen.
+
+60
+00:03:34,180 --> 00:03:37,000
+So, all right, everything is working perfectly.
+
+61
+00:03:38,100 --> 00:03:38,840
+Now what next?
+
+62
+00:03:39,959 --> 00:03:46,120
+Next, I just simply wanted to move ahead and first of all, first step is always going to
+
+63
+00:03:46,121 --> 00:03:46,900
+delete this file.
+
+64
+00:03:47,319 --> 00:03:49,599
+Yes, because we don't need it.
+
+65
+00:03:50,060 --> 00:03:53,900
+After deleting it, yes, you will see something like this, but we are going to fix it in a
+
+66
+00:03:53,901 --> 00:03:56,440
+while and let's move ahead.
+
+67
+00:03:56,700 --> 00:04:03,319
+And after moving ahead, I just wanted to do so what I just wanted to install this much
+
+68
+00:04:03,320 --> 00:04:04,080
+of things.
+
+69
+00:04:04,260 --> 00:04:09,580
+So they are basically prompting us to install react navigation native stack.
+
+70
+00:04:09,800 --> 00:04:10,940
+So simply copy this.
+
+71
+00:04:11,120 --> 00:04:11,640
+No problem.
+
+72
+00:04:12,200 --> 00:04:17,480
+And after this close your currently running application and paste this command.
+
+73
+00:04:17,760 --> 00:04:21,260
+So this is going to install a react navigation library.
+
+74
+00:04:21,980 --> 00:04:24,460
+And if I'm not wrong, they are by default supported it.
+
+75
+00:04:24,620 --> 00:04:26,600
+Yes, I mean, they only took four seconds.
+
+76
+00:04:26,860 --> 00:04:28,440
+So I think they already have it.
+
+77
+00:04:28,900 --> 00:04:36,780
+Now, if you also wanted to install this React Navigation elements, so let's install that
+
+78
+00:04:36,840 --> 00:04:41,979
+as well and they already have to us and we are good to go.
+
+79
+00:04:42,400 --> 00:04:42,800
+Perfect.
+
+80
+00:04:43,220 --> 00:04:43,940
+No problem.
+
+81
+00:04:44,680 --> 00:04:51,500
+Now, what is the first step to start using your this React Navigation library?
+
+82
+00:04:51,800 --> 00:04:59,379
+To create a navigation stack and initially we are understanding about stack this like
+
+83
+00:04:59,380 --> 00:05:00,520
+we have multiple patterns.
+
+84
+00:05:00,780 --> 00:05:02,979
+So we are now understanding about stack patterns.
+
+85
+00:05:02,980 --> 00:05:07,740
+So how you can basically create that and set up that because that is a base for it.
+
+86
+00:05:08,000 --> 00:05:15,080
+So, this is basically going to import this and again need not to go inside static for
+
+87
+00:05:15,081 --> 00:05:20,620
+now just simply press on dynamic and just focus for a few minutes here and then we will
+
+88
+00:05:20,621 --> 00:05:22,300
+see how you can set up that.
+
+89
+00:05:22,860 --> 00:05:24,820
+So, the step number one is done.
+
+90
+00:05:25,060 --> 00:05:25,640
+No problem.
+
+91
+00:05:26,100 --> 00:05:29,180
+Now, let us move ahead and start implementing it.
+
+92
+00:05:29,300 --> 00:05:36,340
+Alright, so for that you again need to create an app folder, easy, no problem.
+
+93
+00:05:37,340 --> 00:05:42,340
+And then step number one is to create a root stack navigator.
+
+94
+00:05:42,470 --> 00:05:45,900
+So for that you can simply create app.tsx.
+
+95
+00:05:46,600 --> 00:05:47,400
+Easy.
+
+96
+00:05:48,240 --> 00:05:50,520
+And then import bunch of things with me.
+
+97
+00:05:50,680 --> 00:05:56,660
+So the first thing is going to be like let me increase the size of it so that this is
+
+98
+00:05:56,661 --> 00:05:57,560
+visible properly.
+
+99
+00:05:58,640 --> 00:05:58,760
+Yes.
+
+100
+00:05:59,260 --> 00:06:00,760
+So simply say import.
+
+101
+00:06:01,500 --> 00:06:02,060
+Create.
+
+102
+00:06:02,400 --> 00:06:11,580
+native stack navigator from react navigation native stack first step and then second step
+
+103
+00:06:11,680 --> 00:06:21,460
+is going to simply say const stack is equals to first of all let me see and smooth my AI
+
+104
+00:06:21,900 --> 00:06:27,680
+perfect and then simply going to say create native stack navigation step 2 is also done.
+
+105
+00:06:28,620 --> 00:06:29,100
+Perfect.
+
+106
+00:06:30,000 --> 00:06:31,500
+Now, what next we need?
+
+107
+00:06:32,520 --> 00:06:35,180
+Next we need to create a root stack.
+
+108
+00:06:35,360 --> 00:06:36,580
+What is the root stack?
+
+109
+00:06:36,960 --> 00:06:40,940
+Basically a system where we are going to tell that look at that.
+
+110
+00:06:41,020 --> 00:06:48,100
+We have home screen, we have detail screen like that we are doing in like what is the
+
+111
+00:06:48,101 --> 00:06:51,980
+name of the library that we are using for it react router DOM.
+
+112
+00:06:52,460 --> 00:06:52,720
+Perfect.
+
+113
+00:06:52,800 --> 00:06:55,200
+So, I hope so you guys know about it react router DOM.
+
+114
+00:06:57,300 --> 00:07:03,100
+Here, react router you will understanding and you are implementing all of that in kind
+
+115
+00:07:03,120 --> 00:07:04,020
+of same way.
+
+116
+00:07:04,740 --> 00:07:12,280
+So, I can simply going to say this as function root stack easy this is just a simple kind
+
+117
+00:07:12,281 --> 00:07:17,240
+of an component and this is going to return very easy thing what is that.
+
+118
+00:07:17,400 --> 00:07:21,540
+This is some bunch of boilerplate code that you need to write.
+
+119
+00:07:23,000 --> 00:07:29,139
+.navigator easy and this navigator is going to accept all the screens that you have.
+
+120
+00:07:29,440 --> 00:07:31,580
+So, how they are going to work simply stack.
+
+121
+00:07:33,600 --> 00:07:37,880
+Navigator, not navigator, sorry, stack dot screen.
+
+122
+00:07:38,120 --> 00:07:38,479
+Yes.
+
+123
+00:07:38,740 --> 00:07:43,740
+And then inside this screen and make sure that this screen is self-closing.
+
+124
+00:07:44,780 --> 00:07:48,080
+And this screen is going to accept two things for now.
+
+125
+00:07:48,800 --> 00:07:50,440
+First thing is the name of screen.
+
+126
+00:07:50,560 --> 00:07:52,180
+So let me call that a home.
+
+127
+00:07:52,400 --> 00:07:55,080
+And then second thing is going to be component.
+
+128
+00:07:55,259 --> 00:07:57,740
+I mean very much resembling with the react router.
+
+129
+00:07:58,680 --> 00:08:05,120
+And then inside this you can simply create a folder and name that as a screens not rocket
+
+130
+00:08:05,121 --> 00:08:06,100
+signs at all.
+
+131
+00:08:06,759 --> 00:08:10,600
+And then I'm simply going to say this as home dot TSX.
+
+132
+00:08:11,000 --> 00:08:16,120
+And this is just a short form for this is just a snippet.
+
+133
+00:08:16,200 --> 00:08:18,080
+So R-N-F-E-S.
+
+134
+00:08:18,380 --> 00:08:24,020
+So this is going to create me a react native component with just a simple text of home.
+
+135
+00:08:25,120 --> 00:08:25,320
+Perfect.
+
+136
+00:08:25,380 --> 00:08:28,240
+And if you wanted to center it, you can definitely center it.
+
+137
+00:08:28,300 --> 00:08:29,020
+So we'll do that.
+
+138
+00:08:29,100 --> 00:08:29,540
+Don't worry.
+
+139
+00:08:30,080 --> 00:08:32,320
+And then simply import this.
+
+140
+00:08:32,321 --> 00:08:38,120
+Easy, step 2 is also done, I don't think so that any rocket science is going on here.
+
+141
+00:08:38,720 --> 00:08:47,380
+Easy, let me save it and then what you can do you can simply say export default function
+
+142
+00:08:47,560 --> 00:08:52,880
+name of the file which is app and then I wanted to return this root stack.
+
+143
+00:08:53,200 --> 00:08:53,680
+Easy.
+
+144
+00:08:54,100 --> 00:09:01,019
+Now, let me just simply return my root stack and save it and then you are just simply going
+
+145
+00:09:01,020 --> 00:09:02,279
+to run it.
+
+146
+00:09:02,720 --> 00:09:05,360
+Perfect, but let me create one more screen for now.
+
+147
+00:09:05,899 --> 00:09:11,420
+Let me call this as details.tsx and rn.tsx.
+
+148
+00:09:11,421 --> 00:09:18,399
+Cool, and this is going to be details and you will simply copy this, simply paste this
+
+149
+00:09:18,400 --> 00:09:21,319
+and make sure to remember the name you are giving them.
+
+150
+00:09:22,240 --> 00:09:27,000
+So again this is going to be details and here I wanted to use details.
+
+151
+00:09:27,259 --> 00:09:27,699
+Easy.
+
+152
+00:09:28,000 --> 00:09:28,660
+Cool.
+
+153
+00:09:29,280 --> 00:09:36,660
+Now, let me clear everything and simply run 1x expo start and the moment I hit this and
+
+154
+00:09:36,661 --> 00:09:37,660
+just wait for it.
+
+155
+00:09:37,760 --> 00:09:40,880
+So let me just wait for it and no problem.
+
+156
+00:09:41,260 --> 00:09:46,460
+Let's again press A. So this is going to open that up into it.
+
+157
+00:09:46,840 --> 00:09:48,040
+What if I need to reload it?
+
+158
+00:09:48,070 --> 00:09:52,940
+Yes, I need to reload it and the moment I reload it, look at that.
+
+159
+00:09:53,100 --> 00:09:58,120
+Now, you can basically see that they are basically showing us a home here.
+
+160
+00:09:59,360 --> 00:10:05,920
+And yes, now you are able to see this home page, but we're still thinking that I wanted
+
+161
+00:10:05,921 --> 00:10:07,740
+to move to my details page.
+
+162
+00:10:07,940 --> 00:10:09,040
+How I can move there?
+
+163
+00:10:09,200 --> 00:10:14,840
+It's also very easy like React Navigation provide you a link component.
+
+164
+00:10:15,420 --> 00:10:20,400
+Yes, make sure to import from React Navigation because right now we are not using XporOptr
+
+165
+00:10:20,840 --> 00:10:27,400
+and this link is basically going to tell you that where you wanted to move.
+
+166
+00:10:27,680 --> 00:10:33,980
+So from home, I basically wanted to go to my detail page.
+
+167
+00:10:34,200 --> 00:10:36,680
+So let me just give it a screen prop.
+
+168
+00:10:37,300 --> 00:10:44,899
+And this screen is going to accept a details then now these details is make sure to match
+
+169
+00:10:44,900 --> 00:10:52,500
+with this name if this is not going to match error will throw here nice and then inside
+
+170
+00:10:52,600 --> 00:10:58,000
+this screen you can simply say go to details no problem and if I save it.
+
+171
+00:10:58,001 --> 00:11:00,120
+Look, you can ignore this for now.
+
+172
+00:11:00,520 --> 00:11:00,660
+Perfect.
+
+173
+00:11:00,661 --> 00:11:05,500
+But if I just simply press on go to details and boom, look at that.
+
+174
+00:11:05,520 --> 00:11:11,280
+I am redirected to details page and you will see that they are in properly stacked behavior
+
+175
+00:11:11,281 --> 00:11:16,780
+because they are also showing me a back button and the moment I press on back, I'm redirected
+
+176
+00:11:16,781 --> 00:11:17,840
+to home once again.
+
+177
+00:11:18,200 --> 00:11:25,220
+Easy. So, this is how you can basically, this is very basic simulation. Perfect. So, this
+
+178
+00:11:25,280 --> 00:11:32,520
+is how you can basically implement this and see everything in action. In same way, if
+
+179
+00:11:32,560 --> 00:11:37,740
+you wanted to create another screen, let us say I wanted to create a profile screen. So,
+
+180
+00:11:37,741 --> 00:11:45,980
+I will simply going to say this as profile.tsx, rnfes and this will become profile. Perfect.
+
+181
+00:11:45,981 --> 00:11:46,960
+What next?
+
+182
+00:11:47,400 --> 00:11:49,920
+First of all, let me go to home page easy.
+
+183
+00:11:50,300 --> 00:11:58,280
+Now next is going to be I need to go my app.tsx in same way let me oops okay let me just simply
+
+184
+00:11:58,281 --> 00:12:04,580
+copy this and paste this now give the name so let me just call that call that a profile
+
+185
+00:12:05,140 --> 00:12:07,180
+and you will say this profile.
+
+186
+00:12:07,500 --> 00:12:14,720
+and save it. Now let's say from detail I wanted to go to profile page. Now it's up to you
+
+187
+00:12:14,740 --> 00:12:20,840
+how you wanted to manage them. Now link is going to accept the screen then make sure
+
+188
+00:12:20,841 --> 00:12:22,280
+to give the correct name.
+
+189
+00:12:23,100 --> 00:12:28,540
+So, this is going to be profile and I'm simply say this is go to profile.
+
+190
+00:12:29,600 --> 00:12:29,819
+Easy.
+
+191
+00:12:30,339 --> 00:12:36,319
+And now first of all, let me go to details and inside details I have go to profile and
+
+192
+00:12:36,320 --> 00:12:38,940
+if I click on go to profile, I am on profile.
+
+193
+00:12:39,100 --> 00:12:39,940
+I can go back.
+
+194
+00:12:40,279 --> 00:12:45,440
+But now if I press on back, I am navigated to details page.
+
+195
+00:12:45,660 --> 00:12:47,620
+But if I now press on details patch.
+
+196
+00:12:47,800 --> 00:12:54,019
+I am back push back to basically home page easy.
+
+197
+00:12:54,240 --> 00:13:00,580
+So I hope so that makes sense how you can basically implement this very very very basic
+
+198
+00:13:00,581 --> 00:13:05,839
+navigation easy from next chapter we are going to understand about.
+
+199
+00:13:06,519 --> 00:13:13,200
+more understand about something known as navigation hook like we have bunch of methods into that
+
+200
+00:13:13,420 --> 00:13:18,279
+going to understand bunch of them line by line and have a very great implementation
+
+201
+00:13:18,320 --> 00:13:18,860
+for it.
+
+202
+00:13:19,180 --> 00:13:23,180
+So yeah this is pretty much it for this chapter and see you next time.
+

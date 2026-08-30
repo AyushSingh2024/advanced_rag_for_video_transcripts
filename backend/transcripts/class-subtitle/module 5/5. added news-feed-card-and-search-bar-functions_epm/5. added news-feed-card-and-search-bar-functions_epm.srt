@@ -1,0 +1,1188 @@
+1
+00:00:00,580 --> 00:00:05,780
+Alright guys so welcome to chapter 2 and in this chapter first of all we are going to
+
+2
+00:00:05,840 --> 00:00:12,220
+fix the chapter number 1's error and the error is like we are not be able to fetch the correct
+
+3
+00:00:12,420 --> 00:00:16,100
+API as I am just consoling and checking the things and
+
+4
+00:00:16,800 --> 00:00:18,420
+This is what I am getting.
+
+5
+00:00:19,580 --> 00:00:20,980
+Everything is working fine.
+
+6
+00:00:21,800 --> 00:00:26,680
+Like but for the API key, this is showing us your API key is invalid or incorrect.
+
+7
+00:00:27,300 --> 00:00:29,960
+This means we are not be able to fetch our API.
+
+8
+00:00:31,579 --> 00:00:34,420
+So for that, first of all, you need to go inside.
+
+9
+00:00:35,100 --> 00:00:43,699
+your ANV and then simply add expo public yep you need to add it and then copy this and
+
+10
+00:00:43,820 --> 00:00:51,379
+then add here expo public news API key and then let's try and now if I try to reload
+
+11
+00:00:51,380 --> 00:00:51,579
+it.
+
+12
+00:00:52,000 --> 00:00:56,280
+And we'll see is we are still able to fetch that or not.
+
+13
+00:00:57,200 --> 00:01:01,980
+And now look at that we are able to fetch at least the data.
+
+14
+00:01:02,380 --> 00:01:04,300
+This is not rendering here it's completely fine.
+
+15
+00:01:05,239 --> 00:01:08,160
+But now at least you will see that we are able to fetch.
+
+16
+00:01:08,600 --> 00:01:14,440
+the data that we have here and the only thing that we need to do is to simply render them
+
+17
+00:01:14,700 --> 00:01:19,200
+onto the UI but first of all let me just quickly add basic fix here.
+
+18
+00:01:19,720 --> 00:01:26,159
+So again if we don't have any news API, so you already have it so you need not to change
+
+19
+00:01:26,240 --> 00:01:26,320
+it.
+
+20
+00:01:26,900 --> 00:01:32,100
+If you don't have any news API key, then simply return from here.
+
+21
+00:01:32,920 --> 00:01:33,040
+Perfect.
+
+22
+00:01:34,240 --> 00:01:40,680
+And then let me remove this, let me remove my query perms, my URL and my data as well.
+
+23
+00:01:42,820 --> 00:01:43,080
+Perfect.
+
+24
+00:01:43,220 --> 00:01:47,860
+So, now if I coming to here and if I reload this, so still everything is going to working
+
+25
+00:01:48,140 --> 00:01:48,880
+perfectly fine.
+
+26
+00:01:50,860 --> 00:01:57,700
+And now you guys can see that my data is coming perfect, but because of some reason I am not
+
+27
+00:01:57,799 --> 00:01:59,600
+be able to render them.
+
+28
+00:01:59,780 --> 00:02:05,460
+So you will see the response is possibly null, a bunch of thing is coming here, it is fine.
+
+29
+00:02:05,560 --> 00:02:08,060
+So we are also getting response, no problem.
+
+30
+00:02:08,180 --> 00:02:14,180
+So I can simply say this as like alright, you can be null, no problem.
+
+31
+00:02:14,900 --> 00:02:18,360
+So, let me just add you something like this.
+
+32
+00:02:19,819 --> 00:02:21,379
+Alright, so just give me a minute.
+
+33
+00:02:22,200 --> 00:02:22,360
+Cool.
+
+34
+00:02:22,920 --> 00:02:25,200
+And let me add this co-sealing as well.
+
+35
+00:02:26,049 --> 00:02:29,640
+And then if I reload it once again, alright.
+
+36
+00:02:30,500 --> 00:02:39,120
+So, for now, I think it is high time to fix all the other thing which is happening and
+
+37
+00:02:40,380 --> 00:02:41,480
+then I'll see that.
+
+38
+00:02:41,740 --> 00:02:48,760
+So for now, I wanted you to close everything and create one component and we already have
+
+39
+00:02:48,840 --> 00:02:49,020
+that.
+
+40
+00:02:49,640 --> 00:02:52,500
+So, first of all, let me go to my news feed.
+
+41
+00:02:53,300 --> 00:03:01,960
+And this news feed is have like this flat list, let me simply format this and this flat list
+
+42
+00:03:02,160 --> 00:03:04,360
+have something known as refresh control.
+
+43
+00:03:04,500 --> 00:03:04,740
+Yes.
+
+44
+00:03:05,620 --> 00:03:11,920
+So, we have this refresh control and this refresh control have a one very interesting component
+
+45
+00:03:12,500 --> 00:03:15,600
+and the name of that component is also refresh control.
+
+46
+00:03:16,200 --> 00:03:19,660
+and they are going to accept a bunch of props.
+
+47
+00:03:19,879 --> 00:03:21,040
+So let me add all of that.
+
+48
+00:03:22,000 --> 00:03:25,480
+So now you will see that I have a refreshing.
+
+49
+00:03:26,620 --> 00:03:30,660
+On refresh is going to be handle refresh, tint color and the colors.
+
+50
+00:03:30,739 --> 00:03:35,780
+So this is basically the moment you scroll it down so you are able to see that.
+
+51
+00:03:36,500 --> 00:03:44,640
+Cool. Perfect. Now let's move ahead and create one component name as header. Yes. And then
+
+52
+00:03:44,760 --> 00:03:49,640
+we'll just focus on fixing them. So let me simply coming to here and write headers dot
+
+53
+00:03:49,819 --> 00:03:57,140
+TSX. And this header is going to have a bunch of things. So let me import all of them for
+
+54
+00:03:57,200 --> 00:04:03,840
+now. And after that, let me move ahead and let me add all the header props that we need.
+
+55
+00:04:05,840 --> 00:04:06,440
+Perfect.
+
+56
+00:04:06,730 --> 00:04:09,780
+And then I can add the categories, simple constant.
+
+57
+00:04:10,030 --> 00:04:14,800
+We have category as general and then we also have icon for it.
+
+58
+00:04:15,270 --> 00:04:22,140
+In same way, we have bunch of countries and then countries can also have bunch of flags
+
+59
+00:04:22,360 --> 00:04:28,480
+like flag US flag, GB, Flag CA, this is how they basically then for India we also have
+
+60
+00:04:28,481 --> 00:04:31,600
+iron. So this is how you can identify your flags.
+
+61
+00:04:32,200 --> 00:04:41,740
+Perfect, and then I can simply say export const header and this header is going to be
+
+62
+00:04:41,780 --> 00:04:47,960
+react.function component and this is going to be the type of header props.
+
+63
+00:04:49,100 --> 00:04:55,240
+And then first thing that we are going to have here is on search.
+
+64
+00:04:56,630 --> 00:05:01,560
+So let me add that and then I can basically initialize something like this.
+
+65
+00:05:02,910 --> 00:05:03,240
+All right.
+
+66
+00:05:04,120 --> 00:05:11,720
+And then I can add here bunch of state variables perfect and then we'll see oops what is happened
+
+67
+00:05:11,880 --> 00:05:12,460
+now cool.
+
+68
+00:05:13,320 --> 00:05:18,880
+Perfect, then I can simply move ahead and then I can simply use there something known
+
+69
+00:05:18,960 --> 00:05:22,940
+as safe area inset, it's a good thing to have.
+
+70
+00:05:23,390 --> 00:05:29,140
+So I can simply say inserts not inserts, this is going to be inserts and then I can
+
+71
+00:05:29,220 --> 00:05:33,400
+say use safe area, inserts, alright.
+
+72
+00:05:35,200 --> 00:05:39,980
+And then I can create here two function handle search submit and handle clear search.
+
+73
+00:05:41,360 --> 00:05:48,580
+Cool, we have two of them and then I can have here selected country data, perfect.
+
+74
+00:05:49,979 --> 00:05:56,379
+And then I can first of all let me render here all the I can say like this is quite
+
+75
+00:05:56,500 --> 00:06:01,220
+big component to have, but don't worry, let me first of all add all the styles that I
+
+76
+00:06:01,259 --> 00:06:01,400
+have.
+
+77
+00:06:02,640 --> 00:06:03,160
+Perfect.
+
+78
+00:06:03,710 --> 00:06:08,600
+So, you will see that we have bunch of styles, I mean lot of styles and this is interesting.
+
+79
+00:06:09,660 --> 00:06:13,600
+Now, let's move ahead and start implementing my header component.
+
+80
+00:06:14,230 --> 00:06:17,620
+This is really a very big component, but don't worry.
+
+81
+00:06:18,100 --> 00:06:24,720
+So, first thing let me coming to here simply say return and then we wanted to return a
+
+82
+00:06:24,780 --> 00:06:32,320
+view this view is going to have a style and this is basically first thing is going to
+
+83
+00:06:32,321 --> 00:06:39,920
+be styles.container, second thing is going to be have a padding top which is equals to
+
+84
+00:06:40,140 --> 00:06:41,600
+insets.top.
+
+85
+00:06:42,200 --> 00:06:43,060
+Perfect.
+
+86
+00:06:43,230 --> 00:06:47,940
+And then inside this, we are first of all going to have the main header component.
+
+87
+00:06:48,770 --> 00:06:55,340
+So this main header, yes, look at that, this main header contain icons which is of newspaper
+
+88
+00:06:55,780 --> 00:06:57,260
+and showing us news feed.
+
+89
+00:06:57,800 --> 00:07:06,419
+And then a basic view which is having a touchable opacity and showing us something like selected
+
+90
+00:07:06,740 --> 00:07:07,400
+country flag.
+
+91
+00:07:07,940 --> 00:07:09,580
+Otherwise we are showing here the globe.
+
+92
+00:07:10,659 --> 00:07:10,759
+Perfect.
+
+93
+00:07:11,780 --> 00:07:16,720
+And then let me close this and out of this now I wanted to show my search bar.
+
+94
+00:07:17,440 --> 00:07:19,360
+So I can simply say here the view.
+
+95
+00:07:21,120 --> 00:07:29,320
+And this is going to have a style and style is equal to styles.searchcontainer and first
+
+96
+00:07:29,420 --> 00:07:34,800
+thing we are going to have a search icon and the second thing we are going to have a search
+
+97
+00:07:35,060 --> 00:07:36,740
+input text area basically.
+
+98
+00:07:37,550 --> 00:07:40,320
+So this text input let me import this.
+
+99
+00:07:40,990 --> 00:07:46,580
+So we have styles placeholder text color value on change on submit and return type.
+
+100
+00:07:48,060 --> 00:07:48,660
+Perfect.
+
+101
+00:07:49,729 --> 00:07:56,600
+Now let's move ahead and then out inside this search container itself, we can simply
+
+102
+00:07:56,720 --> 00:08:02,960
+have one basic rendering, which is if we have a local search query, which whose length is
+
+103
+00:08:03,060 --> 00:08:04,020
+greater than zero.
+
+104
+00:08:04,900 --> 00:08:11,860
+Then I basically wanted to do what I just wanted to have a touchable opacity and this
+
+105
+00:08:11,960 --> 00:08:15,100
+touchable opacity have an icon of closed circle.
+
+106
+00:08:15,460 --> 00:08:15,560
+Cool.
+
+107
+00:08:17,180 --> 00:08:23,900
+Then we have a on press which is going to say handle clear search and then a basic style.
+
+108
+00:08:25,000 --> 00:08:31,720
+And then out of this search container, we are also going to have a category filter bar.
+
+109
+00:08:32,600 --> 00:08:35,760
+So let me just simply add that category filter bar.
+
+110
+00:08:37,000 --> 00:08:37,100
+Perfect.
+
+111
+00:08:37,260 --> 00:08:40,240
+So you will see that we have this category filter bar.
+
+112
+00:08:41,480 --> 00:08:42,760
+And just a minute.
+
+113
+00:08:43,820 --> 00:08:46,640
+Let me come into here, first of all let me remove it.
+
+114
+00:08:47,270 --> 00:08:55,520
+So this category filter bar is basically going to be inside the we can say search scroll
+
+115
+00:08:55,840 --> 00:09:01,680
+area, let me import scroll view from react native, this is horizontal.
+
+116
+00:09:02,400 --> 00:09:09,660
+and then bunch of props, then a basic touchable opacity, same for the categories that we
+
+117
+00:09:09,680 --> 00:09:10,500
+have, cool.
+
+118
+00:09:11,000 --> 00:09:14,260
+And then a basic icon which is optional outline, cool.
+
+119
+00:09:15,760 --> 00:09:20,340
+All right, let me close this as well and in same way we have a category models as well.
+
+120
+00:09:20,800 --> 00:09:26,180
+They are basically going to render all the category onto the models as well.
+
+121
+00:09:26,350 --> 00:09:28,800
+So let me first of all import my model as well.
+
+122
+00:09:28,910 --> 00:09:33,500
+You can also copy and paste it directly because this is not just only about UI.
+
+123
+00:09:34,070 --> 00:09:37,060
+Main thing is how you can call your internet.
+
+124
+00:09:38,209 --> 00:09:38,480
+All right.
+
+125
+00:09:39,360 --> 00:09:41,880
+So I think yes, now I can save it.
+
+126
+00:09:43,620 --> 00:09:49,700
+And I can like this is basically category model in same way we can have country model
+
+127
+00:09:49,750 --> 00:09:50,180
+as well.
+
+128
+00:09:50,500 --> 00:09:54,100
+So, inside this I am going to show all my countries as well.
+
+129
+00:09:54,340 --> 00:09:54,540
+Cool.
+
+130
+00:09:54,990 --> 00:10:03,360
+And now let me go to my news feed component and this news feed component at the top of
+
+131
+00:10:03,440 --> 00:10:06,040
+this flat list I wanted to render my header.
+
+132
+00:10:06,990 --> 00:10:08,680
+So this is my header component.
+
+133
+00:10:09,700 --> 00:10:17,800
+from here and this header component is going to accept bunch of props like first thing
+
+134
+00:10:17,880 --> 00:10:21,620
+we have on search and then this then search query.
+
+135
+00:10:22,400 --> 00:10:28,360
+So let's move ahead and initialize two thing, two state variables I can say.
+
+136
+00:10:29,520 --> 00:10:33,080
+First is search query and then we have a search mode.
+
+137
+00:10:34,000 --> 00:10:34,280
+Perfect.
+
+138
+00:10:34,880 --> 00:10:36,720
+And handle search don't exist.
+
+139
+00:10:37,380 --> 00:10:38,000
+No problem.
+
+140
+00:10:38,180 --> 00:10:40,840
+We can create our handle search method as well.
+
+141
+00:10:41,600 --> 00:10:44,640
+So let's move ahead and start creating.
+
+142
+00:10:44,740 --> 00:10:46,620
+I can say handle search method.
+
+143
+00:10:47,300 --> 00:10:50,180
+So, handle search is going to pretty straightforward.
+
+144
+00:10:50,510 --> 00:10:51,959
+So let me just paste that.
+
+145
+00:10:52,790 --> 00:10:59,580
+So this is your handle search and below this is much better.
+
+146
+00:11:00,690 --> 00:11:02,260
+So copy this and paste it.
+
+147
+00:11:02,519 --> 00:11:02,660
+Cool.
+
+148
+00:11:04,040 --> 00:11:10,720
+Alright and now if I save it, you will see something like this, I mean nothing is able
+
+149
+00:11:10,820 --> 00:11:11,600
+to show to us.
+
+150
+00:11:12,800 --> 00:11:15,760
+So now let me close everything, go to app and layout.
+
+151
+00:11:16,940 --> 00:11:25,720
+Inside this, let me first of all fix this to a stack and this stack is basically going
+
+152
+00:11:25,880 --> 00:11:26,360
+to do what?
+
+153
+00:11:27,480 --> 00:11:30,560
+And instead of this, let it be self closing much better.
+
+154
+00:11:31,500 --> 00:11:41,380
+Just let me fix it, self close this and then simply say screen options and then I wanted
+
+155
+00:11:41,500 --> 00:11:47,020
+to say header shown and this header shown is going to be as false.
+
+156
+00:11:47,790 --> 00:11:54,740
+So this index is going to be vanished from here and then content style is going to have
+
+157
+00:11:54,750 --> 00:11:55,500
+a background.
+
+158
+00:11:57,440 --> 00:12:03,800
+color and this background color is going to be hashtag F9FAFB.
+
+159
+00:12:07,820 --> 00:12:07,899
+Perfect.
+
+160
+00:12:08,339 --> 00:12:09,860
+So, now look at that.
+
+161
+00:12:10,790 --> 00:12:17,220
+You can see that we have this, if I jump pressing here definitely not be able to see them perfectly,
+
+162
+00:12:17,709 --> 00:12:19,820
+but if you press something here you will see.
+
+163
+00:12:20,400 --> 00:12:26,540
+something like this and in same way we can have bunch of other thing but not be able
+
+164
+00:12:26,640 --> 00:12:27,620
+to see them properly.
+
+165
+00:12:29,480 --> 00:12:35,600
+Perfect so I think that we need to fix bunch of UI related thing.
+
+166
+00:12:37,160 --> 00:12:41,340
+So let us move ahead and we will see what more we can do just to see output.
+
+167
+00:12:42,300 --> 00:12:46,980
+First of all, I hope I am writing the correct styling here.
+
+168
+00:12:49,019 --> 00:12:49,100
+Perfect.
+
+169
+00:12:49,170 --> 00:12:52,440
+So let me copy and paste the entire style sheet that I have.
+
+170
+00:12:55,279 --> 00:13:01,399
+And after the style sheet, like inside this main return thing, everything is fine.
+
+171
+00:13:02,420 --> 00:13:03,019
+Perfect.
+
+172
+00:13:03,900 --> 00:13:11,280
+We have everything related to this and whenever when we are basically rendering this, we are
+
+173
+00:13:11,320 --> 00:13:19,940
+rendering this if yes, if the loading let me simply if the loading and whatever the articles
+
+174
+00:13:20,260 --> 00:13:29,040
+dot length is basically equal to equal to 0, then I wanted to fetch this and I can simply
+
+175
+00:13:29,800 --> 00:13:30,560
+return this.
+
+176
+00:13:31,340 --> 00:13:31,500
+Cool?
+
+177
+00:13:32,200 --> 00:13:41,640
+Alright, and then but if we don't have this then I basically wanted to render my empty.
+
+178
+00:13:41,740 --> 00:13:48,580
+So we are entering our empty and then we also wanted to render our I can say false.
+
+179
+00:13:48,760 --> 00:13:50,920
+So we are also rendering that as well.
+
+180
+00:13:52,360 --> 00:13:52,540
+Cool.
+
+181
+00:13:52,640 --> 00:13:54,820
+And maybe I'm doing it wrong.
+
+182
+00:13:55,120 --> 00:13:55,700
+Just give me a minute.
+
+183
+00:13:57,540 --> 00:13:58,780
+Not this, cool?
+
+184
+00:13:59,720 --> 00:14:03,260
+We don't want it to show them like this.
+
+185
+00:14:03,800 --> 00:14:06,000
+So I am wrong, my apology.
+
+186
+00:14:06,900 --> 00:14:08,640
+Let me remove it as well, cool.
+
+187
+00:14:10,260 --> 00:14:14,660
+First thing that I wanted to do is if we are in loading state.
+
+188
+00:14:16,000 --> 00:14:24,600
+If we are in loading state and the articles dot length if this is equal to equal to 0,
+
+189
+00:14:26,220 --> 00:14:32,940
+then basically coming to here and return a view with header and which is basically going
+
+190
+00:14:33,080 --> 00:14:41,160
+to show us this like a header of basic view with the activity indicator and loading news.
+
+191
+00:14:42,180 --> 00:14:42,500
+All right.
+
+192
+00:14:43,100 --> 00:14:50,240
+And but if we wanted to render empty, so this is how we can render our empties, so no problem
+
+193
+00:14:50,420 --> 00:14:56,279
+in it and this is how we can render our thing, but the main thing is we are still not be
+
+194
+00:14:56,339 --> 00:14:57,819
+able to see anything here.
+
+195
+00:14:59,000 --> 00:15:00,440
+So that's the main problem.
+
+196
+00:15:01,740 --> 00:15:02,740
+Why that is happening?
+
+197
+00:15:02,980 --> 00:15:04,420
+I am not be able to understand.
+
+198
+00:15:06,380 --> 00:15:17,019
+Cool, so maybe if I go to my news API, inside this news API, I think everything is fine.
+
+199
+00:15:18,320 --> 00:15:23,839
+Then why we are not seeing that we have top headlines query parents, we have response
+
+200
+00:15:25,120 --> 00:15:30,620
+and if the response is not okay, then I can maybe show maybe
+
+201
+00:15:31,900 --> 00:15:34,740
+I think we are getting that cool.
+
+202
+00:15:35,060 --> 00:15:36,020
+What is happening here?
+
+203
+00:15:38,140 --> 00:15:42,380
+Reference error, alright, no need to worry about this reference error.
+
+204
+00:15:43,620 --> 00:15:48,740
+But if I reload, I'm still seeing like look at that we are able to see the activity indicator.
+
+205
+00:15:49,500 --> 00:15:55,060
+This means we are fetching things properly, but nothing is showing on to the UI.
+
+206
+00:15:56,660 --> 00:16:01,860
+Alright, let me fix it. Just give me a minute. Alright guys, so I have found a bunch of issues
+
+207
+00:16:01,980 --> 00:16:09,240
+inside our code. So let me tell you line by line. So the first issue is inside our index.tsx
+
+208
+00:16:09,800 --> 00:16:14,800
+and that is you need to tell safe area style as flex of one.
+
+209
+00:16:15,200 --> 00:16:20,240
+This is one fix perfect after that inside your news feed
+
+210
+00:16:21,380 --> 00:16:25,640
+We definitely need to add bunch of changes here
+
+211
+00:16:26,240 --> 00:16:31,100
+Perfect and that is like inside your load news page. Yep
+
+212
+00:16:31,680 --> 00:16:36,040
+You will see that we have a page number and then reset so inside the try
+
+213
+00:16:36,940 --> 00:16:40,240
+First thing is always call this set load more
+
+214
+00:16:40,800 --> 00:16:44,680
+And all only call when page number is greater than 1.
+
+215
+00:16:46,200 --> 00:16:53,440
+And then if reset like this one is true, then only say set loading is true and then get
+
+216
+00:16:53,980 --> 00:17:00,640
+the response cool and one more thing also pass here the query query as search query.
+
+217
+00:17:01,140 --> 00:17:04,859
+And again if we don't have any response, then simply show this.
+
+218
+00:17:05,300 --> 00:17:10,240
+Otherwise, and what you can do in same way if we don't have any articles and articles
+
+219
+00:17:10,400 --> 00:17:14,280
+length is 0, then a bunch of error handling, nothing rocket science.
+
+220
+00:17:14,890 --> 00:17:21,300
+And if we have like reset and then simply show this same thing, nothing to change here like
+
+221
+00:17:21,480 --> 00:17:27,980
+the same thing that we have did and has more is also going to be something like this and
+
+222
+00:17:28,020 --> 00:17:30,140
+just remove all the question mark that we have.
+
+223
+00:17:30,600 --> 00:17:36,400
+and set error as null, yes you need to set it, otherwise you will not going to work this
+
+224
+00:17:36,500 --> 00:17:44,140
+properly and yep, this is how this basically going to work and you will see we have added
+
+225
+00:17:44,240 --> 00:17:52,000
+the category, country and search query as the dependency, perfect and for calling this
+
+226
+00:17:52,140 --> 00:17:56,120
+load news I have also added the load news as the dependency.
+
+227
+00:17:56,900 --> 00:18:04,920
+Perfect and same changes will be inside your handle refresh, so where is my handle refresh?
+
+228
+00:18:06,380 --> 00:18:13,660
+So that handle refresh is also going to have this set error as null, cool and I have also
+
+229
+00:18:13,860 --> 00:18:18,620
+added here the handle search which is same like set query whatever you are writing into
+
+230
+00:18:18,700 --> 00:18:23,300
+it and then if we has more and if we are in search mode, alright.
+
+231
+00:18:23,800 --> 00:18:30,980
+And then one more thing inside your news API that I have added basically so where is my
+
+232
+00:18:31,120 --> 00:18:31,980
+news API?
+
+233
+00:18:33,120 --> 00:18:34,240
+So this one cool.
+
+234
+00:18:34,780 --> 00:18:41,440
+So this news API like we are having the basically response and data we are also checking for
+
+235
+00:18:41,520 --> 00:18:43,540
+error like by any chance if we have any error.
+
+236
+00:18:43,900 --> 00:18:49,300
+And if response is not okay, then throw the error like these two, three changes and then
+
+237
+00:18:49,380 --> 00:18:49,920
+look at that.
+
+238
+00:18:50,260 --> 00:18:54,300
+This is working very fine and UI is very top notch.
+
+239
+00:18:55,300 --> 00:18:55,780
+Perfect.
+
+240
+00:18:56,620 --> 00:18:58,680
+Let me just search for R, A.
+
+241
+00:19:01,360 --> 00:19:02,180
+KERS, perfect.
+
+242
+00:19:02,810 --> 00:19:07,920
+And if I hit this and look at that, this is our and the moment you click over it, so
+
+243
+00:19:08,360 --> 00:19:09,620
+this needs to be work.
+
+244
+00:19:10,580 --> 00:19:10,660
+Cool.
+
+245
+00:19:10,940 --> 00:19:12,640
+So we can fix that no problem.
+
+246
+00:19:12,900 --> 00:19:13,900
+Like let me try to click.
+
+247
+00:19:14,450 --> 00:19:16,380
+And if I'm clicking it, nothing is happening.
+
+248
+00:19:16,820 --> 00:19:16,920
+Why?
+
+249
+00:19:18,040 --> 00:19:23,820
+Because if I am not wrong, if I go to my flat list, we have this news card, we haven't
+
+250
+00:19:23,821 --> 00:19:25,760
+handle this handle press.
+
+251
+00:19:26,300 --> 00:19:36,440
+So, let's move ahead and let me just basically go to my news card and this news card is basically
+
+252
+00:19:36,620 --> 00:19:42,880
+going to do you know what a simple thing like you can see that we have a on press as a prop.
+
+253
+00:19:42,970 --> 00:19:49,200
+So I can say if we have on press then simply do this on press.
+
+254
+00:19:49,900 --> 00:19:53,220
+Otherwise, simply go inside else.
+
+255
+00:19:54,360 --> 00:19:57,540
+This else is going to use a linking from React Native.
+
+256
+00:19:57,860 --> 00:20:01,520
+This is used for deep linking.
+
+257
+00:20:02,520 --> 00:20:04,760
+And then you can simply search for open URL.
+
+258
+00:20:05,740 --> 00:20:08,940
+This is going to open this article dot URL.
+
+259
+00:20:09,880 --> 00:20:10,060
+Perfect.
+
+260
+00:20:10,260 --> 00:20:13,300
+And again, by any chance, if we have any error.
+
+261
+00:20:13,900 --> 00:20:20,780
+Then I can simply going to show the error which is equals to console.error and I can
+
+262
+00:20:20,940 --> 00:20:22,680
+render all the error that I have.
+
+263
+00:20:23,440 --> 00:20:29,240
+Perfect and if I click on any news you will see that I am redirected to that specific
+
+264
+00:20:29,420 --> 00:20:29,660
+news.
+
+265
+00:20:30,500 --> 00:20:36,320
+Perfect, in same way you can change let us say let me go to technology and the moment
+
+266
+00:20:36,460 --> 00:20:41,920
+I press over it you will see all the technology related news are coming and if you go little
+
+267
+00:20:41,980 --> 00:20:47,440
+bit side you will found all the filters inside the models and this is your country change
+
+268
+00:20:47,540 --> 00:20:47,760
+model.
+
+269
+00:20:48,500 --> 00:20:49,799
+Cool, isn't it?
+
+270
+00:20:50,279 --> 00:20:55,580
+And you will see that at the top of it, our activity indicator is not showing.
+
+271
+00:20:55,960 --> 00:20:57,260
+So how you can fix that?
+
+272
+00:20:58,100 --> 00:21:18,179
+So let me go to my header and at the top of this header and I will go to my header.
+
+273
+00:21:18,180 --> 00:21:18,200
+Below this I think maybe I can search for something known as activity indicator.
+
+274
+00:21:18,201 --> 00:21:20,200
+So activity and status bar not the activity indicator we have something known as status
+
+275
+00:21:21,120 --> 00:21:26,160
+bar and this status bar is going to have the theme.
+
+276
+00:21:26,600 --> 00:21:35,299
+and maybe the color background color maybe and if I just simply say this as #CCC
+
+277
+00:21:36,059 --> 00:21:42,460
+all right what if #000 and if I save it all right so let me just quickly find
+
+278
+00:21:42,600 --> 00:21:48,220
+out where we can add so that this thing at the above of it is going to show us
+
+279
+00:21:48,500 --> 00:21:57,040
+Maybe inside index, I don't know if I go to my index and below this if I import my status
+
+280
+00:21:57,300 --> 00:21:57,960
+bar component.
+
+281
+00:22:00,100 --> 00:22:00,240
+Perfect.
+
+282
+00:22:00,640 --> 00:22:02,840
+And if I save it, let me just quickly fix it.
+
+283
+00:22:03,820 --> 00:22:04,020
+Cool.
+
+284
+00:22:04,919 --> 00:22:11,580
+Alright, so I have basically imported this status bar inside the index.tsx and let's
+
+285
+00:22:11,700 --> 00:22:15,340
+say at the top of it you will see that they are showing us at as white.
+
+286
+00:22:16,299 --> 00:22:22,299
+So I wanted to change it so simple you need to search for a prop name as bar style and
+
+287
+00:22:22,400 --> 00:22:27,059
+then I can change this tool if I just add default you will see they are showing us default.
+
+288
+00:22:28,000 --> 00:22:29,440
+But if I change this to...
+
+289
+00:22:31,220 --> 00:22:38,200
+dark content and if I save it look at that, now this is changed to dark and that is why
+
+290
+00:22:38,260 --> 00:22:40,880
+this is how they are basically showing, perfect.
+
+291
+00:22:43,180 --> 00:22:49,100
+So amazing, amazing job and yes, this is how we have successfully completed a very basic
+
+292
+00:22:49,240 --> 00:22:50,840
+mini project using.
+
+293
+00:22:52,120 --> 00:22:58,220
+external news API and integrated them and onto a very good UI.
+
+294
+00:22:58,539 --> 00:23:03,260
+So that's why it has take us lot of efforts to build it, but everything is going to be
+
+295
+00:23:03,261 --> 00:23:04,299
+worth it at the end.
+
+296
+00:23:04,799 --> 00:23:05,919
+So don't worry about it.
+
+297
+00:23:06,340 --> 00:23:11,020
+So yeah, this is pretty much it for this entire module and see you next time.
+

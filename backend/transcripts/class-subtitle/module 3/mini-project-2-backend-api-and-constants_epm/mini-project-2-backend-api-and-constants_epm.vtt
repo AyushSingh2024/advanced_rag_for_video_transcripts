@@ -1,0 +1,332 @@
+WEBVTT
+
+00:00:00.400 --> 00:00:05.520
+Alright guys and welcome to chapter number two of our Pokemon multi-screen app.
+
+00:00:06.100 --> 00:00:11.060
+In this chapter, we are basically going to add all the backend fetching logic with Pokemon
+
+00:00:11.200 --> 00:00:16.379
+API and then simply going to copy and paste all the types that we have for it.
+
+00:00:16.420 --> 00:00:16.700
+Easy.
+
+00:00:17.240 --> 00:00:23.780
+So what you need to do simply go inside your app folder and then create an API folder.
+
+00:00:24.080 --> 00:00:24.280
+Yes.
+
+00:00:25.040 --> 00:00:27.900
+API simply say Pokemon dot.
+
+00:00:28.800 --> 00:00:30.060
+TS, easy.
+
+00:00:31.720 --> 00:00:37.620
+And then let me first of all paste all the types that I have related to my Pokemon.
+
+00:00:37.880 --> 00:00:42.540
+Again you can again go to this Arapa, you will get all of that onto my GitHub, don't
+
+00:00:42.620 --> 00:00:45.440
+worry about that and below into zip file as well.
+
+00:00:45.700 --> 00:00:49.560
+So, this is your first Pokemon ref, we have name and URL.
+
+00:00:50.320 --> 00:00:56.000
+Then another thing is export interface Pokemon list that we have count next previous result.
+
+00:00:56.560 --> 00:01:01.120
+This is basically just for infinite scrolling feature that we are going to implement.
+
+00:01:02.100 --> 00:01:08.480
+Then we have type entry like the slot type name URL, then we have status, then we have
+
+00:01:08.481 --> 00:01:09.640
+Pokemon details.
+
+00:01:09.700 --> 00:01:10.760
+This is very important.
+
+00:01:10.800 --> 00:01:16.840
+We have the ID of Pokemon, the name, the types that we have, the status, the sprites.
+
+00:01:19.040 --> 00:01:24.900
+Then we have width, weight, height, abilities like ability name.
+
+00:01:25.020 --> 00:01:26.320
+This will be into the array.
+
+00:01:26.500 --> 00:01:27.400
+So kind of that.
+
+00:01:27.900 --> 00:01:37.100
+Perfect, now let's move ahead and then simply say const base URL is equals to https colon
+
+00:01:37.101 --> 00:01:42.000
+slash slash pokeapi.co slash API slash V2.
+
+00:01:42.800 --> 00:01:46.800
+So this is the free base URL for using Pokemon API.
+
+00:01:46.980 --> 00:01:47.680
+So easy.
+
+00:01:47.900 --> 00:01:50.800
+And, then we are going to create three functions.
+
+00:01:51.340 --> 00:01:51.600
+Perfect.
+
+00:01:52.500 --> 00:02:00.920
+First function is going to be getPokemonList and we are basically going to fetch 20 Pokemon
+
+00:02:01.000 --> 00:02:01.800
+at a one time.
+
+00:02:02.780 --> 00:02:05.780
+So, I can simply say export const.
+
+00:02:07.780 --> 00:02:14.700
+get Pokemon list is equals to async and then first thing is going to be the limit which
+
+00:02:14.701 --> 00:02:22.720
+is type of number is equals to 20, offset is always going to be the number and then
+
+00:02:22.721 --> 00:02:32.700
+0 and let me just simply coming to here, easy and they are going to return me a promise,
+
+00:02:33.700 --> 00:02:40.680
+And the type of this promise is going to be the Pokemon list response.
+
+00:02:41.980 --> 00:02:43.180
+Perfect, easy.
+
+00:02:44.019 --> 00:02:47.959
+And then we are basically going to have a very simple fetch API call.
+
+00:02:48.140 --> 00:02:49.440
+I will call a const.
+
+00:02:50.880 --> 00:02:58.380
+response is equals to await, which back ticks, this is first of all going to have a base
+
+00:02:58.560 --> 00:03:01.300
+URL and then the endpoint we need.
+
+00:03:01.540 --> 00:03:03.480
+So this is going to be for Pokemon.
+
+00:03:04.340 --> 00:03:11.060
+Then let me add some params, some queries basically, the limit is basically going to
+
+00:03:11.080 --> 00:03:13.120
+be as the limit.
+
+00:03:13.800 --> 00:03:20.060
+So, this is the limit that we have and in same way the offset we have.
+
+00:03:20.150 --> 00:03:30.720
+So, end offset easy this is basically also equal to the offset perfect and then I am
+
+00:03:30.721 --> 00:03:34.620
+basically going to return response dot JSON.
+
+00:03:35.000 --> 00:03:40.160
+Easy, let me format this for you just to make it more readable.
+
+00:03:40.740 --> 00:03:43.260
+Now you will see a basic response and returning it.
+
+00:03:43.400 --> 00:03:50.720
+We can just add one check that is going to be if we do not have the response.ok throw
+
+00:03:50.721 --> 00:03:53.720
+this new error, fail to fetch Pokemon list.
+
+00:03:54.820 --> 00:03:56.420
+Simple, perfect.
+
+00:03:56.800 --> 00:04:05.500
+Then, let's move ahead and then say simple export const get Pokemon detail and this is
+
+00:04:05.501 --> 00:04:13.060
+equals to the async and then I will call this as name or id and this will become your string
+
+00:04:13.520 --> 00:04:14.260
+or number.
+
+00:04:15.160 --> 00:04:15.380
+Perfect.
+
+00:04:15.480 --> 00:04:18.779
+You will basically get Pokemon by their name or by their id.
+
+00:04:20.200 --> 00:04:24.160
+This is going to return a promise which is type of Pokemon.
+
+00:04:27.340 --> 00:04:35.860
+And then this will going to return us this very basics again simple database call, simple
+
+00:04:35.900 --> 00:04:45.259
+fetch call response is equals to await fetch back ticks this is going to be as base URL
+
+00:04:46.720 --> 00:04:50.740
+and after the base URL this is going to be the Pokemon.
+
+00:04:51.100 --> 00:04:56.980
+And I will call this name or ID, whatever name is coming, whatever ID is coming on the
+
+00:04:56.981 --> 00:04:58.880
+basis of that we are returning it.
+
+00:04:59.640 --> 00:05:07.180
+Then same thing, failed to fetch Pokemon details.
+
+00:05:08.020 --> 00:05:08.340
+Perfect.
+
+00:05:09.200 --> 00:05:12.940
+And you can definitely add other data like you can add this here.
+
+00:05:13.700 --> 00:05:23.760
+And, then simple return response dot json simple and then in same way I can write export
+
+00:05:23.761 --> 00:05:33.400
+const get pokemon by type like you can also fetch pokemon by their type like you are fetching
+
+00:05:33.440 --> 00:05:36.760
+on their fire water like we have multiple traits.
+
+00:05:37.000 --> 00:05:45.300
+and the Pokemon type which is coming, so type will going to be here the string and they
+
+00:05:45.301 --> 00:05:54.260
+are going to return you again the promise is going to be as Pokemon rough which is type
+
+00:05:54.261 --> 00:06:00.520
+of an array because we can have multiple Pokemon of same type that's why.
+
+00:06:01.000 --> 00:06:11.080
+And, then same simple const response is equals to await fetch and then this will going to
+
+00:06:11.081 --> 00:06:20.400
+become a back tick and base URL slash type slash whatever the type is coming as a prop.
+
+00:06:21.080 --> 00:06:29.440
+And, then same thing like if this is not going to be as going to return this otherwise simple
+
+00:06:30.400 --> 00:06:44.199
+Data is equal to await response dot json and then going to return a data dot pokemon dot
+
+00:06:44.560 --> 00:06:45.639
+is going to be map.
+
+00:06:46.080 --> 00:06:49.080
+We have item which is type of any for now.
+
+00:06:49.400 --> 00:06:56.540
+And then we are returning the item.Pokemon just in a proper formatted way.
+
+00:06:57.120 --> 00:06:58.479
+That's why we have added here array.
+
+00:06:58.780 --> 00:07:01.060
+That's why we're returning into the map.
+
+00:07:01.800 --> 00:07:02.060
+Perfect.
+
+00:07:03.120 --> 00:07:03.479
+Nice.
+
+00:07:03.660 --> 00:07:05.580
+So, yes, we are done with this.
+
+00:07:06.160 --> 00:07:08.979
+But before moving ahead, let me close this.
+
+00:07:09.220 --> 00:07:10.919
+Let me open this, close everything.
+
+00:07:12.080 --> 00:07:18.220
+At the root of our application and not into root, into the app, I wanted to create a constant.
+
+00:07:19.600 --> 00:07:24.280
+And inside this constant, we are going to have two constant.
+
+00:07:25.000 --> 00:07:28.980
+One is for colors that we are going to use all the colors we have.
+
+00:07:29.100 --> 00:07:30.740
+Let me just simply paste them.
+
+00:07:31.360 --> 00:07:33.660
+So you will see that we have a background card.
+
+00:07:33.700 --> 00:07:39.700
+We are going to use that text, subtext, border, accent yellow, accent emerald, then all the
+
+00:07:39.701 --> 00:07:44.920
+types color we have, like we have normal, we have fire, we have water, we have electric,
+
+00:07:45.060 --> 00:07:46.780
+grass, towards the ferry.
+
+00:07:47.100 --> 00:07:51.820
+Easy and then a simple we are exporting it something like this.
+
+00:07:52.540 --> 00:08:00.500
+Then let me also add here types.ts and now we have the color and the colors and we are
+
+00:08:00.501 --> 00:08:02.860
+returning all the Pokemon types we have.
+
+00:08:03.100 --> 00:08:08.300
+Then, in this format basic and then we are also saying get type color.
+
+00:08:09.080 --> 00:08:15.040
+Let us say if the type is normal, we are just simply searching the type normal's color and
+
+00:08:15.041 --> 00:08:18.520
+returning that something like this.
+
+00:08:19.580 --> 00:08:24.860
+Perfect, so basic logic, don't think too much over it, you can simple copy and paste that
+
+00:08:24.960 --> 00:08:25.460
+for now.
+
+00:08:25.461 --> 00:08:29.700
+Our main focus is to understand this React navigation, that's it.
+
+00:08:29.920 --> 00:08:35.539
+Perfect, eventually you will understand all of this in upcoming lectures, so don't take
+
+00:08:35.540 --> 00:08:40.900
+any stress for now, just write with me, keep your brain open and just write with me things
+
+00:08:40.901 --> 00:08:41.620
+for now.
+
+00:08:42.960 --> 00:08:45.600
+Alright, so now we are good to go.
+
+00:08:46.270 --> 00:08:50.680
+So we have successfully completed the chapter number two with adding all the backend fetching
+
+00:08:50.681 --> 00:08:52.680
+logic and Pokemon API.
+
+00:08:52.920 --> 00:08:58.240
+From next chapter we are going to implement the home screen and in same way in upcoming
+
+00:08:58.241 --> 00:08:58.940
+chapters there.
+
+00:08:59.220 --> 00:09:03.020
+This is pretty much it for this chapter and see you in chapter number three.
+

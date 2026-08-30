@@ -1,0 +1,412 @@
+1
+00:00:00,120 --> 00:00:03,700
+Alright everyone and welcome to one more new lecture.
+
+2
+00:00:03,880 --> 00:00:08,560
+In this lecture, we are going to talk about tab navigation inside export outer.
+
+3
+00:00:09,320 --> 00:00:14,880
+So much like stack, you can implement tab navigator in your layout file and all the
+
+4
+00:00:14,920 --> 00:00:19,480
+routes directly inside that directory will be treated as a tab.
+
+5
+00:00:19,780 --> 00:00:20,360
+Simple as that.
+
+6
+00:00:21,160 --> 00:00:22,420
+Consider the following structure.
+
+7
+00:00:22,780 --> 00:00:24,480
+So let's start with this structure.
+
+8
+00:00:25,000 --> 00:00:30,240
+So, for that I have already created one more new folder with the name of tab navigation
+
+9
+00:00:30,900 --> 00:00:35,340
+and initialize a expo project with resetted project, cool.
+
+10
+00:00:36,000 --> 00:00:40,440
+So, we only have this and a basic layout as well, perfect.
+
+11
+00:00:40,700 --> 00:00:45,880
+So, for implementing tabs, you need to, I mean, this is a good practice and this is
+
+12
+00:00:45,920 --> 00:00:50,480
+how you should always create it, you need to create a route group named as tabs and
+
+13
+00:00:50,600 --> 00:00:54,140
+inside this, let us try to copy this.
+
+14
+00:00:54,180 --> 00:00:56,780
+So we have index, feed and profile, all right.
+
+15
+00:00:57,900 --> 00:01:04,099
+So let me simply create index.tsx, feed.tsx and profile.tsx.
+
+16
+00:01:05,700 --> 00:01:06,540
+TSX, alright.
+
+17
+00:01:07,950 --> 00:01:10,280
+And then let me try to copy this page.
+
+18
+00:01:11,060 --> 00:01:16,620
+And first of all, let me paste an index, same in feed and same in profile.
+
+19
+00:01:17,000 --> 00:01:18,520
+Let me change all of their name.
+
+20
+00:01:19,340 --> 00:01:20,780
+So for the tabs, index.
+
+21
+00:01:21,540 --> 00:01:23,600
+Let me just simply going to call this.
+
+22
+00:01:24,100 --> 00:01:29,400
+Let me call it a home, perfect, copy this, change this to home.
+
+23
+00:01:30,200 --> 00:01:35,799
+For the feed, let me also going to change this to feed and let me call this a feed as
+
+24
+00:01:35,880 --> 00:01:37,860
+well and same for profile.
+
+25
+00:01:38,299 --> 00:01:43,600
+So let me call this as a profile and change this index to profile.
+
+26
+00:01:44,660 --> 00:01:49,980
+So, this is the step number one and the step number two is going to be inside your root
+
+27
+00:01:50,080 --> 00:01:57,440
+layout what you need to do, you simply need to first of all do something like this.
+
+28
+00:01:57,720 --> 00:02:05,560
+Let me just simply say this as stack and inside this get your stack then let me call this
+
+29
+00:02:05,610 --> 00:02:08,959
+a screen and then just happened.
+
+30
+00:02:10,780 --> 00:02:11,620
+me fix it.
+
+31
+00:02:12,580 --> 00:02:13,060
+Cool.
+
+32
+00:02:14,960 --> 00:02:17,380
+So, just give me a minute, let me quickly fix it.
+
+33
+00:02:18,240 --> 00:02:23,760
+All right, then basically instead of this for the name of the screen, I am basically
+
+34
+00:02:23,880 --> 00:02:29,040
+going to call it a tabs, something like this, perfect.
+
+35
+00:02:29,880 --> 00:02:35,459
+And after this, what do you need to do or the options, you just need to change a header
+
+36
+00:02:35,600 --> 00:02:39,420
+shown variable to false because tab navigation have their own headers.
+
+37
+00:02:40,680 --> 00:02:48,380
+And then if I save it cool and then you can inside your tabs but you can do for now you
+
+38
+00:02:48,480 --> 00:02:51,140
+can definitely delete this because we do not need it.
+
+39
+00:02:52,120 --> 00:02:57,959
+So let me delete this and let me try to reload everything but you will not going to see anything
+
+40
+00:02:58,260 --> 00:03:02,780
+the way we wanted to see but let me just reload it and let me be on this screen.
+
+41
+00:03:03,319 --> 00:03:07,440
+So you will only see the tab slash fade for now.
+
+42
+00:03:08,300 --> 00:03:13,220
+And then what is the next step you need to do for the next step you basically need to
+
+43
+00:03:13,280 --> 00:03:22,080
+go inside your feed like here and then inside this you need to also create a new layout dot
+
+44
+00:03:22,260 --> 00:03:31,080
+TSX and then for this layout dot TSX what you can do you can simply going to import
+
+45
+00:03:31,180 --> 00:03:32,360
+a tab here perfect.
+
+46
+00:03:32,700 --> 00:03:34,820
+So you can simply going to say import.
+
+47
+00:03:35,500 --> 00:03:43,440
+tabs, not alright import tab from export out and then you can simply say export default
+
+48
+00:03:44,340 --> 00:03:53,900
+and instead of root I can say this as tab layout and let me off my AI and look at that.
+
+49
+00:03:54,340 --> 00:04:00,100
+You have successfully initialize our tab, you will see index, you will see feed and
+
+50
+00:04:00,180 --> 00:04:02,760
+you will also see profile something like this.
+
+51
+00:04:04,439 --> 00:04:09,700
+So, now let's move ahead and we'll see how you can basically modify this.
+
+52
+00:04:09,870 --> 00:04:14,860
+So for modification again, you need to something like this.
+
+53
+00:04:15,040 --> 00:04:19,860
+Let me just coming to here and use this as tabs.
+
+54
+00:04:20,500 --> 00:04:27,080
+And then inside this, let's say for the first index screen, let me say this as tab screen
+
+55
+00:04:27,340 --> 00:04:34,160
+self closing name, name is definitely we have index, but I can change it, I can simply say
+
+56
+00:04:34,200 --> 00:04:34,580
+options.
+
+57
+00:04:35,540 --> 00:04:41,800
+And this options is going to have a tab bar label and this label, I can say this as home.
+
+58
+00:04:42,310 --> 00:04:45,700
+So now you will see form index, this is changed to label.
+
+59
+00:04:46,100 --> 00:04:52,180
+Let me copy this, paste this and paste this as well and although we already have this
+
+60
+00:04:52,400 --> 00:05:00,800
+correctly, but let me just simply move ahead and after that what I can do, I can simply
+
+61
+00:05:00,960 --> 00:05:02,620
+use here something known as explore.
+
+62
+00:05:04,040 --> 00:05:09,040
+And inside this explore, I will call this as this explore, cool.
+
+63
+00:05:10,180 --> 00:05:12,200
+And let me also create here profile.
+
+64
+00:05:14,340 --> 00:05:19,180
+And I will call this as my profile perfect.
+
+65
+00:05:19,540 --> 00:05:26,060
+And if I save it, you will see I have home, I have my profile and we all already although
+
+66
+00:05:26,140 --> 00:05:29,020
+have now this is not profile, sorry, my mistake.
+
+67
+00:05:29,780 --> 00:05:30,220
+This is Feed.
+
+68
+00:05:31,100 --> 00:05:34,400
+And I will say this as my feed, perfect.
+
+69
+00:05:35,260 --> 00:05:41,040
+Now if I save it, this is how they basically going to look because first is the home and
+
+70
+00:05:41,220 --> 00:05:43,180
+second is going to be our profile.
+
+71
+00:05:43,680 --> 00:05:49,420
+So let me change this to profile and now if I save it, now everything is saved.
+
+72
+00:05:49,421 --> 00:05:55,200
+perfectly fine but let's say right now I wanted to change my local icon.
+
+73
+00:05:56,030 --> 00:05:57,040
+So how you can change it?
+
+74
+00:05:57,380 --> 00:06:05,160
+So for that you can basically import a font awesome icon library from a very nice I can
+
+75
+00:06:05,220 --> 00:06:08,600
+say vector icons slash a font awesome.
+
+76
+00:06:09,100 --> 00:06:15,340
+Perfect and if you wanted to be and if you basically wanted to use it so you can use
+
+77
+00:06:15,480 --> 00:06:16,440
+it very easily.
+
+78
+00:06:16,660 --> 00:06:19,800
+So let me show you how you can basically use it.
+
+79
+00:06:20,000 --> 00:06:24,660
+So for that you can just basically coming to here and use the tab bar icon.
+
+80
+00:06:25,100 --> 00:06:32,960
+easy. And inside this tab bar icon you can return a jsx. So, how you can basically do
+
+81
+00:06:33,000 --> 00:06:39,000
+so this simply coming to here. And let me just simply coming to here and say this as
+
+82
+00:06:39,120 --> 00:06:39,780
+font awesome.
+
+83
+00:06:41,720 --> 00:06:43,680
+Where is my font awesome import?
+
+84
+00:06:44,120 --> 00:06:44,760
+Just give me a minute.
+
+85
+00:06:45,930 --> 00:06:47,000
+Let me re import it.
+
+86
+00:06:47,480 --> 00:06:49,160
+So just a minute.
+
+87
+00:06:50,130 --> 00:06:50,400
+All right.
+
+88
+00:06:50,760 --> 00:06:56,160
+So now you guys can basically see that we have this font awesome and I can definitely change
+
+89
+00:06:56,300 --> 00:06:59,300
+this name to the home and you can also give it a size.
+
+90
+00:06:59,700 --> 00:07:01,440
+So let me give the size of 24.
+
+91
+00:07:01,900 --> 00:07:04,240
+And if I save it, look at that.
+
+92
+00:07:05,190 --> 00:07:11,160
+In same way, you can do this for profile, you can also do this for my feed and you can
+
+93
+00:07:11,259 --> 00:07:19,419
+also do this for your profile my feed home everyone like instead of home if we have something
+
+94
+00:07:19,539 --> 00:07:25,800
+related to profile, alright we do not have maybe we have parser and maybe we definitely
+
+95
+00:07:25,940 --> 00:07:26,360
+have user.
+
+96
+00:07:26,940 --> 00:07:30,260
+So, for user this is going to be this and for
+
+97
+00:07:31,420 --> 00:07:36,780
+So, now we have this list perfect, you can also change the color of this let's say you
+
+98
+00:07:36,820 --> 00:07:44,500
+wanted to set the active state depends I mean how you basically wanted to do so this cool.
+
+99
+00:07:45,420 --> 00:07:49,320
+So I hope you are loving this like how you can basically change it how you can modify
+
+100
+00:07:49,480 --> 00:07:55,380
+this now it's completely up to you you know all the hair and their of this stack navigation
+
+101
+00:07:55,381 --> 00:07:58,300
+tab navigation and same thing is going to be for
+
+102
+00:07:58,900 --> 00:08:00,740
+draw navigation as well.
+
+103
+00:08:01,340 --> 00:08:05,139
+So yeah, see you in next chapter for this chapter, this is pretty much it.
+

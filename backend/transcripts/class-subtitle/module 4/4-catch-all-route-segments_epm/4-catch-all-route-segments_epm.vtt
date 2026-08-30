@@ -1,0 +1,413 @@
+WEBVTT
+
+00:00:00.700 --> 00:00:04.300
+Hey everyone and welcome to one more new lecture.
+
+00:00:04.640 --> 00:00:09.740
+In this lecture, we will learn about catch all route segments in X4 router.
+
+00:00:10.720 --> 00:00:16.580
+And this is a powerful way to we can say match any path under a directory.
+
+00:00:17.120 --> 00:00:23.060
+So let's say you are making a blog application, you are making any documentation related application.
+
+00:00:23.400 --> 00:00:27.600
+So for that, you need this cache all route segment.
+
+00:00:28.000 --> 00:00:34.160
+So, the first question arises here, why do we need even the cache all route segment and
+
+00:00:34.200 --> 00:00:35.300
+how they basically look.
+
+00:00:36.040 --> 00:00:42.220
+So, the syntax of cache all route segment is something like this dot dot dot and we
+
+00:00:42.221 --> 00:00:44.460
+can say this as slug dot tsx.
+
+00:00:45.900 --> 00:00:48.440
+inside the square bracket.
+
+00:00:49.410 --> 00:00:53.080
+So this is the syntax we can say of cache all route a segment.
+
+00:00:54.060 --> 00:00:55.720
+Alright let me fix it cool.
+
+00:00:56.010 --> 00:00:59.440
+So this is the syntax of cache all route segment.
+
+00:01:00.570 --> 00:01:03.200
+Now why do we even basically need it?
+
+00:01:03.600 --> 00:01:10.180
+So, in file-based routing, you define dynamic routes, let's say you are following the file-based
+
+00:01:10.300 --> 00:01:17.580
+routing and if you wanted to define a dynamic routes with parameter, so how you can do so
+
+00:01:17.660 --> 00:01:17.840
+that?
+
+00:01:18.100 --> 00:01:24.360
+So, it's going to be pretty easy, you can simply going to use this square notation and
+
+00:01:24.420 --> 00:01:31.160
+then you can simply add here TSX and by that now this dot ID is going to behave as a dynamic
+
+00:01:31.280 --> 00:01:31.440
+route.
+
+00:01:31.800 --> 00:01:35.620
+Like if I just show you here if I just simply go post ID page
+
+00:01:36.200 --> 00:01:38.460
+Now you can see the post ID is coming as well
+
+00:01:39.040 --> 00:01:43.320
+But the moment I change data to 2, 3, 4, 5 or whatever is that
+
+00:01:43.760 --> 00:01:46.260
+Then on the basis of that we are going to show
+
+00:01:46.680 --> 00:01:48.440
+That different data makes sense
+
+00:01:49.300 --> 00:01:55.340
+That work when you know exactly, but why then, but we have the limitation for this.
+
+00:01:55.980 --> 00:01:57.280
+What is that limitation?
+
+00:01:57.860 --> 00:02:00.280
+Limitation is this will only work.
+
+00:02:02.600 --> 00:02:11.620
+Works we can say works when you know, when we know that exactly how many segments.
+
+00:02:13.400 --> 00:02:15.340
+You expect in a path.
+
+00:02:16.030 --> 00:02:17.680
+All right, this is very important point.
+
+00:02:18.090 --> 00:02:24.700
+You expect in a path because into this we expect that we only have one route segment.
+
+00:02:25.360 --> 00:02:28.740
+One is post slash another one is our dynamic data.
+
+00:02:29.170 --> 00:02:31.880
+It can be ID like this is the post ID.
+
+00:02:31.910 --> 00:02:35.500
+So we know that we only have one dynamic route segment.
+
+00:02:36.900 --> 00:02:43.300
+But what if your route structure can have multiple level or we can say unknown segments,
+
+00:02:43.780 --> 00:02:46.840
+you don't know what is going to be here in upcoming lecture.
+
+00:02:47.000 --> 00:02:52.220
+I mean, sorry, not in upcoming lecture, you don't know what's going to be, let's say
+
+00:02:52.260 --> 00:02:58.080
+post slash post ID slash username, and we can say feed, we can say anything like, like
+
+00:02:58.320 --> 00:03:02.400
+let me take the example of this documentation, try to just focus over it.
+
+00:03:02.800 --> 00:03:07.520
+You will see that right now they are showing us router basics notation.
+
+00:03:08.510 --> 00:03:10.960
+Alright, but what if I change this to layout?
+
+00:03:11.740 --> 00:03:17.880
+Now you will see we are on router basics and layout, but we are still into the guides.
+
+00:03:18.500 --> 00:03:22.840
+Just see here, we are still into the guides route segment.
+
+00:03:23.400 --> 00:03:30.980
+Inside this guides route segment, we still have multiple nested route segments.
+
+00:03:31.110 --> 00:03:37.160
+So in that case, we need this cache all route segment because let's say,
+
+00:03:38.940 --> 00:03:42.239
+This is your route segments you wanted to create.
+
+00:03:42.400 --> 00:03:48.180
+You wanted to create admin, we can say admin slash users slash role.
+
+00:03:49.140 --> 00:03:49.220
+Perfect.
+
+00:03:49.560 --> 00:03:55.500
+In same way, you also wanted to create admin slash reports slash logs slash date.
+
+00:03:56.319 --> 00:04:02.680
+So if you are going to create all of them separately, then you are going to see a lot
+
+00:04:02.880 --> 00:04:06.519
+of lot of files into your, we can say, folder structure.
+
+00:04:07.100 --> 00:04:10.640
+So, this is where cache all route segment help.
+
+00:04:11.640 --> 00:04:17.440
+They let a single route file match all unmatched segment at that level.
+
+00:04:17.441 --> 00:04:19.640
+So, what I am basically talking about.
+
+00:04:20.380 --> 00:04:22.260
+So, let's see how you can basically create it.
+
+00:04:22.300 --> 00:04:23.900
+So, let me take the example of.
+
+00:04:24.600 --> 00:04:31.040
+Let me try to paste it here. Perfect. So this is the example. Now you will see we are inside
+
+00:04:31.220 --> 00:04:38.000
+our app directory inside admin and then we have created here cash or route segment. So
+
+00:04:38.060 --> 00:04:45.740
+the moment by using this syntax, I can create admin slash roles. I can create admin slash
+
+00:04:45.900 --> 00:04:52.560
+reports slash logs slash date. I can even redirect myself towards admin slash settings
+
+00:04:53.800 --> 00:04:57.280
+So, this is the power of a cache or route segment.
+
+00:04:57.720 --> 00:05:00.560
+So, let's see and how we can basically create it.
+
+00:05:00.720 --> 00:05:01.520
+So, it's very easy.
+
+00:05:02.400 --> 00:05:03.560
+Let's say let me close everything.
+
+00:05:04.460 --> 00:05:06.900
+Inside this app, I am going to create a simple admin.
+
+00:05:07.900 --> 00:05:08.060
+Perfect.
+
+00:05:08.860 --> 00:05:23.780
+And inside this admin, if I wanted to have a multiple admin, I would have to create a
+
+00:05:23.781 --> 00:05:23.801
+route segment, but I don't know the name of the route segment is going to be in future
+
+00:05:23.802 --> 00:05:23.822
+like I don't know it's going to be user or it's going to be reports is going to be settings
+
+00:05:23.823 --> 00:05:24.039
+I know nothing.
+
+00:05:24.750 --> 00:05:29.199
+So in that case and you wanted to be more smart and more cleaner.
+
+00:05:29.600 --> 00:05:36.500
+Then you are going to do simply create a new file and we can say make name this file something
+
+00:05:36.620 --> 00:05:39.880
+like this dot dot dot and give a unique value here.
+
+00:05:39.910 --> 00:05:43.920
+So let me just call it as segments, you can call it slug, you can call it ID, you can
+
+00:05:43.960 --> 00:05:48.900
+call it route, whatever you want, segments and then dot tsx.
+
+00:05:49.360 --> 00:05:49.420
+Easy.
+
+00:05:50.320 --> 00:05:58.760
+Now, then simple R and FES perfect, let me call this as admin cache all no problem.
+
+00:06:01.300 --> 00:06:07.020
+And first of all, let me off my AI perfect, then very easy, then I'm basically going
+
+00:06:07.140 --> 00:06:09.320
+to use the same hook.
+
+00:06:09.900 --> 00:06:18.960
+So, now this is going to be as use local search params, but now what is going to be the name
+
+00:06:19.060 --> 00:06:19.400
+of this?
+
+00:06:19.680 --> 00:06:25.880
+So, what is the name here segments, I am going to de-structure my segments here.
+
+00:06:26.210 --> 00:06:28.720
+Now, you can add the type of it as well.
+
+00:06:29.320 --> 00:06:35.580
+So, let us say let me going to add the type of it as an object, because this is an object
+
+00:06:35.581 --> 00:06:36.840
+and then objects.
+
+00:06:37.300 --> 00:06:42.580
+segments, this is going to be the type of string of array, easy nothing but just a basic,
+
+00:06:43.300 --> 00:06:45.039
+we can say type script.
+
+00:06:45.819 --> 00:06:52.259
+Now what you can do now, you can just simply coming to here, let me just try to design
+
+00:06:52.360 --> 00:06:55.740
+it little bit, it's completely optional but let me try to design.
+
+00:06:56.280 --> 00:07:03.400
+Now I have a basic container, some title and path text easy and then let me just try to
+
+00:07:03.720 --> 00:07:04.379
+add it here.
+
+00:07:05.160 --> 00:07:10.620
+Now you will see that we have a new variable with which is path display because I wanted
+
+00:07:10.740 --> 00:07:12.740
+to show my path as an UI.
+
+00:07:13.330 --> 00:07:19.740
+So that's why I'm basically going to say this as path display is going to simple segments
+
+00:07:21.120 --> 00:07:28.460
+and we are going to use here the join method and I'm going to join all my segments by forward
+
+00:07:28.720 --> 00:07:29.580
+slash easy.
+
+00:07:30.290 --> 00:07:32.320
+Now let's try to use it.
+
+00:07:32.520 --> 00:07:33.780
+So let me go to my index file.
+
+00:07:34.200 --> 00:07:41.500
+not feed index file and inside this index file let me copy the same and let me try to paste
+
+00:07:42.780 --> 00:08:04.180
+and this is going to be as admin easy and then this admin is we can say
+
+00:08:04.181 --> 00:08:04.201
+What we can say we can let's say I wanted to go inside users inside logs easy and let
+
+00:08:04.202 --> 00:08:04.222
+me just simply say go to admin and go to logs and now if I save it and now if I press here
+
+00:08:04.223 --> 00:08:09.940
+look at that now I am inside my user logs in same way for the same route segment I can
+
+00:08:10.020 --> 00:08:15.480
+create another one as well let's say I am going to call this as reports and for the report
+
+00:08:15.481 --> 00:08:18.160
+Let me just simply say this on the basis of monthly.
+
+00:08:18.600 --> 00:08:29.040
+easy go and monthly reports easy and now if I save it and if I go back and now if I click
+
+00:08:29.140 --> 00:08:34.799
+on go monthly reports you will see I am on to the same segment but I am rendering here
+
+00:08:34.840 --> 00:08:40.080
+different data so on the basis of different data you can definitely decide what you wanted
+
+00:08:40.240 --> 00:08:46.560
+to render so this is the beauty of this cache all route segment so what is happening here
+
+00:08:46.900 --> 00:08:56.600
+This route tellExpoRouter cacheAllPath that are start with /edmint and then hook is basically
+
+00:08:56.680 --> 00:09:02.640
+like the hook we are basically using here is local search params return an array yes
+
+00:09:02.780 --> 00:09:03.720
+this is your array.
+
+00:09:04.200 --> 00:09:09.900
+name as segments, you can call it whatever you want, but let's go with segment that contain
+
+00:09:10.560 --> 00:09:17.300
+each part after like this is this segment is going to contain each part after admin like
+
+00:09:17.380 --> 00:09:23.200
+we have users slash roles, we can have reports slash logs slash date, we can have settings
+
+00:09:23.420 --> 00:09:31.280
+slash security, you can like this segment variable, this segment property contain each
+
+00:09:31.281 --> 00:09:32.400
+part after admin.
+
+00:09:32.700 --> 00:09:34.900
+So, I hope so that makes sense.
+
+00:09:36.260 --> 00:09:41.960
+Like now the biggest question arise here when you would use a cache or route segment.
+
+00:09:42.980 --> 00:09:47.640
+So, whenever you wanted to create a documentation but in mobile phones you definitely going
+
+00:09:47.760 --> 00:09:50.680
+to avoid creating documentation but let's just say.
+
+00:09:51.300 --> 00:09:59.339
+You wanted to create a documentation of your cool and let's say you wanted to create something
+
+00:09:59.459 --> 00:10:05.160
+on as admin panel because admin panel can have multiple routes, multiple nested routes,
+
+00:10:05.459 --> 00:10:06.459
+multiple unknown routes.
+
+00:10:07.940 --> 00:10:13.820
+You can say paginated generated from a CMS, pages which is generated from CMS.
+
+00:10:14.680 --> 00:10:20.600
+Anywhere you want one component and we can say anywhere you want one component to handle
+
+00:10:21.080 --> 00:10:25.280
+varied nested URLs without manually writing each route file.
+
+00:10:25.300 --> 00:10:27.260
+So, we can see that cool.
+
+00:10:28.120 --> 00:10:34.240
+So yeah, this is pretty much it and I can say this approach is much clean and scalable
+
+00:10:34.920 --> 00:10:39.880
+and this is perfect for deep routing because you can see that this is very deep and you
+
+00:10:39.881 --> 00:10:43.399
+can add as much as a route segments you want.
+
+00:10:43.860 --> 00:10:49.560
+So this is definitely perfect for deep routing and we can say without any boilerplate of
+
+00:10:49.640 --> 00:10:49.820
+code.
+
+00:10:50.040 --> 00:10:50.459
+So yeah.
+
+00:10:50.900 --> 00:10:53.240
+This is pretty much it for this chapter.
+
+00:10:53.420 --> 00:10:56.460
+I hope you loved it and see you next time.
+

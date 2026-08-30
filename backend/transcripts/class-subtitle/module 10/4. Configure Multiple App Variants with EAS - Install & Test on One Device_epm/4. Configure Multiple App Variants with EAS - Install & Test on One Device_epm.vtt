@@ -1,0 +1,653 @@
+WEBVTT
+
+00:00:00.220 --> 00:00:06.200
+Alright everyone and welcome to the last chapter of this module, name as configure multiple
+
+00:00:06.700 --> 00:00:07.260
+app variants.
+
+00:00:07.500 --> 00:00:12.900
+So basically till now we know that how to create a development build for our entire application.
+
+00:00:13.700 --> 00:00:18.700
+Alright now sometime let's say you wanted to have a multiple variations of your app.
+
+00:00:18.840 --> 00:00:23.580
+One is for preview, one is for production and another one is for development.
+
+00:00:24.000 --> 00:00:28.940
+So, in that case, you need to know about this configure multiple app variant.
+
+00:00:28.960 --> 00:00:33.060
+You can definitely visit to this URL and start using it.
+
+00:00:33.980 --> 00:00:37.140
+Alright, so, what is the first step for that always?
+
+00:00:38.060 --> 00:00:43.260
+So, the first step you can see that like each variant require a unique Android application
+
+00:00:43.440 --> 00:00:43.700
+ID.
+
+00:00:44.540 --> 00:00:52.579
+And for iOS you need a unique bundle identifier to enable simulation, simul..
+
+00:00:53.300 --> 00:00:58.899
+Alright, so what I can say is simultaneous, maybe I am wrong or right, installation on
+
+00:00:58.960 --> 00:00:59.379
+one device.
+
+00:00:59.520 --> 00:01:02.460
+So here is how IDs are set up in our application file.
+
+00:01:03.000 --> 00:01:08.979
+We know that right now, if I come into here inside my application app.json,
+
+00:01:09.500 --> 00:01:16.740
+So you will see for Android we have a package name as this and then we have a plugin and
+
+00:01:16.860 --> 00:01:22.520
+all the other thing in same way for iOS right now we only have supported tablet but basically
+
+00:01:22.720 --> 00:01:28.920
+what I'm talking about you can change this got it and you can decide the name of your
+
+00:01:28.979 --> 00:01:32.180
+bundle identifier so that you can uniquely identify them.
+
+00:01:33.060 --> 00:01:35.340
+So first thing first you just need
+
+00:01:36.840 --> 00:01:40.580
+for creating the multiple bundle identifiers.
+
+00:01:41.640 --> 00:01:43.580
+First of all, let me decrease the size of it.
+
+00:01:44.420 --> 00:01:44.660
+All right.
+
+00:01:45.100 --> 00:01:52.320
+And change the name of this, we can say app.json to something else.
+
+00:01:52.680 --> 00:01:52.920
+All right.
+
+00:01:53.040 --> 00:01:57.620
+So what is the name of that something else, which is app.config.js.
+
+00:01:57.980 --> 00:02:00.920
+Right now we have app.json, but rename this.
+
+00:02:02.620 --> 00:02:03.440
+this to app.
+
+00:02:07.260 --> 00:02:14.320
+config.js or ts whatever you wanted to go with let's go with ts and the moment I open
+
+00:02:14.390 --> 00:02:19.580
+it you will see still this is wrong this is not how you are basically going to use it.
+
+00:02:20.000 --> 00:02:22.800
+First of all remove this curly braces from starting.
+
+00:02:23.300 --> 00:02:31.560
+And this is the step number one and then what you need to do, you simply need to do here
+
+00:02:31.680 --> 00:02:39.180
+export default and what I can do, I think I can just simply say export default and we
+
+00:02:39.200 --> 00:02:41.180
+don't even need this export.
+
+00:02:41.440 --> 00:02:43.500
+So also remove the last one.
+
+00:02:45.000 --> 00:02:45.320
+All right.
+
+00:02:45.720 --> 00:02:47.860
+And hopefully just give me a minute.
+
+00:02:48.300 --> 00:02:53.780
+Let me just come into here and we don't if I just close this you will see this one.
+
+00:02:53.910 --> 00:03:01.500
+So we don't need this expo and this last yes this one we don't need this even cool and
+
+00:03:01.580 --> 00:03:05.120
+then simply say export default.
+
+00:03:05.490 --> 00:03:08.560
+All right and the moment I say export default they are stop crying.
+
+00:03:09.650 --> 00:03:09.800
+Perfect.
+
+00:03:10.500 --> 00:03:15.720
+next and after export config you can simply coming to here.
+
+00:03:16.200 --> 00:03:24.220
+And yes, do this and after this what you need to do, you just simply coming to here and
+
+00:03:24.340 --> 00:03:28.700
+enclose all of them inside this, alright.
+
+00:03:29.560 --> 00:03:32.819
+So basically we are just enclosing them inside a parenthesis.
+
+00:03:33.340 --> 00:03:36.900
+So let me just do that in much better way, in much more understandable way.
+
+00:03:37.680 --> 00:03:39.640
+So we first of all need this, yes.
+
+00:03:40.540 --> 00:03:42.220
+Then we need here arrow.
+
+00:03:42.700 --> 00:03:51.940
+and coming to here and at the very bottom add this very good now inside this export default we have access of
+
+00:03:52.920 --> 00:03:53.019
+config
+
+00:03:53.940 --> 00:03:59.660
+Perfect since we are using TypeScript so I can definitely add the types as well. So this is going to be config
+
+00:04:01.700 --> 00:04:03.819
+context alright and
+
+00:04:04.040 --> 00:04:05.900
+This is also going to be as as
+
+00:04:12.120 --> 00:04:12.680
+expo
+
+00:04:12.681 --> 00:04:12.940
+And let us move ahead and import both of the type from it.
+
+00:04:13.700 --> 00:04:20.060
+So I can basically import this config context, let me show you from there, you can simply
+
+00:04:20.160 --> 00:04:23.180
+say import config.
+
+00:04:23.700 --> 00:04:27.840
+context and expo config from expo config exactly.
+
+00:04:28.700 --> 00:04:33.380
+Alright, so now you will see this is how we wanted to go with it and the moment you format
+
+00:04:33.560 --> 00:04:40.380
+this once you will see now this is formatted for myself as well and below this what you
+
+00:04:40.420 --> 00:04:43.460
+will do you can simply spread this config here.
+
+00:04:44.100 --> 00:04:44.200
+Perfect.
+
+00:04:44.960 --> 00:04:47.400
+This is the step number one we need to do.
+
+00:04:48.300 --> 00:04:50.580
+All right, perfect.
+
+00:04:51.190 --> 00:04:53.780
+Now let's move ahead and what is the next step?
+
+00:04:55.660 --> 00:04:57.120
+Next step is very simple.
+
+00:04:57.350 --> 00:05:03.060
+So the next step is you can simply come into here and you will see update the dynamic values
+
+00:05:03.340 --> 00:05:04.700
+based on the environment.
+
+00:05:04.770 --> 00:05:05.960
+So simply copy this.
+
+00:05:06.320 --> 00:05:07.160
+These are two variables.
+
+00:05:07.900 --> 00:05:13.139
+So, the first one is isDev and another one is is_preview.
+
+00:05:13.250 --> 00:05:17.940
+So first we have process.env.app variant which is development.
+
+00:05:18.680 --> 00:05:22.160
+Same is preview when the value is going to be as preview.
+
+00:05:23.290 --> 00:05:23.500
+Easy.
+
+00:05:23.900 --> 00:05:27.960
+And after this, yes, you need to copy this.
+
+00:05:28.340 --> 00:05:28.720
+What is this?
+
+00:05:28.860 --> 00:05:37.139
+This is the get unique identifier of the name based on the, we can say, the build based
+
+00:05:37.220 --> 00:05:38.220
+on the environment.
+
+00:05:39.340 --> 00:05:44.520
+So if I save it, you will see if the this is div, then whatever the name of your application,
+
+00:05:45.210 --> 00:05:46.419
+you wanted to put it.
+
+00:05:46.820 --> 00:05:47.680
+So first of all.
+
+00:05:48.200 --> 00:05:51.480
+This is the package name that I have.
+
+00:05:51.500 --> 00:06:01.120
+So, first of all, let me copy this and also change this, change this as well and also
+
+00:06:01.820 --> 00:06:03.100
+change this.
+
+00:06:03.620 --> 00:06:03.740
+Cool.
+
+00:06:03.980 --> 00:06:04.440
+Nice.
+
+00:06:04.520 --> 00:06:05.080
+We will see.
+
+00:06:05.400 --> 00:06:10.960
+If the development, if the identifier is in development mode, so this is the bundle identifier.
+
+00:06:11.580 --> 00:06:16.160
+If we are in preview mode, this is the basically preview mode.
+
+00:06:16.360 --> 00:06:20.560
+Alright, right now one of the biggest question that is arise, what do you mean by bundle
+
+00:06:20.680 --> 00:06:21.120
+identifier?
+
+00:06:21.700 --> 00:06:31.460
+So bundle identifier in iOS or in package name in Android, we can say this is a unique identifier.
+
+00:06:31.620 --> 00:06:37.140
+Yes, this is a unique identifier for your application, whatever you are building that
+
+00:06:37.640 --> 00:06:40.860
+distinguish it from all the other app in the world.
+
+00:06:40.861 --> 00:06:42.980
+So this is we can say a unique ID for it.
+
+00:06:43.700 --> 00:06:43.940
+Got it.
+
+00:06:44.400 --> 00:06:52.060
+Like you know that your app have some we can say social security number kind of that permanent
+
+00:06:52.460 --> 00:06:56.979
+ID card, a unique address in all of the app ecosystem.
+
+00:06:57.870 --> 00:07:00.080
+So this is the format for it.
+
+00:07:00.180 --> 00:07:04.520
+Unim.com your company name and the name of your application.
+
+00:07:04.720 --> 00:07:07.180
+This is the basic format of Bundle Identifier.
+
+00:07:07.700 --> 00:07:13.620
+got it, that's why we need it. So, COM is basically the commercial domain and then this
+
+00:07:13.621 --> 00:07:20.880
+is your company and developer and the brand name and third one is your specific application
+
+00:07:21.200 --> 00:07:26.980
+name. Perfect and why this is important, this is basically give you the uniqueness across
+
+00:07:27.240 --> 00:07:33.320
+App Store and whenever you are putting some app updates then you need it. So, got it,
+
+00:07:33.860 --> 00:07:35.520
+That is why we are doing this much of things.
+
+00:07:36.000 --> 00:07:37.960
+Cool, I hope this is making sense now.
+
+00:07:38.500 --> 00:07:41.340
+So if we are in development mode, this is our identifier.
+
+00:07:41.620 --> 00:07:44.440
+If we are in preview mode, this is our identifier.
+
+00:07:45.100 --> 00:07:50.980
+Otherwise, we are in production mode and this is the default, we can say identifier for
+
+00:07:51.000 --> 00:07:51.140
+it.
+
+00:07:51.220 --> 00:07:52.460
+Now how you can use it?
+
+00:07:52.700 --> 00:07:55.120
+And this is how we are basically giving the name.
+
+00:07:55.510 --> 00:07:57.980
+So name is definitely not the stickers mass.
+
+00:07:58.700 --> 00:08:01.660
+The name is we can right now just go with module 10.
+
+00:08:01.780 --> 00:08:05.900
+I know it's a bit weird name, but we are just understanding it right now.
+
+00:08:07.020 --> 00:08:07.580
+Module 10.
+
+00:08:07.920 --> 00:08:08.820
+Yes, no problem.
+
+00:08:09.400 --> 00:08:10.120
+Perfect.
+
+00:08:10.780 --> 00:08:16.960
+And in same way, now instead of going with this approach, you can simply call the get
+
+00:08:17.280 --> 00:08:17.620
+app name.
+
+00:08:18.300 --> 00:08:18.500
+Perfect.
+
+00:08:18.780 --> 00:08:20.340
+This is how you can change it here.
+
+00:08:20.979 --> 00:08:26.560
+In same way, you can also, we can say, let's keep the module as same.
+
+00:08:26.880 --> 00:08:28.180
+Everything is going to be same.
+
+00:08:28.479 --> 00:08:29.220
+Scheme is same.
+
+00:08:30.620 --> 00:08:36.960
+Now, at this point, yes, we do not need the com dot, this is you will just simply call
+
+00:08:37.080 --> 00:08:42.980
+this, this is basically going to give you a unique identifier of your application and
+
+00:08:42.990 --> 00:08:45.900
+the moment I save it, we are good to go.
+
+00:08:45.970 --> 00:08:46.800
+So, you can see that.
+
+00:08:47.100 --> 00:08:51.600
+Again, if you're configuring this for iOS, this is what you need to do.
+
+00:08:51.949 --> 00:08:57.639
+If you are doing this for Android, which we are doing right now, so you can see using
+
+00:08:58.240 --> 00:09:04.500
+get unique identifier for package property and then configure your EAS JSON.
+
+00:09:04.880 --> 00:09:08.440
+In EAS JSON, add the app variant environment variable.
+
+00:09:09.000 --> 00:09:11.740
+So, let's move ahead and start adding them.
+
+00:09:11.910 --> 00:09:17.140
+So let me go to my EAS JSON and inside this you will see this is all the environment we
+
+00:09:17.180 --> 00:09:19.720
+have first one is the app development.
+
+00:09:20.430 --> 00:09:24.100
+So inside development we have a property name as Env.
+
+00:09:24.900 --> 00:09:31.180
+And inside this ENV we have app variant and what is that app variant that is a development
+
+00:09:31.420 --> 00:09:39.200
+where it is defined it is defined here look at that app variant development cool whenever
+
+00:09:39.400 --> 00:09:41.960
+we are in preview so what we need to do.
+
+00:09:42.300 --> 00:09:49.320
+Simply coming to here and add app variant as preview and production need not to change
+
+00:09:49.399 --> 00:09:54.440
+anything because by default production will come to this name.
+
+00:09:55.100 --> 00:09:55.560
+Making sense?
+
+00:09:56.070 --> 00:09:56.700
+I hope so.
+
+00:09:57.380 --> 00:10:01.640
+Now, let's move ahead and try to create one more build.
+
+00:10:01.970 --> 00:10:04.740
+Alright, again, this is going to take some time, but it's fine.
+
+00:10:04.769 --> 00:10:05.560
+We are ready for it.
+
+00:10:06.200 --> 00:10:09.040
+Let me close this application right now.
+
+00:10:10.560 --> 00:10:14.020
+Clear everything and let's again build for development.
+
+00:10:14.460 --> 00:10:16.320
+So ES build platform Android.
+
+00:10:16.420 --> 00:10:22.640
+Yes, we are specifically building for Android and profile is going to be development and
+
+00:10:22.760 --> 00:10:27.780
+let me hit this once again and let's see what we are going to get here.
+
+00:10:28.200 --> 00:10:36.020
+slug for project identified extra.es project does not match the slug field in module 10
+
+00:10:36.920 --> 00:10:43.740
+alright let me see how I can fix that so basically you can read this entire error and the error
+
+00:10:43.741 --> 00:10:50.780
+is itself saying module - 10 does not match the slug field this module 10 so simply copy
+
+00:10:50.840 --> 00:10:56.020
+this and I think I made some mistake and this.
+
+00:10:56.700 --> 00:11:00.480
+Cool, I think this will work right now.
+
+00:11:00.800 --> 00:11:01.720
+Hopefully, let's see.
+
+00:11:02.620 --> 00:11:05.660
+Alright and then let's move ahead and try to rebuild this.
+
+00:11:05.980 --> 00:11:11.700
+So AS build hyphen hyphen platform Android and again profile is development right now
+
+00:11:11.800 --> 00:11:12.680
+and look at that.
+
+00:11:13.240 --> 00:11:16.200
+Resolve the development environment for the build.
+
+00:11:16.959 --> 00:11:23.180
+Perfect. And environment variable loaded from development build profile, which is with the
+
+00:11:23.220 --> 00:11:29.100
+name of app variant, definitely generate a new key store. Yes, we need to create a new
+
+00:11:29.519 --> 00:11:35.579
+key store because separately we are creating this one, one more APK got it. So definitely
+
+00:11:35.880 --> 00:11:43.120
+let's wait for it and we'll see they are generating a key store in cloud created the key store
+
+00:11:43.121 --> 00:11:44.940
+Compressing the project? Cool?
+
+00:11:45.600 --> 00:11:51.779
+And again uploading to AIS build, our entire project is uploading to AIS build.
+
+00:11:53.019 --> 00:11:53.300
+Perfect.
+
+00:11:53.880 --> 00:12:01.540
+And after uploading this successfully, computed the project of fingerprint and yes, now our
+
+00:12:01.639 --> 00:12:02.500
+build is in queue.
+
+00:12:02.699 --> 00:12:06.139
+Let's just wait for a few minutes and then I'll be right back.
+
+00:12:06.900 --> 00:12:12.160
+And yes, finally, we have installed it successfully, let me first of all say no.
+
+00:12:13.350 --> 00:12:20.560
+And then let me click on this link and let me open this link here.
+
+00:12:20.990 --> 00:12:26.380
+Alright and then let me press on install and let's just try to install this out.
+
+00:12:26.800 --> 00:12:26.900
+Cool.
+
+00:12:27.220 --> 00:12:33.360
+So, this is the variable, this is the basically QR code you need to install and simply scan
+
+00:12:33.390 --> 00:12:34.740
+it, press over it.
+
+00:12:35.300 --> 00:12:37.800
+And now you will find the install button.
+
+00:12:38.260 --> 00:12:43.339
+Simply press over that and they have started installing.
+
+00:12:44.459 --> 00:12:44.940
+Perfect.
+
+00:12:45.060 --> 00:12:48.220
+So, let's just wait for a few seconds and then we'll see.
+
+00:12:49.779 --> 00:12:51.720
+And I think we have installed it successfully.
+
+00:12:51.940 --> 00:12:57.360
+So for that, let me go to my downloads and all right, we are still downloading it.
+
+00:12:57.680 --> 00:12:57.800
+Cool.
+
+00:12:58.360 --> 00:12:59.600
+So, definitely we can wait.
+
+00:13:00.100 --> 00:13:05.579
+Alright, so now we have installed it and the moment I press on installation and now look
+
+00:13:05.819 --> 00:13:07.000
+at the name of this.
+
+00:13:07.380 --> 00:13:11.180
+So the name is coming as module 10 dev.
+
+00:13:11.480 --> 00:13:13.319
+This is the beauty of it.
+
+00:13:13.600 --> 00:13:13.800
+Perfect.
+
+00:13:13.899 --> 00:13:18.420
+So how you can basically configure multiple app variations.
+
+00:13:18.900 --> 00:13:19.680
+Perfect.
+
+00:13:20.150 --> 00:13:23.700
+So, let's just wait for installation and again we haven't code anything.
+
+00:13:24.150 --> 00:13:30.720
+So, you will don't see any difference between the code and nice we have installed it and
+
+00:13:30.721 --> 00:13:38.580
+the moment I open it, definitely you will see something like this cool and I can definitely
+
+00:13:38.780 --> 00:13:41.640
+start the development server one run dev.
+
+00:13:43.259 --> 00:13:44.360
+What just happened?
+
+00:13:44.569 --> 00:13:50.680
+Already 1x expose start, hopefully this will work now, yes and I can simply press on A.
+
+00:13:51.470 --> 00:13:56.860
+So this is going look at that, open with, definitely we wanted to open with module 10
+
+00:13:56.940 --> 00:13:59.639
+because they both are development build, that's why.
+
+00:13:59.949 --> 00:14:03.079
+So simply say open module 10 dev, perfect.
+
+00:14:05.180 --> 00:14:09.240
+And look at that amazing, amazing job.
+
+00:14:10.060 --> 00:14:15.220
+This is how and if you just simply go to your home page, you will find two different app.
+
+00:14:15.640 --> 00:14:20.580
+Definitely they both are development build, but in same way, you can have a preview build
+
+00:14:20.700 --> 00:14:23.040
+as well and production build as well.
+
+00:14:23.041 --> 00:14:24.399
+And this is your development build.
+
+00:14:24.440 --> 00:14:27.500
+So you can definitely check all of them in the same application.
+
+00:14:27.900 --> 00:14:29.760
+So, amazing, amazing job.
+
+00:14:30.360 --> 00:14:33.960
+This is the end of our entire module named as AIS tutorial.
+
+00:14:34.280 --> 00:14:39.720
+Definitely this is not completed yet, but the next part like AIS submit, AIS over the
+
+00:14:39.780 --> 00:14:43.300
+top upload all of that features like AIS submit and AIS update.
+
+00:14:43.840 --> 00:14:46.820
+We'll read about that whenever we go inside the production section.
+
+00:14:47.030 --> 00:14:51.860
+So, right now we have a lot of project, lot more concept to understand, but this is pretty
+
+00:14:51.980 --> 00:14:53.880
+much it and see you next time.
+

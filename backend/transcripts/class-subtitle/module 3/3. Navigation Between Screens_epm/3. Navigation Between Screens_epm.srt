@@ -1,0 +1,940 @@
+1
+00:00:00,000 --> 00:00:06,540
+In real apps, users just don't stay on just one screen as you guys all know.
+
+2
+00:00:07,040 --> 00:00:08,480
+They move between screens.
+
+3
+00:00:08,870 --> 00:00:16,820
+In this lecture, we will learn how to navigate between screens imperatively using React Navigation's
+
+4
+00:00:16,821 --> 00:00:17,900
+Navigation Object.
+
+5
+00:00:17,901 --> 00:00:25,140
+You will see how to go forward, go back, replace any screen and control the navigation stack.
+
+6
+00:00:25,599 --> 00:00:25,880
+Perfect.
+
+7
+00:00:26,400 --> 00:00:29,460
+So, now let's move ahead and start talking about it.
+
+8
+00:00:30,020 --> 00:00:36,540
+So the first thing that I wanted you to simply visit to this page and using the navigation
+
+9
+00:00:36,559 --> 00:00:41,520
+button, using the navigation object because we have already talked about this link or
+
+10
+00:00:41,521 --> 00:00:41,900
+button.
+
+11
+00:00:42,340 --> 00:00:43,939
+So, into this you will see.
+
+12
+00:00:44,500 --> 00:00:48,860
+Another way to navigate is by using the navigation object.
+
+13
+00:00:49,580 --> 00:00:56,120
+This method gives you more control over when and how navigation happens.
+
+14
+00:00:56,580 --> 00:01:02,620
+So the navigation object is available in your screen components through the use navigation
+
+15
+00:01:02,780 --> 00:01:02,920
+hook.
+
+16
+00:01:03,200 --> 00:01:04,040
+Easy.
+
+17
+00:01:04,620 --> 00:01:08,740
+So, now let's move ahead and start talking about this use navigation hook.
+
+18
+00:01:09,420 --> 00:01:13,600
+So, use navigation is a hook that give access to navigation object.
+
+19
+00:01:14,280 --> 00:01:21,300
+It's useful when you can't pass the navigation object as a prop to the component directly
+
+20
+00:01:21,580 --> 00:01:26,020
+or don't want to pass it in case of deeply nested child.
+
+21
+00:01:26,021 --> 00:01:29,960
+So, basically you always have two ways of handling this.
+
+22
+00:01:30,440 --> 00:01:36,760
+One way is you have this navigation objects access with the help of props, but that is
+
+23
+00:01:36,761 --> 00:01:39,979
+not recommended way don't use it I mean in most of the cases.
+
+24
+00:01:40,340 --> 00:01:43,080
+So, this is how we are going to see how you can do so that.
+
+25
+00:01:43,200 --> 00:01:49,159
+Perfect, so make sure that you are on your VS code and after coming to VS code first
+
+26
+00:01:49,180 --> 00:01:55,020
+of all just simply move ahead and then let me run bunx expose start.
+
+27
+00:01:55,860 --> 00:01:59,259
+So this is going to make up and running my application.
+
+28
+00:01:59,900 --> 00:02:02,380
+So, let me wait for it.
+
+29
+00:02:02,720 --> 00:02:03,020
+Perfect.
+
+30
+00:02:03,280 --> 00:02:08,080
+Now, let me just simply press A. So, this is going to start into my Android.
+
+31
+00:02:08,840 --> 00:02:12,620
+You can go back to expo and try to reload the project.
+
+32
+00:02:14,420 --> 00:02:14,600
+Perfect.
+
+33
+00:02:14,720 --> 00:02:16,380
+I think I need to click here.
+
+34
+00:02:16,820 --> 00:02:17,480
+Alright, no problem.
+
+35
+00:02:17,640 --> 00:02:21,140
+Let me just scan my QR code and then we can start.
+
+36
+00:02:21,141 --> 00:02:21,620
+Cool.
+
+37
+00:02:22,260 --> 00:02:23,540
+So, just give me a minute.
+
+38
+00:02:23,820 --> 00:02:26,580
+Let me simply press on my QR code.
+
+39
+00:02:26,820 --> 00:02:29,080
+Let me scan it and hope so.
+
+40
+00:02:29,180 --> 00:02:31,960
+This will start working right now.
+
+41
+00:02:32,840 --> 00:02:36,000
+Let me press no app sending reload to react native app.
+
+42
+00:02:36,200 --> 00:02:36,980
+Just give me a minute.
+
+43
+00:02:37,770 --> 00:02:38,080
+All right.
+
+44
+00:02:38,160 --> 00:02:40,180
+Actually, my phone's Wi-Fi is not connected.
+
+45
+00:02:40,420 --> 00:02:41,380
+That's why it is not working.
+
+46
+00:02:41,680 --> 00:02:47,459
+So, now if I just simply press A, then this is definitely going to open that into it and
+
+47
+00:02:47,460 --> 00:02:48,380
+boom, look at that.
+
+48
+00:02:48,820 --> 00:02:49,700
+They are bundling.
+
+49
+00:02:49,800 --> 00:02:52,280
+And now we are good to go.
+
+50
+00:02:52,281 --> 00:02:52,480
+Cool.
+
+51
+00:02:52,800 --> 00:02:53,520
+So, no problem.
+
+52
+00:02:53,880 --> 00:02:54,140
+Perfect.
+
+53
+00:02:54,880 --> 00:02:59,000
+Now let me go to my file explorer and just give me a minute.
+
+54
+00:03:01,040 --> 00:03:08,040
+And inside this file explorer, I can simply go to my app and let's say let's go to our
+
+55
+00:03:08,041 --> 00:03:08,560
+home page.
+
+56
+00:03:09,100 --> 00:03:17,600
+Right now if I wanted to go to my details page this is how I am able to do so that cool
+
+57
+00:03:18,020 --> 00:03:20,700
+but we have another way of doing it as well.
+
+58
+00:03:21,020 --> 00:03:27,660
+How like first step is like you can always get from here this something known as navigation
+
+59
+00:03:27,661 --> 00:03:28,100
+object.
+
+60
+00:03:28,101 --> 00:03:36,320
+Perfect and for now I am just making this as kind of this just for now I mean definitely
+
+61
+00:03:36,321 --> 00:03:43,160
+we have navigation types properly and let's say instead of using this link component like
+
+62
+00:03:43,180 --> 00:03:45,600
+if I just save it everything is fine.
+
+63
+00:03:46,080 --> 00:03:48,840
+Let me just get a pressable.
+
+64
+00:03:49,880 --> 00:03:57,140
+Perfect, and this pressable is going to show me a text and this text is going to show me
+
+65
+00:03:57,320 --> 00:04:02,440
+go to details and if I save it this is how they are going to just a minute let me off
+
+66
+00:04:02,540 --> 00:04:03,320
+my AI.
+
+67
+00:04:03,820 --> 00:04:04,180
+Cool.
+
+68
+00:04:04,300 --> 00:04:11,600
+And what I wanted to do on press on this pressable easy, I just wanted to call a callback method
+
+69
+00:04:11,940 --> 00:04:18,120
+that is going to do what navigation dot and then you will see that we have a method known
+
+70
+00:04:18,121 --> 00:04:22,320
+as navigate and the page name that you wanted to go.
+
+71
+00:04:22,800 --> 00:04:26,600
+So I just simply add here make sure to copy this and paste this.
+
+72
+00:04:26,601 --> 00:04:33,039
+Cool and if I save it and if I just try to press on go to details and boom look at that
+
+73
+00:04:33,080 --> 00:04:40,800
+this is how you can basically move to it but instead of using this approach what I wanted
+
+74
+00:04:40,801 --> 00:04:42,259
+you to do is to remove this.
+
+75
+00:04:42,500 --> 00:04:50,100
+Easy and then import navigation from from where look at that they are importing this
+
+76
+00:04:50,120 --> 00:04:52,100
+use navigation hook from here.
+
+77
+00:04:52,400 --> 00:04:59,740
+So, let me just simply copy that let me just paste that and here I can simply say const
+
+78
+00:05:00,100 --> 00:05:03,100
+navigation is equals to use navigation.
+
+79
+00:05:04,380 --> 00:05:10,900
+And then now if I save it and if I just go back and again click here look at that this
+
+80
+00:05:10,901 --> 00:05:17,500
+is how they are going to work and one beautiful thing about this is now we have bunch of methods
+
+81
+00:05:17,680 --> 00:05:23,340
+need not to understand about every method each and every method you can skip bunch of
+
+82
+00:05:23,341 --> 00:05:28,080
+them and I will tell you but for now the first method that we have is navigate.
+
+83
+00:05:29,180 --> 00:05:34,180
+Navigate is always accepting what navigate to a screen in current parent navigate.
+
+84
+00:05:34,320 --> 00:05:38,940
+So alright, I just wanted to move towards details page.
+
+85
+00:05:39,600 --> 00:05:39,880
+Perfect.
+
+86
+00:05:40,180 --> 00:05:44,440
+And then if I just simply press over it, this is how I can move again.
+
+87
+00:05:44,560 --> 00:05:45,520
+You can style it.
+
+88
+00:05:45,840 --> 00:05:47,780
+You can give it a very good style.
+
+89
+00:05:47,919 --> 00:05:49,860
+You can centralise everything.
+
+90
+00:05:50,199 --> 00:05:51,919
+And I mean, this is not about UI.
+
+91
+00:05:52,440 --> 00:05:55,060
+You can definitely style it as much as you want.
+
+92
+00:05:55,400 --> 00:06:03,000
+Perfect, now let's move ahead and this navigation object have bunch of other methods as well
+
+93
+00:06:03,240 --> 00:06:07,180
+like first method is navigation.navigate no problem.
+
+94
+00:06:08,180 --> 00:06:15,500
+Perfect, and let me show you one very interesting thing if I copy this and if I go to details
+
+95
+00:06:15,600 --> 00:06:20,979
+page and if I just paste this here no problem easy.
+
+96
+00:06:21,560 --> 00:06:23,840
+First of all let me import my pressable.
+
+97
+00:06:24,300 --> 00:06:31,159
+And let me just initialize this navigation here as well.
+
+98
+00:06:32,819 --> 00:06:37,680
+And then let me just not export, make sure you are not importing this from export out
+
+99
+00:06:38,280 --> 00:06:40,259
+because we are right now using.
+
+100
+00:06:40,600 --> 00:06:48,220
+the react navigation now if you are on to the details page already and if you just once
+
+101
+00:06:48,221 --> 00:06:53,300
+again press this go to details nothing is going to happen isn't seems very common I
+
+102
+00:06:53,301 --> 00:06:58,740
+mean yes this is how they are going to behave like if you are already on this screen then
+
+103
+00:06:58,800 --> 00:07:05,720
+how you can navigate again to this screen getting my point but if I just move ahead
+
+104
+00:07:05,721 --> 00:07:08,720
+and tell you something like you can see that.
+
+105
+00:07:09,300 --> 00:07:17,900
+What is that about this push like right now we are using this navigate method but instead
+
+106
+00:07:17,901 --> 00:07:26,020
+of using navigate if I now use navigate dot push perfect and then if I save it and once
+
+107
+00:07:26,060 --> 00:07:30,280
+again if I press over it so look at that we are adding.
+
+108
+00:07:30,500 --> 00:07:34,580
+same screen multiple times into the same stack.
+
+109
+00:07:35,000 --> 00:07:40,660
+Look at that and if I just again press back you will see I am going to be back again on
+
+110
+00:07:40,980 --> 00:07:43,620
+details page, details page, details page.
+
+111
+00:07:43,980 --> 00:07:47,920
+So yes they have bunch of use cases about this as well.
+
+112
+00:07:48,100 --> 00:07:52,640
+Like if you just coming to here and let's look at that.
+
+113
+00:07:52,980 --> 00:07:56,800
+So we now have the stack with two routes the home route and detailed route.
+
+114
+00:07:57,300 --> 00:08:01,820
+What would happen if you navigate it to the details route again from the details screen.
+
+115
+00:08:01,900 --> 00:08:07,420
+If you are using this method, if you run this code, you will notice that when you tap go
+
+116
+00:08:07,421 --> 00:08:09,440
+to details, it doesn't do anything.
+
+117
+00:08:09,500 --> 00:08:10,140
+I mean, yes.
+
+118
+00:08:10,500 --> 00:08:14,200
+This is because you are already on the details route.
+
+119
+00:08:15,040 --> 00:08:22,260
+So the navigate function, listen to me carefully, navigate function roughly means go to this
+
+120
+00:08:22,280 --> 00:08:25,600
+screen got it, but when it's come to push.
+
+121
+00:08:26,000 --> 00:08:33,220
+Push means each time you call push we add a new route to the navigation stack.
+
+122
+00:08:34,140 --> 00:08:34,440
+Perfect.
+
+123
+00:08:34,570 --> 00:08:41,799
+And when you call navigate it only pushes to a new route if you are not already on that
+
+124
+00:08:42,020 --> 00:08:43,020
+specific route.
+
+125
+00:08:43,299 --> 00:08:47,100
+So, I hope so that this is making sense right now.
+
+126
+00:08:47,760 --> 00:08:52,360
+Now let's move ahead and start talking about other method as well.
+
+127
+00:08:53,019 --> 00:08:58,620
+Let's say instead of going to the details page once again, let go to profile page, but
+
+128
+00:08:58,621 --> 00:09:04,180
+for now let me go to details and from detail I wanted to go profile page.
+
+129
+00:09:04,279 --> 00:09:07,580
+Easy and now if I click on profile I am on profile page.
+
+130
+00:09:07,581 --> 00:09:11,880
+Now you can create your custom going back method as well.
+
+131
+00:09:12,020 --> 00:09:13,160
+How you can do so that?
+
+132
+00:09:13,660 --> 00:09:18,840
+So let me go to my profile and let me just copy this once again.
+
+133
+00:09:19,120 --> 00:09:21,160
+Let me just paste it.
+
+134
+00:09:22,340 --> 00:09:28,180
+Let me grab my pressable and let me just initialize this as well.
+
+135
+00:09:30,440 --> 00:09:30,960
+Perfect.
+
+136
+00:09:31,680 --> 00:09:34,240
+And then let me not from expo router.
+
+137
+00:09:36,300 --> 00:09:39,000
+I just wanted to get it from react navigation.
+
+138
+00:09:39,280 --> 00:09:39,920
+Easy.
+
+139
+00:09:40,700 --> 00:09:40,840
+Perfect.
+
+140
+00:09:40,980 --> 00:09:44,040
+But right now I don't want it to go to again profile page.
+
+141
+00:09:44,340 --> 00:09:46,520
+Now I wanted to use the go back method.
+
+142
+00:09:47,120 --> 00:09:50,220
+So if you just simply call here the go back.
+
+143
+00:09:51,560 --> 00:09:59,440
+And instead of this you can simply say what go back and let me save it and now if I press
+
+144
+00:09:59,441 --> 00:10:05,000
+on go back you will see I am on to this page but if you wanted to go back to the first
+
+145
+00:10:05,001 --> 00:10:11,959
+page listen to me carefully if you wanted to go towards the first page so for that you
+
+146
+00:10:11,960 --> 00:10:15,260
+need to understand about something known as pop method.
+
+147
+00:10:15,300 --> 00:10:18,899
+Right now this is how go back is going to work exactly like this.
+
+148
+00:10:19,519 --> 00:10:24,040
+If you just simply press on go back you are on to the back screen.
+
+149
+00:10:24,440 --> 00:10:27,459
+Perfect you are come one step back into the stack.
+
+150
+00:10:28,120 --> 00:10:30,360
+Making sense I mean it's pretty very very easy.
+
+151
+00:10:30,800 --> 00:10:35,160
+So, now let's talking about the popping screens method.
+
+152
+00:10:36,140 --> 00:10:36,680
+What is that?
+
+153
+00:10:37,160 --> 00:10:41,360
+We have basically two main method for that like going back this is how they are going
+
+154
+00:10:41,361 --> 00:10:41,740
+to work.
+
+155
+00:10:42,180 --> 00:10:46,860
+We also have pop to method, pop to top method and pop method.
+
+156
+00:10:47,000 --> 00:10:48,760
+We have three method around this.
+
+157
+00:10:49,519 --> 00:10:50,959
+So, how this is going to work?
+
+158
+00:10:51,140 --> 00:10:53,620
+First of all let me talk about pop to method.
+
+159
+00:10:57,240 --> 00:11:00,040
+to and the screen that you wanted to go.
+
+160
+00:11:00,420 --> 00:11:05,680
+Let's say I wanted to go home and if I save it let me just try if I just simply press and
+
+161
+00:11:05,681 --> 00:11:13,040
+I am on my home page in same way let's say I wanted to go to the details page.
+
+162
+00:11:13,041 --> 00:11:17,860
+OPT details page, so now you are on to the details page.
+
+163
+00:11:18,339 --> 00:11:18,600
+Perfect.
+
+164
+00:11:19,300 --> 00:11:26,180
+Now, let us move ahead and by popping it this means you are just removing the stacks from
+
+165
+00:11:26,360 --> 00:11:30,779
+removing the stacks I mean making sense and we have another one as well pop.
+
+166
+00:11:31,360 --> 00:11:37,320
+So, pop is going to do so one very very easy thing this is going to go back to one screen
+
+167
+00:11:37,660 --> 00:11:42,260
+perfect this is going back to one screen perfect.
+
+168
+00:11:42,261 --> 00:11:45,800
+So, go back to one screen.
+
+169
+00:11:48,000 --> 00:11:54,140
+So, now if I go to my profile page and simply press go back so I am on details page once
+
+170
+00:11:54,141 --> 00:11:54,600
+again.
+
+171
+00:11:55,040 --> 00:11:55,300
+Perfect.
+
+172
+00:11:55,420 --> 00:12:01,320
+In same way you can definitely enter the numbers like how many screens you wanted to go back
+
+173
+00:12:01,321 --> 00:12:01,600
+to.
+
+174
+00:12:02,060 --> 00:12:02,280
+Perfect.
+
+175
+00:12:02,460 --> 00:12:07,440
+Let's say if I just go to details and if I go to profile and the moment I press on go
+
+176
+00:12:07,441 --> 00:12:07,980
+back.
+
+177
+00:12:08,360 --> 00:12:11,440
+So, profile to details, details to home.
+
+178
+00:12:11,530 --> 00:12:14,720
+So, I am just directly if I am not wrong I am going to be here.
+
+179
+00:12:14,900 --> 00:12:19,160
+So, if I just simply press and boom look at that I am on my home page.
+
+180
+00:12:20,220 --> 00:12:22,720
+We have one more which is known as pop to.
+
+181
+00:12:24,680 --> 00:12:25,520
+Pop to top.
+
+182
+00:12:26,000 --> 00:12:32,140
+So, this pop to top means this is going to be go back to the first root screen.
+
+183
+00:12:32,200 --> 00:12:35,340
+whichever your root screen you are going back to that.
+
+184
+00:12:35,840 --> 00:12:40,680
+Let's say in future you have bunch of other screens as well but you wanted to go back
+
+185
+00:12:40,681 --> 00:12:46,800
+at the root screen so how you can do so that this is how you can basically use this method
+
+186
+00:12:46,820 --> 00:12:47,580
+for it.
+
+187
+00:12:47,880 --> 00:12:48,140
+Easy.
+
+188
+00:12:48,800 --> 00:12:50,600
+I hope so.
+
+189
+00:12:50,980 --> 00:12:51,420
+Yes.
+
+190
+00:12:52,700 --> 00:12:57,459
+And before moving ahead one more thing like you are seeing here the swiveling lines here.
+
+191
+00:12:57,460 --> 00:12:58,480
+So this is nothing.
+
+192
+00:12:59,160 --> 00:13:05,980
+While initializing this here if you just pass the we can say we have bunch of types which
+
+193
+00:13:05,981 --> 00:13:10,480
+is provided by that like let's say for this we have native navigation props.
+
+194
+00:13:10,600 --> 00:13:17,360
+And, then we have bunch of root, stack, parameter list, you will define all the other routes
+
+195
+00:13:17,399 --> 00:13:21,220
+there, then this will not going to throw any error, you will see that.
+
+196
+00:13:21,839 --> 00:13:26,620
+But for now I am just adding here any, but this is not a good practice at all, but just
+
+197
+00:13:26,740 --> 00:13:30,600
+this is not showing me that red lines here.
+
+198
+00:13:31,060 --> 00:13:31,399
+Perfect.
+
+199
+00:13:31,560 --> 00:13:37,240
+So, you can fix it if you wanted to, otherwise for now you can definitely bear it.
+
+200
+00:13:38,139 --> 00:13:44,759
+Now, let us move ahead and start talking about other functions as well, but right now this
+
+201
+00:13:44,760 --> 00:13:50,120
+is very much in that you are going to use, you are going to use navigate in 90% of the
+
+202
+00:13:50,121 --> 00:13:56,800
+case, push and pop, pop number of screen that you wanted to do and one last method that
+
+203
+00:13:56,801 --> 00:13:57,319
+we have.
+
+204
+00:13:57,600 --> 00:14:03,699
+is known as replace method. So, replace is basically going to be let's say if you are
+
+205
+00:14:03,700 --> 00:14:09,660
+on the profile page let's say let me go to my profile and the moment I press alright.
+
+206
+00:14:09,800 --> 00:14:13,819
+So let me find the moment I coming to here and simply press and look at that.
+
+207
+00:14:13,900 --> 00:14:19,320
+So, every time when I am going to details page and then I click on go to profile, I
+
+208
+00:14:19,321 --> 00:14:25,200
+am replacing the stack with the profile stack perfect and if I just press go back I am on
+
+209
+00:14:25,201 --> 00:14:25,880
+my home page.
+
+210
+00:14:25,900 --> 00:14:32,500
+Home page I mean look at the behavior by default if you are on home page and from home page
+
+211
+00:14:32,501 --> 00:14:38,020
+if you are going to details space they both are into stack making sense and from detail
+
+212
+00:14:38,021 --> 00:14:39,640
+if you are going to profile page.
+
+213
+00:14:40,100 --> 00:14:48,540
+You are onto this profile page and if you are going back, so ideally you should on details
+
+214
+00:14:48,541 --> 00:14:51,660
+page, but you will see that you are directly going to home page.
+
+215
+00:14:51,661 --> 00:14:52,620
+Let me show you.
+
+216
+00:14:52,680 --> 00:14:53,920
+Let me go to my detail page.
+
+217
+00:14:54,139 --> 00:14:54,600
+No problem.
+
+218
+00:14:54,839 --> 00:14:56,240
+Let me go to my profile page.
+
+219
+00:14:56,339 --> 00:14:56,800
+No problem.
+
+220
+00:14:57,300 --> 00:15:00,160
+by using this replace method.
+
+221
+00:15:00,500 --> 00:15:05,600
+You will see the moment I click on go back, I'm directly going back to homepage.
+
+222
+00:15:05,940 --> 00:15:06,080
+Why?
+
+223
+00:15:06,200 --> 00:15:09,840
+Because this details is replacing itself with profile.
+
+224
+00:15:09,980 --> 00:15:12,040
+So that is how they are working.
+
+225
+00:15:12,560 --> 00:15:12,880
+Cool.
+
+226
+00:15:13,080 --> 00:15:15,220
+So let's not complicate it much.
+
+227
+00:15:15,980 --> 00:15:19,780
+And yes, this is how they are basically and we have other methods as well.
+
+228
+00:15:19,840 --> 00:15:25,680
+If you wanted to explore them, take this as an assignment and try to do more research over
+
+229
+00:15:25,681 --> 00:15:25,820
+it.
+
+230
+00:15:25,821 --> 00:15:28,100
+But you do not need anything right now.
+
+231
+00:15:28,101 --> 00:15:29,580
+I mean we are good to go.
+
+232
+00:15:29,959 --> 00:15:34,920
+So cool yeah this is pretty much it for this chapter and from next chapter we are going
+
+233
+00:15:34,921 --> 00:15:40,220
+to see bunch of other things as well and then going to create a very nice Pokemon app mini
+
+234
+00:15:40,221 --> 00:15:43,100
+project you will learn everything from there as well.
+
+235
+00:15:43,420 --> 00:15:44,959
+So yeah see you next time.
+

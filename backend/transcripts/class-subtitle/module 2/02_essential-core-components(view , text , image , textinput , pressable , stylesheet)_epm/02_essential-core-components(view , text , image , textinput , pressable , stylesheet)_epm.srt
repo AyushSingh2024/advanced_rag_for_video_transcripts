@@ -1,0 +1,1212 @@
+1
+00:00:00,000 --> 00:00:05,540
+Hey everyone, welcome to one more new lecture. In this lecture we are going to talk about
+
+2
+00:00:05,541 --> 00:00:12,520
+the essential core components. These components are used in almost every mobile app. So, once
+
+3
+00:00:12,560 --> 00:00:17,040
+you understand them building UI in react native become much easier.
+
+4
+00:00:17,300 --> 00:00:25,560
+So, into this lecture we are we will going to cover view, text, image, text input, pressable,
+
+5
+00:00:26,220 --> 00:00:27,539
+scroll view and style sheet.
+
+6
+00:00:27,619 --> 00:00:34,180
+This is not a component, but this is a very good utility to use for styling your all the
+
+7
+00:00:34,181 --> 00:00:35,760
+other components perfect.
+
+8
+00:00:35,900 --> 00:00:41,320
+So, let's start one by one first of all let's move ahead and start talking about view.
+
+9
+00:00:41,450 --> 00:00:42,380
+So, what is view?
+
+10
+00:00:42,760 --> 00:00:49,220
+View is the most basic layout component perfect in react native you can think of view as a
+
+11
+00:00:49,221 --> 00:00:55,720
+container perfect view means container like we have div so this is your view we use view
+
+12
+00:00:56,100 --> 00:01:03,100
+for grouping your component for creating layouts and applying we can say spacing and styling.
+
+13
+00:01:03,260 --> 00:01:10,240
+So if I just simply move ahead and let me just quickly set this up and I'll be right
+
+14
+00:01:10,280 --> 00:01:10,640
+back.
+
+15
+00:01:11,960 --> 00:01:26,080
+Alright guys, so for setting it up, I'm definitely going to move ahead and I'm going to go ahead
+
+16
+00:01:26,081 --> 00:01:26,101
+simply going to create a module to inside this module to let me open this and open in
+
+17
+00:01:26,102 --> 00:01:26,140
+terminal and simply code dot.
+
+18
+00:01:26,939 --> 00:01:32,860
+So now this is going to create open this let me close all the other files and I think yes
+
+19
+00:01:33,039 --> 00:01:34,320
+we are good to go.
+
+20
+00:01:34,740 --> 00:01:40,299
+Now before doing anything first step is going to be same simply run bunX.
+
+21
+00:01:42,360 --> 00:01:45,200
+Create Expo app at the latest.
+
+22
+00:01:46,000 --> 00:01:50,760
+So this is going to be your command to install a Expo application.
+
+23
+00:01:51,620 --> 00:01:51,860
+Perfect.
+
+24
+00:01:51,880 --> 00:01:54,400
+So you can simply just hit enter.
+
+25
+00:01:54,760 --> 00:01:57,440
+So this is now asking you what is your app name.
+
+26
+00:01:57,660 --> 00:02:01,600
+So I just wanted to be inside the current working directory.
+
+27
+00:02:02,480 --> 00:02:07,980
+So,./ now this is going to install all the dependencies that we have.
+
+28
+00:02:08,880 --> 00:02:13,940
+So, let me wait for it and then we can start developing it.
+
+29
+00:02:13,941 --> 00:02:17,620
+Alright, so now we have successfully installed our project is ready.
+
+30
+00:02:17,621 --> 00:02:19,600
+So, what is the next step?
+
+31
+00:02:19,601 --> 00:02:23,100
+Next step is always going to reset your project.
+
+32
+00:02:23,180 --> 00:02:25,120
+Perfect, you need not to touch anything.
+
+33
+00:02:25,121 --> 00:02:26,620
+First of all, always reset your project.
+
+34
+00:02:28,000 --> 00:02:32,620
+scripts/resad-reset-project.
+
+35
+00:02:33,100 --> 00:02:35,900
+So this is going to be reset and no.
+
+36
+00:02:36,540 --> 00:02:38,600
+So now you will see we are reset.
+
+37
+00:02:39,580 --> 00:02:46,860
+Simply clear everything and then you can run sorry, now you can run bunnex-expo-start.
+
+38
+00:02:47,100 --> 00:02:50,740
+This is going to start the development server of your app.
+
+39
+00:02:51,500 --> 00:02:52,640
+Now let me wait for it.
+
+40
+00:02:52,820 --> 00:02:54,400
+I wanted to open in Android.
+
+41
+00:02:54,560 --> 00:02:57,360
+If you are using this, you can simply scan this and open.
+
+42
+00:02:57,920 --> 00:02:59,440
+Let me simply press a.
+
+43
+00:02:59,660 --> 00:03:00,960
+Now you will see the hello world.
+
+44
+00:03:01,220 --> 00:03:03,720
+I hope so you guys able to see that.
+
+45
+00:03:04,240 --> 00:03:04,320
+Yes.
+
+46
+00:03:04,460 --> 00:03:06,700
+Now first of all let me unload this cool.
+
+47
+00:03:06,900 --> 00:03:08,560
+Now everything is fine.
+
+48
+00:03:09,099 --> 00:03:09,579
+Perfect.
+
+49
+00:03:10,220 --> 00:03:10,480
+Nice.
+
+50
+00:03:10,980 --> 00:03:18,860
+Now let me go to my app and index.tsx and inside this we wanted to understand first of all
+
+51
+00:03:18,861 --> 00:03:20,120
+about view.
+
+52
+00:03:20,879 --> 00:03:21,640
+What is the view?
+
+53
+00:03:22,159 --> 00:03:24,319
+View is used to group your component.
+
+54
+00:03:24,540 --> 00:03:30,920
+Now let me just remove everything and make sure that you have installed a react native
+
+55
+00:03:30,940 --> 00:03:31,620
+component.
+
+56
+00:03:32,700 --> 00:03:36,879
+So, first of all let me snooze this and Rnfes.
+
+57
+00:03:37,400 --> 00:03:45,120
+So this is going to write a react native functional component export for you and let me stick
+
+58
+00:03:45,121 --> 00:03:46,079
+with this.
+
+59
+00:03:46,879 --> 00:03:51,319
+Let me just simply write here the index and here a simple react component.
+
+60
+00:03:51,599 --> 00:03:52,500
+This is how you create.
+
+61
+00:03:52,599 --> 00:03:54,159
+I hope this thing is clear.
+
+62
+00:03:55,420 --> 00:04:01,560
+Now, if I just save it and just once again reload it just to see you need not to reload
+
+63
+00:04:01,561 --> 00:04:06,800
+every time and here you will see that they are showing us the index.
+
+64
+00:04:07,040 --> 00:04:14,560
+So inside the view and view wrap the other component it does not show text by itself.
+
+65
+00:04:14,640 --> 00:04:17,980
+So for showing text you have to use this text.
+
+66
+00:04:18,440 --> 00:04:18,700
+Perfect.
+
+67
+00:04:19,240 --> 00:04:22,199
+say inside this view I wanted to have the.
+
+68
+00:04:22,500 --> 00:04:28,860
+another view. Perfect. So let me just simply write here and inside this like if I just
+
+69
+00:04:28,880 --> 00:04:33,540
+try to write here hello world something like this and if I save it you will see error.
+
+70
+00:04:33,900 --> 00:04:40,320
+Error is text string must be rendered within a text component. So you need to copy this
+
+71
+00:04:40,321 --> 00:04:42,100
+once again you need to paste it.
+
+72
+00:04:42,101 --> 00:04:47,660
+And then you need to write Hello World here and then you need to save and this is how
+
+73
+00:04:47,661 --> 00:04:49,520
+you will be able to see this.
+
+74
+00:04:49,780 --> 00:04:53,080
+So it is mainly used for layouting purpose.
+
+75
+00:04:53,680 --> 00:04:53,980
+Perfect.
+
+76
+00:04:54,300 --> 00:04:56,640
+Now let's move ahead and talk about text.
+
+77
+00:04:56,980 --> 00:05:00,200
+So text is used to display text on the screen.
+
+78
+00:05:00,820 --> 00:05:01,220
+Important rule.
+
+79
+00:05:01,400 --> 00:05:02,940
+Make sure to keep that in mind.
+
+80
+00:05:03,680 --> 00:05:07,820
+All text must be inside this text component.
+
+81
+00:05:08,340 --> 00:05:08,520
+Perfect.
+
+82
+00:05:08,700 --> 00:05:10,020
+Yes, you need to do that.
+
+83
+00:05:11,220 --> 00:05:14,160
+For example, that I have already shown you here.
+
+84
+00:05:14,420 --> 00:05:14,700
+Perfect.
+
+85
+00:05:15,620 --> 00:05:20,980
+Now, let's move ahead and start talking about like we are done with view.
+
+86
+00:05:21,200 --> 00:05:23,380
+So I'm just keep checking it.
+
+87
+00:05:24,580 --> 00:05:26,160
+Let me just simply add check.
+
+88
+00:05:26,500 --> 00:05:34,380
+this one and yes and in same way we are also done with this so let me check this now let's
+
+89
+00:05:34,381 --> 00:05:40,660
+move ahead and start talking about image component so how you can basically use this image component
+
+90
+00:05:41,120 --> 00:05:44,000
+so for now let me comment this out.
+
+91
+00:05:44,300 --> 00:05:45,460
+Perfect.
+
+92
+00:05:46,319 --> 00:05:48,819
+And let me import my image component.
+
+93
+00:05:48,940 --> 00:05:56,000
+So for that you can simply import image from react native and inside this below this I
+
+94
+00:05:56,001 --> 00:05:57,639
+am simply going to use this.
+
+95
+00:05:57,819 --> 00:06:00,340
+Yes, this is going to be a self-closing component.
+
+96
+00:06:00,700 --> 00:06:08,220
+And they accept bunch of props but for now let me just simply write here the source and
+
+97
+00:06:08,440 --> 00:06:16,460
+inside the source they accept an object which have a URI and inside this URI you can show
+
+98
+00:06:16,461 --> 00:06:19,500
+the URL of the image you wanted to render here.
+
+99
+00:06:19,501 --> 00:06:27,180
+So let's say let me write here the URL like we have a HTTPS, React Native, Dev and Image
+
+100
+00:06:27,200 --> 00:06:27,800
+Tiny logo.
+
+101
+00:06:29,680 --> 00:06:32,260
+Then, you also need to write here the style.
+
+102
+00:06:32,460 --> 00:06:36,340
+Yes, just give me a minute style and open this inside this style.
+
+103
+00:06:36,500 --> 00:06:44,860
+Let me write the width of 100 and height of 100 and if I save it, look at that and you
+
+104
+00:06:44,861 --> 00:06:46,460
+can even add the padding.
+
+105
+00:06:46,620 --> 00:06:49,680
+Let's say padding of 24 if I add and save it.
+
+106
+00:06:49,700 --> 00:06:52,300
+and maybe padding top.
+
+107
+00:06:53,100 --> 00:06:53,340
+All right.
+
+108
+00:06:53,341 --> 00:06:56,640
+They are not working because definitely there is always a way of doing it.
+
+109
+00:06:56,740 --> 00:06:59,880
+But for now, let me just stick with width and height.
+
+110
+00:07:00,840 --> 00:07:01,160
+Perfect.
+
+111
+00:07:01,480 --> 00:07:05,640
+So, you will see this is how you can render the images inside it.
+
+112
+00:07:05,641 --> 00:07:06,760
+Make sense?
+
+113
+00:07:07,160 --> 00:07:07,640
+Very easy.
+
+114
+00:07:08,080 --> 00:07:13,520
+So, source tell yes, if I just talk about the source, source tells a react native where
+
+115
+00:07:13,521 --> 00:07:14,700
+the image come from.
+
+116
+00:07:15,220 --> 00:07:15,580
+Simple.
+
+117
+00:07:15,960 --> 00:07:18,060
+And width and height are required.
+
+118
+00:07:18,800 --> 00:07:20,980
+Without size, image wouldn't appear.
+
+119
+00:07:21,040 --> 00:07:22,680
+So, make sure to keep that in mind.
+
+120
+00:07:22,900 --> 00:07:26,340
+You have to specify the height of your image.
+
+121
+00:07:27,080 --> 00:07:27,400
+Cool.
+
+122
+00:07:27,540 --> 00:07:28,120
+No problem.
+
+123
+00:07:29,120 --> 00:07:33,460
+Now, let's move ahead and start talking about this text input component.
+
+124
+00:07:34,000 --> 00:07:36,140
+So, how you can use that?
+
+125
+00:07:36,460 --> 00:07:42,900
+So very simple, you can simply come into here and import your text input.
+
+126
+00:07:43,460 --> 00:07:49,540
+This text input is basically used for forms, login screen, search bar, I mean you know
+
+127
+00:07:49,541 --> 00:07:50,020
+that.
+
+128
+00:07:50,400 --> 00:07:56,900
+So, below this make sure you are inside the view and you can simply import text and let
+
+129
+00:07:56,901 --> 00:08:03,199
+me simply write text input and inside this I can simply pass bunch of props.
+
+130
+00:08:03,320 --> 00:08:05,520
+So, the first prop is going to be placeholder.
+
+131
+00:08:05,759 --> 00:08:07,020
+Let me simply write.
+
+132
+00:08:07,021 --> 00:08:13,680
+Enter your name and if I save it, you can see that we have a text input.
+
+133
+00:08:14,180 --> 00:08:14,500
+Perfect.
+
+134
+00:08:14,780 --> 00:08:18,040
+And in same way, I can style it as much as I want.
+
+135
+00:08:18,140 --> 00:08:20,100
+So I can simply going to write here the style.
+
+136
+00:08:21,760 --> 00:08:22,600
+Not like this.
+
+137
+00:08:23,200 --> 00:08:27,200
+And inside the style I can add the border width.
+
+138
+00:08:27,480 --> 00:08:30,080
+Yes you make sure that you are writing style in this way.
+
+139
+00:08:31,040 --> 00:08:33,840
+We have border width then we have padding.
+
+140
+00:08:34,480 --> 00:08:36,340
+Perfect and padding let's say of 10.
+
+141
+00:08:37,559 --> 00:08:43,799
+And boom look at that you can write the text inside this and if I just simply press if
+
+142
+00:08:43,800 --> 00:08:47,360
+you are on phone then definitely going to open the phones keyboard.
+
+143
+00:08:47,980 --> 00:08:50,000
+So I hope so that makes sense now.
+
+144
+00:08:50,820 --> 00:08:56,920
+Perfect. I hope no problem into this very basic, very easy to understand. So placeholder,
+
+145
+00:08:57,440 --> 00:09:02,880
+show hint text, you guys know about it. Then we have style, style, add border and spacing.
+
+146
+00:09:02,890 --> 00:09:06,880
+So we have added a basic border and the padding just for spacing.
+
+147
+00:09:07,200 --> 00:09:13,640
+So, text input is a controlled input will handle state later whenever in future when
+
+148
+00:09:13,641 --> 00:09:18,560
+we are going to use here the hooks the all the other things then you will see how you
+
+149
+00:09:18,561 --> 00:09:22,760
+can handle that as well perfect no problem nice.
+
+150
+00:09:23,400 --> 00:09:28,500
+Now let's move ahead and start talking about this pressable now this is something new.
+
+151
+00:09:28,700 --> 00:09:34,920
+What is this pressable? If I just simply coming to the documentation development make sure
+
+152
+00:09:34,921 --> 00:09:41,020
+you are on component. So, if I just simply press on pressable. So, pressable is a core
+
+153
+00:09:41,040 --> 00:09:48,260
+component wrapper that can detect various stages of press interaction on any of its
+
+154
+00:09:48,560 --> 00:09:49,800
+defined children.
+
+155
+00:09:50,000 --> 00:09:55,640
+So, this is simple pressable and we do not have on click, we have on press, so make sure
+
+156
+00:09:55,641 --> 00:09:56,660
+to keep that in mind.
+
+157
+00:09:57,020 --> 00:09:57,680
+How it work?
+
+158
+00:09:58,000 --> 00:10:03,520
+On an element wrapped by pressable, like you can create any element act as a pressable,
+
+159
+00:10:03,960 --> 00:10:10,280
+you can use that on text, on view, on anything else that we take, text area if you wanted
+
+160
+00:10:10,300 --> 00:10:12,100
+to, but alright you got the point.
+
+161
+00:10:12,700 --> 00:10:19,940
+We have on press in, on press out, on press in is called when a press is activated and
+
+162
+00:10:19,941 --> 00:10:21,960
+in same way when this is deactivated.
+
+163
+00:10:22,600 --> 00:10:27,820
+So they have I mean look at that how beautifully they have explained you that.
+
+164
+00:10:27,960 --> 00:10:28,840
+Press in.
+
+165
+00:10:29,100 --> 00:10:31,639
+Press out and then you can even on press.
+
+166
+00:10:32,139 --> 00:10:38,779
+In same way if you press for 500 milliseconds then that event comes inside on long press.
+
+167
+00:10:38,980 --> 00:10:43,819
+So you can do bunch of other logic on long press as well.
+
+168
+00:10:44,920 --> 00:10:45,199
+Perfect.
+
+169
+00:10:45,440 --> 00:10:47,120
+And they have even added you this.
+
+170
+00:10:47,259 --> 00:10:52,800
+Fingers are not the most precise instrument and it is common for user to accidentally
+
+171
+00:10:52,819 --> 00:10:55,920
+activate the wrong element or miss the activation area.
+
+172
+00:10:55,921 --> 00:11:02,260
+To help a pressable has an optional hit right you can all right you can ignore it for now
+
+173
+00:11:02,261 --> 00:11:04,580
+you need not to understand anything for it.
+
+174
+00:11:05,020 --> 00:11:08,540
+So yes now let's move ahead and start using it.
+
+175
+00:11:08,880 --> 00:11:13,100
+So how you can use it you can see that this is the press me so the moment you press and
+
+176
+00:11:13,101 --> 00:11:18,120
+press 2x 3x cool but let's move ahead and start using it.
+
+177
+00:11:18,320 --> 00:11:19,820
+So how you can use it very easy.
+
+178
+00:11:20,500 --> 00:11:29,900
+I can just simply coming to here and import the pressable component and alright values
+
+179
+00:11:29,940 --> 00:11:36,400
+never used cool let's move ahead and start using it so below the input I am going to
+
+180
+00:11:36,401 --> 00:11:42,940
+use the pressable and inside the pressable I am going to have the text component.
+
+181
+00:11:43,600 --> 00:11:46,279
+And what just happened?
+
+182
+00:11:46,370 --> 00:11:47,060
+All right.
+
+183
+00:11:47,240 --> 00:11:50,800
+I think let me import my text as well.
+
+184
+00:11:51,319 --> 00:11:51,600
+Perfect.
+
+185
+00:11:51,601 --> 00:11:52,800
+What they are saying?
+
+186
+00:11:53,779 --> 00:11:56,040
+Unknown property pressable.
+
+187
+00:11:56,899 --> 00:11:59,800
+Why we have that?
+
+188
+00:12:01,319 --> 00:12:03,980
+Let me just search for pressable.
+
+189
+00:12:06,420 --> 00:12:11,860
+It's fine, maybe this is some different issue, but no problem.
+
+190
+00:12:11,920 --> 00:12:12,620
+This will going to work.
+
+191
+00:12:12,779 --> 00:12:19,560
+And if I just simply search for event on press and then if I run a simple callback here and
+
+192
+00:12:19,561 --> 00:12:21,019
+let me just simply use the alert.
+
+193
+00:12:21,240 --> 00:12:22,519
+Yes, we have alert as well.
+
+194
+00:12:22,699 --> 00:12:29,779
+And if I just simply say button pressed and if I save it and inside the text, I can simply
+
+195
+00:12:30,900 --> 00:12:33,560
+Click me and save it.
+
+196
+00:12:33,740 --> 00:12:34,100
+Perfect.
+
+197
+00:12:34,420 --> 00:12:35,000
+Let me try.
+
+198
+00:12:35,540 --> 00:12:36,700
+Is this going to work or not?
+
+199
+00:12:36,780 --> 00:12:40,900
+And if I just simply click this and boom, look at that.
+
+200
+00:12:41,440 --> 00:12:43,080
+We have a button pressed.
+
+201
+00:12:43,940 --> 00:12:49,240
+So all right, this is basically coming because I am using extension on spell check something.
+
+202
+00:12:49,400 --> 00:12:52,300
+So I'll go into disable that in upcoming lectures.
+
+203
+00:12:52,840 --> 00:12:55,280
+But for now, you can see the moment you click this.
+
+204
+00:12:55,300 --> 00:13:00,959
+And this is how they are showing and again, this is not the best UI design that we are
+
+205
+00:13:00,960 --> 00:13:01,320
+creating.
+
+206
+00:13:01,380 --> 00:13:03,920
+We are going to create crazy UIs.
+
+207
+00:13:04,260 --> 00:13:05,180
+Don't worry about that.
+
+208
+00:13:05,240 --> 00:13:08,500
+But for now, we are only understanding the logic of it.
+
+209
+00:13:09,680 --> 00:13:11,839
+In same way, we also have a scroll view.
+
+210
+00:13:12,000 --> 00:13:13,320
+So what is the scroll view?
+
+211
+00:13:13,760 --> 00:13:17,260
+Like let me simply come into here and import scroll view.
+
+212
+00:13:17,839 --> 00:13:19,459
+Scroll view is basically used.
+
+213
+00:13:19,640 --> 00:13:23,560
+Let me tell you always make sure that the scroll view at the top of it.
+
+214
+00:13:23,700 --> 00:13:27,320
+Perfect, instead of view you can use a scroll view.
+
+215
+00:13:28,340 --> 00:13:33,180
+So let me just instead of calling this view, let me use the scroll view and save it.
+
+216
+00:13:33,420 --> 00:13:40,300
+Scroll view is basically used to render a lot of items at once to create this scrollable
+
+217
+00:13:40,380 --> 00:13:40,700
+screen.
+
+218
+00:13:41,660 --> 00:13:42,140
+Perfect.
+
+219
+00:13:42,141 --> 00:13:46,260
+Let me just try to add a lot of texts here like below this.
+
+220
+00:13:46,740 --> 00:13:48,260
+Let me add a lot of text.
+
+221
+00:13:49,680 --> 00:13:50,740
+Let me save it.
+
+222
+00:13:50,920 --> 00:13:51,120
+Perfect.
+
+223
+00:13:51,240 --> 00:13:53,060
+Like only we have only this much.
+
+224
+00:13:53,240 --> 00:13:56,020
+You can simply add a lot more, lot more.
+
+225
+00:13:56,180 --> 00:13:58,080
+Let me just checking this out.
+
+226
+00:13:58,480 --> 00:13:58,680
+Perfect.
+
+227
+00:13:58,820 --> 00:13:59,860
+And you can look at that.
+
+228
+00:13:59,861 --> 00:14:04,160
+You can simply scroll this and this is how you can simulate the scrolling view.
+
+229
+00:14:05,100 --> 00:14:05,400
+Perfect.
+
+230
+00:14:06,000 --> 00:14:08,500
+So I hope so that makes sense now.
+
+231
+00:14:09,680 --> 00:14:09,940
+Perfect.
+
+232
+00:14:10,040 --> 00:14:12,640
+So scroll view, render all the element at once.
+
+233
+00:14:13,080 --> 00:14:15,780
+Good for small content for large list.
+
+234
+00:14:15,820 --> 00:14:20,320
+Like when you have lot of text, you definitely not going to use in this way.
+
+235
+00:14:20,860 --> 00:14:23,180
+We definitely have something better out of it.
+
+236
+00:14:23,200 --> 00:14:26,000
+So, there is something known as flat list component.
+
+237
+00:14:26,100 --> 00:14:28,420
+We are going to talk about that in upcoming lectures.
+
+238
+00:14:28,980 --> 00:14:35,840
+So, these are the some core components 90 percent of the time you are going to use them
+
+239
+00:14:36,020 --> 00:14:41,900
+not 90 80 percent of time you are going to use this 20 percent components cool.
+
+240
+00:14:42,300 --> 00:14:47,180
+We have in same way we have button as well if I just simply import here the button.
+
+241
+00:14:48,399 --> 00:14:55,839
+And let's say below the image, if I just simply use the button and button will not work the
+
+242
+00:14:55,840 --> 00:14:56,680
+way you expect.
+
+243
+00:14:56,880 --> 00:14:58,300
+Like let me show you how.
+
+244
+00:14:59,740 --> 00:15:00,380
+Where is button?
+
+245
+00:15:00,620 --> 00:15:01,680
+Let me go back.
+
+246
+00:15:02,820 --> 00:15:05,040
+And yes, we have UI interface button.
+
+247
+00:15:05,800 --> 00:15:07,459
+So button will work something like this.
+
+248
+00:15:07,640 --> 00:15:09,620
+So let me copy the code of it.
+
+249
+00:15:10,120 --> 00:15:12,180
+Let me try to paste that.
+
+250
+00:15:12,300 --> 00:15:13,200
+Perfect.
+
+251
+00:15:14,200 --> 00:15:16,220
+And we don't have anything for now.
+
+252
+00:15:16,339 --> 00:15:25,440
+So I can simply again write alert and simply say anything and boom, look at that.
+
+253
+00:15:25,740 --> 00:15:27,420
+We have just added a color of it.
+
+254
+00:15:27,480 --> 00:15:28,399
+We have a title.
+
+255
+00:15:28,640 --> 00:15:30,240
+We have a lot of other things as well.
+
+256
+00:15:30,580 --> 00:15:34,120
+So the moment I click over it and we are showing the alert.
+
+257
+00:15:34,300 --> 00:15:39,240
+And you can even see this is a native specific UI.
+
+258
+00:15:39,399 --> 00:15:43,180
+If you are on iOS, they are showing you a different kind of alert.
+
+259
+00:15:43,420 --> 00:15:45,420
+So that is the beauty of it.
+
+260
+00:15:45,959 --> 00:15:46,440
+Perfect.
+
+261
+00:15:47,240 --> 00:15:47,480
+Nice.
+
+262
+00:15:47,560 --> 00:15:51,380
+Only last thing that we are left with and we have lot of text.
+
+263
+00:15:51,940 --> 00:15:55,180
+So let me try to remove them because we don't need it.
+
+264
+00:15:56,160 --> 00:16:02,560
+from here till here perfect let me format this once and perfect.
+
+265
+00:16:03,180 --> 00:16:06,800
+Now let's move ahead and start talking about something known as style sheet.
+
+266
+00:16:07,660 --> 00:16:14,140
+So let me import the style sheet component and this style sheet is basically using for
+
+267
+00:16:14,141 --> 00:16:15,200
+styling your component.
+
+268
+00:16:15,201 --> 00:16:17,220
+So how you can initialize a style sheet?
+
+269
+00:16:17,700 --> 00:16:23,940
+Where you are exporting default this out of it inside it depend, but let me just simply
+
+270
+00:16:23,941 --> 00:16:30,900
+write here const style and then you can simply use the style sheet component and then we
+
+271
+00:16:30,901 --> 00:16:38,340
+have a method known as create and yes now inside this you can write the object name
+
+272
+00:16:38,380 --> 00:16:43,700
+like in HTML CSS we are writing the class names here you will write the object name
+
+273
+00:16:43,701 --> 00:16:46,440
+something like let us say let me write the container.
+
+274
+00:16:47,339 --> 00:16:50,720
+container have the padding of 20.
+
+275
+00:16:51,300 --> 00:16:51,640
+Perfect.
+
+276
+00:16:52,220 --> 00:16:54,620
+And in same way, let me add simply a comma.
+
+277
+00:16:54,920 --> 00:16:56,180
+Let me add a text.
+
+278
+00:16:56,839 --> 00:17:02,820
+Text is going to have a font size, let's say of 18, not 28, 18.
+
+279
+00:17:04,300 --> 00:17:06,859
+And color is going to be blue.
+
+280
+00:17:07,540 --> 00:17:07,900
+Simple.
+
+281
+00:17:08,140 --> 00:17:08,980
+Let me save it.
+
+282
+00:17:09,140 --> 00:17:10,400
+Nothing is going to change.
+
+283
+00:17:11,660 --> 00:17:15,359
+Now if I move ahead and let me try to show you that.
+
+284
+00:17:16,000 --> 00:17:23,220
+Let's say onto this text and simply write here the style and inside this style I can
+
+285
+00:17:23,380 --> 00:17:30,020
+say always say this styles perfect instead of styles you can simply say this as a styles
+
+286
+00:17:30,240 --> 00:17:36,260
+dot now we have two design one is for container another one is for text so let me simply write
+
+287
+00:17:36,261 --> 00:17:40,640
+text and the moment I save it boom look at that.
+
+288
+00:17:41,179 --> 00:17:41,620
+Perfect.
+
+289
+00:17:41,621 --> 00:17:47,139
+You can even use the font weight and you can add the font weight, let's say of 800.
+
+290
+00:17:48,360 --> 00:17:51,059
+And if I just save it, you can see this become bold.
+
+291
+00:17:51,279 --> 00:17:56,899
+Now, if I just make it red and save it, you can even add hex RGB, a lot of other things
+
+292
+00:17:56,940 --> 00:17:57,779
+as well.
+
+293
+00:17:58,139 --> 00:17:58,620
+Perfect.
+
+294
+00:17:58,960 --> 00:18:02,320
+So, and in same way, you can use this for containers.
+
+295
+00:18:03,100 --> 00:18:04,880
+Let me try to create one.
+
+296
+00:18:05,400 --> 00:18:08,900
+Let me copy this below this text.
+
+297
+00:18:09,160 --> 00:18:10,200
+Let me paste this.
+
+298
+00:18:10,360 --> 00:18:10,640
+Perfect.
+
+299
+00:18:11,380 --> 00:18:17,600
+So let me import view from react native, save this and boom, this is your container.
+
+300
+00:18:18,400 --> 00:18:22,740
+This one and in same way, we have this style text here.
+
+301
+00:18:23,120 --> 00:18:24,540
+So yeah, pretty amazing.
+
+302
+00:18:24,600 --> 00:18:29,480
+You are writing your mobile application in just two to three lectures, which is crazy.
+
+303
+00:18:29,700 --> 00:18:35,720
+So, yeah this is pretty much it for this lecture and see you next time.
+

@@ -1,0 +1,638 @@
+WEBVTT
+
+00:00:00.320 --> 00:00:05.540
+Alright everyone and welcome to chapter number two. In this chapter we are going to add all
+
+00:00:05.640 --> 00:00:11.260
+the assets related to our application like all the images that we need and then going
+
+00:00:11.360 --> 00:00:18.280
+to create one use weather hook and a simple weather utilize. Alright, so let's move ahead
+
+00:00:18.380 --> 00:00:23.680
+and start implementing it. So first step first again if you wanted to grab all of the assets
+
+00:00:24.000 --> 00:00:31.560
+simply need to visit my I can say GitHub repo and from there you can grab all of it nice.
+
+00:00:32.020 --> 00:00:39.400
+So inside the asset what is the first thing I wanted to add is the cloudy image perfect.
+
+00:00:39.500 --> 00:00:40.760
+So let me just paste that.
+
+00:00:40.879 --> 00:00:44.820
+So this is the cloudy image in same way I can have one night image.
+
+00:00:44.920 --> 00:00:47.020
+So let me also paste that.
+
+00:00:47.021 --> 00:00:52.940
+my night image. So this is the night image easy I can also have one known as rain image.
+
+00:00:53.940 --> 00:01:00.640
+So this is the rain image and then I also have a snow image. Yep this looks nice. So
+
+00:01:00.680 --> 00:01:07.640
+this is the snow image that we have and lastly we have one sunny image. So these are all
+
+00:01:07.820 --> 00:01:08.860
+the images.
+
+00:01:09.000 --> 00:01:16.900
+that we need cloudy night, rain, snow, sunny, you can even go to the nano banana and ask
+
+00:01:17.160 --> 00:01:22.100
+it to generate for you, alright and you can even download from internet and you can even
+
+00:01:22.200 --> 00:01:26.880
+grab it from my GitHub repo, easy, nice.
+
+00:01:27.510 --> 00:01:38.979
+So the first thing is done, we have successfully added all the assets, what is the next
+
+00:01:38.980 --> 00:01:39.000
+Next step is to use create one use weather hook.
+
+00:01:39.001 --> 00:01:45.400
+So for that what I wanted to do, again inside this source let me create one hooks folder
+
+00:01:45.680 --> 00:01:53.740
+and inside this hooks folder I can simply create use weather dot ps and this use weather
+
+00:01:53.770 --> 00:01:53.979
+dot
+
+00:01:54.000 --> 00:02:01.640
+t s is going to use something known as a bun x expo install expo location.
+
+00:02:02.460 --> 00:02:02.580
+Alright.
+
+00:02:04.260 --> 00:02:04.500
+Okay.
+
+00:02:04.550 --> 00:02:07.660
+So now we are basically installing the expo location.
+
+00:02:09.270 --> 00:02:09.440
+Perfect.
+
+00:02:10.680 --> 00:02:14.760
+And after installing the expo location, what is the next step?
+
+00:02:15.760 --> 00:02:23.980
+Next step is with the expo.
+
+00:02:23.981 --> 00:02:24.260
+very simple. Let's use that inside this use weather.ts. Perfect. So let me import all of
+
+00:02:24.261 --> 00:02:29.280
+the things that I need. But before that I wanted to add all the types that I'm going
+
+00:02:29.300 --> 00:02:37.660
+to have again. Source. Let me create one types folder inside this type. I can have one weather.ts
+
+00:02:37.959 --> 00:02:46.480
+and I will paste all of
+
+00:02:46.481 --> 00:02:46.520
+the types that I have. This is the first type which contain the weather data name. Since
+
+00:02:46.660 --> 00:02:54.100
+basically they have country sunrise sunset and the main which contain temperature feels
+
+00:02:54.240 --> 00:03:01.320
+like humidity and pressure then we have weather which give us the ID main description.
+
+00:03:01.500 --> 00:03:04.960
+and icon, wind and then dt.
+
+00:03:05.080 --> 00:03:07.960
+In same way forecast, same way we have aqi.
+
+00:03:08.240 --> 00:03:09.120
+Okay, no problem.
+
+00:03:09.240 --> 00:03:10.260
+Let's just copy and paste it.
+
+00:03:10.360 --> 00:03:10.760
+No problem.
+
+00:03:11.280 --> 00:03:11.700
+Nice.
+
+00:03:12.540 --> 00:03:16.540
+Now let me come into here and import all the important things that I need.
+
+00:03:17.900 --> 00:03:21.320
+So I need here a location from expo location.
+
+00:03:21.520 --> 00:03:23.840
+Then I need use effect and use state.
+
+00:03:24.000 --> 00:03:32.740
+Then I need fetchCords by city and fetchWeather byCords easy and then the types for the AQI
+
+00:03:32.780 --> 00:03:35.840
+data, for Cust data and weather data no problem.
+
+00:03:36.680 --> 00:03:44.700
+Okay let's create one hook a custom hook I can simply say exportConst useWeather and
+
+00:03:44.780 --> 00:03:46.520
+this useWeather is basically.
+
+00:03:46.521 --> 00:03:52.580
+going to have bunch of state variables. So let me add all the state variables that we
+
+00:03:52.581 --> 00:04:00.860
+are going to have. So we are going to have the loading, set loading, error message, weather,
+
+00:04:01.180 --> 00:04:09.000
+forecast and AQI set AQI. Okay, these are all the state variables that we need. And
+
+00:04:09.001 --> 00:04:14.240
+And first thing is let us create one function name as getLocationWeather.
+
+00:04:14.460 --> 00:04:24.080
+So I can simply say const getLocationWeather is equals to a sync and inside the sync let
+
+00:04:24.160 --> 00:04:24.940
+me open it.
+
+00:04:26.860 --> 00:04:30.160
+And into it first thing is always set loading.
+
+00:04:31.500 --> 00:04:39.580
+Okay, and then second thing is I can say set error message as empty string and then I
+
+00:04:39.581 --> 00:04:45.900
+will open one try and catch inside this try first of all let me request for the permission
+
+00:04:46.180 --> 00:05:01.480
+so what I will do I can simply say const status is equals to of it location is
+
+00:05:01.481 --> 00:05:05.920
+location.request foreground permission async and then if the status is not equal to equal
+
+00:05:05.960 --> 00:05:14.200
+to granted then simply set error message and set loading as false and return from here
+
+00:05:14.280 --> 00:05:15.900
+because we need the users location.
+
+00:05:17.620 --> 00:05:24.760
+nice and then what next, next I will say const LOC is equals to await and then I can say
+
+00:05:24.880 --> 00:05:32.620
+location.getCurrentPositionAsset and they are going to get the accuracy on the basis
+
+00:05:32.780 --> 00:05:37.340
+of location.accuracy.valuance.
+
+00:05:38.000 --> 00:05:42.200
+Yes, you can even get the accuracy.
+
+00:05:42.201 --> 00:05:46.740
+a best for navigation high high as low simply go with balanced nice and then again simply
+
+00:05:46.920 --> 00:05:54.780
+call the method load up definitively we need the method here so we are going to create
+
+00:05:54.940 --> 00:06:01.320
+that in a way so name of the method is load weather data which going to accept location
+
+00:06:01.500 --> 00:06:13.220
+location.cords.latitude then second thing is location.cords.longitude okay and then
+
+00:06:13.340 --> 00:06:20.020
+inside the catch I can simply return the error that we have so E and I can mark this
+
+00:06:20.021 --> 00:06:23.180
+as any and simply paste it.
+
+00:06:24.860 --> 00:06:29.980
+Now let's move ahead and create this function named as load weather data.
+
+00:06:30.790 --> 00:06:35.860
+So out of this, I can simply create const load weather data.
+
+00:06:36.090 --> 00:06:46.580
+They are going to accept the latitude number and the longitude again number and okay.
+
+00:06:46.581 --> 00:06:48.460
+Let me open this once again.
+
+00:06:52.180 --> 00:06:54.220
+Let me simply open try and catch.
+
+00:06:54.560 --> 00:07:02.560
+First thing is simply call the data is equals to await fetch weather by quotes going to
+
+00:07:02.600 --> 00:07:05.220
+accept the latitude and longitude.
+
+00:07:06.440 --> 00:07:06.540
+Perfect.
+
+00:07:07.260 --> 00:07:07.480
+Nice.
+
+00:07:07.600 --> 00:07:08.180
+But next.
+
+00:07:08.960 --> 00:07:09.080
+Next.
+
+00:07:11.020 --> 00:07:11.180
+Next.
+
+00:07:12.040 --> 00:07:12.200
+Next.
+
+00:07:15.940 --> 00:07:16.100
+Next.
+
+00:07:16.101 --> 00:07:16.121
+Next you can see that we have one state variable with the name of weather.
+
+00:07:16.122 --> 00:07:20.700
+So I wanted to set this data with this name and this data contain weather forecast and
+
+00:07:20.740 --> 00:07:22.540
+AQI what we need we need a weather.
+
+00:07:25.260 --> 00:07:25.520
+All right.
+
+00:07:26.500 --> 00:07:30.360
+Now let's move ahead and then what I will do basically.
+
+00:07:31.320 --> 00:07:42.640
+I will simply try to let me just move ahead and hopefully my sound is coming correctly
+
+00:07:42.760 --> 00:07:45.680
+there is no okay just give me a minute nice.
+
+00:07:46.960 --> 00:07:49.520
+Now you can see that we have a load weather data.
+
+00:07:50.220 --> 00:07:54.320
+So inside this what I will do I will simply going to say set.
+
+00:07:55.000 --> 00:08:03.680
+a weather and this set weather is going to be the data dot weather and then set forecast
+
+00:08:04.600 --> 00:08:07.460
+this is also equals to data dot forecast.
+
+00:08:11.120 --> 00:08:17.700
+And last thing is set AQI and this AQI is equals to again data dot AQI.
+
+00:08:18.720 --> 00:08:18.800
+Nice.
+
+00:08:18.880 --> 00:08:22.220
+And then we can simply say set loading as false.
+
+00:08:22.900 --> 00:08:31.900
+Then into the catch again, let me just make it easy type of any and then paste it easy
+
+00:08:32.279 --> 00:08:32.539
+nice.
+
+00:08:32.650 --> 00:08:37.940
+So this is your another method and after this what you need you need a use effect.
+
+00:08:38.760 --> 00:08:45.480
+So on load this hook I wanted to call the use effect which is going to call get location
+
+00:08:45.600 --> 00:08:50.020
+weather and then I can simply open it.
+
+00:08:50.600 --> 00:08:58.920
+Perfect, last method and the name of that last method is alright, so the next function
+
+00:08:59.139 --> 00:09:00.420
+name is search city.
+
+00:09:00.529 --> 00:09:07.120
+So they are basically going to accept the city name and on the basis of city name, I'm
+
+00:09:07.180 --> 00:09:14.839
+going to get the data so I can simply say city of type string and then a simple function
+
+00:09:15.000 --> 00:09:15.160
+call.
+
+00:09:15.920 --> 00:09:18.540
+What if I just simply copy and paste them?
+
+00:09:19.100 --> 00:09:25.019
+Yep, so now right now you can see that where is my fetch codes by city.
+
+00:09:25.240 --> 00:09:31.319
+So you can see that a simple loading is true, set error message, empty message, then a try
+
+00:09:31.500 --> 00:09:49.079
+and catch, then we are calling a simple
+
+00:09:49.080 --> 00:09:49.100
+coordinates by city yes and then they are going to return us the latitude and longitude
+
+00:09:49.101 --> 00:09:49.121
+and on the basis of this latitude and longitude we are again calling the load weather data
+
+00:09:49.122 --> 00:09:51.420
+this one and then they are going to give us the actual data alright nice.
+
+00:09:53.080 --> 00:09:58.140
+Now, at the very end a hook will always return you sometime return you something.
+
+00:09:58.870 --> 00:10:04.320
+So, we are going to give the loading, we are going to give the error message, we are going
+
+00:10:04.399 --> 00:10:13.700
+to give the weather, a forecast, a QI and then the method with the name of get location
+
+00:10:13.880 --> 00:10:14.100
+weather.
+
+00:10:14.800 --> 00:10:22.940
+and then search search city so nice now we have successfully added all the assets
+
+00:10:23.140 --> 00:10:27.600
+and added use weather hook now let's move ahead and start adding the weather
+
+00:10:27.720 --> 00:10:33.839
+utils so for that let me close this let me open the weather utils file that we
+
+00:10:33.920 --> 00:10:40.360
+already have which only contains this but we need here four methods and that
+
+00:10:40.361 --> 00:10:43.220
+That method will nothing just going to return you.
+
+00:10:43.800 --> 00:10:49.140
+I can say the images on the basis of condition perfect.
+
+00:10:49.610 --> 00:10:55.519
+So if the condition is we can say very cold, so then I wanted to return the background
+
+00:10:55.680 --> 00:10:56.920
+images, no kind of.
+
+00:10:58.490 --> 00:11:04.200
+So let me first of all create export const get export const.
+
+00:11:04.201 --> 00:11:11.120
+background image and this is equal to the condition and this will the string and then
+
+00:11:11.160 --> 00:11:12.240
+we can have the icon.
+
+00:11:14.000 --> 00:11:21.720
+Icon is also string and then let's keep it as any perfect and then we simply need one
+
+00:11:21.820 --> 00:11:23.320
+a lot of switch cases here.
+
+00:11:23.680 --> 00:11:30.080
+So first thing is we are going to get like this icon will come from the API that we are
+
+00:11:30.120 --> 00:11:30.680
+going to call.
+
+00:11:31.200 --> 00:11:35.740
+So, for now I can simply say going to track is it night or day.
+
+00:11:36.240 --> 00:11:43.980
+So when it's night, when this icon include a word name is N and then what I will do,
+
+00:11:43.981 --> 00:11:52.480
+I can simply say if this is night, then simply say and condition is equals to equals to clean.
+
+00:11:54.319 --> 00:12:03.060
+Then simply return this statement, return require this asset, perfect.
+
+00:12:03.899 --> 00:12:06.279
+Otherwise return the night asset again.
+
+00:12:06.280 --> 00:12:10.459
+So, we are returning the same assets itself, but you can have.
+
+00:12:11.780 --> 00:12:17.620
+Let's say this is your night image or you can even have a clean image for the night
+
+00:12:17.740 --> 00:12:23.300
+like if the sky is clean so you can return the night clean dot PNG something like that
+
+00:12:23.720 --> 00:12:28.240
+but right now I'm just going with the same image that we have.
+
+00:12:30.380 --> 00:12:31.340
+Okay, nice.
+
+00:12:31.460 --> 00:12:32.560
+So this is for the night.
+
+00:12:33.120 --> 00:12:33.200
+Perfect.
+
+00:12:33.380 --> 00:12:35.720
+But let's go with the daytime mapping.
+
+00:12:36.340 --> 00:12:38.140
+So I can simply say switch statement.
+
+00:12:38.380 --> 00:12:41.340
+Yes, we need switch here on the basis of condition.
+
+00:12:44.220 --> 00:12:48.700
+The first case is going to be I can simply say case if the case is clear.
+
+00:12:49.400 --> 00:12:52.860
+Then simply return the sunny.png.
+
+00:12:53.940 --> 00:12:58.880
+Perfect, if the case is clear, then simply return the sunny.png
+
+00:12:59.000 --> 00:13:04.360
+Otherwise if the case is clouds, then simply return
+
+00:13:05.200 --> 00:13:13.740
+I can say require and this is again going to accept a bunch of the cloud then we want
+
+00:13:13.840 --> 00:13:21.820
+to return the cloud easy and then in same way we can have for all the other types as
+
+00:13:21.900 --> 00:13:22.040
+well.
+
+00:13:22.041 --> 00:13:24.920
+So it's up to you like how you wanted to add images.
+
+00:13:25.360 --> 00:13:28.260
+So let me just simply copy the entire statement for now.
+
+00:13:28.800 --> 00:13:32.300
+Perfect and let me paste it here and let's try to understand.
+
+00:13:32.600 --> 00:13:35.920
+If the condition is clear, then return this.
+
+00:13:36.339 --> 00:13:40.660
+Otherwise this if the rain, so you can add something related to rain.
+
+00:13:41.300 --> 00:13:45.860
+If the drizzle, you can add related to drizzle like thunderstorm, then we are returning the
+
+00:13:45.899 --> 00:13:48.800
+rain dot PNG snow returning snow dot PNG.
+
+00:13:48.820 --> 00:13:51.600
+If missed fog, then you can also return this.
+
+00:13:53.600 --> 00:13:59.100
+For his otherwise returning a simple sunny dot PNG.
+
+00:13:59.540 --> 00:14:00.399
+Okay, no problem.
+
+00:14:01.279 --> 00:14:01.500
+Got it.
+
+00:14:01.620 --> 00:14:08.139
+So you got the point what you need to do just to make it more better solution for seeing
+
+00:14:08.279 --> 00:14:08.639
+the weather.
+
+00:14:09.019 --> 00:14:11.380
+Okay, so you can definitely improve them.
+
+00:14:12.480 --> 00:14:13.819
+Okay, so I hope you got the point.
+
+00:14:14.200 --> 00:14:20.760
+Like we can have the get background image in same way we can have get weather icon.
+
+00:14:21.070 --> 00:14:29.380
+So what is that I can simply say export const get weather icon and this is again going to
+
+00:14:29.440 --> 00:14:32.360
+accept the condition and the icon.
+
+00:14:32.630 --> 00:14:38.060
+So just give me a minute let me copy this, let me paste it and then they are going to
+
+00:14:38.100 --> 00:14:39.960
+return you something known as string.
+
+00:14:40.700 --> 00:14:44.400
+and let me open it. How this actually going to work?
+
+00:14:46.180 --> 00:14:51.700
+Let me again copy and paste them. So just give me a minute. Let me paste it. You can also copy and paste them.
+
+00:14:52.740 --> 00:14:56.840
+If it's night and include n, so simple condition or if the
+
+00:14:57.400 --> 00:15:14.940
+If the weather is clear and is night then return this weather night icon otherwise return weather sunny all of this icons names are available to the API we are using weather open API here if you just simply visit here and read about this icons you will get all of them ok so chill
+
+00:15:15.600 --> 00:15:22.839
+In same way if it's night, so simply return this icon otherwise return this same for rain,
+
+00:15:23.180 --> 00:15:29.480
+drizzle, thunderstorms, snow, mist, fog, haze and you can search for them and have a better
+
+00:15:30.500 --> 00:15:31.120
+icon names.
+
+00:15:31.579 --> 00:15:32.279
+Okay, got it.
+
+00:15:34.680 --> 00:15:37.899
+In same way we can have a weather color.
+
+00:15:38.630 --> 00:15:40.220
+So let me paste for weather color.
+
+00:15:40.970 --> 00:15:46.459
+So again if night, so it's night, then simply give the light slate night color for night
+
+00:15:46.579 --> 00:15:46.839
+icons.
+
+00:15:47.639 --> 00:15:50.100
+Otherwise, if the condition is clear, then return gold.
+
+00:15:50.600 --> 00:15:57.019
+If cloudy return blue gray, otherwise return light blue light blue of 200 something more
+
+00:15:57.100 --> 00:16:03.160
+lighter, thunderstorm return yellow, snow, sea and you can also do for mist fog and haze
+
+00:16:03.300 --> 00:16:08.220
+haze has sea and of 100 otherwise default it is white got it.
+
+00:16:09.009 --> 00:16:12.279
+Now we can have something known as very interesting function.
+
+00:16:13.250 --> 00:16:14.480
+The name is get.
+
+00:16:16.600 --> 00:16:22.120
+weather image URL and this is going to accept something known as icon code.
+
+00:16:23.560 --> 00:16:26.160
+Okay, in this icon code have a string.
+
+00:16:28.220 --> 00:16:31.940
+Then I will simply open it. Perfect. Nice.
+
+00:16:32.360 --> 00:16:37.200
+And there is one API endpoint from the same API we are using.
+
+00:16:39.340 --> 00:16:41.340
+Image something, let me show you what is that.
+
+00:16:41.400 --> 00:16:43.640
+They accept something known as icon code.
+
+00:16:44.400 --> 00:16:51.420
+And on the basis of the icon code, this one, these are we can say kind of the icon code.
+
+00:16:51.860 --> 00:16:58.620
+So on the basis of the icon code, we are returning the icon which they have inside their, we
+
+00:16:58.720 --> 00:16:59.040
+can say.
+
+00:17:01.380 --> 00:17:03.980
+Endpoint. So, let me I hope you got the point perfect.
+
+00:17:05.380 --> 00:17:07.820
+Nice. So, these are all the methods which are ready for us.
+
+00:17:08.440 --> 00:17:13.140
+So, now we have a get weather icon, we have get weather color, get weather image URL,
+
+00:17:13.720 --> 00:17:17.880
+all of the utilities related to weather in same way we can also have the hooks for it.
+
+00:17:18.300 --> 00:17:23.160
+So, yes, we can say this is the right time from the next chapter, we can start creating
+
+00:17:23.280 --> 00:17:24.619
+this index page.
+
+00:17:25.180 --> 00:17:29.440
+So, amazing, amazing job and this is the end of chapter number two.
+
+00:17:29.900 --> 00:17:31.040
+See you next time.
+

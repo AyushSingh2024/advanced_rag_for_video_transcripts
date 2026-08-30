@@ -1,0 +1,305 @@
+WEBVTT
+
+00:00:00.660 --> 00:00:03.760
+Alright everyone and welcome to chapter number 5.
+
+00:00:03.820 --> 00:00:09.580
+In this chapter we are basically going to create one of the easiest component and easiest
+
+00:00:09.780 --> 00:00:12.020
+screen of our entire mini project.
+
+00:00:12.420 --> 00:00:16.020
+So let's move ahead and start implementing it inside your app.
+
+00:00:16.200 --> 00:00:24.960
+simply go to screen and Pokemon list screens and inside this Pokemon list screen we need
+
+00:00:24.961 --> 00:00:32.640
+to first of all keep it easy let me just simply write here const navigation this is going
+
+00:00:32.641 --> 00:00:39.200
+to be const navigation is equals to use navigation make sure to import this from react navigation
+
+00:00:39.240 --> 00:00:39.620
+native.
+
+00:00:40.000 --> 00:00:45.239
+And this is going to be the type of home screen navigation prop.
+
+00:00:46.700 --> 00:00:50.640
+Then let me add bunch of state variables that we need.
+
+00:00:51.400 --> 00:00:56.680
+So first of all, let me import my use state from react and then Pokemon rough.
+
+00:00:56.860 --> 00:01:03.600
+So you will see that we have this list offset load more has more easy kind of an infinite
+
+00:01:03.860 --> 00:01:04.180
+scrolling.
+
+00:01:05.000 --> 00:01:10.180
+And then let me move ahead and first of all create the load more method.
+
+00:01:10.720 --> 00:01:20.560
+So load more is basically going to be a sync method and if we are into loading state perfect
+
+00:01:21.180 --> 00:01:25.900
+and we don't have has more then we simply going to return it.
+
+00:01:26.100 --> 00:01:34.280
+Then, by doing so this let me simply initialize my loading as true, open try catch and finally
+
+00:01:37.280 --> 00:01:40.200
+and in finally let me set is loading as false.
+
+00:01:41.580 --> 00:01:49.240
+Into the try let me simply say const data is equals to alright just happened cool.
+
+00:01:50.020 --> 00:01:52.440
+So, const data is equals to await.
+
+00:01:53.200 --> 00:02:02.840
+get Pokemon type and instead of Pokemon type this will Pokemon list which is going to accept
+
+00:02:02.841 --> 00:02:05.259
+the initial data and your offset.
+
+00:02:07.520 --> 00:02:11.980
+Perfect and then we are going to simply say set list.
+
+00:02:12.400 --> 00:02:18.700
+is equals to all the previous data that we have and open an array, spread all the previous
+
+00:02:18.780 --> 00:02:25.379
+data and spread all the latest data dot results which is coming.
+
+00:02:26.360 --> 00:02:28.500
+In same way, let me set my offset.
+
+00:02:28.900 --> 00:02:37.159
+as well and then if we don't have any data.next because we are doing kind of an pagination
+
+00:02:37.319 --> 00:02:43.980
+but in kind of scrolling view if we have has more if we don't have this if this becomes
+
+00:02:44.040 --> 00:02:47.000
+false this means we have nothing to fetch more.
+
+00:02:47.540 --> 00:02:52.840
+So let me just simply say set has more as false and by any chance if we have any error
+
+00:02:53.060 --> 00:02:54.599
+let me simply console it.
+
+00:02:54.900 --> 00:03:02.599
+And then let me call my use effect and this use effect is directly going to call this
+
+00:03:02.860 --> 00:03:08.439
+and load more function and this load more function have empty dependency.
+
+00:03:10.299 --> 00:03:16.140
+Let me also add here the handle press method import this Pokemon detail.
+
+00:03:16.500 --> 00:03:16.659
+Cool.
+
+00:03:17.100 --> 00:03:21.040
+And let me first of all paste the styles that I need.
+
+00:03:22.220 --> 00:03:25.720
+So this is the styles and let me import my colors.
+
+00:03:26.500 --> 00:03:28.940
+Cool and very easy.
+
+00:03:29.380 --> 00:03:29.600
+View.
+
+00:03:29.920 --> 00:03:35.560
+So view is going to be the style and as a styles dot container.
+
+00:03:36.920 --> 00:03:44.340
+And then we are going to have something known as app header with the title of a full list.
+
+00:03:45.760 --> 00:03:54.200
+And now if I save it and let me just try to go inside the Pokemon Dex.
+
+00:03:54.880 --> 00:03:55.760
+What just happened?
+
+00:03:56.300 --> 00:03:56.640
+Cool.
+
+00:03:56.960 --> 00:03:58.760
+I don't want it to use it.
+
+00:03:59.500 --> 00:04:03.740
+If I just try to press on Pokemon Dex, so I'm redirecting to back.
+
+00:04:05.020 --> 00:04:13.380
+Yes, normal behavior because instead of pressing that Pokemon Dex, I am pressing my this thing.
+
+00:04:13.500 --> 00:04:14.340
+So just give me a minute.
+
+00:04:14.500 --> 00:04:15.480
+Let me recheck it.
+
+00:04:15.481 --> 00:04:19.540
+Otherwise, I am going to make it quite up.
+
+00:04:20.560 --> 00:04:27.400
+But if I now coming to here, press it again coming to cool, cool, cool.
+
+00:04:27.860 --> 00:04:36.340
+So what I can do now, just for that thing, let me go to my home screen and I will fix
+
+00:04:36.341 --> 00:04:37.320
+that in a while.
+
+00:04:38.580 --> 00:04:41.160
+And at the above, let me import a button.
+
+00:04:42.460 --> 00:04:43.220
+This is optional.
+
+00:04:43.300 --> 00:04:44.860
+You need not to do so this.
+
+00:04:46.100 --> 00:04:55.900
+And let me import my button and the moment I press my button, I wanted to navigation
+
+00:04:56.040 --> 00:05:03.780
+dot navigate navigate to Pokemon list.
+
+00:05:04.580 --> 00:05:05.000
+Perfect.
+
+00:05:05.700 --> 00:05:09.200
+Then let me simply say this as title of go to list.
+
+00:05:09.700 --> 00:05:14.060
+And now if I save it, cool, they are showing us here.
+
+00:05:14.660 --> 00:05:16.780
+Let me add that below this.
+
+00:05:16.940 --> 00:05:17.060
+Cool.
+
+00:05:17.320 --> 00:05:27.000
+So if I press on go to list, navigate dot name Pokemon list was not handled by any navigator.
+
+00:05:29.540 --> 00:05:33.060
+So for that is I need to go inside my app navigator.
+
+00:05:35.020 --> 00:05:37.280
+So, we have Pokemon list.
+
+00:05:37.819 --> 00:05:39.060
+Yes, we have that.
+
+00:05:41.840 --> 00:05:44.360
+But into home, we only have this.
+
+00:05:44.919 --> 00:05:50.599
+So, if I just try to go once again, where is my home screen?
+
+00:05:52.419 --> 00:05:56.740
+Pokemon list if I try to go cool cool cool.
+
+00:05:56.880 --> 00:05:59.520
+So just give me a minute let me try to fix it.
+
+00:06:00.280 --> 00:06:04.100
+Alright, so by using my physical device I am able to come into here so it's fine.
+
+00:06:04.360 --> 00:06:05.680
+Now you can remove this.
+
+00:06:05.840 --> 00:06:11.639
+This is not working because for home screen we have only set up this two stack.
+
+00:06:11.780 --> 00:06:14.560
+One is home and another one is Pokemon detail.
+
+00:06:14.720 --> 00:06:18.039
+So that's why you are not be able to access this from here.
+
+00:06:18.220 --> 00:06:18.320
+Cool.
+
+00:06:21.479 --> 00:06:29.360
+Now, below this, let me just simply add my flat list and let me try to import my flat
+
+00:06:29.400 --> 00:06:29.960
+list.
+
+00:06:32.220 --> 00:06:32.540
+Perfect.
+
+00:06:33.080 --> 00:06:36.940
+And this flat list, I hope so I'm right screen.
+
+00:06:37.560 --> 00:06:37.840
+I am.
+
+00:06:38.620 --> 00:06:41.539
+And then let me first of all pass all the thing that I need.
+
+00:06:43.600 --> 00:06:44.080
+Perfect.
+
+00:06:44.320 --> 00:06:49.120
+So first of all, let me import my card and my activity indicator.
+
+00:06:50.280 --> 00:06:54.260
+Format this and you will see we only have two components.
+
+00:06:54.300 --> 00:06:56.060
+One is app header, this one.
+
+00:06:56.580 --> 00:06:57.860
+Another one is flat list.
+
+00:06:58.100 --> 00:07:02.200
+And if I save this, you will see all the component that we have.
+
+00:07:02.340 --> 00:07:06.620
+And if I keep scrolling, you will see that by every hitting 20, you will see that we
+
+00:07:06.621 --> 00:07:09.960
+have activity indicator and we are loading them.
+
+00:07:10.220 --> 00:07:10.380
+Cool.
+
+00:07:10.800 --> 00:07:14.340
+So, this is how this is going to work for us.
+
+00:07:14.900 --> 00:07:20.599
+And again if you press on any component, any card, then you are redirected to the Pokemon
+
+00:07:20.780 --> 00:07:21.400
+detail page.
+
+00:07:22.479 --> 00:07:22.800
+Perfect.
+
+00:07:22.960 --> 00:07:27.039
+So, this is how you can implement this Pokemon detail page.
+
+00:07:28.159 --> 00:07:33.080
+So, let me come into here and they are showing me yes because we have error.
+
+00:07:33.600 --> 00:07:38.640
+Let me close everything and this is the end of chapter number 5.
+
+00:07:38.820 --> 00:07:44.440
+In next chapter we are going to add bunch of icons and bunch of other things so that
+
+00:07:44.441 --> 00:07:48.580
+let me show you our application is going to look professional in a while.
+

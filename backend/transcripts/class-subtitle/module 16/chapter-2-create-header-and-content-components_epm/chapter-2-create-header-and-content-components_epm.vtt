@@ -1,0 +1,1019 @@
+WEBVTT
+
+00:00:00.619 --> 00:00:03.620
+Alright everyone, welcome to chapter number two.
+
+00:00:03.780 --> 00:00:09.160
+In this chapter, we are going to create the header and content component inside our wallpaper
+
+00:00:09.240 --> 00:00:09.440
+app.
+
+00:00:09.560 --> 00:00:13.900
+For now, let me just simply come into here and head.
+
+00:00:14.160 --> 00:00:15.280
+Bunnex Expo Start.
+
+00:00:15.580 --> 00:00:18.780
+So this is going to start my development server into the Expo Go.
+
+00:00:18.920 --> 00:00:24.040
+Definitely in chapter three most probably and maybe in chapter four, we are going to
+
+00:00:24.041 --> 00:00:26.000
+create the development build for it.
+
+00:00:26.680 --> 00:00:29.340
+But for now, let me try to open my wallpaper app.
+
+00:00:29.600 --> 00:00:36.320
+And, definitely right now they just simply going to show me edit your index.tsx file.
+
+00:00:36.321 --> 00:00:40.560
+So, yes edit this path location to edit this screen.
+
+00:00:40.660 --> 00:00:47.320
+So, yes first step is let me simply go to my layout and inside this layout you will
+
+00:00:47.440 --> 00:00:49.260
+know that we have a header option.
+
+00:00:49.900 --> 00:00:57.660
+A screen option basically, so inside this screen option I wanted to show the header
+
+00:00:58.740 --> 00:01:02.100
+shown as false ok perfect.
+
+00:01:02.101 --> 00:01:05.099
+So now you can see that this is completely empty very good.
+
+00:01:05.140 --> 00:01:09.020
+Close this again open your index.tsx.
+
+00:01:09.200 --> 00:01:17.280
+And this index.tsx is actually going to have a lot of things, but for now, I just wanted
+
+00:01:17.299 --> 00:01:20.360
+to show all the images that I have.
+
+00:01:20.640 --> 00:01:21.600
+That is the main goal.
+
+00:01:22.060 --> 00:01:22.380
+Perfect.
+
+00:01:23.479 --> 00:01:25.039
+So what I will do first of all.
+
+00:01:25.500 --> 00:01:32.000
+Let me paste all the designs that I have so that I need not to write anything from scratch.
+
+00:01:32.600 --> 00:01:34.540
+Okay, just give me a minute.
+
+00:01:35.020 --> 00:01:37.860
+Let me first of all import my style sheet.
+
+00:01:38.160 --> 00:01:46.140
+Now you will see that inside the style sheets I have used here some best practices like
+
+00:01:46.200 --> 00:01:49.160
+this is a color variable that don't exist right now.
+
+00:01:49.200 --> 00:01:55.740
+So, what you will do a very easy step simply go inside your constant and create one file
+
+00:01:55.820 --> 00:02:01.320
+name as theme.ts and let me just paste entire theme that we have.
+
+00:02:01.340 --> 00:02:04.960
+So you will see that this is all the colors that we have.
+
+00:02:05.200 --> 00:02:12.800
+a background, a surface, a card, just to organize all of them and the moment you make any changes
+
+00:02:12.801 --> 00:02:17.360
+here every changes will reflect inside your actual application.
+
+00:02:18.140 --> 00:02:24.220
+So that in future if you wanted to change the branding of your application you can directly
+
+00:02:24.560 --> 00:02:25.900
+control that from here.
+
+00:02:26.200 --> 00:02:27.840
+This is a good practice in itself.
+
+00:02:28.000 --> 00:02:35.540
+So, we have a background, surface, card, text, text secondary, primary, primary dark, border,
+
+00:02:35.880 --> 00:02:37.140
+white, black, overlay.
+
+00:02:37.400 --> 00:02:37.640
+Okay.
+
+00:02:39.160 --> 00:02:46.920
+Then all the sizes like paddings, border radius, icon size, H1, H2, H3, then body, then some
+
+00:02:46.921 --> 00:02:47.320
+shadows.
+
+00:02:47.780 --> 00:02:48.060
+Okay.
+
+00:02:48.061 --> 00:02:49.459
+I hope this is fine.
+
+00:02:50.480 --> 00:02:50.820
+Nice.
+
+00:02:51.060 --> 00:02:54.040
+Now, let me just import all the colors that I have.
+
+00:02:55.200 --> 00:02:58.240
+Okay, I think I'm importing color from wrong place.
+
+00:02:58.400 --> 00:03:02.240
+I need to import from theme and then let me also import sizes.
+
+00:03:02.900 --> 00:03:03.120
+Nice.
+
+00:03:03.420 --> 00:03:04.820
+So now we have all the designs.
+
+00:03:05.580 --> 00:03:06.280
+No problem.
+
+00:03:07.360 --> 00:03:07.620
+Perfect.
+
+00:03:07.740 --> 00:03:15.060
+So, first thing first, let me instead of this view, we wanted to have a safe area view,
+
+00:03:15.800 --> 00:03:18.780
+safe area view basically not the provider actually.
+
+00:03:20.400 --> 00:03:24.420
+Safe area view will come from react native safe area.
+
+00:03:25.980 --> 00:03:34.060
+And this they are going to have a style, style of styles.container and then we have edges,
+
+00:03:34.280 --> 00:03:36.540
+edges will be from top.
+
+00:03:38.120 --> 00:03:41.019
+And then we have a status bar, no problem.
+
+00:03:41.660 --> 00:03:46.500
+status bar's style is going to be as light.
+
+00:03:48.020 --> 00:03:57.360
+Okay, and I think I need to import this status bar from exposed status bar not from here.
+
+00:03:57.640 --> 00:04:04.760
+Okay, so cut this out and import this from exposed status bar and the moment I import
+
+00:04:04.761 --> 00:04:06.760
+it and save it, so yes, look at that.
+
+00:04:06.800 --> 00:04:09.240
+This is the dark background we are using.
+
+00:04:09.400 --> 00:04:13.720
+You will see the background color and the background color is this deep dark color.
+
+00:04:13.780 --> 00:04:16.019
+So that's why this is how they look.
+
+00:04:16.380 --> 00:04:16.779
+Nice.
+
+00:04:17.680 --> 00:04:22.440
+After this, first thing I wanted to show my header.
+
+00:04:23.900 --> 00:04:25.060
+So what I will do?
+
+00:04:25.140 --> 00:04:26.500
+can simply say a view.
+
+00:04:29.700 --> 00:04:33.220
+And I think I need to import this view from react native.
+
+00:04:33.800 --> 00:04:35.040
+They are going to have a style.
+
+00:04:35.400 --> 00:04:38.600
+Style is going to be as styles.header.
+
+00:04:39.340 --> 00:04:44.800
+And inside this header, first thing we are going to have this design.
+
+00:04:45.300 --> 00:04:46.840
+What is this?
+
+00:04:47.159 --> 00:04:53.280
+We are rendering a simple text which is showing first text is pixel, second text is wall.
+
+00:04:53.560 --> 00:04:56.940
+The moment I save it, this is how they look.
+
+00:04:57.259 --> 00:04:58.300
+A pixel wall.
+
+00:04:58.301 --> 00:04:58.419
+Wall.
+
+00:04:58.500 --> 00:05:01.240
+Okay, you can definitely change the name you want it to have.
+
+00:05:01.620 --> 00:05:02.020
+Nice.
+
+00:05:02.440 --> 00:05:06.440
+And the second thing that I wanted to have is the search bar.
+
+00:05:07.699 --> 00:05:12.539
+So for that what I will do, I can simply come into here and then I can again open one view.
+
+00:05:13.820 --> 00:05:19.980
+This view is going to contain the style and then I will say what styles dot search container
+
+00:05:21.400 --> 00:05:27.200
+and this search container is going to first of all show us the icons.
+
+00:05:28.040 --> 00:05:33.120
+So let me just grab the ions icon basically, ion icon.
+
+00:05:33.260 --> 00:05:34.640
+Let me just import them.
+
+00:05:34.900 --> 00:05:41.820
+Okay, so this is your IN icon that icons that will come from expo vector icons.
+
+00:05:43.320 --> 00:05:44.860
+Okay, nice.
+
+00:05:45.300 --> 00:05:50.419
+Then, then I wanted to show first of all my search icon here.
+
+00:05:50.940 --> 00:05:54.400
+So let me show that the moment I save it.
+
+00:05:54.539 --> 00:05:57.400
+Okay, so yes, this is how this view will look.
+
+00:05:57.840 --> 00:06:01.000
+This is a search container that have icon.
+
+00:06:01.200 --> 00:06:10.700
+here, perfect and after this definitely I can have one text input, this text input is
+
+00:06:10.701 --> 00:06:17.720
+going to first of all have a style of styles.input search, okay and yes I can definitely write
+
+00:06:17.721 --> 00:06:23.300
+here but it's okay, I don't need it, let me simply say done, we have a bunch of other
+
+00:06:23.301 --> 00:06:31.180
+components as well, name is keyboard, avoiding view, lot of things but for now, let me just
+
+00:06:31.181 --> 00:06:36.240
+Let me coming to here then in same way we can have a placeholder placeholder is search
+
+00:06:36.280 --> 00:06:44.620
+wallpapers and then we can have a placeholder text color that is equals to colors dot text
+
+00:06:44.621 --> 00:06:45.300
+secondary.
+
+00:06:45.700 --> 00:06:52.340
+Then, we can have the value, the value is equals to the query, this is a state variable
+
+00:06:52.440 --> 00:06:55.500
+that do not exist right now, we will fix it in a while.
+
+00:06:56.060 --> 00:07:02.860
+In same way, we can have onChangeText, this is equals to setQuery, okay.
+
+00:07:03.060 --> 00:07:09.200
+And then we can have onSubmitEditing, which will have a handleSearch function, which we
+
+00:07:09.201 --> 00:07:10.100
+do not have again.
+
+00:07:10.600 --> 00:07:16.160
+And return key type is search, nice.
+
+00:07:17.080 --> 00:07:23.740
+And then if the query length is greater than 0, then I also wanted to show a cross icon.
+
+00:07:24.740 --> 00:07:25.340
+Ok.
+
+00:07:25.400 --> 00:07:30.020
+So, first of all, sorry, let me first of all import my pressable.
+
+00:07:30.500 --> 00:07:36.080
+And let just move ahead and initialize this state variables.
+
+00:07:36.840 --> 00:07:43.700
+So the name of the state variable is simple which is name as query and set query.
+
+00:07:45.120 --> 00:07:50.520
+And we can even have search query and set search query like this.
+
+00:07:52.000 --> 00:07:53.960
+And handle search do not exist.
+
+00:07:54.160 --> 00:07:55.880
+Let me just make it in a while.
+
+00:07:55.980 --> 00:07:57.980
+So handle search is very simple.
+
+00:07:58.500 --> 00:08:04.420
+This handle search will going to call a cert search query and passing the query.
+
+00:08:04.800 --> 00:08:05.040
+Okay.
+
+00:08:05.520 --> 00:08:09.160
+So now you can see that this is the cross icon what I am talking about.
+
+00:08:09.960 --> 00:08:11.560
+Okay so it looks good.
+
+00:08:11.860 --> 00:08:12.300
+Nice.
+
+00:08:12.920 --> 00:08:18.880
+So now you guys can see that we have search bar as well.
+
+00:08:19.160 --> 00:08:19.600
+Perfect.
+
+00:08:20.300 --> 00:08:25.880
+Out of this search bar now what I can do I can even show the bunch of actions we can
+
+00:08:25.881 --> 00:08:26.540
+have yet.
+
+00:08:26.900 --> 00:08:32.299
+Okay, but before that, let me just add here one to do.
+
+00:08:32.919 --> 00:08:37.919
+The to do will show all the actions we have related to the headers, but not now.
+
+00:08:38.100 --> 00:08:39.480
+For now, we are good to go.
+
+00:08:40.720 --> 00:08:45.740
+Now let me come outside of this and then I will have the another.
+
+00:08:45.800 --> 00:08:54.080
+view component, this view component will going to have a style, this is your styles.content
+
+00:08:54.420 --> 00:08:57.339
+not container actually content.
+
+00:08:58.100 --> 00:09:07.120
+Let me save it and inside this styles I wanted to show the list that I have, so for this
+
+00:09:07.180 --> 00:09:13.440
+we have very amazing list, but for that we need to install one external react native
+
+00:09:13.441 --> 00:09:14.100
+library.
+
+00:09:14.500 --> 00:09:24.600
+So, for that you can simply hit one at at the rate react native S E O U L slash M A
+
+00:09:24.601 --> 00:09:28.000
+S O mentionary list.
+
+00:09:29.540 --> 00:09:29.860
+Okay.
+
+00:09:30.480 --> 00:09:32.160
+Let me install it.
+
+00:09:33.060 --> 00:09:33.320
+Alright.
+
+00:09:33.321 --> 00:09:36.420
+So, in less than seven second, we have installed it successfully.
+
+00:09:37.200 --> 00:09:40.860
+And then let me import the component we have installed.
+
+00:09:40.980 --> 00:09:42.720
+This is a third party library component.
+
+00:09:44.460 --> 00:09:50.240
+And, this component will actually going to render us the content that we wanted to show.
+
+00:09:51.060 --> 00:09:52.040
+Okay, no problem.
+
+00:09:52.680 --> 00:09:55.200
+But, there is lot of things to show.
+
+00:09:55.520 --> 00:09:58.260
+So before that, let me tell you something.
+
+00:09:58.540 --> 00:10:01.180
+Let me just coming to here and what I will do.
+
+00:10:01.200 --> 00:10:03.800
+I will have a bunch of state variables.
+
+00:10:04.460 --> 00:10:10.540
+Okay, so this is the three state variables that we need a wallpaper, a loading and a
+
+00:10:10.541 --> 00:10:15.160
+page just for pagination purpose and we can say kind of infinite scrolling.
+
+00:10:16.040 --> 00:10:19.840
+Then we can even add a category color and filter and selected image.
+
+00:10:19.880 --> 00:10:22.880
+Let me add all the state variables that I need.
+
+00:10:23.120 --> 00:10:24.980
+Okay, so this bunch of state variables.
+
+00:10:26.540 --> 00:10:31.020
+Now, let us create one function name as load wallpaper.
+
+00:10:31.840 --> 00:10:35.180
+Wallpapers, they are going to use the use callback function.
+
+00:10:35.500 --> 00:10:36.820
+Then we have a sync.
+
+00:10:37.680 --> 00:10:44.780
+Reset is equals to false initially and then inside this we are going to have empty dependency.
+
+00:10:46.420 --> 00:10:46.700
+Alright.
+
+00:10:46.701 --> 00:10:52.940
+So, inside this function first thing what I will do if we are into the loading state
+
+00:10:53.600 --> 00:11:00.940
+Then simply return from here need not to do anything otherwise simply say set loading
+
+00:11:00.980 --> 00:11:09.220
+as true perfect and then what I will do I can say next page is equals to reset if the
+
+00:11:09.221 --> 00:11:14.079
+value is reset is true then simply say one otherwise whatever the page value add one
+
+00:11:14.080 --> 00:11:14.600
+into it.
+
+00:11:14.601 --> 00:11:18.920
+So, basically we wanted to fetch the net next set of data.
+
+00:11:19.100 --> 00:11:22.759
+At once we are if I am not wrong we are fetching the 20 images.
+
+00:11:23.079 --> 00:11:26.920
+So after that 20 images I wanted to fetch the next 20 images.
+
+00:11:28.579 --> 00:11:33.680
+Okay and then just to get the new wallpaper what you can do you can simply say const new
+
+00:11:34.360 --> 00:11:36.120
+wallpapers is equals to await.
+
+00:11:37.580 --> 00:11:44.220
+fetch wallpapers method from the pixave service and then first thing is the search query,
+
+00:11:45.440 --> 00:11:50.640
+second thing is the category, third thing is the color, fourth thing is the next page.
+
+00:11:51.980 --> 00:11:58.620
+Okay, then what I will do, let me tell you, a simple handling I can say if the reset is
+
+00:11:58.621 --> 00:12:00.820
+true then simply do what?
+
+00:12:01.320 --> 00:12:04.520
+Set wallpaper as the new wallpaper which is coming.
+
+00:12:05.000 --> 00:12:06.620
+No problem.
+
+00:12:07.900 --> 00:12:13.060
+Otherwise, what you will do you can simply say set page and the value of set page is
+
+00:12:13.061 --> 00:12:13.320
+1.
+
+00:12:13.460 --> 00:12:18.800
+Basically, we are fetching the first 20 images.
+
+00:12:20.200 --> 00:12:24.200
+Basically, we are setting the first 20 images and let me just fix the.
+
+00:12:24.700 --> 00:12:30.100
+So, I can first of all say they are going to return as the promise, which is the type
+
+00:12:31.200 --> 00:12:35.480
+of pixabay image and something like this.
+
+00:12:35.700 --> 00:12:36.980
+Hopefully, I am right.
+
+00:12:38.780 --> 00:12:39.080
+Okay.
+
+00:12:39.081 --> 00:12:41.720
+So, why this is not returning the data?
+
+00:12:43.200 --> 00:12:46.000
+Okay, I got it.
+
+00:12:46.500 --> 00:12:51.320
+Function lack ending return statement return type does not include undefined.
+
+00:12:59.780 --> 00:13:01.680
+What I can do?
+
+00:13:03.540 --> 00:13:11.160
+So for now what I will do let me simply say any we cannot write any like this.
+
+00:13:11.380 --> 00:13:12.920
+So let me just leave it for now.
+
+00:13:13.240 --> 00:13:18.920
+Let us just be with it and what I will do I will simply add here exclamation mark.
+
+00:13:19.050 --> 00:13:20.200
+So this is fine.
+
+00:13:20.460 --> 00:13:20.840
+Cool.
+
+00:13:21.680 --> 00:13:27.620
+Otherwise, if we if the reset is equals to false, so this means we wanted to fetch the
+
+00:13:27.621 --> 00:13:29.080
+next set of data.
+
+00:13:29.780 --> 00:13:50.980
+So for that I can simply say const wallpapers, let me get all the previous values then I
+
+00:13:50.981 --> 00:13:51.001
+existing IDs then I can say let's create a new set whatever the previous data simply
+
+00:13:51.002 --> 00:13:52.959
+map over it get the picks and then map it with the ID so that we can have the unique
+
+00:13:52.960 --> 00:13:53.759
+set of data.
+
+00:13:54.400 --> 00:14:04.720
+Then, what I will do I can say unionique new is equals to new wallpapers dot filter p,
+
+00:14:05.960 --> 00:14:10.280
+filter all of them which is not inside the existing IDs, simple.
+
+00:14:10.940 --> 00:14:15.220
+This is how we will get the existing IDs has this ID.
+
+00:14:15.400 --> 00:14:23.820
+Okay, and then simply return all the previous data we have and all the unique new that we
+
+00:14:23.821 --> 00:14:24.020
+have.
+
+00:14:25.360 --> 00:14:28.340
+Okay, so hopefully this will work nice.
+
+00:14:28.870 --> 00:14:30.700
+So now we have all the new data.
+
+00:14:31.440 --> 00:14:35.220
+Then what I will do outside of this, I will set the page.
+
+00:14:35.700 --> 00:14:42.520
+to the next page value this means 1, 1 to 2, 2 to 3, 4, 5 something like this and then
+
+00:14:42.521 --> 00:14:50.540
+I outside of this I can simply say set loading as false and then we can add the dependency
+
+00:14:51.140 --> 00:14:57.960
+as page search query category, color basically sorry and then loading.
+
+00:15:00.380 --> 00:15:07.259
+And what we will do, we will simply use here a use effect, because initially we wanted
+
+00:15:07.279 --> 00:15:08.399
+to show some data.
+
+00:15:09.000 --> 00:15:13.459
+So that's why we need to call this use effect.
+
+00:15:13.899 --> 00:15:19.740
+Let's add the dependency search query category and then the color.
+
+00:15:20.000 --> 00:15:27.400
+Okay, and then I will simply call this load wallpapers method and initially let me simply
+
+00:15:27.401 --> 00:15:28.180
+say this as true.
+
+00:15:29.820 --> 00:15:37.580
+Okay, and one last thing that is one component name as render item.
+
+00:15:38.280 --> 00:15:44.040
+Render item is going to accept the item and the index of it which is the type of item
+
+00:15:44.080 --> 00:15:48.400
+of any and then i of as number.
+
+00:15:50.279 --> 00:15:53.199
+Then, I will simply open it.
+
+00:15:54.160 --> 00:15:58.100
+And then inside this, I will simply say image card.
+
+00:15:59.240 --> 00:15:59.540
+Nice.
+
+00:15:59.699 --> 00:16:04.100
+And now you might be thinking from where this image card component will come.
+
+00:16:04.339 --> 00:16:06.860
+So let me just copy and paste the image card.
+
+00:16:07.620 --> 00:16:12.139
+Let me close everything and at the top of it, I can simply create components.
+
+00:16:12.600 --> 00:16:18.319
+They are going to accept image card dot TSX.
+
+00:16:18.800 --> 00:16:20.540
+Let me paste the entire component.
+
+00:16:20.680 --> 00:16:21.880
+This is just a UI thing.
+
+00:16:22.040 --> 00:16:26.980
+They are accepting item on press and the optional style.
+
+00:16:27.519 --> 00:16:30.500
+And then we are getting the aspect ratio from it.
+
+00:16:30.900 --> 00:16:34.080
+And then we are basically rendering that image.
+
+00:16:34.860 --> 00:16:35.460
+Okay.
+
+00:16:35.520 --> 00:16:40.700
+By on the basis of the aspect ratio we have and then bunch of design that we have.
+
+00:16:41.500 --> 00:16:42.100
+Okay.
+
+00:16:42.440 --> 00:16:44.780
+Then let me import my image card component.
+
+00:16:45.180 --> 00:16:50.060
+This image card component and make sure you are implicit returning this.
+
+00:16:50.600 --> 00:16:58.500
+They are going to have the item something like this then we have on press I wanted to
+
+00:16:58.501 --> 00:17:05.280
+do what set selected item and set selected image equal to the item so that in future
+
+00:17:05.319 --> 00:17:11.799
+I can open the preview model as well and then what I will do margin left will depend on
+
+00:17:11.839 --> 00:17:14.980
+whatever the index modulus of 2.
+
+00:17:15.140 --> 00:17:17.480
+If it's equal to equal to zero.
+
+00:17:19.359 --> 00:17:22.900
+Then simply add 0 otherwise at 12.
+
+00:17:22.940 --> 00:17:26.619
+We are basically adding the gap to the right column, something like that.
+
+00:17:27.780 --> 00:17:29.540
+Okay, and let's move ahead.
+
+00:17:29.640 --> 00:17:32.080
+Hopefully this will work.
+
+00:17:33.320 --> 00:17:41.420
+Inside this content, let me just simply come into here and I will use my masonry list.
+
+00:17:42.340 --> 00:17:44.000
+So let me get that.
+
+00:17:44.200 --> 00:17:47.799
+Where is the masonry list component?
+
+00:17:48.240 --> 00:17:48.380
+Okay.
+
+00:17:48.460 --> 00:17:50.500
+Let me import it once again.
+
+00:17:51.299 --> 00:17:52.260
+All right.
+
+00:17:54.519 --> 00:18:02.240
+And let me come into here and then let me simply say this as masonry.
+
+00:18:02.279 --> 00:18:05.440
+I hope I'm pronouncing this right.
+
+00:18:08.559 --> 00:18:12.639
+Mascinary list, ok, then they are going to accept a lot of things.
+
+00:18:13.220 --> 00:18:17.820
+So first thing is they are going to accept the data, no problem, let me give the data,
+
+00:18:18.039 --> 00:18:24.240
+then second thing is the key extractor, no problem, number of columns, 2, I think this
+
+00:18:24.241 --> 00:18:31.019
+is fine, then content container style is equals to list content, wanted to show the vertical
+
+00:18:31.020 --> 00:18:32.399
+indicators? Nope.
+
+00:18:33.800 --> 00:18:36.380
+Render item, yep, we have a render item.
+
+00:18:36.820 --> 00:18:42.280
+Now if I save it and yes, we are loading it and look at that.
+
+00:18:42.880 --> 00:18:50.060
+This is all the item we are getting and in one basically you can say that in one row
+
+00:18:50.061 --> 00:18:52.180
+we are only showing the two things.
+
+00:18:52.320 --> 00:18:53.920
+So basically we have column of two.
+
+00:18:54.140 --> 00:18:55.580
+What if I make this of 3?
+
+00:18:55.800 --> 00:19:00.240
+So, they are trying to show that into three, but you can see that not looks that good.
+
+00:19:00.620 --> 00:19:01.580
+So, two is fine.
+
+00:19:01.960 --> 00:19:02.140
+Perfect.
+
+00:19:02.200 --> 00:19:04.940
+They look nice and yep, amazing.
+
+00:19:05.160 --> 00:19:08.820
+And you can see at once we are only fetching the 20 images.
+
+00:19:09.020 --> 00:19:14.660
+So, we definitely need to do what we need to do is on and reach.
+
+00:19:14.840 --> 00:19:17.100
+Yes, whenever we reach onto the end.
+
+00:19:17.300 --> 00:19:25.180
+I wanted to simply say load wallpapers and mark this reset as false so that we can fetch
+
+00:19:25.181 --> 00:19:27.640
+the next set of data as well.
+
+00:19:27.700 --> 00:19:28.600
+Yes, look at that.
+
+00:19:29.120 --> 00:19:34.680
+This is how now we are fetching the next set of data and then what we can even give the
+
+00:19:34.681 --> 00:19:38.680
+threshold is equals to 0.5.
+
+00:19:39.000 --> 00:19:47.600
+So, this equals to 0.5 and we can even have a list footer component that will kind of
+
+00:19:47.601 --> 00:19:52.240
+show a loader so that we can see that ok now we are getting the next set of data.
+
+00:19:53.180 --> 00:19:59.300
+So, I can simply show the list footer component let me import the activity indicator and let
+
+00:19:59.301 --> 00:20:03.680
+me save it and if I go to the very bottom of it.
+
+00:20:04.260 --> 00:20:05.620
+Hopefully, I will get it.
+
+00:20:05.720 --> 00:20:07.480
+Okay, I'm just getting look at that.
+
+00:20:07.740 --> 00:20:13.159
+This is all the images we are basically rendering and able to get cool.
+
+00:20:14.919 --> 00:20:19.019
+Definitely this will beautifully we have made it nice.
+
+00:20:19.620 --> 00:20:23.779
+Okay, let's move ahead and then what I will do if we don't have any component, then I
+
+00:20:23.780 --> 00:20:24.860
+will simply show.
+
+00:20:25.300 --> 00:20:31.680
+Like, how list empty component will look if we are not into loading state and the wallpapers
+
+00:20:31.700 --> 00:20:39.460
+length is 0 then I wanted to show what a image and then a text with no wallpaper found ok
+
+00:20:39.620 --> 00:20:42.600
+and then refreshing will basically equal to.
+
+00:20:44.760 --> 00:20:51.720
+loading and wallpaper length if it's zero and then what I will do on refresh I can simply
+
+00:20:51.721 --> 00:20:58.779
+say what load wallpaper and then simply make reset as true.
+
+00:20:59.519 --> 00:21:03.860
+Okay, so if I just try to refresh it now you will see we are I think only able to show
+
+00:21:03.861 --> 00:21:07.779
+the first 20 and whatever all the images we are getting it nice.
+
+00:21:08.760 --> 00:21:09.240
+Perfect.
+
+00:21:10.659 --> 00:21:12.139
+Now what is the next step?
+
+00:21:12.799 --> 00:21:16.080
+Next step is to add all the actions that we wanted to have here.
+
+00:21:16.279 --> 00:21:16.460
+Okay.
+
+00:21:16.519 --> 00:21:19.559
+Let's move ahead and start adding the actions.
+
+00:21:20.519 --> 00:21:26.059
+So the first action that I wanted to have after my this search query.
+
+00:21:26.320 --> 00:21:26.639
+Okay.
+
+00:21:26.720 --> 00:21:27.559
+Let me try to search.
+
+00:21:27.639 --> 00:21:29.440
+Is this going to work or not right now?
+
+00:21:29.441 --> 00:21:30.720
+I don't think so.
+
+00:21:31.360 --> 00:21:36.779
+But let me try to say let me if I search for car and hit this and yes look at that they
+
+00:21:36.780 --> 00:21:37.320
+are working.
+
+00:21:37.600 --> 00:21:40.179
+This is how the car will going to show.
+
+00:21:40.320 --> 00:21:40.559
+Okay.
+
+00:21:41.000 --> 00:21:42.299
+Let me going to search for coding.
+
+00:21:43.000 --> 00:21:44.700
+If I search for coding, look at that.
+
+00:21:44.780 --> 00:21:46.559
+All the images related to coding.
+
+00:21:46.679 --> 00:21:51.179
+And I hope you guys able to see the interactivity indicator as well.
+
+00:21:51.799 --> 00:21:53.059
+Amazing, amazing job.
+
+00:21:53.440 --> 00:21:58.400
+Let's move ahead and import implement a bunch of other things as well.
+
+00:21:59.300 --> 00:22:06.800
+So, after this query that we have, I basically wanted to show what, let me just come out
+
+00:22:06.801 --> 00:22:16.500
+of it, let me create one more new view, this view is the type style, I can simply show
+
+00:22:16.501 --> 00:22:18.140
+is as styles dot.
+
+00:22:19.800 --> 00:22:27.640
+header actions, ok, nice and this header actions first thing they are going to have a refresh
+
+00:22:27.641 --> 00:22:34.560
+button so that you can just directly refresh from here, ok, nice and then we have another
+
+00:22:34.720 --> 00:22:41.500
+pressable that is of home that will basically reset everything, ok and we can say that,
+
+00:22:42.260 --> 00:22:47.600
+load wallpaper method will triggered by use effect because we are definitely changing
+
+00:22:47.620 --> 00:22:48.200
+the states.
+
+00:22:48.780 --> 00:22:50.700
+So, let me just simply paste it.
+
+00:22:51.250 --> 00:22:55.300
+So, now you can see that we have a home the moment I press on home because I am already
+
+00:22:55.301 --> 00:22:55.700
+on home.
+
+00:22:55.701 --> 00:22:57.300
+So, this is how they are showing to us.
+
+00:22:57.560 --> 00:23:01.940
+We are just resetting all the queries, all the search queries, all the category, all
+
+00:23:01.941 --> 00:23:02.440
+the colors.
+
+00:23:03.000 --> 00:23:03.400
+Nice.
+
+00:23:03.880 --> 00:23:04.120
+Perfect.
+
+00:23:05.360 --> 00:23:12.440
+And, after this one last thing that is basically first of all let me come out of this view
+
+00:23:12.720 --> 00:23:16.680
+and yes out of this view I wanted to have one pressable.
+
+00:23:18.260 --> 00:23:21.680
+This pressable will going to contain a bunch of things.
+
+00:23:21.940 --> 00:23:24.240
+So first thing is they are going to have a style.
+
+00:23:24.600 --> 00:23:33.440
+Style is now going to be an array, first is simple styles.filterButton, second thing is
+
+00:23:33.441 --> 00:23:42.299
+depend on the if we have category or we have a color then simply do what styles.filterButton
+
+00:23:42.500 --> 00:23:42.760
+active.
+
+00:23:43.400 --> 00:23:47.200
+Okay, and then simply show the icon of filter.
+
+00:23:47.480 --> 00:23:47.900
+Easy.
+
+00:23:48.720 --> 00:23:49.480
+Let me save it.
+
+00:23:49.520 --> 00:23:54.980
+So this is how and the moment when I click on this filter, I wanted to show here a filter
+
+00:23:54.981 --> 00:23:57.260
+model, but that will implement in next chapter.
+
+00:23:57.980 --> 00:24:00.560
+So for now, this is how my application is look.
+
+00:24:00.720 --> 00:24:02.820
+I think this already look pretty amazing.
+
+00:24:03.840 --> 00:24:04.120
+Perfect.
+
+00:24:04.660 --> 00:24:09.620
+So with this, this is the end of chapter number two and see you next time.
+

@@ -1,0 +1,500 @@
+1
+00:00:00,560 --> 00:00:09,240
+Alright everyone and welcome to one more new chapter. In this chapter we are actually going to create and run a cloud build for our Android application.
+
+2
+00:00:10,220 --> 00:00:16,059
+So definitely in this chapter we will create a development build that can run on Android with EIS build.
+
+3
+00:00:16,400 --> 00:00:24,140
+Perfect, so for that simple you just simply click coming to inside this learn and you
+
+4
+00:00:24,220 --> 00:00:27,480
+will find ES tutorial and Android development build.
+
+5
+00:00:28,220 --> 00:00:34,220
+Perfect, so for Android the development must be in APK very important point otherwise you
+
+6
+00:00:34,221 --> 00:00:36,280
+will get confused in upcoming chapters.
+
+7
+00:00:36,600 --> 00:00:42,800
+So for Android, whenever you are creating a development build, in that case, you need
+
+8
+00:00:42,899 --> 00:00:50,280
+an APK because APK is the only format that are supported inside the iOS, I'm not not
+
+9
+00:00:50,281 --> 00:00:52,059
+I was sorry inside the Android.
+
+10
+00:00:52,900 --> 00:00:57,820
+So, while the default Android format is ABB, double AB.
+
+11
+00:00:58,070 --> 00:01:06,800
+So, this double AB, this AAB is actually ideal for Google Play Store distribution, got it?
+
+12
+00:01:07,740 --> 00:01:10,800
+It can't be installed on device or emulator.
+
+13
+00:01:11,000 --> 00:01:18,400
+So, to create a dot apk in ESJSON make sure the development client is set to true and
+
+14
+00:01:18,520 --> 00:01:24,780
+we know that inside the ESJSON we already have development client as true, very good.
+
+15
+00:01:25,360 --> 00:01:26,740
+Then run this command.
+
+16
+00:01:26,741 --> 00:01:28,060
+So, simply copy this one.
+
+17
+00:01:28,350 --> 00:01:28,640
+All right.
+
+18
+00:01:29,300 --> 00:01:33,520
+And let's try to understand this command first, then we are going to run it.
+
+19
+00:01:33,980 --> 00:01:40,740
+So yes, build hyphen hyphen platform, you can tell for which platform you wanted to build
+
+20
+00:01:40,860 --> 00:01:42,620
+this and then a profile.
+
+21
+00:01:43,160 --> 00:01:47,400
+So how many profile we have, we have development profile, we have preview profile and then
+
+22
+00:01:47,480 --> 00:01:48,820
+we have a production profile.
+
+23
+00:01:49,420 --> 00:01:53,220
+But for now, we wanted to create for a development profile.
+
+24
+00:01:53,360 --> 00:01:54,560
+So let me just paste this.
+
+25
+00:01:55,100 --> 00:01:55,640
+No problem.
+
+26
+00:01:56,300 --> 00:02:04,300
+EAS build hyphen hyphen platform Android and profile as development and the moment I hit
+
+27
+00:02:04,400 --> 00:02:12,100
+this so this command prompt us with the following question what would you like your Android application
+
+28
+00:02:12,340 --> 00:02:16,460
+ID to be so you can just simply give ID just happened.
+
+29
+00:02:18,820 --> 00:02:22,580
+Expo, Graph, API is my internet is not working.
+
+30
+00:02:22,960 --> 00:02:23,900
+I think yes.
+
+31
+00:02:24,600 --> 00:02:24,860
+All right.
+
+32
+00:02:24,940 --> 00:02:27,320
+So now let me retry to run this.
+
+33
+00:02:27,720 --> 00:02:33,460
+So es-bit platform android and hyphen hyphen profile development.
+
+34
+00:02:34,200 --> 00:02:34,320
+Cool.
+
+35
+00:02:35,140 --> 00:02:37,760
+So let me just open this in a full screen for now.
+
+36
+00:02:38,200 --> 00:02:43,560
+So, the first thing that is coming is Android application ID.
+
+37
+00:02:43,780 --> 00:02:46,560
+So, what would you like your Android application ID to be?
+
+38
+00:02:47,099 --> 00:02:49,040
+Just simply press on tap.
+
+39
+00:02:49,540 --> 00:02:51,019
+This is what I wanted to name it.
+
+40
+00:02:53,140 --> 00:02:55,959
+Then all right, so generate a new key store.
+
+41
+00:02:56,019 --> 00:02:58,880
+So, this is already handled by ES build by itself.
+
+42
+00:02:59,860 --> 00:03:01,340
+So, now let's just wait for it.
+
+43
+00:03:01,800 --> 00:03:08,040
+And now you can see that they are basically compressing my project, uploading to AS build
+
+44
+00:03:08,620 --> 00:03:11,460
+and yes, now you have to wait for few minutes.
+
+45
+00:03:11,630 --> 00:03:16,520
+It can take some time like five minutes, sometime 10 minutes as well.
+
+46
+00:03:17,280 --> 00:03:19,560
+And so yes, we definitely need to wait for it.
+
+47
+00:03:19,900 --> 00:03:25,260
+And you can see that we are still in progress and the moment I click it and open this.
+
+48
+00:03:25,700 --> 00:03:30,640
+So you will see all the build details like what is happening, what are all the steps
+
+49
+00:03:31,280 --> 00:03:36,959
+like waiting to start spinning the build environment, prepare the project, read ESJSON, reading
+
+50
+00:03:37,079 --> 00:03:43,739
+the package JSON, installing all the dependencies, reading the app configuration, running expo
+
+51
+00:03:43,740 --> 00:03:46,239
+doctor that's fine then we have pre-build
+
+52
+00:03:46,800 --> 00:03:52,720
+Restore caching and prepare credentials and now they are basically running this.
+
+53
+00:03:53,000 --> 00:03:53,080
+Cool.
+
+54
+00:03:53,081 --> 00:03:57,780
+So you can definitely wait for few seconds and you can see that right now it's been
+
+55
+00:03:57,860 --> 00:04:00,280
+12 minutes and we are still building it.
+
+56
+00:04:00,720 --> 00:04:00,880
+Cool.
+
+57
+00:04:01,140 --> 00:04:03,280
+So let me just wait for few minutes as well.
+
+58
+00:04:03,800 --> 00:04:10,560
+And finally, you can see that we are getting install and run Android build on an emulator.
+
+59
+00:04:10,700 --> 00:04:13,280
+Definitely we would don't want it to run this on emulator.
+
+60
+00:04:13,790 --> 00:04:15,720
+So for now you can simply say no.
+
+61
+00:04:16,630 --> 00:04:16,820
+Easy.
+
+62
+00:04:17,060 --> 00:04:17,320
+Nice.
+
+63
+00:04:17,700 --> 00:04:19,339
+Below this you will find a link.
+
+64
+00:04:19,920 --> 00:04:20,459
+Press over it.
+
+65
+00:04:20,700 --> 00:04:27,820
+Nice. Let me open this. Cool. So after opening this, you will find, let me take you towards
+
+66
+00:04:27,920 --> 00:04:33,900
+this. Nice. So you will see two things. One is the install and another is the open with
+
+67
+00:04:34,160 --> 00:04:38,220
+orbit. And if you just simply press on install.
+
+68
+00:04:38,700 --> 00:04:41,360
+You will find a QR code.
+
+69
+00:04:42,220 --> 00:04:42,360
+Cool.
+
+70
+00:04:42,540 --> 00:04:46,100
+So let me just open my camera and try to run this out.
+
+71
+00:04:46,240 --> 00:04:46,400
+Cool.
+
+72
+00:04:46,640 --> 00:04:49,380
+So let me just press this open export app.
+
+73
+00:04:49,480 --> 00:04:56,300
+So this is basically going to open this inside my Android application and yes, we can simply
+
+74
+00:04:56,380 --> 00:04:58,100
+say allow and press on install.
+
+75
+00:04:58,940 --> 00:05:01,440
+So this is going to install the APK.
+
+76
+00:05:01,760 --> 00:05:02,480
+Yes, look at that.
+
+77
+00:05:02,640 --> 00:05:04,400
+Right now we are installing the APK.
+
+78
+00:05:04,900 --> 00:05:10,540
+So, right now this is basically going to install downloading the file and one more thing Android
+
+79
+00:05:10,740 --> 00:05:10,960
+builds.
+
+80
+00:05:11,270 --> 00:05:16,520
+So, whenever we are installing the development build their size is big because they are not
+
+81
+00:05:17,080 --> 00:05:19,699
+ready to go in production whenever you create.
+
+82
+00:05:20,400 --> 00:05:25,180
+A production build their size is very low so don't worry about it cool.
+
+83
+00:05:25,300 --> 00:05:30,979
+So for now I can simply go to the downloads and this is the file we have downloaded I
+
+84
+00:05:31,000 --> 00:05:37,600
+can simply come into here and say install so right now we are installing a module 10.
+
+85
+00:05:38,000 --> 00:05:42,700
+Cool, so definitely let me just wait for few seconds and look at that.
+
+86
+00:05:43,280 --> 00:05:48,440
+Now they are saying app installed and the moment I press on open you will find something
+
+87
+00:05:48,540 --> 00:05:49,120
+like this UI.
+
+88
+00:05:49,280 --> 00:06:07,980
+So as I told you, development build means creating your own expo go like, ah, you know
+
+89
+00:06:07,981 --> 00:06:08,001
+So, what you will do now, you can simply say 1x expo start and the moment what they are
+
+90
+00:06:08,002 --> 00:06:08,022
+saying is already in use.
+
+91
+00:06:08,220 --> 00:06:12,260
+So, I can definitely close this, let me close this, let me rerun it.
+
+92
+00:06:12,580 --> 00:06:13,900
+So, 1x expo start.
+
+93
+00:06:14,300 --> 00:06:19,819
+And interestingly, right now they are showing us the development build.
+
+94
+00:06:20,379 --> 00:06:25,080
+And if I simply say A, so this is the build which is building right now.
+
+95
+00:06:25,199 --> 00:06:27,919
+So this is your development build.
+
+96
+00:06:28,419 --> 00:06:29,440
+You are opening it.
+
+97
+00:06:30,780 --> 00:06:31,919
+Debugging not working.
+
+98
+00:06:32,240 --> 00:06:33,300
+Try manually loading first.
+
+99
+00:06:33,400 --> 00:06:33,620
+All right.
+
+100
+00:06:33,699 --> 00:06:36,759
+Let me reconnect and let me start it and look at that.
+
+101
+00:06:37,099 --> 00:06:39,199
+I have reloaded it and this is.
+
+102
+00:06:39,800 --> 00:06:46,580
+Running, yes, let me show you, look at that, this is the module 10 which is not running
+
+103
+00:06:46,720 --> 00:06:52,900
+inside the expo go, this is running apart from expo go and working the same and let
+
+104
+00:06:52,940 --> 00:06:58,500
+me show you something, if I just simply go to my app, close everything, let's go to the
+
+105
+00:06:58,560 --> 00:06:58,759
+index.
+
+106
+00:07:00,479 --> 00:07:09,680
+And here instead of welcome, I say welcome to our build and now if I save it, cool.
+
+107
+00:07:10,680 --> 00:07:11,620
+Why this is not worked?
+
+108
+00:07:11,979 --> 00:07:17,139
+Maybe if I am in right thing, maybe I need to reload it once.
+
+109
+00:07:17,639 --> 00:07:18,400
+So this will work.
+
+110
+00:07:18,800 --> 00:07:24,659
+Cool. You need not to reload it every time whenever you make any changes due to some
+
+111
+00:07:24,819 --> 00:07:29,720
+issue that's why they are not working but whenever you made any changes you write anything
+
+112
+00:07:29,919 --> 00:07:35,360
+in real time you can see the output here. And yes look at that. This is what they are
+
+113
+00:07:35,419 --> 00:07:39,699
+showing. It's fine. Definitely you can change it wherever you want.
+
+114
+00:07:40,100 --> 00:07:44,960
+And, where ever you wanted to change, let's say if I just remove this hello wave, hopefully
+
+115
+00:07:45,060 --> 00:07:49,840
+this will work in real time and yes look at that, refreshing and the wave is removed
+
+116
+00:07:49,940 --> 00:07:51,300
+from here, cool.
+
+117
+00:07:51,680 --> 00:07:59,040
+So, this is the power of development build, now what you can do, you can use any, yes
+
+118
+00:07:59,160 --> 00:08:00,920
+You can use any of the
+
+119
+00:08:01,300 --> 00:08:03,919
+packages which is available inside that.
+
+120
+00:08:03,990 --> 00:08:09,379
+So from next chapter we will see that but more things to cover inside this and then
+
+121
+00:08:09,440 --> 00:08:10,900
+we will end this entire module.
+
+122
+00:08:11,389 --> 00:08:16,860
+And once again after completing all the projects when we come into the actual deployment part
+
+123
+00:08:17,000 --> 00:08:21,960
+where I will show you how you can deploy your application to the Play Store then you will
+
+124
+00:08:21,979 --> 00:08:23,780
+learn lot more other thing as well.
+
+125
+00:08:24,560 --> 00:08:28,840
+So this is pretty much it for this chapter and see you next time.
+

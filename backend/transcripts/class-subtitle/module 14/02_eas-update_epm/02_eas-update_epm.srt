@@ -1,0 +1,1460 @@
+1
+00:00:00,000 --> 00:00:03,720
+Alright, beautiful people, welcome to one more new section.
+
+2
+00:00:03,900 --> 00:00:09,160
+In this section, we will basically going to talk about that how you can publish your application
+
+3
+00:00:09,161 --> 00:00:11,360
+to the Play Store or App Store.
+
+4
+00:00:11,600 --> 00:00:11,880
+Perfect.
+
+5
+00:00:12,180 --> 00:00:15,840
+So in this specific section, we'll actually going to learn about.
+
+6
+00:00:15,841 --> 00:00:17,340
+What is EAS update?
+
+7
+00:00:17,660 --> 00:00:19,080
+What is EAS workflows?
+
+8
+00:00:19,300 --> 00:00:20,520
+What is EAS submit?
+
+9
+00:00:21,020 --> 00:00:26,500
+Along with that we are also going to see that how you can create the production build of
+
+10
+00:00:26,501 --> 00:00:27,580
+your any application.
+
+11
+00:00:27,640 --> 00:00:33,580
+We will take some sort of any example application and how you can take that application to the
+
+12
+00:00:33,581 --> 00:00:34,040
+play store.
+
+13
+00:00:34,379 --> 00:00:39,120
+So that is going to be the complete goal of this entire specific section that we will
+
+14
+00:00:39,140 --> 00:00:40,059
+going to learn.
+
+15
+00:00:40,300 --> 00:00:45,579
+So, this is going to be the chapter number one of this section and in this section specifically
+
+16
+00:00:45,620 --> 00:00:49,620
+we will going to basically talk about the EAS update.
+
+17
+00:00:50,100 --> 00:00:50,320
+Perfect.
+
+18
+00:00:50,321 --> 00:00:53,800
+So, the first thing that we wanted to learn is EAS update.
+
+19
+00:00:53,980 --> 00:00:57,980
+So for that this is the documentation that you have to search for.
+
+20
+00:00:58,140 --> 00:01:03,559
+This is your docs.expo.dev/easupdate/introduction.
+
+21
+00:01:03,600 --> 00:01:03,940
+Simple.
+
+22
+00:01:04,560 --> 00:01:04,879
+Perfect.
+
+23
+00:01:04,900 --> 00:01:07,920
+So, now what is this EAS update?
+
+24
+00:01:08,600 --> 00:01:16,560
+EAS update is a cloud service that serves update for projects using the expo update
+
+25
+00:01:16,640 --> 00:01:17,800
+library very important.
+
+26
+00:01:17,950 --> 00:01:19,140
+All right.
+
+27
+00:01:19,660 --> 00:01:21,660
+Along with that EAS update makes.
+
+28
+00:01:21,800 --> 00:01:28,860
+fixing small bugs and pushing quick fixes, a snap in between app store submissions.
+
+29
+00:01:29,000 --> 00:01:30,420
+So now what is this actually?
+
+30
+00:01:31,180 --> 00:01:33,660
+This is something known as a concept known as OTA.
+
+31
+00:01:33,880 --> 00:01:37,220
+Now what is the full form of this OTA?
+
+32
+00:01:38,820 --> 00:01:45,799
+Over the air updates, perfect, over the air updates, now this is the full form of OTA.
+
+33
+00:01:46,820 --> 00:01:51,500
+Let me try to explain you this with the help of a diagram, perfect.
+
+34
+00:01:52,259 --> 00:01:59,320
+Till now we know that like this is our application, perfect and if I wanted to publish this application
+
+35
+00:01:59,360 --> 00:02:00,320
+to my play store.
+
+36
+00:02:00,900 --> 00:02:06,480
+So, basically I have to go through with a lot of steps like I need my Google Play Console
+
+37
+00:02:06,600 --> 00:02:09,120
+ID and I can basically publish my application.
+
+38
+00:02:09,780 --> 00:02:16,260
+Now my app is onto the Play Store and if someone is basically wanted to use my app, they have
+
+39
+00:02:16,280 --> 00:02:20,600
+to install that specific application from the Play Store.
+
+40
+00:02:21,020 --> 00:02:26,920
+No problem and then and only they can basically going to use that app inside their mobile
+
+41
+00:02:26,921 --> 00:02:27,240
+phone.
+
+42
+00:02:27,780 --> 00:02:28,340
+Makes sense?
+
+43
+00:02:28,620 --> 00:02:28,880
+Perfect.
+
+44
+00:02:29,100 --> 00:02:35,640
+Now your application your mobile app let's say you have created basically a simple unit
+
+45
+00:02:35,641 --> 00:02:39,860
+converter application okay this application will basically going to convert a unit into
+
+46
+00:02:39,861 --> 00:02:47,040
+some specific unit perfect like a Fahrenheit to Celsius, Celsius to Fahrenheit, dollars
+
+47
+00:02:47,100 --> 00:02:52,660
+to rupees, rupees to dollars you got the point perfect but there is one typo mistake and
+
+48
+00:02:52,661 --> 00:02:54,860
+And that mistake is instead of offline.
+
+49
+00:02:55,000 --> 00:02:59,380
+You somehow just made a typo there with the offline.
+
+50
+00:03:00,060 --> 00:03:02,280
+Now the F, one single F is missing.
+
+51
+00:03:04,680 --> 00:03:05,620
+This is a problem.
+
+52
+00:03:06,000 --> 00:03:06,360
+Why?
+
+53
+00:03:06,520 --> 00:03:12,140
+Because now if you don't know about this OTA or this EAS update, now what you will do once
+
+54
+00:03:12,141 --> 00:03:12,480
+again?
+
+55
+00:03:12,500 --> 00:03:17,900
+You will once again going to make fixes into your source code that then you will going
+
+56
+00:03:17,901 --> 00:03:23,140
+to build your entire application that application will again go to the Play Store then Play
+
+57
+00:03:23,141 --> 00:03:29,500
+Store will take again some sort of verification time and after that user will have to again
+
+58
+00:03:29,501 --> 00:03:35,600
+update your application and then and only they can see the this type of fixes but this
+
+59
+00:03:35,601 --> 00:03:36,940
+is a very long procedure.
+
+60
+00:03:38,300 --> 00:03:41,680
+There is something unknown as EAS update exists.
+
+61
+00:03:42,100 --> 00:03:44,100
+Now what is the work of this EAS update?
+
+62
+00:03:44,780 --> 00:03:50,700
+When you have some sort of small typos and whenever you wanted to make some design changes
+
+63
+00:03:51,240 --> 00:03:57,180
+perfect and some JS specific changes you can only change only this is the limitation of
+
+64
+00:03:57,181 --> 00:03:58,660
+it and which is good thing.
+
+65
+00:03:58,661 --> 00:04:03,760
+So, let's say you just wanted to fix the typo, so what you will do instead of going through
+
+66
+00:04:03,780 --> 00:04:09,940
+this much of steps you can use something known as ES update and this ES update will directly
+
+67
+00:04:09,980 --> 00:04:17,260
+push yes this ES update will directly going to push the changes inside the installed application
+
+68
+00:04:17,320 --> 00:04:18,380
+of a user.
+
+69
+00:04:19,160 --> 00:04:25,620
+Oh, so this is known as your OTA and with the help of OTA you can bypass the play store
+
+70
+00:04:25,621 --> 00:04:26,840
+verification step.
+
+71
+00:04:28,100 --> 00:04:31,160
+Now let's move ahead and try to once again read this.
+
+72
+00:04:31,500 --> 00:04:38,080
+So ES update makes us fixing small bugs and pushing a quick fixes a snap in between app
+
+73
+00:04:38,081 --> 00:04:39,140
+store submission.
+
+74
+00:04:39,360 --> 00:04:39,560
+Perfect.
+
+75
+00:04:40,320 --> 00:04:47,020
+It accomplishes this by enabling an app update its own non-native pieces.
+
+76
+00:04:47,440 --> 00:04:48,380
+Very important point.
+
+77
+00:04:48,600 --> 00:04:55,860
+such as JavaScript, such as some sort of styling and some sort of images over the air.
+
+78
+00:04:56,080 --> 00:05:02,740
+All app that include the expo updates library have the ability to receive the updates and
+
+79
+00:05:02,760 --> 00:05:04,660
+this is how you can basically use the updates.
+
+80
+00:05:04,780 --> 00:05:09,500
+So now let me just tell you what we will basically going to do inside this lecture.
+
+81
+00:05:09,980 --> 00:05:12,340
+I have already created a application.
+
+82
+00:05:12,420 --> 00:05:12,600
+Okay.
+
+83
+00:05:14,480 --> 00:05:18,300
+sample application name of this application is unit flow.
+
+84
+00:05:19,220 --> 00:05:25,040
+So for this I have already created yes so for this I have already created one development
+
+85
+00:05:25,120 --> 00:05:29,460
+build and I hope you guys know about what is development build and I have also created
+
+86
+00:05:29,461 --> 00:05:30,880
+one preview build.
+
+87
+00:05:31,100 --> 00:05:36,760
+Perfect and this preview build is basically the type of APK.
+
+88
+00:05:37,320 --> 00:05:42,380
+Perfect so that I just don't have to once again write everything and then makes you
+
+89
+00:05:42,760 --> 00:05:48,500
+guys just wait for this application to finish their building process that is why I have
+
+90
+00:05:48,501 --> 00:05:49,520
+already prepared something.
+
+91
+00:05:50,000 --> 00:05:55,220
+And now what we will basically going to do inside this like we already have this preview
+
+92
+00:05:55,221 --> 00:06:00,160
+and development build so I'm just going to use this as an example and show you how this
+
+93
+00:06:00,180 --> 00:06:04,720
+over the top air updates and how this expo updates actually work.
+
+94
+00:06:05,540 --> 00:06:10,720
+So basically this is the name of that application I have basically created an expo application
+
+95
+00:06:10,721 --> 00:06:16,680
+services now what I'm going to do let me just simply open this current application inside
+
+96
+00:06:16,681 --> 00:06:17,240
+my cursor.
+
+97
+00:06:17,900 --> 00:06:24,540
+I'll also demonstrate everything inside one sample application so that you can also follow
+
+98
+00:06:24,780 --> 00:06:27,060
+everything step by step along with me.
+
+99
+00:06:27,720 --> 00:06:33,400
+So let it open and after that what I'll do, let me just once again also create another
+
+100
+00:06:33,419 --> 00:06:38,320
+folder and let me just name it as just say EAS Updates.
+
+101
+00:06:38,699 --> 00:06:38,960
+Perfect.
+
+102
+00:06:39,220 --> 00:06:39,320
+Anything.
+
+103
+00:06:39,380 --> 00:06:40,699
+You can name it anything you want.
+
+104
+00:06:41,300 --> 00:06:44,639
+And let me also open this inside my VS code.
+
+105
+00:06:44,700 --> 00:06:51,920
+And inside my VS code, so this is just a simple empty folder perfect and this is the complete
+
+106
+00:06:51,921 --> 00:06:54,860
+working application that we have perfect nice.
+
+107
+00:06:55,300 --> 00:07:00,240
+So the step number one that I wanted you to is to simply just again a quick disclaimer
+
+108
+00:07:00,360 --> 00:07:01,500
+I am recording this video.
+
+109
+00:07:01,700 --> 00:07:03,980
+at the very end of this entire course.
+
+110
+00:07:04,200 --> 00:07:10,440
+So till then the newest version of Expo already come which is fine I mean we can simply work
+
+111
+00:07:10,441 --> 00:07:17,540
+same with Expo as DK54, Expo as DK55 everything is same you just have to read one simple blog
+
+112
+00:07:17,580 --> 00:07:19,420
+and everything start making sense for you.
+
+113
+00:07:19,440 --> 00:07:19,680
+Perfect.
+
+114
+00:07:19,800 --> 00:07:26,280
+So for now basically what I wanted to do I wanted to create one simple Expo application.
+
+115
+00:07:26,400 --> 00:07:27,940
+So this should be Bunnex.
+
+116
+00:07:29,160 --> 00:07:31,480
+Create Expo app at the latest.
+
+117
+00:07:32,180 --> 00:07:32,460
+Perfect.
+
+118
+00:07:32,960 --> 00:07:39,300
+So when you run this command, if you are using latest version of Expo, create Expo app, then
+
+119
+00:07:39,301 --> 00:07:41,060
+you will see some differences right now.
+
+120
+00:07:41,480 --> 00:07:45,400
+I just wanted to create inside the current working directory, which is fine.
+
+121
+00:07:45,800 --> 00:07:46,660
+Now they're asking.
+
+122
+00:07:46,800 --> 00:07:52,740
+which version you wanted to use but right now I wanted to use 55 but if you are following
+
+123
+00:07:52,759 --> 00:07:58,500
+the old videos then what you can do you can even select SDK 54 which is completely fine
+
+124
+00:07:58,680 --> 00:07:59,979
+no problem in it perfect.
+
+125
+00:08:00,180 --> 00:08:05,120
+So let me just go with 55 right now because the expo go version that I have right now
+
+126
+00:08:05,319 --> 00:08:08,680
+is 55 that is why I basically wanted to go with it.
+
+127
+00:08:10,160 --> 00:08:13,680
+Alright, so installation of this application is completely done.
+
+128
+00:08:14,040 --> 00:08:14,960
+Nice, cool.
+
+129
+00:08:15,680 --> 00:08:22,020
+Now we already have this application, so let me show you the plan what we wanted to follow.
+
+130
+00:08:22,100 --> 00:08:25,500
+So just give me a minute, let me just quickly fix this.
+
+131
+00:08:25,620 --> 00:08:27,120
+Okay, yeah, cool.
+
+132
+00:08:27,200 --> 00:08:34,400
+So, if I just run this application cool let me open this and let me simply hit npx expo
+
+133
+00:08:34,401 --> 00:08:37,200
+start this is the complete application that we have.
+
+134
+00:08:37,540 --> 00:08:43,960
+So, the moment I run this application and open this application inside the expo go then
+
+135
+00:08:44,000 --> 00:08:50,980
+let me show you cool and right now instead of using development build I directly wanted
+
+136
+00:08:50,981 --> 00:08:53,720
+to use this application inside my expogo.
+
+137
+00:08:54,699 --> 00:09:03,519
+So, now this is open inside the expogo let me simply press on A and they are entering
+
+138
+00:09:07,420 --> 00:09:10,500
+this nice and then let me try to reload this.
+
+139
+00:09:10,800 --> 00:09:17,380
+And again I just don't want it to use development build actually so I have to just change the
+
+140
+00:09:17,381 --> 00:09:18,839
+build that is selected.
+
+141
+00:09:19,180 --> 00:09:24,560
+Now you might be thinking that how I can actually change which build is actually selected so
+
+142
+00:09:24,580 --> 00:09:29,339
+you will see right now I am getting here development build but I wanted to switch to the expogo
+
+143
+00:09:29,380 --> 00:09:36,820
+and the moment I press on A this will actually going to ask me in which, why this is showing
+
+144
+00:09:36,821 --> 00:09:39,800
+me this just maybe I need to reload.
+
+145
+00:09:40,779 --> 00:09:41,560
+Okay, perfect.
+
+146
+00:09:41,779 --> 00:09:46,880
+Now this is actually opening inside the expo go and the moment I open this application
+
+147
+00:09:47,040 --> 00:09:47,959
+inside my expo go.
+
+148
+00:09:48,000 --> 00:09:53,220
+So this is just a sample application I have created with the help of AI just to demonstrate
+
+149
+00:09:53,221 --> 00:09:55,579
+you how to use expo updates.
+
+150
+00:09:55,839 --> 00:09:56,160
+Easy.
+
+151
+00:09:56,459 --> 00:09:56,660
+Perfect.
+
+152
+00:09:56,661 --> 00:10:02,480
+So, this is just a simple converter application, this is how you can basically convert up any
+
+153
+00:10:02,481 --> 00:10:06,959
+Euro to something like that and these are all the history that we have, but right now
+
+154
+00:10:07,180 --> 00:10:10,940
+this is working inside the developer, inside the expogo.
+
+155
+00:10:12,120 --> 00:10:17,720
+This means if I change anything here, let's say if I just simply go to my app and inside
+
+156
+00:10:17,721 --> 00:10:19,259
+index.tsx.
+
+157
+00:10:19,260 --> 00:10:25,780
+And inside this index.tsls instead of offline let me convert this to online so no problem
+
+158
+00:10:25,781 --> 00:10:29,080
+I can instantly get this output perfect.
+
+159
+00:10:29,640 --> 00:10:35,500
+But you know what I have something very interesting here if I right now go inside my EAS JSON
+
+160
+00:10:35,700 --> 00:10:41,480
+and inside my EAS JSON I have this preview ignore everything which is coming here you
+
+161
+00:10:41,481 --> 00:10:43,640
+can see this is not for you right now.
+
+162
+00:10:44,500 --> 00:10:49,420
+Inside this preview I have the distribution as internal and I hope everyone know about
+
+163
+00:10:49,421 --> 00:10:54,660
+what is this because we have already covered about AAS build in previous section so make
+
+164
+00:10:54,661 --> 00:10:57,180
+sure to watch that first then and only watch this.
+
+165
+00:10:57,700 --> 00:11:00,560
+Now we have this Android which build type is APK.
+
+166
+00:11:00,899 --> 00:11:04,500
+Now this channel is something new I will explain you about this now.
+
+167
+00:11:05,120 --> 00:11:07,080
+for that but we can do actually.
+
+168
+00:11:08,459 --> 00:11:14,800
+We can basically create the development build of this application and every time when you
+
+169
+00:11:14,880 --> 00:11:21,220
+create development build now how we can create you can simply say EAS in it perfect I can
+
+170
+00:11:21,221 --> 00:11:26,200
+simply come here and I can simply say EAS in it and then I can simply say yes.
+
+171
+00:11:26,700 --> 00:11:31,620
+After that, they will going to create the project for me and now what I can do, I can
+
+172
+00:11:31,621 --> 00:11:38,500
+simply say EAS build hyphen hyphen profile, profile should be development for now and
+
+173
+00:11:38,580 --> 00:11:40,620
+then platform should be Android.
+
+174
+00:11:40,960 --> 00:11:42,420
+We know about this very well.
+
+175
+00:11:44,100 --> 00:11:50,160
+Let me simply hit enter and first thing they will ask me to install expo dev client a look
+
+176
+00:11:50,161 --> 00:11:50,540
+at that.
+
+177
+00:11:50,560 --> 00:11:52,180
+So I can simply press yes.
+
+178
+00:11:52,370 --> 00:11:58,220
+So they will automatically going to install expo dev client for me which is what we need
+
+179
+00:11:58,680 --> 00:12:01,000
+and after this what will going to happen.
+
+180
+00:12:01,100 --> 00:12:02,740
+Let's just wait for few seconds.
+
+181
+00:12:03,000 --> 00:12:05,940
+And they will going to prompt us for first thing.
+
+182
+00:12:05,980 --> 00:12:11,020
+Okay, now first thing they're asking me, what would you like your Android application ID
+
+183
+00:12:11,021 --> 00:12:11,300
+to be?
+
+184
+00:12:11,520 --> 00:12:16,500
+Okay, let's just go with the same ID which is suggesting and second key store.
+
+185
+00:12:16,660 --> 00:12:18,340
+Yes, I wanted to store the key store.
+
+186
+00:12:18,500 --> 00:12:22,540
+Everything is more of specific to Android build how you can create it.
+
+187
+00:12:22,680 --> 00:12:26,360
+not to worry too much about all of the concept for now at least.
+
+188
+00:12:27,100 --> 00:12:34,040
+And after this you will see I am getting compressing your project file, uploading to esbuild and
+
+189
+00:12:34,060 --> 00:12:36,380
+now I can basically wait for few seconds.
+
+190
+00:12:36,819 --> 00:12:37,199
+Perfect.
+
+191
+00:12:38,079 --> 00:12:41,440
+So basically now we definitely need not to wait for it.
+
+192
+00:12:41,860 --> 00:12:44,380
+Let me show you what will basically going to happen.
+
+193
+00:12:44,400 --> 00:12:49,460
+After the build will complete you will basically going to open this specific link.
+
+194
+00:12:49,940 --> 00:12:55,140
+So the moment you visit this link you will see we will actually building our application
+
+195
+00:12:55,640 --> 00:12:57,560
+in profile of development.
+
+196
+00:12:58,360 --> 00:13:03,940
+But for using OTA updates for using EAS update you actually need either.
+
+197
+00:13:04,100 --> 00:13:09,680
+Preview build or either production build but right now for production build we don't have
+
+198
+00:13:09,681 --> 00:13:13,139
+all the setups so we will prefer to go with preview build.
+
+199
+00:13:13,500 --> 00:13:18,660
+So first step for using your EIS update you need a preview build.
+
+200
+00:13:19,519 --> 00:13:25,519
+I hope no problem first thing you need your preview build ok but before creating any preview
+
+201
+00:13:25,520 --> 00:13:28,660
+build what I will suggest you stop this progress thing ok.
+
+202
+00:13:29,300 --> 00:13:35,800
+And, along with this also just come here and make sure to cancel build from here otherwise
+
+203
+00:13:37,240 --> 00:13:39,080
+you will hit rate limit if I am not wrong.
+
+204
+00:13:39,660 --> 00:13:48,420
+Yes, basically what we wanted to do is I wanted to install now my es update.
+
+205
+00:13:48,580 --> 00:13:55,120
+So what I can do I can simply copy this after copying this let me just simply import it.
+
+206
+00:13:55,121 --> 00:13:58,660
+So, NPX Expo install Expo updates.
+
+207
+00:13:59,259 --> 00:13:59,779
+Perfect.
+
+208
+00:14:00,399 --> 00:14:02,639
+Everything is already installed inside this.
+
+209
+00:14:02,699 --> 00:14:05,120
+I'm just demonstrating you how you have to do.
+
+210
+00:14:05,579 --> 00:14:07,639
+First step, install your Expo updates.
+
+211
+00:14:08,399 --> 00:14:11,800
+Next step is simply run EAS update configure.
+
+212
+00:14:12,000 --> 00:14:16,500
+Perfect, next step is simply run EAS update configure.
+
+213
+00:14:16,510 --> 00:14:22,440
+So the moment you run this EAS update configure, this will going to show you some logs.
+
+214
+00:14:22,740 --> 00:14:24,280
+Let's just read about this logs.
+
+215
+00:14:24,780 --> 00:14:28,640
+The following process will configure your project to use EAS update.
+
+216
+00:14:29,460 --> 00:14:35,380
+This changes only apply to your local project files and you can safely revert them at any
+
+217
+00:14:35,381 --> 00:14:35,680
+time.
+
+218
+00:14:36,000 --> 00:14:42,860
+Configured updates URL are this and then configured runtime version for Android and iOS with the
+
+219
+00:14:42,861 --> 00:14:44,120
+policy as app version.
+
+220
+00:14:44,180 --> 00:14:49,460
+We basically need that on which policy you wanted to apply this updates.
+
+221
+00:14:49,461 --> 00:14:51,840
+So basically we wanted to.
+
+222
+00:14:51,841 --> 00:14:57,000
+See the app version we will only send the updates in the specific version if you have
+
+223
+00:14:57,001 --> 00:15:02,060
+newer version of your application then you have to rebuild your entire application and
+
+224
+00:15:02,061 --> 00:15:08,140
+reconfigure this expo updates then and only we can send in the updates to the another
+
+225
+00:15:08,141 --> 00:15:13,680
+version ok and then we have configured the EAS JSON as well so the moment you configure
+
+226
+00:15:13,681 --> 00:15:19,820
+your EAS JSON with the help of expo update configure you will find something very interesting.
+
+227
+00:15:20,000 --> 00:15:27,620
+First thing you will find in all the builds section on the build profile we have something
+
+228
+00:15:27,621 --> 00:15:28,560
+new this channel.
+
+229
+00:15:28,600 --> 00:15:34,360
+So, this is your development channel for development profile, this is your preview channel for
+
+230
+00:15:34,361 --> 00:15:38,620
+preview profile and this is your production channel for production profile.
+
+231
+00:15:39,380 --> 00:15:41,000
+This is something interesting cool.
+
+232
+00:15:41,400 --> 00:15:43,640
+And then that's it.
+
+233
+00:15:44,220 --> 00:15:48,520
+Now what you can do you can basically make any kind of changes and see the output.
+
+234
+00:15:48,760 --> 00:15:55,120
+So this is only configuration and again the moment you add anything like this you have
+
+235
+00:15:55,200 --> 00:15:59,740
+to rebuild your entire application and then install this application and then see the
+
+236
+00:15:59,741 --> 00:16:00,020
+changes.
+
+237
+00:16:00,280 --> 00:16:06,220
+Okay simple again I hope you guys not the 12 year old children that we need to spoon
+
+238
+00:16:06,221 --> 00:16:07,040
+feed you everything.
+
+239
+00:16:09,900 --> 00:16:12,180
+And you will see the output perfect.
+
+240
+00:16:12,680 --> 00:16:15,900
+Now let me show you everything in a working scenarios.
+
+241
+00:16:16,140 --> 00:16:16,580
+Okay.
+
+242
+00:16:16,720 --> 00:16:24,100
+So for that what I can do let me go to my home page, home page of the expo dashboard.
+
+243
+00:16:25,140 --> 00:16:30,700
+So this is my expo dashboard inside this expo dashboard where is my okay now this is the
+
+244
+00:16:30,701 --> 00:16:32,620
+unit full application that I have.
+
+245
+00:16:32,800 --> 00:16:42,620
+And, then let me search for builds and inside this build I have one profile and I wanted
+
+246
+00:16:42,621 --> 00:16:49,940
+to basically install one for preview profile or what for the preview profile and then the
+
+247
+00:16:49,941 --> 00:16:55,060
+moment you have basically configure your expo updates you will find this runtime versioning
+
+248
+00:16:55,120 --> 00:16:57,040
+as well and this channel as well.
+
+249
+00:16:57,260 --> 00:16:59,920
+But before that you will find and look at that.
+
+250
+00:16:59,921 --> 00:17:06,000
+But the moment you set up expo updates you will see this new values as well.
+
+251
+00:17:06,359 --> 00:17:12,000
+Now I basically wanted to click here and after clicking this I wanted to install this.
+
+252
+00:17:12,640 --> 00:17:19,400
+So for installing this what I can do I can simply come and see how I can basically install
+
+253
+00:17:19,401 --> 00:17:24,260
+it, show the details and review.
+
+254
+00:17:26,100 --> 00:17:29,160
+So, how I can install this specific application?
+
+255
+00:17:30,040 --> 00:17:31,920
+This is the build artifact that we have.
+
+256
+00:17:32,280 --> 00:17:37,400
+Okay, availability is basically got expired of it, which is fine because I already have
+
+257
+00:17:38,040 --> 00:17:39,360
+the inside my history.
+
+258
+00:17:40,220 --> 00:17:42,240
+Okay, let me just search for it.
+
+259
+00:17:42,241 --> 00:17:42,840
+Give me a minute.
+
+260
+00:17:43,100 --> 00:17:48,600
+So, I have basically found the preview build of this application and I'm just basically
+
+261
+00:17:48,860 --> 00:17:51,340
+installing this inside my spare device.
+
+262
+00:17:51,880 --> 00:17:54,840
+So let me just wait for a few seconds then I'll be right back.
+
+263
+00:17:55,500 --> 00:17:58,059
+Alright guys, so this is my, let me show you that.
+
+264
+00:17:58,620 --> 00:18:02,640
+This is a completely standalone application with the name of unit flow.
+
+265
+00:18:02,820 --> 00:18:06,880
+Look at that and this is your preview build which is the APK.
+
+266
+00:18:06,881 --> 00:18:10,580
+You can share this with anyone and anyone can actually use this.
+
+267
+00:18:10,720 --> 00:18:11,100
+Perfect.
+
+268
+00:18:11,200 --> 00:18:17,260
+So, I just wanted to show you very magical thing and that is this is your currently running
+
+269
+00:18:17,261 --> 00:18:18,120
+development build.
+
+270
+00:18:18,440 --> 00:18:22,760
+Okay, if I'm not wrong this is your currently running development build which have this
+
+271
+00:18:22,779 --> 00:18:23,740
+online conversion.
+
+272
+00:18:23,899 --> 00:18:30,620
+So let's say instead of going through all that building procedure, all of that pushing
+
+273
+00:18:30,621 --> 00:18:33,860
+updates, let me show you what you can do.
+
+274
+00:18:34,900 --> 00:18:40,440
+Let me just first of all send only this one update, okay, I just wanted to send this one
+
+275
+00:18:40,441 --> 00:18:41,660
+update, so how I can send?
+
+276
+00:18:42,160 --> 00:18:50,540
+I can simply close the currently running application and after that let me just go to the EAS
+
+277
+00:18:50,920 --> 00:18:51,960
+update documentation.
+
+278
+00:18:52,900 --> 00:18:57,860
+And after that I can simply open this and what are the changes?
+
+279
+00:18:58,080 --> 00:19:04,240
+So simply copy the command and open this and let us try to read the command which is EAS
+
+280
+00:19:04,360 --> 00:19:05,060
+update channel.
+
+281
+00:19:05,380 --> 00:19:11,340
+Now channel should not be the production because right now we have the preview channel and
+
+282
+00:19:11,400 --> 00:19:14,400
+the message should be, what is the message?
+
+283
+00:19:14,780 --> 00:19:15,200
+it is.
+
+284
+00:19:17,500 --> 00:19:23,960
+Name changed typo fixed, okay let me say this as typo fixed and let me simply press enter,
+
+285
+00:19:24,140 --> 00:19:29,300
+so the moment I press enter you will interestingly see something, now they are asking you select
+
+286
+00:19:29,301 --> 00:19:31,680
+the environment definitely, environment is preview.
+
+287
+00:19:32,100 --> 00:19:35,679
+Now they have already selected the environment for me.
+
+288
+00:19:36,039 --> 00:19:36,620
+Look at that.
+
+289
+00:19:36,650 --> 00:19:39,860
+Now they are basically doing non interactive is not supported.
+
+290
+00:19:40,240 --> 00:19:44,460
+No problem using source app is now your root directory, which is fine.
+
+291
+00:19:44,919 --> 00:19:50,360
+React compiler enabled starting some Metro bundler iOS Android Android iOS doing a lot
+
+292
+00:19:50,361 --> 00:19:51,320
+of steps internally.
+
+293
+00:19:51,799 --> 00:19:54,380
+We need not to worry about anything right now.
+
+294
+00:19:54,400 --> 00:20:00,820
+And the moment this updates is actually going to finish I have implemented some update on
+
+295
+00:20:00,860 --> 00:20:06,460
+demand known as something let me just search for it update banner yes.
+
+296
+00:20:06,840 --> 00:20:11,200
+So now they also provide you something known as bunch of hooks I will come to it in a while
+
+297
+00:20:11,540 --> 00:20:16,980
+need not to worry about anything for now and let's just wait for all the changes ok look
+
+298
+00:20:16,981 --> 00:20:17,420
+at that.
+
+299
+00:20:18,780 --> 00:20:24,500
+And, interestingly, we can basically see now, we have all of these logs and at the very
+
+300
+00:20:24,501 --> 00:20:25,840
+bottom we got this published.
+
+301
+00:20:26,559 --> 00:20:32,100
+So if I close my development build right now, okay, let me just show you that.
+
+302
+00:20:32,740 --> 00:20:33,919
+If I just simply come.
+
+303
+00:20:34,200 --> 00:20:41,320
+And let me just simply go to the home page and let me open this another application and
+
+304
+00:20:41,321 --> 00:20:46,360
+interestingly I hope you guys able to see that if not let me reconnect my application
+
+305
+00:20:46,460 --> 00:20:50,019
+and let me show you that just a minute.
+
+306
+00:20:51,100 --> 00:20:52,639
+And let me show you this.
+
+307
+00:20:53,799 --> 00:20:57,980
+Okay, now you guys can basically see that this is the application that I am getting
+
+308
+00:20:57,981 --> 00:20:58,860
+right now.
+
+309
+00:20:59,740 --> 00:21:06,340
+All right, and inside this I am getting this alert and the moment I press download you
+
+310
+00:21:06,360 --> 00:21:11,779
+will see that we are basically downloading the over the top updates without building
+
+311
+00:21:11,820 --> 00:21:15,279
+the new application and now I got the another update.
+
+312
+00:21:15,340 --> 00:21:16,279
+Oh crazy.
+
+313
+00:21:16,800 --> 00:21:22,780
+Let me open my expogo once again and what I can do let me simply use a simple AI for
+
+314
+00:21:22,781 --> 00:21:26,500
+it and what I can do right now let me show you the magic.
+
+315
+00:21:27,880 --> 00:21:31,960
+Let me search for the themes actually that we have.
+
+316
+00:21:33,140 --> 00:21:35,980
+Where the theme that I am using just a minute.
+
+317
+00:21:37,280 --> 00:21:37,880
+Okay.
+
+318
+00:21:39,320 --> 00:21:44,180
+So, basically constants, does we have any constant?
+
+319
+00:21:44,340 --> 00:21:45,240
+Yes, so this is the theme.
+
+320
+00:21:45,520 --> 00:21:53,940
+Yes, let me change my theme to pick or I can say change my accent color to pick.
+
+321
+00:21:54,920 --> 00:22:00,100
+Okay, right now we have the lime accent color, but I can actually change the my accent color
+
+322
+00:22:00,101 --> 00:22:00,660
+to the pink.
+
+323
+00:22:00,960 --> 00:22:02,480
+Okay, let's just wait for the changes.
+
+324
+00:22:03,160 --> 00:22:06,460
+Alright, so now they have basically made changes inside the theme.
+
+325
+00:22:07,080 --> 00:22:13,520
+Let me just try to open my application and show you the changes inside the expo go first
+
+326
+00:22:13,560 --> 00:22:15,960
+and then I'll show you the changes without anything.
+
+327
+00:22:16,240 --> 00:22:19,860
+Then I'll show you the current state of the preview build of application.
+
+328
+00:22:19,861 --> 00:22:23,500
+Okay, right now I wanted to change towards the expogo.
+
+329
+00:22:23,799 --> 00:22:27,919
+So let me simply press S and open this inside the expogo.
+
+330
+00:22:29,100 --> 00:22:30,700
+Okay, just a minute.
+
+331
+00:22:31,200 --> 00:22:36,659
+Alright, so now they are basically open inside the expogo application and now theme is pink.
+
+332
+00:22:37,139 --> 00:22:37,600
+No problem.
+
+333
+00:22:37,899 --> 00:22:40,580
+This is running inside your expogo application.
+
+334
+00:22:40,600 --> 00:22:44,620
+This means no changes will actually affect inside this.
+
+335
+00:22:44,820 --> 00:22:45,419
+So look at that.
+
+336
+00:22:45,460 --> 00:22:46,700
+This is still pink.
+
+337
+00:22:47,100 --> 00:22:52,600
+And this is an offline application but now I wanted to send the OTA update, how I can
+
+338
+00:22:52,601 --> 00:22:52,860
+send?
+
+339
+00:22:53,400 --> 00:22:59,120
+Very easy, let me show you, let me simply run this specific command once again, expo
+
+340
+00:22:59,121 --> 00:23:04,080
+update channel preview and now I can say this instead of typo fix you can name it whatever
+
+341
+00:23:04,081 --> 00:23:04,559
+you want.
+
+342
+00:23:05,520 --> 00:23:13,340
+Let me say this as theme changed, ok and then let me simply press on enter.
+
+343
+00:23:14,440 --> 00:23:21,100
+Let's just wait for a few seconds again environment is preview for now and in most of the cases
+
+344
+00:23:21,139 --> 00:23:24,019
+we use OTA in preview or the production builds.
+
+345
+00:23:24,620 --> 00:23:26,080
+Okay now let's just wait for it.
+
+346
+00:23:26,480 --> 00:23:31,139
+Alright so now update is published and you will see in within few seconds what will going
+
+347
+00:23:31,140 --> 00:23:37,460
+to happen if I close my application right now and if I reopen my application then we
+
+348
+00:23:37,461 --> 00:23:39,440
+will basically going to see the output.
+
+349
+00:23:39,500 --> 00:23:45,400
+So, just a minute let me once again open my unit flow look at that I got this update available
+
+350
+00:23:45,540 --> 00:23:50,440
+and the moment I press on download and look at that we are basically downloading let me
+
+351
+00:23:50,441 --> 00:23:58,080
+restart my application and amazing job this is the beautiful thing about OTA now we have
+
+352
+00:23:58,081 --> 00:24:02,440
+successfully changed the theme towards the pick of OTA.
+
+353
+00:24:02,441 --> 00:24:07,620
+One more thing, last thing is you just need to like how you can basically update your
+
+354
+00:24:07,621 --> 00:24:14,520
+application on demand, how do we know that we have the update, so for that they provide
+
+355
+00:24:14,521 --> 00:24:19,360
+you a theme, they provide you a hook known as, let me just show you the name of hook,
+
+356
+00:24:19,760 --> 00:24:22,840
+they basically provide you hook with the name of use updates.
+
+357
+00:24:22,900 --> 00:24:28,920
+Okay, this use updates will basically come from expo updates and they provide you this
+
+358
+00:24:29,000 --> 00:24:34,620
+is update available, is update pending, is downloading, is checking, download progress,
+
+359
+00:24:34,880 --> 00:24:36,120
+check error, download error.
+
+360
+00:24:36,200 --> 00:24:41,200
+So, on the basis of this what you can do, you can basically set up bunch of use effects
+
+361
+00:24:41,700 --> 00:24:45,060
+and bunch of download button and you can simply run a basic update.
+
+362
+00:24:45,200 --> 00:24:49,440
+Okay, this is more of logic specific thing, so need not to worry about it.
+
+363
+00:24:50,620 --> 00:24:57,280
+So, this is how you can basically work with expo updates and I hope you guys loved it,
+
+364
+00:24:57,400 --> 00:25:01,340
+if yes then make sure to drop your feedback with this, let me end this entire chapter
+
+365
+00:25:01,800 --> 00:25:03,180
+and see you next time.
+

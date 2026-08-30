@@ -1,0 +1,808 @@
+1
+00:00:00,679 --> 00:00:04,000
+Alright guys and welcome to one more new lecture.
+
+2
+00:00:04,240 --> 00:00:09,000
+In this lecture we are going to talk about list and data display components.
+
+3
+00:00:10,140 --> 00:00:13,800
+Into this we are basically going to cover two powerful components.
+
+4
+00:00:14,660 --> 00:00:17,660
+One is flat list and another one is section list.
+
+5
+00:00:18,100 --> 00:00:24,400
+So, now let's move ahead and start understand about, start understanding about it.
+
+6
+00:00:24,860 --> 00:00:30,520
+But before moving ahead, I just wanted to talk about, let's say when you have lot of
+
+7
+00:00:30,521 --> 00:00:34,880
+data inside an array, perfect, let's take an example of an array.
+
+8
+00:00:35,360 --> 00:00:42,780
+This is data 1, data 2, data 3, in a specific structure, we can say the array of object,
+
+9
+00:00:43,260 --> 00:00:43,780
+no problem.
+
+10
+00:00:44,220 --> 00:00:46,239
+and whenever you are onto the web.
+
+11
+00:00:46,700 --> 00:00:53,060
+So, you are using dot map method to render a JSX for it, yes or no?
+
+12
+00:00:53,800 --> 00:01:01,140
+Yes and whenever you are going to use it on the basis of that map, we have all the items
+
+13
+00:01:01,360 --> 00:01:03,820
+that you have rendered onto the UI.
+
+14
+00:01:03,900 --> 00:01:04,840
+Is that making sense?
+
+15
+00:01:05,620 --> 00:01:06,140
+Yes.
+
+16
+00:01:06,400 --> 00:01:13,500
+But when it's come to mobile application, this approach is not going to work.
+
+17
+00:01:13,860 --> 00:01:15,280
+Yes, this is not recommended.
+
+18
+00:01:15,281 --> 00:01:19,660
+I mean you can use if you wanted to, but this is not recommended.
+
+19
+00:01:20,840 --> 00:01:20,980
+Perfect.
+
+20
+00:01:21,120 --> 00:01:22,560
+Let's say if you wanted to write.
+
+21
+00:01:22,561 --> 00:01:27,860
+So, something like this, like this is your data, you have simply used the map and then
+
+22
+00:01:27,861 --> 00:01:29,380
+you have basically used the text.
+
+23
+00:01:29,740 --> 00:01:31,479
+So, this is not a recommended method.
+
+24
+00:01:31,560 --> 00:01:33,960
+This is going to work fine for small list.
+
+25
+00:01:34,160 --> 00:01:37,460
+Let's say if you have a small list of data, but on mobile.
+
+26
+00:01:38,000 --> 00:01:42,940
+If the list is long, this approach renders all items at once.
+
+27
+00:01:43,660 --> 00:01:49,580
+This means, yes, listen to me carefully, this means they are going to consume a lot of battery
+
+28
+00:01:49,600 --> 00:01:50,540
+of your application.
+
+29
+00:01:50,690 --> 00:01:52,060
+I mean of your entire phone.
+
+30
+00:01:53,380 --> 00:01:58,460
+So the first thing is battery and instead we can say high memory usage.
+
+31
+00:01:58,461 --> 00:02:02,900
+If you are going to use this approach, they are going to use a lot of memory.
+
+32
+00:02:03,000 --> 00:02:07,720
+slow scrolling because they are going to render all the data at once.
+
+33
+00:02:08,479 --> 00:02:14,040
+Then we have a very very bad user experience and if user is not happy with your application,
+
+34
+00:02:14,480 --> 00:02:17,300
+then you are going to shut it down in a while.
+
+35
+00:02:18,000 --> 00:02:18,280
+Perfect.
+
+36
+00:02:19,080 --> 00:02:19,440
+Then.
+
+37
+00:02:19,500 --> 00:02:23,940
+React Native provide you this two OG components.
+
+38
+00:02:24,540 --> 00:02:31,060
+First one is flat list and second one is section list, which are optimized for performance
+
+39
+00:02:31,740 --> 00:02:34,540
+and only render items when needed.
+
+40
+00:02:35,280 --> 00:02:37,420
+This concept is called virtualization.
+
+41
+00:02:37,520 --> 00:02:40,420
+You can definitely read more about virtualization.
+
+42
+00:02:41,060 --> 00:02:44,920
+Only item currently visible on the screen are rendered kind of that.
+
+43
+00:02:45,420 --> 00:02:46,320
+So perfect.
+
+44
+00:02:47,200 --> 00:02:54,660
+So, now let's move ahead and start talking about first component name as flat list.
+
+45
+00:02:55,360 --> 00:02:55,660
+Perfect.
+
+46
+00:02:56,180 --> 00:02:58,819
+So, what is this flat list is used for?
+
+47
+00:02:59,319 --> 00:03:03,540
+This is basically used for showing all the simple list that you have.
+
+48
+00:03:03,800 --> 00:03:04,700
+Perfect.
+
+49
+00:03:04,800 --> 00:03:08,540
+So let me just simply visit here and read more about it.
+
+50
+00:03:08,700 --> 00:03:16,260
+A performance interface for rendering basic flat lists supporting the most handy features
+
+51
+00:03:16,300 --> 00:03:21,160
+like fully cross-platform, optional horizontal mode, a lot of other things.
+
+52
+00:03:21,161 --> 00:03:25,180
+I mean, basically they have, they are basically using for this thing.
+
+53
+00:03:25,600 --> 00:03:32,000
+Let's say inside the array you have bunch of data and you wanted to render that data
+
+54
+00:03:32,520 --> 00:03:35,220
+onto the UI optimistically.
+
+55
+00:03:35,520 --> 00:03:38,160
+So that's why you are using it.
+
+56
+00:03:38,320 --> 00:03:38,580
+Perfect.
+
+57
+00:03:38,660 --> 00:03:43,420
+So now let's move ahead and directly start using it.
+
+58
+00:03:43,600 --> 00:03:43,820
+Perfect.
+
+59
+00:03:43,840 --> 00:03:50,720
+So let me just simply go to my VS code and open this inside this how you can use it.
+
+60
+00:03:51,060 --> 00:03:54,080
+So I have a bunch of
+
+61
+00:03:55,180 --> 00:03:56,099
+So, perfect.
+
+62
+00:03:56,140 --> 00:03:58,599
+So, first of all, let me paste that data.
+
+63
+00:03:59,480 --> 00:04:04,900
+So, I have a const vegetables id, one name image.
+
+64
+00:04:05,220 --> 00:04:09,780
+In same way, I again have id name image and then id name image.
+
+65
+00:04:10,000 --> 00:04:13,680
+Easy, no problem and everyone has same image for now.
+
+66
+00:04:13,681 --> 00:04:16,639
+You can definitely change that in future.
+
+67
+00:04:16,899 --> 00:04:20,639
+Now, I wanted to render them onto the UI.
+
+68
+00:04:21,680 --> 00:04:23,759
+So, how you can basically do that?
+
+69
+00:04:24,440 --> 00:04:25,160
+It's very easy.
+
+70
+00:04:25,360 --> 00:04:32,979
+So, for using that instead of using, I mean, let's keep this view, let's remove this text
+
+71
+00:04:33,720 --> 00:04:34,400
+inside this.
+
+72
+00:04:34,620 --> 00:04:36,940
+Let me just simply import my flat list.
+
+73
+00:04:37,500 --> 00:04:42,540
+And, this flat list is going to have bunch of props.
+
+74
+00:04:42,940 --> 00:04:46,900
+So, the first prop is going to be the data you wanted to render.
+
+75
+00:04:47,440 --> 00:04:50,460
+So, this is your data name as vegetables.
+
+76
+00:04:52,060 --> 00:04:54,180
+Let me first of all off my AI.
+
+77
+00:04:54,340 --> 00:04:54,480
+Cool.
+
+78
+00:04:54,660 --> 00:05:00,640
+So, we have these vegetables and then we need to provide them a key extractor just to identify
+
+79
+00:05:00,641 --> 00:05:01,620
+them uniquely.
+
+80
+00:05:01,800 --> 00:05:08,560
+So, this is going to be item and item.id from where this item is coming.
+
+81
+00:05:09,199 --> 00:05:10,539
+So, this is your entire data.
+
+82
+00:05:11,080 --> 00:05:17,360
+Each data have this item 1, item 2, item 3 and item have different properties like id,
+
+83
+00:05:17,460 --> 00:05:18,139
+name and image.
+
+84
+00:05:18,440 --> 00:05:21,180
+So, we are using id as a unique identifier.
+
+85
+00:05:21,280 --> 00:05:22,539
+I hope so that makes sense.
+
+86
+00:05:22,900 --> 00:05:26,759
+And in same way we have here something known as render item.
+
+87
+00:05:27,860 --> 00:05:30,600
+This is where you are actually going to render your actual UI.
+
+88
+00:05:31,740 --> 00:05:35,699
+Here we are basically going to return a JSX.
+
+89
+00:05:36,220 --> 00:05:42,919
+Not yes I mean kind of we can say that this is a kind of JSX and this is JSX not kind
+
+90
+00:05:42,920 --> 00:05:44,580
+of this is exactly JSX.
+
+91
+00:05:44,910 --> 00:05:47,479
+Inside this let me just destructure my item.
+
+92
+00:05:48,000 --> 00:05:52,560
+And then inside this I am going to basically render a UI.
+
+93
+00:05:54,100 --> 00:05:56,940
+So let me just simply paste this UI.
+
+94
+00:05:57,700 --> 00:06:04,420
+We have this view and let me import my image from react native and then we have a text
+
+95
+00:06:04,580 --> 00:06:08,300
+simple and then we just simply need to add a design for it.
+
+96
+00:06:08,760 --> 00:06:09,880
+So just give me a minute.
+
+97
+00:06:10,140 --> 00:06:11,380
+Let me bring my design.
+
+98
+00:06:11,800 --> 00:06:18,300
+So, that I need not to write anything from scratch and paste this and look at that the
+
+99
+00:06:18,301 --> 00:06:24,159
+moment I save it and now you can see that this is your data in same way you can have
+
+100
+00:06:24,160 --> 00:06:30,280
+bunch of multiple data as well and then this is a simple flat list first thing is data
+
+101
+00:06:30,500 --> 00:06:36,160
+a unique identifier and then a render item and the UI that you have written here.
+
+102
+00:06:36,161 --> 00:06:43,160
+Basically simple and let's say I just simply add a elevation of 10 then we have a basic
+
+103
+00:06:43,420 --> 00:06:45,120
+shadow here as well.
+
+104
+00:06:45,380 --> 00:06:45,660
+Perfect.
+
+105
+00:06:46,000 --> 00:06:51,920
+Alright guys, so these are the bunch of props that we have, but along with this props, we
+
+106
+00:06:51,921 --> 00:06:53,560
+have bunch of other props as well.
+
+107
+00:06:53,760 --> 00:07:00,120
+Let's say below this render item, if I just simply add here horizontal and make it true,
+
+108
+00:07:00,240 --> 00:07:03,380
+like by default this is going to be something like this.
+
+109
+00:07:03,440 --> 00:07:09,680
+If you don't add true, this is going to be true, but let me just simply define that explicitly.
+
+110
+00:07:10,000 --> 00:07:15,620
+And the moment I write horizontal true, now you will see they now become horizontal.
+
+111
+00:07:16,800 --> 00:07:20,500
+Perfect, you can even decide the number of columns you wanted to show.
+
+112
+00:07:20,650 --> 00:07:27,100
+So you can simply say num columns and if I just simply say 2, let me just try to show
+
+113
+00:07:27,101 --> 00:07:27,600
+you.
+
+114
+00:07:28,120 --> 00:07:29,140
+Alright, they are reloading.
+
+115
+00:07:30,000 --> 00:07:35,300
+Let me simply press R and hope so perfect.
+
+116
+00:07:35,440 --> 00:07:38,680
+So num does not support exactly I mean that makes sense.
+
+117
+00:07:39,420 --> 00:07:45,640
+Instead of let me just go with this if you are on vertical then and only you can basically
+
+118
+00:07:45,641 --> 00:07:49,980
+show number of rows you wanted to show which is I mean basic logical thing.
+
+119
+00:07:50,620 --> 00:07:55,580
+Perfect in same way we have two other props as well like we have a list.
+
+120
+00:07:55,700 --> 00:07:57,180
+header component.
+
+121
+00:07:57,460 --> 00:08:01,080
+So this is basically the header of the list you wanted to show.
+
+122
+00:08:01,220 --> 00:08:06,720
+Let me just simply try to show you header and if I save it you will, I do not know you
+
+123
+00:08:06,721 --> 00:08:09,140
+are able to see it or not but yeah look at here.
+
+124
+00:08:09,620 --> 00:08:10,500
+This is your header.
+
+125
+00:08:11,200 --> 00:08:18,500
+In same way we have list footer component and this is also going to be a text.
+
+126
+00:08:19,800 --> 00:08:20,920
+Let me show you that.
+
+127
+00:08:23,100 --> 00:08:25,800
+Text and I can simply say this as footer.
+
+128
+00:08:26,220 --> 00:08:28,220
+So we have the footer as well.
+
+129
+00:08:29,180 --> 00:08:29,419
+Perfect.
+
+130
+00:08:29,600 --> 00:08:35,059
+You we can even have item separator like first of all let me remove this horizontal true
+
+131
+00:08:35,120 --> 00:08:35,960
+and save it.
+
+132
+00:08:35,961 --> 00:08:36,760
+This is your header.
+
+133
+00:08:37,500 --> 00:08:45,540
+This is your footer and in same way we have a item separator component as well and you
+
+134
+00:08:45,541 --> 00:08:53,000
+what you can do basically here again return a JSX and that is going to be a view and we
+
+135
+00:08:53,100 --> 00:08:57,340
+can say this as a self-closing view which have a style.
+
+136
+00:08:57,500 --> 00:09:04,060
+And the style is going to be pretty basic, like I can give it a height of one, a basic
+
+137
+00:09:04,061 --> 00:09:10,240
+horizontal line and then background color as hashtags CCC.
+
+138
+00:09:10,680 --> 00:09:14,900
+And if I save it, you will see here a basic horizontal line which is coming.
+
+139
+00:09:15,100 --> 00:09:22,959
+We also have on refresh and refreshing bunch of on and reached on and threshold extra data
+
+140
+00:09:23,259 --> 00:09:24,259
+get item layout.
+
+141
+00:09:24,319 --> 00:09:29,100
+We have a lot of props, but you need not to understand that for now.
+
+142
+00:09:29,300 --> 00:09:29,560
+Perfect.
+
+143
+00:09:30,779 --> 00:09:35,259
+So I hope so you guys able to understand that till now how you can use flat list.
+
+144
+00:09:35,700 --> 00:09:40,940
+In same way, we also have something known as a section list.
+
+145
+00:09:41,560 --> 00:09:44,080
+So how you can basically manage your section list?
+
+146
+00:09:44,580 --> 00:09:51,180
+So for managing section list, let me first of all save this and just give me a minute,
+
+147
+00:09:51,860 --> 00:09:56,060
+push this to a GitHub so that you have a track of it.
+
+148
+00:09:57,160 --> 00:09:57,720
+Cool.
+
+149
+00:09:58,139 --> 00:09:59,120
+So just give me a minute.
+
+150
+00:09:59,699 --> 00:09:59,899
+Nice.
+
+151
+00:09:59,980 --> 00:10:01,360
+Now let me remove anything.
+
+152
+00:10:01,720 --> 00:10:04,500
+Rn fes and this is your index.
+
+153
+00:10:04,759 --> 00:10:06,139
+Let me save it.
+
+154
+00:10:06,899 --> 00:10:07,199
+Perfect.
+
+155
+00:10:07,740 --> 00:10:11,699
+Now I wanted to create here and use here section list.
+
+156
+00:10:11,900 --> 00:10:17,220
+So, let me first of all grab my section list data and then we can use it.
+
+157
+00:10:17,260 --> 00:10:17,700
+Don't worry.
+
+158
+00:10:18,120 --> 00:10:21,260
+So, let me copy this and paste this.
+
+159
+00:10:21,500 --> 00:10:25,420
+We have which section where we have an object with a title.
+
+160
+00:10:25,660 --> 00:10:26,820
+Make sure to keep that in mind.
+
+161
+00:10:26,840 --> 00:10:27,720
+We have a title.
+
+162
+00:10:28,400 --> 00:10:32,020
+Then we have a data and each data have ID, name, image.
+
+163
+00:10:32,380 --> 00:10:34,640
+ID, name, image same here as well.
+
+164
+00:10:34,940 --> 00:10:35,240
+Perfect.
+
+165
+00:10:35,800 --> 00:10:42,899
+Now, how you can use this now, let me simply remove all of the view and simply write here
+
+166
+00:10:42,900 --> 00:10:50,779
+this import here the section list component from react native and then first thing we
+
+167
+00:10:50,780 --> 00:10:52,140
+are going to have a sections.
+
+168
+00:10:52,620 --> 00:10:58,480
+So, sections is going to be wedge section first data they are accepting second is the
+
+169
+00:10:58,560 --> 00:11:00,140
+key extractor that we have.
+
+170
+00:11:00,300 --> 00:11:09,180
+So, we are going to have a basic item and then item.id no problem same then again same
+
+171
+00:11:09,181 --> 00:11:15,480
+we have a render item and then this render item destructure the items you can name it
+
+172
+00:11:15,481 --> 00:11:17,720
+anything but let me just name this as item.
+
+173
+00:11:18,400 --> 00:11:24,320
+And then inside this, let me just return implicit return here.
+
+174
+00:11:25,000 --> 00:11:30,940
+So let me just simply return a view with view image and text.
+
+175
+00:11:31,220 --> 00:11:33,900
+Let me import the image from react native.
+
+176
+00:11:35,200 --> 00:11:35,520
+Perfect.
+
+177
+00:11:36,000 --> 00:11:38,860
+And one last thing that we need here.
+
+178
+00:11:39,300 --> 00:11:42,820
+is to render section header and we know about that.
+
+179
+00:11:42,880 --> 00:11:50,640
+So, I can simply say render not footer we know that we have a render section header and what
+
+180
+00:11:50,641 --> 00:11:57,940
+you can do now, now we have access of section here again you can name it anything and inside
+
+181
+00:11:57,941 --> 00:12:04,959
+this we are going to have a text and each text is going to say us something known as
+
+182
+00:12:06,100 --> 00:12:13,139
+We need a title easy and then you can again give it a style of style something like this
+
+183
+00:12:13,300 --> 00:12:14,500
+styles dot header.
+
+184
+00:12:15,500 --> 00:12:21,579
+Perfect and let me just simply copy my styles and paste that easy.
+
+185
+00:12:21,779 --> 00:12:23,079
+I hope so no problem in it.
+
+186
+00:12:23,100 --> 00:12:24,940
+I don't want it to write it from scratch.
+
+187
+00:12:25,620 --> 00:12:30,680
+That's why I am copy and pasting most of it and boom look at that.
+
+188
+00:12:30,940 --> 00:12:33,839
+So now we have basically used here the section list.
+
+189
+00:12:34,200 --> 00:12:36,740
+And this is how you can use it.
+
+190
+00:12:37,520 --> 00:12:47,120
+So the sections are array where each element has a title and each title has its own data
+
+191
+00:12:47,121 --> 00:12:47,420
+array.
+
+192
+00:12:48,080 --> 00:12:48,380
+Perfect.
+
+193
+00:12:48,780 --> 00:12:53,100
+In same way we have a section render section header we already talked about that.
+
+194
+00:12:53,120 --> 00:12:57,180
+We have a render item that will going to show item inside the sections.
+
+195
+00:12:57,800 --> 00:13:02,640
+So section list is like a flat list but with group support.
+
+196
+00:13:03,100 --> 00:13:11,019
+I hope so that makes sense and now I hope so why you need not to use dot map here.
+
+197
+00:13:11,720 --> 00:13:18,940
+Perfect so if I just try to give you a basic summary use flat list for flat list where
+
+198
+00:13:19,000 --> 00:13:25,759
+performance optimization use section list when items are grouped and need headers both
+
+199
+00:13:25,760 --> 00:13:30,480
+are better than simple dot map method with long list because they only render.
+
+200
+00:13:30,700 --> 00:13:33,060
+when needed virtualization.
+
+201
+00:13:33,320 --> 00:13:35,620
+So I hope so that makes sense.
+
+202
+00:13:35,860 --> 00:13:40,040
+And yeah, that is pretty much it for this chapter and see you next time.
+

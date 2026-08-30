@@ -1,0 +1,376 @@
+1
+00:00:00,000 --> 00:00:02,860
+Alright guys, welcome to one more new chapter.
+
+2
+00:00:03,120 --> 00:00:08,460
+In this chapter, we are basically going to talk about, we can say map controls.
+
+3
+00:00:08,820 --> 00:00:15,260
+So with the help of map controls, we can basically control the map of basically if you wanted
+
+4
+00:00:15,420 --> 00:00:19,700
+to go previous, go next, change locations, a lot of things.
+
+5
+00:00:20,000 --> 00:00:24,840
+So, in this chapter, we are going to see how to set and update camera positions.
+
+6
+00:00:25,000 --> 00:00:25,920
+We already have that.
+
+7
+00:00:26,380 --> 00:00:27,900
+How to toggle map UI.
+
+8
+00:00:28,740 --> 00:00:33,820
+Like you wanted to see compass, zoom buttons, gestures, lot of things and how combine camera
+
+9
+00:00:34,060 --> 00:00:36,559
+UI settings into the single page.
+
+10
+00:00:37,260 --> 00:00:37,460
+Perfect.
+
+11
+00:00:38,120 --> 00:00:42,600
+So, let's again build an interactive map controls, a simple mini project.
+
+12
+00:00:43,200 --> 00:00:49,380
+So, first thing make sure we have a expo map installed, everything is already here, perfect.
+
+13
+00:00:49,410 --> 00:00:52,460
+So, now we already have this camera thing, nice.
+
+14
+00:00:53,340 --> 00:00:57,240
+Let's create bunch more state variables.
+
+15
+00:00:58,180 --> 00:01:03,820
+First state variable that we have compass, then we have zoom control, then we have scroll
+
+16
+00:01:04,180 --> 00:01:06,180
+gesture and zoom gesture.
+
+17
+00:01:06,700 --> 00:01:07,299
+Perfect.
+
+18
+00:01:08,320 --> 00:01:13,119
+And again, if you are developing this inside the Apple and if you are developing this inside
+
+19
+00:01:13,299 --> 00:01:14,299
+the Google map depends.
+
+20
+00:01:16,079 --> 00:01:17,720
+So we already have a camera position.
+
+21
+00:01:18,100 --> 00:01:18,280
+Perfect.
+
+22
+00:01:18,500 --> 00:01:19,399
+Let me take this down.
+
+23
+00:01:20,899 --> 00:01:20,979
+Nice.
+
+24
+00:01:21,740 --> 00:01:27,119
+And below this, what I can do, we can have something known as UI settings and inside
+
+25
+00:01:27,259 --> 00:01:34,000
+this UI settings, first thing that we have is Compass enabled is up to the Compass, not
+
+26
+00:01:37,159 --> 00:01:44,259
+Alright and in same way we can have a zoom controlled enabled yes and then pass the value
+
+27
+00:01:44,400 --> 00:01:49,700
+of zoom controls in same way we wanted to have a scroll gesture enabled.
+
+28
+00:01:51,200 --> 00:01:54,520
+scroll gesture, nice.
+
+29
+00:01:55,350 --> 00:02:01,100
+And then we can have a zoom gesture enable and I can again say this as zoom gesture,
+
+30
+00:02:01,740 --> 00:02:03,600
+easy, nice.
+
+31
+00:02:04,789 --> 00:02:07,020
+Let me save it for now, perfect.
+
+32
+00:02:07,399 --> 00:02:09,660
+Nothing has changed here right now, cool.
+
+33
+00:02:09,970 --> 00:02:21,180
+But next, next is let's move ahead and same thing you can pass all of them inside
+
+34
+00:02:21,181 --> 00:02:25,880
+the Apple as well, perfect and I think they do not have this, what we have then?
+
+35
+00:02:26,209 --> 00:02:29,660
+Then I do not know, does we have anything related to zoom?
+
+36
+00:02:31,019 --> 00:02:36,420
+No, so there is definitely some another way of implementing that for Apple for now we are
+
+37
+00:02:36,500 --> 00:02:39,420
+only focusing on Google Maps, perfect.
+
+38
+00:02:40,180 --> 00:02:42,760
+So inside this Google Maps, let us move ahead.
+
+39
+00:02:43,300 --> 00:02:48,520
+And below this what I wanted to do, we definitely don't, all right, this is good.
+
+40
+00:02:49,410 --> 00:02:57,900
+We have this buttons, this is for, so let's create here one design, like we have buttons
+
+41
+00:02:58,140 --> 00:03:01,100
+map below this, let me paste here a control.
+
+42
+00:03:02,120 --> 00:03:06,040
+Perfect inside this controls we have padding and then we have background color.
+
+43
+00:03:06,700 --> 00:03:10,260
+Alright, and let me add one more thing.
+
+44
+00:03:11,040 --> 00:03:15,780
+Name is, let me just quickly show you, which is toggle row.
+
+45
+00:03:17,800 --> 00:03:18,220
+Perfect.
+
+46
+00:03:18,319 --> 00:03:23,360
+This is the toggle row, flex direction, justify content, align item and margin vertical.
+
+47
+00:03:24,069 --> 00:03:24,580
+No problem.
+
+48
+00:03:25,340 --> 00:03:27,420
+And I don't think so that we need buttons now.
+
+49
+00:03:27,630 --> 00:03:29,700
+And then let me try to paste that out.
+
+50
+00:03:30,000 --> 00:03:36,680
+Let me just quickly grab all the UIs and try to paste that out so that you guys can see
+
+51
+00:03:36,900 --> 00:03:38,380
+what is basically happening here.
+
+52
+00:03:39,670 --> 00:03:39,840
+Perfect.
+
+53
+00:03:40,560 --> 00:03:45,480
+So now, definitely we do not need here buttons, we need here controls.
+
+54
+00:03:46,470 --> 00:03:49,040
+Okay, so this is the first thing and yes look at that.
+
+55
+00:03:49,709 --> 00:03:53,780
+After control everything is fine need not to change this Mumbai and Bangalore.
+
+56
+00:03:54,300 --> 00:04:00,620
+Out of this button, yes, below this I wanted you to create here some UI toggles.
+
+57
+00:04:00,990 --> 00:04:07,180
+So the first toggle, first of all definitely let me import the text from React Native and
+
+58
+00:04:07,500 --> 00:04:15,180
+also switch from React Native and if I save it, okay, nice, we need to change it, but
+
+59
+00:04:15,460 --> 00:04:15,900
+no problem.
+
+60
+00:04:17,560 --> 00:04:22,639
+Let me just copy all of them and then let me paste all of them.
+
+61
+00:04:23,000 --> 00:04:29,139
+So now we have a compass, we have zoom control, we have gesture control and this is how I
+
+62
+00:04:29,180 --> 00:04:34,419
+can with the help of my fingers you can see at the top we have this directions, yes look
+
+63
+00:04:34,520 --> 00:04:34,800
+at that.
+
+64
+00:04:35,100 --> 00:04:40,200
+We have zoom gesture, we have scroll gesture, I can definitely scroll all of them with the
+
+65
+00:04:40,240 --> 00:04:41,160
+help of my fingers.
+
+66
+00:04:41,980 --> 00:04:47,100
+Hopefully, you guys are able to see that and yes, I can change it their 3D view as well.
+
+67
+00:04:47,800 --> 00:04:48,000
+Cool.
+
+68
+00:04:48,340 --> 00:04:49,380
+So, look at that.
+
+69
+00:04:50,180 --> 00:04:52,480
+This is how we can basically change it.
+
+70
+00:04:52,840 --> 00:04:53,760
+Yes, look at that.
+
+71
+00:04:54,100 --> 00:04:55,000
+This is your location.
+
+72
+00:04:55,160 --> 00:04:56,700
+You can plus it, minus it.
+
+73
+00:04:57,200 --> 00:05:01,380
+Close this, let's say you don't want it to show the compass and now if I press on to
+
+74
+00:05:01,400 --> 00:05:03,320
+my screen, I am not be able to see anything.
+
+75
+00:05:03,990 --> 00:05:11,540
+The moment I open this and try to definitely open this once again, maybe I need to reload
+
+76
+00:05:11,700 --> 00:05:12,540
+it or something else.
+
+77
+00:05:13,100 --> 00:05:14,940
+So you can see that this is a zoom control.
+
+78
+00:05:15,070 --> 00:05:15,740
+Yes, look at that.
+
+79
+00:05:16,210 --> 00:05:19,300
+The moment I open it, I can zoom it, zoom out.
+
+80
+00:05:19,980 --> 00:05:22,700
+I don't know for some reason I am not be able to see my compass.
+
+81
+00:05:23,520 --> 00:05:26,260
+if I reloaded once then I will see will see.
+
+82
+00:05:27,400 --> 00:05:31,720
+Hopefully, this will work and if I go somewhere else, where is my compass?
+
+83
+00:05:32,150 --> 00:05:32,500
+No idea.
+
+84
+00:05:32,870 --> 00:05:33,540
+Yes, look at that.
+
+85
+00:05:33,800 --> 00:05:36,360
+This is how we can basically see the compass.
+
+86
+00:05:36,580 --> 00:05:38,880
+In same way, we have this zoom gesture.
+
+87
+00:05:39,100 --> 00:05:40,020
+I can control this.
+
+88
+00:05:40,200 --> 00:05:45,140
+Yes, look at that the position, the moment you hold one finger and with the help of another
+
+89
+00:05:45,260 --> 00:05:49,200
+finger, you can rotate it, you can do a lot of things.
+
+90
+00:05:49,350 --> 00:05:51,280
+I mean, it is up to you however you want it to do.
+
+91
+00:05:51,700 --> 00:05:56,240
+So, this is how you can create a bunch of map controls.
+
+92
+00:05:56,580 --> 00:06:01,940
+Again, you can enhance the UI, you can add bunch of icons here instead of using this.
+
+93
+00:06:02,140 --> 00:06:04,220
+This will look much, much better.
+
+94
+00:06:05,300 --> 00:06:09,500
+So, yes, this is pretty much it for this chapter and see you next time.
+

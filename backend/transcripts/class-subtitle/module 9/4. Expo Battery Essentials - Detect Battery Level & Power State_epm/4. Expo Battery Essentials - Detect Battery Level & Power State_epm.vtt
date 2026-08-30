@@ -1,0 +1,401 @@
+WEBVTT
+
+00:00:00.320 --> 00:00:03.200
+Hey everyone and welcome to one more new lecture.
+
+00:00:03.400 --> 00:00:08.820
+In this lecture, we are going to talk about the battery we can say library.
+
+00:00:09.040 --> 00:00:15.300
+So a library that provides battery information for the physical device as well as corresponding
+
+00:00:15.620 --> 00:00:16.280
+event listener.
+
+00:00:16.281 --> 00:00:19.860
+So definitely we are connected to our physical device perfect.
+
+00:00:20.320 --> 00:00:22.080
+So expo battery provides.
+
+00:00:22.500 --> 00:00:27.320
+Information for the physical device such as battery level, whether or not a device is
+
+00:00:27.380 --> 00:00:31.560
+charging and more, as well as corresponding event listeners for it.
+
+00:00:32.720 --> 00:00:37.140
+So this is the chapter number 4 and you will learn how to check battery levels, charging
+
+00:00:37.239 --> 00:00:39.739
+status and monitor battery change in real time.
+
+00:00:40.100 --> 00:00:42.620
+So, what is battery API?
+
+00:00:42.980 --> 00:00:49.399
+So, we can again say just for checking the battery level, we need a battery API.
+
+00:00:49.680 --> 00:00:56.180
+Know if device is charging or not and monitor battery states and why do we even need it?
+
+00:00:56.440 --> 00:01:01.820
+Again, let's say you are creating a video calling app and you want at least a user's
+
+00:01:02.700 --> 00:01:09.780
+should be 10% and greater than 10% then only you will allow them to video call with each
+
+00:01:09.920 --> 00:01:16.640
+other got it same for gaming app like reduce you can whenever you have a low battery you
+
+00:01:16.680 --> 00:01:19.740
+can reduce the graphics for it perfect.
+
+00:01:20.360 --> 00:01:20.580
+So
+
+00:01:21.400 --> 00:01:26.960
+In all of this use cases, you can basically initialize this school.
+
+00:01:27.180 --> 00:01:29.880
+So let's see and how we can implement this.
+
+00:01:30.400 --> 00:01:36.240
+Again let's be inside the same module because I think this is the last module that we need
+
+00:01:36.241 --> 00:01:38.620
+and this is the last library that we need for it.
+
+00:01:39.180 --> 00:01:47.180
+So I can simply say battery and I can simply say battery example.tsx, r and fes.
+
+00:01:52.800 --> 00:01:57.020
+Let's save this and let's go inside the index.tsx.
+
+00:01:57.170 --> 00:01:58.840
+We don't need preceptics.
+
+00:02:00.310 --> 00:02:02.700
+Instead, we need a battery examples.
+
+00:02:03.680 --> 00:02:04.520
+Let me import it.
+
+00:02:04.660 --> 00:02:06.080
+Let me open my expo go.
+
+00:02:06.920 --> 00:02:07.160
+Perfect.
+
+00:02:08.040 --> 00:02:13.080
+And let me go to my module once again and let me try to reload it once.
+
+00:02:13.820 --> 00:02:13.920
+Nice.
+
+00:02:14.300 --> 00:02:16.360
+So, how you can use it?
+
+00:02:16.800 --> 00:02:20.920
+So let's move ahead first of all and let's try to install this.
+
+00:02:21.310 --> 00:02:24.780
+How you can basically install this very easy.
+
+00:02:26.120 --> 00:02:31.520
+Simply copy this command from here till here and then simply hit Banex.
+
+00:02:32.000 --> 00:02:39.300
+"Expo install expo battery" so this is going to install battery and yes you can see that
+
+00:02:39.440 --> 00:02:45.980
+this is the battery example and we don't even need maps here so I can save that so this is how
+
+00:02:46.100 --> 00:02:51.360
+they are coming nice. So let's see that how you can basically listen to battery levels battery
+
+00:02:51.440 --> 00:02:54.020
+state and low power mode everything.
+
+00:02:54.700 --> 00:02:58.940
+Simple and very easy, perfect.
+
+00:02:59.879 --> 00:03:06.360
+So for that, let me just simply coming to here and let me try to show you.
+
+00:03:06.760 --> 00:03:10.440
+So first thing first, let's maintain bunch of state variables.
+
+00:03:11.740 --> 00:03:18.280
+Perfect. So first of all, we have a battery level, battery state and low power mode. No
+
+00:03:18.320 --> 00:03:26.780
+problem. Alright. In same way, let me just move ahead and what I will do, let's first
+
+00:03:26.810 --> 00:03:31.400
+of all make a function name as get battery information. So what I will do, I can say
+
+00:03:31.401 --> 00:03:38.660
+get battery info and just give me a minute let me just fix
+
+00:03:38.700 --> 00:03:46.420
+it yes nice so for first of all let me off my AI I don't need it nice so this is going
+
+00:03:46.540 --> 00:03:56.239
+to be get the battery info and this is equals to your async and this async is simply going
+
+00:03:56.500 --> 00:04:02.080
+to first of all get the battery level battery state and is we are in power mode or not.
+
+00:04:02.400 --> 00:04:05.260
+So, this is how you can basically get it.
+
+00:04:05.340 --> 00:04:06.920
+So, how we can import a battery?
+
+00:04:07.159 --> 00:04:12.760
+Again a simple thing, simply say import as strict as battery from expo battery.
+
+00:04:14.480 --> 00:04:14.720
+Got it?
+
+00:04:15.760 --> 00:04:19.060
+Then we have level, then we have state and power mode, no problem.
+
+00:04:19.940 --> 00:04:20.800
+How you can get level?
+
+00:04:21.120 --> 00:04:23.000
+Simply call get battery level async.
+
+00:04:23.400 --> 00:04:28.300
+How you can get the state, simply say get battery state sync.
+
+00:04:28.460 --> 00:04:31.580
+How you can get is you are in low power mode or not.
+
+00:04:32.070 --> 00:04:35.300
+So this is how is low power mode enabled async.
+
+00:04:35.370 --> 00:04:35.919
+No problem.
+
+00:04:37.120 --> 00:04:38.160
+Very easy API.
+
+00:04:38.440 --> 00:04:41.000
+These are just API that we are using.
+
+00:04:41.800 --> 00:04:46.440
+And what I will do I can set the states for all of them nice.
+
+00:04:47.169 --> 00:04:51.699
+So set battery level, set battery state and set low power mode.
+
+00:04:52.270 --> 00:04:56.580
+In same way I am going to create a get state text.
+
+00:04:57.659 --> 00:05:04.120
+So if my battery state is in charging is in full is in unplugged unknown on the basis
+
+00:05:04.300 --> 00:05:07.099
+of that state we are going to show this.
+
+00:05:07.500 --> 00:05:15.500
+So, right now you will see battery dot battery state these are first of all let me add here
+
+00:05:17.180 --> 00:05:25.020
+this is going to be the battery state type got it and this can be of null as well.
+
+00:05:25.400 --> 00:05:30.479
+of it. So now if I come into here you will see. So we have a battery dot battery state
+
+00:05:30.759 --> 00:05:35.500
+dot charging. So the moment you press here you will get all the states that we have in
+
+00:05:35.560 --> 00:05:41.120
+same way we have full and plugged and unknown. We don't know what is the state for it in
+
+00:05:41.160 --> 00:05:43.240
+same way we can also create one utility.
+
+00:05:43.800 --> 00:05:46.539
+Name as get battery color.
+
+00:05:47.220 --> 00:05:48.539
+So that's crazy.
+
+00:05:48.759 --> 00:05:50.180
+These are just for UI purpose.
+
+00:05:50.330 --> 00:05:51.259
+You need not to do.
+
+00:05:51.560 --> 00:05:52.680
+This is just interesting.
+
+00:05:53.810 --> 00:05:55.680
+We can say activities that we are doing.
+
+00:05:55.960 --> 00:05:56.120
+Cool.
+
+00:05:56.539 --> 00:06:00.639
+In the same way, let me also create here get battery icons.
+
+00:06:00.930 --> 00:06:01.620
+So no problems.
+
+00:06:01.849 --> 00:06:04.580
+If battery state is charging, then show this icon.
+
+00:06:05.129 --> 00:06:07.360
+If battery level is null, then show.
+
+00:06:07.979 --> 00:06:10.720
+Otherwise, if 0.5 to return this.
+
+00:06:11.700 --> 00:06:17.660
+should return the low battery. These are just again a battery icons. Again for UI simulation
+
+00:06:17.780 --> 00:06:29.360
+purpose easy. Yes, battery levels will always in the points. So, 0 point between 0 and 0.
+
+00:06:29.361 --> 00:06:31.000
+to 1 and then we will multiply that by 100.
+
+00:06:31.660 --> 00:06:36.680
+Then we have 50%, 10%, 20% that is how we are calculating it.
+
+00:06:36.980 --> 00:06:37.080
+Cool?
+
+00:06:37.460 --> 00:06:41.200
+Yes, that's the one very important point we need to know.
+
+00:06:41.960 --> 00:06:42.260
+Nice.
+
+00:06:42.780 --> 00:06:46.400
+In same way, I also wanted to add one use effect.
+
+00:06:46.640 --> 00:06:51.800
+Again I'm not writing these off code because I don't think so that we need to write everything.
+
+00:06:51.840 --> 00:06:53.200
+You can also copy and paste.
+
+00:06:53.480 --> 00:06:55.060
+Again we are only understanding this.
+
+00:06:55.860 --> 00:06:56.520
+So that's why.
+
+00:06:56.800 --> 00:07:02.240
+So, if I just simply paste it, so first thing let me import my use effect.
+
+00:07:02.680 --> 00:07:08.240
+So first thing this is going to get the initial battery info no problem, then we are subscribing
+
+00:07:08.759 --> 00:07:13.300
+to battery level like what is my battery level and we are setting the state for it.
+
+00:07:13.979 --> 00:07:19.400
+Same for we can say battery state is it charging or unplugged we are listening in real time.
+
+00:07:20.200 --> 00:07:25.360
+Then we have power subscription got it is we are in low power mode or not.
+
+00:07:26.580 --> 00:07:28.680
+That's all we are basically doing.
+
+00:07:29.460 --> 00:07:29.580
+Nice.
+
+00:07:30.170 --> 00:07:33.900
+So now let me try to render all of that onto the UI.
+
+00:07:34.260 --> 00:07:37.640
+So well, first of all, let me copy the entire UI.
+
+00:07:38.760 --> 00:07:41.460
+So just give me a minute and then I'll try to show you.
+
+00:07:41.490 --> 00:07:46.320
+So these are just pretty straightforward and pretty interesting things by the way.
+
+00:07:47.220 --> 00:07:48.720
+So let me just copy.
+
+00:07:49.400 --> 00:07:53.580
+And from here to here, let me paste it.
+
+00:07:53.610 --> 00:07:59.840
+So, only thing that I need to change is this.
+
+00:08:00.720 --> 00:08:09.440
+We have a battery example, but below this I need to say export default battery example,
+
+00:08:10.020 --> 00:08:10.360
+nice.
+
+00:08:10.699 --> 00:08:14.080
+And now if I save it, look at that.
+
+00:08:14.500 --> 00:08:17.280
+Yes, this is the right percentage.
+
+00:08:17.940 --> 00:08:21.980
+I can't unplug it because the moment I unplug it you are not be able to see anything.
+
+00:08:22.580 --> 00:08:27.220
+So that's why and this is you can see that right now we are charging it.
+
+00:08:27.620 --> 00:08:27.700
+Cool.
+
+00:08:28.600 --> 00:08:34.460
+But what if I just coming to here and open my power saving mode.
+
+00:08:34.740 --> 00:08:37.880
+So you will see that low power mode is enabled right now.
+
+00:08:38.100 --> 00:08:39.019
+Got it?
+
+00:08:39.480 --> 00:08:44.819
+In same way if we are in a low battery mode in another mode, so you can also simulate
+
+00:08:45.100 --> 00:08:47.079
+up on the basis of that.
+
+00:08:47.759 --> 00:08:48.060
+Got it?
+
+00:08:49.100 --> 00:08:56.579
+So this is how you can basically see multiple states of your battery like you can check
+
+00:08:56.660 --> 00:09:01.220
+for state, you can check for your battery level, you can even check for is you are in
+
+00:09:01.221 --> 00:09:02.500
+power mode or not.
+
+00:09:02.900 --> 00:09:07.660
+Then we have a bunch of battery state enums like charging full
+
+00:09:08.680 --> 00:09:13.260
+unplugged got it and yes, this is how you can basically
+
+00:09:14.220 --> 00:09:17.840
+Calculate that cool. So this is a simple battery simulator app
+
+00:09:18.200 --> 00:09:23.560
+And I hope you guys are loving it again if you wanted to go much in depth here.
+
+00:09:23.760 --> 00:09:30.840
+So, read more about it, but I think this is pretty much it for this entire module and
+
+00:09:30.980 --> 00:09:32.480
+see you next time.
+

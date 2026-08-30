@@ -1,0 +1,1156 @@
+1
+00:00:00,820 --> 00:00:04,140
+Alright everyone and welcome to one more new module.
+
+2
+00:00:04,620 --> 00:00:10,680
+From this module we are going to talk about data storage and file systems in expo.
+
+3
+00:00:11,040 --> 00:00:11,720
+So what is this?
+
+4
+00:00:11,900 --> 00:00:18,140
+So basically whenever you wanted to store some sort of data locally, so for webs we
+
+5
+00:00:18,180 --> 00:00:20,840
+already have session storage, local storage.
+
+6
+00:00:20,900 --> 00:00:24,920
+But when it's come to mobile app, what is the solution for it?
+
+7
+00:00:25,160 --> 00:00:31,599
+So we have three different solutions and each of them have different use cases like first
+
+8
+00:00:31,600 --> 00:00:32,879
+one is async storage.
+
+9
+00:00:33,280 --> 00:00:40,559
+This is a separate initially they natively support into react native or we can say expo,
+
+10
+00:00:40,860 --> 00:00:42,879
+but for now they maintained separately.
+
+11
+00:00:43,160 --> 00:00:44,059
+We'll talk about it.
+
+12
+00:00:44,100 --> 00:00:44,500
+Don't worry.
+
+13
+00:00:45,180 --> 00:00:47,699
+Then we have this Expo Secure Store.
+
+14
+00:00:48,000 --> 00:00:52,720
+Then we have this Expo SQLite and then Expo file system.
+
+15
+00:00:52,860 --> 00:00:55,720
+This is basically more of a file system related thing.
+
+16
+00:00:56,340 --> 00:01:02,040
+So this is the chapter number one and in this chapter we are basically going to talk about
+
+17
+00:01:02,239 --> 00:01:03,080
+async storage.
+
+18
+00:01:04,110 --> 00:01:09,479
+So now let's move ahead and start talking about async storage and what is this?
+
+19
+00:01:09,900 --> 00:01:18,580
+So basically, we can say whenever you wanted to let your app save data locally on a device
+
+20
+00:01:19,500 --> 00:01:23,820
+like many mobile apps need to remember things we can say that and definitely.
+
+21
+00:01:24,520 --> 00:01:30,620
+So in terms of user preferences, some settings or some other information.
+
+22
+00:01:31,000 --> 00:01:38,140
+Even after the user close the app and we can say refresh it and reopen it, we want it to
+
+23
+00:01:38,260 --> 00:01:42,680
+sync up and pop up all the previously stored data kind of that.
+
+24
+00:01:43,900 --> 00:01:46,860
+So this is where a sync storage came in the picture.
+
+25
+00:01:47,100 --> 00:01:50,580
+So, async storage is a key value storage system.
+
+26
+00:01:51,799 --> 00:01:56,979
+Yes, async storage is basically store data into key value format.
+
+27
+00:01:57,460 --> 00:02:00,040
+Like they store data asynchronously.
+
+28
+00:02:00,280 --> 00:02:03,800
+This means they are not going to block any UI for you.
+
+29
+00:02:04,149 --> 00:02:08,539
+You can smoothly use your app and in background they are going to store your data.
+
+30
+00:02:08,699 --> 00:02:12,920
+Now, the second thing is and like second thing is this is async.
+
+31
+00:02:13,260 --> 00:02:18,239
+Third, we can say they persist your data and that is why we basically need it.
+
+32
+00:02:18,599 --> 00:02:20,440
+And then this is unencrypted.
+
+33
+00:02:20,620 --> 00:02:20,760
+Yep.
+
+34
+00:02:21,480 --> 00:02:28,860
+Like we can say that whenever you wanted to store a non-sensitive data, so it is good for
+
+35
+00:02:28,920 --> 00:02:29,360
+storing.
+
+36
+00:02:31,600 --> 00:02:34,020
+Non-sensitive data. Cool.
+
+37
+00:02:34,660 --> 00:02:38,160
+This is basically good for storing non-sensitive data.
+
+38
+00:02:38,680 --> 00:02:43,260
+Like as I told you earlier, like user preferences, some app state,
+
+39
+00:02:44,280 --> 00:02:48,020
+but not secure for sensitive data.
+
+40
+00:02:48,021 --> 00:02:50,700
+We can say like storing passwords.
+
+41
+00:02:51,000 --> 00:02:57,980
+Storing tokens, storing AI API keys, these are not a good practice to follow with async
+
+42
+00:02:58,040 --> 00:02:58,460
+storage.
+
+43
+00:02:58,500 --> 00:03:00,960
+For that we have this Expo secure store.
+
+44
+00:03:01,020 --> 00:03:02,900
+We'll come to it in next chapter.
+
+45
+00:03:04,360 --> 00:03:04,640
+Cool.
+
+46
+00:03:04,900 --> 00:03:10,280
+So now let's move ahead and we'll see basically how you can use it and how you can implement
+
+47
+00:03:10,281 --> 00:03:10,700
+it.
+
+48
+00:03:10,860 --> 00:03:13,380
+So for that we have this website.
+
+49
+00:03:14,100 --> 00:03:19,380
+Perfect, name as react native async storage where you will basically find it.
+
+50
+00:03:19,560 --> 00:03:27,520
+So you just simply need to go to the documentation and search for async storage and after searching
+
+51
+00:03:27,521 --> 00:03:30,080
+you will found this doc page.
+
+52
+00:03:30,300 --> 00:03:37,920
+And here you will see that async storage is our synchronous, unencrypted, persistent key
+
+53
+00:03:37,921 --> 00:03:40,900
+value storage for react native apps.
+
+54
+00:03:40,901 --> 00:03:42,880
+And we can say for expo they both are same.
+
+55
+00:03:43,500 --> 00:03:49,280
+It has a simple API and it is good choice for storing small amount of data.
+
+56
+00:03:49,700 --> 00:03:50,360
+It is good.
+
+57
+00:03:50,760 --> 00:03:55,040
+It is also good choice for storing data that does not need encryption.
+
+58
+00:03:55,100 --> 00:03:58,940
+such as user preferences or we can say app store.
+
+59
+00:03:59,660 --> 00:04:05,420
+So understanding more about it, you can simply press on async storage documentation and you
+
+60
+00:04:05,440 --> 00:04:07,360
+will be redirected to this page.
+
+61
+00:04:08,720 --> 00:04:12,980
+And after that, you can basically click here to go to latest version because we wanted
+
+62
+00:04:12,981 --> 00:04:13,800
+to go latest.
+
+63
+00:04:15,140 --> 00:04:19,460
+And then this is the command you are going to run for implementing it.
+
+64
+00:04:19,740 --> 00:04:20,740
+I think.
+
+65
+00:04:22,699 --> 00:04:24,380
+Let's go to the previous one.
+
+66
+00:04:24,520 --> 00:04:24,800
+Yes.
+
+67
+00:04:24,860 --> 00:04:27,720
+And simply press on see installation and go with it.
+
+68
+00:04:27,900 --> 00:04:28,000
+Cool.
+
+69
+00:04:28,139 --> 00:04:28,500
+Yes.
+
+70
+00:04:29,340 --> 00:04:33,820
+And let me copy this command only this.
+
+71
+00:04:34,060 --> 00:04:40,039
+And I have already installed a basic expo app and I have resetted it and open into my
+
+72
+00:04:40,600 --> 00:04:41,980
+Expo Go app.
+
+73
+00:04:42,240 --> 00:04:42,520
+Perfect.
+
+74
+00:04:42,600 --> 00:04:43,400
+So I hope so.
+
+75
+00:04:43,480 --> 00:04:45,820
+These things you guys can do by yourself.
+
+76
+00:04:46,540 --> 00:04:53,920
+And now let me just simply open my terminal and inside my terminal I can simply run burnx
+
+77
+00:04:54,400 --> 00:04:58,420
+Expo install at the rate react native async storage.
+
+78
+00:04:58,700 --> 00:05:02,440
+slash async storage and then simply hit this.
+
+79
+00:05:02,660 --> 00:05:08,980
+So after hitting it you will just wait for few seconds and you will just let me just
+
+80
+00:05:08,981 --> 00:05:14,600
+write back and alright now you can see that in fraction of seconds in less than 7 seconds
+
+81
+00:05:14,700 --> 00:05:17,360
+We have installed it successfully.
+
+82
+00:05:18,180 --> 00:05:19,980
+Now how you can use it?
+
+83
+00:05:20,120 --> 00:05:25,080
+So for using it you can simply press on usage and this is how you can store it.
+
+84
+00:05:25,081 --> 00:05:31,180
+So the first step is always going to be import this and then use it.
+
+85
+00:05:31,200 --> 00:05:36,000
+So, let's move ahead and we will see that how we can use it.
+
+86
+00:05:36,140 --> 00:05:41,460
+So for that let me go inside the index.tsx files.
+
+87
+00:05:41,680 --> 00:05:42,180
+Alright.
+
+88
+00:05:42,740 --> 00:05:46,500
+And here, so the first thing I wanted to do is to import this.
+
+89
+00:05:47,080 --> 00:05:51,320
+So for importing it, I can simply say async storage.
+
+90
+00:05:52,780 --> 00:05:57,880
+Prom, add the rate, react native, async storage, async storage.
+
+91
+00:05:58,020 --> 00:05:58,280
+All right.
+
+92
+00:05:58,620 --> 00:05:59,760
+And let me off my AI.
+
+93
+00:05:59,900 --> 00:06:02,460
+I think we are already done with it.
+
+94
+00:06:02,461 --> 00:06:02,840
+Cool.
+
+95
+00:06:04,820 --> 00:06:10,240
+Now for stimulating it, I just wanted you to do a bunch of settings with me.
+
+96
+00:06:10,460 --> 00:06:11,880
+Yes, you have to do it.
+
+97
+00:06:11,900 --> 00:06:18,740
+Like first thing is you can simply maintain a state variable simply say output and then
+
+98
+00:06:18,860 --> 00:06:26,320
+this is going to be set output and this is equals to use state.
+
+99
+00:06:27,600 --> 00:06:27,979
+Perfect.
+
+100
+00:06:28,860 --> 00:06:31,720
+And I will just keep this as empty.
+
+101
+00:06:32,260 --> 00:06:32,880
+Perfect.
+
+102
+00:06:33,460 --> 00:06:36,039
+And then I am going to create here.
+
+103
+00:06:36,600 --> 00:06:41,660
+a simple utility just to simulate a lot of things for you.
+
+104
+00:06:41,980 --> 00:06:48,240
+I will call it a log and this log is going to accept a message and then this is going
+
+105
+00:06:48,241 --> 00:06:49,340
+to show us the output.
+
+106
+00:06:49,700 --> 00:06:50,180
+Easy.
+
+107
+00:06:50,800 --> 00:06:56,700
+And whatever the output is here like previous one, I am basically going to show that.
+
+108
+00:06:58,200 --> 00:07:05,240
+like backslash and just to show them in a show the string into new line and whatever
+
+109
+00:07:05,241 --> 00:07:14,180
+the message will come cool and this will going to be type of any because this can be of string
+
+110
+00:07:14,181 --> 00:07:19,200
+this can be of an object so let's keep this as an array as in any.
+
+111
+00:07:19,400 --> 00:07:20,240
+Perfect.
+
+112
+00:07:20,380 --> 00:07:25,240
+So the first thing that I wanted to understand is how you can store the data.
+
+113
+00:07:25,520 --> 00:07:30,020
+So for storing the data, you can already see this is the simple method.
+
+114
+00:07:30,780 --> 00:07:32,300
+And what is that method?
+
+115
+00:07:32,800 --> 00:07:35,440
+Method is a sync storage dot set item.
+
+116
+00:07:35,700 --> 00:07:39,420
+And, then you need to give the key for it and the value.
+
+117
+00:07:39,540 --> 00:07:43,660
+Simple, straightforward, nothing rocket science, perfect.
+
+118
+00:07:44,380 --> 00:07:50,640
+Alright, so let's move ahead and I am going to say this as cons example 1.
+
+119
+00:07:51,320 --> 00:07:54,140
+And then I am going to create here a sync method.
+
+120
+00:07:55,600 --> 00:08:01,860
+First thing before using it, I always wanted to clear all the previous logs that we have.
+
+121
+00:08:01,960 --> 00:08:04,920
+So let me just simply, you need not to do so all of this.
+
+122
+00:08:05,340 --> 00:08:10,780
+You can just directly run it and see the output, but I wanted to simulate a lot of other methods
+
+123
+00:08:11,400 --> 00:08:11,840
+as well.
+
+124
+00:08:12,000 --> 00:08:13,800
+That's why I'm doing this much of thing.
+
+125
+00:08:13,900 --> 00:08:19,540
+Perfect, so let me simply say set output as an empty string, not rocket science at all.
+
+126
+00:08:20,380 --> 00:08:24,440
+Perfect, so here before calling anything I just wanted to clear out everything.
+
+127
+00:08:26,100 --> 00:08:30,840
+Perfect, and then I can simply say await async storage.
+
+128
+00:08:32,760 --> 00:08:34,220
+Alright, where is my async storage?
+
+129
+00:08:34,520 --> 00:08:36,839
+I think they just get out of it.
+
+130
+00:08:37,080 --> 00:08:38,740
+No problem, let me re-import it.
+
+131
+00:08:39,299 --> 00:08:42,339
+And let me try to reuse it.
+
+132
+00:08:42,399 --> 00:08:49,000
+So asyncstorage.setitem and then first thing is always going to be the key.
+
+133
+00:08:49,260 --> 00:08:54,720
+So let me say this as username and then second thing is always going to be value.
+
+134
+00:08:55,320 --> 00:08:58,080
+Let me simply say name as Suraj.
+
+135
+00:08:58,899 --> 00:08:59,420
+Easy.
+
+136
+00:08:59,620 --> 00:09:04,180
+And then let me just create a log and I can say saved.
+
+137
+00:09:04,700 --> 00:09:08,920
+Perfect, saved word, username is equal to solage.
+
+138
+00:09:09,020 --> 00:09:09,620
+No problem.
+
+139
+00:09:10,460 --> 00:09:11,560
+Simple, easy thing.
+
+140
+00:09:12,700 --> 00:09:13,000
+Perfect.
+
+141
+00:09:13,460 --> 00:09:20,540
+And now what you can do, you can simply come into here and then let me try to design it
+
+142
+00:09:20,541 --> 00:09:21,040
+a bit.
+
+143
+00:09:21,200 --> 00:09:21,460
+Perfect.
+
+144
+00:09:21,660 --> 00:09:22,520
+So just give me a minute.
+
+145
+00:09:23,240 --> 00:09:29,660
+Let me say just for right now, I am basically going to use here the pressable.
+
+146
+00:09:30,000 --> 00:09:31,340
+All right.
+
+147
+00:09:31,840 --> 00:09:37,080
+And then this pressable is basically going to save me a text.
+
+148
+00:09:37,420 --> 00:09:40,620
+Text is going to be save item into storage.
+
+149
+00:09:41,360 --> 00:09:42,160
+No problem.
+
+150
+00:09:43,280 --> 00:09:43,580
+Perfect.
+
+151
+00:09:43,840 --> 00:09:46,900
+And let me rerun my application.
+
+152
+00:09:48,560 --> 00:09:50,060
+Burn X, expose start.
+
+153
+00:09:52,280 --> 00:09:52,600
+Perfect.
+
+154
+00:09:53,280 --> 00:09:55,800
+And then let me reload it.
+
+155
+00:09:58,040 --> 00:09:58,760
+Cool.
+
+156
+00:09:59,460 --> 00:10:05,220
+So you can definitely reference this chapter specifically just for this async storage in
+
+157
+00:10:05,221 --> 00:10:06,180
+future as well.
+
+158
+00:10:06,800 --> 00:10:12,960
+And I can say on press is basically going to be as example one.
+
+159
+00:10:13,760 --> 00:10:14,060
+Perfect.
+
+160
+00:10:14,400 --> 00:10:21,940
+So the moment I simply say save item and then if I check my logs nothing happened.
+
+161
+00:10:22,160 --> 00:10:22,440
+Why?
+
+162
+00:10:23,940 --> 00:10:26,100
+Let me reload it.
+
+163
+00:10:26,340 --> 00:10:26,560
+Cool.
+
+164
+00:10:27,440 --> 00:10:29,740
+What if I say alert instead of log?
+
+165
+00:10:29,960 --> 00:10:31,040
+What if I say alert?
+
+166
+00:10:32,000 --> 00:10:32,500
+Cool.
+
+167
+00:10:34,100 --> 00:10:34,380
+Perfect.
+
+168
+00:10:34,780 --> 00:10:39,780
+And then if I once again click over this saved and you will see saved user name is equals
+
+169
+00:10:39,781 --> 00:10:40,220
+to source.
+
+170
+00:10:40,320 --> 00:10:42,700
+This means data is saving.
+
+171
+00:10:43,920 --> 00:10:46,560
+Now, how I can see the output?
+
+172
+00:10:47,160 --> 00:10:53,320
+So for seeing the output what I can do I mean this is not necessary to do so but let's do
+
+173
+00:10:53,321 --> 00:10:54,040
+it.
+
+174
+00:10:54,880 --> 00:11:02,680
+Let me below this let me add here a view perfect this view is going to show the title as output
+
+175
+00:11:03,100 --> 00:11:07,500
+and then a scroll view of showing the output like this output basically.
+
+176
+00:11:07,600 --> 00:11:15,399
+like this one. Cool. And let me just simply apply the design for it. So, let me bring
+
+177
+00:11:15,400 --> 00:11:23,819
+that cool and I will say this as const styles is equals to style.
+
+178
+00:11:25,500 --> 00:11:30,220
+style sheet dot create.
+
+179
+00:11:31,820 --> 00:11:32,060
+Perfect.
+
+180
+00:11:33,080 --> 00:11:36,180
+And then inside this, I am basically going to paste it.
+
+181
+00:11:36,339 --> 00:11:39,120
+Now let me see what happened.
+
+182
+00:11:40,339 --> 00:11:41,540
+Where is my style sheet?
+
+183
+00:11:43,160 --> 00:11:46,279
+Maybe this is not. Let me import my scroll view.
+
+184
+00:11:47,480 --> 00:11:49,500
+Let me go back one more back.
+
+185
+00:11:51,899 --> 00:11:58,560
+Style sheet and this will come from react native and this will create and then I am
+
+186
+00:11:58,579 --> 00:12:00,259
+going to paste this design.
+
+187
+00:12:00,860 --> 00:12:01,019
+Cool.
+
+188
+00:12:01,779 --> 00:12:06,040
+So, now you will see that we have the design.
+
+189
+00:12:06,100 --> 00:12:09,139
+Sorry, let me fix it.
+
+190
+00:12:09,300 --> 00:12:09,519
+Cool.
+
+191
+00:12:09,940 --> 00:12:11,040
+Now we are good to go.
+
+192
+00:12:11,279 --> 00:12:11,560
+Perfect.
+
+193
+00:12:12,300 --> 00:12:14,560
+And let me import my scroll view once again.
+
+194
+00:12:15,259 --> 00:12:21,620
+And now if I go to here, you will see this something like, so let me fix this by saying
+
+195
+00:12:22,100 --> 00:12:28,959
+here and this is going to be the styles.container.
+
+196
+00:12:29,680 --> 00:12:32,139
+Let me create here one container for it.
+
+197
+00:12:32,380 --> 00:12:44,199
+So this is going to be as container and this container is going to have a flex of one and
+
+198
+00:12:48,720 --> 00:12:49,680
+All right.
+
+199
+00:12:50,140 --> 00:12:52,020
+This is going to be the padding of 20.
+
+200
+00:12:53,020 --> 00:12:55,740
+And now if I save it, you will see that we have this output.
+
+201
+00:12:56,740 --> 00:13:03,060
+And now instead of alert, if I simply say this as log and if I say save item, you will
+
+202
+00:13:03,061 --> 00:13:07,680
+see saved this and this is how we can basically simulating it.
+
+203
+00:13:07,840 --> 00:13:07,960
+Cool.
+
+204
+00:13:08,140 --> 00:13:11,620
+So now we have already seen how you can save the data.
+
+205
+00:13:11,700 --> 00:13:12,600
+Perfect.
+
+206
+00:13:13,180 --> 00:13:18,720
+Now let's move ahead and then I wanted to see basically how you can get the data.
+
+207
+00:13:19,940 --> 00:13:20,220
+Perfect.
+
+208
+00:13:20,980 --> 00:13:27,700
+So for getting the data, let me simply create here example 2 and this is going to be as
+
+209
+00:13:27,701 --> 00:13:29,120
+simple as sync.
+
+210
+00:13:29,600 --> 00:13:35,740
+And for before getting it, I wanted to clear everything that I have and then simple await
+
+211
+00:13:36,880 --> 00:13:40,100
+and before awaiting it, I wanted to get it.
+
+212
+00:13:40,220 --> 00:13:48,000
+So I can simply say there very easily, I can say const value and this value is basically
+
+213
+00:13:48,040 --> 00:13:54,899
+equal to await and very, this is very straightforward as equal to we can say local storage.
+
+214
+00:13:55,100 --> 00:14:03,940
+So, asyncstorage.getitems, go get item not items and then you simply need to pass the
+
+215
+00:14:03,941 --> 00:14:04,139
+key.
+
+216
+00:14:04,240 --> 00:14:11,100
+So, the key is user username and then I can simply use my log and then I can show whatever
+
+217
+00:14:11,101 --> 00:14:12,420
+the value is coming.
+
+218
+00:14:13,600 --> 00:14:16,740
+Perfect and in same way I can copy this.
+
+219
+00:14:17,060 --> 00:14:17,399
+Perfect.
+
+220
+00:14:17,819 --> 00:14:18,959
+I can paste this.
+
+221
+00:14:18,980 --> 00:14:23,839
+I can use here example2 and then I can say
+
+222
+00:14:24,300 --> 00:14:25,980
+Get items.
+
+223
+00:14:26,620 --> 00:14:26,940
+Perfect.
+
+224
+00:14:27,480 --> 00:14:32,760
+And now if I press on get items, you will see this is the data which is coming from
+
+225
+00:14:32,779 --> 00:14:33,339
+localhost.
+
+226
+00:14:33,839 --> 00:14:36,860
+Let's say instead of Suraj, I have changed this to Karan.
+
+227
+00:14:37,820 --> 00:14:38,060
+Perfect.
+
+228
+00:14:38,160 --> 00:14:45,760
+And if I press simply as save item into storage, then we definitely, I can change this as well.
+
+229
+00:14:45,900 --> 00:14:51,300
+And if I simply say you can see that this is the data and if I press get item you will
+
+230
+00:14:51,301 --> 00:14:55,460
+see this is the data which is coming from a sync storage.
+
+231
+00:14:55,660 --> 00:15:01,800
+So this is how you can set items, this is how you can get item in same way let me tell
+
+232
+00:15:01,801 --> 00:15:06,940
+you in same way you can definitely store data into JSON format as well.
+
+233
+00:15:07,200 --> 00:15:12,520
+You can store like if you just simply press on API, you will see we have a lot of methods.
+
+234
+00:15:12,580 --> 00:15:16,180
+I don't want it to get all of, I just don't want it to cover all of them.
+
+235
+00:15:16,780 --> 00:15:21,200
+You will definitely figure out like very straightforward, very simple.
+
+236
+00:15:22,060 --> 00:15:22,260
+Perfect.
+
+237
+00:15:22,320 --> 00:15:24,820
+Let me just try to show you the remove item.
+
+238
+00:15:25,300 --> 00:15:31,959
+How you can basically remove all the items that are present inside your local system.
+
+239
+00:15:32,019 --> 00:15:32,580
+So very easy.
+
+240
+00:15:33,320 --> 00:15:39,620
+I can simply say example 3 and I will rename this to example 3.
+
+241
+00:15:40,500 --> 00:15:41,839
+Perfect and what I can do?
+
+242
+00:15:41,940 --> 00:15:46,140
+I can simply going to use here the remove item function.
+
+243
+00:15:46,500 --> 00:15:47,920
+Perfect and after that.
+
+244
+00:15:48,100 --> 00:15:49,959
+Things is going to be very easy.
+
+245
+00:15:50,100 --> 00:15:54,300
+So instead of this, I can simply say this as remove item.
+
+246
+00:15:54,779 --> 00:15:56,259
+Now how this remove item work?
+
+247
+00:15:56,839 --> 00:15:57,040
+Nothing.
+
+248
+00:15:57,180 --> 00:15:59,199
+You just simply need to call it.
+
+249
+00:15:59,560 --> 00:16:01,300
+So we need not to do anything else.
+
+250
+00:16:02,100 --> 00:16:04,699
+I can simply say data removed.
+
+251
+00:16:06,360 --> 00:16:06,880
+Easy.
+
+252
+00:16:08,279 --> 00:16:13,980
+And then in same way I can copy this, I can paste this, this is very easy.
+
+253
+00:16:14,740 --> 00:16:19,279
+This is example 3 and then I can say delete items.
+
+254
+00:16:19,540 --> 00:16:20,540
+Let me save it.
+
+255
+00:16:20,899 --> 00:16:23,540
+Let me press on delete item, you will see data removed.
+
+256
+00:16:24,199 --> 00:16:27,560
+And now if I press on get item, you will see I am getting null.
+
+257
+00:16:27,819 --> 00:16:28,699
+Why I am getting null?
+
+258
+00:16:28,959 --> 00:16:32,380
+Because every data that is inside my async storage.
+
+259
+00:16:33,540 --> 00:16:39,860
+has wiped out. Cool. I can again save the data. I can again get the data, but if I delete
+
+260
+00:16:39,861 --> 00:16:46,440
+it then I am going to get nothing. Cool. In same way you can check for multi get, multi
+
+261
+00:16:46,540 --> 00:16:50,140
+set, multi merge. This means you can merge more than one data.
+
+262
+00:16:52,140 --> 00:16:59,300
+Now, we also have a clear basically means this is going to remove all the items that
+
+263
+00:16:59,301 --> 00:17:01,820
+are present inside your async storage.
+
+264
+00:17:01,920 --> 00:17:03,460
+So I mean this is also easy.
+
+265
+00:17:04,359 --> 00:17:06,579
+Now we have use async storage hook.
+
+266
+00:17:07,000 --> 00:17:10,700
+So, hook like interface that we are experimenting with.
+
+267
+00:17:10,839 --> 00:17:12,839
+Now they are basically experimenting this.
+
+268
+00:17:13,339 --> 00:17:17,180
+So this will change in nearest future to fully leverage Hooks API.
+
+269
+00:17:17,760 --> 00:17:19,640
+So I mean this is again an optional thing.
+
+270
+00:17:19,740 --> 00:17:23,560
+They are basically providing you a bunch of method out of the box.
+
+271
+00:17:23,900 --> 00:17:30,160
+So, instead of just importing this, listen to me, instead of importing this and then
+
+272
+00:17:30,161 --> 00:17:36,360
+extract this from here and then use it, they are providing you a basic simple hook and
+
+273
+00:17:36,540 --> 00:17:41,380
+inside this hook you have get item, you have set item, you can merge item, you have remove
+
+274
+00:17:41,420 --> 00:17:41,700
+item.
+
+275
+00:17:41,800 --> 00:17:45,720
+And this is how you can extract them and use them.
+
+276
+00:17:45,820 --> 00:17:51,980
+So I think this is pretty much it for this chapter because there is nothing as such groundbreaking
+
+277
+00:17:52,220 --> 00:17:52,420
+into it.
+
+278
+00:17:52,421 --> 00:17:57,860
+This is a bunch of simple APIs and you just need to know how you can use it.
+
+279
+00:17:57,900 --> 00:18:03,440
+So, I am assuming that this is very easy for you guys to understand what is happening.
+
+280
+00:18:03,960 --> 00:18:07,020
+This is just my assignment and take this as an assignment.
+
+281
+00:18:07,260 --> 00:18:14,540
+Try to create all the examples and use it and see that inside the output.
+
+282
+00:18:14,780 --> 00:18:15,080
+Cool.
+
+283
+00:18:15,400 --> 00:18:16,820
+Design it as much as you want.
+
+284
+00:18:17,000 --> 00:18:18,980
+And, yep, now it's up to you.
+
+285
+00:18:19,240 --> 00:18:23,100
+So this is pretty much it for the chapter number one where we have learned about async
+
+286
+00:18:23,101 --> 00:18:23,460
+storage.
+
+287
+00:18:23,980 --> 00:18:28,080
+In our next chapter, we are going to talk about bunch of other features like secure
+
+288
+00:18:28,081 --> 00:18:28,400
+storage.
+
+289
+00:18:29,380 --> 00:18:32,320
+So yeah, this is pretty much it and see you next time.
+

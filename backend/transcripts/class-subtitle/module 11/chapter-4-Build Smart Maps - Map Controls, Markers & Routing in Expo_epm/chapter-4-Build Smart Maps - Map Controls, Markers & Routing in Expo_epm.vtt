@@ -1,0 +1,104 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:06.680
+Alright everyone, welcome to one more new chapter. In this chapter we are basically going to talk about
+
+00:00:07.520 --> 00:00:13.600
+markers in much more depth. Perfect. So basically we are again going to create a simple mini project
+
+00:00:13.840 --> 00:00:16.219
+that is map camera plus markers.
+
+00:00:16.600 --> 00:00:22.060
+So, the main feature is again displaying the map which we already have and showing the
+
+00:00:22.120 --> 00:00:30.400
+multiple markers and move camera to mark on a button tap we can say that and marker properties
+
+00:00:30.740 --> 00:00:36.860
+have coordinates, titles, snippets, dragable we see that how we basically implement it.
+
+00:00:37.400 --> 00:00:41.100
+Got it again for that I have again prepared a simple.
+
+00:00:43.179 --> 00:00:50.480
+array, so this array have a coordinates and then titles and then snippets and then draggable
+
+00:00:50.739 --> 00:00:51.640
+as true perfect.
+
+00:00:51.820 --> 00:00:58.519
+So for title Delhi snippet capital of India a lot of same Mumbai and then Bangalore and
+
+00:00:58.620 --> 00:01:00.479
+how you can basically use it.
+
+00:01:01.000 --> 00:01:07.560
+And again, let me just point out one more thing which is expo map still is in alpha
+
+00:01:07.900 --> 00:01:10.420
+and they definitely required a development build.
+
+00:01:10.780 --> 00:01:14.820
+So, make sure that you have a development build then and only you are testing it out
+
+00:01:15.560 --> 00:01:15.740
+cool.
+
+00:01:16.420 --> 00:01:23.080
+So, for testing this out what I can do I can again go to this UI settings below this we
+
+00:01:23.220 --> 00:01:27.600
+can have a marker this markers have markers Google.
+
+00:01:28.200 --> 00:01:33.399
+And, if I save it and decrease the size of it look at that, this is the three locations
+
+00:01:34.200 --> 00:01:40.340
+that we are on and you can see this is somewhere around Delhi, this is somewhere around Mumbai
+
+00:01:40.539 --> 00:01:44.439
+and this is somewhere around, yes this is somewhere around we can say.
+
+00:01:45.759 --> 00:01:52.880
+Bangload. Alright, this is pretty amazing. So basically, render marker define this marker
+
+00:01:53.020 --> 00:01:59.259
+data, this is how we have added and each marker, yes, each marker have this much of property.
+
+00:01:59.670 --> 00:02:05.040
+The coordinates and if you definitely press over it, you can see something like this.
+
+00:02:05.280 --> 00:02:15.080
+Got it again, you can get the proper Google map is not installed or is disabled. It's
+
+00:02:15.081 --> 00:02:16.599
+And you can definitely click them.
+
+00:02:17.720 --> 00:02:22.239
+I do not know they are not dragging some, but you can definitely drag them as well.
+
+00:02:22.269 --> 00:02:23.000
+Yes, look at that.
+
+00:02:23.680 --> 00:02:27.819
+This is how you can drag the entire, let us say let me paste it somewhere around.
+
+00:02:27.909 --> 00:02:33.260
+So they have some different location on the basis of that we can fetch that and show that
+
+00:02:33.340 --> 00:02:34.280
+specific location.
+
+00:02:34.800 --> 00:02:40.500
+as well. Perfect. So when the draggable is true, so the moment you just pick it up and
+
+00:02:40.580 --> 00:02:49.880
+drag it somewhere wherever you basically wanted to put this out. Got it. Nice. Now let's move
+
+00:02:49.960 --> 00:02:55.840
+ahead and yes, this is how you can basically add markers inside your application. So yes,
+
+00:02:55.980 --> 00:02:59.680
+this is pretty much it for this shifter and see you next time.
+

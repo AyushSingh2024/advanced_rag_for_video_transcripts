@@ -1,0 +1,972 @@
+1
+00:00:00,000 --> 00:00:04,019
+Hey everyone and welcome to one more new module.
+
+2
+00:00:04,180 --> 00:00:09,600
+In this module we are going to learn about navigation with react native apps.
+
+3
+00:00:10,200 --> 00:00:17,100
+We will start with what is navigation, why we need it and then understand the different
+
+4
+00:00:17,220 --> 00:00:20,780
+navigation patterns mobile apps use in modern era.
+
+5
+00:00:21,000 --> 00:00:28,260
+We will also compare React navigation and re-expo router so you know why we are teaching
+
+6
+00:00:28,261 --> 00:00:28,880
+you both.
+
+7
+00:00:29,439 --> 00:00:29,800
+Perfect.
+
+8
+00:00:30,520 --> 00:00:30,820
+Nice.
+
+9
+00:00:31,460 --> 00:00:39,940
+Now, the first question that is arise is why navigation is important.
+
+10
+00:00:40,960 --> 00:00:41,280
+Perfect.
+
+11
+00:00:41,660 --> 00:00:45,520
+Why navigation is important in mobile apps.
+
+12
+00:00:46,200 --> 00:00:50,580
+So, in mobile apps, we rarely have a single screen.
+
+13
+00:00:51,420 --> 00:00:52,080
+Make sense or not?
+
+14
+00:00:52,240 --> 00:00:53,820
+Let's say this is your mobile.
+
+15
+00:00:54,560 --> 00:00:54,820
+Perfect.
+
+16
+00:00:55,520 --> 00:01:02,580
+And in mobile screen, let's say you are using WhatsApp and I'm just calling it WP.
+
+17
+00:01:02,960 --> 00:01:03,360
+Make sense?
+
+18
+00:01:03,540 --> 00:01:03,960
+No problem.
+
+19
+00:01:04,180 --> 00:01:05,900
+So, let's say you are using WhatsApp.
+
+20
+00:01:06,300 --> 00:01:08,500
+So, WhatsApp have multiple screen.
+
+21
+00:01:09,020 --> 00:01:11,140
+One screen is your normal home screen.
+
+22
+00:01:11,680 --> 00:01:15,200
+Another screen, let's say these days we have community screen.
+
+23
+00:01:16,120 --> 00:01:19,600
+And then you also have something known as status screen.
+
+24
+00:01:19,980 --> 00:01:21,820
+So WhatsApp have multiple screen.
+
+25
+00:01:22,300 --> 00:01:26,580
+In same way, if you are using Instagram, let me call it IG.
+
+26
+00:01:28,060 --> 00:01:30,640
+So you again have, let's say a feed or home page.
+
+27
+00:01:30,700 --> 00:01:32,880
+We can say that in same way.
+
+28
+00:01:32,979 --> 00:01:35,200
+We also have profile page here.
+
+29
+00:01:35,400 --> 00:01:40,920
+In the same way, you also have real page here, real page or screen, whatever you wanted to
+
+30
+00:01:40,960 --> 00:01:41,440
+call it.
+
+31
+00:01:41,660 --> 00:01:47,340
+So each application into your mobile, they have multiple screens.
+
+32
+00:01:48,420 --> 00:01:56,000
+So managing and popping between these screens, let's say you wanted to go home screen to
+
+33
+00:01:56,001 --> 00:01:59,740
+status, then how you can move in react native and export.
+
+34
+00:02:00,180 --> 00:02:01,040
+Same for now.
+
+35
+00:02:01,100 --> 00:02:03,520
+We don't have any mechanism for that.
+
+36
+00:02:03,640 --> 00:02:06,460
+We don't have anything inbuilt for that.
+
+37
+00:02:07,259 --> 00:02:13,720
+So that's why user always needs to move from A screen to B screen.
+
+38
+00:02:14,040 --> 00:02:14,420
+Make sense?
+
+39
+00:02:14,840 --> 00:02:18,100
+Let's say this is A screen and they wanted to move to B or C.
+
+40
+00:02:18,700 --> 00:02:25,300
+Makes sense, so navigation is not just showing different screen, so this is also concern,
+
+41
+00:02:25,900 --> 00:02:32,640
+navigation is not just showing different screen, it must feel natural and native.
+
+42
+00:02:32,860 --> 00:02:38,380
+Let's say if you are using Android then you feel that yes this is how Android applications
+
+43
+00:02:38,580 --> 00:02:42,360
+are switching between them, they are switching screens between them.
+
+44
+00:02:42,500 --> 00:02:47,420
+Perfect. Like we have back buttons, we have screen transition.
+
+45
+00:02:47,790 --> 00:02:50,500
+You users should be able to go forward, go back,
+
+46
+00:02:50,960 --> 00:02:52,380
+jump any part of the app.
+
+47
+00:02:52,500 --> 00:02:57,320
+Like they can easily navigate between your multiple screen of the
+
+48
+00:02:57,321 --> 00:03:00,700
+application. So I hope so I'm making sense. So in short,
+
+49
+00:03:01,100 --> 00:03:12,400
+Perfect, in short good navigation improves user flow and app usability.
+
+50
+00:03:13,760 --> 00:03:19,180
+So this is why we need, this is one of the reason we need navigation.
+
+51
+00:03:19,740 --> 00:03:20,180
+Perfect.
+
+52
+00:03:20,300 --> 00:03:27,840
+Cool, so for understanding navigation inside react native, we need to understand a core
+
+53
+00:03:28,120 --> 00:03:35,480
+react navigation library, which is routing and navigation for react native and web apps.
+
+54
+00:03:35,580 --> 00:03:42,400
+If I just simply press on redox and just give you a quick overview of it, so what follow
+
+55
+00:03:42,401 --> 00:03:48,060
+within the fundamental section, cool, alright, they are just saying you need this much of
+
+56
+00:03:48,061 --> 00:03:49,620
+prerequisite all of that.
+
+57
+00:03:49,800 --> 00:03:56,540
+So, if I just simply go to Hello React Navigation, cool, let's just try to read it and try to
+
+58
+00:03:56,541 --> 00:03:59,280
+understand, don't worry, you will understand everything, just give me a minute.
+
+59
+00:04:00,020 --> 00:04:04,540
+In web browser, you can link to different pages using anchor tag, yes we know that,
+
+60
+00:04:05,000 --> 00:04:11,180
+let's say if you are in a web browser, then what you can do, you can simply have multiple,
+
+61
+00:04:11,640 --> 00:04:16,339
+let's say if you have about page, if you have, let's say let me just simply write, we have
+
+62
+00:04:16,340 --> 00:04:17,380
+index.page.
+
+63
+00:04:17,800 --> 00:04:23,300
+index.html page, we have about.html page.
+
+64
+00:04:23,699 --> 00:04:29,560
+So if you wanted to move from about to index and index to about, we are using something
+
+65
+00:04:29,580 --> 00:04:31,060
+known as anchor tag.
+
+66
+00:04:31,419 --> 00:04:32,060
+No problem.
+
+67
+00:04:32,500 --> 00:04:38,560
+Yes, when the user click on the link, the URL is push, just keep this in mind, push
+
+68
+00:04:38,561 --> 00:04:40,520
+to the browser history stack.
+
+69
+00:04:40,800 --> 00:04:42,940
+Perfect, I'll just tell you what is this.
+
+70
+00:04:43,240 --> 00:04:49,699
+When the user press the back button, the browser pops the item from top of the history stack.
+
+71
+00:04:50,180 --> 00:04:53,020
+So active page is now previously visited page.
+
+72
+00:04:53,159 --> 00:04:54,780
+All right, they are just complicating thing.
+
+73
+00:04:55,080 --> 00:05:00,659
+They are basically telling you, let's say just listen to me carefully, just track my
+
+74
+00:05:00,660 --> 00:05:01,020
+cursor.
+
+75
+00:05:01,300 --> 00:05:03,860
+Now, I am on home page, no problem.
+
+76
+00:05:04,280 --> 00:05:09,419
+The moment I click on read docs, I am on docs/getstarted.
+
+77
+00:05:09,580 --> 00:05:10,780
+So now I have history.
+
+78
+00:05:11,180 --> 00:05:11,960
+What is that history?
+
+79
+00:05:12,020 --> 00:05:17,620
+If I just simply press on back, I am redirected to the page where I am coming from.
+
+80
+00:05:18,100 --> 00:05:20,860
+Easy, so this is what they are talking about.
+
+81
+00:05:21,580 --> 00:05:27,640
+So if I just come into here and in same way React Navigation's native stack navigator,
+
+82
+00:05:28,180 --> 00:05:35,780
+so like how React native is allowing you to move between screens and maintain a stack,
+
+83
+00:05:35,960 --> 00:05:38,360
+I hope so you guys know a data structure about stack.
+
+84
+00:05:38,700 --> 00:05:46,140
+I hope cool so provide a way for your app to transition between screen and manage navigation
+
+85
+00:05:46,141 --> 00:05:47,560
+history cool.
+
+86
+00:05:48,420 --> 00:05:52,740
+So let's move ahead and we will see that how you can do so that so for that definitely
+
+87
+00:05:52,741 --> 00:06:00,380
+you need this much of libraries but now in mobile app you will see a bunch of different
+
+88
+00:06:00,381 --> 00:06:01,620
+navigation patterns.
+
+89
+00:06:02,060 --> 00:06:06,060
+If I just simply coming to here and write navigation.
+
+90
+00:06:08,180 --> 00:06:11,760
+patterns, so what is the navigation patterns that we have?
+
+91
+00:06:12,200 --> 00:06:17,600
+Like first pattern for navigation is something known as stack navigation.
+
+92
+00:06:18,760 --> 00:06:20,080
+What is stack navigation?
+
+93
+00:06:20,520 --> 00:06:25,840
+If I just try to explain you, screens are stack one top of other.
+
+94
+00:06:26,260 --> 00:06:30,780
+Perfect, let's say this is a screen 1, you have screen 2 in same way.
+
+95
+00:06:30,800 --> 00:06:33,120
+You have screen 3, screen 4.
+
+96
+00:06:33,280 --> 00:06:36,860
+So this is how this tagged on top of each other.
+
+97
+00:06:37,360 --> 00:06:37,659
+Perfect.
+
+98
+00:06:38,039 --> 00:06:42,860
+You can push a screen and you can let's just say you can pop a screen.
+
+99
+00:06:43,639 --> 00:06:43,919
+Perfect.
+
+100
+00:06:44,080 --> 00:06:48,340
+This is like moving forward and backward in browser like something like this.
+
+101
+00:06:48,620 --> 00:06:50,360
+You are going backward, you are going forward.
+
+102
+00:06:50,539 --> 00:06:52,020
+This is what they are talking about.
+
+103
+00:06:52,200 --> 00:06:58,620
+Cool, so basically this is again same way, so let's just say this is your home page,
+
+104
+00:06:59,500 --> 00:07:06,340
+from home page, home screen you are going towards a detail page, we can say that you
+
+105
+00:07:06,341 --> 00:07:10,240
+are going towards detail page and from detail page.
+
+106
+00:07:11,360 --> 00:07:13,120
+Let me just put them up.
+
+107
+00:07:13,400 --> 00:07:18,900
+And from detail page you are let's say moving to profile page.
+
+108
+00:07:19,220 --> 00:07:22,560
+So this is how you are basically going to do so this.
+
+109
+00:07:23,060 --> 00:07:23,400
+Perfect.
+
+110
+00:07:23,720 --> 00:07:29,919
+Now we have another way and another navigation pattern which is known as tab navigation.
+
+111
+00:07:30,600 --> 00:07:37,220
+What is tab navigation? Tab navigation something like this. You will see that we have text,
+
+112
+00:07:37,480 --> 00:07:42,260
+we have code like you can definitely this is not exactly navigation but this that is
+
+113
+00:07:42,261 --> 00:07:48,540
+how they are going to look to you. Let's suppose this is your mobile app and at the very bottom
+
+114
+00:07:48,620 --> 00:07:51,380
+and also at the top, they can be anywhere.
+
+115
+00:07:51,900 --> 00:07:57,380
+Perfect, you have a bar with tab at bottom or top, doesn't matter.
+
+116
+00:07:58,100 --> 00:08:03,120
+And then from here you can switch between screen without stacking them.
+
+117
+00:08:03,660 --> 00:08:09,139
+So make sure to keep that in mind, without stacking them you can switch between screen.
+
+118
+00:08:10,039 --> 00:08:16,500
+Perfect, so let me just simply write switch between screens without stacking them.
+
+119
+00:08:19,220 --> 00:08:25,960
+Perfect, let's say you have something known as, if I just try to give you an example here,
+
+120
+00:08:26,040 --> 00:08:27,340
+let me change the color.
+
+121
+00:08:28,139 --> 00:08:28,419
+Cool.
+
+122
+00:08:28,780 --> 00:08:30,180
+Let's say this is your home page.
+
+123
+00:08:30,979 --> 00:08:34,419
+This is your search and this is your profile.
+
+124
+00:08:34,880 --> 00:08:35,080
+Perfect.
+
+125
+00:08:35,299 --> 00:08:40,779
+And again, you have here home icon, you have let's just say here something else as well.
+
+126
+00:08:41,360 --> 00:08:41,740
+Perfect.
+
+127
+00:08:42,220 --> 00:08:44,260
+I am just demonstrating for you guys.
+
+128
+00:08:44,500 --> 00:08:50,140
+Let's just say this is your home icon in same way you have another icons as well cool and
+
+129
+00:08:50,141 --> 00:08:55,100
+when you click on home you are on home page when you click on let's just say detail page
+
+130
+00:08:55,220 --> 00:09:00,100
+then you are on detail and in same way if you click on profile you are on profile and
+
+131
+00:09:00,101 --> 00:09:06,740
+again you are not stacking them you are just switching between screen without stacking them
+
+132
+00:09:07,660 --> 00:09:08,160
+perfect.
+
+133
+00:09:09,579 --> 00:09:15,399
+Now, let's move ahead and start talking and again I am going to explain you each of them
+
+134
+00:09:15,400 --> 00:09:16,779
+in their separate chapter.
+
+135
+00:09:16,899 --> 00:09:21,459
+I am just giving you a bunch of theory about navigation with React navigation.
+
+136
+00:09:21,779 --> 00:09:22,060
+Perfect.
+
+137
+00:09:22,680 --> 00:09:22,860
+Cool.
+
+138
+00:09:22,861 --> 00:09:27,980
+And in same way we have another pattern that is known as drawer navigation.
+
+139
+00:09:28,300 --> 00:09:30,940
+So how this drawer navigation is going to work?
+
+140
+00:09:31,860 --> 00:09:35,199
+Drawer navigation means a side menu that slides in.
+
+141
+00:09:35,360 --> 00:09:35,600
+Perfect.
+
+142
+00:09:37,500 --> 00:09:44,580
+And when you click on something like if you are using a Google, I mean YouTube, perfect.
+
+143
+00:09:44,720 --> 00:09:46,720
+Then YouTube always showing you this.
+
+144
+00:09:46,880 --> 00:09:53,880
+Here you have a bunch of other options as well to show like home, trending, your preferences. Cool.
+
+145
+00:09:54,380 --> 00:09:58,640
+And this is basically good for large app with many sections. Perfect.
+
+146
+00:09:58,680 --> 00:10:05,000
+This is good for a large apps with many sections that you have.
+
+147
+00:10:05,700 --> 00:10:11,700
+And then another one that we have is known as model screens.
+
+148
+00:10:11,900 --> 00:10:13,560
+What is this model screen?
+
+149
+00:10:14,220 --> 00:10:19,300
+Model screens means let me just simply write what this model screens means.
+
+150
+00:10:19,800 --> 00:10:25,660
+Let's say this is your main screen and on over this current screen, yes on over this
+
+151
+00:10:25,860 --> 00:10:28,900
+current screen you are going to see another screen.
+
+152
+00:10:29,000 --> 00:10:29,900
+Perfect.
+
+153
+00:10:30,280 --> 00:10:32,420
+So this is what your model screens means.
+
+154
+00:10:32,820 --> 00:10:40,820
+This is basically commonly used for if I just try to write common for alerts or something
+
+155
+00:10:40,920 --> 00:10:44,860
+which is in temporary action we can say that.
+
+156
+00:10:45,240 --> 00:10:48,200
+So this is what we are basically going to use.
+
+157
+00:10:48,400 --> 00:10:54,820
+So again if I just try to explain you like how many navigation pattern that we have,
+
+158
+00:10:54,840 --> 00:10:57,400
+I just simply write navigation patterns.
+
+159
+00:10:58,100 --> 00:11:05,240
+So, the first pattern that we have is named as snack navigation.
+
+160
+00:11:06,279 --> 00:11:06,600
+Perfect.
+
+161
+00:11:07,060 --> 00:11:14,180
+The another navigation pattern that we have is named as, let me just try to put them.
+
+162
+00:11:15,120 --> 00:11:15,860
+I don't know.
+
+163
+00:11:16,000 --> 00:11:16,640
+Yes.
+
+164
+00:11:16,641 --> 00:11:19,980
+So, then another one that we have is the tab navigation.
+
+165
+00:11:20,760 --> 00:11:21,040
+Perfect.
+
+166
+00:11:21,100 --> 00:11:27,100
+So, let me simply write tab navigation and the third one that we have is known as drawer
+
+167
+00:11:27,101 --> 00:11:27,740
+navigation.
+
+168
+00:11:27,940 --> 00:11:33,200
+This is very rarely used, but still and then in same way, we also have.
+
+169
+00:11:34,640 --> 00:11:38,780
+model screens models you are going to use a lot perfect.
+
+170
+00:11:38,960 --> 00:11:45,880
+So this is your another one and in same way we have the third one and in same way we have
+
+171
+00:11:45,881 --> 00:11:47,000
+another one as well.
+
+172
+00:11:47,180 --> 00:11:50,600
+So let me just simply write them here as well cool.
+
+173
+00:11:50,940 --> 00:11:54,260
+So these are all the navigation patterns that we have.
+
+174
+00:11:54,400 --> 00:11:55,460
+No problem.
+
+175
+00:11:55,600 --> 00:11:56,920
+This is just a theory chapter.
+
+176
+00:11:57,880 --> 00:12:05,460
+Now let's move ahead and try to understand we have two type of navigations like two type
+
+177
+00:12:05,461 --> 00:12:07,400
+of libraries we can use.
+
+178
+00:12:08,080 --> 00:12:10,580
+But right now we are understanding react navigation.
+
+179
+00:12:10,800 --> 00:12:16,680
+And then another one is expo router and this is what expo router we are going to use in
+
+180
+00:12:16,779 --> 00:12:18,440
+all our upcoming chapters.
+
+181
+00:12:19,019 --> 00:12:23,720
+Why we are understanding and why we are learning about react navigation because this is the
+
+182
+00:12:23,721 --> 00:12:24,019
+base.
+
+183
+00:12:25,140 --> 00:12:25,380
+Perfect.
+
+184
+00:12:25,420 --> 00:12:31,080
+I can simply write here react navigation versus expo router.
+
+185
+00:12:33,580 --> 00:12:38,300
+All right, let me just simply coming to here and write something like this.
+
+186
+00:12:38,790 --> 00:12:42,420
+So what is React Navigation and Xporouter?
+
+187
+00:12:42,470 --> 00:12:49,060
+So now there are different ways to implement navigation and these are the two popular ones
+
+188
+00:12:49,061 --> 00:12:50,940
+in React native ecosystem.
+
+189
+00:12:51,100 --> 00:12:53,500
+Like React Native is what?
+
+190
+00:12:53,839 --> 00:12:56,819
+React Native is a component based library.
+
+191
+00:12:57,139 --> 00:12:57,420
+Perfect.
+
+192
+00:12:57,560 --> 00:12:59,100
+Make sure to keep that in mind.
+
+193
+00:12:59,839 --> 00:13:01,680
+This is component based library.
+
+194
+00:13:02,500 --> 00:13:09,139
+But when it's come to expo router, this is built on top of React Native and this is file
+
+195
+00:13:09,140 --> 00:13:10,199
+based routing system.
+
+196
+00:13:11,440 --> 00:13:17,440
+Like if you have ever used Next.js, they are resembling with them very much.
+
+197
+00:13:17,880 --> 00:13:21,980
+So this is going to be file-based routing system.
+
+198
+00:13:22,700 --> 00:13:22,980
+Perfect.
+
+199
+00:13:23,680 --> 00:13:28,720
+Here in React navigation, you will see that from upcoming lectures, you will explicitly
+
+200
+00:13:28,839 --> 00:13:34,140
+define stacks, tab, drawer, screen options, headers, a lot of other things.
+
+201
+00:13:34,300 --> 00:13:37,880
+And they work with expo and non-expo apps as well.
+
+202
+00:13:38,140 --> 00:13:40,640
+And this is very powerful and flexible.
+
+203
+00:13:41,279 --> 00:13:46,339
+And this is definitely they have large community and their ecosystem are very, very, very good.
+
+204
+00:13:46,580 --> 00:13:49,760
+You can definitely go with it and you have much more control over it.
+
+205
+00:13:49,800 --> 00:13:54,080
+But when it's come to expo router, they are using file based routing.
+
+206
+00:13:54,720 --> 00:14:01,080
+You can organize screen inside a folder like what I mean by inside a folder.
+
+207
+00:14:01,580 --> 00:14:09,080
+Let's say you have an app folder and inside this you can create app/home, app/about, app/details.
+
+208
+00:14:09,580 --> 00:14:12,260
+They all are treated as a route segment.
+
+209
+00:14:12,400 --> 00:14:15,740
+Perfect, and they automatically create from files.
+
+210
+00:14:16,280 --> 00:14:22,080
+Expo router is integrated, yes, they are integrated with Expo if you are using it and definitely
+
+211
+00:14:22,081 --> 00:14:28,020
+we are learning Expo one of the best thing that you can learn in today's era, form while
+
+212
+00:14:28,021 --> 00:14:32,420
+development and this is ideal for quick setup and file centering structure.
+
+213
+00:14:32,600 --> 00:14:33,399
+Perfect.
+
+214
+00:14:33,699 --> 00:14:40,560
+So, I hope so I'm making sense like React navigation is component based and this expo
+
+215
+00:14:40,561 --> 00:14:44,399
+router is also built on top of React navigation itself.
+
+216
+00:14:45,440 --> 00:14:48,300
+But now let's move ahead and one question arise.
+
+217
+00:14:48,980 --> 00:14:55,100
+Why do we even need to learn about React navigation when we are already learning about expo and
+
+218
+00:14:55,101 --> 00:14:58,019
+in future we're definitely going to learn about expo routers.
+
+219
+00:14:58,100 --> 00:15:03,519
+But this is the extra chapter and this is the optional chapter again if you don't want
+
+220
+00:15:03,520 --> 00:15:06,420
+it to cover it, it's completely optional you can skip it.
+
+221
+00:15:06,860 --> 00:15:12,980
+But I just wanted to suggest you to watch it and build up a mini project that we are
+
+222
+00:15:12,981 --> 00:15:19,000
+going to build which is Pokemon Go, not Pokemon Go app but we are going to use here multiple
+
+223
+00:15:19,420 --> 00:15:22,560
+screens and implement a very nice Pokemon app.
+
+224
+00:15:22,800 --> 00:15:29,580
+Perfect, so why do we even need to learn about React Navigation?
+
+225
+00:15:29,880 --> 00:15:35,820
+So again even though we will transition to Expo router later but understanding React
+
+226
+00:15:35,821 --> 00:15:41,600
+Navigation is important because it teaches you the core navigation concepts.
+
+227
+00:15:41,700 --> 00:15:47,960
+Perfect, you need to understand about core navigation concept like in same way whenever
+
+228
+00:15:47,980 --> 00:15:53,440
+you wanted to learn about react native, you need to understand about reacts in same way
+
+229
+00:15:53,500 --> 00:15:59,780
+when you wanted to learn about X-For router, you need to have you need have you basically
+
+230
+00:16:00,040 --> 00:16:01,860
+need to have a basic understanding of.
+
+231
+00:16:02,000 --> 00:16:08,300
+React navigation perfect like many third party libraries still assume that you are using
+
+232
+00:16:08,301 --> 00:16:14,840
+navigations kind of expo router also mirror many react navigation patterns under the hood.
+
+233
+00:16:14,920 --> 00:16:18,800
+So expo router also using it.
+
+234
+00:16:18,801 --> 00:16:23,060
+And you will know what happened behind the file based routing.
+
+235
+00:16:23,160 --> 00:16:28,540
+So always you are going to understand like what is happening behind the scene.
+
+236
+00:16:28,880 --> 00:16:32,420
+Perfect behind the file based routing in Expo.
+
+237
+00:16:33,940 --> 00:16:36,420
+So I hope so now you have a clear path.
+
+238
+00:16:37,560 --> 00:16:41,540
+Why we basically need to learn about react navigation first.
+
+239
+00:16:41,900 --> 00:16:42,620
+Cool.
+
+240
+00:16:43,140 --> 00:16:48,620
+So yeah, this is just a basic theory about a react navigation and why do we even need
+
+241
+00:16:48,621 --> 00:16:53,900
+navigation from next chapter we are going to install this and start understanding bunch
+
+242
+00:16:53,901 --> 00:16:55,680
+of concept about it.
+
+243
+00:16:55,960 --> 00:16:59,140
+So yeah, this is pretty much it and see you next time.
+

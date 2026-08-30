@@ -1,0 +1,1232 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:07.040
+Alright everyone and welcome to one more new lecture and today we are going to deep dive
+
+00:00:07.540 --> 00:00:14.240
+into something really exciting and that is known as network API.
+
+00:00:15.120 --> 00:00:19.620
+Perfect, so this is the main thing that we are going to learn definitely this is the
+
+00:00:19.700 --> 00:00:25.540
+chapter number one of our complete module on device and system APIs.
+
+00:00:26.100 --> 00:00:33.160
+And by the end of this lecture, you will know how to check internet connectivity and handle
+
+00:00:33.640 --> 00:00:37.860
+network changes into your expo or react native apps.
+
+00:00:38.780 --> 00:00:43.440
+So with that, grab your coffee, open your code editor and let's get started.
+
+00:00:43.739 --> 00:00:44.000
+Perfect.
+
+00:00:44.500 --> 00:00:48.100
+So the first thing is, what do you understand by network API?
+
+00:00:49.040 --> 00:00:50.620
+What is network API?
+
+00:00:51.500 --> 00:01:00.060
+So, the network API inside the expo allow us to check if the device is connected to
+
+00:01:00.120 --> 00:01:01.220
+internet or not.
+
+00:01:01.850 --> 00:01:02.120
+Perfect.
+
+00:01:02.620 --> 00:01:08.400
+First thing is, is device is connected to internet or not.
+
+00:01:08.610 --> 00:01:09.560
+This is the first thing.
+
+00:01:09.660 --> 00:01:13.400
+Second, you can know your connection type.
+
+00:01:13.800 --> 00:01:19.760
+Got it, you can know your connection type, but we can say we can say that is, is it a
+
+00:01:19.780 --> 00:01:24.200
+Wi-Fi, is it a cellular data and is it something else?
+
+00:01:25.180 --> 00:01:25.540
+Got it.
+
+00:01:26.640 --> 00:01:31.600
+And we can even check for network changes in real time.
+
+00:01:32.080 --> 00:01:40.220
+Got it, we can check for network changes in real time and get the device IP address, MAC
+
+00:01:40.300 --> 00:01:41.880
+address, whatever you wanted to get.
+
+00:01:42.000 --> 00:01:49.520
+Alright, so this is why we basically need a network API and this is the network API is
+
+00:01:49.560 --> 00:01:51.040
+basically allow you to do.
+
+00:01:51.940 --> 00:01:52.020
+Perfect.
+
+00:01:52.550 --> 00:01:54.340
+No, the biggest question is arise.
+
+00:01:54.570 --> 00:01:57.920
+Why do we even need the network API?
+
+00:01:58.670 --> 00:02:00.940
+So let's try to imagine a scenario.
+
+00:02:01.790 --> 00:02:04.640
+Alright, let's say you are creating a video player application.
+
+00:02:05.400 --> 00:02:11.400
+Alright, this is your video player application and you wanted to create this, but you only
+
+00:02:11.540 --> 00:02:14.319
+wanted to auto play on Wi-Fi.
+
+00:02:15.520 --> 00:02:25.100
+So basically what I'm talking about only auto play videos on Wi-Fi auto play videos on Wi-Fi
+
+00:02:25.760 --> 00:02:27.100
+and what we can say that.
+
+00:02:27.700 --> 00:02:29.660
+This is the first requirement.
+
+00:02:30.030 --> 00:02:32.520
+Second, show warning on cellular data.
+
+00:02:33.000 --> 00:02:36.440
+Let's say you are creating a video streaming application and a video app.
+
+00:02:36.910 --> 00:02:43.080
+You wanted to show the warning whenever user on the cellular data because video streaming
+
+00:02:43.599 --> 00:02:45.800
+take a lot much of data.
+
+00:02:45.970 --> 00:02:46.340
+Got it?
+
+00:02:46.440 --> 00:02:47.000
+Lot of data.
+
+00:02:47.200 --> 00:02:50.920
+And third, pause download when you are offline.
+
+00:02:51.110 --> 00:02:51.459
+Got it.
+
+00:02:51.560 --> 00:02:54.440
+These are bunch of features you wanted to implement.
+
+00:02:54.890 --> 00:02:58.760
+So pause downloads when we are offline.
+
+00:02:59.269 --> 00:03:00.700
+So how you can do so this?
+
+00:03:01.269 --> 00:03:03.519
+So that's why you need a network API.
+
+00:03:03.760 --> 00:03:04.700
+Let's say another example.
+
+00:03:05.290 --> 00:03:07.239
+You are creating a shopping cart.
+
+00:03:07.709 --> 00:03:07.940
+All right.
+
+00:03:07.941 --> 00:03:09.440
+And we can say a shopping app.
+
+00:03:09.790 --> 00:03:11.160
+So that shopping app.
+
+00:03:11.500 --> 00:03:19.440
+is first to fall prevent the checkout, yes they are going to basically prevent the checkout
+
+00:03:19.780 --> 00:03:24.060
+and let me just give my stop, alright.
+
+00:03:24.061 --> 00:03:30.080
+So they are basically going to prevent the checkout whenever a user cellular or basically
+
+00:03:30.240 --> 00:03:41.480
+we can say whenever user is
+
+00:03:41.481 --> 00:03:41.501
+offline. This is the first use case. Second use case is you wanted to show no internet
+
+00:03:41.502 --> 00:03:46.340
+banner. You wanted to cache data for offline viewing. In all of that case, you need a,
+
+00:03:46.700 --> 00:03:51.560
+we can say network API. Third, you are creating a chat application whenever you wanted to,
+
+00:03:52.540 --> 00:03:58.160
+let's say you are just chatting with your friend and let me just try to grab your friend.
+
+00:04:00.000 --> 00:04:04.320
+Let's say this is your friend got it?
+
+00:04:04.470 --> 00:04:05.420
+This is your user.
+
+00:04:05.570 --> 00:04:06.400
+Let me grab here.
+
+00:04:06.590 --> 00:04:06.780
+Perfect.
+
+00:04:06.830 --> 00:04:08.740
+You are chatting with someone.
+
+00:04:09.450 --> 00:04:09.720
+All right.
+
+00:04:09.860 --> 00:04:12.380
+And this is you and you are chatting with this guy.
+
+00:04:12.710 --> 00:04:14.880
+But in between you get offline.
+
+00:04:15.610 --> 00:04:21.320
+So in that case, whatever message you have sent, we are going to store that message.
+
+00:04:22.340 --> 00:04:23.800
+We can say inside a queue.
+
+00:04:24.500 --> 00:04:27.220
+Basically a place where whenever I am online
+
+00:04:27.800 --> 00:04:32.659
+I am again going to get all of the message and start sending them.
+
+00:04:33.080 --> 00:04:34.379
+Alright, start sending them.
+
+00:04:34.460 --> 00:04:35.819
+This is how we can say that.
+
+00:04:36.090 --> 00:04:42.240
+So without this API, your app would not know it's offline until it crashed.
+
+00:04:42.550 --> 00:04:42.940
+Got it?
+
+00:04:43.120 --> 00:04:46.539
+That's why we need this network API.
+
+00:04:47.300 --> 00:04:53.460
+Perfect, like how it's actually work if I just try to explain you it visually how it's
+
+00:04:53.539 --> 00:04:54.120
+actually work.
+
+00:04:54.699 --> 00:04:59.599
+Let's say this is your, we can say your expo app.
+
+00:05:00.050 --> 00:05:01.680
+All right, this is your expo app.
+
+00:05:01.949 --> 00:05:02.479
+No problem.
+
+00:05:03.200 --> 00:05:04.040
+Perfect.
+
+00:05:04.900 --> 00:05:10.180
+And first thing that we have is the expo app is have network API.
+
+00:05:10.520 --> 00:05:14.260
+We know that expo app have a network API.
+
+00:05:14.520 --> 00:05:19.160
+So this network API is first of all going to check your connectivity.
+
+00:05:19.820 --> 00:05:25.240
+Like it is basically going to check your connection is you are connected or not.
+
+00:05:26.900 --> 00:05:31.840
+Then this is basically going to check your network type like how you can check network
+
+00:05:31.940 --> 00:05:37.220
+type, is it a Wi-Fi, is it a cellular, is it something else?
+
+00:05:37.410 --> 00:05:43.320
+So then this third thing is what we can do, we can basically check like what is the network
+
+00:05:43.479 --> 00:05:44.180
+type for it.
+
+00:05:44.600 --> 00:05:51.640
+And then at the end, there is always an event listener for it, like they always keep listening
+
+00:05:51.980 --> 00:05:57.560
+to the alright and then at the end what you will do, you have basically access of the
+
+00:05:58.040 --> 00:05:59.000
+device network.
+
+00:05:59.001 --> 00:06:05.960
+So, with the help of this network API at the end, we have the access of we can say the
+
+00:06:06.200 --> 00:06:06.540
+device.
+
+00:06:07.700 --> 00:06:13.480
+network API, this is your device and then we have access of all the network APIs which
+
+00:06:13.580 --> 00:06:15.740
+is available to us, perfect.
+
+00:06:17.350 --> 00:06:21.360
+I can say simply device network, perfect.
+
+00:06:22.070 --> 00:06:25.000
+So now let's move ahead and start using it.
+
+00:06:25.070 --> 00:06:30.040
+So for that what you can do, you can first of all simply copy this installation command,
+
+00:06:30.310 --> 00:06:30.900
+we know that.
+
+00:06:31.100 --> 00:06:37.160
+and then let me open my terminal and simply run "bunx create expo app"
+
+00:06:37.780 --> 00:06:41.000
+wanted to create in module 9 folder
+
+00:06:41.520 --> 00:06:45.660
+let me hit this and let's just wait for application installation
+
+00:06:46.940 --> 00:06:49.840
+alright guys so now we have installed it successfully
+
+00:06:50.100 --> 00:06:53.920
+you can see that how much time it took, it's fine sometime it take it
+
+00:06:54.460 --> 00:06:58.800
+and after that let me move ahead and reset it so "bun run reset"
+
+00:07:00.699 --> 00:07:07.139
+So, this is going to reset my project, simply say no, clear it, bun x expo start.
+
+00:07:07.280 --> 00:07:12.060
+So, this is going to start my application, let just wait for it and let us clear it,
+
+00:07:12.061 --> 00:07:18.419
+we do not need it anymore and then I can simply press on A, then this is going to start my
+
+00:07:18.479 --> 00:07:21.460
+application, what just happened, something went wrong.
+
+00:07:22.920 --> 00:07:26.620
+Okay, if I try to reload it, nothing just happened.
+
+00:07:27.300 --> 00:07:27.420
+Cool.
+
+00:07:27.550 --> 00:07:31.580
+What if if I try to scan this, maybe this will work right now.
+
+00:07:32.260 --> 00:07:33.400
+So just give me a minute.
+
+00:07:34.030 --> 00:07:35.000
+Let me scan this.
+
+00:07:35.280 --> 00:07:36.500
+Let me open it here.
+
+00:07:37.260 --> 00:07:38.740
+Hopefully this will work right now.
+
+00:07:40.000 --> 00:07:41.040
+Sorry about that.
+
+00:07:41.090 --> 00:07:44.820
+You can go back to expo home and try to reload this.
+
+00:07:45.090 --> 00:07:45.380
+All right.
+
+00:07:46.120 --> 00:07:46.360
+All right.
+
+00:07:46.520 --> 00:07:50.380
+So let me try to restart it as bunnix expo start.
+
+00:07:51.420 --> 00:07:54.260
+Alright, hopefully this will work right now.
+
+00:07:54.890 --> 00:07:56.720
+We have installed everything correctly.
+
+00:07:57.000 --> 00:07:58.120
+Then why this is not working?
+
+00:07:58.980 --> 00:07:59.100
+Cool.
+
+00:07:59.220 --> 00:08:00.880
+Maybe that is my network issue.
+
+00:08:01.900 --> 00:08:07.700
+And if I again press on a skipping expo go version validation in offline mode.
+
+00:08:07.930 --> 00:08:09.860
+Alright, so I'm getting in offline mode.
+
+00:08:10.160 --> 00:08:10.880
+That is the issue.
+
+00:08:11.700 --> 00:08:13.260
+Actually, I am connected to my internet.
+
+00:08:14.000 --> 00:08:14.180
+Yes.
+
+00:08:14.900 --> 00:08:18.560
+I am connected to this internet then why this is not working.
+
+00:08:19.699 --> 00:08:23.960
+Alright, so actually I have reconnected my physical device and I think right now this
+
+00:08:24.060 --> 00:08:27.419
+is going to work fine, cool because I am getting this bundling option.
+
+00:08:27.520 --> 00:08:30.060
+So this means this is going to work.
+
+00:08:31.060 --> 00:08:35.740
+So let's just wait for this bundling and I think this is finished now, cool.
+
+00:08:36.500 --> 00:08:42.700
+Alright guys so I have basically reconnected my physical device once again and now this
+
+00:08:42.820 --> 00:08:43.900
+is working fine alright.
+
+00:08:44.600 --> 00:08:50.120
+It's fine now you can see that this is how and if I just try to simply say here hello
+
+00:08:50.220 --> 00:08:51.380
+world and save it.
+
+00:08:51.800 --> 00:08:54.260
+So, you will see this is how they working nice.
+
+00:08:54.510 --> 00:08:56.360
+So, now everything is fine, cool.
+
+00:08:56.930 --> 00:08:57.399
+What next?
+
+00:08:58.339 --> 00:09:04.500
+Now, let us move ahead and first of all simply visit to this expo network documentation.
+
+00:09:04.810 --> 00:09:07.420
+You can simply visit and search for expo network.
+
+00:09:08.200 --> 00:09:11.560
+And then you are redirected to this documentation.
+
+00:09:12.800 --> 00:09:18.740
+So provide a useful information about the device network such as IP address, Mac, Internet
+
+00:09:18.920 --> 00:09:22.480
+S, Mac address and airplane mode status.
+
+00:09:22.840 --> 00:09:29.880
+So simply first of all copy this command and after copying this open a new terminal and
+
+00:09:30.000 --> 00:09:33.760
+then hit 1x expose install expose network.
+
+00:09:34.000 --> 00:09:40.040
+So, this is basically going to install this dependency, alright, alright, so in less than
+
+00:09:40.140 --> 00:09:43.880
+six seconds we have successfully installed it, perfect.
+
+00:09:44.860 --> 00:09:50.580
+Now what I wanted you to first of all let's move ahead and try to do some basic network
+
+00:09:50.700 --> 00:09:56.760
+checks like how you can basically do a basic network checks, perfect.
+
+00:09:57.480 --> 00:10:01.500
+So for that what I wanted you to do is to simply
+
+00:10:02.400 --> 00:10:09.060
+move ahead and what if I just simply create a component and show that so that we can see
+
+00:10:09.140 --> 00:10:12.720
+multiple examples, I think yes that is the right approach.
+
+00:10:13.270 --> 00:10:18.060
+So let me just simply not commence, this is going to be components.
+
+00:10:18.940 --> 00:10:23.740
+Inside the component first thing I can simply going to say this as basic.
+
+00:10:24.300 --> 00:10:40.060
+network check dot TSX all right and then RNFES no problem basic network check all right.
+
+00:10:40.061 --> 00:10:41.779
+Let me save it, let me copy this.
+
+00:10:42.200 --> 00:10:49.080
+And let me also import that here, perfect basic network check and if I save it, this
+
+00:10:49.160 --> 00:10:51.000
+is what I am getting, no problem.
+
+00:10:51.920 --> 00:10:58.160
+Now first of all let's move ahead and simply say import H-trick and first of all let me
+
+00:10:58.220 --> 00:10:58.960
+off my AI.
+
+00:11:01.120 --> 00:11:09.660
+Then I can simply import a string as network from expo network.
+
+00:11:10.720 --> 00:11:10.980
+Nice.
+
+00:11:11.199 --> 00:11:12.180
+And then what next?
+
+00:11:12.980 --> 00:11:19.440
+Next let's see that I basically just wanted to check my network state as I'm connected
+
+00:11:20.060 --> 00:11:21.860
+or as I'm not connected to internet.
+
+00:11:22.319 --> 00:11:22.540
+Simple.
+
+00:11:23.139 --> 00:11:25.180
+Let's see how we can do that.
+
+00:11:25.600 --> 00:11:31.160
+So, for that first thing, what I can do, let me just maintain some state variable, I can
+
+00:11:31.220 --> 00:11:40.360
+simply say is connected and then set is connected is equals to use state and then initially
+
+00:11:40.540 --> 00:11:41.899
+I can keep it as null.
+
+00:11:42.980 --> 00:11:43.220
+Perfect.
+
+00:11:44.040 --> 00:11:50.500
+And then what I can do, I can simply say network and then set network type.
+
+00:11:53.140 --> 00:11:57.100
+type and we can say simply again a simple yo state.
+
+00:11:57.560 --> 00:12:01.860
+Alright and I hope you guys are loving my theme.
+
+00:12:03.000 --> 00:12:03.100
+Perfect.
+
+00:12:03.980 --> 00:12:06.480
+So which theme I am using if you are interested into that.
+
+00:12:06.980 --> 00:12:10.160
+So the theme that I am using right now is whisper vibrant.
+
+00:12:10.520 --> 00:12:13.760
+Alright this is also good but I don't know for some reason I am not loving it.
+
+00:12:14.660 --> 00:12:16.640
+Instead I am loving this.
+
+00:12:17.200 --> 00:12:18.220
+even more.
+
+00:12:18.440 --> 00:12:24.540
+Alright, now let's move ahead and just create a simple utility and that utility is simply
+
+00:12:24.620 --> 00:12:27.000
+going to check a network for us.
+
+00:12:28.640 --> 00:12:31.820
+So check network is equals to async.
+
+00:12:32.600 --> 00:12:40.060
+And then inside this first thing what I will do I can simply say network state is equals
+
+00:12:40.220 --> 00:12:46.420
+to await and then let me just get network and for getting the network state if you go
+
+00:12:46.500 --> 00:12:53.880
+to the documentation you will find something known as network state.
+
+00:12:53.881 --> 00:12:56.740
+Get network state async, alright, yes, this is the simple function that we are going to
+
+00:12:56.779 --> 00:12:57.019
+use.
+
+00:12:57.350 --> 00:13:04.040
+So, I can simply going to call this easy and if I just try to read it, so get the devices
+
+00:13:04.620 --> 00:13:11.000
+current network state on web navigator.connection.type is not available on browser, alright, we are
+
+00:13:11.060 --> 00:13:12.980
+also not focusing much on browser.
+
+00:13:13.180 --> 00:13:15.600
+So, if there is any active network connection.
+
+00:13:16.200 --> 00:13:19.480
+return state unknown, alright, you can ignore it.
+
+00:13:19.960 --> 00:13:21.540
+Let's see that how we can get it.
+
+00:13:22.060 --> 00:13:27.740
+So for now, but I can say if I am connected, so what I will do, I am going to change my
+
+00:13:28.020 --> 00:13:35.260
+state variable easy, so I can simply say network state dot is connected, easy, I hope
+
+00:13:35.280 --> 00:13:35.440
+so.
+
+00:13:35.680 --> 00:13:41.460
+Now they are throwing me an error, what they say argument of Boolean undefined is not assignable
+
+00:13:41.500 --> 00:13:43.520
+to type of null.
+
+00:13:45.620 --> 00:13:55.779
+So, what I can do instead I can keep this as right now let me make it as any perfect
+
+00:13:56.000 --> 00:14:00.300
+for now we can definitely fix it and then let us move ahead and what I will do I can
+
+00:14:00.519 --> 00:14:06.180
+first of all get my network type or how I can get it I can simply say.
+
+00:14:09.860 --> 00:14:13.759
+network type, yes network type dot type.
+
+00:14:15.050 --> 00:14:17.860
+So where is that at this point cool.
+
+00:14:18.560 --> 00:14:24.819
+So network state not network type sorry my mistake so network state dot type yes look
+
+00:14:24.820 --> 00:14:25.199
+at that.
+
+00:14:25.600 --> 00:14:31.660
+Cool and for now I can also keep here any because I don't want it to grab bunch of
+
+00:14:31.899 --> 00:14:37.660
+states and then show you all right it's fine let's focus here first of all and then what
+
+00:14:37.759 --> 00:14:42.380
+we can do let's just console that as well easy so I can simply console it.
+
+00:14:43.540 --> 00:14:45.940
+network state whatever is going to be now.
+
+00:14:46.510 --> 00:14:50.240
+How I can call it on reload, simply use use effect.
+
+00:14:50.910 --> 00:14:58.360
+So what if I just simply call here my use effect and inside this use effect I am going
+
+00:14:58.460 --> 00:15:00.480
+to call this check network method.
+
+00:15:01.270 --> 00:15:03.620
+Alright, so for logic part we are done.
+
+00:15:03.700 --> 00:15:05.380
+This is just a basic network check.
+
+00:15:05.600 --> 00:15:11.339
+So, let me just grab my designs, alright, again you can get all the designs, all the
+
+00:15:11.399 --> 00:15:16.759
+code file whatever I am writing on to my GitHub, don't worry about that, but for now
+
+00:15:16.959 --> 00:15:17.980
+let's focus here, cool.
+
+00:15:18.930 --> 00:15:24.720
+Let me copy my entire design and then try to show you what is they are going to look
+
+00:15:24.819 --> 00:15:25.160
+to us.
+
+00:15:25.600 --> 00:15:29.160
+So, let me import button from React Native.
+
+00:15:29.620 --> 00:15:31.180
+So, I have BC look at that.
+
+00:15:32.019 --> 00:15:38.480
+They are showing me connected to Wi-Fi and what if I just try to off my Wi-Fi.
+
+00:15:38.839 --> 00:15:45.060
+Alright and now if I refresh it look at that in real time look at that in real time the
+
+00:15:45.061 --> 00:15:48.560
+the moment I press on refresh my network status.
+
+00:15:49.100 --> 00:15:53.660
+Yes, my network status is coming as disconnected.
+
+00:15:54.540 --> 00:15:56.560
+That's the beauty of network API.
+
+00:15:56.759 --> 00:15:57.940
+Let me just reconnect it.
+
+00:15:58.519 --> 00:15:58.600
+Cool.
+
+00:15:59.060 --> 00:16:00.100
+So just give me a minute.
+
+00:16:01.420 --> 00:16:02.899
+And yes, just just give me a minute.
+
+00:16:03.199 --> 00:16:06.759
+Let me reload my application as well and look at that in real time.
+
+00:16:06.779 --> 00:16:13.600
+We are saying is connected true is internet reachable true and type is again to the Wi-Fi
+
+00:16:13.740 --> 00:16:15.040
+and let me just reload it once.
+
+00:16:16.600 --> 00:16:24.220
+Every changes will reflect in a while cool and you will see that right now look at that
+
+00:16:24.399 --> 00:16:30.060
+now this is connected to it but I think I need to reconnect my application because after
+
+00:16:30.139 --> 00:16:46.579
+disconnected Wi-Fi my systems
+
+00:16:46.580 --> 00:16:46.600
+IP address because we are using same Wi-Fi.
+
+00:16:46.601 --> 00:16:46.621
+So that's why they just mismatch.
+
+00:16:46.622 --> 00:16:46.642
+So just give me a minute.
+
+00:16:46.643 --> 00:16:48.860
+Let me try to reconnect my application and I think, alright, I'm still getting no connected
+
+00:16:49.000 --> 00:16:49.140
+app.
+
+00:16:50.040 --> 00:16:51.000
+So just give me a minute.
+
+00:16:51.280 --> 00:16:51.920
+Let me fix it.
+
+00:16:52.980 --> 00:16:53.140
+Alright.
+
+00:16:53.960 --> 00:16:54.980
+So now you can see.
+
+00:16:55.800 --> 00:16:58.380
+We are connected successfully.
+
+00:16:59.330 --> 00:16:59.480
+Perfect.
+
+00:16:59.720 --> 00:17:03.140
+Let's move ahead and try to take more examples.
+
+00:17:04.480 --> 00:17:14.000
+So for that, what we can do, we can create an example to as real-time network listener.
+
+00:17:15.359 --> 00:17:22.440
+So whenever you change your network state, then we are going to show here online, otherwise
+
+00:17:22.579 --> 00:17:23.679
+offline, something like that.
+
+00:17:23.800 --> 00:17:23.960
+Cool.
+
+00:17:24.800 --> 00:17:32.020
+So, let me go to my components and let me simply say this as why I am making so much
+
+00:17:32.100 --> 00:17:42.700
+spelling mistake for network, network listener, LISTE and a listener dot TSX, R and FES and
+
+00:17:42.701 --> 00:17:44.980
+then this is going to be network.
+
+00:17:46.780 --> 00:17:47.300
+Listener.
+
+00:17:48.350 --> 00:17:48.620
+All right.
+
+00:17:48.730 --> 00:17:49.780
+And let me save it.
+
+00:17:50.430 --> 00:17:57.480
+Let me go to my app and index dot t s x and below this let me try to paste that as well.
+
+00:17:59.220 --> 00:17:59.500
+Perfect.
+
+00:17:59.670 --> 00:18:05.020
+So and let me just comment this out cool so that we can have a network listener here.
+
+00:18:06.840 --> 00:18:12.860
+And again same thing, let me first of all import all of that that I need.
+
+00:18:13.310 --> 00:18:17.380
+So let me go to my this application and import all of this from here.
+
+00:18:18.020 --> 00:18:18.180
+Cool.
+
+00:18:18.690 --> 00:18:19.560
+Let me paste it.
+
+00:18:20.050 --> 00:18:20.460
+And then.
+
+00:18:23.019 --> 00:18:29.960
+Nice, and then let's maintain here two state variable, one is status and another one is
+
+00:18:30.080 --> 00:18:31.179
+a set status.
+
+00:18:31.860 --> 00:18:38.179
+This is equal to again, use that and initially we can keep the status as checking whatever
+
+00:18:38.200 --> 00:18:39.860
+you want, I mean it's up to you, cool.
+
+00:18:41.919 --> 00:18:46.360
+just a simple I can say connection type and then set
+
+00:18:48.920 --> 00:18:56.620
+connection type and this is again equal to use state, perfect.
+
+00:18:56.750 --> 00:19:02.820
+And then what we can do in same way, now we are going to basically use here a very nice
+
+00:19:03.400 --> 00:19:03.920
+utility.
+
+00:19:05.070 --> 00:19:06.480
+If I take you at the very bottom.
+
+00:19:07.200 --> 00:19:13.320
+And what if I try to show you, I think this one, add network state listener, cool.
+
+00:19:13.840 --> 00:19:17.299
+So let us move ahead and start using that, cool.
+
+00:19:18.019 --> 00:19:23.620
+So very easy to use, let me just simply coming to here and simply go inside a use effect.
+
+00:19:25.440 --> 00:19:28.860
+Add a dependency and dependency is empty for now.
+
+00:19:30.960 --> 00:19:32.040
+Inside this what I can do?
+
+00:19:33.900 --> 00:19:47.200
+I can again say const of subscription is equals to network.addnetworkStateListener and then
+
+00:19:47.300 --> 00:19:48.440
+they have access of state.
+
+00:19:50.180 --> 00:19:56.360
+Then a simple callback and let's console everything so that we can have a proper debug
+
+00:19:56.500 --> 00:19:56.760
+logs.
+
+00:19:59.200 --> 00:20:00.560
+So network changed.
+
+00:20:03.210 --> 00:20:03.440
+All right.
+
+00:20:03.520 --> 00:20:07.920
+First of all, we are tracking for the network change that we have that easy.
+
+00:20:08.400 --> 00:20:13.920
+And then what I will say if I simply I am going to say state dot if it is to look at
+
+00:20:13.980 --> 00:20:19.820
+that, now we have three things first is connected is internet reachable true or false simple
+
+00:20:20.720 --> 00:20:21.440
+and what is the type.
+
+00:20:21.560 --> 00:20:24.720
+So, if I say state dot is connected then.
+
+00:20:25.300 --> 00:20:32.580
+I am simply going to say what status as online, no problem, I am simply going to say set status
+
+00:20:32.700 --> 00:20:41.580
+as online, otherwise set status as offline, perfect and let me format this out, cool.
+
+00:20:42.440 --> 00:20:46.560
+And what we will do now, I can simply.
+
+00:20:47.300 --> 00:20:49.180
+it, perfect.
+
+00:20:49.540 --> 00:20:55.180
+So, but for calling it before that let me just simply say return and whatever we are
+
+00:20:55.200 --> 00:21:02.160
+subscribed to just simply say subscription.remove so that we have proper demounting as well unmounting
+
+00:21:02.240 --> 00:21:02.400
+sorry.
+
+00:21:03.180 --> 00:21:08.800
+Now, let us move ahead and create a simple initial state like initially whenever this
+
+00:21:09.360 --> 00:21:11.320
+use effect is run we are on which state.
+
+00:21:12.100 --> 00:21:19.520
+So, for that I can simply create a function name as check initial state and this is equals
+
+00:21:19.660 --> 00:21:27.760
+to the async and this async is first of all we need to get the state for it.
+
+00:21:28.480 --> 00:21:32.780
+So, now what we are going to basically say simply say here.
+
+00:21:33.600 --> 00:21:42.460
+Network, yes, network dot get network status sync simple method, no problem that we did
+
+00:21:42.539 --> 00:21:50.280
+here perfect and same thing if with the status is connected then simply says connected otherwise
+
+00:21:50.500 --> 00:21:54.880
+we are going to create here a utility as get name type name.
+
+00:21:55.309 --> 00:21:56.520
+So how that is?
+
+00:21:56.900 --> 00:22:02.260
+So, this is basically going to accept a type, alright, for now let me make this as type
+
+00:22:02.380 --> 00:22:04.300
+of any, perfect.
+
+00:22:04.760 --> 00:22:10.040
+So, if type is 0, this means none, we are just basically mapping it, perfect, this is
+
+00:22:10.100 --> 00:22:11.640
+how we are basically mapping it out.
+
+00:22:12.500 --> 00:22:19.640
+And just simply copy this and initially like this is just for state change, but initially
+
+00:22:19.760 --> 00:22:24.440
+whenever I run this use effect, then I wanted to show this.
+
+00:22:24.660 --> 00:22:28.440
+So let me just move ahead and grab my UI for it.
+
+00:22:28.900 --> 00:22:33.660
+Perfect, and where is that at this point, cool.
+
+00:22:34.140 --> 00:22:40.200
+So now I have all my UI and let me copy the view for it, perfect, let me save it.
+
+00:22:40.520 --> 00:22:43.340
+So now you will see if I save it, look at that.
+
+00:22:43.920 --> 00:22:44.880
+Right now what I am getting?
+
+00:22:45.500 --> 00:22:47.700
+I am getting the online status.
+
+00:22:48.490 --> 00:22:48.680
+Perfect.
+
+00:22:48.860 --> 00:22:53.900
+But what I am saying try turning on and off Wi-Fi or airplane mode.
+
+00:22:54.320 --> 00:22:57.020
+Let's first basically there is no SIM connected.
+
+00:22:57.790 --> 00:23:00.800
+But let me just try to go to airplane mode and look at that.
+
+00:23:00.940 --> 00:23:03.660
+Right now they are showing me a offline.
+
+00:23:04.470 --> 00:23:04.700
+All right.
+
+00:23:04.780 --> 00:23:09.780
+But if I just move still I'm offline because I'm not connected to any internet.
+
+00:23:10.480 --> 00:23:14.520
+Alright, now let me try to basically connect to internet.
+
+00:23:15.240 --> 00:23:15.440
+Cool.
+
+00:23:15.960 --> 00:23:18.440
+So just give me a minute, let me reconnect it.
+
+00:23:19.240 --> 00:23:22.140
+And you can also check the logs in real time.
+
+00:23:22.680 --> 00:23:27.060
+This is the network state is connected through and is internet reachable.
+
+00:23:27.190 --> 00:23:30.780
+Let me try to reload it once so that we can see the updated UI.
+
+00:23:32.080 --> 00:23:32.360
+And yes.
+
+00:23:33.000 --> 00:23:34.180
+Look at that.
+
+00:23:34.700 --> 00:23:38.220
+The moment I reloaded it, we are again online.
+
+00:23:39.180 --> 00:23:45.300
+So this is how you can basically listen to a network state change.
+
+00:23:46.380 --> 00:23:46.740
+Perfect.
+
+00:23:47.500 --> 00:23:48.960
+So what is right now happening?
+
+00:23:50.080 --> 00:23:52.320
+Automatically detects network changes.
+
+00:23:53.000 --> 00:23:59.340
+and updates UI in real time and we can even say that there is no manual refresh needed
+
+00:24:00.040 --> 00:24:03.840
+and you can see that proper alive status indicator.
+
+00:24:05.240 --> 00:24:05.420
+Perfect.
+
+00:24:06.500 --> 00:24:08.800
+In same way, if you wanted to see.
+
+00:24:09.400 --> 00:24:13.360
+a bunch of information about your network.
+
+00:24:14.050 --> 00:24:20.320
+So let me just copy and paste that directly because I just don't want it to stretch that
+
+00:24:20.380 --> 00:24:20.700
+too much.
+
+00:24:21.330 --> 00:24:31.680
+So that's why let me just simply copy it and say this as network, network details dot
+
+00:24:31.840 --> 00:24:32.420
+TSX.
+
+00:24:39.419 --> 00:24:46.440
+network details, alright. So, first thing let me import all of that what I need easy
+
+00:24:46.620 --> 00:24:53.340
+no problem till now. So, just give me a minute let me copy this and let me paste it easy
+
+00:24:53.580 --> 00:24:57.059
+no problem. Now let us maintain a state variable.
+
+00:24:59.200 --> 00:25:01.280
+This state variable is an object.
+
+00:25:02.700 --> 00:25:06.840
+So this is network info and we have a empty state.
+
+00:25:07.940 --> 00:25:09.300
+Is connected initially false?
+
+00:25:09.920 --> 00:25:11.320
+Is internet reachable null?
+
+00:25:11.640 --> 00:25:12.940
+What is your IP address?
+
+00:25:13.080 --> 00:25:14.320
+And then loading true.
+
+00:25:15.260 --> 00:25:15.360
+Perfect.
+
+00:25:17.020 --> 00:25:23.300
+And in same way, let me try to create the function that is going to basically fetch me
+
+00:25:23.360 --> 00:25:24.000
+the IP address.
+
+00:25:24.990 --> 00:25:26.260
+So this is how we will get it.
+
+00:25:27.760 --> 00:25:30.060
+First is get network state, we know that.
+
+00:25:30.660 --> 00:25:35.900
+Then we have initialized here one IP address and if we are connected, then we are basically
+
+00:25:36.040 --> 00:25:39.360
+getting the networks IP address by using this method.
+
+00:25:39.590 --> 00:25:39.860
+All right.
+
+00:25:40.600 --> 00:25:45.080
+And setting the state, no problem till now, easy.
+
+00:25:45.710 --> 00:25:52.900
+And then for now, let me again mark this as any, so that this is stop crying, perfect.
+
+00:25:54.980 --> 00:26:00.179
+And we can also show here, if the network info is in loading state, yes.
+
+00:26:01.270 --> 00:26:03.520
+So, we wanted to show here a simple live indicator.
+
+00:26:04.720 --> 00:26:07.780
+And whenever for the first time, I coming to here.
+
+00:26:08.700 --> 00:26:12.480
+I basically wanted to fetch this easy.
+
+00:26:12.880 --> 00:26:14.820
+So let's see that onto the UI.
+
+00:26:15.779 --> 00:26:18.620
+UI is bit bigger here but it's fine.
+
+00:26:20.840 --> 00:26:24.580
+Let me copy that and let me paste it and same with the design.
+
+00:26:28.700 --> 00:26:31.960
+Let me copy my entire design and paste it.
+
+00:26:33.140 --> 00:26:38.660
+Alright, now let's close this, let's close this as well and simply go inside index.tsx
+
+00:26:39.120 --> 00:26:45.320
+we don't need it anymore, simply we need a network details component and now if I save
+
+00:26:45.400 --> 00:26:46.820
+it, look at that.
+
+00:26:47.500 --> 00:26:54.520
+We are connected, internet is reachable and this is how I am basically fetching my IP address.
+
+00:26:55.060 --> 00:26:55.280
+Perfect.
+
+00:26:55.700 --> 00:26:59.560
+So it's connected, check device connection and is internet reachable, check your actual
+
+00:26:59.740 --> 00:27:01.120
+internet connections.
+
+00:27:01.660 --> 00:27:07.380
+So this is how you can basically make decisions on the basis of networks, APIs.
+
+00:27:07.960 --> 00:27:08.460
+Perfect.
+
+00:27:08.820 --> 00:27:10.400
+Is it making sense right now?
+
+00:27:10.460 --> 00:27:12.960
+Like this is all we have discussed till now.
+
+00:27:13.660 --> 00:27:13.820
+Perfect.
+
+00:27:14.400 --> 00:27:20.280
+So, this is the end of chapter number one with the help we have basically studied here
+
+00:27:20.380 --> 00:27:26.860
+how you can use the network API and again there is lot of types, lot of variables as
+
+00:27:26.940 --> 00:27:27.200
+well.
+
+00:27:27.700 --> 00:27:31.900
+So, if you just simply go to this documentation and search for types.
+
+00:27:32.610 --> 00:27:35.660
+So, you will see network state have bunch of types.
+
+00:27:36.300 --> 00:27:42.800
+Like is connected is internet reachable network state event have Bluetooth, cellular, ethernet,
+
+00:27:43.320 --> 00:27:51.020
+non other unknown VPN, Wi-Fi, Wi-Max all of this is just your network state types and
+
+00:27:51.180 --> 00:27:52.220
+this is just a enums.
+
+00:27:53.020 --> 00:27:58.320
+Perfect along with that we also have some error codes so you can also use it.
+
+00:28:00.400 --> 00:28:08.680
+So, yes, this is pretty much it for this and now if I just try to give you a simple conclusion,
+
+00:28:08.980 --> 00:28:14.260
+we have learned what is network API and why we need it, how to check a basic connectivity,
+
+00:28:14.700 --> 00:28:19.920
+how to listen to our network changes and how to get IP address and detail information and
+
+00:28:20.000 --> 00:28:21.140
+we have also seen.
+
+00:28:21.600 --> 00:28:25.080
+A bunch of examples on the real world use cases.
+
+00:28:25.419 --> 00:28:29.400
+So this is the end of this chapter and see you next time.
+

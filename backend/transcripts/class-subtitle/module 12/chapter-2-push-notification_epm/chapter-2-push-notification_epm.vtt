@@ -1,0 +1,1802 @@
+WEBVTT
+
+00:00:00.860 --> 00:00:04.180
+Alright everyone and welcome to a brand new chapter.
+
+00:00:04.380 --> 00:00:08.840
+In this chapter we are going to talk about push notification like how you can set up
+
+00:00:08.860 --> 00:00:12.000
+push notification inside your expo application.
+
+00:00:12.760 --> 00:00:16.180
+But for that I have definitely created a brand new folder.
+
+00:00:16.420 --> 00:00:20.860
+I know it is such a time consuming thing but we have to do it.
+
+00:00:20.900 --> 00:00:27.200
+And then without wasting any time, let me just simply run "Bunex create Expo at the
+
+00:00:27.220 --> 00:00:27.779
+latest".
+
+00:00:27.880 --> 00:00:31.599
+So, this is basically going to create me my application.
+
+00:00:32.700 --> 00:00:34.660
+./ just give me a minute.
+
+00:00:35.379 --> 00:00:38.379
+Alright, so now we are basically installing the Expo.
+
+00:00:39.140 --> 00:00:40.720
+Perfect, let's just wait for it.
+
+00:00:41.360 --> 00:00:44.080
+Alright guys, so now we have successfully installed it.
+
+00:00:44.200 --> 00:00:51.180
+Let me simply clear it and then let me run run, reset project.
+
+00:00:51.280 --> 00:00:54.940
+So this is basically going to reset my project and perfect.
+
+00:00:56.380 --> 00:00:59.180
+Now let us simply move to this documentation.
+
+00:00:59.520 --> 00:01:02.240
+Alright and I hope you guys are able to see the link for it.
+
+00:01:02.340 --> 00:01:03.940
+So make sure to visit only this.
+
+00:01:04.599 --> 00:01:11.720
+And if you try to read it to utilize expo push notification service, you must configure
+
+00:01:11.721 --> 00:01:20.820
+your app by installing a set of libraries implementing functions to handle notification
+
+00:01:21.580 --> 00:01:24.740
+and set up credentials for Android and iOS.
+
+00:01:25.380 --> 00:01:25.659
+Perfect.
+
+00:01:26.759 --> 00:01:30.420
+So for that, like do you want to use FCM, APN directly?
+
+00:01:30.580 --> 00:01:31.240
+Now what is this?
+
+00:01:31.340 --> 00:01:32.380
+I'll explain everything.
+
+00:01:32.600 --> 00:01:33.100
+Don't worry.
+
+00:01:33.600 --> 00:01:41.600
+Now, very important point push notification are not supported on Android emulators and
+
+00:01:41.820 --> 00:01:45.220
+iOS simulators a real device is required.
+
+00:01:45.221 --> 00:01:50.220
+So, I hope you guys have a real device because this is the real device which is basically
+
+00:01:50.221 --> 00:01:51.500
+connected to my system.
+
+00:01:52.300 --> 00:01:57.960
+And, then you will see these are the libraries they are asking us to install.
+
+00:01:57.961 --> 00:02:05.740
+So, let me just simply copy this and run 1x expo install expo notification expo device
+
+00:02:05.760 --> 00:02:07.080
+and expo constant.
+
+00:02:07.960 --> 00:02:09.080
+Why expo notification?
+
+00:02:09.139 --> 00:02:15.720
+We know that library is used to request a user's permission and obtain the expo push
+
+00:02:15.721 --> 00:02:19.560
+token for sending push notification not a local notification.
+
+00:02:19.800 --> 00:02:26.280
+This is the push notification and expo device is basically used to check whether the app
+
+00:02:26.420 --> 00:02:33.280
+is running on a physical device or not and expo constant is used to get the project ID
+
+00:02:33.300 --> 00:02:39.020
+value from the app configuration and the second step they are asking us is to add exponent
+
+00:02:39.680 --> 00:02:40.320
+notification.
+
+00:02:41.420 --> 00:02:45.640
+Plugin in the plugins array of app config perfect.
+
+00:02:45.720 --> 00:02:55.920
+So if we are not wrong so they automatically do this for us if I go to my app.json alright
+
+00:02:55.980 --> 00:03:04.160
+and let me go to my plugins ok so we explicitly need to add that no problem let me just simply
+
+00:03:04.161 --> 00:03:06.280
+copy this expo notification.
+
+00:03:06.700 --> 00:03:16.380
+And out of this and I think below this let me open one array and inside this array let
+
+00:03:16.381 --> 00:03:19.980
+me just simply pass this expo notifications.
+
+00:03:20.660 --> 00:03:27.080
+Alright and the next step is they are basically asking us to add a minimal working example.
+
+00:03:27.680 --> 00:03:33.739
+So what if we simply just copy this the code below shows a working example of how to register
+
+00:03:34.600 --> 00:03:40.960
+Send and receive notification in a react native app copy and paste it into your project will
+
+00:03:41.140 --> 00:03:41.940
+based it right now.
+
+00:03:42.120 --> 00:03:43.780
+Let's leave it as it is.
+
+00:03:45.620 --> 00:03:49.040
+And the next step they are asking us to using the previous example.
+
+00:03:49.060 --> 00:03:50.280
+I mean this one.
+
+00:03:50.600 --> 00:03:56.920
+When you are registering for push notification you need to use a project ID.
+
+00:03:57.460 --> 00:03:58.860
+So what is this project ID?
+
+00:03:59.380 --> 00:04:02.820
+Basically your EAS builds project ID.
+
+00:04:03.040 --> 00:04:04.320
+We will grabbing that in a while.
+
+00:04:05.100 --> 00:04:12.160
+This property is used to attribute expo push notification to the specific project.
+
+00:04:12.980 --> 00:04:14.920
+for projects using EAS.
+
+00:04:15.540 --> 00:04:16.019
+All right.
+
+00:04:16.320 --> 00:04:19.959
+And the next step is get credentials for development build.
+
+00:04:20.759 --> 00:04:22.280
+Now, this is the right time.
+
+00:04:22.680 --> 00:04:27.199
+I wanted you to simply visit the firebase.google.com.
+
+00:04:28.139 --> 00:04:29.360
+Yes, you need to visit here.
+
+00:04:29.979 --> 00:04:32.320
+And then let me just change my account.
+
+00:04:32.419 --> 00:04:33.960
+Let me log in with this.
+
+00:04:34.639 --> 00:04:38.320
+And after this, simply press on go to console.
+
+00:04:39.000 --> 00:04:44.920
+And after coming here, I wanted you to simply press create a new Firebase project.
+
+00:04:46.660 --> 00:04:50.500
+And you can add Firebase to an existing project.
+
+00:04:52.040 --> 00:04:55.640
+OK, let me just change this to default one.
+
+00:04:56.000 --> 00:05:01.880
+Maybe we have here if I just simply say add a project perfect now let me just simply say
+
+00:05:01.881 --> 00:05:10.660
+this as expo push notification app and then I can simply press on continue.
+
+00:05:11.600 --> 00:05:16.820
+All right, if they are recommending us, let's move ahead and then simply press on continue.
+
+00:05:17.860 --> 00:05:23.120
+Then once again, press on continue default account for Firebase and then simply press
+
+00:05:23.140 --> 00:05:24.340
+on create projects.
+
+00:05:24.540 --> 00:05:26.520
+All right, let's just wait for it.
+
+00:05:26.680 --> 00:05:30.940
+All right, guys, so now we have successfully created this project and then simply press
+
+00:05:30.960 --> 00:05:31.820
+on continue.
+
+00:05:32.400 --> 00:05:36.520
+All right, now we have a expo.
+
+00:05:36.699 --> 00:05:38.820
+I mean, Firebase project as well.
+
+00:05:39.000 --> 00:05:39.139
+Cool.
+
+00:05:39.199 --> 00:05:44.400
+Let's hold on and let me go to my eraser.
+
+00:05:44.919 --> 00:05:50.100
+And first of all, let's try to understand what is FCM.
+
+00:05:50.260 --> 00:05:50.479
+Perfect.
+
+00:05:50.660 --> 00:05:52.419
+Yes, what is FCM?
+
+00:05:54.420 --> 00:05:58.340
+Why do we need Expo push tokens now?
+
+00:05:58.580 --> 00:05:59.800
+What is this basically?
+
+00:06:00.020 --> 00:06:04.980
+So these are very big question and we need to understand about it.
+
+00:06:05.020 --> 00:06:08.940
+Not DCM this is FCM.
+
+00:06:09.140 --> 00:06:09.360
+Alright.
+
+00:06:09.500 --> 00:06:18.560
+So, let me just say one really big thing notification don't magically reach to your phone you know
+
+00:06:18.561 --> 00:06:26.480
+that let's say this is a WhatsApp, this is a WhatsApp server and your friend like someone
+
+00:06:26.640 --> 00:06:33.720
+has messaged you but you don't know so for that WhatsApp is basically sending you a push
+
+00:06:33.721 --> 00:06:34.680
+notification.
+
+00:06:36.300 --> 00:06:42.860
+agree WhatsApp is basically sent going to send you a push notification, but notification
+
+00:06:43.120 --> 00:06:44.979
+don't magically reach to your phone.
+
+00:06:45.300 --> 00:06:47.479
+We need some identification matrix.
+
+00:06:47.699 --> 00:06:50.720
+We need something so that we can send you notification.
+
+00:06:51.100 --> 00:06:56.080
+So, that is why there is always a small service in the middle.
+
+00:06:56.400 --> 00:07:00.140
+Yes, in the middle we have a very small service for it.
+
+00:07:00.660 --> 00:07:07.700
+This is basically is the service which is we can say delivers the notification to your
+
+00:07:07.701 --> 00:07:08.520
+registered phone.
+
+00:07:09.100 --> 00:07:16.700
+So, there are two types of services like if you are Android user, so most probably you
+
+00:07:16.701 --> 00:07:24.120
+guys are using the FCM perfect and if you are iOS user you are most probably using something
+
+00:07:24.121 --> 00:07:26.160
+known as APNs.
+
+00:07:26.200 --> 00:07:30.000
+Perfect and now what is this FCM?
+
+00:07:30.260 --> 00:07:38.340
+So FCM is basically means if I just simply write FCM, FCM is means Firebase Cloud Messaging.
+
+00:07:39.000 --> 00:07:47.840
+Yes FCM basically means Firebase Cloud Messaging and FCM we can say that is a Google's push
+
+00:07:47.841 --> 00:07:49.640
+notification delivery service.
+
+00:07:50.000 --> 00:07:50.880
+Perfect.
+
+00:07:51.240 --> 00:07:52.120
+What is FCM?
+
+00:07:52.740 --> 00:07:58.620
+It is a Google's post notification delivery service for Android devices.
+
+00:08:00.180 --> 00:08:02.100
+And what FCM actually do?
+
+00:08:02.280 --> 00:08:06.740
+They basically delivers the notification to the Android phones.
+
+00:08:06.920 --> 00:08:08.500
+Yes, make sure to keep that in mind.
+
+00:08:08.560 --> 00:08:19.980
+They delivers that in the Android.
+
+00:08:19.981 --> 00:08:20.001
+Android's phone. Perfect.
+
+00:08:20.002 --> 00:08:23.140
+And one of the nice thing about this, like if your phone is off and you just
+
+00:08:23.500 --> 00:08:29.140
+forcefully stopped your app and your phone is logged, they work even that condition as well.
+
+00:08:30.120 --> 00:08:33.220
+And who is using basically these FCM?
+
+00:08:33.260 --> 00:08:36.080
+So a lot of big companies like WhatsApp.
+
+00:08:36.500 --> 00:08:44.220
+is using FCM, we can say Instagram is also using FCM, Zomato is also using FCM, Uber
+
+00:08:44.380 --> 00:08:50.780
+is also using FCM and we can say almost every Android app is using FCM, basically the Firebase
+
+00:08:50.840 --> 00:08:53.880
+cloud messaging services.
+
+00:08:55.800 --> 00:09:00.280
+And you can even build your own, but all right, who's going to manage that infrastructure?
+
+00:09:00.700 --> 00:09:07.000
+So Firebase cloud messaging is basically it's a Google's push notification delivery service
+
+00:09:07.001 --> 00:09:08.280
+for Android device.
+
+00:09:09.180 --> 00:09:11.720
+Perfect and very, very important rule here.
+
+00:09:12.380 --> 00:09:17.980
+Every Android app that send push notification eventually talk to FCM got it.
+
+00:09:18.000 --> 00:09:21.040
+So as you know, we know that this is the middleman.
+
+00:09:21.300 --> 00:09:28.279
+So, every time when we wanted to send a push notification to your device, so your notification
+
+00:09:28.280 --> 00:09:35.160
+will always go to the first of all FCM, then FCM will send this notification to the mobile
+
+00:09:35.161 --> 00:09:35.600
+phone.
+
+00:09:36.500 --> 00:09:36.779
+Perfect.
+
+00:09:36.980 --> 00:09:42.200
+So, we can say that like this is your backend server and from wherever you are basically
+
+00:09:42.201 --> 00:09:48.820
+generating the notification and then in between we have FCM.
+
+00:09:48.821 --> 00:09:56.540
+Firebase cloud messaging and then we are basically sending this to your Android phone.
+
+00:09:57.200 --> 00:10:00.660
+Alright so I hope so this is making sense now.
+
+00:10:02.000 --> 00:10:05.720
+Now very important term which is basically this push token.
+
+00:10:05.839 --> 00:10:11.680
+Now what is this actually push token is or instant we can say this as FCM token.
+
+00:10:12.160 --> 00:10:13.159
+Now what is in?
+
+00:10:18.240 --> 00:10:22.819
+So, FCM token is the address of an Android device got it.
+
+00:10:23.079 --> 00:10:26.220
+So, this is the where we are basically identifying this.
+
+00:10:26.221 --> 00:10:27.819
+So, let us say this is your Android device.
+
+00:10:28.329 --> 00:10:31.160
+So, this is basically the address for it.
+
+00:10:31.300 --> 00:10:39.180
+So, we can simply say this as this is basically the address of your Android device and very
+
+00:10:39.181 --> 00:10:46.680
+important point to mention this is unique per app perfect per app per device this is
+
+00:10:46.681 --> 00:10:53.220
+very important this is unique per app and per device all right interesting.
+
+00:10:53.700 --> 00:11:00.980
+And, then can change anything we can say that this can be changed anytime and must be stored
+
+00:11:00.981 --> 00:11:03.880
+safely on the backend got it.
+
+00:11:03.881 --> 00:11:08.640
+So, why do we use FCM directly in XPOT this is the biggest question.
+
+00:11:08.940 --> 00:11:10.960
+So, we can say that.
+
+00:11:11.500 --> 00:11:19.600
+The problem with FCM directly is they require a Firebase setup and we definitely going to
+
+00:11:19.601 --> 00:11:20.320
+use that.
+
+00:11:20.500 --> 00:11:22.580
+So don't worry about it.
+
+00:11:22.740 --> 00:11:27.480
+Perfect and then you need to add server keys, Android credentials, a lot of things.
+
+00:11:27.660 --> 00:11:30.080
+But one more very interesting thing that we have.
+
+00:11:30.100 --> 00:11:33.000
+is known as expo notification.
+
+00:11:33.139 --> 00:11:40.339
+So from here you just simply add your expo exponent push token we get that and then whatever
+
+00:11:40.360 --> 00:11:45.300
+message title you wanted to send and then simply press on send notification and this
+
+00:11:45.360 --> 00:11:47.779
+is going to work very fine.
+
+00:11:48.680 --> 00:11:51.720
+Perfect, and now one thing that we have is expo push token.
+
+00:11:51.840 --> 00:11:53.460
+This is basically FCM token.
+
+00:11:53.520 --> 00:11:54.220
+This is different.
+
+00:11:54.760 --> 00:11:58.480
+Now, we have another thing which is known as expo push token.
+
+00:11:58.660 --> 00:12:01.680
+So, expo push token is not same as FCM token.
+
+00:12:01.840 --> 00:12:03.120
+Make sure to keep that in mind.
+
+00:12:03.600 --> 00:12:09.759
+So, this expo push token is the token which is issued by your expo servers.
+
+00:12:10.600 --> 00:12:15.899
+We can say that they act as a proxy and we can easily generate that and we can easily
+
+00:12:15.900 --> 00:12:16.880
+use it.
+
+00:12:17.100 --> 00:12:17.180
+Cool.
+
+00:12:17.380 --> 00:12:25.180
+So, I think let us move ahead and try to understand that how we can actually set up all of that.
+
+00:12:25.240 --> 00:12:29.620
+So, overall if I just simply tell you one word then we will move ahead definitely.
+
+00:12:29.900 --> 00:12:37.360
+So, every time whenever you wanted to send a push notification to the Android, so Firebase
+
+00:12:38.060 --> 00:12:43.560
+cloud messaging is always involved doesn't matter you are directly using it or you are
+
+00:12:43.561 --> 00:12:45.220
+using with the help of expo.
+
+00:12:45.400 --> 00:12:50.240
+Perfect, this is the non-negotiable rule we can say that, cool.
+
+00:12:50.600 --> 00:12:55.960
+So all Android push notifications are delivered by FCM, got it.
+
+00:12:56.400 --> 00:13:01.860
+Now let's move ahead and let me simply come into here and start setting it up.
+
+00:13:02.320 --> 00:13:03.880
+simply press on the settings.
+
+00:13:04.500 --> 00:13:12.200
+And after settings you can simply let me just simply say on general and inside the general
+
+00:13:12.201 --> 00:13:16.300
+you will find something known as service accounts.
+
+00:13:18.060 --> 00:13:20.520
+Perfect and hopefully this will load it.
+
+00:13:20.521 --> 00:13:26.000
+And after loading this service account, you will see that we have a node.js, Java, Python.
+
+00:13:26.540 --> 00:13:30.540
+Only thing that you need to do simply say generate new private key.
+
+00:13:30.860 --> 00:13:32.900
+Then simply say generate key.
+
+00:13:33.240 --> 00:13:33.460
+Perfect.
+
+00:13:33.540 --> 00:13:36.760
+So this is basically going to generate you one private key.
+
+00:13:36.980 --> 00:13:42.540
+So basically grab this, open your VS code and make sure to save this here.
+
+00:13:42.700 --> 00:13:43.020
+Perfect.
+
+00:13:43.200 --> 00:13:50.100
+So, just give me a minute let me open my explorer and let me bring this once again and drop
+
+00:13:50.101 --> 00:13:53.520
+it here perfect never push this to your GitHub for now at least.
+
+00:13:54.600 --> 00:14:00.220
+Alright so now we have this perfect close this and now if you go to general what you
+
+00:14:00.221 --> 00:14:01.640
+to do is to
+
+00:14:29.180 --> 00:14:29.940
+.
+
+00:14:29.941 --> 00:14:29.961
+setup your app Android. So, I can simply press on Android and now this is very important
+
+00:14:29.962 --> 00:14:29.982
+point first thing they are asking you to add your Android package name and Android app
+
+00:14:29.983 --> 00:14:30.003
+ID and whatever you wanted to do, but for setting it up we definitely need to build
+
+00:14:30.004 --> 00:14:30.024
+our application perfect. So, we will build that right now. So, for that what I can do
+
+00:14:30.025 --> 00:14:36.899
+Let's move ahead and trigger a build here at least and get the bunch of credentials
+
+00:14:36.900 --> 00:14:37.680
+that we need.
+
+00:14:38.420 --> 00:14:42.259
+All right, so for that, what we can do first of all, let me fix it.
+
+00:14:42.260 --> 00:14:44.420
+All right, let me open this as well.
+
+00:14:45.220 --> 00:14:48.319
+And where is my device just give me a minute.
+
+00:14:48.380 --> 00:14:49.440
+Let me open it.
+
+00:14:49.540 --> 00:14:49.980
+All right.
+
+00:14:50.899 --> 00:14:56.660
+And first thing first, make sure you are successfully logged in with your EAS and I can simply hit
+
+00:14:56.661 --> 00:14:57.819
+EAS in it.
+
+00:14:58.399 --> 00:15:02.180
+So this is basically going to initialize my EAS project.
+
+00:15:02.459 --> 00:15:02.660
+Perfect.
+
+00:15:02.779 --> 00:15:05.100
+So would you like to create a project for this?
+
+00:15:05.199 --> 00:15:06.800
+Yes, I wanted to create.
+
+00:15:06.801 --> 00:15:10.260
+And now they are basically creating my project.
+
+00:15:10.480 --> 00:15:10.680
+Perfect.
+
+00:15:10.720 --> 00:15:15.640
+So we can definitely wait for a few seconds and they are still creating it.
+
+00:15:16.760 --> 00:15:23.820
+Alright, I am basically getting would you like to create this and a project with this
+
+00:15:23.821 --> 00:15:26.920
+slug has previously created by this account.
+
+00:15:27.100 --> 00:15:29.080
+So provide a different project slug.
+
+00:15:30.120 --> 00:15:32.740
+Alright, let me try to add a different slug.
+
+00:15:33.100 --> 00:15:34.519
+Hopefully that will work right now.
+
+00:15:35.000 --> 00:15:39.520
+So, the idea is this would you like to link this project?
+
+00:15:39.760 --> 00:15:41.700
+Yes, hopefully this will link and work.
+
+00:15:42.680 --> 00:15:47.940
+Alright, so now you will see that project successfully linked and if I move ahead and
+
+00:15:47.941 --> 00:15:51.720
+then if I go to my app Jason at the very bottom, you can see this.
+
+00:15:51.840 --> 00:15:53.940
+Yes, and the owner.
+
+00:15:54.140 --> 00:15:54.340
+Perfect.
+
+00:15:54.440 --> 00:15:58.040
+So, first thing that we have is the project ID.
+
+00:15:58.700 --> 00:15:59.040
+Perfect.
+
+00:15:59.560 --> 00:16:00.520
+Now, what next?
+
+00:16:00.800 --> 00:16:07.920
+So, after initializing this I basically wanted you to set up this credentials yes you need
+
+00:16:07.921 --> 00:16:15.000
+to add this and then what I can do I can simply coming to here and then I can say EAS build
+
+00:16:15.160 --> 00:16:20.959
+colon and just give me a minute let me just first of all clear it and then let me say
+
+00:16:20.960 --> 00:16:28.600
+again say EAS build colon configure perfect and now they are basically going to ask me.
+
+00:16:29.560 --> 00:16:32.339
+for which platform would you like to configure this.
+
+00:16:32.459 --> 00:16:37.259
+So we definitely wanted to go with Android and now you will see that your project is
+
+00:16:37.260 --> 00:16:40.819
+ready to build run EAS build when you are ready to submit.
+
+00:16:41.319 --> 00:16:42.519
+All right, we'll do that in a while.
+
+00:16:43.279 --> 00:16:46.959
+And now if I take you to this, we can say.
+
+00:16:47.200 --> 00:16:48.700
+Alright, just give me a minute.
+
+00:16:48.800 --> 00:16:50.800
+This looks weird little.
+
+00:16:51.060 --> 00:16:52.000
+Alright, now we are fine.
+
+00:16:52.720 --> 00:16:54.740
+If you again coming to here, perfect.
+
+00:16:55.860 --> 00:17:02.300
+And let me take you towards town and hopefully I will find post notification service.
+
+00:17:02.520 --> 00:17:06.859
+And yes, this is very nice diagram by the way, if you wanted to read about it, you can
+
+00:17:06.860 --> 00:17:07.640
+definitely read.
+
+00:17:08.099 --> 00:17:09.820
+I'm just searching for that.
+
+00:17:10.060 --> 00:17:10.940
+Just give me a minute.
+
+00:17:11.680 --> 00:17:17.180
+And then we are good to go.
+
+00:17:17.181 --> 00:17:17.201
+Alright, so basically I am not finding it out but it is okay.
+
+00:17:17.202 --> 00:17:25.140
+Next thing what you need to do you simply need to run EAS credentials perfect.
+
+00:17:25.839 --> 00:17:31.720
+So now you will going to see they are going to prompt you to select basically which platform
+
+00:17:31.760 --> 00:17:33.460
+so yes we wanted to build for Android.
+
+00:17:34.040 --> 00:17:34.980
+Now which profile?
+
+00:17:35.340 --> 00:17:37.760
+So always select production for now.
+
+00:17:38.000 --> 00:17:44.100
+Perfect, so we wanted to go with production and now the next option, alright now they
+
+00:17:44.101 --> 00:17:48.620
+are basically saying me android.package in app.json.
+
+00:17:49.600 --> 00:17:52.980
+So run this command once again, alright I got it.
+
+00:17:53.080 --> 00:17:56.900
+So basically we haven't configured the android package name.
+
+00:17:57.500 --> 00:18:02.100
+So basically what you need to do, you simply need to go inside your as json.
+
+00:18:02.300 --> 00:18:05.800
+And inside this es json everything is fine.
+
+00:18:06.200 --> 00:18:09.060
+Let me go to app json and search for android.
+
+00:18:09.880 --> 00:18:15.080
+So it is my android up here is it perfect and then what you need to do you simply need
+
+00:18:15.120 --> 00:18:20.760
+to below this and not the dot sorry simply need to search for something known as package
+
+00:18:21.220 --> 00:18:24.000
+and inside this simply try to add the package.
+
+00:18:24.080 --> 00:18:25.780
+I can simply say dev dot.
+
+00:18:26.880 --> 00:18:30.100
+expo. and whatever the name of your application.
+
+00:18:30.220 --> 00:18:37.519
+So this is going to be expo push notification perfect and just remove this hyphens and yes
+
+00:18:37.520 --> 00:18:40.360
+this is the right approach of doing it perfect.
+
+00:18:40.760 --> 00:18:46.000
+So now you will see that we have a dev.expo.expo push notifications.
+
+00:18:46.120 --> 00:18:48.539
+So this is your package name we know that no problem.
+
+00:18:48.800 --> 00:18:53.960
+And in the same way, if you are doing for iOS, there is something known as a bundle identifier.
+
+00:18:54.540 --> 00:18:57.520
+So you can basically use that if you wanted to.
+
+00:18:57.800 --> 00:18:58.100
+Perfect.
+
+00:18:58.500 --> 00:19:00.440
+So let's move ahead and try that once again.
+
+00:19:01.120 --> 00:19:06.500
+So for doing that once again, what I will do, let me just come into here and rerun EAS
+
+00:19:06.520 --> 00:19:07.100
+credentials.
+
+00:19:08.340 --> 00:19:08.740
+Cool.
+
+00:19:09.700 --> 00:19:17.880
+They are basically running ASCLI and yes Android and now basically they are asking for the
+
+00:19:17.881 --> 00:19:23.539
+profile so yes select the production and hopefully this will work right now.
+
+00:19:25.100 --> 00:19:28.960
+And, and, and, okay, using Nice.
+
+00:19:29.320 --> 00:19:31.380
+So now you will see they found the project.
+
+00:19:32.080 --> 00:19:36.240
+Now they found the Dev Expo, basically application identifier.
+
+00:19:36.940 --> 00:19:42.820
+And the next thing you basically need to open this Google service account.
+
+00:19:43.660 --> 00:19:44.100
+Yes.
+
+00:19:44.419 --> 00:19:45.500
+Now let's move ahead.
+
+00:19:46.100 --> 00:19:48.299
+And let's implement it.
+
+00:19:48.360 --> 00:19:50.940
+So now simply select this Google service account.
+
+00:19:51.059 --> 00:19:54.440
+Yes, you need to do so that and then let me simply open it.
+
+00:19:54.760 --> 00:19:58.120
+And now you will see manage your service account key from Play Store.
+
+00:19:58.780 --> 00:20:04.160
+No, I manage your Google service account key for push notification FCM V1.
+
+00:20:04.220 --> 00:20:08.720
+Yes, we wanted to do so this now you can see that how we are connecting the dots.
+
+00:20:08.900 --> 00:20:13.960
+In the moment I coming to here and now they are saying set up a Google service account
+
+00:20:13.961 --> 00:20:19.420
+key for push notifications, select an existing Google service account key for push notifications.
+
+00:20:19.540 --> 00:20:26.820
+So set up a Google service account key and they will basically going to ask you, we can
+
+00:20:26.821 --> 00:20:27.540
+say the key.
+
+00:20:27.760 --> 00:20:30.500
+So choose an existing key, upload a new service key.
+
+00:20:30.560 --> 00:20:32.720
+So simply say upload a new service key.
+
+00:20:33.620 --> 00:20:37.820
+And, they are saying expo push notification.
+
+00:20:38.270 --> 00:20:40.080
+Yes, I think they found it out.
+
+00:20:40.150 --> 00:20:41.799
+Would you like to use this file?
+
+00:20:42.200 --> 00:20:43.640
+And hopefully you have imported this.
+
+00:20:43.840 --> 00:20:47.380
+Yes, you will see that how smart the ESCL is.
+
+00:20:47.539 --> 00:20:51.720
+They have automatically identified this key and simply say yes.
+
+00:20:52.100 --> 00:20:59.320
+Now, the moment I say yes, you will see uploaded Google service account and Google service account
+
+00:20:59.419 --> 00:21:07.820
+key assigned to this specific bundle identifier basically package name for FCM V1 press any
+
+00:21:07.821 --> 00:21:09.000
+key to continue.
+
+00:21:09.001 --> 00:21:10.440
+Let me simply press enter.
+
+00:21:12.060 --> 00:21:13.400
+Perfect and nice.
+
+00:21:13.840 --> 00:21:15.560
+So now we are basically done with it.
+
+00:21:15.590 --> 00:21:22.000
+So I can simply control see this perfect and after cancelling this what I will do let me
+
+00:21:22.180 --> 00:21:28.620
+clear everything and let me just simply go to my expo we can say dashboard.
+
+00:21:29.700 --> 00:21:30.140
+Perfect.
+
+00:21:30.179 --> 00:21:33.960
+Now, after going to my export dashboard, yes, this is the application I'm talking about.
+
+00:21:34.100 --> 00:21:37.640
+Let me just simply open it after opening it.
+
+00:21:38.360 --> 00:21:42.299
+If you go to the overview, these are the slug, the ID, all of that thing.
+
+00:21:42.500 --> 00:21:42.760
+Perfect.
+
+00:21:43.260 --> 00:21:50.360
+Let me go to my, if I'm not wrong to a submission or general, I think towards the general and
+
+00:21:50.559 --> 00:21:54.100
+maybe in the fingerprints, we will find the things that we need.
+
+00:21:54.299 --> 00:21:54.480
+All right.
+
+00:21:54.580 --> 00:21:56.780
+Create a fingerprint for this project.
+
+00:21:58.420 --> 00:22:03.300
+Okay, if I go to my builds, okay, we don't even have any builds.
+
+00:22:03.460 --> 00:22:06.240
+If I go to my overview, all right.
+
+00:22:07.100 --> 00:22:10.820
+So basically, I think what we can do, let me just close this.
+
+00:22:10.980 --> 00:22:11.160
+Cool.
+
+00:22:12.140 --> 00:22:13.460
+Let me just come into here.
+
+00:22:13.700 --> 00:22:16.679
+First thing first, let me copy this package name.
+
+00:22:17.080 --> 00:22:22.380
+Yes, we understand this and let me come into here and paste my package name.
+
+00:22:22.559 --> 00:22:22.799
+Perfect.
+
+00:22:22.800 --> 00:22:29.980
+You can name it as expo push notification and simply say register your app.
+
+00:22:30.220 --> 00:22:32.620
+So this is basically going to register my app.
+
+00:22:33.580 --> 00:22:35.240
+All right, let me just wait for it.
+
+00:22:35.600 --> 00:22:40.460
+Now, you will see they are giving us something a Google service.
+
+00:22:40.640 --> 00:22:40.840
+Jason.
+
+00:22:40.960 --> 00:22:42.480
+So, yes, you need to download this.
+
+00:22:42.860 --> 00:22:44.720
+Let me just simply press a download.
+
+00:22:45.380 --> 00:22:51.080
+Let me once again open my VS code and bring that here.
+
+00:22:51.110 --> 00:22:51.299
+Cool.
+
+00:22:51.900 --> 00:22:56.180
+Nice, and after this, let me just rename it perfectly.
+
+00:22:57.300 --> 00:22:57.480
+Nice.
+
+00:22:57.640 --> 00:23:00.220
+So, now we have a Google services dot Jason.
+
+00:23:00.800 --> 00:23:01.920
+Nice, we need it.
+
+00:23:02.420 --> 00:23:09.220
+And after that, you can simply press on next and everything is done simply again say next
+
+00:23:09.221 --> 00:23:11.160
+and then say continue to console.
+
+00:23:11.500 --> 00:23:18.100
+So the moment you continue to console, you will find here something known as SHA certificate
+
+00:23:18.240 --> 00:23:18.840
+fingerprints.
+
+00:23:19.040 --> 00:23:22.400
+So we need to definitely add a fingerprints as well.
+
+00:23:23.140 --> 00:23:27.500
+Alright so now if I go to my dashboard, you will see like if I just go to my credentials,
+
+00:23:27.800 --> 00:23:31.020
+I am not founding anything useful here.
+
+00:23:31.040 --> 00:23:35.840
+Like you can see that we don't have any, alright, we have client, we have private key, but we
+
+00:23:35.841 --> 00:23:38.500
+don't have the SHA fingerprints.
+
+00:23:38.720 --> 00:23:41.900
+So for that we need to trigger a build for it.
+
+00:23:42.200 --> 00:23:46.540
+Yes, I know it's a lot of things to do, but as I said you earlier, this is one of the
+
+00:23:46.541 --> 00:23:48.980
+hardest part and you need to go through it.
+
+00:23:49.200 --> 00:23:56.200
+Perfect, so how I can basically hit the development build, so for that I can simply run EAS,
+
+00:23:57.179 --> 00:24:03.080
+alright just give me a minute, let me see a little set EAS build and the -p profile
+
+00:24:03.580 --> 00:24:12.019
+and I can say the profile is basically for Android, perfect, so -p and Android and just
+
+00:24:12.020 --> 00:24:18.340
+hit it, we do not need any, basically the platform we do not need any profile for now.
+
+00:24:18.500 --> 00:24:25.160
+So, now you will see perfect they are basically saying no environment variable with visibility
+
+00:24:25.340 --> 00:24:26.900
+plain text and sensitivity.
+
+00:24:27.620 --> 00:24:33.960
+All right let just wait for it and yes generate a new key store generating the key store into
+
+00:24:33.961 --> 00:24:34.560
+the cloud.
+
+00:24:35.480 --> 00:24:38.360
+All right let just wait for it as well.
+
+00:24:38.540 --> 00:24:38.860
+Perfect.
+
+00:24:39.200 --> 00:24:42.500
+Now they are basically compressing the project file.
+
+00:24:42.700 --> 00:24:44.799
+All right, we can definitely wait for this as well.
+
+00:24:45.320 --> 00:24:51.000
+And now if I come into here and if I go to my builds, all right, there's nothing stills
+
+00:24:51.001 --> 00:24:53.380
+because they are already uploading it.
+
+00:24:53.880 --> 00:24:56.380
+All right, so now you can see that our build is in progress.
+
+00:24:56.620 --> 00:24:58.399
+Definitely we are going to cancel this build.
+
+00:24:58.679 --> 00:25:01.159
+But first of all, let me open this build.
+
+00:25:01.860 --> 00:25:04.740
+And now you can see the build is in progress.
+
+00:25:05.100 --> 00:25:05.340
+Perfect.
+
+00:25:05.460 --> 00:25:07.399
+Let me just again go to credentials.
+
+00:25:07.600 --> 00:25:10.299
+And we already have this fingerprints and IT.
+
+00:25:11.000 --> 00:25:13.039
+So let me just open this.
+
+00:25:13.620 --> 00:25:19.020
+Okay and okay, I think we don't have let me go to my credentials inside the credentials.
+
+00:25:19.200 --> 00:25:27.679
+Let me open this and yes, this is your SHA1 fingerprint simply copy this fingerprint and
+
+00:25:27.960 --> 00:25:32.260
+add a fingerprint simply paste it cool and then simply say save.
+
+00:25:33.720 --> 00:25:38.200
+And then simply say add add up all up to your app Android.
+
+00:25:38.600 --> 00:25:39.580
+We have already added this.
+
+00:25:39.700 --> 00:25:41.040
+All right, we are good to go now.
+
+00:25:41.440 --> 00:25:41.760
+Perfect.
+
+00:25:41.820 --> 00:25:45.640
+So now you can see that we have successfully registered this now.
+
+00:25:45.980 --> 00:25:53.160
+What next is go to your build, make sure to open this and I wanted to cancel it for now.
+
+00:25:53.480 --> 00:25:55.580
+So let me just simply press on cancel.
+
+00:25:55.900 --> 00:26:00.460
+And hopefully this will stop because right now we don't want it to build anything.
+
+00:26:00.540 --> 00:26:04.800
+We just need a bunch of credentials for setting it up everything and perfect.
+
+00:26:05.580 --> 00:26:07.740
+Alright, so now you guys can see that.
+
+00:26:07.940 --> 00:26:12.560
+Let me first of all coming to here and now you can see that we have a Google services
+
+00:26:12.660 --> 00:26:13.460
+dot Jason.
+
+00:26:25.650 --> 00:26:25.760
+But.
+
+00:26:25.761 --> 00:26:25.781
+This Google services dot json and this expo push notifications all of these are file that
+
+00:26:25.782 --> 00:26:25.802
+we do not want it to push this towards the GitHub.
+
+00:26:25.803 --> 00:26:30.600
+So we know that I can just simply add that inside my git ignore and after this what you
+
+00:26:30.601 --> 00:26:35.360
+can do first of all we do not need it anymore so I can simply delete it because you have
+
+00:26:35.361 --> 00:26:41.580
+successfully uploaded that and then you can simply coming to here and what you can do
+
+00:26:43.160 --> 00:26:50.539
+You can just simply say dot slash Google services dot json because we don't want it to push
+
+00:26:50.540 --> 00:26:51.440
+this to the GitHub.
+
+00:26:52.720 --> 00:26:57.340
+So basically our main goal is we never wanted to push this towards the GitHub.
+
+00:26:57.640 --> 00:27:00.260
+So I think I need to add that in this way.
+
+00:27:00.860 --> 00:27:05.660
+Alright, now you can see this is ignore but one more thing to keep in mind is this something
+
+00:27:05.661 --> 00:27:07.340
+known as EAS ignore as well.
+
+00:27:07.600 --> 00:27:10.380
+Perfect, now what is this EAS ignore?
+
+00:27:10.559 --> 00:27:16.919
+EAS ignore is all the file that you do not wanted to push to the EAS while building the
+
+00:27:16.920 --> 00:27:18.140
+EAS builds basically.
+
+00:27:18.380 --> 00:27:25.000
+So I just wanted to coming here but yes we need to push Google services.json to the EAS
+
+00:27:25.020 --> 00:27:25.179
+build.
+
+00:27:25.200 --> 00:27:31.080
+We do not wanted to push this to the GitHub but we wanted to push this towards the EAS
+
+00:27:31.081 --> 00:27:31.260
+build.
+
+00:27:31.520 --> 00:27:33.960
+So that is why I have just added this like.
+
+00:27:34.200 --> 00:27:40.919
+in this format. Perfect. Now let's move ahead and after this what you need to do simply
+
+00:27:40.920 --> 00:27:47.139
+go inside your app.json and inside this make sure that you are into this Android section
+
+00:27:47.260 --> 00:27:52.440
+and inside this simply open and search for Google services file and then add your Google
+
+00:27:52.441 --> 00:27:54.200
+services dot slash.
+
+00:27:54.500 --> 00:28:01.820
+And let me copy the path for it and all right, not the path, the relative path.
+
+00:28:01.900 --> 00:28:03.820
+Hopefully this will work right now.
+
+00:28:04.280 --> 00:28:04.460
+Yes.
+
+00:28:04.480 --> 00:28:08.300
+So this is the basically relative path of our Google services.
+
+00:28:08.980 --> 00:28:09.380
+Perfect.
+
+00:28:09.820 --> 00:28:10.080
+Nice.
+
+00:28:10.500 --> 00:28:14.860
+So, I think yes, we are all set for sending the push notifications.
+
+00:28:15.020 --> 00:28:19.760
+You might be thinking a lot of things to do, but alright now we have successfully added
+
+00:28:19.780 --> 00:28:24.860
+this and we know that we have successfully installed all of the things that we need to
+
+00:28:24.861 --> 00:28:25.140
+install.
+
+00:28:26.100 --> 00:28:26.540
+Nice.
+
+00:28:27.100 --> 00:28:33.500
+So, now let's move ahead and start adding some code and start making a push notifications.
+
+00:28:33.700 --> 00:28:39.440
+Alright, so for that what we can do, let me again go to my folder structure and first thing
+
+00:28:39.441 --> 00:28:45.440
+first let me go to my app and maybe at the top of it what I can do, I can create here
+
+00:28:45.441 --> 00:28:53.080
+a folder as the name of notifications and inside this notification I can first of all
+
+00:28:53.081 --> 00:28:55.480
+wanted to register my push notifications.
+
+00:28:55.539 --> 00:28:58.559
+I can say register push dot ts.
+
+00:28:58.700 --> 00:29:02.080
+And inside this simply paste this code.
+
+00:29:02.299 --> 00:29:02.919
+Now what is this?
+
+00:29:03.019 --> 00:29:05.100
+Let me just explain you that one by one.
+
+00:29:05.659 --> 00:29:12.620
+First thing first we have successfully imported the expo constants, expo device and expo notification.
+
+00:29:12.960 --> 00:29:13.480
+No problem.
+
+00:29:13.639 --> 00:29:15.500
+Then created a simple function.
+
+00:29:15.980 --> 00:29:20.779
+The name of this function is register for push notification async easy.
+
+00:29:21.460 --> 00:29:22.960
+Then first of all I have checked.
+
+00:29:23.400 --> 00:29:26.780
+Is my device is physical device or not?
+
+00:29:26.940 --> 00:29:28.040
+So then I have added alerts.
+
+00:29:28.200 --> 00:29:35.140
+If not of the physical device, then I will show here push notification require a physical
+
+00:29:35.141 --> 00:29:38.260
+device and after this what I will do?
+
+00:29:38.860 --> 00:29:41.060
+This is how we are basically asking for permission.
+
+00:29:41.180 --> 00:29:41.900
+We know that.
+
+00:29:42.000 --> 00:29:49.240
+And then if existing status is not equal to granted then ask for permission perfect and
+
+00:29:49.300 --> 00:29:52.660
+again if it's not granted then simply say permission not granted.
+
+00:29:53.060 --> 00:29:58.720
+Then this is very important point this is what we have did this much of circus then
+
+00:29:58.721 --> 00:30:07.360
+simply say const token data is equals to await notifications.getExpoPushTokenAssign now what
+
+00:30:07.361 --> 00:30:07.880
+is this?
+
+00:30:08.000 --> 00:30:15.100
+This return a expo token that can be used to send a notification to the device using
+
+00:30:15.220 --> 00:30:17.320
+exposed post notification service.
+
+00:30:18.100 --> 00:30:23.940
+This means makes request to expo servers and it can reject in case where the request itself
+
+00:30:23.960 --> 00:30:25.080
+fails so alright.
+
+00:30:26.700 --> 00:30:32.600
+They are basically going to give you the we can say expo push token this is what we need
+
+00:30:33.260 --> 00:30:37.799
+and we are basically getting the project data and from where we are basically getting the
+
+00:30:37.800 --> 00:30:44.220
+project data constant expo config dot extra dot es dot project ID.
+
+00:30:44.320 --> 00:30:45.960
+Yes, we have this project ID.
+
+00:30:46.300 --> 00:30:51.700
+And now what I will do, let me go to my app and index.tsx.
+
+00:30:51.760 --> 00:30:56.260
+Yes, we know that we haven't show anything extra here.
+
+00:30:56.360 --> 00:30:58.080
+So let me just paste that entirely.
+
+00:30:59.200 --> 00:30:59.520
+Perfect.
+
+00:31:00.020 --> 00:31:02.860
+So first thing, okay, we need to install Xpoclipboard.
+
+00:31:03.180 --> 00:31:07.560
+So I can simply save BunX, Expo install.
+
+00:31:09.600 --> 00:31:15.480
+Expo clipboard, so this is and you can see that there is lot of libraries inside the
+
+00:31:15.481 --> 00:31:16.060
+Expo itself.
+
+00:31:16.100 --> 00:31:20.460
+So, this is basically for using the clipboard for accessing the clipboards.
+
+00:31:21.340 --> 00:31:26.600
+Okay, so now we have react native and then we have Expo clipboard and then we have this
+
+00:31:26.601 --> 00:31:28.400
+register push easy.
+
+00:31:28.700 --> 00:31:35.299
+First thing what I did here, I have just initialize here a token and a state variable then call
+
+00:31:35.300 --> 00:31:36.200
+a use effect.
+
+00:31:36.740 --> 00:31:40.120
+This is basically registering my push notification perfect.
+
+00:31:42.179 --> 00:31:48.820
+And this is my expo push token and this is token selectable and let me just simply save
+
+00:31:48.821 --> 00:31:49.200
+it.
+
+00:31:49.600 --> 00:31:50.520
+All right.
+
+00:31:50.679 --> 00:31:51.799
+And now what next?
+
+00:31:52.020 --> 00:31:57.080
+Next is to basically build our entire application and wait for it.
+
+00:31:57.200 --> 00:31:57.440
+All right.
+
+00:31:57.460 --> 00:32:01.960
+So what I can do for that, I can simply come into here, clear everything and then simply
+
+00:32:01.961 --> 00:32:04.900
+run EAS build perfect.
+
+00:32:05.240 --> 00:32:11.280
+And then I wanted to build a platform as Android, A and D, R, O, I, I, D, I hope my spelling's
+
+00:32:12.120 --> 00:32:12.360
+right.
+
+00:32:12.820 --> 00:32:14.280
+If not, excuse me for that.
+
+00:32:14.419 --> 00:32:17.140
+And profile is going to be development.
+
+00:32:17.500 --> 00:32:23.380
+So, now this is basically going to start creating build for my application perfect.
+
+00:32:24.620 --> 00:32:29.160
+So, they have resolved and hopefully this will work right now.
+
+00:32:29.820 --> 00:32:33.520
+So, let us just wait for it and we are good to go.
+
+00:32:35.400 --> 00:32:39.360
+Alright, so now you can see that we are basically uploading this to AIS build.
+
+00:32:39.760 --> 00:32:40.020
+Perfect.
+
+00:32:41.140 --> 00:32:45.020
+Alright guys, so now you guys can see that we have successfully created the build.
+
+00:32:45.320 --> 00:32:51.580
+Right now let me simply say no and let me go to my builds.
+
+00:32:52.060 --> 00:32:52.500
+Perfect.
+
+00:32:53.240 --> 00:32:54.440
+And let me reload it once.
+
+00:32:56.139 --> 00:32:56.620
+Perfect.
+
+00:32:56.779 --> 00:32:58.620
+So now we have successfully created it.
+
+00:32:58.860 --> 00:33:07.399
+Simply press on install and then let me open my camera and scan this, open this.
+
+00:33:07.720 --> 00:33:07.919
+Perfect.
+
+00:33:07.980 --> 00:33:09.880
+So let's just wait for it.
+
+00:33:11.159 --> 00:33:11.260
+Okay.
+
+00:33:11.419 --> 00:33:13.880
+So now you guys can see that we have this build artifact.
+
+00:33:14.659 --> 00:33:15.720
+Simply press on install.
+
+00:33:16.519 --> 00:33:18.779
+So this is going to start downloading my files.
+
+00:33:19.200 --> 00:33:21.899
+And now we have successfully installed it.
+
+00:33:21.980 --> 00:33:26.600
+Let me go to the downloads and yes, we are still downloading it.
+
+00:33:26.700 --> 00:33:27.179
+All right.
+
+00:33:27.240 --> 00:33:28.960
+Ninety four, ninety eight.
+
+00:33:29.480 --> 00:33:31.100
+Hopefully this will finish.
+
+00:33:31.899 --> 00:33:32.399
+All right.
+
+00:33:32.419 --> 00:33:38.659
+So now let me just simply press this and yes, expo push notification and then simply press
+
+00:33:38.660 --> 00:33:39.320
+on install.
+
+00:33:39.960 --> 00:33:40.500
+All right.
+
+00:33:40.600 --> 00:33:42.639
+And then I can simply press on open.
+
+00:33:43.120 --> 00:33:43.779
+So perfect.
+
+00:33:44.159 --> 00:33:45.220
+wait for it.
+
+00:33:45.600 --> 00:33:52.260
+So, this is basically opening my application and definitely I can close it and I can run
+
+00:33:52.261 --> 00:33:54.160
+1x Expo Start.
+
+00:33:55.820 --> 00:34:02.760
+Alright and now you will see right now they are showing still showing us this Expo Go.
+
+00:34:03.260 --> 00:34:03.740
+Perfect.
+
+00:34:04.940 --> 00:34:09.500
+Alright, let me again run this 1x Expo Start.
+
+00:34:11.440 --> 00:34:16.599
+Alright, and if I open my expo this application, ok, Android is building this.
+
+00:34:18.619 --> 00:34:19.560
+And yes, look at that.
+
+00:34:19.639 --> 00:34:22.199
+First of all, they are asking me allow push notification.
+
+00:34:22.619 --> 00:34:23.540
+Simply press on allow.
+
+00:34:24.339 --> 00:34:29.900
+And yes, right now we are able to get our push notification, but we are not done yet.
+
+00:34:30.359 --> 00:34:31.480
+As you guys can see that.
+
+00:34:31.900 --> 00:34:37.119
+Alright, so next step is like you guys can see that we are asking for notifications,
+
+00:34:37.400 --> 00:34:43.199
+permission, we are even getting the expo push token, but this is not enough.
+
+00:34:43.819 --> 00:34:44.940
+Why this is not enough?
+
+00:34:45.199 --> 00:34:48.639
+Let's move ahead and we need bunch of requirement.
+
+00:34:48.739 --> 00:34:49.960
+First requirement is done.
+
+00:34:49.961 --> 00:34:51.319
+We have a development build.
+
+00:34:51.600 --> 00:34:57.800
+Next requirement is we need to add an Android notification channel.
+
+00:34:58.360 --> 00:35:01.460
+Without this Android may silently drop notification.
+
+00:35:02.260 --> 00:35:21.580
+So for that what we can do, let me just go inside my index and inside this index, I will
+
+00:35:21.581 --> 00:35:21.601
+We can basically create a function name as we can say setup Android channel and let me
+
+00:35:21.602 --> 00:35:21.622
+paste that first of all and we do not need to export it.
+
+00:35:21.623 --> 00:35:26.980
+First of all, let me import my platform and let me also import this notification.
+
+00:35:27.119 --> 00:35:31.020
+So we can import notification like this from here to here.
+
+00:35:31.240 --> 00:35:31.460
+Perfect.
+
+00:35:31.520 --> 00:35:32.720
+So what is this basically?
+
+00:35:33.000 --> 00:35:34.700
+setup Android channel.
+
+00:35:34.740 --> 00:35:42.440
+So the channel if the platform.os is Android, then simply do this notification channel name
+
+00:35:42.441 --> 00:35:45.760
+is default and make sure to add the importance to max.
+
+00:35:46.640 --> 00:35:51.240
+If the importance is low, sometime your device may miss this notifications.
+
+00:35:51.440 --> 00:35:52.800
+We don't want that.
+
+00:35:53.740 --> 00:35:54.120
+Alright.
+
+00:35:55.920 --> 00:36:00.339
+And after this, what we will do, let me just take you to the code example.
+
+00:36:00.660 --> 00:36:01.820
+This will much easier.
+
+00:36:03.380 --> 00:36:07.780
+So first thing that we have did, this is where is that?
+
+00:36:08.220 --> 00:36:10.900
+Yes, this thing you can even add vibration and light colors.
+
+00:36:11.200 --> 00:36:16.619
+So, let me add the vibrations and light colour for it.
+
+00:36:16.660 --> 00:36:16.900
+Nice.
+
+00:36:16.940 --> 00:36:22.020
+And after that, yes, you need to also add for the notifications permission.
+
+00:36:22.099 --> 00:36:24.500
+We have already handled that one more thing.
+
+00:36:24.640 --> 00:36:26.400
+One last thing of this one.
+
+00:36:26.900 --> 00:36:30.920
+Set notification handler because we haven't added that.
+
+00:36:31.619 --> 00:36:33.940
+So below this I can also add it.
+
+00:36:34.599 --> 00:36:41.119
+So this is your notification dot set notification handler should play sound should set badge
+
+00:36:41.619 --> 00:36:43.440
+should show banner should show list.
+
+00:36:43.700 --> 00:36:43.940
+All right.
+
+00:36:43.941 --> 00:36:45.020
+These are all the things.
+
+00:36:47.740 --> 00:36:54.040
+After this, what you need to do, let's move ahead and simply add all of that inside the
+
+00:36:54.041 --> 00:36:59.960
+notification listener and we can say notification response received.
+
+00:37:00.020 --> 00:37:02.700
+So let me show you how you can basically handle it.
+
+00:37:02.860 --> 00:37:08.760
+Alright, so first thing first, let me just cut this down and add this into the use effect
+
+00:37:08.780 --> 00:37:09.240
+as well.
+
+00:37:09.720 --> 00:37:13.440
+And after this, yes, you also need to copy this.
+
+00:37:13.600 --> 00:37:16.020
+and below this call this function.
+
+00:37:16.050 --> 00:37:19.240
+So we are basically setting the notification handler.
+
+00:37:19.260 --> 00:37:24.240
+We are setting up the Android channel and registering the push notification.
+
+00:37:25.220 --> 00:37:26.060
+All good.
+
+00:37:26.580 --> 00:37:26.940
+Nice.
+
+00:37:27.480 --> 00:37:31.720
+Now, what we can do basically, I think we are good to go for now.
+
+00:37:31.860 --> 00:37:33.280
+Let me just copy my token.
+
+00:37:34.100 --> 00:37:34.320
+Perfect.
+
+00:37:34.440 --> 00:37:35.360
+Hopefully this will work.
+
+00:37:35.940 --> 00:37:38.240
+Let me add my push notification token.
+
+00:37:41.700 --> 00:37:45.780
+drink water, anything.
+
+00:37:47.820 --> 00:37:50.700
+I can give this message body.
+
+00:37:51.940 --> 00:37:59.740
+Message body can be hello boy, stay hydrated, whatever is that.
+
+00:38:01.840 --> 00:38:04.820
+Nice, and let me just try to send a notification.
+
+00:38:06.060 --> 00:38:09.020
+Perfect, we will see is this fail or going to work.
+
+00:38:09.740 --> 00:38:10.200
+Perfect.
+
+00:38:12.660 --> 00:38:14.480
+And look at that.
+
+00:38:15.260 --> 00:38:20.980
+This is the beauty of push notification and if I just remove all of the other notification
+
+00:38:21.400 --> 00:38:23.400
+and show you this, look at that.
+
+00:38:23.940 --> 00:38:29.420
+This is your push notification which is basically coming from some push notification tools.
+
+00:38:29.600 --> 00:38:36.880
+Look at that. Please drink water. Hello boys stay hydrated amazing amazing job guys.
+
+00:38:37.240 --> 00:38:42.840
+Now one interesting thing you can definitely modify this you can modify the entire color of it.
+
+00:38:43.100 --> 00:38:47.000
+You can do whatever you want it to do with this but with this this is pretty much it.
+
+00:38:47.280 --> 00:38:51.460
+This is how you can basically set up a push notification for your
+
+00:38:52.000 --> 00:38:54.800
+We can say application as well.
+
+00:38:54.900 --> 00:39:01.840
+So let me just fix this, fix this code, copy this and paste this and yes.
+
+00:39:02.720 --> 00:39:08.500
+In next chapter, we are basically going to see that how you can handle a deep linking
+
+00:39:08.580 --> 00:39:13.180
+with the help of your push notification, how you can basically, we are basically going
+
+00:39:13.181 --> 00:39:15.540
+to create one small application.
+
+00:39:15.940 --> 00:39:16.360
+Perfect.
+
+00:39:16.361 --> 00:39:17.560
+but with this.
+
+00:39:17.800 --> 00:39:23.660
+Let me just end this chapter because already we are 40 minutes and 39 minutes pretty basically.
+
+00:39:24.240 --> 00:39:29.420
+So yeah this is pretty much it for this entire push notification chapter and see you next
+
+00:39:29.421 --> 00:39:29.760
+time.
+

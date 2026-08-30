@@ -1,0 +1,380 @@
+1
+00:00:00,320 --> 00:00:04,880
+Hey everyone and welcome to chapter number one in our expo router module.
+
+2
+00:00:05,540 --> 00:00:10,960
+In this lecture, we will learn what expo router is, what file based routing means and why
+
+3
+00:00:11,160 --> 00:00:15,920
+expo router is recommended way to handle navigation and new expo projects.
+
+4
+00:00:16,300 --> 00:00:22,259
+So, for now I have already installed a basic expo application and reset that cool and nothing
+
+5
+00:00:22,340 --> 00:00:23,580
+rocket science I have done here.
+
+6
+00:00:23,949 --> 00:00:26,480
+So I hope so you guys can do it very easily.
+
+7
+00:00:27,150 --> 00:00:32,879
+Now let me focus here and then a simply write what is expo router?
+
+8
+00:00:34,100 --> 00:00:34,320
+Perfect.
+
+9
+00:00:34,809 --> 00:00:38,440
+So expo router means file based navigation system.
+
+10
+00:00:39,580 --> 00:00:41,879
+Outer means file based.
+
+11
+00:00:45,220 --> 00:00:53,079
+navigation system. So, this means like that instead of manually defining navigation stacks
+
+12
+00:00:53,320 --> 00:01:01,360
+like we do in react navigation into this expo router, yes into this expo router your file
+
+13
+00:01:01,600 --> 00:01:06,820
+and your folder is now going to become like this is your file in same way that you are
+
+14
+00:01:06,821 --> 00:01:08,259
+going to have multiple folders.
+
+15
+00:01:08,800 --> 00:01:13,820
+is going to become your routes, perfect.
+
+16
+00:01:14,060 --> 00:01:17,200
+This is basically going to become your routes automatically.
+
+17
+00:01:17,700 --> 00:01:24,860
+When you add any file under into this basically, when you add any file under this app directory,
+
+18
+00:01:25,300 --> 00:01:27,980
+It become a route inside our app.
+
+19
+00:01:28,660 --> 00:01:28,740
+Cool.
+
+20
+00:01:29,110 --> 00:01:35,260
+So this is what expo router is and if I just simply open the documentation of it and try
+
+21
+00:01:35,360 --> 00:01:35,920
+to read it.
+
+22
+00:01:36,410 --> 00:01:41,840
+So expo router is a file based router for react navigation and web apps.
+
+23
+00:01:42,000 --> 00:01:47,980
+It allows you to manage navigation between screen in your app, allow user to move seamlessly
+
+24
+00:01:48,680 --> 00:01:50,720
+between different part of your apps UI.
+
+25
+00:01:50,721 --> 00:01:56,020
+This is what navigation actually means, using the same component on multiple platform.
+
+26
+00:01:57,440 --> 00:02:02,740
+And again, they provide you bunch of features, just basic introduction, like they basically
+
+27
+00:02:02,860 --> 00:02:04,800
+going to provide you the native support.
+
+28
+00:02:05,800 --> 00:02:12,740
+So, ExpoRouter is built on top of our powerful React navigation suite and we know React navigation
+
+29
+00:02:12,840 --> 00:02:13,260
+very well.
+
+30
+00:02:14,080 --> 00:02:16,120
+ExpoRouter navigation is truly native.
+
+31
+00:02:16,370 --> 00:02:18,080
+So, this is the beauty of ExpoRouter.
+
+32
+00:02:18,200 --> 00:02:18,740
+This is native.
+
+33
+00:02:19,420 --> 00:02:20,820
+Nothing is coming out of the box.
+
+34
+00:02:21,460 --> 00:02:26,420
+Then something shareable, when we talk about deep link then at this point you are going
+
+35
+00:02:26,520 --> 00:02:27,600
+to understand much better.
+
+36
+00:02:28,100 --> 00:02:32,900
+And we have offline first, this is the one of the feature like if you have created a
+
+37
+00:02:32,920 --> 00:02:38,300
+replication and let's say by any chance we don't have internet connection, you can still
+
+38
+00:02:38,440 --> 00:02:41,740
+use use the cached route segments kind of.
+
+39
+00:02:42,450 --> 00:02:50,000
+So we can say that like the explore router's idea is very similar to how modern web frameworks
+
+40
+00:02:50,300 --> 00:02:59,500
+Like if I just try to give you example of next years, next years is also handle routing
+
+41
+00:02:59,720 --> 00:03:04,100
+inside their app router version, something like this, which make it familiar, intuitive
+
+42
+00:03:04,380 --> 00:03:05,380
+and fast to work.
+
+43
+00:03:05,800 --> 00:03:11,080
+Perfect, so now you guys have the understanding of what is a expo router is.
+
+44
+00:03:11,200 --> 00:03:18,080
+Expo router is basically if I just try to summarize overall thing for you, so expo router
+
+45
+00:03:18,220 --> 00:03:22,500
+is basically mean like this is your file structure, perfect.
+
+46
+00:03:22,940 --> 00:03:27,440
+So your file structure is equals to your app navigation.
+
+47
+00:03:28,840 --> 00:03:30,300
+I hope I'm making sense.
+
+48
+00:03:31,560 --> 00:03:37,319
+Now let's move ahead and try to understand what is file based routing.
+
+49
+00:03:38,360 --> 00:03:39,720
+Now what is the meaning of this?
+
+50
+00:03:40,340 --> 00:03:45,480
+So traditionally in React navigation, we write code something like this if I just try to
+
+51
+00:03:45,540 --> 00:03:47,500
+give you an example of this.
+
+52
+00:03:47,900 --> 00:03:53,160
+So yes, like if I wanted to add some screen, let's say we have two screen, one is home,
+
+53
+00:03:53,500 --> 00:03:54,980
+And another one is profile.
+
+54
+00:03:55,660 --> 00:03:57,600
+So this is how we are going to add it.
+
+55
+00:03:58,320 --> 00:04:05,860
+But with expo router, if I just simply come into here and just try to point out with expo
+
+56
+00:04:05,920 --> 00:04:09,780
+router and let me just try to add the expo icon.
+
+57
+00:04:10,400 --> 00:04:12,040
+So, this is the expo icon.
+
+58
+00:04:12,480 --> 00:04:15,980
+So, with expo router you are not going to do anything like this.
+
+59
+00:04:16,720 --> 00:04:17,079
+You know what?
+
+60
+00:04:17,519 --> 00:04:24,360
+Instead of that inside your app file like let's say let me treat my home as the index
+
+61
+00:04:24,820 --> 00:04:28,560
+and if I just simply write here profile.tsx.
+
+62
+00:04:29,080 --> 00:04:34,940
+Now this is going to become something like this, like this stack.screen thing.
+
+63
+00:04:35,200 --> 00:04:40,160
+So, if I just try to paste the structure of it, so something like this, cool.
+
+64
+00:04:41,170 --> 00:04:47,360
+So with expo router, this is how you are going to define your route segment, your screen
+
+65
+00:04:47,680 --> 00:04:48,980
+segments we can say that.
+
+66
+00:04:49,510 --> 00:04:56,060
+So, for indexed.tsx and this is going to become my home screen and for profile slash profile
+
+67
+00:04:56,340 --> 00:04:58,460
+is now treated as this screen.
+
+68
+00:04:58,900 --> 00:05:06,180
+Perfect, so expo router definitely automatically going to map all of these files to the route.
+
+69
+00:05:06,690 --> 00:05:12,300
+So by just looking at the file structure, we can understand how navigation actually work.
+
+70
+00:05:13,650 --> 00:05:17,540
+So I hope so now you have the understanding of what is file based routing is.
+
+71
+00:05:18,870 --> 00:05:26,340
+Now let's move ahead and the biggest question that is arises now is why expo router is recommended?
+
+72
+00:05:27,000 --> 00:05:30,620
+Like this is the question, alright my spelling is not correct.
+
+73
+00:05:31,500 --> 00:05:38,980
+So why export outer is basically recommended, perfect for all the new export projects.
+
+74
+00:05:39,930 --> 00:05:45,820
+So definitely again, you can definitely read all of these features like they provide and
+
+75
+00:05:45,920 --> 00:05:51,400
+that is why we are using it and as you guys know we are creating a modern mobile applications
+
+76
+00:05:51,401 --> 00:05:52,820
+which is supported in iOS.
+
+77
+00:05:53,300 --> 00:06:00,099
+in Android. So, that is why I always recommend you to use this expo router and in future
+
+78
+00:06:00,300 --> 00:06:06,039
+when we understand all the other concepts which is available inside expo router then
+
+79
+00:06:06,040 --> 00:06:08,819
+you will definitely going to love it even more.
+
+80
+00:06:10,980 --> 00:06:17,020
+So, now let us move ahead and if I just try to give you a simple summary of this lecture,
+
+81
+00:06:17,980 --> 00:06:19,540
+like what is expo router?
+
+82
+00:06:20,020 --> 00:06:25,160
+Expo router is basically a file based routing system for react native applications.
+
+83
+00:06:26,100 --> 00:06:27,560
+Perfect what is file based routing?
+
+84
+00:06:27,840 --> 00:06:32,840
+File based routing means instead of manually defining all the stack screens and not only
+
+85
+00:06:32,920 --> 00:06:34,840
+stack, tabs, all the other things.
+
+86
+00:06:35,500 --> 00:06:43,620
+And we are going to basically rely on our file based system and why expo router is recommended
+
+87
+00:06:43,800 --> 00:06:47,960
+because they are provide you bunch of feature like they are native, they are shareable,
+
+88
+00:06:47,980 --> 00:06:53,620
+they are offline first, they are highly optimized, iteration universal like you can Android,
+
+89
+00:06:53,800 --> 00:06:55,520
+iOS web, you can share anywhere.
+
+90
+00:06:55,960 --> 00:07:01,700
+This is discoverable like expo router enable built in static rendering on web.
+
+91
+00:07:02,000 --> 00:07:06,040
+And do not just go too much in theory and just recommend you.
+
+92
+00:07:07,030 --> 00:07:12,640
+So yeah, this is pretty much for the introduction of it from next chapter we are going to move
+
+93
+00:07:12,720 --> 00:07:18,280
+inside expo router one in one where we are going to understand all the rules, all the
+
+94
+00:07:19,020 --> 00:07:24,700
+norms for it how you can define multiple type of files notations.
+
+95
+00:07:25,010 --> 00:07:28,980
+So yeah, this is pretty much it for this chapter and see you next time.
+

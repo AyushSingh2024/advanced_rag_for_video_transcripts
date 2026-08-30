@@ -1,0 +1,452 @@
+1
+00:00:00,640 --> 00:00:03,520
+Alright guys and welcome to one more new chapter.
+
+2
+00:00:03,900 --> 00:00:06,040
+Right now we are done with this X-ROSCOPE.
+
+3
+00:00:06,220 --> 00:00:09,880
+Let's move ahead and start talking about this magnetometer.
+
+4
+00:00:10,300 --> 00:00:13,060
+This is also very easy and easy to understand.
+
+5
+00:00:13,880 --> 00:00:16,200
+Let me try to explain you what is the use of this.
+
+6
+00:00:16,340 --> 00:00:19,600
+So this sensor tell you the magnetic field.
+
+7
+00:00:19,700 --> 00:00:20,600
+Perfect.
+
+8
+00:00:21,040 --> 00:00:26,880
+The only work of this sensor is to tell you the magnetic field around your phone.
+
+9
+00:00:27,020 --> 00:00:32,880
+So you can use this as a compass, which you can use like again a digital compass.
+
+10
+00:00:33,480 --> 00:00:33,820
+Perfect.
+
+11
+00:00:33,960 --> 00:00:35,340
+So why this actually matters?
+
+12
+00:00:35,680 --> 00:00:42,460
+So instead of just reacting on motion, you can tell which way the device is pointing.
+
+13
+00:00:43,040 --> 00:00:47,960
+So real use case for this magnetometer is again a compass screen.
+
+14
+00:00:48,500 --> 00:00:50,780
+And then directional map.
+
+15
+00:00:51,020 --> 00:00:53,780
+Yes, you can use this as a directional maps.
+
+16
+00:00:54,580 --> 00:00:56,900
+You can orientation base UIs.
+
+17
+00:00:57,040 --> 00:00:58,480
+You can basically create that.
+
+18
+00:00:58,680 --> 00:00:59,000
+Perfect.
+
+19
+00:01:00,080 --> 00:01:04,739
+So let me try to explain you this by again having a great example.
+
+20
+00:01:05,520 --> 00:01:06,560
+So let's move ahead.
+
+21
+00:01:06,660 --> 00:01:13,540
+Let me add a component and I will simply say this as compass dot t s x r a f c e not r
+
+22
+00:01:17,079 --> 00:01:19,520
+And this will become my compass.
+
+23
+00:01:19,979 --> 00:01:20,219
+Perfect.
+
+24
+00:01:20,399 --> 00:01:22,820
+And we don't need it right now.
+
+25
+00:01:23,180 --> 00:01:26,799
+And below this I can import my compass.
+
+26
+00:01:28,799 --> 00:01:29,259
+Perfect.
+
+27
+00:01:29,720 --> 00:01:33,179
+Let me close this, close this as well and only focus here.
+
+28
+00:01:33,200 --> 00:01:37,079
+So, again I simply wanted to show perfect.
+
+29
+00:01:37,909 --> 00:01:41,159
+So, let's move ahead and start implementing step by step.
+
+30
+00:01:41,500 --> 00:01:45,939
+So, the first thing first let me just simply have here our direction.
+
+31
+00:01:47,100 --> 00:01:54,399
+So, direction and then set direction this is equals to use state and right now by default
+
+32
+00:01:54,400 --> 00:01:56,179
+we can keep it as unknown.
+
+33
+00:01:56,900 --> 00:02:02,320
+And in same way, let me have again simple design.
+
+34
+00:02:03,360 --> 00:02:06,700
+This is for a style and this is for this school.
+
+35
+00:02:07,120 --> 00:02:09,300
+So you will see right now showing us unknown.
+
+36
+00:02:09,740 --> 00:02:10,240
+Very good.
+
+37
+00:02:11,020 --> 00:02:14,640
+Let's move ahead and again start implementing this.
+
+38
+00:02:15,060 --> 00:02:17,520
+So for that I can have a use effect.
+
+39
+00:02:17,900 --> 00:02:25,760
+And this use effect will again going to subscribe to an event but first of all let me add an
+
+40
+00:02:25,761 --> 00:02:26,659
+empty dependency.
+
+41
+00:02:27,860 --> 00:02:33,659
+So this is going to be sub is equals to let me import this magnetometer.
+
+42
+00:02:34,859 --> 00:02:37,459
+So this is magnetometer.
+
+43
+00:02:42,040 --> 00:02:50,820
+meter dot add listener. Perfect. And then we have a x axis, y axis and again not x. This
+
+44
+00:02:50,880 --> 00:03:01,520
+is going to be z axis. And then again let's use simple maths dot absolute value. If maths
+
+45
+00:03:01,521 --> 00:03:03,440
+dot x is greater than.
+
+46
+00:03:04,100 --> 00:03:17,360
+So, math dot absolute of y perfect this means our direction will be in eastish or westish
+
+47
+00:03:17,680 --> 00:03:17,940
+perfect.
+
+48
+00:03:17,941 --> 00:03:25,620
+So, if x value is greater than 0 this means value is something around eastish.
+
+49
+00:03:27,740 --> 00:03:30,760
+Otherwise, this is going to be westish, perfect.
+
+50
+00:03:31,160 --> 00:03:34,700
+So, westish.
+
+51
+00:03:36,300 --> 00:03:42,340
+Else, this is going to be northish and southish, perfect.
+
+52
+00:03:42,341 --> 00:03:49,520
+So, I can simply have the directions as well and at the very bottom I can again come into
+
+53
+00:03:49,521 --> 00:03:56,720
+here and say return and then whatever this let me just simply remove it.
+
+54
+00:03:56,780 --> 00:03:57,160
+Cool.
+
+55
+00:03:57,700 --> 00:04:02,260
+Let's test this out, but you will see right now my phone position is in something Southish,
+
+56
+00:04:02,620 --> 00:04:07,319
+but if I try to rotate it and look at that now we are in West now in North.
+
+57
+00:04:07,400 --> 00:04:13,299
+And hopefully in HD, yes, so successfully I am able to track my locations.
+
+58
+00:04:14,260 --> 00:04:14,459
+Perfect.
+
+59
+00:04:14,519 --> 00:04:18,699
+So how I am able to do so with the help of this Magnetometer.
+
+60
+00:04:20,079 --> 00:04:20,419
+Perfect.
+
+61
+00:04:21,199 --> 00:04:22,120
+So amazing.
+
+62
+00:04:22,600 --> 00:04:25,560
+Alright, so let's enhance this bit more again.
+
+63
+00:04:25,840 --> 00:04:26,080
+Perfect.
+
+64
+00:04:26,160 --> 00:04:29,280
+So for that, let me grab a bunch of styles.
+
+65
+00:04:29,700 --> 00:04:33,500
+And let me paste all of that here.
+
+66
+00:04:33,620 --> 00:04:33,920
+Perfect.
+
+67
+00:04:34,240 --> 00:04:37,360
+And then in same way, I can also have a view.
+
+68
+00:04:38,520 --> 00:04:42,460
+Now this view have a something new thing as arrow and a color.
+
+69
+00:04:42,920 --> 00:04:43,420
+All right.
+
+70
+00:04:43,800 --> 00:04:47,420
+So let me add all the three state variables that I need.
+
+71
+00:04:47,780 --> 00:04:49,060
+We already have a direction.
+
+72
+00:04:49,340 --> 00:04:51,140
+We need arrow and a color.
+
+73
+00:04:51,340 --> 00:04:53,800
+And if I, what happened?
+
+74
+00:04:54,100 --> 00:04:54,840
+Just give me a minute.
+
+75
+00:04:55,680 --> 00:04:58,180
+And if I save it, you will see something like this.
+
+76
+00:04:58,600 --> 00:04:59,620
+Cool.
+
+77
+00:05:00,140 --> 00:05:02,220
+Let's try to enhance this bit more.
+
+78
+00:05:02,340 --> 00:05:03,100
+Everything is fine.
+
+79
+00:05:03,120 --> 00:05:04,420
+We have X and Y.
+
+80
+00:05:04,540 --> 00:05:06,680
+We don't need Z right now.
+
+81
+00:05:07,360 --> 00:05:07,640
+Perfect.
+
+82
+00:05:07,920 --> 00:05:15,120
+And if this is here, so what I will say here, inside this if I will add one more condition
+
+83
+00:05:15,280 --> 00:05:17,160
+and let me just simply paste that.
+
+84
+00:05:17,200 --> 00:05:24,660
+So, if x is greater than 0, this means direction is in east, arrow should be here and then
+
+85
+00:05:24,661 --> 00:05:25,920
+color is something like this.
+
+86
+00:05:26,160 --> 00:05:30,800
+Otherwise, we are in west and arrow is in here and set color is this.
+
+87
+00:05:30,880 --> 00:05:32,500
+Why we are calculating for 0?
+
+88
+00:05:34,080 --> 00:05:36,180
+Imagine this as a Cartesian Plan.
+
+89
+00:05:37,100 --> 00:05:37,460
+Perfect.
+
+90
+00:05:37,759 --> 00:05:43,740
+So, at this point, right at the bottom we have x-axis and y-axis as zero.
+
+91
+00:05:44,360 --> 00:05:47,320
+If we are increasing this, we are moving towards east.
+
+92
+00:05:47,440 --> 00:05:50,460
+If we are decreasing this, we are moving towards west.
+
+93
+00:05:50,940 --> 00:05:51,460
+That's why.
+
+94
+00:05:52,060 --> 00:05:57,580
+Otherwise, let's do same thing inside the here, so perfect.
+
+95
+00:05:58,120 --> 00:06:04,060
+Now if y is greater than 0 this means we are moving towards north, if less than 0 this
+
+96
+00:06:04,061 --> 00:06:08,700
+means negative we are moving towards south and if I save it look at that.
+
+97
+00:06:08,701 --> 00:06:14,680
+My phone is facing towards south right now but if I change it look at that my phone is
+
+98
+00:06:14,681 --> 00:06:16,280
+facing towards west.
+
+99
+00:06:16,980 --> 00:06:19,420
+Now on north and then in east.
+
+100
+00:06:19,680 --> 00:06:26,600
+So I hope you are loving it and this is how you can basically use it and create your own
+
+101
+00:06:26,601 --> 00:06:27,100
+compass.
+
+102
+00:06:27,780 --> 00:06:28,080
+Perfect.
+
+103
+00:06:29,440 --> 00:06:33,300
+So, yes, so magnetometer give you X and Y values.
+
+104
+00:06:33,539 --> 00:06:35,500
+So bigger value decide directions.
+
+105
+00:06:35,960 --> 00:06:37,379
+So which show an arrow and color.
+
+106
+00:06:37,520 --> 00:06:38,220
+That's it.
+
+107
+00:06:38,240 --> 00:06:38,520
+Cool.
+
+108
+00:06:40,120 --> 00:06:40,340
+Yes.
+
+109
+00:06:40,360 --> 00:06:43,580
+So this is pretty much it for this our entire chapter.
+
+110
+00:06:44,360 --> 00:06:49,319
+So again, we are also done with this one like this magnetometer.
+
+111
+00:06:49,639 --> 00:06:49,860
+Perfect.
+
+112
+00:06:49,861 --> 00:06:53,500
+So let me just make it green and amazing, amazing job.
+
+113
+00:06:54,120 --> 00:06:55,199
+See you next time.
+

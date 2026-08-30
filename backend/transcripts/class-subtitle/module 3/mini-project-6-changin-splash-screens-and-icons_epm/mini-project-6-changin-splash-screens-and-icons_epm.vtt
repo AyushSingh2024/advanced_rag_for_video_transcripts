@@ -1,0 +1,89 @@
+WEBVTT
+
+00:00:00.900 --> 00:00:03.940
+Alright guys and welcome to one more new chapter.
+
+00:00:04.100 --> 00:00:10.020
+In this chapter we are going to change this icon and the moment you press this and reload
+
+00:00:10.021 --> 00:00:12.120
+your application and do anything with it.
+
+00:00:12.220 --> 00:00:17.540
+So instead of showing that by default expo splash screen we are going to talk about it
+
+00:00:17.541 --> 00:00:17.780
+more.
+
+00:00:18.300 --> 00:00:20.000
+So I wanted to show my icon.
+
+00:00:20.220 --> 00:00:21.460
+So how you can fix it?
+
+00:00:21.520 --> 00:00:22.060
+Very easy.
+
+00:00:22.900 --> 00:00:27.000
+You can simply search for a file name as app.json.
+
+00:00:27.001 --> 00:00:27.680
+Jason.
+
+00:00:28.600 --> 00:00:34.260
+And this app dot json you can see that we have option as icon.
+
+00:00:35.020 --> 00:00:41.620
+Instead of showing this icon dot png I wanted you to simply say this as logo dot png.
+
+00:00:42.320 --> 00:00:46.840
+And if you just redirect towards this page you will start sharing this.
+
+00:00:47.000 --> 00:00:52.600
+Cool and definitely you can change the name of this application whatever you want it to
+
+00:00:52.960 --> 00:00:55.380
+and then you can definitely change the background color.
+
+00:00:55.520 --> 00:00:59.440
+Let me just add 18181B.
+
+00:01:01.180 --> 00:01:01.460
+Perfect.
+
+00:01:01.920 --> 00:01:06.960
+And in same way if you wanted to change other things so you can like let's say just for
+
+00:01:06.961 --> 00:01:11.340
+web instead of showing fav icon you can simply write here logo.png.
+
+00:01:11.500 --> 00:01:18.820
+In same way you can instead of showing splash icon you can simply show logo.png easy.
+
+00:01:19.560 --> 00:01:22.660
+So let's try to see this look at that.
+
+00:01:22.780 --> 00:01:29.840
+So the moment I reload it you by doing by changing this you are able to see that and
+
+00:01:29.841 --> 00:01:35.640
+if I go to complete home page and look at that now we have successfully changed the
+
+00:01:35.641 --> 00:01:37.460
+logo of our application.
+
+00:01:37.900 --> 00:01:44.420
+With this the end of our entire mini project I hope so you have learned a much much more
+
+00:01:45.140 --> 00:01:50.120
+about react navigation and this is going to be the last time we are talking about react
+
+00:01:50.121 --> 00:01:55.760
+navigation because from next module we are going to start learning about and exploring
+
+00:01:55.761 --> 00:01:57.020
+about X-PORouter.
+
+00:01:57.780 --> 00:02:03.160
+So yes this is pretty much it for this entire module and see you next time.
+

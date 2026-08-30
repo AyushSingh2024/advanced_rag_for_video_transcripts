@@ -1,0 +1,1298 @@
+WEBVTT
+
+00:00:00.720 --> 00:00:07.080
+All right, beautiful people's welcome to one more new chapter in this chapter we are going
+
+00:00:07.081 --> 00:00:09.820
+to talk about AI integration.
+
+00:00:09.900 --> 00:00:12.620
+So this is the soul of our entire application.
+
+00:00:13.720 --> 00:00:20.020
+This is where we are actually going to implement the story related logic and along with story
+
+00:00:20.140 --> 00:00:23.140
+the also images generation related logic.
+
+00:00:23.300 --> 00:00:30.439
+Perfect, so first of all we need to understand how we are actually going to integrate the
+
+00:00:30.440 --> 00:00:32.040
+AI inside our application.
+
+00:00:32.879 --> 00:00:38.400
+So if I just simply coming to here, perfect let's just try to focus every time whenever
+
+00:00:38.401 --> 00:00:40.920
+I put some prompt let's say this is the prompt.
+
+00:00:41.260 --> 00:00:41.339
+Okay.
+
+00:00:42.000 --> 00:00:48.060
+So, I will say the first thing that we have is the prompt, the user prompt, user will
+
+00:00:48.100 --> 00:00:53.820
+give the prompt like I wanted to generate this and the moment user press on generate
+
+00:00:53.821 --> 00:01:04.560
+story then I would then basically I am going to call the expo API routes.
+
+00:01:05.120 --> 00:01:10.200
+Okay, so basically I can say I am going to hit my backend API.
+
+00:01:11.000 --> 00:01:20.120
+And, then this backend API will going to talk to the LLMs provider, going to talk to the
+
+00:01:21.260 --> 00:01:22.880
+LLMs providers.
+
+00:01:23.740 --> 00:01:27.280
+Ok, now what do you mean by LLM providers?
+
+00:01:27.760 --> 00:01:29.660
+We know that into the market.
+
+00:01:29.661 --> 00:01:32.159
+We have a lot of large language models.
+
+00:01:32.680 --> 00:01:40.119
+I can say related to OpenAI, we can have related to Gemini, we can have related to Claude,
+
+00:01:40.400 --> 00:01:41.280
+Anthropic, lot of them.
+
+00:01:41.400 --> 00:01:42.240
+So we know that.
+
+00:01:42.299 --> 00:01:44.180
+What is the meaning of LLMs?
+
+00:01:45.320 --> 00:01:53.220
+So there is a lot of providers into the market that give you the one single API layer.
+
+00:01:53.979 --> 00:01:55.500
+One of them is open router.
+
+00:01:55.640 --> 00:01:58.680
+Let me try to explain you what is this open router.
+
+00:01:58.900 --> 00:02:05.100
+So, this open router will expose you some API some rest API URL.
+
+00:02:07.020 --> 00:02:12.900
+Okay because you can't directly talk to LLMs or Gemini basically LLMs you can't directly
+
+00:02:12.901 --> 00:02:21.200
+talk to the LLMs you need your application need some rest API layer so that you can talk
+
+00:02:21.201 --> 00:02:26.280
+to this open AI Gemini and all the open router supported LLMs.
+
+00:02:26.320 --> 00:02:26.620
+Yes.
+
+00:02:26.621 --> 00:02:32.640
+Open router is not any LLM, it is the LLM provider that provides you some LLM.
+
+00:02:33.180 --> 00:02:39.160
+If I just simply visit to the documentation and the website open router, what is this?
+
+00:02:40.060 --> 00:02:47.400
+This is the unified interface for LLMs, better prices, better uptime and no subscriptions
+
+00:02:47.401 --> 00:02:50.780
+and you can see one API for any model.
+
+00:02:50.900 --> 00:02:59.379
+Basically, you need one REST API and with the help of this one REST API URL, you can
+
+00:02:59.380 --> 00:03:07.280
+use OpenAI's LLMs, you can use Gemini LLMs and you can use lot of free LLMs.
+
+00:03:07.600 --> 00:03:16.800
+We can say AI models, okay, so that you never directly talk to the open AI, Gemini, free
+
+00:03:16.801 --> 00:03:23.520
+AI models because you need some rest API URL then and only your expo backend will talk
+
+00:03:23.521 --> 00:03:29.780
+to this rest API URL and internally they have some implementation and that is how we are
+
+00:03:29.781 --> 00:03:31.240
+actually able to talk to them.
+
+00:03:32.700 --> 00:03:37.300
+Again, this rest API URL will need one more layering.
+
+00:03:37.599 --> 00:03:44.180
+Yes, this will need one more layer of abstraction that is known as SDKs.
+
+00:03:45.319 --> 00:03:47.819
+Okay, SDKs means software development kit.
+
+00:03:48.400 --> 00:03:53.040
+Now into the market, we have a lot of AI related SDKs.
+
+00:03:53.060 --> 00:03:54.739
+We have OpenAISDK.
+
+00:03:56.280 --> 00:04:02.980
+Okay, we have, we can say if you have a lesson about TanzTech AI, we have something like
+
+00:04:03.020 --> 00:04:05.420
+that, okay, you need not to understand everything for now.
+
+00:04:06.080 --> 00:04:08.640
+Then we have something known as AISDK.
+
+00:04:08.880 --> 00:04:13.960
+This lot of SDKs that in turn that will basically provide you.
+
+00:04:14.860 --> 00:04:21.220
+application layer where you will basically expose to some methods, some methods, some
+
+00:04:21.360 --> 00:04:28.300
+hooks, you should just simply use this methods and hook and you're basically you will directly
+
+00:04:28.301 --> 00:04:33.160
+going to write TypeScript or JavaScript code and then your TypeScript and JavaScript code
+
+00:04:33.520 --> 00:04:40.420
+will talk to this REST API URLs and this REST API URLs internally have support of OpenAI,
+
+00:04:40.560 --> 00:04:42.520
+Gemini, FreeAI models, all of them.
+
+00:04:42.700 --> 00:04:47.420
+So, kind of we can say that this is how this actually works.
+
+00:04:47.980 --> 00:04:48.420
+Okay.
+
+00:04:49.180 --> 00:04:53.920
+And not only OpenAI, TenStack, AISDK, we have lot of other things as well.
+
+00:04:54.540 --> 00:04:58.620
+Okay, you can search for Lang graph, you can search for lot of things.
+
+00:04:58.680 --> 00:05:02.420
+I mean you can just simply search for Lang chain, Lang graph.
+
+00:05:02.760 --> 00:05:03.880
+These are the first guy.
+
+00:05:04.000 --> 00:05:11.280
+who took the concept of AI agents and with the help of that now we have AISDK, OpenAISDK,
+
+00:05:11.320 --> 00:05:11.880
+lot of things.
+
+00:05:12.300 --> 00:05:16.320
+So you can simply read if you just simply visit AISDK.
+
+00:05:16.380 --> 00:05:17.160
+What is this?
+
+00:05:17.440 --> 00:05:18.680
+The AI toolkit.
+
+00:05:18.900 --> 00:05:21.340
+Yes, we can say that this is the toolkit.
+
+00:05:21.600 --> 00:05:30.060
+which is provide you all the required tools, all the required functions, hooks, we can
+
+00:05:30.061 --> 00:05:37.240
+say even the UI elements, yes they are providing even the UI elements, with the help of that
+
+00:05:37.420 --> 00:05:40.100
+you can build generative AI application.
+
+00:05:40.101 --> 00:05:47.260
+Because as an application developer, our only work to understand how we can build AI generated
+
+00:05:47.380 --> 00:05:52.340
+application need not to go into the research part like how we can build our own LLMs.
+
+00:05:52.480 --> 00:05:53.980
+No, that is not our work.
+
+00:05:54.440 --> 00:05:55.500
+Our work is simple.
+
+00:05:55.980 --> 00:05:57.140
+You just give me the API.
+
+00:05:57.520 --> 00:05:59.740
+I will integrate that inside my application.
+
+00:05:59.860 --> 00:06:03.640
+And this is what most of the application developer is going to do.
+
+00:06:04.180 --> 00:06:06.320
+Most of the AI engineer is going to do.
+
+00:06:06.500 --> 00:06:12.220
+Alright guys, so I think this is the high time, first step is always simply go inside
+
+00:06:12.221 --> 00:06:13.120
+the open router.
+
+00:06:13.960 --> 00:06:15.460
+Now what is this open router?
+
+00:06:15.680 --> 00:06:22.740
+Open router will again just provide you one API for using I can say most of the LLMs,
+
+00:06:23.340 --> 00:06:28.700
+higher availability, price and performance, custom data policies and you can see these
+
+00:06:28.701 --> 00:06:34.140
+are bunch of models that they have, but if you just simply coming to here and hit free.
+
+00:06:34.300 --> 00:06:40.180
+Okay, and you can even see that if I am not wrong, let me show you something.
+
+00:06:40.379 --> 00:06:41.220
+Yes, look at that.
+
+00:06:41.780 --> 00:06:42.879
+This is the free models.
+
+00:06:44.020 --> 00:06:50.280
+So if I just simply come into here and from where I can see, okay, I can let me go inside
+
+00:06:50.281 --> 00:06:54.060
+models and simply hit the free and simply hit it.
+
+00:06:54.379 --> 00:06:59.979
+You can see right now we are able to see the 33 models, which is free to use.
+
+00:07:00.780 --> 00:07:01.220
+Okay.
+
+00:07:01.860 --> 00:07:06.180
+for programming, for role play, then we have this as well.
+
+00:07:06.181 --> 00:07:12.580
+A lot of I mean DeepSec, DeepSec, R1, NVIDIA, Stefffun, these are all the AI models which
+
+00:07:12.581 --> 00:07:13.360
+is free to use.
+
+00:07:13.440 --> 00:07:16.240
+You need not to pay a single penny for using it.
+
+00:07:16.640 --> 00:07:18.220
+So this is something StealDeal.
+
+00:07:18.800 --> 00:07:19.820
+Alright, so what is the step?
+
+00:07:19.880 --> 00:07:26.520
+You simply visit to the open router, log in yourself and then simply press on get API
+
+00:07:26.560 --> 00:07:26.720
+key.
+
+00:07:27.000 --> 00:07:30.120
+And after getting it, I already have one.
+
+00:07:30.260 --> 00:07:33.380
+You can just simply press here create API key.
+
+00:07:34.220 --> 00:07:40.100
+So I will simply say AI story generator API.
+
+00:07:40.500 --> 00:07:40.860
+Okay.
+
+00:07:41.340 --> 00:07:44.660
+And if you wanted to add some expiration, you can simply add.
+
+00:07:44.800 --> 00:07:48.380
+Let me simply add one day of expiration because I don't need it after one day.
+
+00:07:48.840 --> 00:07:52.800
+I can simply press on create and then I will copy it easy.
+
+00:07:53.080 --> 00:07:55.420
+Now we have open routers API.
+
+00:07:55.700 --> 00:08:03.520
+So, let me simply open this ENV, paste this ENV for now, go inside your getignore and
+
+00:08:03.540 --> 00:08:05.600
+where is ENV?
+
+00:08:06.100 --> 00:08:09.120
+Yep, below this add your.env as well.
+
+00:08:10.360 --> 00:08:11.320
+Hopefully this will work.
+
+00:08:11.360 --> 00:08:12.120
+Yep, look at that.
+
+00:08:12.260 --> 00:08:14.380
+This is ignored and amazing.
+
+00:08:15.360 --> 00:08:15.660
+Nice.
+
+00:08:15.760 --> 00:08:19.040
+So, now we have this API keys.
+
+00:08:19.980 --> 00:08:20.260
+Perfect.
+
+00:08:20.700 --> 00:08:22.480
+What next?
+
+00:08:23.220 --> 00:08:29.120
+Next is simply inside your dot env, you will simply paste this name.
+
+00:08:29.280 --> 00:08:36.760
+The name is open router underscore API underscore key is equals to this and then I will made
+
+00:08:36.761 --> 00:08:39.059
+it as API key.
+
+00:08:39.360 --> 00:08:41.080
+So this is our open router API key.
+
+00:08:41.820 --> 00:08:43.440
+we simply save it.
+
+00:08:43.500 --> 00:08:44.540
+Perfect.
+
+00:08:45.140 --> 00:08:50.400
+Now, let me come into here and let us try to understand how our application is actually
+
+00:08:50.401 --> 00:08:52.860
+going to use the API.
+
+00:08:53.900 --> 00:08:54.180
+Perfect.
+
+00:08:54.200 --> 00:08:55.840
+So, let me again come into here.
+
+00:08:56.380 --> 00:08:57.080
+This is the prompt.
+
+00:08:57.720 --> 00:08:58.020
+Nice.
+
+00:08:58.420 --> 00:09:01.280
+After giving this prompt, we simply press on generate.
+
+00:09:01.840 --> 00:09:04.060
+We have called our Expo backend API.
+
+00:09:04.500 --> 00:09:08.340
+Okay, we understand that this is our Expo backend API.
+
+00:09:09.080 --> 00:09:15.600
+Now this Expo backend API will use some methods which is provided by AISDK.
+
+00:09:15.940 --> 00:09:17.140
+I will show you bunch of them.
+
+00:09:17.960 --> 00:09:21.380
+Then this method will actually call the open routers.
+
+00:09:21.700 --> 00:09:27.460
+API key simple very simple steps you don't even realize they are internally using it.
+
+00:09:27.560 --> 00:09:35.060
+So it's so easy to implement and then this open router API will talk to the any free
+
+00:09:35.061 --> 00:09:42.220
+model whichever I am going to select so chill for that and then that LLM will going to generate
+
+00:09:42.300 --> 00:09:47.740
+some data so they will return this to AISDK and then AISDK will give to our backend and
+
+00:09:48.400 --> 00:09:53.060
+This backend will get a structured output.
+
+00:09:53.300 --> 00:09:58.420
+Yes, we can even get the structured output like I need the output in which format.
+
+00:09:58.600 --> 00:10:05.540
+We know that if I go to the storage, I know this is the format in which I need my data.
+
+00:10:05.800 --> 00:10:06.620
+I need title.
+
+00:10:06.720 --> 00:10:07.600
+I need paragraphs.
+
+00:10:08.840 --> 00:10:12.260
+Paragraphs will further contain paragraph and prompt to image.
+
+00:10:12.360 --> 00:10:15.520
+Yes, all of this will become generated by AI.
+
+00:10:15.800 --> 00:10:22.500
+And, then we will only need this prompt to image from this and then we are again going
+
+00:10:22.501 --> 00:10:27.880
+to make one another API call and this API call will give us the image URL something
+
+00:10:27.881 --> 00:10:28.519
+like that.
+
+00:10:28.720 --> 00:10:33.320
+Okay, this is the simple strategy that we are going to use.
+
+00:10:34.399 --> 00:10:39.540
+Perfect, so the first step is simply go to the documentation and then press on get started.
+
+00:10:39.720 --> 00:10:43.720
+So, the moment you just coming to here you will find this installation command.
+
+00:10:44.300 --> 00:10:50.700
+You can see that I am new to AI, try the AISDK, show me some examples and I need help.
+
+00:10:50.899 --> 00:10:52.160
+Let's say you are new to AI.
+
+00:10:52.380 --> 00:10:55.820
+So the moment you press here, you will find the overview.
+
+00:10:56.800 --> 00:10:57.760
+What is this overview?
+
+00:10:58.860 --> 00:11:06.519
+The AISDK standardized integrating artificial intelligence models across supported providers.
+
+00:11:06.800 --> 00:11:09.019
+They have a bunch of supported providers.
+
+00:11:09.300 --> 00:11:15.600
+They have Anthropic, they have OpenAI, they have Google, OpenRouter, lot of the providers.
+
+00:11:16.779 --> 00:11:24.940
+This enables the developer to focus on building great AI application, not waste time on technical
+
+00:11:25.120 --> 00:11:25.399
+details.
+
+00:11:25.440 --> 00:11:26.760
+This is what I am talking about.
+
+00:11:27.680 --> 00:11:32.620
+For example, how you can generate text with various models using AISDK.
+
+00:11:33.620 --> 00:11:36.000
+This is how you will simply import.
+
+00:11:36.200 --> 00:11:41.160
+One method name is generate text from this AI package.
+
+00:11:42.120 --> 00:11:46.960
+So by reading this name I am understanding what is this going to generate?
+
+00:11:47.400 --> 00:11:50.220
+This is going to generate some text for us.
+
+00:11:52.640 --> 00:11:58.519
+And two things they are accepting, first is model, which model you wanted to use, alright
+
+00:11:58.700 --> 00:11:59.300
+no problem.
+
+00:11:59.820 --> 00:12:05.880
+Second is what is your prompt, so if I just give this prompt here and then if I just simply
+
+00:12:05.881 --> 00:12:08.980
+hit this command they are actually going to generate me a story.
+
+00:12:09.400 --> 00:12:16.280
+Nice. So you will see that this is the AI response to effectively revolutionize the AISDK. It
+
+00:12:16.360 --> 00:12:22.120
+helped to familiarize yourself with the following concept. What is generative AI, artificial,
+
+00:12:22.360 --> 00:12:27.620
+large language models, embedding models. You can definitely read a bit more about this.
+
+00:12:27.900 --> 00:12:28.180
+All right.
+
+00:12:28.500 --> 00:12:34.000
+And then simply you will see all the providers and models we have and look at that.
+
+00:12:34.660 --> 00:12:35.960
+These are bunch of methods.
+
+00:12:36.080 --> 00:12:39.960
+First is generate text, second is generate object.
+
+00:12:40.580 --> 00:12:42.500
+This is the object we are going to use.
+
+00:12:42.800 --> 00:12:49.840
+This generate object will help us to generate this title paragraph, then paragraph will
+
+00:12:49.841 --> 00:12:51.100
+further have a paragraph.
+
+00:12:51.480 --> 00:12:53.840
+This is paragraph actually sorry for that.
+
+00:12:54.260 --> 00:12:55.420
+Then prompt image.
+
+00:12:56.100 --> 00:12:56.440
+Simple.
+
+00:12:56.600 --> 00:12:58.199
+So, it's ok.
+
+00:12:58.380 --> 00:13:01.600
+So what I will do right now, I can simply press here.
+
+00:13:01.779 --> 00:13:02.040
+Perfect.
+
+00:13:02.980 --> 00:13:07.819
+And then I will simply press on get started and you guys know we are using expo.
+
+00:13:07.880 --> 00:13:10.100
+We can simply press on expo.
+
+00:13:10.579 --> 00:13:13.880
+After pressing on expo, what I will try to do.
+
+00:13:13.900 --> 00:13:16.780
+I will simply try to install the dependency.
+
+00:13:17.000 --> 00:13:23.900
+Yes, I can simply go inside the bun, copy this much and open one new PowerShell and simply
+
+00:13:23.901 --> 00:13:24.360
+paste it.
+
+00:13:24.500 --> 00:13:29.380
+So we are installing AI, AISDK React some package and then Zod.
+
+00:13:30.000 --> 00:13:31.800
+Okay, this is Zod for validations.
+
+00:13:32.660 --> 00:13:33.580
+I will clear it.
+
+00:13:34.020 --> 00:13:34.780
+What next?
+
+00:13:35.320 --> 00:13:37.880
+Next is inside dot env local.
+
+00:13:38.080 --> 00:13:40.200
+You should configure your AI API key.
+
+00:13:41.100 --> 00:13:41.980
+We already have it.
+
+00:13:41.981 --> 00:13:42.340
+So chill.
+
+00:13:42.800 --> 00:13:48.160
+Okay, and after this they are saying you to create a API routes will create that don't
+
+00:13:48.161 --> 00:13:50.620
+worry and choose the provider.
+
+00:13:51.459 --> 00:13:57.540
+So I wanted to use even simply press on providers and inside the provider you will definitely
+
+00:13:58.399 --> 00:14:00.600
+find where is open router.
+
+00:14:00.769 --> 00:14:02.200
+I am not seeing that.
+
+00:14:02.600 --> 00:14:05.220
+We have bunch of them.
+
+00:14:05.720 --> 00:14:10.560
+Maybe I need to search for it so I can simply open it and search the open router.
+
+00:14:11.240 --> 00:14:14.980
+So this is the provider that we have.
+
+00:14:15.220 --> 00:14:22.000
+Okay, open router is a unified API gateway that provide access to hundreds of AI models
+
+00:14:22.959 --> 00:14:27.720
+from leading providers like Anthropic, Google, Meta, Mistral and more.
+
+00:14:27.920 --> 00:14:28.399
+Okay.
+
+00:14:28.400 --> 00:14:31.900
+Then, you can simply install this dependency.
+
+00:14:32.180 --> 00:14:34.900
+This is the open router AISDK provider.
+
+00:14:35.160 --> 00:14:35.820
+No problem.
+
+00:14:36.260 --> 00:14:38.200
+Let me install this as well.
+
+00:14:39.120 --> 00:14:39.260
+Cool.
+
+00:14:40.900 --> 00:14:41.500
+Nice.
+
+00:14:42.680 --> 00:14:43.200
+What next?
+
+00:14:43.340 --> 00:14:46.960
+Next, they are saying you to create one provider instance.
+
+00:14:47.060 --> 00:14:48.220
+We will create all of them.
+
+00:14:48.900 --> 00:14:53.000
+So I think this is the high time to start using it.
+
+00:14:53.200 --> 00:15:00.780
+So, the first step is I wanted you to simply close everything and first thing is I wanted
+
+00:15:00.781 --> 00:15:04.660
+to create the generate plus API k.
+
+00:15:04.661 --> 00:15:07.940
+Okay, so basically our endpoint name as
+
+00:15:08.600 --> 00:15:14.279
+So, this generate will actually going to generate me and it simple.
+
+00:15:14.759 --> 00:15:22.139
+So, this will accept some prompt and on the basis of prompt we are going to return one
+
+00:15:22.140 --> 00:15:26.579
+title then we will going to return the paragraphs.
+
+00:15:26.860 --> 00:15:33.560
+This paragraphs will be array that array will contain one object and object will have the
+
+00:15:34.800 --> 00:15:40.060
+whatever the text and then prompt to image.
+
+00:15:41.480 --> 00:15:44.240
+This is the simple that we wanted to do.
+
+00:15:44.339 --> 00:15:44.540
+Cool.
+
+00:15:45.019 --> 00:15:48.600
+So, this is what I basically wanted to get from this end point.
+
+00:15:48.660 --> 00:15:50.140
+So, how you will get it?
+
+00:15:50.339 --> 00:15:50.480
+Simple.
+
+00:15:50.700 --> 00:15:56.579
+Close everything, go inside your app, create one directory with the name of API and the
+
+00:15:56.580 --> 00:15:57.899
+API endpoint is.
+
+00:16:01.540 --> 00:16:09.020
+generate plus API dot ts. But before using this, I hope you got the point. Go inside
+
+00:16:09.040 --> 00:16:16.000
+your app dot json and what we need to change. Just try to think whenever we wanted to implement
+
+00:16:16.220 --> 00:16:22.500
+some backend related stuffs, then search for web, change this output static to std.
+
+00:16:23.200 --> 00:16:27.160
+Server, cool, you guys getting smart, good.
+
+00:16:27.720 --> 00:16:32.460
+Now let's move ahead and then I will import how what is the first step they are telling
+
+00:16:32.500 --> 00:16:33.180
+us?
+
+00:16:33.540 --> 00:16:37.420
+First step they are telling us is create this instance.
+
+00:16:37.960 --> 00:16:44.920
+So let me copy this, let me paste it directly, okay, nothing, I have just grabbed this code
+
+00:16:45.280 --> 00:16:48.180
+and paste it here, let me off my AI first of all.
+
+00:16:48.260 --> 00:16:50.240
+I've just imported create open router.
+
+00:16:53.079 --> 00:16:54.560
+from AISDK provider.
+
+00:16:57.060 --> 00:16:57.260
+Okay.
+
+00:16:57.600 --> 00:17:00.459
+And after this you can see that we have one open router.
+
+00:17:01.640 --> 00:17:03.920
+You need to pass the API key.
+
+00:17:03.921 --> 00:17:12.800
+So we can simply password process.env.openrouter_api_key.
+
+00:17:12.801 --> 00:17:17.020
+And then simple exclamation mark just to deal with some typescript error.
+
+00:17:17.280 --> 00:17:21.099
+Let me go to env and I hope this is the correct name.
+
+00:17:21.940 --> 00:17:23.420
+Just confirm perfect.
+
+00:17:24.880 --> 00:17:28.760
+So first thing is simply create one end point.
+
+00:17:28.820 --> 00:17:32.000
+So I can say export async function.
+
+00:17:32.680 --> 00:17:34.620
+This async function is the post.
+
+00:17:34.900 --> 00:17:44.040
+Then I can say here request this request is the type of request simple then for using
+
+00:17:44.041 --> 00:17:50.400
+this endpoint what we need we need the users prompt yes so whenever I press on generate
+
+00:17:50.401 --> 00:17:53.320
+story I am definitely going to hit this endpoint.
+
+00:17:53.500 --> 00:17:57.080
+But this is the post request, so we need some data.
+
+00:17:57.280 --> 00:18:00.320
+So this is the prompt that will come from request json.
+
+00:18:00.420 --> 00:18:02.700
+So I can destructure it.
+
+00:18:02.860 --> 00:18:04.920
+First of all, let me add try and catch.
+
+00:18:05.620 --> 00:18:07.980
+Inside this, I can simply say prompt.
+
+00:18:08.880 --> 00:18:10.520
+Prompt is equals to await.
+
+00:18:12.340 --> 00:18:19.220
+request.json nice now we have a prompt but by any chance if someone is trying to use
+
+00:18:19.221 --> 00:18:25.180
+this endpoint without providing the prompt then I will simply return the error you know
+
+00:18:25.181 --> 00:18:26.620
+this is very easy.
+
+00:18:27.880 --> 00:18:35.960
+I can simply say return response dot json and this json will return error.
+
+00:18:36.700 --> 00:18:43.159
+And the error will we can say prompt is required.
+
+00:18:43.519 --> 00:18:43.860
+Nice.
+
+00:18:44.100 --> 00:18:47.919
+Then you can even pass the status code if you wanted to.
+
+00:18:48.159 --> 00:18:51.000
+So this will be we can say a 400.
+
+00:18:53.299 --> 00:18:53.340
+Okay.
+
+00:18:54.019 --> 00:18:55.480
+There is something wrong.
+
+00:18:55.820 --> 00:18:57.740
+I need to remove it.
+
+00:18:58.059 --> 00:18:58.139
+Cool.
+
+00:18:58.299 --> 00:19:00.000
+And then I need to close this.
+
+00:19:00.159 --> 00:19:00.460
+Fine.
+
+00:19:00.700 --> 00:19:02.559
+Now, what next?
+
+00:19:02.799 --> 00:19:08.240
+Next is I wanted to generate, I wanted to generate object.
+
+00:19:08.399 --> 00:19:15.779
+So, you will search for, if you simply go to docs and open this, search for generate
+
+00:19:16.659 --> 00:19:16.960
+object.
+
+00:19:17.179 --> 00:19:18.600
+Yes, this is the method.
+
+00:19:18.740 --> 00:19:24.399
+So, what they are saying, generate object is depreciated, use generate text with the
+
+00:19:24.400 --> 00:19:25.519
+output property instead.
+
+00:19:25.899 --> 00:19:26.419
+So, it is fine.
+
+00:19:26.460 --> 00:19:28.299
+We can simply press definitely.
+
+00:19:28.300 --> 00:19:30.080
+we need a structured data.
+
+00:19:30.300 --> 00:19:39.500
+Right now we know that, let's say this is your AI and you are asking your AI to generate
+
+00:19:39.520 --> 00:19:45.460
+me a data, so I have just simply said give me a story.
+
+00:19:46.680 --> 00:19:53.320
+So, AI will definitely going to generate you some text based on the prompt AI will going
+
+00:19:53.321 --> 00:20:00.900
+to generate you some story in the format of text we know that no problem into it but does
+
+00:20:00.901 --> 00:20:08.880
+we only need the text no we need data in a structured format I wanted to tell my AI hey
+
+00:20:08.881 --> 00:20:12.900
+AI can you please give me the data in this format.
+
+00:20:13.200 --> 00:20:16.659
+Then AI will say no I don't know how to give in this way.
+
+00:20:17.100 --> 00:20:23.940
+So that is why we need this function, this utility but is the name of utility a simple
+
+00:20:23.941 --> 00:20:28.880
+generate text that will simply accept one XORed schema.
+
+00:20:29.200 --> 00:20:31.440
+What is the Zord schema?
+
+00:20:31.860 --> 00:20:38.740
+Zord schema means the structure of your application, structure of your data that's it, this is
+
+00:20:38.741 --> 00:20:39.440
+it cool.
+
+00:20:40.100 --> 00:20:46.820
+So what I will do I will simply come into here and I will import generate text.
+
+00:20:48.260 --> 00:20:56.600
+generate text from ai cool nice you also need to import something known as Zord you will
+
+00:20:56.700 --> 00:21:04.220
+see here we have a Zord as well so let me import Zord as well cool what just happened
+
+00:21:04.280 --> 00:21:09.240
+cool so this is the Zord api no problem we have imported the Zord as well.
+
+00:21:09.300 --> 00:21:17.160
+So, before hitting any endpoint, I wanted you to create the story schema.
+
+00:21:17.280 --> 00:21:18.520
+So, how much story will look?
+
+00:21:18.580 --> 00:21:24.980
+I can simply say const story schema is equals to z dot object.
+
+00:21:25.140 --> 00:21:28.880
+We know that first thing is what is the first thing?
+
+00:21:29.660 --> 00:21:34.420
+If I take you to the, what is that, storage.
+
+00:21:35.000 --> 00:21:40.980
+So, what is the first thing title second thing is paragraph ok. So, I will simply say this
+
+00:21:40.981 --> 00:21:51.260
+as title is z dot string that is it you can even describe this like what is the use of
+
+00:21:51.261 --> 00:21:58.400
+it. So, I can simply say that title of the story nice then what is the next step next
+
+00:21:59.700 --> 00:22:07.899
+Next step is paragraph, so I can simply say this is the paragraph I need but the paragraph
+
+00:22:07.980 --> 00:22:13.720
+is type of array and then further they contain another schema.
+
+00:22:14.380 --> 00:22:19.820
+Okay, so this means I need to say this as z.array.
+
+00:22:19.821 --> 00:22:28.940
+Okay, you are the type of paragraph schema which don't exist right now and minimum we
+
+00:22:28.941 --> 00:22:29.860
+need 10 data.
+
+00:22:30.180 --> 00:22:32.340
+Okay, minimum we need 10 data.
+
+00:22:33.260 --> 00:22:37.080
+Basically, we wanted to get 10 paragraphs at minimum.
+
+00:22:39.159 --> 00:22:46.279
+And then what I will do I will simply say describe and then this describe will simply
+
+00:22:46.419 --> 00:22:57.039
+say array of at least we can say 10 paragraphs and each with story.
+
+00:22:57.300 --> 00:23:00.340
+Text and image prompt.
+
+00:23:01.240 --> 00:23:04.380
+Simple this is the simple description for it.
+
+00:23:04.700 --> 00:23:07.380
+Now let's move ahead and create another schema.
+
+00:23:07.480 --> 00:23:13.560
+So I can say const paragraph schema is equals to again z.object.
+
+00:23:13.900 --> 00:23:18.400
+So, first thing is paragraph, second thing is prompt to image.
+
+00:23:19.300 --> 00:23:22.260
+So, what if I just simply paste the paragraph.
+
+00:23:23.480 --> 00:23:30.780
+So, paragraph z.string describe a single paragraph of the story 3 to 5 sentence and then prompt
+
+00:23:30.781 --> 00:23:31.260
+to image.
+
+00:23:32.580 --> 00:23:38.420
+This prompt to image is again a type of string and then simple description, a detailed visual
+
+00:23:38.421 --> 00:23:42.580
+description for generating an image that matches this paragraph.
+
+00:23:43.460 --> 00:23:46.680
+This is just a description, so that is all.
+
+00:23:46.920 --> 00:23:50.900
+So now we have a proper structure of our data.
+
+00:23:51.100 --> 00:23:52.380
+What next?
+
+00:23:52.980 --> 00:23:56.539
+Next is simply go inside the documentation.
+
+00:23:57.760 --> 00:24:02.520
+Go inside the documentation and inside the documentation how you will use it?
+
+00:24:03.080 --> 00:24:06.080
+This is how you will basically use it.
+
+00:24:06.081 --> 00:24:13.500
+So you can simply below this, you can simply say const get the output.
+
+00:24:13.900 --> 00:24:21.240
+Output is equal to await, generate text and this generate text will first thing going
+
+00:24:21.241 --> 00:24:22.640
+to accept the model.
+
+00:24:23.320 --> 00:24:25.240
+Model will come from open router.
+
+00:24:25.600 --> 00:24:34.620
+This configuration and inside this open router, let me go to this and we have lot of free
+
+00:24:34.700 --> 00:24:35.000
+models.
+
+00:24:35.180 --> 00:24:40.360
+If I just simply press on models and I think Gemini is also free to use.
+
+00:24:40.980 --> 00:24:42.640
+2.5 if I'm not wrong.
+
+00:24:42.900 --> 00:24:50.860
+So, we can definitely use this AI model, you can simply copy the name of this model and
+
+00:24:51.180 --> 00:24:57.040
+paste that model cool, yes this is it what you need to do to use it cool.
+
+00:24:57.041 --> 00:25:02.640
+So, this is a Gemini 2.5 flash we are good to go with it then what next?
+
+00:25:03.000 --> 00:25:09.240
+Next, is the schema and instead of schema let me come into here next is your output
+
+00:25:10.520 --> 00:25:10.880
+ok.
+
+00:25:11.470 --> 00:25:18.640
+So, this is your output this output will be the type of how this is actually going to
+
+00:25:18.641 --> 00:25:24.380
+work here you will also need to import one more thing the name is output ok.
+
+00:25:24.780 --> 00:25:30.020
+So, this output will be output dot, output dot what do you need?
+
+00:25:30.200 --> 00:25:31.340
+We need object.
+
+00:25:31.900 --> 00:25:33.540
+Yes or no?
+
+00:25:33.960 --> 00:25:42.560
+Output dot object and then this object will be the type of, this will be the type of schema.
+
+00:25:43.360 --> 00:25:44.840
+We know that what is the schema?
+
+00:25:45.180 --> 00:25:50.500
+I can simply say schema and schema is the type of, where is my story schema?
+
+00:25:50.800 --> 00:25:51.180
+This one.
+
+00:25:52.940 --> 00:25:54.020
+That's it.
+
+00:25:54.760 --> 00:25:56.700
+This is how you will basically get it.
+
+00:25:57.140 --> 00:26:01.540
+But next thing and the last thing is the prompt we have.
+
+00:26:01.780 --> 00:26:04.420
+So this prompt is coming from the front end.
+
+00:26:05.580 --> 00:26:05.940
+That's all.
+
+00:26:06.040 --> 00:26:08.960
+So by doing this, what you are doing?
+
+00:26:09.000 --> 00:26:11.240
+You will simply calling this generate text.
+
+00:26:11.700 --> 00:26:12.560
+This is basically.
+
+00:26:13.620 --> 00:26:20.960
+using, this is basically coming from the AISDK, look you are actually implementing the AI
+
+00:26:21.440 --> 00:26:25.160
+inside your application, so clap for yourself guys, clap for yourself.
+
+00:26:25.380 --> 00:26:31.040
+Then we have the simple model, this is the model I wanted to use, then a simple output
+
+00:26:31.060 --> 00:26:31.820
+and the prompt.
+
+00:26:33.300 --> 00:26:39.580
+Perfect, ok, this is your prompt but along with prompt we have one more thing which is
+
+00:26:39.640 --> 00:26:41.380
+known as system prompt.
+
+00:26:42.460 --> 00:26:43.980
+What is this system prompt?
+
+00:26:44.840 --> 00:26:51.180
+System prompt is something which is you are giving the additional information to your
+
+00:26:51.181 --> 00:26:51.480
+LLM.
+
+00:26:51.680 --> 00:26:56.980
+So you are basically telling your LLM that you have this system prompt.
+
+00:26:58.600 --> 00:27:07.720
+like you are an expert, we can say that you are an expert thumbnail generator that is
+
+00:27:07.721 --> 00:27:13.900
+basically generating a thumbnail on the basis of the schema and then this they have some
+
+00:27:13.901 --> 00:27:15.320
+training data we know that.
+
+00:27:15.400 --> 00:27:21.860
+LLMs are always working on some training data, but along with some training data, we are
+
+00:27:22.000 --> 00:27:26.900
+giving additional prompt like this is your additional prompt, this is your system prompt
+
+00:27:27.160 --> 00:27:32.640
+on the basis of this you will generate the data whatever the user will prompt.
+
+00:27:32.680 --> 00:27:37.240
+So we have two types of prompt first of all understand this is the user prompt your actual
+
+00:27:37.280 --> 00:27:42.100
+requirement this is the system prompt that you will use in back of the mind.
+
+00:27:42.300 --> 00:27:46.780
+Like this is what I need to keep in mind while generating the response.
+
+00:27:48.120 --> 00:27:53.740
+And let me try to just paste the entire system prompt.
+
+00:27:54.900 --> 00:27:57.000
+So the system prompt is this.
+
+00:27:57.500 --> 00:28:04.320
+You are a creative storyteller, generate a detailed engaging story with at least 10 paragraphs.
+
+00:28:05.040 --> 00:28:10.780
+For each paragraph, write three to five compelling sentences that advance the story.
+
+00:28:11.000 --> 00:28:15.560
+Create a detailed visual prompt for AI image generation.
+
+00:28:16.140 --> 00:28:21.840
+Be specific about scene, characters, mood, colors and style.
+
+00:28:22.920 --> 00:28:29.700
+Structure your entire response as a valid JSON with a title field and a paragraphs field
+
+00:28:29.780 --> 00:28:33.740
+which is the array of object with paragraph and prompt image field.
+
+00:28:33.900 --> 00:28:36.360
+Okay, we already have this output, but it's fine.
+
+00:28:36.500 --> 00:28:42.160
+This is also a good practice and make sure the story has a clear beginning, middle and
+
+00:28:42.161 --> 00:28:42.540
+end.
+
+00:28:42.860 --> 00:28:46.660
+Each paragraph should flow naturally to the next.
+
+00:28:47.540 --> 00:28:47.620
+Okay.
+
+00:28:48.860 --> 00:28:53.020
+And then we also wanted to modify a little bit of this system prompt.
+
+00:28:53.140 --> 00:28:54.400
+So simply add backticks.
+
+00:28:54.800 --> 00:28:56.580
+paste this, okay.
+
+00:28:57.140 --> 00:29:02.160
+So right now you can see that right, a creative story based on the prompt.
+
+00:29:02.500 --> 00:29:04.720
+This prompt is coming from the AI.
+
+00:29:06.420 --> 00:29:09.540
+Okay, and why I am not be able to highlight this?
+
+00:29:10.200 --> 00:29:11.220
+Hopefully this is highlighting.
+
+00:29:11.420 --> 00:29:13.800
+And yes, showing us the cons, this means this is fine.
+
+00:29:14.400 --> 00:29:21.920
+Cool, ok, prompt whatever the prompt is coming the story must have at least 10 detailed paragraph
+
+00:29:22.020 --> 00:29:23.940
+with corresponding image prompt for each.
+
+00:29:25.140 --> 00:29:29.940
+Ok, and I think one last thing which is known as temperature.
+
+00:29:30.620 --> 00:29:32.160
+What is the meaning of temperature?
+
+00:29:32.420 --> 00:29:35.840
+Temperature setting, the range depend on the provider and model.
+
+00:29:36.000 --> 00:29:40.880
+Temperature is basically just to give how much creativity to your model.
+
+00:29:41.400 --> 00:29:42.460
+Okay something like that.
+
+00:29:42.920 --> 00:29:45.540
+So I can simply add 0.7 that's all.
+
+00:29:46.620 --> 00:29:47.040
+Nice.
+
+00:29:47.580 --> 00:29:53.400
+So now we have inside this output we are going to have the actual data.
+
+00:29:54.660 --> 00:29:54.980
+Perfect.
+
+00:29:55.140 --> 00:30:01.340
+So you will basically yes this result you will simply return the result to the AI and
+
+00:30:01.360 --> 00:30:02.920
+yes we are good to go.
+
+00:30:03.200 --> 00:30:03.580
+Perfect.
+
+00:30:04.640 --> 00:30:10.140
+Alright, so what next you can do you can simply come into here and at the end of it we can
+
+00:30:10.141 --> 00:30:11.480
+simply return the response.
+
+00:30:11.520 --> 00:30:17.280
+So I can say return response.json and then return this output.
+
+00:30:17.500 --> 00:30:17.860
+Cool.
+
+00:30:18.300 --> 00:30:21.960
+So this output contain the title and paragraph.
+
+00:30:22.300 --> 00:30:26.860
+Cool, so now we are done with this generate API endpoint, perfect.
+
+00:30:27.180 --> 00:30:32.100
+So with this I can end this part from the next part of the same chapter we will implement
+
+00:30:32.400 --> 00:30:34.100
+some further information, alright.
+

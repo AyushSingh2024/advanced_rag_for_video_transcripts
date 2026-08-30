@@ -1,0 +1,340 @@
+1
+00:00:00,000 --> 00:00:03,540
+Hello everyone and welcome to chapter number 1.
+
+2
+00:00:04,260 --> 00:00:07,740
+In this chapter we are going to talk about what is mobile development.
+
+3
+00:00:08,660 --> 00:00:14,400
+Before we start coding, let's first understand what is the actual meaning of mobile development
+
+4
+00:00:14,440 --> 00:00:17,060
+and why it is very important.
+
+5
+00:00:17,760 --> 00:00:21,500
+So if I try to just simply write some while development.
+
+6
+00:00:21,900 --> 00:00:31,340
+means building apps or mobile devices. Got it? Whenever you wanted to build apps for
+
+7
+00:00:31,360 --> 00:00:36,780
+your mobile devices, like what are the name of mobile devices? It can be your smartphones.
+
+8
+00:00:37,739 --> 00:00:45,239
+It can be your tablets. You can even build apps for your IoT devices. But let's keep
+
+9
+00:00:45,240 --> 00:00:50,500
+that aside and only focus on these two. Perfect. Mobile development means,
+
+10
+00:00:50,600 --> 00:00:58,660
+building apps for mobile devices like your smartphones, your tablet, and these app.
+
+11
+00:00:59,120 --> 00:01:04,759
+Yes, these apps run on Android and iOS.
+
+12
+00:01:05,080 --> 00:01:05,780
+What are they?
+
+13
+00:01:05,781 --> 00:01:07,740
+They are just operating systems.
+
+14
+00:01:08,340 --> 00:01:08,500
+Perfect.
+
+15
+00:01:08,501 --> 00:01:10,060
+We are going to talk about it.
+
+16
+00:01:10,119 --> 00:01:10,580
+Don't worry.
+
+17
+00:01:11,440 --> 00:01:16,720
+And like if I just try to give you a bunch of examples of mobile apps that we have.
+
+18
+00:01:16,900 --> 00:01:28,520
+So, apps like we have a WhatsApp, we have Insta, we have YouTube, we also have Google
+
+19
+00:01:28,560 --> 00:01:31,180
+Maps, all of them are created.
+
+20
+00:01:31,660 --> 00:01:35,320
+Yes, all of them are created.
+
+21
+00:01:37,460 --> 00:01:40,360
+created using mobile development.
+
+22
+00:01:41,600 --> 00:01:46,620
+Yes, so yeah, same like you can even create your WhatsApp, Insta, YouTube, Google Maps,
+
+23
+00:01:47,160 --> 00:01:50,360
+all of them with the help of mobile development.
+
+24
+00:01:50,979 --> 00:01:51,140
+Perfect.
+
+25
+00:01:51,220 --> 00:01:56,600
+Now we understand what is mobile development, but why even mobile development matters?
+
+26
+00:01:56,700 --> 00:02:06,420
+So, today most time spent yes like today your 24 hour and out of your 24 hour you spend
+
+27
+00:02:06,600 --> 00:02:11,680
+more than 16 to 15 hours on your mobile phone perfect.
+
+28
+00:02:11,681 --> 00:02:23,780
+So, most people spend more time on their phones than on laptops.
+
+29
+00:02:24,200 --> 00:02:30,800
+Like we use mobile phones for if I just simply try to write here the purpose we are using
+
+30
+00:02:30,840 --> 00:02:39,459
+it for, for chattings, perfect, for shopping we can even use for payments, yes, we use
+
+31
+00:02:39,460 --> 00:02:44,840
+for learning like watching YouTube, watching Udemy courses and lot of other things as well.
+
+32
+00:02:45,160 --> 00:02:47,580
+You can even use your phone for watching.
+
+33
+00:02:48,300 --> 00:02:54,900
+your web series and just for anime and entertainment purpose got it so spend
+
+34
+00:02:54,920 --> 00:02:59,660
+more time on their phone rather than on laptops so these are the purpose you are
+
+35
+00:02:59,661 --> 00:03:04,260
+choosing for you can use for chatting shopping payment learning entertainment
+
+36
+00:03:04,320 --> 00:03:05,800
+and like anything
+
+37
+00:03:06,000 --> 00:03:11,700
+So, that's why companies need mobile app and they need mobile developer.
+
+38
+00:03:12,540 --> 00:03:12,860
+Perfect.
+
+39
+00:03:13,200 --> 00:03:19,660
+So, mobile development, if I just simply write here mobile development is untapped market
+
+40
+00:03:19,920 --> 00:03:27,459
+like no one is focusing on the mobile development as compared to web development like we have
+
+41
+00:03:27,520 --> 00:03:29,120
+a lot of web developers.
+
+42
+00:03:29,320 --> 00:03:32,220
+We don't have much mobile developers.
+
+43
+00:03:32,500 --> 00:03:36,300
+Perfect. So the first thing is in high demand.
+
+44
+00:03:37,000 --> 00:03:40,100
+Yep. Mobile development is in very high demand.
+
+45
+00:03:40,540 --> 00:03:45,020
+This is a valuable skill. Like if you know how to develop an app,
+
+46
+00:03:45,280 --> 00:03:48,640
+you can even ship your own apps and start earning out of it.
+
+47
+00:03:49,080 --> 00:03:52,560
+A strong career option. Like if you wanted to start your career,
+
+48
+00:03:53,000 --> 00:03:55,959
+you can definitely go with mobile development.
+
+49
+00:03:56,300 --> 00:04:02,160
+Perfect, so this is what mobile development and why even need it.
+
+50
+00:04:02,560 --> 00:04:09,320
+Now before moving ahead I just wanted to talk about types of mobile apps that we have.
+
+51
+00:04:09,640 --> 00:04:16,980
+Perfect, so there are always three main type of mobile apps like if I just simply try to
+
+52
+00:04:16,981 --> 00:04:17,500
+write here.
+
+53
+00:04:19,100 --> 00:04:26,760
+three types of mobile apps. Perfect. So the first type of mobile app is known as native
+
+54
+00:04:26,761 --> 00:04:36,700
+apps. Perfect. What is native app? Native apps means built for only one platform. Now another
+
+55
+00:04:36,701 --> 00:04:41,880
+type for our mobile apps that we have is cross platform.
+
+56
+00:04:42,300 --> 00:04:44,259
+Let me simply write here.
+
+57
+00:04:44,560 --> 00:04:50,639
+This is your cross platform app and third one is known as hybrid app.
+
+58
+00:04:51,099 --> 00:04:52,440
+What is hybrid app?
+
+59
+00:04:52,759 --> 00:04:57,940
+Hybrid app means mostly web apps inside a web mobile app kind of.
+
+60
+00:04:58,220 --> 00:05:01,479
+So we can simply say this as hybrid app.
+
+61
+00:05:01,600 --> 00:05:10,380
+Perfect native apps that only run on one platform cross platform app means they like you have
+
+62
+00:05:10,381 --> 00:05:17,780
+one code base that work on both Android and iOS in the same way we have hybrid app like
+
+63
+00:05:18,280 --> 00:05:23,800
+this is easy to build but like they usually slower and they can even run in web they can
+
+64
+00:05:23,801 --> 00:05:24,640
+even run mobile.
+
+65
+00:05:24,680 --> 00:05:26,840
+We can say that kind of a.
+
+66
+00:05:28,479 --> 00:05:32,100
+progressive web apps but let's not focus there perfect.
+
+67
+00:05:32,860 --> 00:05:39,160
+So this is what mobile development is why do you need it and types of mobile apps we
+
+68
+00:05:39,220 --> 00:05:39,500
+have.
+
+69
+00:05:40,220 --> 00:05:42,400
+So what will you learn in this course?
+
+70
+00:05:42,880 --> 00:05:48,240
+You are going to learn the real world mobile apps like how you can create your own real
+
+71
+00:05:48,241 --> 00:05:49,060
+world mobile apps.
+
+72
+00:05:49,100 --> 00:05:55,620
+how you can talk to the APIs that we have, how you can basically implement authentication,
+
+73
+00:05:55,740 --> 00:06:02,000
+how you can implement the mapping feature using camera using notifications like you
+
+74
+00:06:02,001 --> 00:06:06,660
+just name the topic and we are going to cover all of that inside this course.
+
+75
+00:06:07,700 --> 00:06:13,780
+Now one of the biggest questions that arise who is this course is for?
+
+76
+00:06:14,200 --> 00:06:18,300
+So, this course is for the complete beginners.
+
+77
+00:06:18,480 --> 00:06:24,800
+Like if you have the basic knowledge of JavaScript and React, like this is course, this course
+
+78
+00:06:24,801 --> 00:06:25,720
+is for you.
+
+79
+00:06:26,160 --> 00:06:30,100
+Then we have, if you are a web developer, you can definitely start with it.
+
+80
+00:06:30,140 --> 00:06:34,780
+If you are a student or working professional, you can definitely go with it.
+
+81
+00:06:34,880 --> 00:06:39,400
+So anyone who wants to build real mobile app, this course is for you.
+
+82
+00:06:39,600 --> 00:06:40,520
+Perfect.
+
+83
+00:06:41,120 --> 00:06:46,940
+So, yeah, this is pretty much it for the introduction of what is mobile development from next chapter.
+
+84
+00:06:46,960 --> 00:06:50,280
+We are going to talk about a bunch of other topics as well.
+
+85
+00:06:50,400 --> 00:06:53,700
+So, yeah, this is pretty much it and see you next time.
+

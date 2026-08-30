@@ -1,0 +1,230 @@
+WEBVTT
+
+00:00:00.820 --> 00:00:05.160
+Hey there everyone, my name is Zitesh and before we move on into this course, I
+
+00:00:05.180 --> 00:00:09.560
+would like to take small amount of time of yours to make sure that I share
+
+00:00:09.561 --> 00:00:13.760
+something very personal to you and since this is a mobile development entire
+
+00:00:13.780 --> 00:00:17.500
+course, I would love to share my journey of mobile development as well.
+
+00:00:17.600 --> 00:00:23.080
+See, my name is Hitesh and I've been writing code for almost more than 15 years probably
+
+00:00:23.120 --> 00:00:23.340
+I guess.
+
+00:00:23.440 --> 00:00:25.380
+I haven't counted but it's almost like that.
+
+00:00:25.860 --> 00:00:28.520
+And I was never a programmer in the initial days.
+
+00:00:29.100 --> 00:00:33.080
+I started my journey as a penetration tester and cyber security.
+
+00:00:33.879 --> 00:00:36.840
+So security was all the fun that I enjoyed.
+
+00:00:37.270 --> 00:00:40.980
+And to be very honest, in those days I didn't like programming that much.
+
+00:00:41.000 --> 00:00:43.940
+I was very happy in cybersecurity ecosystem.
+
+00:00:44.800 --> 00:00:48.760
+But then one day I found out about mobile application development.
+
+00:00:49.520 --> 00:00:52.580
+And I instantly fell in love with programming.
+
+00:00:52.820 --> 00:00:55.840
+The amount of programming that I truly started to learn,
+
+00:00:55.880 --> 00:00:58.300
+I knew programming before that as well, bits and pieces,
+
+00:00:58.739 --> 00:01:01.500
+but the real world implementation that I truly learned
+
+00:01:01.501 --> 00:01:03.540
+was through the mobile development itself.
+
+00:01:03.800 --> 00:01:10.260
+For the very first time I felt that I not only can create things but actually I can create something very
+
+00:01:10.700 --> 00:01:14.820
+personalized which lives in my phone and I can carry it day in and day out.
+
+00:01:15.560 --> 00:01:21.880
+After that I built so many application to help my dad for me personally. A lot of them were very naive
+
+00:01:22.000 --> 00:01:24.180
+but it was very personal to me.
+
+00:01:24.200 --> 00:01:28.380
+that first thing helped me to fall in love with programming. So mobile
+
+00:01:28.500 --> 00:01:32.899
+development ecosystem will always get a special place in my heart because this
+
+00:01:32.900 --> 00:01:37.439
+is so close to me. This is where first time I saw that the huge potential as
+
+00:01:37.440 --> 00:01:41.659
+well as love of building something and now we are in the age of AI. It doesn't
+
+00:01:41.660 --> 00:01:45.740
+matter whether AI is helping you to know the concept and write it faster and
+
+00:01:45.899 --> 00:01:48.840
+build your product faster or you're writing the entire code on your own
+
+00:01:48.841 --> 00:01:49.920
+doesn't really matter.
+
+00:01:50.000 --> 00:01:57.480
+What matters is that you can build something very personal for yourself or some company or somebody in the family or friend and
+
+00:01:58.300 --> 00:02:03.680
+They can keep this entire thing with them in their personal phone is a very personal device
+
+00:02:03.920 --> 00:02:08.320
+And not only that once I fell into love of building so many of these applications
+
+00:02:08.940 --> 00:02:14.660
+Also, I noticed that there's a huge demand in mobile application ecosystem
+
+00:02:14.840 --> 00:02:19.980
+but not enough people who are taking interest in it and
+
+00:02:19.981 --> 00:02:22.580
+I saw that a lot of people learn different kind of things, maybe machine learning, maybe
+
+00:02:22.740 --> 00:02:28.760
+AI, maybe backend engineering or maybe web development but chances are high, here is
+
+00:02:28.761 --> 00:02:32.780
+the small test, that if you're watching a video on the YouTube, chances are high that
+
+00:02:32.781 --> 00:02:35.560
+you majorly watch it on a mobile app.
+
+00:02:35.900 --> 00:02:40.220
+If you're watching it on Udemy, chances are high that you're watching it on the mobile
+
+00:02:40.240 --> 00:02:40.880
+app as well.
+
+00:02:41.000 --> 00:02:51.780
+So every single application which is going viral needs a mobile app and I was always wondering why there are not enough mobile engineers or mobile developers who can actually take those roles.
+
+00:02:52.280 --> 00:03:00.380
+Every single company always struggles in hiring those engineers because there are very few of them and that's what happened early in my career as well.
+
+00:03:00.400 --> 00:03:05.720
+I started to building mobile apps, I was enjoying it and then I saw opportunities coming to my way.
+
+00:03:06.120 --> 00:03:13.120
+I build so many applications remotely for the US client, for Japanese client, for Vietnamese client and all of that
+
+00:03:13.500 --> 00:03:17.140
+right sitting at my home and I was able to charge whatever I wish for because
+
+00:03:17.400 --> 00:03:20.420
+there are not enough bids on those freelancing projects.
+
+00:03:21.040 --> 00:03:25.680
+There's nobody who can actually build an end-to-end mobile application and serve it to the people.
+
+00:03:25.800 --> 00:03:29.160
+And when there is a demand which is low, you can definitely charge.
+
+00:03:29.600 --> 00:03:33.920
+Now, nowadays, the demand is definitely going a little on the higher side, but still, compared
+
+00:03:33.940 --> 00:03:38.260
+to web development or machine learning or any other profession, mobile development is
+
+00:03:38.261 --> 00:03:42.140
+still an untapped territory where not many people are there to tap into.
+
+00:03:55.260 --> 00:03:55.780
+So...
+
+00:03:55.781 --> 00:03:55.801
+My humble request is take this very very seriously. This course is all that you need
+
+00:03:55.802 --> 00:03:55.822
+We have worked really hard to make sure that whatever is required to build a full-fledged mobile application
+
+00:03:55.823 --> 00:03:59.700
+We serve you all of that material. Not only that we help you that how you can utilize these
+
+00:04:00.860 --> 00:04:13.280
+Resources and skill to build application that can be AI powered as well
+
+00:04:13.281 --> 00:04:13.301
+It doesn't really matter whether your app is AI powered, AI consumption user, whatever it is.
+
+00:04:13.302 --> 00:04:13.640
+You will be able to build that.
+
+00:04:13.980 --> 00:04:16.940
+This course has enough material, in fact more than material,
+
+00:04:17.360 --> 00:04:20.260
+that is required to build any kind of mobile application.
+
+00:04:20.399 --> 00:04:25.780
+We have worked really hard in assembling the curriculum, writing code for it and then recording
+
+00:04:25.781 --> 00:04:26.600
+part as well.
+
+00:04:27.259 --> 00:04:31.960
+In this course especially I was moreover worried about the curriculum, the architecture and
+
+00:04:32.380 --> 00:04:35.199
+the decisions of which curriculum should come after the next one.
+
+00:04:35.639 --> 00:04:38.080
+We have worked really hard, me and Suraj both on this one.
+
+00:04:38.100 --> 00:04:42.700
+But yes, just wanted to take a moment to share this personal thought about my journey of
+
+00:04:42.701 --> 00:04:43.360
+mobile development.
+
+00:04:43.820 --> 00:04:44.540
+I still enjoy it.
+
+00:04:44.680 --> 00:04:47.680
+I have a lot of applications in my phone that are very personal to me.
+
+00:04:47.900 --> 00:04:50.460
+Recently I gifted one application to my wife as well.
+
+00:04:50.560 --> 00:04:53.820
+She's an avid book reader and she wanted one so I built one for her.
+
+00:04:54.000 --> 00:05:00.240
+And I want you to do the exactly same, not gifting application to your wife, but to build
+
+00:05:00.241 --> 00:05:06.240
+something very personal for your friends, for yourself and enjoy the building process,
+
+00:05:06.540 --> 00:05:08.380
+enjoy the building of mobile application.
+
+00:05:08.820 --> 00:05:09.240
+That is it.
+
+00:05:09.340 --> 00:05:10.380
+Let's catch up in next video.
+

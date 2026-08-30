@@ -1,0 +1,341 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:07.760
+Alright everyone and in this lecture we are going to talk about layouts and slots in expo
+
+00:00:07.840 --> 00:00:08.060
+router.
+
+00:00:08.660 --> 00:00:16.260
+So in expo router layout help you to wrap we can say the common UI around your screen
+
+00:00:16.960 --> 00:00:21.560
+and slot component lets you render the current route inside the layout.
+
+00:00:21.561 --> 00:00:25.040
+So what I am talking about let's try to read it and try to understand.
+
+00:00:25.900 --> 00:00:32.320
+Each directory with the app within the app directory including app itself can define
+
+00:00:32.489 --> 00:00:41.960
+a layout in the form of a slash underscore, underscore layout dot TSX file inside the
+
+00:00:42.040 --> 00:00:42.320
+directory.
+
+00:00:42.370 --> 00:00:49.040
+So, this file define how all the pages within that directory are arranged.
+
+00:00:49.400 --> 00:00:54.260
+So, this is where you would define a stack navigator, we will going to talk, although
+
+00:00:54.340 --> 00:00:59.620
+we have already talked about this stack navigator, tab navigator, drawer navigator, all in our
+
+00:00:59.680 --> 00:01:04.920
+react navigation, but we are also going to understand that in this module as well.
+
+00:01:05.000 --> 00:01:05.440
+So, do not worry.
+
+00:01:06.900 --> 00:01:11.580
+So, this is where you would define a stack navigator, tab navigator, draw navigator,
+
+00:01:11.760 --> 00:01:12.660
+any other layout.
+
+00:01:13.110 --> 00:01:17.900
+So, any other layout is a slot that we are going to see what is that that you want to
+
+00:01:17.940 --> 00:01:21.200
+use for the pages and screen in that directory.
+
+00:01:21.860 --> 00:01:28.420
+So, so the layout file export a default component that is rendered before whatever page you
+
+00:01:28.500 --> 00:01:30.780
+are navigating to within that directory.
+
+00:01:31.060 --> 00:01:34.700
+So, we are definitely like first we have this root layout.
+
+00:01:35.500 --> 00:01:40.120
+From where from here our application is a start rendering.
+
+00:01:40.630 --> 00:01:47.180
+So virtually every app will have underscore layout.tsx file directory inside the app.
+
+00:01:48.140 --> 00:01:48.500
+Cool.
+
+00:01:48.501 --> 00:01:50.000
+So this is the main thing that you have.
+
+00:01:50.370 --> 00:01:55.060
+And from here you can define stack, you can define tabs, you can define slots.
+
+00:01:55.720 --> 00:01:59.520
+So in this chapter, we are going to talk about layout and slots.
+
+00:02:00.200 --> 00:02:03.360
+So let's see how we can basically implement that.
+
+00:02:03.800 --> 00:02:06.040
+I just don't want it to complicate much.
+
+00:02:06.320 --> 00:02:10.460
+So that's why now let's move ahead and we'll see how you can basically do so that.
+
+00:02:11.130 --> 00:02:16.700
+So right now you will see that we are able to see the index and then all the files that
+
+00:02:16.860 --> 00:02:17.200
+we have.
+
+00:02:17.710 --> 00:02:20.880
+But layouts mean you wanted to share some common UI.
+
+00:02:21.400 --> 00:02:24.599
+So, let's say inside this app, where is my layout?
+
+00:02:25.200 --> 00:02:25.560
+This one.
+
+00:02:25.780 --> 00:02:26.220
+So, yeah.
+
+00:02:27.040 --> 00:02:31.840
+Now, right now, I don't want it to use stack because I wanted to talk about a stack in
+
+00:02:31.900 --> 00:02:32.840
+separate section.
+
+00:02:33.900 --> 00:02:38.159
+So, right now, my main motive is to make you understand about layout, like what is the
+
+00:02:38.200 --> 00:02:39.379
+actual role of this layout.
+
+00:02:39.859 --> 00:02:43.239
+So, for understanding that we are going to use here something on a slot.
+
+00:02:44.840 --> 00:02:47.640
+And yes, let me change the slot here as well.
+
+00:02:49.099 --> 00:02:54.720
+Now, the moment I save it, you will see all the stacks, all the back button, front button,
+
+00:02:54.860 --> 00:02:56.599
+everything just gone away from here.
+
+00:02:57.860 --> 00:03:03.739
+Now what you can do, you can let's say just first of all do so this and let me just wrap
+
+00:03:03.860 --> 00:03:08.180
+all of them inside a view and we can say a safe area view.
+
+00:03:08.730 --> 00:03:10.540
+So, let me get my safe area.
+
+00:03:11.100 --> 00:03:19.120
+view. Perfect. And then let me wrap my slot inside this safe area view. And here let me
+
+00:03:19.180 --> 00:03:26.160
+call this a view. Let me import it. And I can call this as header, not inside this. Yep,
+
+00:03:26.320 --> 00:03:31.300
+here. I will call this header. Easy. Let me import my text.
+
+00:03:32.000 --> 00:03:38.400
+And in same way I can copy this and below my slot I can call this footer and if I save
+
+00:03:38.520 --> 00:03:43.700
+it you will interestingly see we are able to see this header and we are also able to
+
+00:03:43.760 --> 00:03:44.840
+see this footer.
+
+00:03:45.000 --> 00:03:47.640
+So how you can basically see the actual output?
+
+00:03:48.200 --> 00:03:52.879
+So, for that now you can see that we have header, we have photo and let's say you wanted
+
+00:03:53.020 --> 00:03:56.080
+to render your index dot file.
+
+00:03:56.720 --> 00:04:00.180
+Alright, so right now let me just try to decorate this.
+
+00:04:00.540 --> 00:04:04.459
+So for that, let me get my style sheet.
+
+00:04:05.019 --> 00:04:05.180
+Cool.
+
+00:04:05.760 --> 00:04:10.080
+So let me import this style sheet via basic container, a header and a photo.
+
+00:04:10.260 --> 00:04:10.420
+Easy.
+
+00:04:11.140 --> 00:04:13.260
+And then let me copy and paste that.
+
+00:04:13.599 --> 00:04:13.780
+So.
+
+00:04:14.500 --> 00:04:17.640
+from here till here, easy.
+
+00:04:17.740 --> 00:04:25.480
+So now you will see that we have this slot which is styles.container and instead of this
+
+00:04:25.740 --> 00:04:27.460
+we can define this here.
+
+00:04:27.520 --> 00:04:32.960
+So just give me a minute, let me call this a style and this style is going to become
+
+00:04:33.100 --> 00:04:36.500
+now my container and I can remove this view.
+
+00:04:36.900 --> 00:04:41.000
+Perfect and now if I save it, so look at that.
+
+00:04:41.940 --> 00:04:49.040
+Now you guys able to see this is my app header, this one and below is my app footer and all
+
+00:04:49.199 --> 00:04:53.260
+the content of my index.tsx file is rendering here.
+
+00:04:53.500 --> 00:05:00.540
+And let's say if I now go to my feed, perfect, let me fix this design, cool.
+
+00:05:01.030 --> 00:05:02.360
+So now let me go to my feed.
+
+00:05:02.470 --> 00:05:07.800
+So the moment I press on feed, you will see my feed is changing, the content.
+
+00:05:09.500 --> 00:05:17.140
+In place of slot we are rendering feed so at the top of it we can see my app header bottom my f footer
+
+00:05:17.420 --> 00:05:23.140
+Same layout sharing between all of them and interestingly you will see now. We don't have any back button
+
+00:05:24.100 --> 00:05:29.040
+So for that yes, you can reload it and then you can again be on your home page
+
+00:05:29.900 --> 00:05:31.660
+and you can test it out.
+
+00:05:31.759 --> 00:05:34.660
+So we are just right now understanding about layouts.
+
+00:05:35.100 --> 00:05:39.080
+Layouts is about sharing some common properties
+
+00:05:39.759 --> 00:05:42.280
+along with the, we can say, directories, files
+
+00:05:42.880 --> 00:05:43.479
+that we have.
+
+00:05:43.900 --> 00:05:44.840
+I hope so making sense.
+
+00:05:45.300 --> 00:05:51.180
+So, yeah, now let's see how you can create a separate like this is your root layout,
+
+00:05:51.819 --> 00:05:53.560
+but I wanted to create a scope layout.
+
+00:05:54.210 --> 00:05:59.400
+So how you can create a scope layout scope layout is going to be pretty easy.
+
+00:05:59.629 --> 00:06:01.479
+We can say even that nested layout.
+
+00:06:02.259 --> 00:06:08.580
+So let's say inside profile and inside this, let me create this layout.tsx.
+
+00:06:09.420 --> 00:06:18.460
+perfect and let me copy this, let me paste it cool and instead of root layout, let me
+
+00:06:18.520 --> 00:06:27.640
+call this a profile layout easy and let me replace this and we already have this my app
+
+00:06:27.740 --> 00:06:33.760
+header my app order so I don't want it to show this instead at the top of it.
+
+00:06:34.200 --> 00:06:43.420
+I wanted to render a text and this text is going to show me profile easy, simple just
+
+00:06:43.440 --> 00:06:44.600
+to identify this.
+
+00:06:45.540 --> 00:06:49.200
+So now if I save it and let me go to my homepage once again.
+
+00:06:53.180 --> 00:06:59.040
+And if I try to go to my profile page, let's say cool, so if I just press on profile user,
+
+00:06:59.540 --> 00:07:01.000
+you will see something interesting.
+
+00:07:01.660 --> 00:07:08.720
+So for all the files inside this profile, you are going to see this profile tag.
+
+00:07:09.460 --> 00:07:12.419
+But this is your root layouts, this is your nested layout.
+
+00:07:13.000 --> 00:07:17.640
+So, this is how you can define and this is how you can control the layouting of your
+
+00:07:17.840 --> 00:07:17.960
+files.
+
+00:07:18.660 --> 00:07:23.380
+For now, we are using slots, but definitely you are not going to use slots that much.
+
+00:07:24.180 --> 00:07:25.760
+So, you can read more about slots.
+
+00:07:25.860 --> 00:07:29.440
+So, in some cases, you may want a layout with without a navigator.
+
+00:07:29.580 --> 00:07:31.000
+In that case, you can use it.
+
+00:07:31.360 --> 00:07:35.980
+So, this is helpful for adding a header or footer around the current route or for displaying
+
+00:07:36.140 --> 00:07:38.480
+a model over any route inside a directory.
+
+00:07:38.900 --> 00:07:46.580
+So, in this case you can use the slot component which serves as a placeholder for the current
+
+00:07:46.699 --> 00:07:47.259
+child route.
+
+00:07:47.400 --> 00:07:50.400
+Yes, this is the nice definition for slot.
+
+00:07:50.979 --> 00:07:55.300
+This is serve as a placeholder for the current child route.
+
+00:07:55.600 --> 00:08:00.460
+So, yeah, I hope so I am making sense and from next chapter we are going to talk about
+
+00:08:00.540 --> 00:08:05.280
+some route groups, how you can create route groups, then we are going to create some stacks,
+
+00:08:05.600 --> 00:08:07.600
+tabs, draw all of that.
+
+00:08:07.920 --> 00:08:12.640
+So don't worry about it, but for now this is pretty much it and see you next time.
+
