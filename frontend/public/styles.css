@@ -42,8 +42,6 @@
   --vla-sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto,
     "Helvetica Neue", Arial, sans-serif;
   --vla-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
-
-  --vla-band: 240px;      /* the masthead's floor, and so the band's height */
 }
 
 @media (prefers-color-scheme: light) {
@@ -84,79 +82,165 @@ body {
   font: 400 15px/1.6 var(--vla-sans);
 }
 
-/* ------------------------------------------------------------- wave band ---
-   A full-bleed strip behind the title, and the only moving thing in the app.
-   It is decoration: aria-hidden, not clickable, and it degrades to a flat warm
-   gradient where WebGL2 is missing.
+/* ------------------------------------------------------------- hero ---
+   Split editorial hero: serif headline on the left, staggered info cards
+   on the right. No motion, no blur, no gradients on controls — consistent
+   with the rest of the sheet. Cards are offset vertically to create the
+   staggered panel feel from editorial layouts. */
 
-   Its height is the masthead's height, not a number of its own. That is the
-   thing that makes it safe: measured against the brightest pixel the shader can
-   draw, only the large title clears WCAG AA over the waves — the greeting, the
-   health pills and the course line do not, at any scrim strength worth looking
-   at. So they live below the band on plain paper, and the band cannot grow to
-   reach them. The scrim in ::after deepens downward, towards the title; the
-   mask retires the band into the paper instead of ending on a hard edge. Both
-   are checked numerically in frontend/verify-ui.mjs. */
-.waves {
-  position: absolute;
-  inset: 0;
-  z-index: 0;
-  overflow: hidden;
-  pointer-events: none;
-  background: linear-gradient(180deg, #4a2a17 0%, #24170e 62%, var(--vla-shell) 100%);
-  -webkit-mask-image: linear-gradient(180deg, #000 0%, #000 64%, transparent 100%);
-  mask-image: linear-gradient(180deg, #000 0%, #000 64%, transparent 100%);
+.hero {
+  width: 100%;
+  background: var(--vla-shell);
+  border-bottom: 1px solid var(--vla-line-soft);
+  padding: 4rem 1.5rem 3.5rem;
 }
 
-.waves canvas { display: block; width: 100%; height: 100%; }
+.hero-inner {
+  max-width: 1060px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: start;
+}
 
-.waves::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(180deg,
-    rgb(20 16 12 / .28) 0%,
-    rgb(20 16 12 / .58) 58%,
-    rgb(20 16 12 / .88) 100%);
+@media (max-width: 700px) {
+  .hero-inner {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+}
+
+/* Left column */
+.hero-eyebrow {
+  margin: 0 0 1rem;
+  font-size: .6875rem;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--vla-ember);
+  font-weight: 500;
+}
+
+.hero-headline {
+  margin: 0 0 1.25rem;
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 700;
+  letter-spacing: -.025em;
+  line-height: 1.08;
+  color: var(--vla-text);
+}
+
+.hero-headline em {
+  font-style: normal;
+  font-weight: 300;
+  color: var(--vla-ember);
+}
+
+.hero-body {
+  margin: 0 0 2rem;
+  font-size: .9375rem;
+  line-height: 1.65;
+  color: var(--vla-dim);
+  max-width: 38ch;
+}
+
+.hero-cta-row {
+  display: flex;
+  gap: .75rem;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.hero-cta {
+  display: inline-block;
+  background: var(--vla-ember);
+  color: var(--vla-ink);
+  border: 1px solid var(--vla-ember);
+  border-radius: var(--vla-r-sm);
+  padding: .6rem 1.2rem;
+  font: 600 .875rem/1 var(--vla-sans);
+  text-decoration: none;
+  cursor: pointer;
+}
+.hero-cta:hover { background: var(--vla-text); border-color: var(--vla-text); }
+.hero-cta:focus-visible { outline: 2px solid var(--vla-ember); outline-offset: 2px; }
+
+.hero-cta-ghost {
+  display: inline-block;
+  background: none;
+  color: var(--vla-dim);
+  border: 1px solid var(--vla-line);
+  border-radius: var(--vla-r-sm);
+  padding: .6rem 1.2rem;
+  font: 500 .875rem/1 var(--vla-sans);
+  text-decoration: none;
+  cursor: pointer;
+}
+.hero-cta-ghost:hover { color: var(--vla-text); border-color: var(--vla-dim); }
+.hero-cta-ghost:focus-visible { outline: 2px solid var(--vla-ember); outline-offset: 2px; }
+
+/* Right column: staggered cards */
+.hero-cards {
+  display: flex;
+  flex-direction: column;
+  gap: .75rem;
+  padding-top: .5rem;
+}
+
+.hero-card {
+  background: var(--vla-surface);
+  border: 1px solid var(--vla-line);
+  border-radius: var(--vla-r);
+  padding: 1rem 1.15rem;
+}
+
+/* Stagger: each card is offset right to create the layered panel effect */
+.hero-card--1 { margin-left: 0; }
+.hero-card--2 { margin-left: 1.5rem; }
+.hero-card--3 { margin-left: 3rem; }
+
+@media (max-width: 700px) {
+  .hero-card--2, .hero-card--3 { margin-left: 0; }
+}
+
+.hero-card-label {
+  display: block;
+  font-size: .625rem;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--vla-faint);
+  margin-bottom: .3rem;
+}
+
+.hero-card-value {
+  display: block;
+  font-size: .9375rem;
+  font-weight: 600;
+  color: var(--vla-text);
+  margin-bottom: .4rem;
+}
+
+.hero-card-desc {
+  margin: 0;
+  font-size: .8125rem;
+  line-height: 1.55;
+  color: var(--vla-dim);
+}
+
+/* Accent the first card with ember border */
+.hero-card--1 {
+  border-left: 3px solid var(--vla-ember);
 }
 
 @media (prefers-color-scheme: light) {
-  .waves {
-    background: linear-gradient(180deg, #e8cdb4 0%, #f4ebe0 62%, var(--vla-shell) 100%);
-  }
-  /* Paper is bright here, so the scrim lightens rather than darkens. */
-  .waves::after {
-    background: linear-gradient(180deg,
-      rgb(250 247 242 / .34) 0%,
-      rgb(250 247 242 / .64) 58%,
-      rgb(250 247 242 / .9) 100%);
+  .hero {
+    background: var(--vla-shell);
+    border-bottom-color: var(--vla-line);
   }
 }
 
-/* ---------------------------------------------------------------- layout ---
-   The masthead sits outside .wrap so it can run the full width of the window
-   without a 100vw trick, and it holds the title and nothing else. The title
-   aligns to the bottom of the band, where the scrim is deepest, which leaves
-   the open water above it as the picture. */
-.titlebar {
-  position: relative;
-  min-height: var(--vla-band);
-  display: flex;
-  align-items: flex-end;
-}
-
-.titlebar-inner {
-  position: relative;
-  z-index: 1;
-  width: 100%;
-  max-width: 1060px;
-  margin: 0 auto;
-  padding: 3.4rem 1.5rem 2rem;
-}
-
+/* ---------------------------------------------------------------- layout --- */
 .wrap {
-  position: relative;
-  z-index: 1;                    /* above the band */
   max-width: 1060px;
   margin: 0 auto;
   padding: 0 1.5rem 4rem;
