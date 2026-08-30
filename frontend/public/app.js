@@ -57,12 +57,14 @@ function updateStreak() {
 }
 
 /* ------------------------------------------------------------------ API */
+const API_BASE_URL = "https://advanced-rag-for-video.onrender.com";
+
 async function api(path, options) {
   let response;
   try {
-    response = await fetch(path, options);
+    response = await fetch(`${API_BASE_URL}${path}`, options);
   } catch (cause) {
-    throw new Error(`Cannot reach the server at ${location.origin}. Is \`npm run serve\` still running?`);
+    throw new Error(`Cannot reach the server at ${API_BASE_URL}. Is the backend awake?`);
   }
   const body = await response.text();
   let parsed = null;
@@ -82,7 +84,7 @@ function errorCard(error, hints) {
 async function loadHealth() {
   const pills = [];
   try {
-    const response = await fetch("/health");
+    const response = await fetch(`${API_BASE_URL}/health`);
     const health = await response.json();
     pills.push(`<span class="pill ${health.postgres ? "ok" : "bad"}"><i class="dot"></i>Postgres</span>`);
     pills.push(`<span class="pill ${health.qdrant ? "ok" : "bad"}"><i class="dot"></i>Qdrant</span>`);
