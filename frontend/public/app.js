@@ -80,27 +80,6 @@ function errorCard(error, hints) {
     ${hints?.length ? `<ul>${hints.map((hint) => `<li>${hint}</li>`).join("")}</ul>` : ""}</div></div>`;
 }
 
-/* ------------------------------------------------------------------ health */
-async function loadHealth() {
-  const pills = [];
-  try {
-    const response = await fetch(`${API_BASE_URL}/health`);
-    const health = await response.json();
-    pills.push(`<span class="pill ${health.postgres ? "ok" : "bad"}"><i class="dot"></i>Postgres</span>`);
-    pills.push(`<span class="pill ${health.qdrant ? "ok" : "bad"}"><i class="dot"></i>Qdrant</span>`);
-  } catch {
-    pills.push('<span class="pill bad"><i class="dot"></i>server unreachable</span>');
-  }
-  try {
-    const probe = await api("/concepts?kind=core&limit=1");
-    const ok = Array.isArray(probe.concepts) && probe.concepts.length > 0;
-    pills.push(`<span class="pill ${ok ? "ok" : "bad"}"><i class="dot"></i>concept graph</span>`);
-  } catch {
-    pills.push('<span class="pill bad"><i class="dot"></i>concept graph</span>');
-  }
-  $("health").innerHTML = pills.join("");
-}
-
 /* ------------------------------------------------------------------ spine */
 async function loadCurriculum() {
   const view = await api("/curriculum");
@@ -474,7 +453,6 @@ function debounce(fn, ms) {
 (async function boot() {
   $("greeting-text").textContent = getGreeting();
   updateStreak();
-  loadHealth();
   try {
     await loadCurriculum();
     const fromHash = /^#lesson=(\d+)$/.exec(location.hash);
