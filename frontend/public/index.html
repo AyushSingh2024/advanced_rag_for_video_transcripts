@@ -26,34 +26,20 @@
         what you have already watched — no spoilers, no guessing.
       </p>
       <div class="hero-cta-row">
-        <a href="#panel-ask" class="hero-cta" onclick="document.getElementById('question').focus();return false;">Ask a question</a>
-        <a href="#panel-concepts" class="hero-cta-ghost" onclick="document.querySelector('[aria-controls=panel-concepts]').click();return false;">Browse concepts</a>
+        <a href="#main-app" class="hero-cta" onclick="document.getElementById('main-app').scrollIntoView({behavior:'smooth'});document.getElementById('question').focus();return false;">Ask a question</a>
+        <a href="#main-app" class="hero-cta-ghost" onclick="document.getElementById('main-app').scrollIntoView({behavior:'smooth'});return false;">Browse concepts</a>
       </div>
     </div>
 
-    <!-- Right: staggered info cards -->
-    <div class="hero-cards" aria-hidden="true">
-      <div class="hero-card hero-card--1">
-        <span class="hero-card-label">Spoiler filter</span>
-        <span class="hero-card-value">Lesson-aware retrieval</span>
-        <p class="hero-card-desc">Only answers from lessons you have reached. Drag the slider to set your position.</p>
-      </div>
-      <div class="hero-card hero-card--2">
-        <span class="hero-card-label">RAG pipeline</span>
-        <span class="hero-card-value">Hybrid search + reranking</span>
-        <p class="hero-card-desc">Vector similarity and keyword search fused and reranked for precise transcript retrieval.</p>
-      </div>
-      <div class="hero-card hero-card--3">
-        <span class="hero-card-label">Concept graph</span>
-        <span class="hero-card-value">420 concepts mapped</span>
-        <p class="hero-card-desc">See what depends on what, find prerequisite gaps, and know what to watch next.</p>
-      </div>
+    <!-- Right: RAG animation video -->
+    <div class="hero-video-wrap" aria-hidden="true">
+      <video class="hero-video" src="rag_animation.mp4" autoplay loop muted playsinline></video>
     </div>
 
   </div>
 </div>
 
-<div class="wrap">
+<div class="wrap" id="main-app">
   <header>
     <div class="header-top">
       <div class="greeting-row">

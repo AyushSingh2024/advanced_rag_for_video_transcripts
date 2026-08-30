@@ -16,11 +16,11 @@
 :root {
   color-scheme: dark;
 
-  --vla-shell: #14100c;   /* the page */
-  --vla-surface: #1b1611; /* cards */
-  --vla-raised: #221c15;  /* inputs, table hover, pills */
-  --vla-line: #362c21;
-  --vla-line-soft: #241e17;
+  --vla-shell: #000000;   /* the page — pure black */
+  --vla-surface: #0d0d0d; /* cards */
+  --vla-raised: #141414;  /* inputs, table hover, pills */
+  --vla-line: #242424;
+  --vla-line-soft: #1a1a1a;
 
   --vla-text: #f2ece2;
   --vla-dim: #c0b2a0;
@@ -44,31 +44,7 @@
   --vla-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color-scheme: light;
-
-    --vla-shell: #faf7f2;
-    --vla-surface: #ffffff;
-    --vla-raised: #f3eee6;
-    --vla-line: #ddd3c5;
-    --vla-line-soft: #ebe4d9;
-
-    --vla-text: #201811;
-    --vla-dim: #574c40;
-    --vla-faint: #6b5f51;
-
-    --vla-ember: #8f550f;
-    --vla-ember-wash: #f7ecdc;
-    --vla-ember-edge: #cbae86;
-    --vla-cold: #275878;
-    --vla-cold-wash: #e6eef4;
-    --vla-cold-edge: #9db8cb;
-    --vla-ok: #40631f;
-    --vla-alarm: #a33a24;
-    --vla-ink: #ffffff;
-  }
-}
+/* Light mode intentionally not overriding shell to black — dark only. */
 
 *, *::before, *::after { box-sizing: border-box; }
 
@@ -179,63 +155,30 @@ body {
 .hero-cta-ghost:hover { color: var(--vla-text); border-color: var(--vla-dim); }
 .hero-cta-ghost:focus-visible { outline: 2px solid var(--vla-ember); outline-offset: 2px; }
 
-/* Right column: staggered cards */
-.hero-cards {
+/* Right column: RAG animation video */
+.hero-video-wrap {
   display: flex;
-  flex-direction: column;
-  gap: .75rem;
-  padding-top: .5rem;
-}
-
-.hero-card {
-  background: var(--vla-surface);
-  border: 1px solid var(--vla-line);
+  align-items: center;
+  justify-content: center;
   border-radius: var(--vla-r);
-  padding: 1rem 1.15rem;
+  overflow: hidden;
+  border: 1px solid var(--vla-line);
+  background: #000;
+  aspect-ratio: 16 / 9;
+  width: 100%;
 }
 
-/* Stagger: each card is offset right to create the layered panel effect */
-.hero-card--1 { margin-left: 0; }
-.hero-card--2 { margin-left: 1.5rem; }
-.hero-card--3 { margin-left: 3rem; }
-
-@media (max-width: 700px) {
-  .hero-card--2, .hero-card--3 { margin-left: 0; }
-}
-
-.hero-card-label {
+.hero-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
   display: block;
-  font-size: .625rem;
-  letter-spacing: .1em;
-  text-transform: uppercase;
-  color: var(--vla-faint);
-  margin-bottom: .3rem;
-}
-
-.hero-card-value {
-  display: block;
-  font-size: .9375rem;
-  font-weight: 600;
-  color: var(--vla-text);
-  margin-bottom: .4rem;
-}
-
-.hero-card-desc {
-  margin: 0;
-  font-size: .8125rem;
-  line-height: 1.55;
-  color: var(--vla-dim);
-}
-
-/* Accent the first card with ember border */
-.hero-card--1 {
-  border-left: 3px solid var(--vla-ember);
 }
 
 @media (prefers-color-scheme: light) {
   .hero {
-    background: var(--vla-shell);
-    border-bottom-color: var(--vla-line);
+    background: #000;
+    border-bottom-color: #222;
   }
 }
 
