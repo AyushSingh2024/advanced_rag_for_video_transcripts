@@ -28,21 +28,11 @@ const querySchema = z.object({
   lessonInModule: z.coerce.number().int().min(1).optional(),
 });
 
-function isAllowedOrigin(origin) {
-  if (!origin) return true;
-  return config.extensionOrigins.some((allowed) => allowed.endsWith("://") ? origin.startsWith(allowed) : origin === allowed);
-}
-
 function corsMiddleware(request, response, next) {
-  const origin = request.get("origin");
-  if (origin && isAllowedOrigin(origin)) {
-    response.set("Access-Control-Allow-Origin", origin);
-    response.set("Vary", "Origin");
-    response.set("Access-Control-Allow-Headers", "Content-Type, Authorization");
-    response.set("Access-Control-Allow-Methods", "GET, POST, DELETE, OPTIONS");
-  }
-  if (request.method === "OPTIONS") return response.status(isAllowedOrigin(origin) ? 204 : 403).end();
-  if (origin && !isAllowedOrigin(origin)) return response.status(403).json({ error: "Origin not allowed" });
+  response.set("Access-Control-Allow-Origin", "*");
+  response.set("Access-Control-Allow-Headers", "Content-Type, Authorization");
+  response.set("Access-Control-Allow-Methods", "GET, POST, DELETE, OPTIONS");
+  if (request.method === "OPTIONS") return response.status(204).end();
   next();
 }
 
