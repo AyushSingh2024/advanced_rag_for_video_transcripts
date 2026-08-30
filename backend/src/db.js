@@ -7,6 +7,7 @@ export const pool = new Pool({
   max: 10,
   idleTimeoutMillis: 30_000,
   connectionTimeoutMillis: 5_000,
+  ssl: config.databaseUrl.includes("render.com") ? { rejectUnauthorized: false } : false,
 });
 
 export async function withTransaction(callback) {
