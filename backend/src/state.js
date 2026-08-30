@@ -34,5 +34,9 @@ export const StateAnnotation = Annotation.Root({
   bestAnswer: Annotation({ reducer: replace, default: () => null }),
   bestCitations: Annotation({ reducer: replace, default: () => [] }),
   bestScore: Annotation({ reducer: replace, default: () => -1 }),
+  /** True when bounded retrieval returned too few results and the pipeline
+   *  fell back to an unbounded (whole-course) search. The answer may contain
+   *  material from lessons the student has not reached yet. */
+  fallbackUsed: Annotation({ reducer: replace, default: () => false }),
   trace: Annotation({ reducer: replace, default: () => ({}) }),
 });

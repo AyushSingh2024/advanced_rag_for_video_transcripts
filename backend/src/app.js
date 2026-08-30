@@ -68,6 +68,12 @@ function answerPayload(state, conversationId) {
     citations: state.bestCitations?.length ? state.bestCitations : state.citations,
     insufficientContext: state.insufficientContext,
     /**
+     * True when bounded (spoiler-filtered) retrieval returned too few results
+     * and the pipeline fell back to an unbounded search. The answer may
+     * reference material the student has not reached yet.
+     */
+    fallbackUsed: state.fallbackUsed ?? false,
+    /**
      * Present when the question is answered better by material the student has
      * not reached. The client renders it as "this is coming up in …" rather
      * than as an error.

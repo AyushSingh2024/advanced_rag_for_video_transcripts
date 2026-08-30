@@ -236,12 +236,18 @@ function renderResult(payload) {
     ? `<div class="banner thin">The pipeline judged the retrieved material insufficient and said so rather than guessing.</div>`
     : "";
 
+  /* Spoiler fallback banner: shown when bounded retrieval found nothing and
+   * the pipeline fell back to the whole course. */
+  const spoilerBanner = payload.fallbackUsed && !payload.insufficientContext
+    ? `<div class="banner ahead">⚠ No relevant material was found within your current lesson range. The answer below draws on content from later in the course and may contain minor spoilers.</div>`
+    : "";
+
   /* One notice, and only when it says something the locators cannot. How many
    * citations sit past your playhead is worth a sentence, because it explains
    * why those ones carry no timestamp. "Everything is covered" needs no banner:
    * the locators are already ember, which is the same information for free. */
   const ahead = (payload.citations ?? []).filter((citation) => scopeOf(citation.lessonOrder) === "ahead").length;
-  const aheadBanner = ahead > 0 && !payload.insufficientContext
+  const aheadBanner = ahead > 0 && !payload.insufficientContext && !payload.fallbackUsed
     ? `<div class="banner ahead">${ahead} citation${ahead === 1 ? "" : "s"} ${ahead === 1 ? "sits" : "sit"} past where you have watched, so ${
         ahead === 1 ? "it is" : "they are"} named without a timestamp or a quote.</div>`
     : "";
@@ -251,11 +257,13 @@ function renderResult(payload) {
     ["attempts", payload.attempts ?? "—"],
     ["bound", payload.upToLesson == null ? "whole course" : `≤ lesson ${payload.upToLesson}`],
     ["citations", payload.citations?.length ?? 0],
+    ...(payload.fallbackUsed ? [["fallback", "yes — spoiler filter relaxed"]] : []),
     ...(payload.lookahead?.lessonLabel ? [["introduced in", payload.lookahead.lessonLabel]] : []),
   ].map(([key, value]) => `<span class="pill">${key} <strong>${esc(value)}</strong></span>`).join("");
 
   return `<div class="card">
     ${banner}
+    ${spoilerBanner}
     ${aheadBanner}
     <div class="answer">${renderAnswer(payload.answer ?? "", payload.citations)}</div>
     <details class="trace">

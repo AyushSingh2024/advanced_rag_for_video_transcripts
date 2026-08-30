@@ -48,6 +48,14 @@ const MODE_GUIDANCE = {
  */
 function curriculumGuidance(state) {
   if (state.upToLesson == null) return "";
+
+  // When fallback retrieval was used, the excerpts are NOT restricted by lesson
+  // order — they span the whole course. Tell the model so it can warn the student
+  // instead of pretending the material is in range.
+  if (state.fallbackUsed) {
+    return ` The student is at lesson ${state.upToLesson}, but no relevant material was found within that range. The excerpts below may come from later lessons the student has not watched yet. Answer the question fully, but begin with a short note that the answer draws on material from later in the course. Cite every source normally.`;
+  }
+
   const position = ` The excerpts have been restricted to material at or before lesson ${state.upToLesson}, which is as far as the student has reached; treat anything beyond it as not yet taught, and never assume vocabulary the course has not introduced.`;
   const ahead = state.lookahead;
   if (!ahead?.lessonLabel) return position;

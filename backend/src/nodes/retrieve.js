@@ -146,6 +146,46 @@ export async function retrieveNode(state) {
 
   const retrievedChunks = reciprocalRankFusion(lists, { limit: config.fusedLimit });
 
+  /* ── Unbounded fallback ──────────────────────────────────────────────────
+   * When the spoiler-bounded search returns too few results to be useful,
+   * retry without the lesson-order ceiling. The answer will carry a spoiler
+   * warning, but an honest answer with a caveat beats a flat "I don't know".
+   */
+  let finalChunks = retrievedChunks;
+  let fallbackUsed = false;
+
+  if (retrievedChunks.length < 2 && upToLesson != null) {
+    const fbLists = [];
+
+    // Re-run vector searches without the lesson_order bound
+    const fbFilter = buildQdrantVideoFilter(videoId, null);
+    const fbSettled = await Promise.allSettled(queryVectors.map((vector, index) =>
+      qdrant.query(config.qdrantCollection, { query: vector, limit: config.vectorLimit, with_payload: true, ...(fbFilter ? { filter: fbFilter } : {}) })
+        .then((response) => ({ name: `fb-vector:${index}`, documents: response.points.map(qdrantDocument) })),
+    ));
+    fbLists.push(...fbSettled.filter(({ status }) => status === "fulfilled").map(({ value }) => value));
+
+    // Re-run keyword search without the lesson_order bound
+    try {
+      const fbKeyword = await pool.query(
+        `SELECT ${CHUNK_COLUMNS},
+                ts_rank_cd(c.search_vector, websearch_to_tsquery('english', $1)) AS keyword_score
+         FROM chunks c JOIN sources s USING (source_id)
+         WHERE c.search_vector @@ websearch_to_tsquery('english', $1)
+           AND ($3::text IS NULL OR c.video_id = $3)
+         ORDER BY keyword_score DESC LIMIT $2`,
+        [keywordQuery, config.keywordLimit, videoId],
+      );
+      fbLists.push({ name: "fb-keyword", documents: fbKeyword.rows.map(keywordDocument) });
+    } catch { /* bounded answer already exists; fallback is best-effort */ }
+
+    const fbFused = reciprocalRankFusion(fbLists, { limit: config.fusedLimit });
+    if (fbFused.length >= 2) {
+      finalChunks = fbFused;
+      fallbackUsed = true;
+    }
+  }
+
   // Only worth probing when there is a bound to be ahead of, and only using the
   // primary query vector — the point is to locate the lesson, not to rank well.
   let lookahead = null;
@@ -167,10 +207,10 @@ export async function retrieveNode(state) {
     }
   }
 
-  return { retrievedChunks, lookahead, trace: {
+  return { retrievedChunks: finalChunks, fallbackUsed, lookahead, trace: {
     ...state.trace, retrievalMs: Date.now() - startedAt, queryVariantCount: state.queryVariants.length,
-    videoId, currentTime, upToLesson,
-    retrievedCount: retrievedChunks.length,
+    videoId, currentTime, upToLesson, fallbackUsed,
+    retrievedCount: finalChunks.length,
     lookaheadLesson: lookahead?.lessonLabel ?? null,
     lookaheadStronger: lookahead?.strongerThanTaught ?? null,
     retrievalLists: lists.map(({ name, documents }) => ({ name, count: documents.length })),
