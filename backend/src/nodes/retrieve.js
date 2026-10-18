@@ -63,6 +63,7 @@ function bestVectorScore(lists) {
 async function probeAhead({ vector, query, videoId, upToLesson }) {
   const lists = [];
   try {
+    if (!config.qdrantEnabled || !vector) throw new Error("Vector retrieval disabled");
     const response = await qdrant.query(config.qdrantCollection, {
       query: vector, limit: config.vectorLimit, with_payload: true,
       filter: buildQdrantAheadFilter(videoId, upToLesson),
@@ -108,8 +109,11 @@ export async function retrieveNode(state) {
   const filter = buildQdrantVideoFilter(videoId, upToLesson);
   const keywordQuery = state.rewrittenQuery || state.originalQuery;
 
-  const embeddings = new OpenAIEmbeddings({ model: config.embeddingModel, apiKey: config.openAiApiKey, dimensions: config.embeddingDimensions });
-  const queryVectors = await embeddings.embedDocuments(state.queryVariants);
+  let queryVectors = [];
+  if (config.qdrantEnabled) {
+    const embeddings = new OpenAIEmbeddings({ model: config.embeddingModel, apiKey: config.openAiApiKey, dimensions: config.embeddingDimensions });
+    queryVectors = await embeddings.embedDocuments(state.queryVariants);
+  }
   const vectorSettled = await Promise.allSettled(queryVectors.map((vector, index) =>
     qdrant.query(config.qdrantCollection, { query: vector, limit: config.vectorLimit, with_payload: true, ...(filter ? { filter } : {}) })
       .then((response) => ({ name: `vector:${index}`, documents: response.points.map(qdrantDocument) })),

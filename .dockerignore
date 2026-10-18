@@ -13,14 +13,10 @@
 # the one at the root. macOS scatters them through every transcript folder.
 **/.DS_Store
 
-# The image serves; it never ingests. At runtime the only thing needed from
-# transcripts/ is the spine named by CURRICULUM_PATH, so the 87 lessons and the
-# concept-graph cache stay out of the build context — about 4.8 MB of 5.4 MB.
-# Keep backend/transcripts/class-subtitle/curriculum.json.
-**/transcripts/**/*.vtt
+# Render bootstraps PostgreSQL from the VTT corpus. SRT duplicates and generated
+# graph caches stay out of the image; the manifest and curriculum stay in it.
 **/transcripts/**/*.srt
 **/transcripts/**/concept-graph*.json
-**/transcripts/**/transcript-manifest.json
 
 # Documentation and tests are not needed to run the server. frontend/public is
 # deliberately absent from this list: the server serves it.

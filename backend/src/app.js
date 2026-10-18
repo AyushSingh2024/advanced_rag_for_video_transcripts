@@ -137,9 +137,11 @@ export function createApp({ graph = compileGraph() } = {}) {
   app.use(extensionAuth);
 
   app.get("/health", async (_request, response) => {
-    const health = { status: "ok", postgres: false, qdrant: false };
+    const health = { status: "ok", postgres: false, qdrant: config.qdrantEnabled ? false : "disabled" };
     try { await pool.query("SELECT 1"); health.postgres = true; } catch { health.status = "degraded"; }
-    try { await qdrant.getCollections(); health.qdrant = true; } catch { health.status = "degraded"; }
+    if (config.qdrantEnabled) {
+      try { await qdrant.getCollections(); health.qdrant = true; } catch { health.status = "degraded"; }
+    }
     response.status(health.status === "ok" ? 200 : 503).json(health);
   });
 

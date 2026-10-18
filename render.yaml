@@ -1,0 +1,31 @@
+services:
+  - type: web
+    name: advanced_rag_for_video
+    runtime: node
+    plan: free
+    region: singapore
+    rootDir: backend
+    buildCommand: npm ci
+    startCommand: npm run start:render
+    healthCheckPath: /health
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: USE_QDRANT
+        value: "false"
+      - key: DATABASE_URL
+        fromDatabase:
+          name: advanced-rag-db
+          property: connectionString
+      - key: OPENAI_API_KEY
+        sync: false
+      - key: COHERE_API_KEY
+        sync: false
+      - key: RATE_LIMIT_PER_MINUTE
+        value: "30"
+
+databases:
+  - name: advanced-rag-db
+    plan: free
+    databaseName: advanced_rag
+    user: advanced_rag

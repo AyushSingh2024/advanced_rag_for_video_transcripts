@@ -54,7 +54,8 @@ async function loadTranscriptManifest(inputPath) {
 }
 
 export async function ingestFile(filePath, { force = false, metadata = {} } = {}) {
-  requireConfig("openAiApiKey", "qdrantUrl", "databaseUrl");
+  requireConfig("databaseUrl");
+  if (config.qdrantEnabled) requireConfig("openAiApiKey", "qdrantUrl");
   const loaded = await loadFile(filePath);
   const integer = (value) => (Number.isFinite(Number(value)) ? Math.trunc(Number(value)) : null);
   loaded.metadata = {
@@ -99,42 +100,43 @@ export async function ingestFile(filePath, { force = false, metadata = {} } = {}
     endTime,
   }));
 
-  const embeddings = new OpenAIEmbeddings({
-    model: config.embeddingModel,
-    apiKey: config.openAiApiKey,
-    dimensions: config.embeddingDimensions,
-  });
-  const vectors = await embeddings.embedDocuments(chunks.map(({ content }) => content));
+  if (config.qdrantEnabled) {
+    const embeddings = new OpenAIEmbeddings({
+      model: config.embeddingModel,
+      apiKey: config.openAiApiKey,
+      dimensions: config.embeddingDimensions,
+    });
+    const vectors = await embeddings.embedDocuments(chunks.map(({ content }) => content));
 
-  await ensureQdrantCollection();
-  if (existing.rowCount) await deleteSourceVectors(sourceId);
-  await qdrant.upsert(config.qdrantCollection, {
-    wait: true,
-    points: chunks.map((chunk, index) => ({
-      id: chunk.chunkId,
-      vector: vectors[index],
-      payload: {
-        chunk_id: chunk.chunkId,
-        source_id: sourceId,
-        source_title: loaded.metadata.sourceTitle,
-        source_type: loaded.metadata.sourceType,
-        source_path: loaded.metadata.sourcePath,
-        source_url: loaded.metadata.sourceUrl,
-        video_id: loaded.metadata.videoId,
-        channel_id: loaded.metadata.channelId ?? null,
-        module: loaded.metadata.module ?? null,
-        // Integer so Qdrant can bound a search with a range filter.
-        lesson_order: loaded.metadata.lessonOrder,
-        module_order: loaded.metadata.moduleOrder,
-        lesson_label: loaded.metadata.lessonLabel,
-        language: loaded.metadata.language ?? null,
-        chunk_index: chunk.chunkIndex,
-        start_time: chunk.startTime,
-        end_time: chunk.endTime,
-        content: chunk.content,
-      },
-    })),
-  });
+    await ensureQdrantCollection();
+    if (existing.rowCount) await deleteSourceVectors(sourceId);
+    await qdrant.upsert(config.qdrantCollection, {
+      wait: true,
+      points: chunks.map((chunk, index) => ({
+        id: chunk.chunkId,
+        vector: vectors[index],
+        payload: {
+          chunk_id: chunk.chunkId,
+          source_id: sourceId,
+          source_title: loaded.metadata.sourceTitle,
+          source_type: loaded.metadata.sourceType,
+          source_path: loaded.metadata.sourcePath,
+          source_url: loaded.metadata.sourceUrl,
+          video_id: loaded.metadata.videoId,
+          channel_id: loaded.metadata.channelId ?? null,
+          module: loaded.metadata.module ?? null,
+          lesson_order: loaded.metadata.lessonOrder,
+          module_order: loaded.metadata.moduleOrder,
+          lesson_label: loaded.metadata.lessonLabel,
+          language: loaded.metadata.language ?? null,
+          chunk_index: chunk.chunkIndex,
+          start_time: chunk.startTime,
+          end_time: chunk.endTime,
+          content: chunk.content,
+        },
+      })),
+    });
+  }
 
   await withTransaction(async (client) => {
     await client.query(
