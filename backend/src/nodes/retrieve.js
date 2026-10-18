@@ -20,6 +20,13 @@ function qdrantDocument(point) {
 const CHUNK_COLUMNS = `c.chunk_id, c.source_id, s.source_title, s.source_path, s.source_url, c.chunk_index,
         c.content, c.page_number, c.video_id, c.start_time, c.end_time, c.lesson_order, s.lesson_label`;
 
+// Without vector search, require any meaningful query term rather than every
+// word in a natural-language question. Reranking selects the relevant excerpts.
+// PostgreSQL parses and escapes the terms before we replace only its AND operator.
+const KEYWORD_QUERY = config.qdrantEnabled
+  ? "websearch_to_tsquery('english', $1)"
+  : "to_tsquery('english', replace(plainto_tsquery('english', $1)::text, ' & ', ' | '))";
+
 function keywordDocument(row) {
   return {
     id: row.chunk_id, content: row.content, source_id: row.source_id, source_title: row.source_title,
@@ -74,9 +81,9 @@ async function probeAhead({ vector, query, videoId, upToLesson }) {
   try {
     const keyword = await pool.query(
       `SELECT ${CHUNK_COLUMNS},
-              ts_rank_cd(c.search_vector, websearch_to_tsquery('english', $1)) AS keyword_score
+              ts_rank_cd(c.search_vector, ${KEYWORD_QUERY}) AS keyword_score
        FROM chunks c JOIN sources s USING (source_id)
-       WHERE c.search_vector @@ websearch_to_tsquery('english', $1)
+       WHERE c.search_vector @@ ${KEYWORD_QUERY}
          AND ($3::text IS NULL OR c.video_id = $3)
          AND c.lesson_order IS NOT NULL AND c.lesson_order > $4
        ORDER BY keyword_score DESC LIMIT $2`,
@@ -123,9 +130,9 @@ export async function retrieveNode(state) {
   try {
     const keyword = await pool.query(
       `SELECT ${CHUNK_COLUMNS},
-              ts_rank_cd(c.search_vector, websearch_to_tsquery('english', $1)) AS keyword_score
+              ts_rank_cd(c.search_vector, ${KEYWORD_QUERY}) AS keyword_score
        FROM chunks c JOIN sources s USING (source_id)
-       WHERE c.search_vector @@ websearch_to_tsquery('english', $1)
+       WHERE c.search_vector @@ ${KEYWORD_QUERY}
          AND ($3::text IS NULL OR c.video_id = $3)
          AND ($4::int IS NULL OR c.lesson_order IS NULL OR c.lesson_order <= $4)
        ORDER BY keyword_score DESC LIMIT $2`,
@@ -173,9 +180,9 @@ export async function retrieveNode(state) {
     try {
       const fbKeyword = await pool.query(
         `SELECT ${CHUNK_COLUMNS},
-                ts_rank_cd(c.search_vector, websearch_to_tsquery('english', $1)) AS keyword_score
+                ts_rank_cd(c.search_vector, ${KEYWORD_QUERY}) AS keyword_score
          FROM chunks c JOIN sources s USING (source_id)
-         WHERE c.search_vector @@ websearch_to_tsquery('english', $1)
+         WHERE c.search_vector @@ ${KEYWORD_QUERY}
            AND ($3::text IS NULL OR c.video_id = $3)
          ORDER BY keyword_score DESC LIMIT $2`,
         [keywordQuery, config.keywordLimit, videoId],
