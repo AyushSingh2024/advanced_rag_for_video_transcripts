@@ -6,7 +6,7 @@
   "type": "module",
   "scripts": {
     "start": "node src/server.js",
-    "start:render": "node src/cli/migrate.js && node src/cli/ingest.js transcripts/class-subtitle && node src/server.js",
+    "start:render": "node src/cli/migrate.js && node src/cli/ingest.js transcripts/class-subtitle && node src/cli/buildConceptGraph.js --load-existing && node src/server.js",
     "ask": "node index.js",
     "ingest": "node src/cli/ingest.js",
     "curriculum": "node src/cli/buildCurriculum.js",

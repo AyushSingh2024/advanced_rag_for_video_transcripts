@@ -193,7 +193,7 @@ export async function retrieveNode(state) {
   // Only worth probing when there is a bound to be ahead of, and only using the
   // primary query vector — the point is to locate the lesson, not to rank well.
   let lookahead = null;
-  if (upToLesson != null && queryVectors.length) {
+  if (upToLesson != null) {
     const ahead = await probeAhead({ vector: queryVectors[0], query: keywordQuery, videoId, upToLesson });
     if (ahead) {
       const boundedBest = bestVectorScore(lists);

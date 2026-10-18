@@ -165,6 +165,12 @@ const graphPath = join(transcriptRoot, "concept-graph.json");
 const dryRun = argv.includes("--dry-run");
 
 try {
+  if (argv.includes("--load-existing")) {
+    const graph = JSON.parse(await readFile(graphPath, "utf8"));
+    if (!graph.concepts?.length) throw new Error("Cached concept graph is empty");
+    await persist(graph);
+    console.log(`Loaded ${graph.concepts.length} cached concepts into Postgres without LLM calls.`);
+  } else {
   const curriculum = JSON.parse(await readFile(curriculumPath, "utf8"));
   const reuse = flag("from");
   let extractions;
@@ -242,6 +248,7 @@ try {
   } else {
     await persist(graph);
     console.log(`\nWrote ${graphPath} and loaded the graph into Postgres.`);
+  }
   }
 } catch (error) {
   console.error(error.message);
